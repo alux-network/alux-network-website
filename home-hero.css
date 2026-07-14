@@ -1,0 +1,881 @@
+/*
+ * ALUX home hero material pass.
+ * Scope: the first screen only. Shared page components and later sections stay untouched.
+ */
+
+body[data-page="home"] .hero-home {
+  --hero-caramel-light: #dfbc91;
+  --hero-caramel: #bd8552;
+  --hero-caramel-deep: #8d5f3c;
+  --hero-mint-light: #91dcc4;
+  --hero-mint: #64bfa1;
+  --hero-mint-deep: #459a7f;
+  --hero-ink: #2f2118;
+  --hero-copy: #496175;
+  --hero-signal: rgba(255, 250, 238, 0.78);
+}
+
+body[data-page="home"] .hero-home .hero-home-unified {
+  border: 1px solid rgba(139, 103, 66, 0.16);
+  background:
+    radial-gradient(circle at 83% 16%, rgba(255, 219, 99, 0.15) 0%, rgba(255, 219, 99, 0) 25%),
+    radial-gradient(circle at 78% 82%, rgba(91, 188, 157, 0.08) 0%, rgba(91, 188, 157, 0) 25%),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.97) 0%, rgba(249, 242, 231, 0.93) 58%, rgba(239, 226, 207, 0.9) 100%);
+  box-shadow:
+    0 28px 64px rgba(87, 61, 35, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+body[data-page="home"] .hero-home .hero-home-copy {
+  background: linear-gradient(90deg, rgba(255, 251, 244, 0.78) 0%, rgba(255, 251, 244, 0.34) 48%, rgba(255, 251, 244, 0) 100%);
+}
+
+body[data-page="home"] .hero-home .hero-home-copy h1 {
+  color: var(--hero-ink);
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.34);
+}
+
+body[data-page="home"] .hero-home .hero-loop {
+  color: rgba(57, 77, 97, 0.58);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+body[data-page="home"] .hero-home .hero-text {
+  color: var(--hero-copy);
+}
+
+body[data-page="home"] .hero-home .lego-skyline {
+  direction: ltr;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 83% 16%, rgba(255, 224, 124, 0.12), rgba(255, 224, 124, 0) 27%),
+    radial-gradient(circle at 72% 78%, rgba(97, 171, 151, 0.08), rgba(97, 171, 151, 0) 28%);
+}
+
+/* The sun stays a sun: the only strong warm light source in the scene. */
+body[data-page="home"] .hero-home .orb-sun {
+  background:
+    radial-gradient(circle at 31% 27%, rgba(255, 255, 236, 0.96) 0 5%, rgba(255, 240, 151, 0.94) 13%, rgba(250, 205, 48, 0.98) 46%, #ecb31f 78%, #d99418 100%);
+  border: 1px solid rgba(215, 151, 20, 0.18);
+  box-shadow:
+    0 0 0 17px rgba(255, 220, 104, 0.18),
+    0 0 42px 22px rgba(255, 203, 61, 0.15),
+    inset -9px -10px 16px rgba(204, 126, 8, 0.13),
+    inset 5px 5px 12px rgba(255, 255, 229, 0.34);
+  animation: homeSunBreathe 8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+body[data-page="home"] .hero-home .orb-sun::before {
+  content: "";
+  position: absolute;
+  top: 18%;
+  left: 20%;
+  width: 26%;
+  height: 17%;
+  border-radius: 50%;
+  background: rgba(255, 255, 244, 0.42);
+  transform: rotate(-28deg);
+  filter: blur(1px);
+}
+
+body[data-page="home"] .hero-home .orb-moon {
+  background: radial-gradient(circle at 33% 31%, #ffffff 0 8%, #dceeff 52%, #b6d8f2 100%);
+  border: 1px solid rgba(128, 170, 205, 0.16);
+  box-shadow:
+    0 0 0 10px rgba(179, 207, 229, 0.12),
+    0 12px 22px rgba(92, 119, 143, 0.13);
+  opacity: 0.72;
+  animation: homeNodeBreathe 7.6s ease-in-out infinite;
+}
+
+/* The old tower pseudo-elements produced accidental dots. Hide them and redraw
+   the signal points intentionally on the island groups below. */
+body[data-page="home"] .hero-home .brick-tower,
+body[data-page="home"] .hero-home .brick-tower::before,
+body[data-page="home"] .hero-home .brick-tower::after {
+  display: none;
+}
+
+body[data-page="home"] .hero-home .floating-island {
+  animation: homeModuleFloat 9.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+body[data-page="home"] .hero-home .island-b {
+  animation-delay: -3.1s;
+}
+
+body[data-page="home"] .hero-home .island-c {
+  animation-delay: -1.4s;
+}
+
+body[data-page="home"] .hero-home .island-b::before,
+body[data-page="home"] .hero-home .island-c::before {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--hero-signal);
+  box-shadow:
+    16px 0 0 rgba(255, 248, 232, 0.66),
+    32px 0 0 rgba(255, 246, 226, 0.5);
+  animation: homeSignalFlow 4.8s ease-in-out infinite;
+}
+
+body[data-page="home"] .hero-home .island-b::before {
+  top: 24px;
+  left: 24px;
+  animation-delay: -1.6s;
+}
+
+body[data-page="home"] .hero-home .island-c::before {
+  top: 20px;
+  left: -55px;
+}
+
+body[data-page="home"] .hero-home .stone-base {
+  --brick-stud-size: 27px;
+  --brick-stud-height: 9px;
+  --brick-stud-cap: 8px;
+  --brick-stud-face: #b97947;
+  --brick-stud-dark: #92552f;
+  --brick-stud-top: #dca66f;
+  --brick-stud-light: #f0c792;
+  --brick-groove-width: 28px;
+  --brick-groove-height: 8px;
+  border: 1px solid rgba(116, 78, 47, 0.18);
+  border-radius: 14px;
+  overflow: visible;
+  background: linear-gradient(180deg, #d9b386 0%, #c18d5d 54%, #a97046 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.38),
+    inset 0 -9px 14px rgba(92, 52, 27, 0.1),
+    0 7px 0 rgba(137, 89, 53, 0.5),
+    0 18px 26px rgba(92, 61, 36, 0.16);
+}
+
+body[data-page="home"] .hero-home .stone-base::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 2px;
+  left: 12px;
+  right: 12px;
+  bottom: auto;
+  width: auto;
+  height: 8px;
+  border: 0;
+  border-radius: 8px 8px 3px 3px;
+  background: linear-gradient(180deg, rgba(255, 242, 219, 0.48), rgba(255, 235, 203, 0));
+  box-shadow: none;
+}
+
+body[data-page="home"] .hero-home .stone-base::after {
+  content: "";
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 8px;
+  right: -1px;
+  bottom: 7px;
+  left: auto;
+  width: 11px;
+  height: auto;
+  border: 0;
+  border-radius: 0 7px 7px 0;
+  background:
+    linear-gradient(90deg, rgba(255, 226, 190, 0.12), rgba(92, 52, 27, 0.16)),
+    linear-gradient(180deg, transparent 0 30%, rgba(80, 45, 25, 0.18) 30% 67%, transparent 67%);
+  box-shadow:
+    inset 2px 0 2px rgba(255, 232, 202, 0.1),
+    inset -2px 0 3px rgba(80, 45, 25, 0.12);
+}
+
+body[data-page="home"] .hero-home .brick-studs,
+body[data-page="home"] .hero-home .brick-grooves {
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+body[data-page="home"] .hero-home .brick-studs {
+  top: calc(-1 * var(--brick-stud-height) - 7px);
+  right: 22px;
+  left: 22px;
+  align-items: end;
+}
+
+body[data-page="home"] .hero-home .brick-studs--6 {
+  grid-template-columns: repeat(6, var(--brick-stud-size));
+}
+
+body[data-page="home"] .hero-home .brick-studs--5 {
+  grid-template-columns: repeat(5, var(--brick-stud-size));
+}
+
+body[data-page="home"] .hero-home .brick-studs--4 {
+  grid-template-columns: repeat(4, var(--brick-stud-size));
+}
+
+body[data-page="home"] .hero-home .brick-studs i {
+  position: relative;
+  display: block;
+  width: var(--brick-stud-size);
+  height: var(--brick-stud-height);
+  border: 1px solid rgba(85, 49, 27, 0.17);
+  border-radius: 44% 44% 36% 36%;
+  background: linear-gradient(90deg, var(--brick-stud-dark), var(--brick-stud-face) 28%, var(--brick-stud-top) 68%, var(--brick-stud-dark));
+  box-shadow: -1px 2px 3px rgba(82, 47, 26, 0.22);
+}
+
+body[data-page="home"] .hero-home .brick-studs i::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -1px;
+  left: -1px;
+  height: var(--brick-stud-cap);
+  border: 1px solid rgba(85, 49, 27, 0.14);
+  border-radius: 50%;
+  background: radial-gradient(circle at 70% 24%, rgba(255, 245, 225, 0.86) 0 8%, var(--brick-stud-light) 21%, var(--brick-stud-top) 58%, var(--brick-stud-face) 100%);
+  box-shadow: inset -2px -2px 3px rgba(103, 58, 31, 0.13);
+}
+
+body[data-page="home"] .hero-home .brick-grooves {
+  right: 22px;
+  bottom: 5px;
+  left: 22px;
+  align-items: start;
+}
+
+body[data-page="home"] .hero-home .brick-grooves--5 {
+  grid-template-columns: repeat(5, var(--brick-groove-width));
+}
+
+body[data-page="home"] .hero-home .brick-grooves--4 {
+  grid-template-columns: repeat(4, var(--brick-groove-width));
+}
+
+body[data-page="home"] .hero-home .brick-grooves--3 {
+  grid-template-columns: repeat(3, var(--brick-groove-width));
+}
+
+body[data-page="home"] .hero-home .brick-grooves i {
+  display: block;
+  width: var(--brick-groove-width);
+  height: var(--brick-groove-height);
+  border: 1px solid rgba(83, 47, 25, 0.12);
+  border-radius: 2px 2px 6px 6px;
+  background: linear-gradient(180deg, rgba(86, 48, 25, 0.22), rgba(109, 63, 35, 0.12));
+  box-shadow:
+    inset 0 2px 3px rgba(73, 40, 21, 0.18),
+    0 1px 0 rgba(255, 227, 189, 0.12);
+}
+
+body[data-page="home"] .hero-home .island-c .stone-base {
+  --brick-stud-face: #a96d43;
+  --brick-stud-dark: #805034;
+  --brick-stud-top: #c89a68;
+  --brick-stud-light: #e7c38f;
+  background: linear-gradient(180deg, #ddc39f 0%, #c59a6d 52%, #9b6842 100%);
+}
+
+body[data-page="home"] .hero-home .island-c .brick-studs,
+body[data-page="home"] .hero-home .island-c .brick-grooves {
+  right: 20px;
+  left: 20px;
+}
+
+body[data-page="home"] .hero-home .brick-bridge {
+  --brick-stud-size: 23px;
+  --brick-stud-height: 7px;
+  --brick-stud-cap: 6px;
+  --brick-stud-face: #55ad91;
+  --brick-stud-dark: #3f8c75;
+  --brick-stud-top: #77cfb2;
+  --brick-stud-light: #b6efdc;
+  --brick-groove-width: 18px;
+  --brick-groove-height: 5px;
+  border: 1px solid rgba(43, 132, 104, 0.2);
+  border-radius: 10px;
+  overflow: visible;
+  background: linear-gradient(180deg, #8bd9c0 0%, #67c2a4 62%, #4da487 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(233, 255, 247, 0.46),
+    inset -7px 0 9px rgba(34, 117, 91, 0.1),
+    0 6px 0 var(--hero-mint-deep),
+    0 14px 22px rgba(57, 117, 97, 0.18);
+}
+
+body[data-page="home"] .hero-home .brick-bridge::before {
+  content: "";
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: -5px;
+  left: 5px;
+  right: 5px;
+  bottom: auto;
+  width: auto;
+  height: 7px;
+  border: 1px solid rgba(39, 126, 98, 0.22);
+  border-radius: 5px 5px 2px 2px;
+  background: linear-gradient(180deg, #91ddc5, #67bea1);
+  box-shadow:
+    inset 0 1px 0 rgba(236, 255, 249, 0.5),
+    0 2px 3px rgba(47, 118, 94, 0.16);
+}
+
+body[data-page="home"] .hero-home .brick-bridge::after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: -1px;
+  bottom: 4px;
+  left: auto;
+  width: 7px;
+  height: auto;
+  border-radius: 0 5px 5px 0;
+  background: linear-gradient(90deg, rgba(226, 255, 246, 0.08), rgba(34, 113, 88, 0.17));
+  box-shadow: inset -2px 0 2px rgba(31, 94, 74, 0.12);
+}
+
+body[data-page="home"] .hero-home .brick-bridge > .brick-studs {
+  top: calc(-1 * var(--brick-stud-height) - 4px);
+  right: 18px;
+  left: 18px;
+}
+
+body[data-page="home"] .hero-home .brick-bridge > .brick-grooves {
+  right: 18px;
+  bottom: 2px;
+  left: 18px;
+}
+
+/* Hero CTAs share the same material language without touching global buttons. */
+body[data-page="home"] .hero-home .home-hero-actions > .button {
+  min-height: 52px;
+  border: 1px solid rgba(111, 66, 34, 0.22);
+  border-radius: 13px;
+  overflow: visible;
+  color: #fff8ef;
+  text-shadow: 0 1px 0 rgba(92, 50, 24, 0.2);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 239, 213, 0.36),
+    inset 0 -7px 12px rgba(100, 54, 28, 0.1),
+    0 6px 0 #8a5834,
+    0 14px 22px rgba(105, 65, 35, 0.18);
+  transition: transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 160ms cubic-bezier(0.2, 0.8, 0.2, 1), filter 160ms ease;
+}
+
+body[data-page="home"] .hero-home .home-hero-actions > .button.primary {
+  background: linear-gradient(180deg, #d49861 0%, #bd7745 52%, #a45f35 100%);
+}
+
+body[data-page="home"] .hero-home .home-hero-actions > .button.secondary {
+  background: linear-gradient(180deg, #dda970 0%, #c6884f 52%, #ad693d 100%);
+}
+
+body[data-page="home"] .hero-home .home-hero-actions > .button::before {
+  top: 2px;
+  left: 12px;
+  right: 12px;
+  height: 6px;
+  border-radius: 7px 7px 3px 3px;
+  background: linear-gradient(180deg, rgba(255, 239, 215, 0.38), rgba(255, 239, 215, 0.02));
+  box-shadow: none;
+}
+
+body[data-page="home"] .hero-home .home-hero-actions > .button::after {
+  display: none;
+}
+
+@media (hover: hover) {
+  body[data-page="home"] .hero-home .home-hero-actions > .button:hover {
+    transform: translateY(-2px);
+    filter: saturate(1.03) brightness(1.02);
+    box-shadow:
+      inset 0 2px 0 rgba(255, 239, 213, 0.4),
+      inset 0 -7px 12px rgba(100, 54, 28, 0.09),
+      0 8px 0 #875431,
+      0 18px 26px rgba(105, 65, 35, 0.2);
+  }
+}
+
+body[data-page="home"] .hero-home .home-hero-actions > .button:active {
+  transform: translateY(4px);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 239, 213, 0.3),
+    inset 0 -5px 10px rgba(100, 54, 28, 0.12),
+    0 2px 0 #875431,
+    0 7px 12px rgba(105, 65, 35, 0.17);
+}
+
+body[data-page="home"] .hero-home .home-hero-actions > .button:focus-visible {
+  outline: 3px solid rgba(74, 112, 142, 0.62);
+  outline-offset: 5px;
+}
+
+@media (min-width: 961px) {
+  body[data-page="home"] .hero-home .orb-sun {
+    top: 50px;
+    right: 6.7%;
+    left: auto;
+    width: 116px;
+    height: 116px;
+  }
+
+  body[data-page="home"] .hero-home .orb-moon {
+    top: 49%;
+    right: auto;
+    left: 57.2%;
+    width: 34px;
+    height: 34px;
+  }
+
+  body[data-page="home"] .hero-home .island-c {
+    top: 165px;
+    right: 14.5%;
+    bottom: auto;
+    left: auto;
+    width: 252px;
+    height: 146px;
+    opacity: 0.96;
+  }
+
+  body[data-page="home"] .hero-home .island-c .stone-base {
+    left: 0;
+    right: auto;
+    bottom: 12px;
+    width: 252px;
+    height: 64px;
+  }
+
+  body[data-page="home"] .hero-home .island-b {
+    right: 4.1%;
+    bottom: 76px;
+    left: auto;
+    top: auto;
+    width: 312px;
+    height: 210px;
+    opacity: 1;
+  }
+
+  body[data-page="home"] .hero-home .island-b .stone-base {
+    left: 0;
+    right: auto;
+    bottom: 0;
+    width: 312px;
+    height: 82px;
+  }
+
+  body[data-page="home"] .hero-home .island-b .brick-bridge {
+    left: 86px;
+    right: auto;
+    bottom: 88px;
+    width: 212px;
+    height: 30px;
+  }
+
+  body[data-page="home"] .hero-home .island-a {
+    left: -7%;
+    right: auto;
+    bottom: -82px;
+    top: auto;
+    opacity: 0.28;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 960px) {
+  body[data-page="home"] .hero-home .hero-home-unified {
+    min-height: 720px;
+  }
+
+  body[data-page="home"] .hero-home .hero-home-copy {
+    max-width: 72%;
+  }
+
+  body[data-page="home"] .hero-home .orb-sun {
+    top: 44px;
+    right: 5%;
+    left: auto;
+    width: 92px;
+    height: 92px;
+  }
+
+  body[data-page="home"] .hero-home .island-c {
+    top: 230px;
+    right: 2%;
+    bottom: auto;
+    left: auto;
+    width: 210px;
+    height: 125px;
+  }
+
+  body[data-page="home"] .hero-home .island-c .stone-base {
+    left: 0;
+    bottom: 10px;
+    width: 210px;
+    height: 56px;
+  }
+
+  body[data-page="home"] .hero-home .island-b {
+    right: -2%;
+    bottom: 34px;
+    left: auto;
+    top: auto;
+    width: 260px;
+    height: 178px;
+  }
+
+  body[data-page="home"] .hero-home .island-b .stone-base {
+    left: 0;
+    bottom: 0;
+    width: 260px;
+    height: 72px;
+  }
+
+  body[data-page="home"] .hero-home .island-b .brick-bridge {
+    left: 72px;
+    bottom: 78px;
+    width: 172px;
+    height: 27px;
+  }
+}
+
+@media (max-width: 720px) {
+  /* The fixed desktop canvas is cropped on phones rather than squeezed into
+     the narrow viewport. Keep only the quietest background modules here. */
+  body[data-page="home"] > .lego-defs {
+    opacity: 0.16;
+  }
+
+  body[data-page="home"] > .lego-defs .network-span {
+    display: none;
+  }
+
+  body[data-page="home"] > .lego-defs .cluster-glow {
+    opacity: 0.12;
+  }
+
+  body[data-page="home"] .hero-home .hero-home-unified {
+    height: auto;
+    min-height: 0;
+  }
+
+  body[data-page="home"] .hero-home .hero-home-copy {
+    height: auto;
+    min-height: 0;
+    justify-content: flex-start;
+    padding: 48px 18px 190px;
+    background: linear-gradient(180deg, rgba(255, 251, 244, 0.72) 0%, rgba(255, 251, 244, 0.22) 57%, rgba(255, 251, 244, 0) 100%);
+  }
+
+  body[data-page="home"] .hero-home .hero-home-copy h1 {
+    max-width: 230px;
+    font-size: 62px;
+    line-height: 0.95;
+  }
+
+  body[data-page="home"] .hero-home .hero-loop {
+    color: rgba(57, 77, 97, 0.61);
+  }
+
+  body[data-page="home"] .hero-home .home-hero-actions {
+    position: relative;
+    z-index: 5;
+  }
+
+  body[data-page="home"] .hero-home .home-hero-actions > .button {
+    min-height: 51px;
+  }
+
+  body[data-page="home"] .hero-home .orb-sun {
+    top: 24px;
+    right: 18px;
+    left: auto;
+    width: 68px;
+    height: 68px;
+    box-shadow:
+      0 0 0 11px rgba(255, 220, 104, 0.17),
+      0 0 28px 14px rgba(255, 203, 61, 0.13),
+      inset -6px -7px 11px rgba(204, 126, 8, 0.12),
+      inset 4px 4px 8px rgba(255, 255, 229, 0.32);
+  }
+
+  body[data-page="home"] .hero-home .orb-moon {
+    top: auto;
+    right: 128px;
+    bottom: 154px;
+    left: auto;
+    width: 24px;
+    height: 24px;
+  }
+
+  body[data-page="home"] .hero-home .island-a,
+  body[data-page="home"] .hero-home .island-c {
+    display: none;
+  }
+
+  body[data-page="home"] .hero-home .island-b {
+    right: 14px;
+    bottom: 18px;
+    left: auto;
+    top: auto;
+    width: 170px;
+    height: 118px;
+  }
+
+  body[data-page="home"] .hero-home .island-b::before {
+    top: 4px;
+    left: 12px;
+  }
+
+  body[data-page="home"] .hero-home .island-b .stone-base {
+    left: 0;
+    right: auto;
+    bottom: 0;
+    width: 170px;
+    height: 54px;
+    border-radius: 16px;
+  }
+
+  body[data-page="home"] .hero-home .island-b .brick-bridge {
+    left: 47px;
+    right: auto;
+    bottom: 61px;
+    width: 108px;
+    height: 23px;
+    border-radius: 10px;
+  }
+
+  body[data-page="home"] .hero-home .island-b .brick-bridge::before {
+    top: 6px;
+    left: 10px;
+    width: 9px;
+    height: 9px;
+    box-shadow:
+      17px 0 0 rgba(117, 209, 179, 0.82),
+      34px 0 0 rgba(117, 209, 179, 0.72);
+  }
+}
+
+/* Mobile navigation is a warm material panel, not the legacy dark drawer. */
+@media (max-width: 960px) {
+  body[data-page="home"] .menu-toggle {
+    position: relative;
+    z-index: 32;
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid rgba(105, 79, 57, 0.24);
+    border-radius: 15px;
+    color: #4f3c2f;
+    background: linear-gradient(180deg, rgba(255, 253, 248, 0.99), rgba(239, 226, 207, 0.97));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.96),
+      0 7px 16px rgba(83, 60, 41, 0.13);
+    cursor: pointer;
+    transition: transform 150ms ease, border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
+  }
+
+  body[data-page="home"] .menu-toggle span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 21px;
+    height: 2.5px;
+    margin: 0;
+    border-radius: 999px;
+    background: currentColor;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.48);
+    transform-origin: center;
+    transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 130ms ease;
+  }
+
+  body[data-page="home"] .menu-toggle span:nth-child(1) {
+    transform: translate(-50%, -50%) translateY(-6px);
+  }
+
+  body[data-page="home"] .menu-toggle span:nth-child(2) {
+    transform: translate(-50%, -50%);
+  }
+
+  body[data-page="home"] .menu-toggle span:nth-child(3) {
+    transform: translate(-50%, -50%) translateY(6px);
+  }
+
+  body[data-page="home"] .menu-toggle[aria-expanded="true"] {
+    border-color: rgba(105, 79, 57, 0.34);
+    background: linear-gradient(180deg, #f4e7d5, #e9d4b9);
+    box-shadow:
+      inset 0 2px 6px rgba(103, 72, 46, 0.1),
+      0 6px 14px rgba(83, 60, 41, 0.11);
+    transform: none;
+  }
+
+  body[data-page="home"] .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  body[data-page="home"] .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  body[data-page="home"] .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  body[data-page="home"] .menu-toggle:focus-visible {
+    outline: 3px solid rgba(75, 110, 137, 0.56);
+    outline-offset: 4px;
+  }
+
+  body[data-page="home"] .site-nav {
+    top: calc(100% + 12px);
+    right: 0;
+    left: auto;
+    z-index: 30;
+    width: min(328px, calc(100vw - 32px));
+    min-width: 0;
+    max-height: calc(100dvh - 118px);
+    gap: 4px;
+    padding: 12px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 1px solid rgba(110, 83, 60, 0.2);
+    border-radius: 24px;
+    color: #4f443b;
+    background: rgba(255, 252, 246, 0.985);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.92),
+      0 24px 52px rgba(79, 57, 39, 0.2),
+      0 6px 16px rgba(79, 57, 39, 0.1);
+    backdrop-filter: blur(18px) saturate(1.04);
+  }
+
+  body[data-page="home"] .site-nav.open {
+    display: flex;
+  }
+
+  body[data-page="home"] .site-nav > a,
+  body[data-page="home"] .nav-dropdown-trigger,
+  body[data-page="home"] .nav-dropdown-menu a {
+    min-height: 50px;
+    padding: 0 14px;
+    border-radius: 14px;
+    color: #56493f;
+    font-weight: 600;
+  }
+
+  body[data-page="home"] .site-nav > a:hover,
+  body[data-page="home"] .site-nav > a:focus-visible,
+  body[data-page="home"] .nav-dropdown-trigger:hover,
+  body[data-page="home"] .nav-dropdown-trigger:focus-visible,
+  body[data-page="home"] .nav-dropdown-menu a:hover,
+  body[data-page="home"] .nav-dropdown-menu a:focus-visible {
+    color: #33271f;
+    background: rgba(196, 154, 111, 0.14);
+  }
+
+  body[data-page="home"] .site-nav > a.active-link {
+    color: #443126;
+    background: linear-gradient(135deg, rgba(220, 184, 141, 0.3), rgba(149, 205, 184, 0.16));
+  }
+
+  body[data-page="home"] .nav-dropdown-menu {
+    margin-top: 4px;
+    padding: 6px;
+    border: 1px solid rgba(110, 83, 60, 0.12);
+    border-radius: 16px;
+    background: rgba(242, 233, 220, 0.72);
+    box-shadow: none;
+  }
+}
+
+html[dir="rtl"] body[data-page="home"] .hero-home .lego-skyline {
+  direction: ltr;
+}
+
+html[dir="rtl"] body[data-page="home"] .hero-home .orb-sun {
+  right: 6.7%;
+  left: auto;
+}
+
+html[dir="rtl"] body[data-page="home"] .hero-home .orb-moon {
+  right: auto;
+  left: 57.2%;
+}
+
+html[dir="rtl"] body[data-page="home"] .hero-home .island-b {
+  right: 4.1%;
+  left: auto;
+}
+
+html[dir="rtl"] body[data-page="home"] .hero-home .island-c {
+  right: 14.5%;
+  left: auto;
+}
+
+@media (max-width: 720px) {
+  html[dir="rtl"] body[data-page="home"] .hero-home .orb-sun {
+    right: 18px;
+    left: auto;
+  }
+
+  html[dir="rtl"] body[data-page="home"] .hero-home .orb-moon {
+    right: 128px;
+    left: auto;
+  }
+
+  html[dir="rtl"] body[data-page="home"] .hero-home .island-b {
+    right: -7px;
+    left: auto;
+  }
+}
+
+@keyframes homeSunBreathe {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.008); opacity: 0.985; }
+}
+
+@keyframes homeNodeBreathe {
+  0%, 100% { transform: scale(1); opacity: 0.64; }
+  50% { transform: scale(1.025); opacity: 0.78; }
+}
+
+@keyframes homeModuleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes homeSignalFlow {
+  0%, 100% { transform: translateX(0); opacity: 0.5; }
+  50% { transform: translateX(2px); opacity: 0.86; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="home"] .hero-home .orb-sun,
+  body[data-page="home"] .hero-home .orb-moon,
+  body[data-page="home"] .hero-home .floating-island,
+  body[data-page="home"] .hero-home .island-b::before,
+  body[data-page="home"] .hero-home .island-c::before {
+    animation: none;
+    transform: none;
+  }
+
+  body[data-page="home"] .hero-home .home-hero-actions > .button {
+    transition: none;
+  }
+}

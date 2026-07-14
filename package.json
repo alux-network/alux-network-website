@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check script.js && node --check scripts/sync-i18n.mjs && node --check scripts/verify-i18n.mjs && node --check scripts/verify-site.mjs && node scripts/verify-i18n.mjs && node scripts/verify-site.mjs",
+    "i18n:scan": "node scripts/sync-i18n.mjs --scan",
+    "i18n:ai": "node scripts/sync-i18n.mjs --ai",
+    "i18n:apply": "node scripts/sync-i18n.mjs --apply",
+    "i18n:verify": "node scripts/verify-i18n.mjs",
+    "site:verify": "node scripts/verify-site.mjs"
+  }
+}

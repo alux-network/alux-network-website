@@ -1,0 +1,164 @@
+/* Homepage Hero: tablet and phone composition only. Desktop stays on the restored baseline. */
+
+@media (min-width: 721px) and (max-width: 960px) {
+  body[data-page="home"] .hero-home {
+    padding-top: 36px;
+  }
+
+  body[data-page="home"] .hero-home-unified {
+    min-height: 640px;
+    background:
+      radial-gradient(circle at 16% 15%, rgba(255, 255, 255, 0.72), transparent 28%),
+      radial-gradient(circle at 84% 80%, rgba(143, 207, 187, 0.1), transparent 24%),
+      linear-gradient(180deg, rgba(255, 251, 244, 0.96), rgba(248, 241, 231, 0.9));
+  }
+
+  body[data-page="home"] .hero-home-copy {
+    z-index: 2;
+    width: 68%;
+    min-height: 640px;
+    padding: 58px 28px 64px;
+  }
+
+  body[data-page="home"] .lego-skyline {
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  body[data-page="home"] .lego-skyline::before {
+    inset: auto -4% 2% 44%;
+    height: 220px;
+  }
+
+  body[data-page="home"] .island-a {
+    display: none;
+  }
+
+  body[data-page="home"] .island-c {
+    top: 118px;
+    right: 4%;
+    width: 126px;
+    height: 98px;
+  }
+
+  body[data-page="home"] .island-b {
+    top: auto;
+    right: 1%;
+    bottom: 70px;
+    width: 198px;
+    height: 150px;
+  }
+
+  body[data-page="home"] .orb-sun {
+    top: 32px;
+    right: 5%;
+    width: 88px;
+    height: 88px;
+    box-shadow: 0 0 0 14px rgba(241, 196, 15, 0.1);
+  }
+
+  body[data-page="home"] .orb-moon {
+    top: 188px;
+    right: 34%;
+    left: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  body[data-page="home"] .hero-home {
+    padding-top: 34px;
+  }
+
+  body[data-page="home"] .hero-home-unified {
+    min-height: 0;
+    background:
+      radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.76), transparent 28%),
+      radial-gradient(circle at 78% 90%, rgba(137, 205, 184, 0.11), transparent 23%),
+      linear-gradient(180deg, rgba(255, 251, 244, 0.97), rgba(250, 245, 237, 0.94));
+  }
+
+  body[data-page="home"] .hero-home-copy {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 0;
+    padding: 40px 16px 210px;
+  }
+
+  body[data-page="home"] .lego-skyline {
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  body[data-page="home"] .lego-skyline::before {
+    inset: auto -18% 10px 26%;
+    height: 176px;
+    background: radial-gradient(circle at center, rgba(151, 211, 195, 0.18), transparent 70%);
+    filter: blur(6px);
+  }
+
+  body[data-page="home"] .orb-sun {
+    top: 24px;
+    right: clamp(24px, 7vw, 32px);
+    width: clamp(76px, 22vw, 84px);
+    height: clamp(76px, 22vw, 84px);
+    box-shadow: 0 0 0 13px rgba(241, 196, 15, 0.1);
+  }
+
+  body[data-page="home"] .orb-moon,
+  body[data-page="home"] .island-a,
+  body[data-page="home"] .island-c {
+    display: none;
+  }
+
+  body[data-page="home"] .island-b {
+    top: auto;
+    right: -4px;
+    bottom: 32px;
+    width: 174px;
+    height: 132px;
+    opacity: 0.9;
+  }
+
+  body[data-page="home"] .island-b .stone-base {
+    height: 64px;
+  }
+
+  body[data-page="home"] .hero-home h1 {
+    max-width: calc(100% - 92px);
+    font-size: clamp(3.15rem, 16vw, 4.35rem);
+  }
+
+  body[data-page="home"] .hero-home .hero-loop,
+  body[data-page="home"] .hero-home .hero-text,
+  body[data-page="home"] .home-hero-actions {
+    position: relative;
+    z-index: 3;
+  }
+
+  body[data-page="home"] .home-hero-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  body[data-page="home"] .home-hero-actions > .button {
+    width: 100%;
+    min-height: 58px;
+  }
+}
+
+@media (max-width: 420px) {
+  body[data-page="home"] .hero-home-copy {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (max-width: 960px) {
+  body[data-page="home"] .floating-island {
+    animation: none;
+  }
+}
