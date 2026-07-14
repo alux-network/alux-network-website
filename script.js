@@ -1754,14 +1754,30 @@ function setStoredValue(key, value) {
   } catch (error) {}
 }
 
+function getSessionLanguage() {
+  try {
+    const value = sessionStorage.getItem("alux-lang");
+    if (value !== null) return value;
+  } catch (error) {}
+
+  return memoryStore["alux-lang"] ?? null;
+}
+
+function setSessionLanguage(value) {
+  memoryStore["alux-lang"] = value;
+
+  try {
+    sessionStorage.setItem("alux-lang", value);
+  } catch (error) {}
+}
+
 function detectLanguage() {
-  const saved = getStoredValue("alux-lang");
+  try {
+    localStorage.removeItem("alux-lang");
+  } catch (error) {}
+
+  const saved = getSessionLanguage();
   if (saved && supportedLanguages.has(saved)) return saved;
-  const locale = (navigator.language || "").toLowerCase();
-  if (locale.startsWith("zh")) return "zh";
-  if (locale.startsWith("ko")) return "ko";
-  if (locale.startsWith("ja")) return "ja";
-  if (locale.startsWith("ar")) return "ar";
   return "en";
 }
 
@@ -4087,7 +4103,7 @@ function initLanguage() {
   langButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const lang = button.dataset.lang;
-      setStoredValue("alux-lang", lang);
+      setSessionLanguage(lang);
       renderPage(lang);
       if (langDropdown && langSwitch) {
         langDropdown.classList.remove("open");
