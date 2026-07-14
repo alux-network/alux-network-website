@@ -1,45 +1,42 @@
 # ALUX Network Website
 
-This project is the static website package for `alux.network`.
+This repository contains the source code and production assets for the official ALUX Network website.
 
-The homepage entry is `index.html`, so hosted domains and local previews open the same homepage file.
+**Website:** [alux.network](https://alux.network)
 
-Current pages:
+## About the Website
 
-- `index.html`
-- `for-ai-agents.html`
-- `alux-vs-others.html`
-- `runtime-lab.html`
-- `glvm.html`
-- `team.html`
-- `roadmap.html`
+We maintain this repository as the source of truth for the ALUX Network website. The website presents our technology, roadmap, team, and ongoing development.
 
-Keep shared assets, localization data, scripts, and styles in this same project folder when publishing the full website.
+It is built as a multilingual static website using HTML, CSS, and JavaScript. English is the default language for every new visit, with Simplified Chinese, Korean, Japanese, and Arabic available through the language selector.
 
-`parallel-concurrent-composable.html` is a compatibility redirect for the former Runtime Lab URL. Keep it until traffic or backlink data confirms that the old URL is no longer needed.
+## Repository Structure
 
-## Localization workflow
+- `index.html` — Official homepage
+- `*.html` — Website pages and compatibility routes
+- `assets/` — Images, videos, icons, and visual assets
+- `i18n/` — Localization sources and generated language bundles
+- `blender/` — 3D source scenes and production scripts
+- `scripts/` — Localization and website validation tools
 
-English page and interface copy in `script.js` is the only authored runtime source. Do not add hand-written Chinese, Korean, Japanese, or Arabic page objects back into the script.
+## Development
 
-1. Edit only necessary English source copy in `script.js`.
-2. Run `npm run i18n:scan` to refresh `i18n/source/site.en.json` and mark only changed entries stale.
-3. Review every changed entry in `i18n/locales/{zh,ko,ja,ar}.json`; publishable entries must be `human-reviewed` or `ai-reviewed`.
-4. Run `npm run i18n:apply` to rebuild `i18n/site.generated.js`.
-5. Run `npm run i18n:verify` and `npm run check` before publishing.
+No build step is required for local preview. Open `index.html` directly in a browser.
 
-The official concepts **Long Transaction** and **Global Logical Virtual Machine (GLVM)** must follow `i18n/QUALITY.md`. Internal IDs, asset paths, portrait keys, and capability-map combination keys are structural data and must never be translated.
+Before publishing changes, run:
 
-## Verification
+```bash
+npm run check
+```
 
-The release gate covers all seven active pages in English, Simplified Chinese, Korean, Japanese, and Arabic at phone, tablet, laptop, and desktop widths. It checks horizontal overflow, overlap, first-viewport content, touch targets, local resource failures, RTL layout, translation freshness, HTML-tag preservation, and generated-bundle parity.
+This verifies JavaScript syntax, localization integrity, website pages, and local asset references.
 
-Disposable audit reports, screenshots, backups, and archived design masters belong in the sibling `F:\shixi\ALUX\output` directory rather than this website source tree.
+## Deployment
 
-## Team LEGO avatars
+Production deployments are managed through Vercel from the `main` branch.
 
-The Team page portraits are LEGO-style minifigs generated inline by `renderTeamPortrait()` in `script.js`, colored via per-member CSS variables in `styles.css` (`--lego-skin`, `--lego-torso`, `--lego-laptop`, ...).
+Pull requests and development branches receive independent preview deployments for review before being merged into production.
 
-- Design spec + guide for adding new members: `assets/team/README.md`
-- Finalized static SVG exports (for use outside the site): `assets/team/*.svg`
-- After editing `script.js`/`styles.css`, bump the `?v=` query in the HTML pages so browsers pick up changes.
+## Maintenance
+
+This website is maintained by the ALUX Network team.
