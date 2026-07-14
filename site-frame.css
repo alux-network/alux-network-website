@@ -157,8 +157,43 @@ body[data-page] .header-actions .button.ghost {
 }
 
 @media (max-width: 380px) {
+  body[data-page] .site-header {
+    gap: 8px !important;
+    padding: 14px 12px !important;
+  }
+
   body[data-page] .header-actions {
-    gap: 10px !important;
+    gap: 8px !important;
+  }
+
+  body[data-page] .lang-label {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  body[data-page] .lang-switch {
+    min-width: 0 !important;
+    gap: 7px !important;
+    padding: 0 12px !important;
+  }
+}
+
+@media (max-width: 960px) {
+  body[data-page] .nav-dropdown:not(.open) .nav-dropdown-menu {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: none !important;
+  }
+
+  body[data-page] .nav-dropdown:not(.open) .nav-caret {
+    transform: rotate(45deg) translateY(-1px) !important;
   }
 }
 

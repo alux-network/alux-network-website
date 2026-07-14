@@ -8424,7 +8424,8 @@ body[data-page="home"] .site-shell {
 body[data-page="home"] .lego-defs {
   position: fixed;
   inset: 0;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   height: 100vh;
   pointer-events: none;
   z-index: 50;
@@ -11084,8 +11085,8 @@ body[data-page="team"] .team-member-card--featured {
   border-radius: 38px;
   background:
     radial-gradient(circle at 8% 18%, rgba(166, 121, 81, 0.1), transparent 26%),
-    radial-gradient(circle at 86% 8%, rgba(108, 160, 125, 0.12), transparent 28%),
-    linear-gradient(135deg, rgba(255, 252, 247, 0.98), rgba(244, 249, 241, 0.96)),
+    radial-gradient(circle at 90% 6%, rgba(108, 160, 125, 0.045), transparent 20%),
+    linear-gradient(135deg, rgba(255, 252, 247, 0.985), rgba(250, 248, 242, 0.97)),
     rgba(255, 252, 247, 0.98);
 }
 
@@ -11345,6 +11346,10 @@ body[data-page="team"] .team-portrait-initials {
 }
 
 @media (max-width: 760px) {
+  body[data-page="home"] {
+    overflow-x: clip;
+  }
+
   body[data-page="team"] .team-stack-rail {
     align-items: flex-start;
     flex-direction: column;
@@ -29257,5 +29262,67 @@ body[data-page="home"] .architecture-runtime-lane > .architecture-tvm-node {
   body[data-page="home"] .architecture-runtime-lane > .architecture-tvm-node {
     grid-column: 3 !important;
     grid-row: 1 !important;
+  }
+}
+
+/* Mobile capability map: scrolling first, tap for detail, double-tap for runtime connection. */
+body[data-page="home"] .capability-map-intro--mobile,
+body[data-page="home"] .capability-map-guide-mobile {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  body[data-page="home"] .capability-map-intro--desktop,
+  body[data-page="home"] .capability-map-guide-desktop {
+    display: none !important;
+  }
+
+  body[data-page="home"] .capability-map-intro--mobile {
+    display: block;
+  }
+
+  body[data-page="home"] .capability-map-note span.capability-map-guide-mobile {
+    display: inline-flex;
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+    padding-inline: 10px !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    line-height: 1.25 !important;
+    text-align: center;
+  }
+
+  body[data-page="home"] .capability-map-heading h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.04em;
+  }
+
+  body[data-page="home"] .capability-map-title-name {
+    white-space: normal;
+    font-size: clamp(2.35rem, 11.25vw, 2.75rem);
+    overflow-wrap: anywhere;
+  }
+
+  html[lang="en"] body[data-page="home"] .capability-map-title-name,
+  html[lang="zh"] body[data-page="home"] .capability-map-title-name,
+  html[lang="ko"] body[data-page="home"] .capability-map-title-name {
+    white-space: nowrap;
+  }
+
+  body[data-page="home"] .capability-mindmap-viewport,
+  body[data-page="home"] .capability-mindmap-canvas,
+  body[data-page="home"] .capability-mindmap-node,
+  body[data-page="home"] .capability-mindmap-core,
+  body[data-page="home"] .capability-mindmap-outcome {
+    touch-action: pan-y !important;
+  }
+
+  body[data-page="home"] .capability-mindmap-node,
+  body[data-page="home"] .capability-mindmap-core,
+  body[data-page="home"] .capability-mindmap-outcome {
+    cursor: pointer;
   }
 }

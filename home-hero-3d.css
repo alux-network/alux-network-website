@@ -319,7 +319,15 @@ body[data-page="home"] .home-hero-actions > .button:focus-visible {
   }
 
   body[data-page="home"] .island-c {
-    display: none;
+    display: block;
+    top: auto;
+    right: clamp(18px, 6vw, 28px);
+    bottom: clamp(136px, 39vw, 152px);
+    left: auto;
+    width: clamp(146px, 44vw, 170px);
+    height: clamp(62px, 19vw, 74px);
+    opacity: 0.92;
+    z-index: 2;
   }
 
   body[data-page="home"] .island-b {

@@ -9,7 +9,7 @@ const cookieBanner = document.querySelector(".cookie-banner");
 const cookieAccept = document.querySelector(".cookie-accept");
 const pageContent = document.querySelector("#page-content");
 const currentPage = document.body.dataset.page || "home";
-const homeHref = window.location.protocol === "file:" ? "index.html" : "/";
+const homeHref = window.location?.protocol === "file:" ? "index.html" : "/";
 document.querySelectorAll('.brand, [data-nav="home"]').forEach((anchor) => {
   anchor.setAttribute("href", homeHref);
 });
@@ -363,7 +363,7 @@ const pageData = {
       {
         type: "cards",
         eyebrow: "Use Cases",
-        title: "What You Can Build\non ALUX",
+        title: "What You Can\nBuild on ALUX",
         text: "Start with familiar EVM tooling, then build public-chain services that stay alive across blocks, coordinate with external systems, and carry explicit authority.",
         items: [
           ["Bookings, Approvals, and Escrow", "Build workflows that pause for inventory, a signature, or payment, then resume and settle without restarting the service."],
@@ -1422,6 +1422,7 @@ function initCapabilityMindmaps() {
     };
 
     const motionQuery = window.matchMedia?.("(prefers-reduced-motion: reduce)");
+    const touchModeQuery = window.matchMedia?.("(max-width: 760px)");
     nodes.forEach((node) => {
       let dragging = false;
       let moved = false;
@@ -1436,6 +1437,7 @@ function initCapabilityMindmaps() {
       let lastOpenTapAt = 0;
       let clickHandledFlip = false;
       let suppressNextClick = false;
+      let mobileTapTimer = 0;
 
       const activate = () => {
         viewport.querySelectorAll("[data-node-id].is-active").forEach((activeNode) => {
@@ -1517,6 +1519,8 @@ function initCapabilityMindmaps() {
         moved = false;
         lastOpenTapAt = 0;
         clickHandledFlip = false;
+        window.clearTimeout(mobileTapTimer);
+        mobileTapTimer = 0;
         cancelReturn();
         clearNodePosition(node);
         node.classList.remove("is-dragging", "is-returning", "is-fusing", "is-active");
@@ -1536,6 +1540,7 @@ function initCapabilityMindmaps() {
 
       node.addEventListener("pointerdown", (event) => {
         if (event.button !== undefined && event.button !== 0) return;
+        if (touchModeQuery?.matches) return;
         if (isStatusDotClick(event, node)) {
           event.preventDefault();
           event.stopPropagation();
@@ -1561,6 +1566,7 @@ function initCapabilityMindmaps() {
       });
 
       node.addEventListener("pointermove", (event) => {
+        if (touchModeQuery?.matches) return;
         if (!dragging) return;
         event.preventDefault();
         const pointerDx = event.clientX - startX;
@@ -1577,6 +1583,7 @@ function initCapabilityMindmaps() {
       });
 
       const stopDrag = (event) => {
+        if (touchModeQuery?.matches) return;
         if (!dragging) return;
         dragging = false;
         node.classList.remove("is-dragging");
@@ -1601,6 +1608,34 @@ function initCapabilityMindmaps() {
           clearMindmapState();
           return;
         }
+        if (touchModeQuery?.matches) {
+          event.preventDefault();
+          event.stopPropagation();
+          activate();
+          const now = Date.now();
+          const isDoubleTap = event.detail >= 2 || (now - lastOpenTapAt > 0 && now - lastOpenTapAt < 420);
+          if (isDoubleTap) {
+            window.clearTimeout(mobileTapTimer);
+            mobileTapTimer = 0;
+            lastOpenTapAt = 0;
+            if (node === coreNode) {
+              toggleFlip(node);
+            } else {
+              showRuntimeConnection(node);
+            }
+            return;
+          }
+
+          lastOpenTapAt = now;
+          window.clearTimeout(mobileTapTimer);
+          mobileTapTimer = window.setTimeout(() => {
+            mobileTapTimer = 0;
+            lastOpenTapAt = 0;
+            activate();
+            toggleFlip(node);
+          }, 340);
+          return;
+        }
         activate();
         const now = Date.now();
         const isSecondClick = event.detail === 2 || (now - lastOpenTapAt > 0 && now - lastOpenTapAt < 340);
@@ -1614,6 +1649,7 @@ function initCapabilityMindmaps() {
       });
       node.addEventListener("dblclick", (event) => {
         event.preventDefault();
+        if (touchModeQuery?.matches) return;
         activate();
         if (clickHandledFlip) {
           clickHandledFlip = false;
@@ -2293,7 +2329,10 @@ const inlineUiLabels = {
     before: "Before",
     after: "After",
     shift: "Shift",
-    runtimeNodes: ["Agents", "Messages", "Memory", "Resume"]
+    runtimeNodes: ["Agents", "Messages", "Memory", "Resume"],
+    capabilityMapMobileIntro: "Tap a card once to open its detail.\nDouble-tap a module card to connect it to ALUX Runtime.",
+    capabilityMapMobileTapDetail: "Tap once for detail",
+    capabilityMapMobileTapConnect: "Double-tap a module to connect to ALUX Runtime"
   }
 };
 
@@ -2449,10 +2488,16 @@ function renderHomeCapabilityMapSection(section) {
     const frontItems = renderItems(cluster.items);
     return `<article class="capability-mindmap-node ${className}" data-capability-node data-node-id="${id}" data-node-label="${attr(cluster.label)}" data-node-title="${attr(cluster.title)}" data-node-detail="${attr(cluster.text)}" data-node-items="${attr(JSON.stringify(cluster.items || []))}" data-runtime-label="${attr(cluster.runtimeLabel || cluster.label)}" data-runtime-title="${attr(cluster.runtimeTitle || cluster.title)}" data-runtime-technical="${attr(cluster.runtimeTechnical || cluster.text)}" data-runtime-business="${attr(cluster.runtimeBusiness || "")}" aria-pressed="false" aria-expanded="false" tabindex="0"><div class="capability-card-shell"><div class="capability-card-face capability-card-face--front"><span class="capability-mindmap-label">${cluster.label}</span><h3>${cluster.title}</h3>${frontItems ? `<ul>${frontItems}</ul>` : ""}</div>${renderBackFace(cluster)}</div></article>`;
   };
+  const labels = getInlineUiLabels();
   const guideSteps = section.guideSteps || ["Drag to ALUX Runtime", "Double-click to See Why"];
-  const guide = guideSteps.map((step) => `<span>${escapeAttr(step)}</span>`).join("");
+  const guide = guideSteps.map((step) => `<span class="capability-map-guide-desktop">${escapeAttr(step)}</span>`).join("");
+  const mobileGuide = [
+    labels.capabilityMapMobileTapDetail,
+    labels.capabilityMapMobileTapConnect
+  ].filter(Boolean).map((step) => `<span class="capability-map-guide-mobile">${escapeAttr(step)}</span>`).join("");
   const mapIntro = section.mapIntro || section.text || "";
-  const note = `<div class="capability-map-note">${guide}</div>`;
+  const mobileMapIntro = labels.capabilityMapMobileIntro || "Tap once for detail.\nDouble-tap a module to connect to ALUX Runtime.";
+  const note = `<div class="capability-map-note">${guide}${mobileGuide}</div>`;
   const renderFrontCopy = (value = "") => renderInlineCopy(value)
     .replace(/capability authority/g, "capability&nbsp;authority")
     .replace(/BlockGit finality/g, "BlockGit&nbsp;finality")
@@ -2483,9 +2528,13 @@ function renderHomeCapabilityMapSection(section) {
     ? `<p class="capability-map-kicker">${escapeAttr(headingKicker)}</p>`
     : "";
   const headingIntro = mapIntro
-    ? `<p class="capability-map-intro">${renderInlineCopy(mapIntro)}</p>`
+    ? `<p class="capability-map-intro capability-map-intro--desktop">${renderInlineCopy(mapIntro)}</p><p class="capability-map-intro capability-map-intro--mobile">${renderInlineCopy(mobileMapIntro)}</p>`
     : "";
-  const headingBlock = `<div class="capability-map-title-block">${headingKickerHtml}<h2>${escapeAttr(headingTitle)}</h2>${headingIntro}${note}</div>`;
+  const headingTitleParts = String(headingTitle).match(/^(ALUX)\s+(.+)$/u);
+  const headingTitleHtml = headingTitleParts
+    ? `<span class="capability-map-title-brand">${escapeAttr(headingTitleParts[1])}</span> <span class="capability-map-title-name">${escapeAttr(headingTitleParts[2])}</span>`
+    : escapeAttr(headingTitle);
+  const headingBlock = `<div class="capability-map-title-block">${headingKickerHtml}<h2>${headingTitleHtml}</h2>${headingIntro}${note}</div>`;
   const coreBack = renderBackFace({
     title: core.runtimeTitle || core.detailTitle || core.title || "ALUX Runtime",
     detailTechnical: core.runtimeTechnical || core.detailTechnical || core.text,
@@ -4058,6 +4107,10 @@ function initMenu() {
   menuToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.toggle("open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
+    if (!isOpen && navDropdown && dropdownTrigger) {
+      navDropdown.classList.remove("open");
+      dropdownTrigger.setAttribute("aria-expanded", "false");
+    }
   });
 }
 
@@ -4089,6 +4142,8 @@ function initDropdown() {
       return;
     }
 
+    event.preventDefault();
+    event.stopPropagation();
     const isOpen = navDropdown.classList.toggle("open");
     dropdownTrigger.setAttribute("aria-expanded", String(isOpen));
   });

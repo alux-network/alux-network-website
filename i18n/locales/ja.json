@@ -1,7 +1,7 @@
 {
   "language": "ja",
   "target": "Japanese, polished native Japanese product/protocol copy",
-  "updatedAt": "2026-07-14T18:21:50.434Z",
+  "updatedAt": "2026-07-14T22:27:41.011Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -4252,12 +4252,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.6.title": {
-      "source": "What You Can Build\non ALUX",
-      "sourceHash": "e4787bf4d4da0d4bdf68389f988aa8337a0faf45b5d8dcaad424783057e64353",
+      "source": "What You Can\nBuild on ALUX",
+      "sourceHash": "cc4ddf9d77ff27c6be307dec6023913df9d999a5fb88e076b8feb91430f0735a",
       "text": "ALUX で\n構築できるもの",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "reviewedAt": "2026-07-14T22:00:46.081Z",
+      "reviewerNotes": "Source line break updated for mobile semantic wrapping; the reviewed Japanese wording remains accurate."
     },
     "home.sections.9.eyebrow": {
       "source": "Frequently Asked Questions",
@@ -4458,6 +4458,30 @@
       "status": "ai-reviewed",
       "reviewedAt": "2026-07-13T13:43:16.874Z",
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+    },
+    "inlineUiLabels.capabilityMapMobileIntro": {
+      "source": "Tap a card once to open its detail.\nDouble-tap a module card to connect it to ALUX Runtime.",
+      "sourceHash": "5090d732a6e1583aa20558953834fa8839f42bdf36ebf27dcb382e3ecc72d228",
+      "text": "カードを1回タップすると詳細を表示します。\nモジュールカードを2回続けてタップすると ALUX Runtime に接続します。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-14T22:27:05.359Z",
+      "reviewerNotes": "Mobile interaction wording updated to clarify that only module cards connect to ALUX Runtime."
+    },
+    "inlineUiLabels.capabilityMapMobileTapConnect": {
+      "source": "Double-tap a module to connect to ALUX Runtime",
+      "sourceHash": "45e70d08c6b51709b11413e8bdce1606b82c56f778d058189d51cd3b12986878",
+      "text": "モジュールを2回タップして ALUX Runtime に接続",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-14T22:27:05.359Z",
+      "reviewerNotes": "Mobile interaction wording updated to clarify that only module cards connect to ALUX Runtime."
+    },
+    "inlineUiLabels.capabilityMapMobileTapDetail": {
+      "source": "Tap once for detail",
+      "sourceHash": "86e044d2c5b1a61172ad13f00798021479a703b0072b8acfe5ca4becc5cf212a",
+      "text": "1回タップして詳細を表示",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-14T22:00:46.081Z",
+      "reviewerNotes": "Concise Japanese mobile action label reviewed."
     },
     "inlineUiLabels.constraint": {
       "source": "Constraint",
