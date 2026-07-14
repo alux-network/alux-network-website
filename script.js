@@ -3452,7 +3452,10 @@ function renderAluxVsOthersPage(page) {
     .filter(([label, id]) => label && id && id !== "roadmap")
     .map(([label, id]) => `<a href="#${id}">${label}</a>`)
     .join("");
-  const articleTitle = article.title;
+  const articleTitle = document.documentElement.lang === "zh"
+    && article.title === "统一 Web 2 与 Web 3 的分布式运行时"
+    ? article.title.replace("分布式运行时", '<span class="alux-vs-title-unit">分布式运行时</span>')
+    : article.title;
   return `
     <article class="alux-vs-page alux-vs-article">
       <header class="alux-vs-article-header fade-in">

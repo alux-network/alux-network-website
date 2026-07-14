@@ -17117,6 +17117,10 @@ html[dir="rtl"] body[data-page="aluxVsOthers"] .alux-vs-article-section ul {
     overflow-wrap: anywhere;
   }
 
+  html[lang="zh"] body[data-page="aluxVsOthers"] .alux-vs-title-unit {
+    white-space: nowrap;
+  }
+
   body[data-page="aluxVsOthers"] .alux-vs-article-header p {
     font-size: 1rem;
     line-height: 1.74;
@@ -26026,29 +26030,29 @@ body[data-page="parallelConcurrentComposable"] .pcc-close-actions .button.second
 
   body[data-page="parallelConcurrentComposable"] .pcc-foundation-item {
     display: grid;
-    grid-template-columns: 38px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     align-items: start;
-    gap: 4px 10px;
+    gap: 5px;
     min-height: 0;
-    padding: 12px 14px;
+    padding: 14px 16px 16px;
   }
 
   body[data-page="parallelConcurrentComposable"] .pcc-foundation-item span {
-    grid-row: 1 / span 2;
-    padding-top: 2px;
+    grid-row: auto;
+    padding-top: 0;
   }
 
   body[data-page="parallelConcurrentComposable"] .pcc-foundation-item h3 {
     margin: 0;
-    font-size: 0.92rem;
+    font-size: 1rem;
     line-height: 1.25;
   }
 
   body[data-page="parallelConcurrentComposable"] .pcc-foundation-item p {
-    grid-column: 2;
+    grid-column: 1;
     margin: 0;
-    font-size: 0.8rem;
-    line-height: 1.42;
+    font-size: 0.86rem;
+    line-height: 1.48;
   }
 
   body[data-page="parallelConcurrentComposable"] .pcc-glvm-bridge {

@@ -1,6 +1,6 @@
-/* Homepage-only mobile navigation. The hero remains on the restored baseline. */
+/* Shared mobile navigation. Page-specific hero and content styles remain untouched. */
 @media (max-width: 960px) {
-  body[data-page="home"] .menu-toggle {
+  body[data-page] .menu-toggle {
     position: relative;
     z-index: 32;
     display: inline-grid;
@@ -21,7 +21,7 @@
     transition: border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
   }
 
-  body[data-page="home"] .menu-toggle span {
+  body[data-page] .menu-toggle span {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -36,19 +36,19 @@
     transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 130ms ease;
   }
 
-  body[data-page="home"] .menu-toggle span:nth-child(1) {
+  body[data-page] .menu-toggle span:nth-child(1) {
     transform: translate(-50%, -50%) translateY(-7px);
   }
 
-  body[data-page="home"] .menu-toggle span:nth-child(2) {
+  body[data-page] .menu-toggle span:nth-child(2) {
     transform: translate(-50%, -50%);
   }
 
-  body[data-page="home"] .menu-toggle span:nth-child(3) {
+  body[data-page] .menu-toggle span:nth-child(3) {
     transform: translate(-50%, -50%) translateY(7px);
   }
 
-  body[data-page="home"] .menu-toggle[aria-expanded="true"] {
+  body[data-page] .menu-toggle[aria-expanded="true"] {
     color: #45413d;
     border-color: rgba(80, 72, 65, 0.17);
     background: rgba(238, 235, 230, 0.94);
@@ -57,24 +57,24 @@
       0 7px 18px rgba(60, 53, 47, 0.085);
   }
 
-  body[data-page="home"] .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  body[data-page] .menu-toggle[aria-expanded="true"] span:nth-child(1) {
     transform: translate(-50%, -50%) rotate(45deg);
   }
 
-  body[data-page="home"] .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  body[data-page] .menu-toggle[aria-expanded="true"] span:nth-child(2) {
     opacity: 0;
   }
 
-  body[data-page="home"] .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  body[data-page] .menu-toggle[aria-expanded="true"] span:nth-child(3) {
     transform: translate(-50%, -50%) rotate(-45deg);
   }
 
-  body[data-page="home"] .menu-toggle:focus-visible {
+  body[data-page] .menu-toggle:focus-visible {
     outline: 3px solid rgba(75, 110, 137, 0.5);
     outline-offset: 4px;
   }
 
-  body[data-page="home"] .site-nav {
+  body[data-page] .site-nav {
     top: calc(100% + 12px);
     right: 0;
     left: auto;
@@ -97,13 +97,13 @@
     backdrop-filter: blur(18px) saturate(0.96);
   }
 
-  body[data-page="home"] .site-nav.open {
+  body[data-page] .site-nav.open {
     display: flex;
   }
 
-  body[data-page="home"] .site-nav > a,
-  body[data-page="home"] .nav-dropdown-trigger,
-  body[data-page="home"] .nav-dropdown-menu a {
+  body[data-page] .site-nav > a,
+  body[data-page] .nav-dropdown-trigger,
+  body[data-page] .nav-dropdown-menu a {
     min-height: 50px;
     padding: 0 14px;
     border-radius: 14px;
@@ -111,22 +111,23 @@
     font-weight: 600;
   }
 
-  body[data-page="home"] .site-nav > a:hover,
-  body[data-page="home"] .site-nav > a:focus-visible,
-  body[data-page="home"] .nav-dropdown-trigger:hover,
-  body[data-page="home"] .nav-dropdown-trigger:focus-visible,
-  body[data-page="home"] .nav-dropdown-menu a:hover,
-  body[data-page="home"] .nav-dropdown-menu a:focus-visible {
+  body[data-page] .site-nav > a:hover,
+  body[data-page] .site-nav > a:focus-visible,
+  body[data-page] .nav-dropdown-trigger:hover,
+  body[data-page] .nav-dropdown-trigger:focus-visible,
+  body[data-page] .nav-dropdown-menu a:hover,
+  body[data-page] .nav-dropdown-menu a:focus-visible {
     color: #2f3335;
     background: rgba(76, 79, 81, 0.07);
   }
 
-  body[data-page="home"] .site-nav > a.active-link {
+  body[data-page] .site-nav > a.active-link,
+  body[data-page] .nav-dropdown-trigger.active-link {
     color: #303335;
     background: linear-gradient(135deg, rgba(199, 196, 190, 0.24), rgba(231, 229, 224, 0.26));
   }
 
-  body[data-page="home"] .nav-dropdown-menu {
+  body[data-page] .nav-dropdown-menu {
     margin-top: 4px;
     padding: 6px;
     border: 1px solid rgba(76, 76, 74, 0.1);
@@ -137,8 +138,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body[data-page="home"] .menu-toggle,
-  body[data-page="home"] .menu-toggle span {
+  body[data-page] .menu-toggle,
+  body[data-page] .menu-toggle span {
     transition: none;
   }
 }
