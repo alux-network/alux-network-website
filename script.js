@@ -1334,6 +1334,15 @@ function initCapabilityMindmaps() {
         setText("[data-composer-business]", runtimeBusiness, composer);
         positionRuntimeComposer(node);
         composer.classList.add("is-active", "is-runtime-drop");
+        if (touchModeQuery?.matches) {
+          requestAnimationFrame(() => {
+            composer.scrollIntoView({
+              block: "center",
+              inline: "nearest",
+              behavior: motionQuery?.matches ? "auto" : "smooth"
+            });
+          });
+        }
         return true;
       }
     };
@@ -1435,9 +1444,8 @@ function initCapabilityMindmaps() {
       let returnFrame = 0;
       let keyReturnTimer = 0;
       let lastOpenTapAt = 0;
+      let lastMobileTapAt = 0;
       let clickHandledFlip = false;
-      let suppressNextClick = false;
-      let mobileTapTimer = 0;
 
       const activate = () => {
         viewport.querySelectorAll("[data-node-id].is-active").forEach((activeNode) => {
@@ -1518,9 +1526,8 @@ function initCapabilityMindmaps() {
         dragging = false;
         moved = false;
         lastOpenTapAt = 0;
+        lastMobileTapAt = 0;
         clickHandledFlip = false;
-        window.clearTimeout(mobileTapTimer);
-        mobileTapTimer = 0;
         cancelReturn();
         clearNodePosition(node);
         node.classList.remove("is-dragging", "is-returning", "is-fusing", "is-active");
@@ -1532,7 +1539,6 @@ function initCapabilityMindmaps() {
         dot.addEventListener("click", (event) => {
           event.preventDefault();
           event.stopPropagation();
-          suppressNextClick = true;
           clearMindmapState();
           updateLinks();
         });
@@ -1540,14 +1546,8 @@ function initCapabilityMindmaps() {
 
       node.addEventListener("pointerdown", (event) => {
         if (event.button !== undefined && event.button !== 0) return;
+        if (event.target.closest(".capability-card-close-dot")) return;
         if (touchModeQuery?.matches) return;
-        if (isStatusDotClick(event, node)) {
-          event.preventDefault();
-          event.stopPropagation();
-          suppressNextClick = true;
-          clearMindmapState();
-          return;
-        }
         event.preventDefault();
         event.stopPropagation();
         cancelReturn();
@@ -1595,45 +1595,31 @@ function initCapabilityMindmaps() {
       node.addEventListener("pointerup", stopDrag);
       node.addEventListener("pointercancel", stopDrag);
       node.addEventListener("click", (event) => {
-        if (suppressNextClick) {
-          event.preventDefault();
-          event.stopPropagation();
-          suppressNextClick = false;
-          return;
-        }
+        if (event.target.closest(".capability-card-close-dot")) return;
         if (moved) return;
-        if (isStatusDotClick(event, node)) {
-          event.preventDefault();
-          event.stopPropagation();
-          clearMindmapState();
-          return;
-        }
         if (touchModeQuery?.matches) {
           event.preventDefault();
           event.stopPropagation();
           activate();
-          const now = Date.now();
-          const isDoubleTap = event.detail >= 2 || (now - lastOpenTapAt > 0 && now - lastOpenTapAt < 420);
+          const now = performance.now();
+          const elapsed = now - lastMobileTapAt;
+          const isDoubleTap = lastMobileTapAt > 0 && elapsed >= 40 && elapsed <= 460;
           if (isDoubleTap) {
-            window.clearTimeout(mobileTapTimer);
-            mobileTapTimer = 0;
-            lastOpenTapAt = 0;
+            lastMobileTapAt = 0;
             if (node === coreNode) {
-              toggleFlip(node);
+              nodes.forEach((item) => {
+                if (item !== node) setFlipped(item, false);
+              });
+              setFlipped(node, true);
+              requestAnimationFrame(updateLinks);
             } else {
               showRuntimeConnection(node);
             }
             return;
           }
 
-          lastOpenTapAt = now;
-          window.clearTimeout(mobileTapTimer);
-          mobileTapTimer = window.setTimeout(() => {
-            mobileTapTimer = 0;
-            lastOpenTapAt = 0;
-            activate();
-            toggleFlip(node);
-          }, 340);
+          lastMobileTapAt = now;
+          toggleFlip(node);
           return;
         }
         activate();
@@ -1686,9 +1672,22 @@ function initCapabilityMindmaps() {
       });
     });
 
+    let lastLayoutWidth = document.documentElement.clientWidth || window.innerWidth;
+    let lastTouchMode = Boolean(touchModeQuery?.matches);
     const refreshLayout = () => {
-      nodeStates.forEach((state) => state.resetLayoutPosition());
-      scheduleLayoutRefresh();
+      const nextLayoutWidth = document.documentElement.clientWidth || window.innerWidth;
+      const nextTouchMode = Boolean(touchModeQuery?.matches);
+      const widthChanged = Math.abs(nextLayoutWidth - lastLayoutWidth) > 1;
+      const breakpointChanged = nextTouchMode !== lastTouchMode;
+      lastLayoutWidth = nextLayoutWidth;
+      lastTouchMode = nextTouchMode;
+
+      if (widthChanged || breakpointChanged) {
+        clearMindmapState();
+        return;
+      }
+
+      requestAnimationFrame(updateLinks);
     };
 
     composer?.addEventListener("click", (event) => {
@@ -2330,9 +2329,9 @@ const inlineUiLabels = {
     after: "After",
     shift: "Shift",
     runtimeNodes: ["Agents", "Messages", "Memory", "Resume"],
-    capabilityMapMobileIntro: "Tap a card once to open its detail.\nDouble-tap a module card to connect it to ALUX Runtime.",
-    capabilityMapMobileTapDetail: "Tap once for detail",
-    capabilityMapMobileTapConnect: "Double-tap a module to connect to ALUX Runtime"
+    capabilityMapMobileIntro: "Tap a module to explore its role.\nDouble-tap it to connect to ALUX Runtime and see the composed result.",
+    capabilityMapMobileTapDetail: "Tap a module for details",
+    capabilityMapMobileTapConnect: "Double-tap to connect"
   }
 };
 
@@ -2496,7 +2495,7 @@ function renderHomeCapabilityMapSection(section) {
     labels.capabilityMapMobileTapConnect
   ].filter(Boolean).map((step) => `<span class="capability-map-guide-mobile">${escapeAttr(step)}</span>`).join("");
   const mapIntro = section.mapIntro || section.text || "";
-  const mobileMapIntro = labels.capabilityMapMobileIntro || "Tap once for detail.\nDouble-tap a module to connect to ALUX Runtime.";
+  const mobileMapIntro = labels.capabilityMapMobileIntro || "Tap a module to explore its role.\nDouble-tap it to connect to ALUX Runtime and see the composed result.";
   const note = `<div class="capability-map-note">${guide}${mobileGuide}</div>`;
   const renderFrontCopy = (value = "") => renderInlineCopy(value)
     .replace(/capability authority/g, "capability&nbsp;authority")
@@ -4104,6 +4103,21 @@ function renderPage(lang) {
 
 function initMenu() {
   if (!menuToggle || !siteNav) return;
+
+  const blogLinks = [...document.querySelectorAll('a[data-nav="blog"]')];
+  const syncBlogNavigation = () => {
+    blogLinks.forEach((link) => {
+      if (mobileQuery.matches) {
+        link.removeAttribute("target");
+      } else {
+        link.setAttribute("target", "_blank");
+      }
+    });
+  };
+
+  syncBlogNavigation();
+  mobileQuery.addEventListener?.("change", syncBlogNavigation);
+
   menuToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.toggle("open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
@@ -4111,6 +4125,13 @@ function initMenu() {
       navDropdown.classList.remove("open");
       dropdownTrigger.setAttribute("aria-expanded", "false");
     }
+  });
+
+  siteNav.addEventListener("click", (event) => {
+    const link = event.target.closest("a[href]");
+    if (!link || !mobileQuery.matches) return;
+    siteNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
   });
 }
 

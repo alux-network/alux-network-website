@@ -29265,24 +29265,38 @@ body[data-page="home"] .architecture-runtime-lane > .architecture-tvm-node {
   }
 }
 
-/* Mobile capability map: scrolling first, tap for detail, double-tap for runtime connection. */
-body[data-page="home"] .capability-map-intro--mobile,
-body[data-page="home"] .capability-map-guide-mobile {
-  display: none;
+/* Capability-map instructions are mutually exclusive across desktop and mobile. */
+body[data-page="home"] .capability-map-intro--mobile {
+  display: none !important;
+}
+
+body[data-page="home"] .capability-map-intro--desktop {
+  display: block !important;
+}
+
+body[data-page="home"] .capability-map-note span.capability-map-guide-mobile {
+  display: none !important;
+}
+
+body[data-page="home"] .capability-map-note span.capability-map-guide-desktop {
+  display: inline-flex !important;
 }
 
 @media (max-width: 760px) {
-  body[data-page="home"] .capability-map-intro--desktop,
-  body[data-page="home"] .capability-map-guide-desktop {
+  body[data-page="home"] .capability-map-intro--desktop {
     display: none !important;
   }
 
   body[data-page="home"] .capability-map-intro--mobile {
-    display: block;
+    display: block !important;
+  }
+
+  body[data-page="home"] .capability-map-note span.capability-map-guide-desktop {
+    display: none !important;
   }
 
   body[data-page="home"] .capability-map-note span.capability-map-guide-mobile {
-    display: inline-flex;
+    display: inline-flex !important;
     box-sizing: border-box;
     min-width: 0;
     max-width: 100%;

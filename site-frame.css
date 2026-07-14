@@ -166,21 +166,18 @@ body[data-page] .header-actions .button.ghost {
     gap: 8px !important;
   }
 
-  body[data-page] .lang-label {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    clip: rect(0 0 0 0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
-  }
-
   body[data-page] .lang-switch {
     min-width: 0 !important;
-    gap: 7px !important;
-    padding: 0 12px !important;
+    gap: 6px !important;
+    padding: 0 10px !important;
+  }
+
+  body[data-page] .lang-label {
+    font-size: 0.74rem !important;
+  }
+
+  body[data-page] .lang-current {
+    font-size: 0.88rem !important;
   }
 }
 
