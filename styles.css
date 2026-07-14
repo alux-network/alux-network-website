@@ -8376,7 +8376,7 @@ body[data-page="home"]::before {
   background:
     radial-gradient(circle at 20% 24%, rgba(231, 76, 60, 0.12), transparent 18%),
     radial-gradient(circle at 78% 16%, rgba(52, 152, 219, 0.12), transparent 18%),
-    radial-gradient(circle at 70% 78%, rgba(46, 204, 113, 0.1), transparent 18%),
+    radial-gradient(circle at 70% 78%, rgba(204, 190, 167, 0.055), transparent 18%),
     radial-gradient(circle at 28% 82%, rgba(241, 196, 15, 0.1), transparent 16%);
   pointer-events: none;
 }
@@ -8401,7 +8401,7 @@ body[data-page="home"] .bg-grid {
 body[data-page="home"] .bg-glow {
   display: block;
   filter: blur(56px);
-  opacity: 0.16;
+  opacity: 0.08;
 }
 
 body[data-page="home"] .glow-one {
@@ -8413,7 +8413,7 @@ body[data-page="home"] .glow-one {
 body[data-page="home"] .glow-two {
   top: 22rem;
   right: -6rem;
-  background: rgba(155, 196, 181, 0.12);
+  background: rgba(204, 190, 167, 0.08);
 }
 
 body[data-page="home"] .site-shell {
@@ -8534,7 +8534,7 @@ body[data-page="home"] .space-station {
 body[data-page="home"] .lego-defs {
   opacity: 0.62;
   mix-blend-mode: normal;
-  filter: saturate(0.94) brightness(0.99);
+  filter: saturate(0.9) brightness(1.015) contrast(1.015);
 }
 
 body[data-page="home"] .node-network,
@@ -8546,7 +8546,7 @@ body[data-page="home"] .network-span {
 }
 
 body[data-page="home"] .cluster-glow {
-  opacity: 0.24;
+  opacity: 0.065;
 }
 
 body[data-page="home"] .glow-blue {

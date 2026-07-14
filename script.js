@@ -9,6 +9,10 @@ const cookieBanner = document.querySelector(".cookie-banner");
 const cookieAccept = document.querySelector(".cookie-accept");
 const pageContent = document.querySelector("#page-content");
 const currentPage = document.body.dataset.page || "home";
+const homeHref = window.location.protocol === "file:" ? "index.html" : "/";
+document.querySelectorAll('.brand, [data-nav="home"]').forEach((anchor) => {
+  anchor.setAttribute("href", homeHref);
+});
 const memoryStore = {};
 let staticRoadmapHTML = null;
 const mobileQuery = window.matchMedia("(max-width: 960px)");
@@ -3909,7 +3913,7 @@ function setupParallelConcurrentComposablePage() {
 
 function updateActiveNavigation() {
   const activeHrefByPage = {
-    home: "index.html",
+    home: homeHref,
     vs: "for-ai-agents.html",
     aluxVsOthers: "alux-vs-others.html",
     parallelConcurrentComposable: "runtime-lab.html",

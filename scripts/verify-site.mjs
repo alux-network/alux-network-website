@@ -26,7 +26,10 @@ function cleanLocalUrl(value) {
 async function ensureLocalReference(owner, value) {
   const clean = cleanLocalUrl(value);
   if (!clean) return;
-  const resolved = path.resolve(path.dirname(path.join(rootDir, owner)), clean);
+  const isRootRelative = clean.startsWith("/");
+  const referencePath = isRootRelative ? clean.slice(1) || "index.html" : clean;
+  const referenceBase = isRootRelative ? rootDir : path.dirname(path.join(rootDir, owner));
+  const resolved = path.resolve(referenceBase, referencePath);
   const rootPrefix = `${rootDir}${path.sep}`;
   if (resolved !== rootDir && !resolved.startsWith(rootPrefix)) {
     errors.push(`${owner}: local reference escapes site root: ${value}`);
