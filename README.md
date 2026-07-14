@@ -40,3 +40,5 @@ Pull requests and development branches receive independent preview deployments f
 ## Maintenance
 
 This website is maintained by the ALUX Network team.
+
+Primary maintainer: [@shixi-11](https://github.com/shixi-11).
