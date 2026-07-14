@@ -23635,30 +23635,6 @@ body[data-page="vs"] .agent-principle-heading .agent-principle-title .title-line
   }
 }
 
-@media (max-width: 520px) {
-  body[data-page="vs"] .lang-label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-  body[data-page="vs"] .header-actions {
-    gap: 10px;
-  }
-
-  body[data-page="vs"] .lang-switch {
-    gap: 8px;
-    min-height: 44px;
-    padding: 0 13px;
-  }
-}
-
 /* Compact homepage architecture: preserve every layer and label while removing excess height. */
 body[data-page="home"] .home-architecture-section {
   padding-top: clamp(52px, 5vw, 72px);
