@@ -1,10 +1,10 @@
 # ALUX Network Website
 
-Official website for [ALUX Network](https://alux.network), the decentralized composability middleware for AI agents.
+Official website for [ALUX Network](https://alux.network).
 
 ## Deployment
 
-Production deployments are managed by Vercel from the `main` branch. Pull requests and development branches receive preview deployments before being merged into production.
+Production deployments are managed by Vercel from the `main` branch. Development branches receive preview deployments before being merged into production.
 
 ## Local Development
 
