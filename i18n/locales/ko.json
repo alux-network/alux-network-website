@@ -1,7 +1,7 @@
 {
   "language": "ko",
   "target": "Korean, polished native Korean product/protocol copy",
-  "updatedAt": "2026-07-14T22:56:00.443Z",
+  "updatedAt": "2026-07-14T23:46:41.271Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -4460,28 +4460,31 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "inlineUiLabels.capabilityMapMobileIntro": {
-      "source": "Tap a module to explore its role.\nDouble-tap it to connect to ALUX Runtime and see the composed result.",
-      "sourceHash": "7fad012d47642acf3f2f3453d83db60926213c95eba283e8573bac18d79b1936",
-      "text": "모듈을 탭해 시스템에서 맡는 역할을 확인하세요.\n두 번 연속 탭하면 ALUX Runtime에 연결되고 조합 결과가 표시됩니다.",
+      "source": "Tap once to open a module’s deeper note.\nDouble-tap to connect it to ALUX Runtime and reveal its public-chain role in the composed result.",
+      "sourceHash": "b46bf930e74f0b359fc59920335593a522892dab3d3d9a69fdfe7f0cda8cfb74",
+      "text": "한 번 탭하면 모듈의 상세 설명이 열립니다.\n더블 탭하면 모듈이 ALUX 런타임에 연결되고, 조합 결과를 통해 모듈이 퍼블릭 체인에서 맡는 역할을 확인할 수 있습니다.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-14T22:55:19.140Z",
-      "reviewerNotes": "Natural Korean mobile guidance aligned with the updated interaction."
+      "reviewedAt": "2026-07-14T23:46:41.271Z",
+      "reviewerNotes": "Native Korean mobile-interaction review aligned to the current English source and ALUX terminology.",
+      "previousSource": "Tap a module to explore its role.\nDouble-tap it to connect to ALUX Runtime and see the composed result."
     },
     "inlineUiLabels.capabilityMapMobileTapConnect": {
-      "source": "Double-tap to connect",
-      "sourceHash": "71da68af0dd09cb6c072b5985b21025c1bd0b046a0dbd1075f9179786196b4f6",
-      "text": "두 번 탭해 연결",
+      "source": "Double-tap · Connect to Runtime",
+      "sourceHash": "aba1d57b456bd5f20f71d7cb9566a1b0159d8797d1a832da21ee09fdeab00303",
+      "text": "더블 탭 · 런타임에 연결",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-14T22:55:19.140Z",
-      "reviewerNotes": "Compact native Korean mobile label."
+      "reviewedAt": "2026-07-14T23:46:41.271Z",
+      "reviewerNotes": "Native Korean mobile-interaction review aligned to the current English source and ALUX terminology.",
+      "previousSource": "Double-tap to connect"
     },
     "inlineUiLabels.capabilityMapMobileTapDetail": {
-      "source": "Tap a module for details",
-      "sourceHash": "64c8bec8b186cd5f18cf76cc7cb0c3feede6221062e37290e0ea4d13e22023ba",
-      "text": "모듈을 탭해 상세 보기",
+      "source": "Tap once · View details",
+      "sourceHash": "ead326e36202c70ca0325d133c540c3a1f3b4fbbbaeb6f01329cd9b1fe279bbc",
+      "text": "한 번 탭 · 자세히 보기",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-14T22:55:19.140Z",
-      "reviewerNotes": "Clarifies the target while remaining concise."
+      "reviewedAt": "2026-07-14T23:46:41.271Z",
+      "reviewerNotes": "Native Korean mobile-interaction review aligned to the current English source and ALUX terminology.",
+      "previousSource": "Tap a module for details"
     },
     "inlineUiLabels.constraint": {
       "source": "Constraint",

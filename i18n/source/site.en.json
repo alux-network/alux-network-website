@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T22:56:00.686Z",
+  "generatedAt": "2026-07-14T23:47:24.319Z",
   "source": "script.js:all active English page and shared UI data; roadmap.html static roadmap text nodes",
   "entries": {
     "aluxVsOthers.article.closingText": {
@@ -2231,16 +2231,16 @@
       "sourceHash": "5faf58a69db59058fbc0871ab221aafa5b026f81b13c71a40039bb1459171958"
     },
     "inlineUiLabels.capabilityMapMobileIntro": {
-      "source": "Tap a module to explore its role.\nDouble-tap it to connect to ALUX Runtime and see the composed result.",
-      "sourceHash": "7fad012d47642acf3f2f3453d83db60926213c95eba283e8573bac18d79b1936"
+      "source": "Tap once to open a module’s deeper note.\nDouble-tap to connect it to ALUX Runtime and reveal its public-chain role in the composed result.",
+      "sourceHash": "b46bf930e74f0b359fc59920335593a522892dab3d3d9a69fdfe7f0cda8cfb74"
     },
     "inlineUiLabels.capabilityMapMobileTapConnect": {
-      "source": "Double-tap to connect",
-      "sourceHash": "71da68af0dd09cb6c072b5985b21025c1bd0b046a0dbd1075f9179786196b4f6"
+      "source": "Double-tap · Connect to Runtime",
+      "sourceHash": "aba1d57b456bd5f20f71d7cb9566a1b0159d8797d1a832da21ee09fdeab00303"
     },
     "inlineUiLabels.capabilityMapMobileTapDetail": {
-      "source": "Tap a module for details",
-      "sourceHash": "64c8bec8b186cd5f18cf76cc7cb0c3feede6221062e37290e0ea4d13e22023ba"
+      "source": "Tap once · View details",
+      "sourceHash": "ead326e36202c70ca0325d133c540c3a1f3b4fbbbaeb6f01329cd9b1fe279bbc"
     },
     "inlineUiLabels.constraint": {
       "source": "Constraint",

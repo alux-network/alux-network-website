@@ -2329,9 +2329,9 @@ const inlineUiLabels = {
     after: "After",
     shift: "Shift",
     runtimeNodes: ["Agents", "Messages", "Memory", "Resume"],
-    capabilityMapMobileIntro: "Tap a module to explore its role.\nDouble-tap it to connect to ALUX Runtime and see the composed result.",
-    capabilityMapMobileTapDetail: "Tap a module for details",
-    capabilityMapMobileTapConnect: "Double-tap to connect"
+    capabilityMapMobileIntro: "Tap once to open a module’s deeper note.\nDouble-tap to connect it to ALUX Runtime and reveal its public-chain role in the composed result.",
+    capabilityMapMobileTapDetail: "Tap once · View details",
+    capabilityMapMobileTapConnect: "Double-tap · Connect to Runtime"
   }
 };
 
@@ -2495,7 +2495,7 @@ function renderHomeCapabilityMapSection(section) {
     labels.capabilityMapMobileTapConnect
   ].filter(Boolean).map((step) => `<span class="capability-map-guide-mobile">${escapeAttr(step)}</span>`).join("");
   const mapIntro = section.mapIntro || section.text || "";
-  const mobileMapIntro = labels.capabilityMapMobileIntro || "Tap a module to explore its role.\nDouble-tap it to connect to ALUX Runtime and see the composed result.";
+  const mobileMapIntro = labels.capabilityMapMobileIntro || "Tap once to open a module’s deeper note.\nDouble-tap to connect it to ALUX Runtime and reveal its public-chain role in the composed result.";
   const note = `<div class="capability-map-note">${guide}${mobileGuide}</div>`;
   const renderFrontCopy = (value = "") => renderInlineCopy(value)
     .replace(/capability authority/g, "capability&nbsp;authority")

@@ -1,7 +1,7 @@
 {
   "language": "zh",
   "target": "Chinese, polished Simplified Chinese product/protocol copy",
-  "updatedAt": "2026-07-14T22:56:00.443Z",
+  "updatedAt": "2026-07-14T23:46:41.271Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -4460,28 +4460,31 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "inlineUiLabels.capabilityMapMobileIntro": {
-      "source": "Tap a module to explore its role.\nDouble-tap it to connect to ALUX Runtime and see the composed result.",
-      "sourceHash": "7fad012d47642acf3f2f3453d83db60926213c95eba283e8573bac18d79b1936",
-      "text": "轻触模块，查看它在系统中的作用。\n连续轻触两次，将它连接到 ALUX Runtime，并查看组合结果。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-14T22:55:19.140Z",
-      "reviewerNotes": "Rewritten for immediate mobile interaction and a visible composed result."
+      "source": "Tap once to open a module’s deeper note.\nDouble-tap to connect it to ALUX Runtime and reveal its public-chain role in the composed result.",
+      "sourceHash": "b46bf930e74f0b359fc59920335593a522892dab3d3d9a69fdfe7f0cda8cfb74",
+      "text": "轻触一次，打开模块的详细说明。\n连续轻触两次，将模块接入 ALUX Runtime，并在组合结果中显示它在公链中的角色。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-14T23:46:41.271Z",
+      "reviewerNotes": "Native Chinese mobile-interaction review aligned to the current English source and ALUX terminology.",
+      "previousSource": "Tap a module to explore its role.\nDouble-tap it to connect to ALUX Runtime and see the composed result."
     },
     "inlineUiLabels.capabilityMapMobileTapConnect": {
-      "source": "Double-tap to connect",
-      "sourceHash": "71da68af0dd09cb6c072b5985b21025c1bd0b046a0dbd1075f9179786196b4f6",
-      "text": "连续轻触两次连接",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-14T22:55:19.140Z",
-      "reviewerNotes": "Shortened for compact mobile guidance."
+      "source": "Double-tap · Connect to Runtime",
+      "sourceHash": "aba1d57b456bd5f20f71d7cb9566a1b0159d8797d1a832da21ee09fdeab00303",
+      "text": "连续轻触两次 · 连接 Runtime",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-14T23:46:41.271Z",
+      "reviewerNotes": "Native Chinese mobile-interaction review aligned to the current English source and ALUX terminology.",
+      "previousSource": "Double-tap to connect"
     },
     "inlineUiLabels.capabilityMapMobileTapDetail": {
-      "source": "Tap a module for details",
-      "sourceHash": "64c8bec8b186cd5f18cf76cc7cb0c3feede6221062e37290e0ea4d13e22023ba",
-      "text": "轻触模块看详情",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-14T22:55:19.140Z",
-      "reviewerNotes": "Clarifies the target while staying compact."
+      "source": "Tap once · View details",
+      "sourceHash": "ead326e36202c70ca0325d133c540c3a1f3b4fbbbaeb6f01329cd9b1fe279bbc",
+      "text": "轻触一次 · 查看详情",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-14T23:46:41.271Z",
+      "reviewerNotes": "Native Chinese mobile-interaction review aligned to the current English source and ALUX terminology.",
+      "previousSource": "Tap a module for details"
     },
     "inlineUiLabels.constraint": {
       "source": "Constraint",
