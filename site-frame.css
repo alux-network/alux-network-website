@@ -1,0 +1,208 @@
+/* All foreground pages share the same 95% frame and home header geometry. */
+body[data-page] .site-shell {
+  zoom: var(--foreground-scale) !important;
+  width: min(var(--container), calc(100% - 48px)) !important;
+}
+
+body[data-page] .site-header {
+  margin-top: 18px !important;
+  padding: 18px 24px !important;
+  border-radius: 28px !important;
+}
+
+body[data-page] .brand {
+  width: auto !important;
+  height: auto !important;
+  gap: 10px !important;
+  padding: 10px 16px !important;
+  justify-content: center !important;
+  border-radius: 16px !important;
+  background: linear-gradient(180deg, #5e4733 0%, #493523 100%) !important;
+  color: #fff7ea !important;
+  /* Solid bottom edge follows the corner radius (a hard offset
+     box-shadow leaves crescent gaps at the rounded corners). */
+  border: 0 !important;
+  border-bottom: 7px solid #2d2118 !important;
+  box-shadow: 0 12px 22px rgba(82, 56, 31, 0.22) !important;
+}
+
+body[data-page] .brand-logo {
+  width: 42px !important;
+  height: 42px !important;
+}
+
+body[data-page] .site-nav {
+  flex: 0 0 auto !important;
+  gap: 28px !important;
+}
+
+body[data-page] .header-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 16px !important;
+  width: auto !important;
+  min-width: max-content !important;
+  flex: 0 0 auto !important;
+}
+
+body[data-page] .lang-switch,
+body[data-page] .header-actions .button {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+}
+
+body[data-page] .header-actions .button {
+  min-height: 56px !important;
+  padding: 0 26px !important;
+  border-radius: 18px !important;
+}
+
+body[data-page] .header-actions .button.ghost {
+  color: #6b4f35 !important;
+  background: rgba(255, 248, 239, 0.96) !important;
+  border: 3px solid #be8d61 !important;
+  box-shadow:
+    0 6px 0 rgba(190, 141, 97, 0.26),
+    0 12px 22px rgba(110, 84, 60, 0.14) !important;
+}
+
+@media (min-width: 721px) {
+  body[data-page="parallelConcurrentComposable"] .pcc-page {
+    padding-top: clamp(42px, 4.6vw, 64px) !important;
+  }
+
+  body[data-page="parallelConcurrentComposable"] .pcc-hero h1 {
+    font-size: clamp(3.9rem, 5.75vw, 5.75rem) !important;
+  }
+
+  body[data-page="parallelConcurrentComposable"] .pcc-hero-text {
+    font-size: clamp(0.95rem, 1.06vw, 1.1rem) !important;
+  }
+
+  body[data-page="parallelConcurrentComposable"] .pcc-signal strong {
+    font-size: clamp(0.92rem, 0.94vw, 1rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  body[data-page="parallelConcurrentComposable"] .pcc-section-heading h2 {
+    font-size: clamp(2.32rem, 3.55vw, 4.1rem) !important;
+  }
+
+  body[data-page="parallelConcurrentComposable"] .pcc-section-heading p:not(.eyebrow) {
+    font-size: clamp(0.95rem, 1vw, 1.06rem) !important;
+  }
+
+  body[data-page="parallelConcurrentComposable"] .pcc-mode-panel h3 {
+    font-size: clamp(1.55rem, 2.15vw, 2.45rem) !important;
+  }
+
+  body[data-page="parallelConcurrentComposable"] .pcc-lab-section .pcc-section-heading h2 {
+    font-size: clamp(1.86rem, 2.75vw, 2.85rem) !important;
+  }
+
+  body[data-page="parallelConcurrentComposable"] .pcc-foundation-item h3 {
+    font-size: 0.98rem !important;
+  }
+
+  body[data-page="parallelConcurrentComposable"] .pcc-close-copy h2 {
+    font-size: clamp(1.95rem, 2.95vw, 3.05rem) !important;
+  }
+}
+
+@media (max-width: 960px) {
+  body[data-page] .header-actions {
+    min-width: 0 !important;
+  }
+
+  body[data-page] .menu-toggle {
+    width: 47px !important;
+    min-width: 47px !important;
+    height: 47px !important;
+  }
+
+  body[data-page] .lang-switch,
+  body[data-page] .lang-button,
+  body[data-page] .site-nav > a,
+  body[data-page] .nav-dropdown-trigger,
+  body[data-page] .nav-dropdown-menu a,
+  body[data-page="parallelConcurrentComposable"] .pcc-mode-button,
+  body[data-page="parallelConcurrentComposable"] .pcc-glvm-bridge-link,
+  body[data-page="glvm"] .glvm-route-button,
+  body[data-page="glvm"] .glvm-journey-control button {
+    min-height: 47px !important;
+  }
+
+  body[data-page] .site-nav > a,
+  body[data-page] .nav-dropdown-trigger,
+  body[data-page] .nav-dropdown-menu a {
+    display: flex !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+
+  body[data-page] .footer-meta a {
+    display: inline-flex !important;
+    min-height: 47px !important;
+    align-items: center !important;
+  }
+
+  body[data-page="team"] .team-links a,
+  body[data-page="aluxVsOthers"] .alux-vs-article-nav a {
+    display: inline-flex !important;
+    min-width: 47px !important;
+    min-height: 47px !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 380px) {
+  body[data-page] .header-actions {
+    gap: 10px !important;
+  }
+}
+
+@media (min-width: 961px) {
+  body[data-page] .site-nav > a,
+  body[data-page] .nav-dropdown-trigger,
+  body[data-page] .footer-meta a,
+  body[data-page="aluxVsOthers"] .alux-vs-article-nav a {
+    display: inline-flex !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 720px) {
+  body[data-page] .site-shell {
+    width: min(var(--container), calc(100% - 24px)) !important;
+  }
+
+  body[data-page] .site-header {
+    padding: 16px 18px !important;
+  }
+}
+
+/* Top-level nav stays clean; Learn submenu keeps its underline state. */
+.site-nav > a::after,
+.site-nav > .nav-dropdown > .nav-dropdown-trigger::after,
+.site-nav > a:hover::after,
+.site-nav > a.active-link::after,
+.site-nav > .nav-dropdown > .nav-dropdown-trigger:hover::after,
+.site-nav > .nav-dropdown > .nav-dropdown-trigger.active-link::after {
+  opacity: 0 !important;
+  transform: scaleX(0) !important;
+}
+
+.nav-dropdown-menu a::after {
+  opacity: 0 !important;
+  transform: scaleX(0) !important;
+}
+
+.nav-dropdown-menu a:hover::after,
+.nav-dropdown-menu a:focus-visible::after,
+.nav-dropdown-menu a.active-link::after {
+  opacity: 1 !important;
+  transform: scaleX(1) !important;
+}

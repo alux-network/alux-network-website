@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 210" role="img" aria-label="ALUX">
+  <defs>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6b4c36"/>
+      <stop offset="0.48" stop-color="#523826"/>
+      <stop offset="1" stop-color="#3e291c"/>
+    </linearGradient>
+    <path id="letters" fill-rule="evenodd" d="
+      M18 184V84h20V44h20V20h64v24h20v40h20v100h-40v-58H58v58H18Zm40-120v24h64V64H58Z
+      M192 20h42v122h82v42H192V20Z
+      M342 20h42v122h60V20h42v142h-20v22H362v-22h-20V20Z
+      M516 20h44v40h20v22h20V60h20V20h44v44h-20v22h-20v32h20v22h20v44h-44v-40h-20v-22h-20v22h-20v40h-44v-44h20v-22h20V86h-20V64h-20V20Z"/>
+  </defs>
+  <use href="#letters" transform="translate(8 8)" fill="#a98768" opacity="0.42"/>
+  <use href="#letters" fill="url(#face)"/>
+  <path d="M58 20h64v6H58zM192 20h42v6h-42zM342 20h42v6h-42zM444 20h42v6h-42zM516 20h44v6h-44zM620 20h44v6h-44z" fill="#9a7558" opacity="0.26"/>
+</svg>

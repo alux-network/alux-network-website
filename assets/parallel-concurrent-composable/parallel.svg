@@ -1,0 +1,167 @@
+<svg viewBox="0 0 1672 941" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four independent transactions start together and complete separately on isolated execution lanes.">
+  <defs>
+    <linearGradient id="p-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfaf6"/>
+      <stop offset="0.58" stop-color="#f5f2eb"/>
+      <stop offset="1" stop-color="#ece8df"/>
+    </linearGradient>
+    <linearGradient id="p-rail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#595247"/>
+      <stop offset="0.48" stop-color="#3d372e"/>
+      <stop offset="1" stop-color="#2c2822"/>
+    </linearGradient>
+    <linearGradient id="p-glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="0.52" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#d4ccbc" stop-opacity="0.42"/>
+    </linearGradient>
+    <radialGradient id="p-soft-glow">
+      <stop offset="0" stop-color="currentColor" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="currentColor" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="p-shadow" x="-40%" y="-50%" width="180%" height="220%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#302a22" flood-opacity="0.18"/>
+    </filter>
+    <filter id="p-blur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+
+    <g id="p-lane">
+      <rect x="250" y="-29" width="1670" height="72" rx="17" fill="#d9d0bf"/>
+      <rect x="250" y="-20" width="1670" height="54" rx="13" fill="url(#p-rail)"/>
+      <rect x="250" y="-20" width="1670" height="9" rx="4.5" fill="#81796c" opacity="0.72"/>
+      <line x1="286" y1="7" x2="1880" y2="7" stroke="currentColor" stroke-width="7" stroke-linecap="round" opacity="0.82"/>
+    </g>
+
+    <g id="p-capsule">
+      <ellipse cx="0" cy="42" rx="102" ry="16" fill="#211e19" opacity="0.22"/>
+      <rect x="-110" y="18" width="220" height="27" rx="13.5" fill="#302b24"/>
+      <rect x="-110" y="15" width="220" height="8" rx="4" fill="#70685c"/>
+      <ellipse cx="0" cy="-2" rx="92" ry="43" fill="url(#p-soft-glow)"/>
+      <rect x="-102" y="-48" width="204" height="70" rx="35" fill="url(#p-glass)" stroke="#ffffff" stroke-opacity="0.9" stroke-width="3"/>
+      <path d="M -78 -35 Q -38 -44 10 -39" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.34"/>
+      <circle cx="72" cy="-5" r="6" fill="currentColor" opacity="0.72"/>
+    </g>
+
+    <g id="p-plane">
+      <path d="M -47 6 L -10 -3 L 8 -35 L 22 -34 L 15 -4 L 47 6 L 47 17 L 13 13 L 4 34 L -7 34 L -4 11 L -47 17 Z" fill="#eef8f6" stroke="#3f8f88" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M -10 -3 L 15 -4" stroke="#8fd0c8" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <g id="p-hotel">
+      <rect x="-38" y="-28" width="76" height="64" rx="7" fill="#fff8e9" stroke="#ad7b3e" stroke-width="3"/>
+      <path d="M -46 -28 L 0 -55 L 46 -28" fill="#f1c978" stroke="#ad7b3e" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="-10" y="8" width="20" height="28" rx="4" fill="#c48b43"/>
+      <g fill="#efd29a"><rect x="-27" y="-16" width="14" height="14" rx="2"/><rect x="13" y="-16" width="14" height="14" rx="2"/><rect x="-27" y="7" width="14" height="14" rx="2"/><rect x="13" y="7" width="14" height="14" rx="2"/></g>
+    </g>
+    <g id="p-car">
+      <path d="M -48 11 L -38 -12 Q -34 -23 -22 -23 H 22 Q 34 -23 39 -12 L 49 11 V 28 H -49 V 11 Z" fill="#eaf7ef" stroke="#4b9a69" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M -25 -15 H 22 Q 28 -15 31 -8 L 35 1 H -34 L -30 -8 Q -28 -15 -25 -15 Z" fill="#b9dfc7"/>
+      <circle cx="-30" cy="28" r="9" fill="#39342d" stroke="#8b8172" stroke-width="3"/>
+      <circle cx="30" cy="28" r="9" fill="#39342d" stroke="#8b8172" stroke-width="3"/>
+      <circle cx="-38" cy="12" r="5" fill="#f6d47e"/><circle cx="38" cy="12" r="5" fill="#f6d47e"/>
+    </g>
+    <g id="p-shield">
+      <path d="M 0 -48 C 18 -34 36 -31 45 -29 V 0 C 45 30 25 48 0 58 C -25 48 -45 30 -45 0 V -29 C -36 -31 -18 -34 0 -48 Z" fill="#f0edfb" stroke="#7d69bc" stroke-width="4"/>
+      <path d="M -19 3 L -6 17 L 22 -16" fill="none" stroke="#7d69bc" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <g id="p-suitcase">
+      <path d="M -24 -37 V -48 Q -24 -58 -14 -58 H 14 Q 24 -58 24 -48 V -37" fill="none" stroke="#8b6a42" stroke-width="7"/>
+      <rect x="-48" y="-37" width="96" height="76" rx="16" fill="#e7bd74" stroke="#9a713d" stroke-width="4"/>
+      <path d="M -19 -33 V 35 M 19 -33 V 35" stroke="#f7dda9" stroke-width="6" opacity=".78"/>
+      <rect x="-8" y="-8" width="16" height="18" rx="4" fill="#9a713d"/>
+    </g>
+
+  </defs>
+
+  <style>
+    .p-job-1 { animation: p-job-1 7.4s cubic-bezier(.4,0,.16,1) infinite; }
+    .p-job-2 { animation: p-job-2 7.4s cubic-bezier(.4,0,.16,1) infinite; }
+    .p-job-3 { animation: p-job-3 7.4s cubic-bezier(.4,0,.16,1) infinite; }
+    .p-job-4 { animation: p-job-4 7.4s cubic-bezier(.4,0,.16,1) infinite; }
+    .p-launch-pulse { animation: p-launch-pulse 7.4s ease-out infinite; transform-origin: 130px 470px; }
+    .p-result-1 { animation: p-result-1 7.4s cubic-bezier(.22,.72,.24,1) infinite; transform-origin: 0 0; }
+    .p-result-2 { animation: p-result-2 7.4s cubic-bezier(.22,.72,.24,1) infinite; transform-origin: 0 0; }
+    .p-result-3 { animation: p-result-3 7.4s cubic-bezier(.22,.72,.24,1) infinite; transform-origin: 0 0; }
+    .p-result-4 { animation: p-result-4 7.4s cubic-bezier(.22,.72,.24,1) infinite; transform-origin: 0 0; }
+
+    @keyframes p-job-1 {
+      0%, 7% { transform: translateX(300px) scale(.84); opacity: 0; }
+      12% { opacity: 1; transform: translateX(300px) scale(1); }
+      49%, 89% { transform: translateX(1240px) scale(1); opacity: 1; }
+      96%, 100% { transform: translateX(1240px) scale(.96); opacity: 0; }
+    }
+    @keyframes p-job-2 {
+      0%, 7% { transform: translateX(300px) scale(.84); opacity: 0; }
+      12% { opacity: 1; transform: translateX(300px) scale(1); }
+      60%, 89% { transform: translateX(1390px) scale(1); opacity: 1; }
+      96%, 100% { transform: translateX(1390px) scale(.96); opacity: 0; }
+    }
+    @keyframes p-job-3 {
+      0%, 7% { transform: translateX(300px) scale(.84); opacity: 0; }
+      12% { opacity: 1; transform: translateX(300px) scale(1); }
+      43%, 89% { transform: translateX(1130px) scale(1); opacity: 1; }
+      96%, 100% { transform: translateX(1130px) scale(.96); opacity: 0; }
+    }
+    @keyframes p-job-4 {
+      0%, 7% { transform: translateX(300px) scale(.84); opacity: 0; }
+      12% { opacity: 1; transform: translateX(300px) scale(1); }
+      66%, 89% { transform: translateX(1450px) scale(1); opacity: 1; }
+      96%, 100% { transform: translateX(1450px) scale(.96); opacity: 0; }
+    }
+    @keyframes p-launch-pulse { 0%, 5%, 18%, 100% { opacity: 0; transform: scale(.72); } 10% { opacity: .5; transform: scale(1); } 16% { opacity: 0; transform: scale(1.55); } }
+    @keyframes p-result-1 { 0%, 46% { opacity: .22; transform: scale(.92); } 52%, 91% { opacity: 1; transform: scale(1); } 98%,100% { opacity: .22; transform: scale(.92); } }
+    @keyframes p-result-2 { 0%, 57% { opacity: .22; transform: scale(.92); } 63%, 91% { opacity: 1; transform: scale(1); } 98%,100% { opacity: .22; transform: scale(.92); } }
+    @keyframes p-result-3 { 0%, 40% { opacity: .22; transform: scale(.92); } 46%, 91% { opacity: 1; transform: scale(1); } 98%,100% { opacity: .22; transform: scale(.92); } }
+    @keyframes p-result-4 { 0%, 63% { opacity: .22; transform: scale(.92); } 69%, 91% { opacity: 1; transform: scale(1); } 98%,100% { opacity: .22; transform: scale(.92); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .p-job-1, .p-job-2, .p-job-3, .p-job-4, .p-launch-pulse, .p-result-1, .p-result-2, .p-result-3, .p-result-4 { animation: none !important; }
+      .p-job-1 { transform: translateX(1240px); opacity: 1; }
+      .p-job-2 { transform: translateX(1390px); opacity: 1; }
+      .p-job-3 { transform: translateX(1130px); opacity: 1; }
+      .p-job-4 { transform: translateX(1450px); opacity: 1; }
+      .p-launch-pulse { opacity: 0; }
+      .p-result-1, .p-result-2, .p-result-3, .p-result-4 { opacity: 1; }
+    }
+  </style>
+
+  <rect width="1672" height="941" fill="url(#p-bg)"/>
+  <ellipse cx="1420" cy="160" rx="360" ry="150" fill="#ffffff" opacity="0.28" filter="url(#p-blur)"/>
+
+  <g transform="translate(836,470) rotate(-5) translate(-836,-470)">
+    <path d="M 190 440 C 232 420 228 170 280 170 M 194 458 C 232 446 236 370 280 370 M 194 482 C 232 494 236 570 280 570 M 190 500 C 232 520 228 770 280 770" fill="none" stroke="#d6cdbd" stroke-width="10" stroke-linecap="round"/>
+    <path d="M 190 440 C 232 420 228 170 280 170" fill="none" stroke="#3f9e96" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 194 458 C 232 446 236 370 280 370" fill="none" stroke="#d4963b" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 194 482 C 232 494 236 570 280 570" fill="none" stroke="#63b883" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 190 500 C 232 520 228 770 280 770" fill="none" stroke="#8873c8" stroke-width="4" stroke-linecap="round"/>
+    <circle class="p-launch-pulse" cx="130" cy="470" r="112" fill="url(#p-soft-glow)" color="#d6a354"/>
+    <g transform="translate(130,470)" filter="url(#p-shadow)">
+      <circle r="76" fill="#d9d0bf"/>
+      <circle r="66" fill="url(#p-glass)" stroke="#ffffff" stroke-width="4"/>
+      <g transform="scale(.72)"><use href="#p-suitcase"/></g>
+      <circle cx="49" cy="-43" r="7" fill="#d6a354"/>
+    </g>
+    <g color="#3f9e96" transform="translate(0,170)"><use href="#p-lane"/></g>
+    <g color="#d4963b" transform="translate(0,370)"><use href="#p-lane"/></g>
+    <g color="#63b883" transform="translate(0,570)"><use href="#p-lane"/></g>
+    <g color="#8873c8" transform="translate(0,770)"><use href="#p-lane"/></g>
+
+    <g transform="translate(0,170)" color="#3f9e96">
+      <g transform="translate(1240,-4)"><g class="p-result-1"><ellipse rx="138" ry="64" fill="currentColor" opacity=".13" filter="url(#p-blur)"/></g></g>
+      <g class="p-job-1" filter="url(#p-shadow)"><g transform="scale(1.12)"><use href="#p-capsule"/><g transform="translate(0,-8) scale(.78)"><use href="#p-plane"/></g></g></g>
+    </g>
+    <g transform="translate(0,370)" color="#d4963b">
+      <g transform="translate(1390,-4)"><g class="p-result-2"><ellipse rx="138" ry="64" fill="currentColor" opacity=".13" filter="url(#p-blur)"/></g></g>
+      <g class="p-job-2" filter="url(#p-shadow)"><g transform="scale(1.12)"><use href="#p-capsule"/><g transform="translate(0,-5) scale(.72)"><use href="#p-hotel"/></g></g></g>
+    </g>
+    <g transform="translate(0,570)" color="#63b883">
+      <g transform="translate(1130,-4)"><g class="p-result-3"><ellipse rx="138" ry="64" fill="currentColor" opacity=".13" filter="url(#p-blur)"/></g></g>
+      <g class="p-job-3" filter="url(#p-shadow)"><g transform="scale(1.12)"><use href="#p-capsule"/><g transform="translate(0,-8) scale(.72)"><use href="#p-car"/></g></g></g>
+    </g>
+    <g transform="translate(0,770)" color="#8873c8">
+      <g transform="translate(1450,-4)"><g class="p-result-4"><ellipse rx="138" ry="64" fill="currentColor" opacity=".13" filter="url(#p-blur)"/></g></g>
+      <g class="p-job-4" filter="url(#p-shadow)"><g transform="scale(1.12)"><use href="#p-capsule"/><g transform="translate(0,-8) scale(.6)"><use href="#p-shield"/></g></g></g>
+    </g>
+  </g>
+</svg>

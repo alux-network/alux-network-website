@@ -1,0 +1,354 @@
+/* Homepage hero hybrid art layer.
+   3D carries the physical modules; restrained pixel details keep the system language crisp. */
+
+body[data-page="home"] {
+  --hero-caramel-face: #bd7d46;
+  --hero-caramel-light: #d89e65;
+  --hero-caramel-side: #8f572f;
+  --hero-cream-highlight: rgba(255, 243, 220, 0.78);
+  --hero-signal-dot: rgba(255, 253, 246, 0.9);
+}
+
+body[data-page="home"] .orb-sun,
+body[data-page="home"] .orb-moon,
+body[data-page="home"] .island-b,
+body[data-page="home"] .island-c {
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  will-change: transform;
+}
+
+body[data-page="home"] .orb-sun {
+  background-image: url("assets/alux-hero-3d-sun-pixel.png");
+  border-radius: 0;
+  box-shadow: none;
+  filter:
+    saturate(1.08)
+    drop-shadow(0 0 18px rgba(247, 201, 72, 0.2))
+    drop-shadow(0 10px 18px rgba(190, 139, 34, 0.14));
+  animation: alux3dSunBreath 6.8s ease-in-out infinite;
+}
+
+body[data-page="home"] .orb-moon {
+  background-image: url("assets/alux-hero-3d-blue-node.png");
+  border-radius: 0;
+  box-shadow: none;
+  filter:
+    saturate(0.9)
+    brightness(1.05)
+    drop-shadow(0 10px 16px rgba(118, 151, 177, 0.14));
+  animation: alux3dNodeFloat 6.4s ease-in-out infinite;
+}
+
+body[data-page="home"] .island-b {
+  background-image: url("assets/alux-hero-3d-lower-assembly.png?v=20260714-studfix1");
+}
+
+body[data-page="home"] .island-c {
+  background-image: url("assets/alux-hero-3d-upper-brick.png?v=20260714-studfix1");
+}
+
+body[data-page="home"] .island-b,
+body[data-page="home"] .island-c {
+  opacity: 1;
+  filter: brightness(1.055) saturate(0.92) drop-shadow(0 18px 22px rgba(103, 73, 43, 0.14));
+  animation: alux3dBrickFloat 7.8s ease-in-out infinite;
+}
+
+body[data-page="home"] .island-c {
+  animation-delay: -2.6s;
+}
+
+body[data-page="home"] .island-a,
+body[data-page="home"] .island-b > *,
+body[data-page="home"] .island-c > * {
+  display: none;
+}
+
+body[data-page="home"] .island-c::after {
+  display: none;
+}
+
+/* Two quiet signal triplets. They deliberately stay 2D: identical, soft, and optically spaced. */
+body[data-page="home"] .cloud-a,
+body[data-page="home"] .cloud-b {
+  display: block;
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--hero-signal-dot);
+  box-shadow:
+    20px 0 0 rgba(255, 253, 246, 0.84),
+    40px 0 0 rgba(255, 253, 246, 0.78);
+  filter:
+    drop-shadow(0 0 5px rgba(255, 255, 255, 0.5))
+    drop-shadow(0 5px 9px rgba(126, 100, 73, 0.07));
+  pointer-events: none;
+}
+
+body[data-page="home"] .lego-skyline::after {
+  display: none;
+}
+
+/* Keep the brand name unmistakable; only a quiet contact shadow ties it to the 3D scene. */
+body[data-page="home"] .hero-home-brand {
+  width: auto;
+  aspect-ratio: auto;
+  color: #4b3525;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  font-size: 1.14em;
+  line-height: inherit;
+  text-shadow:
+    0 2px 0 rgba(255, 247, 232, 0.72),
+    0 12px 22px rgba(104, 77, 50, 0.12);
+  filter: none;
+}
+
+/* HTML buttons stay responsive/localizable. Their brick cue is deliberately quiet and inset. */
+body[data-page="home"] .home-hero-actions > .button.primary,
+body[data-page="home"] .home-hero-actions > .button.secondary {
+  min-height: 54px;
+  overflow: visible;
+  border: 1px solid rgba(116, 68, 34, 0.18);
+  border-radius: 17px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 242, 219, 0.38),
+    inset 0 -3px 7px rgba(100, 56, 27, 0.07),
+    0 5px 0 rgba(104, 62, 34, 0.46),
+    0 13px 24px rgba(112, 79, 47, 0.11);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+body[data-page="home"] .home-hero-actions > .button.primary {
+  background: linear-gradient(180deg, #d0965f 0%, #bc804b 64%, #ad6f3e 100%);
+}
+
+body[data-page="home"] .home-hero-actions > .button.secondary {
+  background: linear-gradient(180deg, #dcaa72 0%, #c8955d 64%, #b9824d 100%);
+}
+
+body[data-page="home"] .home-hero-actions > .button.primary::before,
+body[data-page="home"] .home-hero-actions > .button.secondary::before {
+  top: 2px;
+  left: 18px;
+  right: 18px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 232, 199, 0.34), rgba(255, 240, 218, 0.14));
+  box-shadow: none;
+}
+
+body[data-page="home"] .home-hero-actions > .button.primary::after,
+body[data-page="home"] .home-hero-actions > .button.secondary::after {
+  top: 8px;
+  left: 18px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 230, 196, 0.3);
+  box-shadow:
+    17px 0 0 rgba(255, 230, 196, 0.26),
+    34px 0 0 rgba(255, 230, 196, 0.22);
+  filter: none;
+}
+
+body[data-page="home"] .home-hero-actions > .button.primary:hover,
+body[data-page="home"] .home-hero-actions > .button.secondary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.025);
+}
+
+body[data-page="home"] .home-hero-actions > .button.primary:active,
+body[data-page="home"] .home-hero-actions > .button.secondary:active {
+  transform: translateY(4px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 242, 219, 0.48),
+    inset 0 -4px 6px rgba(100, 56, 27, 0.12),
+    0 3px 0 rgba(104, 62, 34, 0.68),
+    0 8px 12px rgba(112, 79, 47, 0.11);
+}
+
+body[data-page="home"] .home-hero-actions > .button:focus-visible {
+  outline: 3px solid rgba(65, 131, 123, 0.42);
+  outline-offset: 5px;
+}
+
+@keyframes alux3dBrickFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -3px, 0);
+  }
+}
+
+@keyframes alux3dSunBreath {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.018);
+  }
+}
+
+@keyframes alux3dNodeFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(0, -2px, 0) scale(1.015);
+  }
+}
+
+@media (min-width: 961px) {
+  body[data-page="home"] .orb-sun {
+    top: 10px;
+    right: 7.5%;
+    width: 190px;
+    height: 190px;
+    z-index: 4;
+  }
+
+  body[data-page="home"] .orb-moon {
+    top: 336px;
+    right: 43%;
+    left: auto;
+    width: 72px;
+    height: 72px;
+    z-index: 2;
+  }
+
+  body[data-page="home"] .island-c {
+    top: 230px;
+    right: 15.5%;
+    bottom: auto;
+    left: auto;
+    width: 320px;
+    height: 132px;
+    z-index: 2;
+  }
+
+  body[data-page="home"] .island-b {
+    top: auto;
+    right: 2.75%;
+    bottom: 46px;
+    left: auto;
+    width: 386px;
+    height: 174px;
+    z-index: 3;
+  }
+
+  body[data-page="home"] .cloud-a {
+    top: 188px;
+    right: 42%;
+    left: auto;
+  }
+
+  body[data-page="home"] .cloud-b {
+    top: 378px;
+    right: 31%;
+    left: auto;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 960px) {
+  body[data-page="home"] .orb-sun {
+    top: 12px;
+    right: 2.5%;
+    width: 154px;
+    height: 154px;
+    z-index: 4;
+  }
+
+  body[data-page="home"] .orb-moon {
+    top: 278px;
+    right: 35%;
+    left: auto;
+    width: 62px;
+    height: 62px;
+    z-index: 2;
+  }
+
+  body[data-page="home"] .island-c {
+    top: 184px;
+    right: 8.5%;
+    bottom: auto;
+    left: auto;
+    width: 208px;
+    height: 88px;
+    z-index: 2;
+  }
+
+  body[data-page="home"] .island-b {
+    top: auto;
+    right: 0.5%;
+    bottom: 36px;
+    left: auto;
+    width: 266px;
+    height: 120px;
+    z-index: 3;
+  }
+
+  body[data-page="home"] .cloud-a,
+  body[data-page="home"] .cloud-b {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  body[data-page="home"] .orb-sun {
+    top: 4px;
+    right: clamp(8px, 2.5vw, 14px);
+    width: clamp(124px, 36vw, 142px);
+    height: clamp(124px, 36vw, 142px);
+    z-index: 4;
+  }
+
+  body[data-page="home"] .island-c {
+    display: none;
+  }
+
+  body[data-page="home"] .island-b {
+    top: auto;
+    right: 2px;
+    bottom: 28px;
+    left: auto;
+    width: clamp(194px, 58vw, 220px);
+    height: clamp(88px, 26vw, 100px);
+    opacity: 0.96;
+    z-index: 3;
+  }
+
+  body[data-page="home"] .hero-home h1 {
+    max-width: calc(100% - 132px);
+  }
+
+  body[data-page="home"] .cloud-a,
+  body[data-page="home"] .cloud-b {
+    display: none;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="home"] .orb-sun,
+  body[data-page="home"] .orb-moon,
+  body[data-page="home"] .island-b,
+  body[data-page="home"] .island-c {
+    animation: none;
+  }
+}

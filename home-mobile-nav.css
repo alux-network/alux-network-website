@@ -1,0 +1,143 @@
+/* Homepage-only mobile navigation. The hero remains on the restored baseline. */
+@media (max-width: 960px) {
+  body[data-page="home"] .menu-toggle {
+    position: relative;
+    z-index: 32;
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid rgba(105, 88, 71, 0.13);
+    border-radius: 15px;
+    color: #766b62;
+    background: linear-gradient(180deg, rgba(255, 254, 251, 0.995), rgba(250, 247, 241, 0.985));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.98),
+      0 4px 12px rgba(83, 60, 41, 0.055);
+    cursor: pointer;
+    transition: border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
+  }
+
+  body[data-page="home"] .menu-toggle span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 21px;
+    height: 2.5px;
+    margin: 0;
+    border-radius: 999px;
+    background: currentColor;
+    box-shadow: none;
+    transform-origin: center;
+    transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 130ms ease;
+  }
+
+  body[data-page="home"] .menu-toggle span:nth-child(1) {
+    transform: translate(-50%, -50%) translateY(-6px);
+  }
+
+  body[data-page="home"] .menu-toggle span:nth-child(2) {
+    transform: translate(-50%, -50%);
+  }
+
+  body[data-page="home"] .menu-toggle span:nth-child(3) {
+    transform: translate(-50%, -50%) translateY(6px);
+  }
+
+  body[data-page="home"] .menu-toggle[aria-expanded="true"] {
+    color: #685d54;
+    border-color: rgba(105, 88, 71, 0.17);
+    background: linear-gradient(180deg, #fdfaf5, #f7f0e7);
+    box-shadow:
+      inset 0 1px 3px rgba(103, 72, 46, 0.045),
+      0 4px 10px rgba(83, 60, 41, 0.065);
+  }
+
+  body[data-page="home"] .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  body[data-page="home"] .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  body[data-page="home"] .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  body[data-page="home"] .menu-toggle:focus-visible {
+    outline: 3px solid rgba(75, 110, 137, 0.5);
+    outline-offset: 4px;
+  }
+
+  body[data-page="home"] .site-nav {
+    top: calc(100% + 12px);
+    right: 0;
+    left: auto;
+    z-index: 30;
+    width: min(328px, calc(100vw - 32px));
+    min-width: 0;
+    max-height: calc(100dvh - 118px);
+    gap: 4px;
+    padding: 12px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 1px solid rgba(110, 83, 60, 0.18);
+    border-radius: 24px;
+    color: #574b42;
+    background: rgba(255, 252, 246, 0.985);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.92),
+      0 24px 52px rgba(79, 57, 39, 0.18),
+      0 6px 16px rgba(79, 57, 39, 0.08);
+    backdrop-filter: blur(18px) saturate(1.04);
+  }
+
+  body[data-page="home"] .site-nav.open {
+    display: flex;
+  }
+
+  body[data-page="home"] .site-nav > a,
+  body[data-page="home"] .nav-dropdown-trigger,
+  body[data-page="home"] .nav-dropdown-menu a {
+    min-height: 50px;
+    padding: 0 14px;
+    border-radius: 14px;
+    color: #5a4e45;
+    font-weight: 600;
+  }
+
+  body[data-page="home"] .site-nav > a:hover,
+  body[data-page="home"] .site-nav > a:focus-visible,
+  body[data-page="home"] .nav-dropdown-trigger:hover,
+  body[data-page="home"] .nav-dropdown-trigger:focus-visible,
+  body[data-page="home"] .nav-dropdown-menu a:hover,
+  body[data-page="home"] .nav-dropdown-menu a:focus-visible {
+    color: #33271f;
+    background: rgba(196, 154, 111, 0.12);
+  }
+
+  body[data-page="home"] .site-nav > a.active-link {
+    color: #443126;
+    background: linear-gradient(135deg, rgba(220, 184, 141, 0.26), rgba(149, 205, 184, 0.14));
+  }
+
+  body[data-page="home"] .nav-dropdown-menu {
+    margin-top: 4px;
+    padding: 6px;
+    border: 1px solid rgba(110, 83, 60, 0.1);
+    border-radius: 16px;
+    background: rgba(242, 233, 220, 0.7);
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="home"] .menu-toggle,
+  body[data-page="home"] .menu-toggle span {
+    transition: none;
+  }
+}
