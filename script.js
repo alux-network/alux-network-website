@@ -75,8 +75,8 @@ const homeFaqItems = {
 
 const pageData = {
   home: {
-    metaTitle: "ALUX Network — A Distributed Runtime to Unify Web 2 & Web 3",
-    metaDescription: "ALUX is a service-native public chain and distributed runtime for composable decentralized services across Web 2 and Web 3.",
+    metaTitle: "ALUX Network — A Service-Native Public Chain",
+    metaDescription: "ALUX unifies execution, permissions, commit logic, and consensus into a composable runtime for decentralized services.",
     hero: {
       eyebrow: "",
       title: "ALUX",
