@@ -75,8 +75,8 @@ const homeFaqItems = {
 
 const pageData = {
   home: {
-    metaTitle: "Home | ALUX Network",
-    metaDescription: "ALUX is composability middleware for decentralized services: a capability runtime where agents, apps, and workflows coordinate across trust boundaries.",
+    metaTitle: "ALUX Network — A Distributed Runtime to Unify Web 2 & Web 3",
+    metaDescription: "ALUX is a service-native public chain and distributed runtime for composable decentralized services across Web 2 and Web 3.",
     hero: {
       eyebrow: "",
       title: "ALUX",
