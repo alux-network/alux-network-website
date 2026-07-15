@@ -9,7 +9,7 @@ BLENDER_ROOT = os.path.dirname(SCRIPT_DIR)
 PROJECT_ROOT = os.path.dirname(BLENDER_ROOT)
 SOURCE_BLEND = os.path.join(BLENDER_ROOT, "scenes", "alux_hero_bricks_candidate.blend")
 OUTPUT_BLEND = os.path.join(BLENDER_ROOT, "scenes", "alux_hero_bricks_hybrid.blend")
-ASSET_DIR = os.path.join(PROJECT_ROOT, "assets")
+ASSET_DIR = os.path.join(PROJECT_ROOT, "assets", "home", "hero")
 SUN_OUTPUT = os.path.join(ASSET_DIR, "alux-hero-3d-sun-pixel.png")
 BLUE_OUTPUT = os.path.join(ASSET_DIR, "alux-hero-3d-blue-node.png")
 

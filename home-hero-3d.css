@@ -22,7 +22,7 @@ body[data-page="home"] .island-c {
 }
 
 body[data-page="home"] .orb-sun {
-  background-image: url("assets/alux-hero-3d-sun-pixel.png");
+  background-image: url("assets/home/hero/alux-hero-3d-sun-pixel.png");
   border-radius: 0;
   box-shadow: none;
   filter:
@@ -33,7 +33,7 @@ body[data-page="home"] .orb-sun {
 }
 
 body[data-page="home"] .orb-moon {
-  background-image: url("assets/alux-hero-3d-blue-node.png");
+  background-image: url("assets/home/hero/alux-hero-3d-blue-node.png");
   border-radius: 0;
   box-shadow: none;
   filter:
@@ -44,11 +44,11 @@ body[data-page="home"] .orb-moon {
 }
 
 body[data-page="home"] .island-b {
-  background-image: url("assets/alux-hero-3d-lower-assembly.png?v=20260714-studfix1");
+  background-image: url("assets/home/hero/alux-hero-3d-lower-assembly.png?v=20260714-studfix1");
 }
 
 body[data-page="home"] .island-c {
-  background-image: url("assets/alux-hero-3d-upper-brick.png?v=20260714-studfix1");
+  background-image: url("assets/home/hero/alux-hero-3d-upper-brick.png?v=20260714-studfix1");
 }
 
 body[data-page="home"] .island-b,

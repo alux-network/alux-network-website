@@ -6,7 +6,7 @@ from mathutils import Vector
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 BLENDER_ROOT = os.path.dirname(SCRIPT_DIR)
 PROJECT_ROOT = os.path.dirname(BLENDER_ROOT)
-OUTPUT_DIR = os.path.join(PROJECT_ROOT, "assets")
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "assets", "home", "hero")
 
 
 def descendants(root):
