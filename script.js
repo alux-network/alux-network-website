@@ -62,33 +62,34 @@ const homeHeroActions = {
 
 const homeFaqItems = {
   en: [
-    ["Is ALUX just another faster L1?", "No. Faster L1s accelerate the same abstraction: one-shot state updates. ALUX is a decentralized concurrent runtime for services that wait, resume, coordinate, and carry authority across time. Its GLVM architecture is designed to extend that logical execution model across blockchain nodes, cloud servers, and personal devices."],
-    ["What becomes possible on ALUX that ordinary smart contracts cannot do?", "A transaction can suspend across block boundaries, preserve its execution context, and resume when the awaited input arrives. Replay and commit mechanisms let validators reproduce the same outcome and finalize bounded work atomically."],
-    ["Why is ALUX built for AI agents?", "Agents need more than wallets. They need scoped access to tools and services, context across multi-step work, and async coordination. In ALUX, a process cannot forge arbitrary channel references; it can act only through references it created or was explicitly passed."],
-    ["What is a capability in ALUX?", "In the current runtime, a capability is an unforgeable channel reference that can be held, passed, and attenuated. General-purpose expiry, revocation, and usage quotas remain planned until they are implemented and tested."],
+    ["Is ALUX just another faster L1?", "No. Faster L1s accelerate the same abstraction: one-shot state updates that happen within one block. ALUX is a decentralized concurrent runtime for Long Transactions that can wait, resume, join across multiple channels, or select whichever channel becomes ready first; their state updates are no longer constrained by a block boundary. Through its GLVM architecture—Virtual Machine Abstraction—the same logical transaction is designed to extend beyond block boundaries toward shard and system boundaries."],
+    ["What becomes possible on ALUX that ordinary smart contracts cannot do?", "ALUX programs can fork into concurrent processes, wait for external inputs, join results from multiple channels, select the first event that becomes ready, and still commit the complete transaction atomically. Replay and commit mechanisms let validators reproduce the same outcome without exposing partial state."],
+    ["Why is ALUX built for AI agents?", "An on-chain agent is naturally a Long Transaction. Calling an LLM or a tool takes time; it cannot complete instantly—one only has to look at a Claude Code or Codex session. In other words, ALUX is a decentralized durable execution engine for agents."],
+    ["What is Object Capability (OCAP)?", "Technical details are being finalized and will be added shortly."],
     ["How does ALUX keep Long Transactions deterministic?", "ReplayTrie records the non-deterministic COMM choices that affect execution, enabling bit-exact deterministic replay inside the ALUX runtime so validators can reproduce the same execution outcome."],
-    ["Can existing smart contract developers use it?", "ALUX exposes a growing set of eth_* JSON-RPC methods and runs EVM and Solidity workloads through its EVM path. Compatibility depends on the RPC methods and EVM features currently implemented; Tolang is available for concurrency-native services."],
-    ["What is ALUX's OpenClaw?", "OpenClaw is the endgame: an open capability layer for the agent world, where agents discover, request, delegate, and combine what they are allowed to do. The internet connected information; blockchains connected assets; agent networks must connect capability."],
-    ["How is ALUX different from agent frameworks like LangGraph or Temporal?", "LangGraph and Temporal are application frameworks for coordinating workflows you control. ALUX is a public runtime designed for work across trust boundaries: validators can reproduce recorded COMM choices, processes act through explicit channel capabilities, and cross-block execution can preserve context through defined replay and commit paths."]
+    ["Can existing smart contract developers use it?", "TVM runs EVM bytecode inside isolated sandboxes, so most EVM contracts can be migrated to ALUX with minimal changes. ALUX also presents an Ethereum-compatible view through a set of commonly used eth_* JSON-RPC methods."],
+    ["Some other chains also claim to support cross-block transactions. How is ALUX different?", "<strong>The keyword is atomicity.</strong><br><br><strong>Compensation / Saga:</strong> <code>commit → commit → ✗ fail → run compensating undo</code><br>Each step commits locally, intermediate states are visible, compensation can also fail, and external effects cannot always be reversed. This is eventual consistency. Some asynchronous chains, including ICP and Rialo, lean on this model. It is easier to implement, but unsuitable for applications that require stronger ACID guarantees.<br><br><strong>ALUX all-or-nothing:</strong> <code>stage → stage → ✗ fail → discard everything</code><br>Nothing commits until the whole transaction commits. On abort, uncommitted effects are discarded and no partial state becomes observable. That is true ACID atomicity across block heights."],
+    ["Why is OCAP a stronger and composable security model?", "Technical details are being finalized and will be added shortly."],
+    ["What does it mean for OCAP to be natively supported in ALUX?", "Technical details are being finalized and will be added shortly."]
   ]
 };
 
 const pageData = {
   home: {
-    metaTitle: "ALUX Network — A Service-Native Public Chain",
-    metaDescription: "ALUX unifies execution, permissions, commit logic, and consensus into a composable runtime for decentralized services.",
+    metaTitle: "ALUX Network — Building the Global VM",
+    metaDescription: "ALUX is building one logical virtual machine that runs across public blockchains, private clusters, and client hardware while preserving atomic commit.",
     hero: {
-      eyebrow: "",
-      title: "ALUX",
-      loop: "A Service-Native Public Chain\nfor Composable\nDecentralized Services",
-      text: "ALUX unifies execution, permissions, commit logic, and consensus into a composable runtime, enabling decentralized services to persist over time, carry scoped authority, and coordinate across systems."
+      eyebrow: "ALUX Network",
+      title: "Building the global VM",
+      loop: "",
+      text: "Imagine one logical virtual machine that runs everywhere—on a public blockchain, on a private cluster, and on client hardware such as phones and browsers—while abstracting away the state, threads, replication, and consensus underneath. Developers write one concurrent program; where it runs becomes a configuration choice, not an architecture. Its parts still commit together, atomically. That is Virtual Machine Abstraction, and ALUX is building it."
     },
     sections: [
       {
         type: "architecture",
-        eyebrow: "ALUX GLVM Architecture",
-        title: "Many machines.<br>One logical virtual machine.",
-        text: "GLVM is ALUX's target layered architecture for decentralized services: physical infrastructure below, the concurrent runtime in the middle, and world operating systems above.",
+        eyebrow: "Virtual Machine Abstraction",
+        title: "One logical virtual machine.<br>Everywhere.",
+        text: "GLVM abstracts the state, threads, replication, and consensus beneath one concurrent program, so deployment becomes a configuration choice rather than a new application architecture.",
         architecture: {
           world: {
             label: "Layer 3",
@@ -103,7 +104,7 @@ const pageData = {
             label: "Layer 2",
             title: "ALUX — Decentralized Concurrent Runtime",
             vm: "Unified World VM",
-            controls: ["Sharding", "Concurrency Control", "Capability Management"],
+            controls: ["State + Threads", "Replication", "Consensus"],
             tvms: ["TVM", "TVM", "TVM"],
             caption: "TVM abstraction — each TVM is abstracted into the Unified World VM above."
           },
@@ -111,9 +112,9 @@ const pageData = {
             label: "Layer 1",
             title: "Physical Infrastructure",
             groups: [
-              ["Blockchain", "Blockchain Nodes"],
-              ["Cloud", "Cloud Servers"],
-              ["Personal Devices", "Laptops / Phones"]
+              ["Public Blockchain", "Blockchain Nodes"],
+              ["Private Cluster", "Cloud / Enterprise Nodes"],
+              ["Client Hardware", "Phones / Browsers"]
             ]
           }
         }
@@ -128,28 +129,28 @@ const pageData = {
         title: "ALUX Runtime Capability Map",
         mapKicker: "",
         mapTitle: "ALUX Capability Map",
-        mapIntro: "Drag modules into ALUX Runtime to reveal their public-chain role.\nDouble-click any card for the deeper note.",
-        text: "Drag modules into ALUX Runtime to reveal their public-chain role.\nDouble-click any card for the deeper note.",
+        mapIntro: "Drag modules into ALUX Runtime to see how they compose inside one logical VM.\nDouble-click any card for the deeper note.",
+        text: "Drag modules into ALUX Runtime to see how they compose inside one logical VM.\nDouble-click any card for the deeper note.",
         guideSteps: ["Drag into ALUX Runtime", "Double-click for detail"],
         comboLabel: "Runtime Connection",
         comboTitle: "Connect a module to ALUX",
-        comboDefault: "Drop a module onto ALUX Runtime to see how it becomes part of the public-chain service runtime.",
+        comboDefault: "Drop a module onto ALUX Runtime to see how it composes inside the global VM.",
         inspectorLabel: "Module Trace",
         inspectorTitle: "Open a module",
         inspectorDefault: "Double-click a card to flip it into a short note on what it does, why it matters, and where it touches real services.",
-        featuredClusterIds: ["execution", "authority", "data", "transaction", "consensus", "build"],
+        featuredClusterIds: ["execution", "authority", "transaction", "consensus", "build"],
         core: {
-          label: "ALUX Public Chain",
+          label: "Virtual Machine Abstraction",
           title: "ALUX Runtime",
-          text: "A service-native public chain where TVM execution, capability authority, verifiable state, and BlockGit finality compose into one runtime.",
-          items: ["Public Chain", "Composable Runtime", "Service Primitives"],
-          detailTitle: "A public chain for live services",
-          detailTechnical: "ALUX treats execution, authority, state, and finality as one runtime surface rather than separate application patches.",
-          detailBusiness: "Teams can build services that keep running, hold limited authority, and settle against verifiable public-chain records.",
-          runtimeLabel: "ALUX Public Chain",
-          runtimeTitle: "ALUX Runtime\nforms\u00A0the\u00A0public\u00A0chain",
-          runtimeTechnical: "TVM execution, OCAP authority, verifiable state, cross-block commit logic, and BlockGit finality meet in one runtime.",
-          runtimeBusiness: "That is the public-chain layer for services that must keep running, carry scoped authority, and settle with verifiable finality."
+          text: "One logical VM where concurrent TVM execution, Native OCAP Support, cross-block atomicity, and BlockGit finality compose across deployment environments.",
+          items: ["One Logical VM", "Concurrent Runtime", "Atomic Commit"],
+          detailTitle: "One concurrent program, anywhere",
+          detailTechnical: "ALUX abstracts the state, threads, replication, and consensus beneath a single concurrent execution model.",
+          detailBusiness: "Developers write one program and choose where it runs as configuration, while its parts still commit together atomically.",
+          runtimeLabel: "Virtual Machine Abstraction",
+          runtimeTitle: "ALUX Runtime\nforms\u00A0one\u00A0logical\u00A0VM",
+          runtimeTechnical: "TVM execution, Native OCAP Support, cross-block commit logic, and BlockGit finality meet inside one runtime abstraction.",
+          runtimeBusiness: "The same concurrent program can target public blockchains, private clusters, and client hardware without becoming three architectures."
         },
         clusters: [
           {
@@ -168,15 +169,15 @@ const pageData = {
           },
           {
             id: "authority",
-            label: "Capability Control",
-            title: "OCAP Authority",
+            label: "Object Capability Security",
+            title: "Native OCAP Support",
             text: "Unforgeable references make authority explicit: a process can use only capabilities it created or was passed, and those capabilities can be scoped, attenuated, and constrained by runtime rules.",
             items: ["Namespaces", "Delegation", "Attenuation", "Lifecycle Types"],
             detailTitle: "Scoped authority",
             detailTechnical: "OCAP represents authority as unforgeable channel references. A process can use only references it created or was explicitly passed; capabilities can then be attenuated and constrained by channel usage and lifecycle rules.",
             detailBusiness: "Each task receives only the capabilities it needs; authority unrelated to the task never enters its execution context.",
-            runtimeLabel: "Capability Control",
-            runtimeTitle: "Capabilities become\nprotocol\u00A0objects",
+            runtimeLabel: "Native OCAP Support",
+            runtimeTitle: "OCAP is native\nto\u00A0the\u00A0VM",
           runtimeTechnical: "OCAP channel references are unforgeable. Each process starts only with capabilities explicitly introduced into its environment; namespaces, attenuation, and lifecycle rules narrow what each holder can do.",
           runtimeBusiness: "Prompt injection may influence a process, but it cannot invoke capabilities that were never passed into that process."
           },
@@ -192,7 +193,7 @@ const pageData = {
             runtimeLabel: "Transaction Layer",
           runtimeTitle: "Services cross block boundaries",
           runtimeTechnical: "Segments, ReplayTrie, isolation, and commit points let work suspend, resume, and settle atomically after a bounded checkpoint.",
-          runtimeBusiness: "Long-running workflows can wait for real-world inputs and still reach verifiable public-chain finality."
+          runtimeBusiness: "Long-running workflows can wait for real-world inputs and still settle atomically across block heights."
           },
           {
             id: "framework",
@@ -235,20 +236,6 @@ const pageData = {
             title: "Full Node + RPC",
             text: "The node layer exposes RPC, P2P, storage context, and static service surfaces around the runtime.",
             items: ["eth_* RPC", "P2P Gossip", "Storage Context", "Static Site"]
-          },
-          {
-            id: "data",
-            label: "State Layer",
-            title: "Verifiable State",
-            text: "Versioned tuple-space resources are committed through trie-backed storage, so replay, block merge, and finalized state share verifiable views.",
-            items: ["Tuple-Space State", "Versioned Reads", "Merkle Trie", "Atomic Commit"],
-            detailTitle: "Auditable state",
-            detailTechnical: "Versioned tuple-space resources commit into trie-backed storage, so execution, replay, merge, and finality read the same verifiable view.",
-            detailBusiness: "Services keep durable public-chain memory that validators can reconstruct and audit.",
-            runtimeLabel: "State Layer",
-          runtimeTitle: "Replay keeps state verifiable",
-          runtimeTechnical: "Versioned tuple-space resources commit through trie-backed storage, so execution, replay, block merge, and finality read the same verifiable views.",
-          runtimeBusiness: "Services get durable public-chain memory that validators can reconstruct and audit."
           },
           {
             id: "proof",
@@ -299,14 +286,14 @@ const pageData = {
             label: "Cross-Block Scheduler",
             title: "Services keep moving across block boundaries",
             technical: "Segments, partitions, and fringe building preserve partial progress while replay keeps validation deterministic.",
-            business: "Lets service work pause for real-world inputs, resume later, and still settle against a verifiable public-chain record."
+            business: "Lets service work pause for real-world inputs, resume later, and still settle as one replayable atomic result."
           },
           {
-            nodes: ["data", "node"],
-            label: "Public Service Backbone",
-            title: "Verifiable state with standard access",
-            technical: "Typed KV, trie state, RPC, P2P, and storage context create a public backend for persistent services.",
-            business: "Lets teams ship service infrastructure without private servers becoming the trust anchor."
+            nodes: ["execution", "framework"],
+            label: "Process Orchestration",
+            title: "Join and select across channels",
+            technical: "Concurrent TVM processes can fork, wait, join multiple channel results, or select the first event that becomes ready.",
+            business: "Complex applications coordinate many live processes without being reduced to a chain of one-shot transactions."
           },
           {
             nodes: ["execution", "proof"],
@@ -364,23 +351,23 @@ const pageData = {
         type: "cards",
         eyebrow: "Use Cases",
         title: "What You Can\nBuild on ALUX",
-        text: "Start with familiar EVM tooling, then build public-chain services that stay alive across blocks, coordinate with external systems, and carry explicit authority.",
+        text: "Build decentralized applications as concurrent programs: processes can fork, wait, join multiple channels, select the first available event, coordinate across blocks, and commit all-or-nothing.",
         items: [
-          ["Bookings, Approvals, and Escrow", "Build workflows that pause for inventory, a signature, or payment, then resume and settle without restarting the service."],
-          ["Concurrent EVM Applications", "Run isolated EVM applications concurrently and coordinate shared resources through TVM and TSAC."],
-          ["Cross-System Service Workflows", "Connect on-chain logic with verified HTTPS inputs today, while broader database and external-system adapters remain part of the target architecture."],
-          ["Capability-Native Applications", "Pass task-specific, unforgeable capabilities between services instead of letting identity carry unrelated ambient authority into every task."]
+          ["Long-Running Process Orchestration", "Fork processes, wait for inputs, join results from multiple channels, or select whichever event becomes ready first—without restarting the transaction."],
+          ["Concurrent EVM Applications", "Run EVM bytecode inside isolated sandboxes, coordinate concurrent workloads through TVM, and migrate supported contracts through familiar Ethereum-facing interfaces."],
+          ["Atomic Cross-System Workflows", "Stage work across blocks and connected systems, then commit the complete transaction all-or-nothing instead of exposing partial state."],
+          ["Native OCAP Applications", "Compose task-specific, unforgeable capabilities between processes instead of letting identity carry unrelated ambient authority into every task."]
         ],
         demos: [
-          { type: "workflow", label: "reservation.tox", status: "WAITING", steps: ["Request", "Wait", "Resume", "Settle"] },
+          { type: "workflow", label: "reservation.tox", status: "LIVE TRACE", steps: ["Spawn", "Wait", "Join", "Select", "Commit"] },
           { type: "parallel", label: "EVM workload", status: "3 INSTANCES", lanes: ["EVM 01", "EVM 02", "EVM 03"], core: "TVM / TSAC" },
           { type: "systems", label: "service commit", status: "TARGET MODEL", nodes: ["CHAIN", "API", "DATABASE"], footer: "Target: settle together" },
           { type: "capability", label: "capability", status: "DELEGATED", rows: [["namespace", "orders/write"], ["holder", "service-b"], ["rights", "scoped"]] }
         ],
         cta: {
-          eyebrow: "Build past the one-shot transaction",
-          title: "Explore a service that can wait, resume, coordinate, and settle.",
-          text: "Use Runtime Lab to inspect current execution primitives and the target composition model.",
+          eyebrow: "Build beyond the one-shot transaction",
+          title: "Explore concurrent programs that orchestrate and commit atomically.",
+          text: "Use Runtime Lab to inspect fork, wait, join, select, replay, and atomic commit across the ALUX execution model.",
           label: "Open Runtime Lab"
         }
       },
@@ -395,7 +382,7 @@ const pageData = {
         eyebrow: "Frequently Asked Questions",
         title: "FAQ",
         hint: "Click a question to view the answer",
-        faqOrder: [0, 1, 7, 3, 5, 2, 4, 6],
+        faqOrder: [0, 1, 6, 4, 3, 7, 8, 2, 5],
         items: homeFaqItems.en
       },
       {
@@ -664,7 +651,7 @@ const pageData = {
     foundations: {
       eyebrow: "Runtime path",
       title: "What keeps a service alive",
-      text: "A long-running service stays coherent because every step can run, interact, carry explicit authority, replay deterministically, and settle along one verifiable public-chain path.",
+      text: "A long-running service stays coherent because every step can run, interact, carry explicit authority, replay deterministically, and settle along one verifiable atomic path.",
       items: [
         ["Run", "TVM process lifecycle", "A process can fork, wait in one block, and resume in a later block without restarting its local execution context."],
         ["Interact", "Tuple space + COMM", "A waiting consume meets another transaction's produce. The match activates the continuation while unrelated work keeps moving."],
@@ -1232,8 +1219,7 @@ function initCapabilityMindmaps() {
       framework: ["transaction", "consensus"],
       consensus: ["transaction", "framework"],
       build: ["node", "authority", "tooling"],
-      node: ["build", "data"],
-      data: ["node"],
+      node: ["build"],
       proof: ["execution"],
       tooling: ["build"]
     };
@@ -1822,7 +1808,7 @@ function detectLanguage() {
 
 const forAiAgentsPage = {
   metaTitle: "For AI Agents | ALUX Network",
-  metaDescription: "How ALUX gives production AI agents cross-block continuity, tuple-space coordination, OCAP authority, and an EVM path through TSAC.",
+  metaDescription: "How ALUX gives production AI agents cross-block continuity, tuple-space coordination, native OCAP support, and an EVM path through TSAC.",
   hero: {
     hidden: true
   },
@@ -2183,11 +2169,12 @@ function renderHero(hero, lang) {
     ? hero.title.replace(/^ALUX\b/, '<span class="hero-home-brand">ALUX</span>')
     : hero.title;
   if (currentPage === "home") {
+    const titleClass = /^ALUX\b/.test(hero.title) ? "" : " class=\"hero-home-title--statement\"";
     const actions = (homeHeroActions[lang] || homeHeroActions.en)
       .map(({ label, href, variant }) => `<a class="button ${variant}" href="${href}" ${href.startsWith("http") ? 'target="_blank" rel="noreferrer"' : ""}>${label}</a>`)
       .join("");
 
-    return `<section class="hero hero-home fade-in"><div class="hero-home-unified"><div class="lego-skyline" aria-hidden="true"><div class="sky-orb orb-sun"></div><div class="sky-orb orb-moon"></div><div class="lego-cloud cloud-a"></div><div class="lego-cloud cloud-b"></div><div class="floating-island island-a"><span class="stone-base"></span><span class="brick-tower tower-red"></span><span class="brick-tower tower-blue"></span><span class="brick-bridge bridge-a"></span></div><div class="floating-island island-b"><span class="stone-base"></span><span class="brick-tower tower-yellow"></span><span class="brick-tower tower-green"></span><span class="brick-bridge bridge-b"></span></div><div class="floating-island island-c"><span class="stone-base"></span><span class="brick-tower tower-purple"></span><span class="brick-tower tower-orange"></span></div><div class="loose-brick loose-a"></div><div class="loose-brick loose-b"></div><div class="loose-brick loose-c"></div></div><div class="hero-copy hero-home-copy">${eyebrow}<h1>${title}</h1>${loop}${text}<div class="hero-actions home-hero-actions">${actions}</div></div></div></section>`;
+    return `<section class="hero hero-home fade-in"><div class="hero-home-unified"><div class="lego-skyline" aria-hidden="true"><div class="sky-orb orb-sun"></div><div class="sky-orb orb-moon"></div><div class="lego-cloud cloud-a"></div><div class="lego-cloud cloud-b"></div><div class="floating-island island-a"><span class="stone-base"></span><span class="brick-tower tower-red"></span><span class="brick-tower tower-blue"></span><span class="brick-bridge bridge-a"></span></div><div class="floating-island island-b"><span class="stone-base"></span><span class="brick-tower tower-yellow"></span><span class="brick-tower tower-green"></span><span class="brick-bridge bridge-b"></span></div><div class="floating-island island-c"><span class="stone-base"></span><span class="brick-tower tower-purple"></span><span class="brick-tower tower-orange"></span></div><div class="loose-brick loose-a"></div><div class="loose-brick loose-b"></div><div class="loose-brick loose-c"></div></div><div class="hero-copy hero-home-copy">${eyebrow}<h1${titleClass}>${title}</h1>${loop}${text}<div class="hero-actions home-hero-actions">${actions}</div></div></div></section>`;
   }
 
   return `<section class="hero hero-simple fade-in"><div class="hero-copy">${eyebrow}<h1>${title}</h1>${text}</div></section>`;
@@ -2203,7 +2190,6 @@ function splitHtmlParagraphs(text) {
 
 const externalProjectNameReplacements = {
   en: [
-    [/\bEthereum\b/gi, "state-first systems"],
     [/\bSolana\b/gi, "high-throughput state systems"],
     [/\bSui\s*\/\s*Aptos\b/gi, "object-state systems"],
     [/\bSui\b/gi, "object-state systems"],
@@ -2329,7 +2315,7 @@ const inlineUiLabels = {
     after: "After",
     shift: "Shift",
     runtimeNodes: ["Agents", "Messages", "Memory", "Resume"],
-    capabilityMapMobileIntro: "Tap once to open a module’s deeper note.\nDouble-tap to connect it to ALUX Runtime and reveal its public-chain role in the composed result.",
+    capabilityMapMobileIntro: "Tap once to open a module’s deeper note.\nDouble-tap to connect it to ALUX Runtime and see its role inside the composed VM.",
     capabilityMapMobileTapDetail: "Tap once · View details",
     capabilityMapMobileTapConnect: "Double-tap · Connect to Runtime"
   }
@@ -2401,7 +2387,7 @@ function renderHomeShowcasePanel(section, index) {
     const renderDemoHead = (demo) => `<div class="showcase-demo-head"><span>${demo.label}</span><strong>${demo.status}</strong></div>`;
     const renderUseCaseDemo = (demo = {}) => {
       if (demo.type === "workflow") {
-        return `<div class="showcase-demo showcase-demo--workflow">${renderDemoHead(demo)}<div class="showcase-demo-steps">${demo.steps.map((step, stepIndex) => `<span class="${stepIndex === 1 ? "is-active" : ""}">${step}</span>`).join("")}</div><div class="showcase-demo-progress"><span></span></div></div>`;
+        return `<div class="showcase-demo showcase-demo--workflow">${renderDemoHead(demo)}<div class="showcase-demo-steps" style="--step-count:${demo.steps.length}">${demo.steps.map((step, stepIndex) => `<span style="--step-index:${stepIndex}">${step}</span>`).join("")}</div><div class="showcase-demo-progress"><span></span></div></div>`;
       }
       if (demo.type === "parallel") {
         return `<div class="showcase-demo showcase-demo--parallel">${renderDemoHead(demo)}<div class="showcase-demo-lanes">${demo.lanes.map((lane, laneIndex) => `<div><span>${lane}</span><i style="--lane-progress:${72 - laneIndex * 14}%"></i></div>`).join("")}</div><strong class="showcase-demo-runtime">${demo.core}</strong></div>`;
@@ -2451,7 +2437,7 @@ function renderHomeCapabilityMapSection(section) {
   const core = section.core || {};
   const outcome = section.outcome || {};
   const showOutcomeNode = section.showOutcomeNode === true;
-  const fallbackIds = ["execution", "authority", "transaction", "framework", "consensus", "build", "node", "data", "proof", "tooling"];
+  const fallbackIds = ["execution", "authority", "transaction", "framework", "consensus", "build", "node", "proof", "tooling"];
   const attr = (value = "") => encodeURIComponent(String(value));
   const escapeAttr = (value = "") =>
     String(value).replace(/[&<>"']/g, (char) => (
@@ -2495,14 +2481,14 @@ function renderHomeCapabilityMapSection(section) {
     labels.capabilityMapMobileTapConnect
   ].filter(Boolean).map((step) => `<span class="capability-map-guide-mobile">${escapeAttr(step)}</span>`).join("");
   const mapIntro = section.mapIntro || section.text || "";
-  const mobileMapIntro = labels.capabilityMapMobileIntro || "Tap once to open a module’s deeper note.\nDouble-tap to connect it to ALUX Runtime and reveal its public-chain role in the composed result.";
+  const mobileMapIntro = labels.capabilityMapMobileIntro || "Tap once to open a module’s deeper note.\nDouble-tap to connect it to ALUX Runtime and see its role inside the composed VM.";
   const note = `<div class="capability-map-note">${guide}${mobileGuide}</div>`;
   const renderFrontCopy = (value = "") => renderInlineCopy(value)
     .replace(/capability authority/g, "capability&nbsp;authority")
     .replace(/BlockGit finality/g, "BlockGit&nbsp;finality")
     .replace(/one runtime/g, "one&nbsp;runtime");
   const coreText = core.text ? `<p>${renderFrontCopy(core.text)}</p>` : "";
-  const coreItems = core.items || ["Public Chain", "Composable Runtime", "Service Primitives"];
+  const coreItems = core.items || ["One Logical VM", "Concurrent Runtime", "Atomic Commit"];
   const outcomeItems = outcome.items || ["Discover", "Delegate", "Compose", "Audit"];
   const outcomeChips = outcomeItems.map((item) => `<li>${item}</li>`).join("");
   const linkPaths = [
@@ -2512,7 +2498,7 @@ function renderHomeCapabilityMapSection(section) {
   const comboTemplates = (section.combinations || []).map((combo) => `<template data-combo-key="${attr(comboKey(combo.nodes || []))}" data-combo-label="${attr(combo.label)}" data-combo-title="${attr(combo.title)}" data-combo-technical="${attr(combo.technical)}" data-combo-business="${attr(combo.business)}"></template>`).join("");
   const comboLabel = section.comboLabel || "Runtime Connection";
   const comboTitle = section.comboTitle || "Connect a module to ALUX";
-  const comboDefault = section.comboDefault || "Drag a capability card into ALUX Runtime to reveal its role inside the public chain.";
+  const comboDefault = section.comboDefault || "Drag a capability card into ALUX Runtime to reveal its role inside the global VM.";
   const inspectorDefault = section.inspectorDefault || "Double-click a module for detail, or drag it into ALUX Runtime to connect it.";
   const ariaLabel = [
     section.mapKicker,

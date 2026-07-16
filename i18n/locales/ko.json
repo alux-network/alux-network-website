@@ -1,7 +1,7 @@
 {
   "language": "ko",
   "target": "Korean, polished native Korean product/protocol copy",
-  "updatedAt": "2026-07-14T23:46:41.271Z",
+  "updatedAt": "2026-07-16T03:21:12.091Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -2099,53 +2099,53 @@
       "reviewedAt": "2026-07-13T13:37:19.360Z",
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
-    "home.hero.loop": {
-      "source": "A Service-Native Public Chain\nfor Composable\nDecentralized Services",
-      "sourceHash": "bd297ff641357f6b9010d68317591ab660365a13b0ea0cae20197326db643996",
-      "text": "조합 가능한 탈중앙화 서비스를 위한\n서비스 네이티브 퍼블릭 체인",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+    "home.hero.eyebrow": {
+      "source": "ALUX Network",
+      "sourceHash": "5e3100ea2c1cd77ed74f2927a8c5225a3d0c9f7bf89622ef6345166f2238f18f",
+      "text": "ALUX Network",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.hero.text": {
-      "source": "ALUX unifies execution, permissions, commit logic, and consensus into a composable runtime, enabling decentralized services to persist over time, carry scoped authority, and coordinate across systems.",
-      "sourceHash": "7a3e492f0deb3d4c8b6c0857d326e50b62db0e3157d7cf3547f12aca80db2390",
-      "text": "ALUX는 실행, 권한, 커밋 로직, 합의를 하나의 조합 가능한 런타임으로 통합해 탈중앙화 서비스가 오래 실행되고, 제한된 권한을 보유하며, 여러 시스템을 넘어 조율될 수 있게 합니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Imagine one logical virtual machine that runs everywhere—on a public blockchain, on a private cluster, and on client hardware such as phones and browsers—while abstracting away the state, threads, replication, and consensus underneath. Developers write one concurrent program; where it runs becomes a configuration choice, not an architecture. Its parts still commit together, atomically. That is Virtual Machine Abstraction, and ALUX is building it.",
+      "sourceHash": "9326167f58de3c37f370880a293374e93144e2faafc3255063ec74199ff5e021",
+      "text": "어디서나 실행되는 하나의 논리 가상 머신을 상상해 보십시오. 공용 블록체인, 프라이빗 클러스터, 그리고 휴대전화와 브라우저 같은 클라이언트 하드웨어 위에서 동작하면서 그 아래의 상태, 스레드, 복제, 합의를 추상화합니다. 개발자는 하나의 동시성 프로그램만 작성합니다. 실행 위치는 아키텍처가 아니라 구성 선택이 됩니다. 각 부분은 여전히 함께, 원자적으로 커밋됩니다. 이것이 가상 머신 추상화이며, ALUX가 구축하고 있는 것입니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.hero.title": {
-      "source": "ALUX",
-      "sourceHash": "baa357ef6a30042918e42928be099483e83a83133593c4af07b71938947db0dd",
-      "text": "ALUX",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Building the global VM",
+      "sourceHash": "1d3ec87e2a532c895cc3fbcfb41e48696c9fa5267510a7a15b033e216ed44b51",
+      "text": "전역 VM 구축",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.metaDescription": {
-      "source": "ALUX is composability middleware for decentralized services: a capability runtime where agents, apps, and workflows coordinate across trust boundaries.",
-      "sourceHash": "43b10b5d211177d43faab6eacab0c946c8abc5c0634d0b9d5d66d034bc35248f",
-      "text": "ALUX는 탈중앙화 서비스를 위한 조합 가능성 미들웨어입니다. 에이전트, 앱, 워크플로가 신뢰 경계를 넘어 조율되는 권한 기반 런타임입니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "ALUX is building one logical virtual machine that runs across public blockchains, private clusters, and client hardware while preserving atomic commit.",
+      "sourceHash": "3ff23dd31f2a9bb673555c76e3ea3c4b82961a47ccf043da535ae803fe5979cc",
+      "text": "ALUX는 공용 블록체인, 프라이빗 클러스터, 클라이언트 하드웨어 전반에서 실행되면서 원자적 커밋을 유지하는 하나의 논리 가상 머신을 구축합니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.metaTitle": {
-      "source": "Home | ALUX Network",
-      "sourceHash": "f0467a6b757864c9b42035d04cfc7a9a38f5523f1bce0d2d44114f621de92dd7",
-      "text": "홈 | ALUX Network",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "ALUX Network — Building the Global VM",
+      "sourceHash": "d632055d3369f4e87597857b3e023cfa4a79adc265bee2146049d0ced4c83636",
+      "text": "ALUX Network — 전역 VM 구축",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.infrastructure.groups.0.0": {
-      "source": "Blockchain",
-      "sourceHash": "625da44e4eaf58d61cf048d168aa6f5e492dea166d8bb54ec06c30de07db57e1",
-      "text": "블록체인",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Public Blockchain",
+      "sourceHash": "1d3c2fcf0e6c6a12391fb240feec08fc203e49d353ceef8377c320bb6b134500",
+      "text": "공용 블록체인",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.infrastructure.groups.0.1": {
       "source": "Blockchain Nodes",
@@ -2156,36 +2156,36 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.0.architecture.infrastructure.groups.1.0": {
-      "source": "Cloud",
-      "sourceHash": "b977b950c1ae31e5aeb9ef778cc20a66fc034eb81e738e0206104b677962c465",
-      "text": "클라우드",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Private Cluster",
+      "sourceHash": "a532bf45218091588db1c0c84228ab0b0a1173eb1a71ecd0785505efff49c70b",
+      "text": "프라이빗 클러스터",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.infrastructure.groups.1.1": {
-      "source": "Cloud Servers",
-      "sourceHash": "a5e5bfd769f48802954db242ecb24263cb850e9b59b1c6141328d6fba4fc4cee",
-      "text": "클라우드 서버",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Cloud / Enterprise Nodes",
+      "sourceHash": "d606cde1b4865ba41de16a9227e1febee61d070ef4c6ec3f157c841b3ee42bbc",
+      "text": "클라우드 / 엔터프라이즈 노드",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.infrastructure.groups.2.0": {
-      "source": "Personal Devices",
-      "sourceHash": "95ea76fc52265947d37d65c1bb5e5c50b37cf806e452519a0d9b01c2fce70e5c",
-      "text": "개인 기기",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Client Hardware",
+      "sourceHash": "a134024af5b548ef99bd9767488270c00f5b21e8dd097cb91308914368eed04f",
+      "text": "클라이언트 하드웨어",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.infrastructure.groups.2.1": {
-      "source": "Laptops / Phones",
-      "sourceHash": "320529ebfd6913702eba6836015f18548902525f2436b31c246444bd366bc8ce",
-      "text": "노트북 / 휴대폰",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Phones / Browsers",
+      "sourceHash": "008e836411003eb65cde34c0eacd0d9b2f66ea7c878485693c4436943f2f06e1",
+      "text": "휴대전화 / 브라우저",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.infrastructure.label": {
       "source": "Layer 1",
@@ -2212,28 +2212,28 @@
       "reviewerNotes": "Aligned with the canonical three-layer GLVM model."
     },
     "home.sections.0.architecture.runtime.controls.0": {
-      "source": "Sharding",
-      "sourceHash": "18d5c33469224ffc261297bde4423876e794e19f66d12b1795add1bc757102bc",
-      "text": "샤딩",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "State + Threads",
+      "sourceHash": "91b4b1d7993e1cd33d19ea86638810763543276fa87cc205279ed607e72c2ead",
+      "text": "상태 + 스레드",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.runtime.controls.1": {
-      "source": "Concurrency Control",
-      "sourceHash": "772843e18f1892a605d0712d36f7034087f23722224ecdbf4cb32d07464c835c",
-      "text": "동시성 제어",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Replication",
+      "sourceHash": "0b73ca14b5d89fd5c289af312a66842146e766baf6c5018848b36f086944cb0b",
+      "text": "복제",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.runtime.controls.2": {
-      "source": "Capability Management",
-      "sourceHash": "a6ba599af7c2c54f9e1718005e885633b5e3734f08898aa32e4a150817f353af",
-      "text": "권한 관리",
+      "source": "Consensus",
+      "sourceHash": "8abe09bf65aefdb8e84bd8564efb765179cc01ee3f45809e47c8c9a02f72ff83",
+      "text": "합의",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-15T00:00:00.000Z",
-      "reviewerNotes": "Full capability-management term retained."
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.runtime.label": {
       "source": "Layer 2",
@@ -2324,28 +2324,28 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.0.eyebrow": {
-      "source": "ALUX GLVM Architecture",
-      "sourceHash": "9fc139b9f83d0c540215c9985d2e7091f8218aca6ff2fb7d0d30fe9dc8ec2aef",
-      "text": "ALUX GLVM 아키텍처",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T18:39:40.615Z",
-      "reviewerNotes": "Native final review after rejecting an unnecessary English copy rewrite; aligned to the approved English fact boundary."
+      "source": "Virtual Machine Abstraction",
+      "sourceHash": "4a024c42f0e278b92a2953820d1bd6b89d9cffc986f81b24ca3af0da1a6749a8",
+      "text": "가상 머신 추상화",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.text": {
-      "source": "GLVM is ALUX's target layered architecture for decentralized services: physical infrastructure below, the concurrent runtime in the middle, and world operating systems above.",
-      "sourceHash": "41d29267897359970f610d2e700a17cbc3c41edb8d1562dec1bc53e7ffdc5b9f",
-      "text": "GLVM은 탈중앙화 서비스를 위해 ALUX가 지향하는 계층형 아키텍처입니다. 아래에는 물리 인프라, 가운데에는 동시성 런타임, 위에는 월드 운영 체계를 둡니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T18:39:40.615Z",
-      "reviewerNotes": "Native final review after rejecting an unnecessary English copy rewrite; aligned to the approved English fact boundary."
+      "source": "GLVM abstracts the state, threads, replication, and consensus beneath one concurrent program, so deployment becomes a configuration choice rather than a new application architecture.",
+      "sourceHash": "c1d100d1588d1eafb235efae4bd2bb99c45984f48157ee321381d2bf829878ae",
+      "text": "GLVM은 하나의 동시성 프로그램 아래에서 상태, 스레드, 복제, 합의를 추상화하여 배포 위치가 새로운 애플리케이션 아키텍처가 아니라 구성 선택이 되게 합니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.title": {
-      "source": "Many machines.<br>One logical virtual machine.",
-      "sourceHash": "3d54988a01ff0925560e49abbb86028e4feb1c6863267d35dafb7dee208777bc",
-      "text": "여러 머신을<br>하나의 논리 가상 머신으로",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T18:39:40.615Z",
-      "reviewerNotes": "Native final review after rejecting an unnecessary English copy rewrite; aligned to the approved English fact boundary."
+      "source": "One logical virtual machine.<br>Everywhere.",
+      "sourceHash": "95e9685a95040abf3dba09d1cf1b2da178a221da7f82bdbc0217b3c76c207c6e",
+      "text": "하나의 논리 가상 머신.<br>어디서나.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.10.eyebrow": {
       "source": "Learn More",
@@ -2588,12 +2588,12 @@
       "reviewerNotes": "Native Korean spacing and UI phrasing review against the current English source; ALUX terminology preserved."
     },
     "home.sections.2.clusters.1.label": {
-      "source": "Capability Control",
-      "sourceHash": "90be6c27c6c0e73fd2e1d27a90e508eaf8fd3ee999dcff6d7039747a233b79f2",
-      "text": "권한 제어",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Object Capability Security",
+      "sourceHash": "e34050d9c1ee776fef9affc6b6c896aa270afd6c7ab3d7585d22f273fe0c537e",
+      "text": "객체 기능 보안",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.clusters.1.runtimeBusiness": {
       "source": "Prompt injection may influence a process, but it cannot invoke capabilities that were never passed into that process.",
@@ -2604,12 +2604,12 @@
       "reviewerNotes": "Reviewed for task-scoped OCAP and ambient-authority semantics."
     },
     "home.sections.2.clusters.1.runtimeLabel": {
-      "source": "Capability Control",
-      "sourceHash": "90be6c27c6c0e73fd2e1d27a90e508eaf8fd3ee999dcff6d7039747a233b79f2",
-      "text": "권한 제어",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Native OCAP Support",
+      "sourceHash": "d7f071366586d7463fe2f03c587c7a471cf23a9b1137dfa4693c6efcc98d7cb6",
+      "text": "네이티브 OCAP 지원",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.clusters.1.runtimeTechnical": {
       "source": "OCAP channel references are unforgeable. Each process starts only with capabilities explicitly introduced into its environment; namespaces, attenuation, and lifecycle rules narrow what each holder can do.",
@@ -2620,12 +2620,12 @@
       "reviewerNotes": "Reviewed for task-scoped OCAP and ambient-authority semantics."
     },
     "home.sections.2.clusters.1.runtimeTitle": {
-      "source": "Capabilities become\nprotocol objects",
-      "sourceHash": "2ee77accb09468a3d6cad1eb0dffdf9a18ed0ebc95a15c7c546efd34f1a05cf6",
-      "text": "OCAP은 권한을 프로그래밍 가능하게 합니다",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "OCAP is native\nto the VM",
+      "sourceHash": "288cccc409180fd6da67a28ff7d8df9f027d2e684f124ae2b098fcfc5ebad40d",
+      "text": "OCAP는 VM에\n네이티브로 내장됩니다",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.clusters.1.text": {
       "source": "Unforgeable references make authority explicit: a process can use only capabilities it created or was passed, and those capabilities can be scoped, attenuated, and constrained by runtime rules.",
@@ -2636,12 +2636,12 @@
       "reviewerNotes": "Reviewed for task-scoped OCAP and ambient-authority semantics."
     },
     "home.sections.2.clusters.1.title": {
-      "source": "OCAP Authority",
-      "sourceHash": "72546cdc78a8db3cc122b3e8e9b15c086bd47ff2a86dcccdc31589601e22d4ed",
-      "text": "OCAP 권한",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Native OCAP Support",
+      "sourceHash": "d7f071366586d7463fe2f03c587c7a471cf23a9b1137dfa4693c6efcc98d7cb6",
+      "text": "네이티브 OCAP 지원",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.clusters.2.detailBusiness": {
       "source": "A service can wait for delivery, approval, oracle data, or an agent action, then complete settlement with a verifiable audit trail.",
@@ -2708,12 +2708,12 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.2.clusters.2.runtimeBusiness": {
-      "source": "Long-running workflows can wait for real-world inputs and still reach verifiable public-chain finality.",
-      "sourceHash": "6da1782fac20978d8c793f451a8b4f9919d715c527c6842f45e8f16314250a1c",
-      "text": "장기 워크플로는 현실 세계의 입력을 기다린 뒤에도 검증 가능한 퍼블릭 체인 최종성에 도달할 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T15:13:42.143Z",
-      "reviewerNotes": "Native ko review against the current English source and ALUX terminology baseline."
+      "source": "Long-running workflows can wait for real-world inputs and still settle atomically across block heights.",
+      "sourceHash": "d6dc115c04fe4da4e7c1ddc5a4649eb28334e69e5261d4ec966847e8c74d44ae",
+      "text": "장기 실행 워크플로는 현실 세계의 입력을 기다리면서도 블록 높이를 넘어 원자적으로 정산할 수 있습니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.clusters.2.runtimeLabel": {
       "source": "Transaction Layer",
@@ -3091,229 +3091,117 @@
       "reviewedAt": "2026-07-13T13:37:19.360Z",
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
-    "home.sections.2.clusters.7.detailBusiness": {
-      "source": "Services keep durable public-chain memory that validators can reconstruct and audit.",
-      "sourceHash": "66315734b7e39a68bcea055dcd029b1bfc87274210fee5a09fd77be82de3092b",
-      "text": "서비스는 지속 가능한 퍼블릭 체인 메모리를 갖고, 검증자는 이를 재구성하고 감사할 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
-    },
-    "home.sections.2.clusters.7.detailTechnical": {
-      "source": "Versioned tuple-space resources commit into trie-backed storage, so execution, replay, merge, and finality read the same verifiable view.",
-      "sourceHash": "da278118e43a0a8211b211f16f4f5e10f1e10a1c37f984eae707bac9548b1c24",
-      "text": "버전이 지정된 튜플 공간 리소스는 트라이 기반 저장소에 커밋되므로 실행, 리플레이, 병합, 최종성이 동일한 검증 가능 뷰를 참조합니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
-    },
-    "home.sections.2.clusters.7.detailTitle": {
-      "source": "Auditable state",
-      "sourceHash": "c8344f1ac057449067ace87b6f3d3ea8879b9300768e97306625197dbfded07d",
-      "text": "감사 가능한 상태",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
-    },
     "home.sections.2.clusters.7.items.0": {
-      "source": "Tuple-Space State",
-      "sourceHash": "a76130671765d1048eb886ef54e14fee19cb8d51d7a536d287c9757e87f6f070",
-      "text": "튜플 공간 상태",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
-    },
-    "home.sections.2.clusters.7.items.1": {
-      "source": "Versioned Reads",
-      "sourceHash": "31fd414e70ce374043698179e0aef6ae1e1c0dc2b32682c5e6cc3b1cc26498d6",
-      "text": "버전 읽기",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
-    },
-    "home.sections.2.clusters.7.items.2": {
-      "source": "Merkle Trie",
-      "sourceHash": "4d583aaa4b9579196b7b0942bac05e6bdfca6b917eb46fefdec1d46d94c6f1cd",
-      "text": "Merkle 트라이",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
-    },
-    "home.sections.2.clusters.7.items.3": {
-      "source": "Atomic Commit",
-      "sourceHash": "f1d6d835904d87cce0bbafb56ba19c31ffd5153e2d9fce39e5f58bf1a5c44d49",
-      "text": "원자적 커밋",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
-    },
-    "home.sections.2.clusters.7.label": {
-      "source": "State Layer",
-      "sourceHash": "a6de87e87c5d25f4cc470a892adfc7175ee9dddddf8d6219b00c7019b7e480f2",
-      "text": "상태 계층",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
-    },
-    "home.sections.2.clusters.7.runtimeBusiness": {
-      "source": "Services get durable public-chain memory that validators can reconstruct and audit.",
-      "sourceHash": "8183974e089009c0305ea9c991679b20dfcb6f0eaf18b15115def15ba1d7ffa6",
-      "text": "서비스는 지속 상태를 유지하고, 검증자는 어느 상태가 사용되었는지 증명할 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
-    },
-    "home.sections.2.clusters.7.runtimeLabel": {
-      "source": "State Layer",
-      "sourceHash": "a6de87e87c5d25f4cc470a892adfc7175ee9dddddf8d6219b00c7019b7e480f2",
-      "text": "상태 계층",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
-    },
-    "home.sections.2.clusters.7.runtimeTechnical": {
-      "source": "Versioned tuple-space resources commit through trie-backed storage, so execution, replay, block merge, and finality read the same verifiable views.",
-      "sourceHash": "3ae073bda86635eec560c8600dffb92bb769e3833cb355e58dd3b4b5878bf578",
-      "text": "버전이 지정된 튜플 공간 리소스는 트라이 기반 저장소를 통해 커밋되므로 실행, 리플레이, 블록 병합, 최종성이 동일한 검증 가능 뷰를 참조합니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
-    },
-    "home.sections.2.clusters.7.runtimeTitle": {
-      "source": "Replay keeps state verifiable",
-      "sourceHash": "e989fce5f4a0ebc88d8bca1b34fee981941359ce0b04f8d658d76ed0352aca40",
-      "text": "리플레이로 상태의 검증 가능성을 유지합니다",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
-    },
-    "home.sections.2.clusters.7.text": {
-      "source": "Versioned tuple-space resources are committed through trie-backed storage, so replay, block merge, and finalized state share verifiable views.",
-      "sourceHash": "059170da0c4a949562f625cb5dd7c3373e3c8e1d8b502141f47f4a9ddb5e1e03",
-      "text": "버전이 지정된 튜플 공간 리소스는 트라이 기반 저장소를 통해 커밋되므로 리플레이, 블록 병합, 최종 상태가 동일한 검증 가능 뷰를 공유합니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
-    },
-    "home.sections.2.clusters.7.title": {
-      "source": "Verifiable State",
-      "sourceHash": "75287c0372584778084c03e29dca2eef093826fb1570d44979ab52c9cfb8c51e",
-      "text": "검증 가능한 상태",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
-    },
-    "home.sections.2.clusters.8.items.0": {
       "source": "BranchId",
       "sourceHash": "a7d1daf5f5b1b7daecb5b29f1a851568fe11b98ab543eac8f22f29d535f58058",
       "text": "BranchId",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.8.items.1": {
+    "home.sections.2.clusters.7.items.1": {
       "source": "COMM Events",
       "sourceHash": "0debb172cc432fa1696baa877835ee18c30c95a20923ed03c1f217c3a5e22f77",
       "text": "COMM 이벤트",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.8.items.2": {
+    "home.sections.2.clusters.7.items.2": {
       "source": "Replay Log",
       "sourceHash": "5f15c1d5c40d170448af7b473b6252b144e2445852c0711c8b3f46b49484f96e",
-      "text": "리플레이 로그",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "text": "재생 로그",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.8.items.3": {
+    "home.sections.2.clusters.7.items.3": {
       "source": "Deterministic Replay",
       "sourceHash": "b9ba97dcd9b12127e54bd2d8b1482d11cb27d830145d11cea2177a94ee9eb2c2",
-      "text": "결정적 리플레이",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "text": "결정적 재생",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.8.label": {
+    "home.sections.2.clusters.7.label": {
       "source": "Validator Proof",
       "sourceHash": "65f940d2afb4e31adfdd47dabac0266a1d006331fb49babda678a8ad6a95ff61",
       "text": "검증자 증명",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.8.text": {
+    "home.sections.2.clusters.7.text": {
       "source": "Branch identifiers and replay logs let validators reproduce non-deterministic COMM events deterministically.",
       "sourceHash": "c87dec4b639e8114057510ab97cd2028799b1952de73e72dc83e197494b8996b",
-      "text": "BranchId와 리플레이 로그는 검증자가 비결정적 COMM 이벤트를 결정적으로 재현할 수 있게 합니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "text": "브랜치 식별자와 재생 로그를 통해 검증자는 비결정적 COMM 이벤트를 결정적으로 재현할 수 있습니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.8.title": {
+    "home.sections.2.clusters.7.title": {
       "source": "Replay + Trace",
       "sourceHash": "70ce8e57fde2f5154a3bae92ff9d16e3e1f7544ef2f70aee8dbfa15901ce87dd",
-      "text": "리플레이 + 트레이스",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "text": "재생 + 추적",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.9.items.0": {
+    "home.sections.2.clusters.8.items.0": {
       "source": "Diagnostics",
       "sourceHash": "268f14bbfe119c1e92150583af960a086d7db9619a097f8aa72ff6779842f610",
       "text": "진단",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.9.items.1": {
+    "home.sections.2.clusters.8.items.1": {
       "source": "Expand",
       "sourceHash": "07548c2c6511d4d1780564de8a237a1966cf9c99a97cf5c8a185e6c2aeacff09",
       "text": "확장",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.9.items.2": {
+    "home.sections.2.clusters.8.items.2": {
       "source": "Compiler Format",
       "sourceHash": "860f09eb8585d28b34df9ca135b935c2377421c833b80fe5fc74795e89c194b0",
       "text": "컴파일러 포맷",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.9.items.3": {
+    "home.sections.2.clusters.8.items.3": {
       "source": "Run / Simulate",
       "sourceHash": "fd811d046fcad57c21b25a6828eecd460f86690b5f855b6ee542923ca1b75f53",
       "text": "실행 / 시뮬레이션",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.9.label": {
+    "home.sections.2.clusters.8.label": {
       "source": "Developer Tooling",
       "sourceHash": "5019fbfb8b82150ccc1385e6c3e8c47e50713b01540929f69d2d08f302119184",
       "text": "개발자 도구",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.9.text": {
+    "home.sections.2.clusters.8.text": {
       "source": "Compiler diagnostics, expand, format, and playground runs make service logic visible before it reaches a live node.",
       "sourceHash": "05a7ab2ea6fe36d0a2445d33aa9454e7f5c38bf25664b011bd830ec5c91d9409",
-      "text": "컴파일러 진단, 확장, 포맷, Playground 실행으로 서비스 로직을 실제 노드에 올리기 전에 보고, 테스트하고, 반복할 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "text": "컴파일러 진단, 확장, 포맷, Playground 실행으로 서비스 로직이 실제 노드에 도달하기 전에 가시화됩니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.9.title": {
+    "home.sections.2.clusters.8.title": {
       "source": "LSP + Playground",
       "sourceHash": "2360602921505c6f01232eba07a7cbda0b0744052534db0c6d51ba565c75dac4",
       "text": "LSP + Playground",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.combinations.0.business": {
       "source": "Replaces shared API keys with explicitly passed, attenuated authority; budget and time-window policy remain product-layer targets.",
@@ -3444,12 +3332,12 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.2.combinations.4.business": {
-      "source": "Lets service work pause for real-world inputs, resume later, and still settle against a verifiable public-chain record.",
-      "sourceHash": "7344e653146eb22e23b574e79ec826459431e41483192ccb368ad049ed8525e4",
-      "text": "서비스 작업은 현실 세계의 입력을 기다렸다가 나중에 재개하더라도 검증 가능한 퍼블릭 체인 기록을 바탕으로 정산할 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T15:13:42.143Z",
-      "reviewerNotes": "Native ko review against the current English source and ALUX terminology baseline."
+      "source": "Lets service work pause for real-world inputs, resume later, and still settle as one replayable atomic result.",
+      "sourceHash": "1b75e690fdd34012eb39415fcc157398acc6a02301ee8e1f76f180c98e5bd79f",
+      "text": "서비스 작업이 현실 세계의 입력을 기다리며 일시 중지되고 나중에 재개된 뒤에도, 하나의 재생 가능한 원자적 결과로 정산되게 합니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.combinations.4.label": {
       "source": "Cross-Block Scheduler",
@@ -3476,36 +3364,36 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.2.combinations.5.business": {
-      "source": "Lets teams ship service infrastructure without private servers becoming the trust anchor.",
-      "sourceHash": "fbbea7ac2d2b43a1ecb4cfa45c6693553a2ca49e64dc88400c270ac16068a41c",
-      "text": "팀은 사설 서버를 신뢰 앵커로 만들지 않고 서비스 인프라를 배포할 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Complex applications coordinate many live processes without being reduced to a chain of one-shot transactions.",
+      "sourceHash": "aa756e442d0e4de42536f3ad02c0767847f60e7e78e171c324e6fb9321d868cb",
+      "text": "복잡한 애플리케이션이 일회성 트랜잭션의 연속으로 축소되지 않고 여러 실행 중인 프로세스를 조정할 수 있습니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.combinations.5.label": {
-      "source": "Public Service Backbone",
-      "sourceHash": "85796c4de12147274f0b2cf493987387a943bea18ca15b046b0730288bb7649b",
-      "text": "퍼블릭 서비스 백본",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Process Orchestration",
+      "sourceHash": "51d0ebc669a03d60e011d6ddc22122915da6f7254e8286c5b31f82689a70fec2",
+      "text": "프로세스 오케스트레이션",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.combinations.5.technical": {
-      "source": "Typed KV, trie state, RPC, P2P, and storage context create a public backend for persistent services.",
-      "sourceHash": "b77e2bab87a9039f32eaa0c9e13f7460e65c1d60e993cf0a91810aa80205036c",
-      "text": "Typed KV, 트라이 상태, RPC, P2P, 스토리지 컨텍스트가 지속형 서비스의 공용 백엔드를 구성합니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Concurrent TVM processes can fork, wait, join multiple channel results, or select the first event that becomes ready.",
+      "sourceHash": "95c673c6249b80485d4f9f82711ba9a866ca0bf7071ad95c68b033502c238e34",
+      "text": "동시성 TVM 프로세스는 분기하고, 기다리고, 여러 채널의 결과를 합치거나, 가장 먼저 준비된 이벤트를 선택할 수 있습니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.combinations.5.title": {
-      "source": "Verifiable state with standard access",
-      "sourceHash": "ec4cdd69f457221ac2207db6863077adfb250c86883e72db242ab1fc84b2e9b9",
-      "text": "표준 접근을 갖춘 검증 가능한 상태",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Join and select across channels",
+      "sourceHash": "355eb5624e5093ecb7f61883667b56e6bfb7622768ab75b11e331975937b9d2f",
+      "text": "채널 간 join 및 select",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.combinations.6.business": {
       "source": "AI/API workflows can run asynchronously while producing replay evidence that validators can reproduce.",
@@ -3636,12 +3524,12 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.2.comboDefault": {
-      "source": "Drop a module onto ALUX Runtime to see how it becomes part of the public-chain service runtime.",
-      "sourceHash": "bc6b04bc40cd50432341b317891a2fdb21e1a35bf5f62fb942a102daf8b662ae",
-      "text": "기능 카드를 중앙의 ALUX Runtime에 놓으면 퍼블릭 체인 서비스 런타임에서 맡는 역할을 확인할 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Drop a module onto ALUX Runtime to see how it composes inside the global VM.",
+      "sourceHash": "dcbfefc02a09539895b7951f6a033167578f744b925e3f21a168e39a3f02606e",
+      "text": "모듈을 ALUX Runtime에 놓아 전역 VM 안에서 어떻게 조합되는지 확인해 보십시오.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.comboLabel": {
       "source": "Runtime Connection",
@@ -3660,100 +3548,100 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.2.core.detailBusiness": {
-      "source": "Teams can build services that keep running, hold limited authority, and settle against verifiable public-chain records.",
-      "sourceHash": "869aafadc6e601af37274d257cbedf40cf6b378aff2db3c0edf28cf4c0289590",
-      "text": "팀은 지속 실행되고, 범위가 제한된 권한을 지니며, 검증 가능한 퍼블릭 체인 기록을 바탕으로 정산되는 서비스를 구축할 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T15:13:42.143Z",
-      "reviewerNotes": "Native ko review against the current English source and ALUX terminology baseline."
+      "source": "Developers write one program and choose where it runs as configuration, while its parts still commit together atomically.",
+      "sourceHash": "88d4e735f755233139f5f0e0ec8cf9630f2f5f57a450d0c74d2ed8d922d5f4a5",
+      "text": "개발자는 하나의 프로그램을 작성하고 실행 위치를 구성으로 선택하면서도, 각 부분을 함께 원자적으로 커밋할 수 있습니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.detailTechnical": {
-      "source": "ALUX treats execution, authority, state, and finality as one runtime surface rather than separate application patches.",
-      "sourceHash": "5b9e2d53447fb3898207382ba049bdb617d129e6ff56fd47a33ff3791a0cffcb",
-      "text": "ALUX는 실행, 권한, 상태, 최종성을 서로 분리된 애플리케이션 보완책이 아니라 하나의 런타임 표면으로 다룹니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "ALUX abstracts the state, threads, replication, and consensus beneath a single concurrent execution model.",
+      "sourceHash": "464b0a1eb7319ad16b76eac6bb9c83adc4c35007c545ac5de461bf75a0518eb3",
+      "text": "ALUX는 하나의 동시성 실행 모델 아래에서 상태, 스레드, 복제, 합의를 추상화합니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.detailTitle": {
-      "source": "A public chain for live services",
-      "sourceHash": "b075d3ad819fefcd1adcb4ecc9ef52be8db656404fa56889963b14dbaa47c7d6",
-      "text": "지속 실행 서비스를 위한\n퍼블릭 체인",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "One concurrent program, anywhere",
+      "sourceHash": "6ff83e212db16a377ad9a1014f2e56ef1fcb6118b6fdb235f93a90ef5e65d797",
+      "text": "하나의 동시성 프로그램, 어디서나",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.items.0": {
-      "source": "Public Chain",
-      "sourceHash": "16db026e54a86c4dd3f03425aab30eacc07b4c2741ef410d7710678b57f0b21a",
-      "text": "퍼블릭 체인",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "One Logical VM",
+      "sourceHash": "12fe36781df2a3046f44dc95bc89498757b029bc3577e052d2fc1157c7c79a7a",
+      "text": "하나의 논리 VM",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.items.1": {
-      "source": "Composable Runtime",
-      "sourceHash": "d138e18ce0bde4d2a2d10ab9377781da61c2827a8fe200a034a9146d78f5074a",
-      "text": "조합 가능한 런타임",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Concurrent Runtime",
+      "sourceHash": "4947a2c08f12b5b5de120266d6b6dadfb7ed92997ecb9b72dbdc4488d06f1951",
+      "text": "동시성 런타임",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.items.2": {
-      "source": "Service Primitives",
-      "sourceHash": "e1aa60a2187f4cf0c8cbeacada1597e73c5e4de04fd3334c662aee9647df2a26",
-      "text": "서비스 프리미티브",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Atomic Commit",
+      "sourceHash": "f1d6d835904d87cce0bbafb56ba19c31ffd5153e2d9fce39e5f58bf1a5c44d49",
+      "text": "원자적 커밋",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.label": {
-      "source": "ALUX Public Chain",
-      "sourceHash": "cd616a0c2a2155842837352456999987b2a0782df74f44f851873a680360e673",
-      "text": "ALUX 퍼블릭 체인",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Virtual Machine Abstraction",
+      "sourceHash": "4a024c42f0e278b92a2953820d1bd6b89d9cffc986f81b24ca3af0da1a6749a8",
+      "text": "가상 머신 추상화",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.runtimeBusiness": {
-      "source": "That is the public-chain layer for services that must keep running, carry scoped authority, and settle with verifiable finality.",
-      "sourceHash": "f58744fc779a165eadc82bd585ee310f102f2174501ccc6adda0e5f830eaf32e",
-      "text": "이것이 지속 실행되고, 범위가 제한된 권한을 지니며, 검증 가능한 최종성으로 정산되어야 하는 서비스를 위한 퍼블릭 체인 계층입니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "The same concurrent program can target public blockchains, private clusters, and client hardware without becoming three architectures.",
+      "sourceHash": "1f130e8448a6e3dc35ccbb17f3b5e02983f983416edc40a17eab8fdd1ba193cb",
+      "text": "동일한 동시성 프로그램이 세 가지 아키텍처로 나뉘지 않고 공용 블록체인, 프라이빗 클러스터, 클라이언트 하드웨어를 대상으로 실행될 수 있습니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.runtimeLabel": {
-      "source": "ALUX Public Chain",
-      "sourceHash": "cd616a0c2a2155842837352456999987b2a0782df74f44f851873a680360e673",
-      "text": "ALUX 퍼블릭 체인",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Virtual Machine Abstraction",
+      "sourceHash": "4a024c42f0e278b92a2953820d1bd6b89d9cffc986f81b24ca3af0da1a6749a8",
+      "text": "가상 머신 추상화",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.runtimeTechnical": {
-      "source": "TVM execution, OCAP authority, verifiable state, cross-block commit logic, and BlockGit finality meet in one runtime.",
-      "sourceHash": "5926dec79fa2771ba9ac58b309332a177084ded8c8c5d30d9c536d2ad26194bb",
-      "text": "TVM 실행, OCAP 권한, 검증 가능한 상태, 블록 간 커밋 로직, BlockGit 최종성이 하나의 런타임 안에서 만납니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "TVM execution, Native OCAP Support, cross-block commit logic, and BlockGit finality meet inside one runtime abstraction.",
+      "sourceHash": "8245d06d62a087a1ec2a52f21f6a3531274f12c633b77ea6c2d0b2e2f2125e26",
+      "text": "TVM 실행, 네이티브 OCAP 지원, 크로스 블록 커밋 로직, BlockGit 최종성이 하나의 런타임 추상화 안에서 만납니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.runtimeTitle": {
-      "source": "ALUX Runtime\nforms the public chain",
-      "sourceHash": "7f6272305b25178b361eb7cadd5029244e8e7be29a87eb83bfb4dde2ad9103e8",
-      "text": "ALUX Runtime이\n퍼블릭 체인을 구성합니다",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "ALUX Runtime\nforms one logical VM",
+      "sourceHash": "1fa69e26ebc8713f3fc4dac143643fdd39677a248654e6b1662422d5d3a00968",
+      "text": "ALUX Runtime은\n하나의 논리 VM을 구성합니다",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.text": {
-      "source": "A service-native public chain where TVM execution, capability authority, verifiable state, and BlockGit finality compose into one runtime.",
-      "sourceHash": "a74bb80fbfb66bd857672dacf6dcc6ea5ace4a4ba50e8bbdd8f5e1318294f965",
-      "text": "TVM 실행, 권한 체계, 검증 가능한 상태, BlockGit 최종성이 하나의 런타임으로 조합되는 서비스 네이티브 퍼블릭 체인입니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "One logical VM where concurrent TVM execution, Native OCAP Support, cross-block atomicity, and BlockGit finality compose across deployment environments.",
+      "sourceHash": "9ad34ac695172adc51009da9a02b231d6f84f4d4a71ce8cdebec152ad5578a09",
+      "text": "하나의 논리 VM 안에서 동시성 TVM 실행, 네이티브 OCAP 지원, 크로스 블록 원자성, BlockGit 최종성이 배포 환경 전반에 걸쳐 조합됩니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.title": {
       "source": "ALUX Runtime",
@@ -3812,12 +3700,12 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.2.mapIntro": {
-      "source": "Drag modules into ALUX Runtime to reveal their public-chain role.\nDouble-click any card for the deeper note.",
-      "sourceHash": "b7afa3e68c782724f33163493f035700aa01a5a5ef10867259eef35c47c82a4c",
-      "text": "모듈을 ALUX Runtime으로 끌어 퍼블릭 체인에서 맡는 역할을 확인하세요.\n카드를 두 번 클릭하면 실제 서비스에서 왜 중요한지 볼 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Drag modules into ALUX Runtime to see how they compose inside one logical VM.\nDouble-click any card for the deeper note.",
+      "sourceHash": "e2812b3ee56295daad0a77b7e0be19d79f2d8a251bcd394f0904579559a9e972",
+      "text": "모듈을 ALUX Runtime으로 드래그하여 하나의 논리 VM 안에서 어떻게 조합되는지 확인해 보십시오.\n카드를 더블클릭하면 자세한 설명을 볼 수 있습니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.mapTitle": {
       "source": "ALUX Capability Map",
@@ -3916,12 +3804,12 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.2.text": {
-      "source": "Drag modules into ALUX Runtime to reveal their public-chain role.\nDouble-click any card for the deeper note.",
-      "sourceHash": "b7afa3e68c782724f33163493f035700aa01a5a5ef10867259eef35c47c82a4c",
-      "text": "모듈을 ALUX Runtime으로 끌어 퍼블릭 체인에서 맡는 역할을 확인하세요.\n카드를 두 번 클릭하면 실제 서비스에서 왜 중요한지 볼 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Drag modules into ALUX Runtime to see how they compose inside one logical VM.\nDouble-click any card for the deeper note.",
+      "sourceHash": "e2812b3ee56295daad0a77b7e0be19d79f2d8a251bcd394f0904579559a9e972",
+      "text": "모듈을 ALUX Runtime으로 드래그하여 하나의 논리 VM 안에서 어떻게 조합되는지 확인해 보십시오.\n카드를 더블클릭하면 자세한 설명을 볼 수 있습니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.title": {
       "source": "ALUX Runtime Capability Map",
@@ -3932,12 +3820,12 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.6.cta.eyebrow": {
-      "source": "Build past the one-shot transaction",
-      "sourceHash": "b2f9dae6e99daa33e7ae71c20ad775d9eafec0ef198fbc04ba3e2b94ff6958cc",
-      "text": "일회성 트랜잭션을 넘어서",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Build beyond the one-shot transaction",
+      "sourceHash": "7d921728ddd577dd145307b9d84333995edb9d8328fcb485970b27d25115df7d",
+      "text": "일회성 트랜잭션을 넘어 구축하기",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.cta.label": {
       "source": "Open Runtime Lab",
@@ -3948,20 +3836,20 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.6.cta.text": {
-      "source": "Use Runtime Lab to inspect current execution primitives and the target composition model.",
-      "sourceHash": "763fcab8477ceca69d5373f95552d0b5f8742e59a19184a61b13b5d07d49d379",
-      "text": "Runtime Lab에서 현재 구현된 실행 기본 요소와 목표로 삼는 조합 모델을 살펴보세요.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Use Runtime Lab to inspect fork, wait, join, select, replay, and atomic commit across the ALUX execution model.",
+      "sourceHash": "0d9111beabe957b21809ce6fd01e855558eaf96dc7af456cde0919933993bd9a",
+      "text": "Runtime Lab에서 ALUX 실행 모델의 fork, wait, join, select, replay, 원자적 커밋을 살펴보십시오.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.cta.title": {
-      "source": "Explore a service that can wait, resume, coordinate, and settle.",
-      "sourceHash": "fcc2d6c7974316b6bf4a38cb43d5ed89ee3703e907d1ed595384132fd056728f",
-      "text": "대기하고, 재개하고, 조율하고, 정산하는 서비스를 살펴보세요.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Explore concurrent programs that orchestrate and commit atomically.",
+      "sourceHash": "c0c5f11afa2a6f44dbaaba36bf125798ec26a24769e5d4ee2a936bf8c655ea78",
+      "text": "오케스트레이션하고 원자적으로 커밋하는 동시성 프로그램을 살펴보십시오.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.demos.0.label": {
       "source": "reservation.tox",
@@ -3972,20 +3860,20 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.6.demos.0.status": {
-      "source": "WAITING",
-      "sourceHash": "77aaf105c28c4c82ea7b2e0627b92fdff753c249771e7d2ab4a6f7ec6a5f400f",
-      "text": "대기 중",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "LIVE TRACE",
+      "sourceHash": "b553a3650c45b7438000814f482dcef4257e01ae0a15c3e9d6d048359bf860d2",
+      "text": "실시간 추적",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.demos.0.steps.0": {
-      "source": "Request",
-      "sourceHash": "59f03d642b41e22f4575061e817f9e87c3ced5a0e77d5c92364bd45b7f90d0c9",
-      "text": "요청",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Spawn",
+      "sourceHash": "0fc12ed14135db008d0eb5b87113feec1e3871ba7b35373cd20aebd119a69896",
+      "text": "생성",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.demos.0.steps.1": {
       "source": "Wait",
@@ -3996,20 +3884,28 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.6.demos.0.steps.2": {
-      "source": "Resume",
-      "sourceHash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
-      "text": "재개",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Join",
+      "sourceHash": "fd30fe681b4b2d9e55f851cb34641f907401aa43e9d80f5b1e14ce714ef00497",
+      "text": "합류",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.demos.0.steps.3": {
-      "source": "Settle",
-      "sourceHash": "a0c79a8531e1feaabb997bc20b88d1db6896b8cdce1b22af71e9d665f2405e25",
-      "text": "정산",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Select",
+      "sourceHash": "2a78025de6aae5e7ff88e5a951bb3a78ddd67388913529cf9e2dd9653e62b02d",
+      "text": "선택",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
+    },
+    "home.sections.6.demos.0.steps.4": {
+      "source": "Commit",
+      "sourceHash": "82a9c46ffa4789945d9f2359d75891558ef6faa8dee09e4b25e4e0597704f5bd",
+      "text": "커밋",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.demos.1.core": {
       "source": "TVM / TSAC",
@@ -4180,20 +4076,20 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.6.items.0.0": {
-      "source": "Bookings, Approvals, and Escrow",
-      "sourceHash": "1ebb72bccc018bc2426ea534f6c1b38c82b8e01527c4a5ae4381c3ab3d915ab6",
-      "text": "예약, 승인, 에스크로 흐름",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Long-Running Process Orchestration",
+      "sourceHash": "ce71b56e880f973e3f98d6bfd09eccd6afd6b7cc318ea39cb44b8cdda23d8489",
+      "text": "장기 실행 프로세스 오케스트레이션",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.items.0.1": {
-      "source": "Build workflows that pause for inventory, a signature, or payment, then resume and settle without restarting the service.",
-      "sourceHash": "14d9bf64a22e2534773475b857715e36a2d474cc4c635324d96452ec71f807db",
-      "text": "재고, 서명 또는 결제를 기다렸다가 조건이 충족되면 다시 실행하고 정산하는 워크플로를 구축합니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Fork processes, wait for inputs, join results from multiple channels, or select whichever event becomes ready first—without restarting the transaction.",
+      "sourceHash": "d9bdaa277475a00e01f784f896d56d97c5aed82c5402ffb349dcf92a12860f85",
+      "text": "트랜잭션을 다시 시작하지 않고 프로세스를 분기하고, 입력을 기다리고, 여러 채널의 결과를 합치거나, 가장 먼저 준비된 이벤트를 선택합니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.items.1.0": {
       "source": "Concurrent EVM Applications",
@@ -4204,52 +4100,52 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.6.items.1.1": {
-      "source": "Run isolated EVM applications concurrently and coordinate shared resources through TVM and TSAC.",
-      "sourceHash": "a31442d64343c143cc3202698ff73c0fe9b3a8e9bb03bc32f8c20612d3d46f05",
-      "text": "격리된 EVM 애플리케이션을 동시에 실행하고 TVM과 TSAC로 공유 자원을 조율합니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Run EVM bytecode inside isolated sandboxes, coordinate concurrent workloads through TVM, and migrate supported contracts through familiar Ethereum-facing interfaces.",
+      "sourceHash": "7129801cbf6bfb2a9f762408fdd81ace6452596e9b01ebddf173409c46bd68d0",
+      "text": "격리된 샌드박스에서 EVM 바이트코드를 실행하고, TVM을 통해 동시성 워크로드를 조정하며, 익숙한 Ethereum 인터페이스로 지원되는 계약을 마이그레이션합니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.items.2.0": {
-      "source": "Cross-System Service Workflows",
-      "sourceHash": "6acda05ea030addc1d756270919673237d42dcc2dd34571c5fddec7fbef6b3b8",
-      "text": "크로스 시스템 서비스 워크플로",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Atomic Cross-System Workflows",
+      "sourceHash": "fd54302666522ebfa7eb8959aab99018fdecbc535a2d23678a933c3dc17c3993",
+      "text": "원자적 크로스 시스템 워크플로",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.items.2.1": {
-      "source": "Connect on-chain logic with verified HTTPS inputs today, while broader database and external-system adapters remain part of the target architecture.",
-      "sourceHash": "89e31ab58f082e45acffb769372074af430739a4fa604385397cac50c5ed7951",
-      "text": "현재 온체인 로직을 검증된 HTTPS 입력과 연결할 수 있습니다. 더 폭넓은 데이터베이스 및 외부 시스템 어댑터는 목표 아키텍처 범위에 포함됩니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:53:26.079Z",
-      "reviewerNotes": "Native final review against the current English source, ALUX knowledge base, and official terminology."
+      "source": "Stage work across blocks and connected systems, then commit the complete transaction all-or-nothing instead of exposing partial state.",
+      "sourceHash": "0e0f2eb2b4c2295ec78f1488a9dac8eafc3fe1661e35c5d5b11263c34329d2b9",
+      "text": "블록과 연결된 시스템 전반의 작업을 스테이징한 뒤, 부분 상태를 노출하지 않고 전체 트랜잭션을 전부 아니면 전무 방식으로 커밋합니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.items.3.0": {
-      "source": "Capability-Native Applications",
-      "sourceHash": "5c5319c58115f397156ccb407ef34664c83055ecbea18588eb6f442466ba2948",
-      "text": "권한 기반 애플리케이션",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Native OCAP Applications",
+      "sourceHash": "b432db53ec8bd15229e87ed9b26893d7e364aaeecae0c625ab65ff9327abe377",
+      "text": "네이티브 OCAP 애플리케이션",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.items.3.1": {
-      "source": "Pass task-specific, unforgeable capabilities between services instead of letting identity carry unrelated ambient authority into every task.",
-      "sourceHash": "9b131888c20ce31779c3fe56bdf6261d1d430c21c1722ffd150104c8372e6889",
-      "text": "광범위한 신원이 모든 작업에 무관한 주변 권한을 끌고 들어오게 하는 대신, 작업별로 위조할 수 없는 권한을 서비스 사이에 전달합니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-14T16:34:17.746Z",
-      "reviewerNotes": "Reviewed for task-scoped OCAP and ambient-authority semantics."
+      "source": "Compose task-specific, unforgeable capabilities between processes instead of letting identity carry unrelated ambient authority into every task.",
+      "sourceHash": "ae1087aa3abe62594aaa9e0f8647674283f1fd0582850ebf9e30da964dd58a5a",
+      "text": "신원이 관련 없는 주변 권한을 모든 작업에 끌어들이게 하는 대신, 프로세스 간에 작업별 위조 불가능한 기능을 조합합니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.text": {
-      "source": "Start with familiar EVM tooling, then build public-chain services that stay alive across blocks, coordinate with external systems, and carry explicit authority.",
-      "sourceHash": "1965ef5474b1c78f7254fedb4e14fa3d99d7447aab3b071e3d60ced0c421f250",
-      "text": "익숙한 EVM 도구에서 시작해 블록을 넘어 계속 실행되고, 외부 시스템과 조율하며, 명시적인 권한을 지니는 퍼블릭 체인 서비스를 구축하세요.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Build decentralized applications as concurrent programs: processes can fork, wait, join multiple channels, select the first available event, coordinate across blocks, and commit all-or-nothing.",
+      "sourceHash": "ea9f783a586ab857b57f153f82eca9581d2a11822f00fefd8dd1d6816ad496ad",
+      "text": "탈중앙화 애플리케이션을 동시성 프로그램으로 구축합니다. 프로세스는 분기하고, 기다리고, 여러 채널을 합치고, 첫 번째로 사용 가능한 이벤트를 선택하고, 블록을 넘어 조정하며, 전부 아니면 전무 방식으로 커밋할 수 있습니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.title": {
       "source": "What You Can\nBuild on ALUX",
@@ -4284,12 +4180,12 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.9.items.0.1": {
-      "source": "No. Faster L1s accelerate the same abstraction: one-shot state updates. ALUX is a decentralized concurrent runtime for services that wait, resume, coordinate, and carry authority across time. Its GLVM architecture is designed to extend that logical execution model across blockchain nodes, cloud servers, and personal devices.",
-      "sourceHash": "439126b5c82b0e14b41d0ef51edffef02f551a6a87d05fc2104d67f86d1786b4",
-      "text": "아닙니다. 더 빠른 L1은 일회성 상태 업데이트라는 같은 추상화를 가속합니다. ALUX는 대기하고, 재개하고, 조율하며, 시간에 걸쳐 권한을 유지하는 서비스를 위한 탈중앙화 동시성 런타임입니다. GLVM 아키텍처는 이 논리 실행 모델을 블록체인 노드, 클라우드 서버, 개인 기기로 확장하도록 설계되었습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "No. Faster L1s accelerate the same abstraction: one-shot state updates that happen within one block. ALUX is a decentralized concurrent runtime for Long Transactions that can wait, resume, join across multiple channels, or select whichever channel becomes ready first; their state updates are no longer constrained by a block boundary. Through its GLVM architecture—Virtual Machine Abstraction—the same logical transaction is designed to extend beyond block boundaries toward shard and system boundaries.",
+      "sourceHash": "11adb65fa335cf45d8242c52f7bb560d93a05f7a0f4d63dd3d3386b667980ae3",
+      "text": "아닙니다. 더 빠른 L1은 같은 추상화, 즉 한 블록 안에서 일어나는 일회성 상태 업데이트를 가속합니다. ALUX는 기다리고, 재개하고, 여러 채널을 합치거나, 가장 먼저 준비된 채널을 선택할 수 있는 장기 트랜잭션(Long Transaction)을 위한 탈중앙화 동시성 런타임입니다. 상태 업데이트는 더 이상 블록 경계에 제약되지 않습니다. GLVM 아키텍처인 가상 머신 추상화를 통해 동일한 논리 트랜잭션은 블록 경계를 넘어 샤드와 시스템 경계까지 확장되도록 설계됩니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.1.0": {
       "source": "What becomes possible on ALUX that ordinary smart contracts cannot do?",
@@ -4300,12 +4196,12 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.9.items.1.1": {
-      "source": "A transaction can suspend across block boundaries, preserve its execution context, and resume when the awaited input arrives. Replay and commit mechanisms let validators reproduce the same outcome and finalize bounded work atomically.",
-      "sourceHash": "5022f2f7558ccde4e640169b67208fa45932d86562da6a2df7ff91195ed5ce2f",
-      "text": "트랜잭션은 블록 경계에서 일시 중단한 뒤 실행 컨텍스트를 보존하고, 기다리던 입력이 도착하면 재개할 수 있습니다. 리플레이와 커밋 메커니즘을 통해 검증자는 같은 결과를 재현하고 범위가 제한된 작업을 원자적으로 최종화할 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "ALUX programs can fork into concurrent processes, wait for external inputs, join results from multiple channels, select the first event that becomes ready, and still commit the complete transaction atomically. Replay and commit mechanisms let validators reproduce the same outcome without exposing partial state.",
+      "sourceHash": "f7f758c66e44ea5e25ebc3be9b4a201c9d83621304d4774030035d88feff88e6",
+      "text": "ALUX 프로그램은 동시성 프로세스로 분기하고, 외부 입력을 기다리고, 여러 채널의 결과를 합치고, 가장 먼저 준비된 이벤트를 선택하면서도 전체 트랜잭션을 원자적으로 커밋할 수 있습니다. 재생 및 커밋 메커니즘을 통해 검증자는 부분 상태를 노출하지 않고 동일한 결과를 재현할 수 있습니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.2.0": {
       "source": "Why is ALUX built for AI agents?",
@@ -4316,28 +4212,28 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.9.items.2.1": {
-      "source": "Agents need more than wallets. They need scoped access to tools and services, context across multi-step work, and async coordination. In ALUX, a process cannot forge arbitrary channel references; it can act only through references it created or was explicitly passed.",
-      "sourceHash": "1e7860fe3a8e9a881c6c5bf0504214fd4fbbf9cf823ef76cd6fa1c200dbe6f7c",
-      "text": "에이전트에는 지갑만으로 부족합니다. 도구와 서비스에 대한 범위가 제한된 접근 권한, 여러 단계에 걸친 작업 컨텍스트, 비동기 조율이 필요합니다. ALUX에서 프로세스는 임의의 채널 참조를 위조할 수 없으며, 직접 만들었거나 명시적으로 전달받은 참조를 통해서만 작업할 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "An on-chain agent is naturally a Long Transaction. Calling an LLM or a tool takes time; it cannot complete instantly—one only has to look at a Claude Code or Codex session. In other words, ALUX is a decentralized durable execution engine for agents.",
+      "sourceHash": "f49b9c95957b3abbc06f4eb3ea41e6fa378d7d0ae1031744f6ecfcb1ac5c5823",
+      "text": "온체인 에이전트는 본질적으로 장기 트랜잭션(Long Transaction)입니다. LLM이나 도구를 호출하는 데는 시간이 걸리며 즉시 완료될 수 없습니다. Claude Code나 Codex 세션만 보아도 알 수 있습니다. 다시 말해 ALUX는 에이전트를 위한 탈중앙화 내구 실행 엔진입니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.3.0": {
-      "source": "What is a capability in ALUX?",
-      "sourceHash": "bc79e852feef70a6362035be08e873ce5469a6de84ed09aa8c7f343dc82af005",
-      "text": "ALUX에서 권한(capability)이란 무엇인가요?",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "What is Object Capability (OCAP)?",
+      "sourceHash": "6a6bfe6952509bafc7fa9e58c047837482f40b5f8fb3758a06ea8aec588b91dd",
+      "text": "객체 기능(OCAP)이란 무엇입니까?",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.3.1": {
-      "source": "In the current runtime, a capability is an unforgeable channel reference that can be held, passed, and attenuated. General-purpose expiry, revocation, and usage quotas remain planned until they are implemented and tested.",
-      "sourceHash": "b99bb66a2ac4de36b8b1330872438af9adfe1ce5fa23c19319f8dc03f19ce9f4",
-      "text": "현재 런타임에서 권한(capability)은 보유하고, 전달하고, 더 좁게 제한할 수 있는 위조 불가능한 채널 참조입니다. 범용 만료, 철회, 사용량 제한은 구현과 테스트가 끝날 때까지 계획 단계에 남아 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Technical details are being finalized and will be added shortly.",
+      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe",
+      "text": "관련 기술 세부 사항을 최종 정리 중이며 곧 추가할 예정입니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T03:20:12.428Z",
+      "reviewerNotes": "Reviewed against the current English source."
     },
     "home.sections.9.items.4.0": {
       "source": "How does ALUX keep Long Transactions deterministic?",
@@ -4364,44 +4260,60 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "home.sections.9.items.5.1": {
-      "source": "ALUX exposes a growing set of eth_* JSON-RPC methods and runs EVM and Solidity workloads through its EVM path. Compatibility depends on the RPC methods and EVM features currently implemented; Tolang is available for concurrency-native services.",
-      "sourceHash": "26a24715b9cffdffcfab014c7465c29a5612157167ebc1ee31872862cc099095",
-      "text": "ALUX는 지원 범위를 늘려 가는 eth_* JSON-RPC 메서드를 제공하며, EVM 실행 경로를 통해 EVM 및 Solidity 워크로드를 처리합니다. 호환성은 현재 구현된 RPC 메서드와 EVM 기능에 따라 달라집니다. 동시성 중심 서비스를 만들 때는 Tolang을 사용할 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "TVM runs EVM bytecode inside isolated sandboxes, so most EVM contracts can be migrated to ALUX with minimal changes. ALUX also presents an Ethereum-compatible view through a set of commonly used eth_* JSON-RPC methods.",
+      "sourceHash": "49ae7c5406ea4b32ea374ef2354de314b26f4ec2a9857ee052e1c3560c2b0a99",
+      "text": "TVM은 격리된 샌드박스에서 EVM 바이트코드를 실행하므로 대부분의 EVM 계약을 최소한의 변경으로 ALUX에 마이그레이션할 수 있습니다. ALUX는 일반적으로 사용되는 eth_* JSON-RPC 메서드 집합을 통해 Ethereum 호환 뷰도 제공합니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.6.0": {
-      "source": "What is ALUX's OpenClaw?",
-      "sourceHash": "c5f164ea3a6d295843766bb3d017afdb69f7fdc7b923e56ff5ed2f0f9e6bb70a",
-      "text": "ALUX의 OpenClaw는 무엇인가요?",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Some other chains also claim to support cross-block transactions. How is ALUX different?",
+      "sourceHash": "9f932c7d7e55e031f5c2364e2cfb8ceb9cdc28fd4a0dd9df0b21381cd659539b",
+      "text": "다른 체인도 크로스 블록 트랜잭션을 지원한다고 주장합니다. ALUX는 무엇이 다릅니까?",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.6.1": {
-      "source": "OpenClaw is the endgame: an open capability layer for the agent world, where agents discover, request, delegate, and combine what they are allowed to do. The internet connected information; blockchains connected assets; agent networks must connect capability.",
-      "sourceHash": "1fe828f6e02e1fcaa888055741ddc307270513401b8599e96bf267f5c665bbf3",
-      "text": "OpenClaw는 최종 비전입니다. 에이전트 세계를 위한 개방형 권한 계층으로, 에이전트가 허용된 작업을 발견하고, 요청하고, 위임하고, 조합할 수 있게 합니다. 인터넷이 정보를 연결하고 블록체인이 자산을 연결했다면, 에이전트 네트워크는 권한을 연결해야 합니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "<strong>The keyword is atomicity.</strong><br><br><strong>Compensation / Saga:</strong> <code>commit → commit → ✗ fail → run compensating undo</code><br>Each step commits locally, intermediate states are visible, compensation can also fail, and external effects cannot always be reversed. This is eventual consistency. Some asynchronous chains, including ICP and Rialo, lean on this model. It is easier to implement, but unsuitable for applications that require stronger ACID guarantees.<br><br><strong>ALUX all-or-nothing:</strong> <code>stage → stage → ✗ fail → discard everything</code><br>Nothing commits until the whole transaction commits. On abort, uncommitted effects are discarded and no partial state becomes observable. That is true ACID atomicity across block heights.",
+      "sourceHash": "0b903c35ac399aec4fcbbaef8979f7d72f530e7b6bce101ffb21e39da45b9e96",
+      "text": "<strong>핵심은 원자성입니다.</strong><br><br><strong>보상 / Saga:</strong> <code>commit → commit → ✗ fail → run compensating undo</code><br>각 단계는 로컬에서 커밋되고 중간 상태가 노출되며, 보상 자체도 실패할 수 있고 외부 효과를 항상 되돌릴 수 있는 것은 아닙니다. 이것은 최종 일관성입니다. ICP와 Rialo를 포함한 일부 비동기 체인은 이 모델에 의존합니다. 구현은 더 쉽지만 더 강한 ACID 보장이 필요한 애플리케이션에는 적합하지 않습니다.<br><br><strong>ALUX 전부 아니면 전무:</strong> <code>stage → stage → ✗ fail → discard everything</code><br>전체 트랜잭션이 커밋될 때까지 아무것도 커밋되지 않습니다. 중단되면 커밋되지 않은 효과는 모두 폐기되고 부분 상태는 관찰되지 않습니다. 이것이 블록 높이를 아우르는 진정한 ACID 원자성입니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.7.0": {
-      "source": "How is ALUX different from agent frameworks like LangGraph or Temporal?",
-      "sourceHash": "65e4de795ecbe7556515192129d33488c5298391ddbc98ed96494967bb1bd001",
-      "text": "ALUX는 LangGraph나 Temporal 같은 에이전트 프레임워크와 무엇이 다른가요?",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Why is OCAP a stronger and composable security model?",
+      "sourceHash": "a3482e3eef954139b968cd38f0d5ee947a43362320973b9d9b566973c520cea5",
+      "text": "OCAP가 더 강력하고 조합 가능한 보안 모델인 이유는 무엇입니까?",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.7.1": {
-      "source": "LangGraph and Temporal are application frameworks for coordinating workflows you control. ALUX is a public runtime designed for work across trust boundaries: validators can reproduce recorded COMM choices, processes act through explicit channel capabilities, and cross-block execution can preserve context through defined replay and commit paths.",
-      "sourceHash": "ca5d61a06fc7bf1ba2ad5c97310883958b276845e06f3ee0c7352373edfd151f",
-      "text": "LangGraph와 Temporal은 사용자가 통제하는 워크플로를 조율하는 애플리케이션 프레임워크입니다. ALUX는 신뢰 경계를 넘는 작업을 위한 퍼블릭 런타임입니다. 검증자는 기록된 COMM 선택을 재현할 수 있고, 프로세스는 명시적인 채널 권한을 통해서만 동작하며, 블록 간 실행은 정의된 리플레이·커밋 경로를 따라 컨텍스트를 보존할 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "Technical details are being finalized and will be added shortly.",
+      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe",
+      "text": "관련 기술 세부 사항을 최종 정리 중이며 곧 추가할 예정입니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T03:20:12.428Z",
+      "reviewerNotes": "Reviewed against the current English source."
+    },
+    "home.sections.9.items.8.0": {
+      "source": "What does it mean for OCAP to be natively supported in ALUX?",
+      "sourceHash": "248e74389c85b31700b030cf2d3828b0adc188f0d2677575ede7fa339b64d00d",
+      "text": "ALUX가 OCAP를 네이티브로 지원한다는 것은 무엇을 의미합니까?",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
+    },
+    "home.sections.9.items.8.1": {
+      "source": "Technical details are being finalized and will be added shortly.",
+      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe",
+      "text": "관련 기술 세부 사항을 최종 정리 중이며 곧 추가할 예정입니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T03:20:12.428Z",
+      "reviewerNotes": "Reviewed against the current English source."
     },
     "home.sections.9.title": {
       "source": "FAQ",
@@ -4460,13 +4372,12 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "inlineUiLabels.capabilityMapMobileIntro": {
-      "source": "Tap once to open a module’s deeper note.\nDouble-tap to connect it to ALUX Runtime and reveal its public-chain role in the composed result.",
-      "sourceHash": "b46bf930e74f0b359fc59920335593a522892dab3d3d9a69fdfe7f0cda8cfb74",
-      "text": "한 번 탭하면 모듈의 상세 설명이 열립니다.\n더블 탭하면 모듈이 ALUX 런타임에 연결되고, 조합 결과를 통해 모듈이 퍼블릭 체인에서 맡는 역할을 확인할 수 있습니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-14T23:46:41.271Z",
-      "reviewerNotes": "Native Korean mobile-interaction review aligned to the current English source and ALUX terminology.",
-      "previousSource": "Tap a module to explore its role.\nDouble-tap it to connect to ALUX Runtime and see the composed result."
+      "source": "Tap once to open a module’s deeper note.\nDouble-tap to connect it to ALUX Runtime and see its role inside the composed VM.",
+      "sourceHash": "9cb4cc9860af0e3f8c775b42b0f3259202eb6b4aab086912d2ce85bd80800eb4",
+      "text": "한 번 탭하면 모듈의 자세한 설명이 열립니다.\n두 번 탭하면 ALUX Runtime에 연결되고 조합된 VM 안에서의 역할을 확인할 수 있습니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "inlineUiLabels.capabilityMapMobileTapConnect": {
       "source": "Double-tap · Connect to Runtime",
@@ -4474,8 +4385,7 @@
       "text": "더블 탭 · 런타임에 연결",
       "status": "ai-reviewed",
       "reviewedAt": "2026-07-14T23:46:41.271Z",
-      "reviewerNotes": "Native Korean mobile-interaction review aligned to the current English source and ALUX terminology.",
-      "previousSource": "Double-tap to connect"
+      "reviewerNotes": "Native Korean mobile-interaction review aligned to the current English source and ALUX terminology."
     },
     "inlineUiLabels.capabilityMapMobileTapDetail": {
       "source": "Tap once · View details",
@@ -4483,8 +4393,7 @@
       "text": "한 번 탭 · 자세히 보기",
       "status": "ai-reviewed",
       "reviewedAt": "2026-07-14T23:46:41.271Z",
-      "reviewerNotes": "Native Korean mobile-interaction review aligned to the current English source and ALUX terminology.",
-      "previousSource": "Tap a module for details"
+      "reviewerNotes": "Native Korean mobile-interaction review aligned to the current English source and ALUX terminology."
     },
     "inlineUiLabels.constraint": {
       "source": "Constraint",
@@ -4943,12 +4852,12 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "parallelConcurrentComposable.foundations.text": {
-      "source": "A long-running service stays coherent because every step can run, interact, carry explicit authority, replay deterministically, and settle along one verifiable public-chain path.",
-      "sourceHash": "10218a9ed2aed5fc694afe1eb504ed6685778732c65cc23245e474ebd6d6b272",
-      "text": "장기 실행 서비스가 일관성을 유지하는 이유는 모든 단계가 하나의 검증 가능한 퍼블릭 체인 경로에서 실행되고, 상호작용하고, 명시적 권한을 지니며, 결정적으로 재현되고, 정산되기 때문입니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "source": "A long-running service stays coherent because every step can run, interact, carry explicit authority, replay deterministically, and settle along one verifiable atomic path.",
+      "sourceHash": "fd931f3df6844dc0ae7543a89cf10c50b53a8e981dafb1e307d43b2516a2c35e",
+      "text": "장기 실행 서비스가 일관성을 유지하는 이유는 각 단계가 실행되고, 상호작용하고, 명시적 권한을 전달하고, 결정적으로 재생되며, 검증 가능한 하나의 원자적 경로를 따라 정산될 수 있기 때문입니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "parallelConcurrentComposable.foundations.title": {
       "source": "What keeps a service alive",
@@ -7239,12 +7148,12 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "vs.metaDescription": {
-      "source": "How ALUX gives production AI agents cross-block continuity, tuple-space coordination, OCAP authority, and an EVM path through TSAC.",
-      "sourceHash": "6dc5bc9799600883ca72b3521f87498e74bf345921998086faca6a728454d4db",
-      "text": "ALUX가 블록 간 연속 실행, 튜플 공간 조율, OCAP 권한, TSAC를 통한 EVM 경로를 바탕으로 프로덕션 AI 에이전트에 런타임 기반을 제공하는 방식을 설명합니다.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:53:26.079Z",
-      "reviewerNotes": "Native final review against the current English source, ALUX knowledge base, and official terminology."
+      "source": "How ALUX gives production AI agents cross-block continuity, tuple-space coordination, native OCAP support, and an EVM path through TSAC.",
+      "sourceHash": "8bee3bb0cc4eca78690789da1ee3c73e0b8b9c87f5040b1459db67478d5b90f9",
+      "text": "ALUX가 프로덕션 AI 에이전트에 크로스 블록 연속성, 튜플 공간 조정, 네이티브 OCAP 지원, 그리고 TSAC를 통한 EVM 경로를 제공하는 방식을 소개합니다.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T03:20:12.428Z",
+      "reviewerNotes": "Reviewed against the current English source."
     },
     "vs.metaTitle": {
       "source": "For AI Agents | ALUX Network",
