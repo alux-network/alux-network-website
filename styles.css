@@ -3814,6 +3814,10 @@ body[data-page="home"] .hero-home h1.hero-home-title--statement {
   letter-spacing: -0.055em;
 }
 
+body[data-page="home"] .hero-home-title-line {
+  display: inline;
+}
+
 body[data-page="home"] .hero-home-brand {
   display: inline-block;
   color: #25384c;
@@ -6574,9 +6578,17 @@ html[dir="rtl"] body[data-page="home"] .showcase-use-cases-cta > a span {
 
 @media (max-width: 720px) {
   body[data-page="home"] .hero-home h1.hero-home-title--statement {
-    max-width: calc(100% - 84px);
+    max-width: 100%;
     font-size: clamp(2.75rem, 13vw, 3.7rem);
     line-height: 1;
+  }
+
+  body[data-page="home"] .hero-home-title-line {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    white-space: nowrap !important;
+    text-wrap: nowrap !important;
   }
 
   body[data-page="home"] .showcase-demo-steps {
