@@ -1,7 +1,7 @@
 {
   "language": "ja",
   "target": "Japanese, polished native Japanese product/protocol copy",
-  "updatedAt": "2026-07-14T23:46:41.271Z",
+  "updatedAt": "2026-07-16T03:21:12.091Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -2099,53 +2099,53 @@
       "reviewedAt": "2026-07-13T13:43:16.874Z",
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
-    "home.hero.loop": {
-      "source": "A Service-Native Public Chain\nfor Composable\nDecentralized Services",
-      "sourceHash": "bd297ff641357f6b9010d68317591ab660365a13b0ea0cae20197326db643996",
-      "text": "コンポーザブルな\n分散型サービスのための\nサービスネイティブな\nパブリックチェーン",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+    "home.hero.eyebrow": {
+      "source": "ALUX Network",
+      "sourceHash": "5e3100ea2c1cd77ed74f2927a8c5225a3d0c9f7bf89622ef6345166f2238f18f",
+      "text": "ALUX Network",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.hero.text": {
-      "source": "ALUX unifies execution, permissions, commit logic, and consensus into a composable runtime, enabling decentralized services to persist over time, carry scoped authority, and coordinate across systems.",
-      "sourceHash": "7a3e492f0deb3d4c8b6c0857d326e50b62db0e3157d7cf3547f12aca80db2390",
-      "text": "ALUX は実行、権限、コミットロジック、合意をひとつのコンポーザブルなランタイムに統合し、分散型サービスが長く動き、限定された権限を持ちながら、複数のシステムを越えて協調できるようにします。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Imagine one logical virtual machine that runs everywhere—on a public blockchain, on a private cluster, and on client hardware such as phones and browsers—while abstracting away the state, threads, replication, and consensus underneath. Developers write one concurrent program; where it runs becomes a configuration choice, not an architecture. Its parts still commit together, atomically. That is Virtual Machine Abstraction, and ALUX is building it.",
+      "sourceHash": "9326167f58de3c37f370880a293374e93144e2faafc3255063ec74199ff5e021",
+      "text": "あらゆる場所で動く、ひとつの論理仮想マシンを想像してください。パブリックブロックチェーン、プライベートクラスター、そしてスマートフォンやブラウザなどのクライアントハードウェアで実行され、その下にある状態、スレッド、レプリケーション、コンセンサスは抽象化されます。開発者が記述するのは、ひとつの並行プログラムだけです。どこで動かすかはアーキテクチャではなく、設定で選べます。それでも各部分は、ひとつの単位としてアトミックにコミットされます。これが Virtual Machine Abstraction であり、ALUX が構築しているものです。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.hero.title": {
-      "source": "ALUX",
-      "sourceHash": "baa357ef6a30042918e42928be099483e83a83133593c4af07b71938947db0dd",
-      "text": "ALUX",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Building the global VM",
+      "sourceHash": "1d3ec87e2a532c895cc3fbcfb41e48696c9fa5267510a7a15b033e216ed44b51",
+      "text": "グローバル VM を構築する",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.metaDescription": {
-      "source": "ALUX is composability middleware for decentralized services: a capability runtime where agents, apps, and workflows coordinate across trust boundaries.",
-      "sourceHash": "43b10b5d211177d43faab6eacab0c946c8abc5c0634d0b9d5d66d034bc35248f",
-      "text": "ALUX は分散型サービス向けのコンポーザビリティ・ミドルウェアです。エージェント、アプリ、ワークフローが信頼境界を越えて協調するためのケイパビリティ・ランタイムを提供します。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "ALUX is building one logical virtual machine that runs across public blockchains, private clusters, and client hardware while preserving atomic commit.",
+      "sourceHash": "3ff23dd31f2a9bb673555c76e3ea3c4b82961a47ccf043da535ae803fe5979cc",
+      "text": "ALUX は、アトミックコミットを維持しながら、パブリックブロックチェーン、プライベートクラスター、クライアントハードウェアを横断して動作する、ひとつの論理仮想マシンを構築しています。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.metaTitle": {
-      "source": "Home | ALUX Network",
-      "sourceHash": "f0467a6b757864c9b42035d04cfc7a9a38f5523f1bce0d2d44114f621de92dd7",
-      "text": "ホーム | ALUX Network",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "ALUX Network — Building the Global VM",
+      "sourceHash": "d632055d3369f4e87597857b3e023cfa4a79adc265bee2146049d0ced4c83636",
+      "text": "ALUX Network — グローバル VM を構築する",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.infrastructure.groups.0.0": {
-      "source": "Blockchain",
-      "sourceHash": "625da44e4eaf58d61cf048d168aa6f5e492dea166d8bb54ec06c30de07db57e1",
-      "text": "ブロックチェーン",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Public Blockchain",
+      "sourceHash": "1d3c2fcf0e6c6a12391fb240feec08fc203e49d353ceef8377c320bb6b134500",
+      "text": "パブリックブロックチェーン",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.infrastructure.groups.0.1": {
       "source": "Blockchain Nodes",
@@ -2156,36 +2156,36 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.0.architecture.infrastructure.groups.1.0": {
-      "source": "Cloud",
-      "sourceHash": "b977b950c1ae31e5aeb9ef778cc20a66fc034eb81e738e0206104b677962c465",
-      "text": "クラウド",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Private Cluster",
+      "sourceHash": "a532bf45218091588db1c0c84228ab0b0a1173eb1a71ecd0785505efff49c70b",
+      "text": "プライベートクラスター",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.infrastructure.groups.1.1": {
-      "source": "Cloud Servers",
-      "sourceHash": "a5e5bfd769f48802954db242ecb24263cb850e9b59b1c6141328d6fba4fc4cee",
-      "text": "クラウドサーバー",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Cloud / Enterprise Nodes",
+      "sourceHash": "d606cde1b4865ba41de16a9227e1febee61d070ef4c6ec3f157c841b3ee42bbc",
+      "text": "クラウド / エンタープライズノード",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.infrastructure.groups.2.0": {
-      "source": "Personal Devices",
-      "sourceHash": "95ea76fc52265947d37d65c1bb5e5c50b37cf806e452519a0d9b01c2fce70e5c",
-      "text": "個人デバイス",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Client Hardware",
+      "sourceHash": "a134024af5b548ef99bd9767488270c00f5b21e8dd097cb91308914368eed04f",
+      "text": "クライアントハードウェア",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.infrastructure.groups.2.1": {
-      "source": "Laptops / Phones",
-      "sourceHash": "320529ebfd6913702eba6836015f18548902525f2436b31c246444bd366bc8ce",
-      "text": "ノート PC / スマートフォン",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Phones / Browsers",
+      "sourceHash": "008e836411003eb65cde34c0eacd0d9b2f66ea7c878485693c4436943f2f06e1",
+      "text": "スマートフォン / ブラウザ",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.infrastructure.label": {
       "source": "Layer 1",
@@ -2212,28 +2212,28 @@
       "reviewerNotes": "Aligned with the canonical three-layer GLVM model."
     },
     "home.sections.0.architecture.runtime.controls.0": {
-      "source": "Sharding",
-      "sourceHash": "18d5c33469224ffc261297bde4423876e794e19f66d12b1795add1bc757102bc",
-      "text": "シャーディング",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "State + Threads",
+      "sourceHash": "91b4b1d7993e1cd33d19ea86638810763543276fa87cc205279ed607e72c2ead",
+      "text": "状態 + スレッド",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.runtime.controls.1": {
-      "source": "Concurrency Control",
-      "sourceHash": "772843e18f1892a605d0712d36f7034087f23722224ecdbf4cb32d07464c835c",
-      "text": "並行制御",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Replication",
+      "sourceHash": "0b73ca14b5d89fd5c289af312a66842146e766baf6c5018848b36f086944cb0b",
+      "text": "レプリケーション",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.runtime.controls.2": {
-      "source": "Capability Management",
-      "sourceHash": "a6ba599af7c2c54f9e1718005e885633b5e3734f08898aa32e4a150817f353af",
-      "text": "ケイパビリティ管理",
+      "source": "Consensus",
+      "sourceHash": "8abe09bf65aefdb8e84bd8564efb765179cc01ee3f45809e47c8c9a02f72ff83",
+      "text": "コンセンサス",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-15T00:00:00.000Z",
-      "reviewerNotes": "Full capability-management term retained."
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.architecture.runtime.label": {
       "source": "Layer 2",
@@ -2324,28 +2324,28 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.0.eyebrow": {
-      "source": "ALUX GLVM Architecture",
-      "sourceHash": "9fc139b9f83d0c540215c9985d2e7091f8218aca6ff2fb7d0d30fe9dc8ec2aef",
-      "text": "ALUX GLVM アーキテクチャ",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T18:39:40.615Z",
-      "reviewerNotes": "Native final review after rejecting an unnecessary English copy rewrite; aligned to the approved English fact boundary."
+      "source": "Virtual Machine Abstraction",
+      "sourceHash": "4a024c42f0e278b92a2953820d1bd6b89d9cffc986f81b24ca3af0da1a6749a8",
+      "text": "仮想マシン抽象化",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.text": {
-      "source": "GLVM is ALUX's target layered architecture for decentralized services: physical infrastructure below, the concurrent runtime in the middle, and world operating systems above.",
-      "sourceHash": "41d29267897359970f610d2e700a17cbc3c41edb8d1562dec1bc53e7ffdc5b9f",
-      "text": "GLVM は、分散型サービスに向けて ALUX が目指す階層型アーキテクチャです。下層に物理インフラ、中層に並行ランタイム、上層にワールド OS を配置します。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T18:39:40.615Z",
-      "reviewerNotes": "Native final review after rejecting an unnecessary English copy rewrite; aligned to the approved English fact boundary."
+      "source": "GLVM abstracts the state, threads, replication, and consensus beneath one concurrent program, so deployment becomes a configuration choice rather than a new application architecture.",
+      "sourceHash": "c1d100d1588d1eafb235efae4bd2bb99c45984f48157ee321381d2bf829878ae",
+      "text": "GLVM は、ひとつの並行プログラムの下にある状態、スレッド、レプリケーション、コンセンサスを抽象化します。これにより、デプロイ先は新たなアプリケーションアーキテクチャではなく、設定として選択できます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.title": {
-      "source": "Many machines.<br>One logical virtual machine.",
-      "sourceHash": "3d54988a01ff0925560e49abbb86028e4feb1c6863267d35dafb7dee208777bc",
-      "text": "複数のマシンを、<br>ひとつの論理仮想マシンへ",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T18:39:40.615Z",
-      "reviewerNotes": "Native final review after rejecting an unnecessary English copy rewrite; aligned to the approved English fact boundary."
+      "source": "One logical virtual machine.<br>Everywhere.",
+      "sourceHash": "95e9685a95040abf3dba09d1cf1b2da178a221da7f82bdbc0217b3c76c207c6e",
+      "text": "ひとつの論理仮想マシン。<br>あらゆる場所で。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.10.eyebrow": {
       "source": "Learn More",
@@ -2588,12 +2588,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.2.clusters.1.label": {
-      "source": "Capability Control",
-      "sourceHash": "90be6c27c6c0e73fd2e1d27a90e508eaf8fd3ee999dcff6d7039747a233b79f2",
-      "text": "ケイパビリティ制御",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Object Capability Security",
+      "sourceHash": "e34050d9c1ee776fef9affc6b6c896aa270afd6c7ab3d7585d22f273fe0c537e",
+      "text": "オブジェクトケイパビリティ・セキュリティ",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.clusters.1.runtimeBusiness": {
       "source": "Prompt injection may influence a process, but it cannot invoke capabilities that were never passed into that process.",
@@ -2604,12 +2604,12 @@
       "reviewerNotes": "Reviewed for task-scoped OCAP and ambient-authority semantics."
     },
     "home.sections.2.clusters.1.runtimeLabel": {
-      "source": "Capability Control",
-      "sourceHash": "90be6c27c6c0e73fd2e1d27a90e508eaf8fd3ee999dcff6d7039747a233b79f2",
-      "text": "ケイパビリティ制御",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Native OCAP Support",
+      "sourceHash": "d7f071366586d7463fe2f03c587c7a471cf23a9b1137dfa4693c6efcc98d7cb6",
+      "text": "OCAP のネイティブサポート",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.clusters.1.runtimeTechnical": {
       "source": "OCAP channel references are unforgeable. Each process starts only with capabilities explicitly introduced into its environment; namespaces, attenuation, and lifecycle rules narrow what each holder can do.",
@@ -2620,12 +2620,12 @@
       "reviewerNotes": "Reviewed for task-scoped OCAP and ambient-authority semantics."
     },
     "home.sections.2.clusters.1.runtimeTitle": {
-      "source": "Capabilities become\nprotocol objects",
-      "sourceHash": "2ee77accb09468a3d6cad1eb0dffdf9a18ed0ebc95a15c7c546efd34f1a05cf6",
-      "text": "ケイパビリティが\nプロトコルオブジェクトになる",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "OCAP is native\nto the VM",
+      "sourceHash": "288cccc409180fd6da67a28ff7d8df9f027d2e684f124ae2b098fcfc5ebad40d",
+      "text": "OCAP は VM に\nネイティブ統合",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.clusters.1.text": {
       "source": "Unforgeable references make authority explicit: a process can use only capabilities it created or was passed, and those capabilities can be scoped, attenuated, and constrained by runtime rules.",
@@ -2636,12 +2636,12 @@
       "reviewerNotes": "Reviewed for task-scoped OCAP and ambient-authority semantics."
     },
     "home.sections.2.clusters.1.title": {
-      "source": "OCAP Authority",
-      "sourceHash": "72546cdc78a8db3cc122b3e8e9b15c086bd47ff2a86dcccdc31589601e22d4ed",
-      "text": "OCAP 権限",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Native OCAP Support",
+      "sourceHash": "d7f071366586d7463fe2f03c587c7a471cf23a9b1137dfa4693c6efcc98d7cb6",
+      "text": "OCAP のネイティブサポート",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.clusters.2.detailBusiness": {
       "source": "A service can wait for delivery, approval, oracle data, or an agent action, then complete settlement with a verifiable audit trail.",
@@ -2708,12 +2708,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.2.clusters.2.runtimeBusiness": {
-      "source": "Long-running workflows can wait for real-world inputs and still reach verifiable public-chain finality.",
-      "sourceHash": "6da1782fac20978d8c793f451a8b4f9919d715c527c6842f45e8f16314250a1c",
-      "text": "長期実行されるワークフローは現実世界の入力を待ちながら、検証可能なパブリックチェーン上のファイナリティに到達できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T15:13:47.780Z",
-      "reviewerNotes": "Native Japanese incremental review after English source rescan; Long Transactions, GLVM, and bit-exact replay verified."
+      "source": "Long-running workflows can wait for real-world inputs and still settle atomically across block heights.",
+      "sourceHash": "d6dc115c04fe4da4e7c1ddc5a4649eb28334e69e5261d4ec966847e8c74d44ae",
+      "text": "長期実行ワークフローは現実世界からの入力を待機しながら、複数のブロック高にまたがってもアトミックに確定できます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.clusters.2.runtimeLabel": {
       "source": "Transaction Layer",
@@ -3091,229 +3091,117 @@
       "reviewedAt": "2026-07-13T13:43:16.874Z",
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
-    "home.sections.2.clusters.7.detailBusiness": {
-      "source": "Services keep durable public-chain memory that validators can reconstruct and audit.",
-      "sourceHash": "66315734b7e39a68bcea055dcd029b1bfc87274210fee5a09fd77be82de3092b",
-      "text": "サービスは永続的なパブリックチェーンメモリを持ち、バリデータはそれを再構成して監査できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
-    },
-    "home.sections.2.clusters.7.detailTechnical": {
-      "source": "Versioned tuple-space resources commit into trie-backed storage, so execution, replay, merge, and finality read the same verifiable view.",
-      "sourceHash": "da278118e43a0a8211b211f16f4f5e10f1e10a1c37f984eae707bac9548b1c24",
-      "text": "バージョン管理されたタプル空間リソースは、トライ基盤のストレージへコミットされます。実行、リプレイ、マージ、ファイナリティは、同じ検証可能なビューを参照します。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
-    },
-    "home.sections.2.clusters.7.detailTitle": {
-      "source": "Auditable state",
-      "sourceHash": "c8344f1ac057449067ace87b6f3d3ea8879b9300768e97306625197dbfded07d",
-      "text": "監査可能な状態",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
-    },
     "home.sections.2.clusters.7.items.0": {
-      "source": "Tuple-Space State",
-      "sourceHash": "a76130671765d1048eb886ef54e14fee19cb8d51d7a536d287c9757e87f6f070",
-      "text": "タプル空間状態",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
-    },
-    "home.sections.2.clusters.7.items.1": {
-      "source": "Versioned Reads",
-      "sourceHash": "31fd414e70ce374043698179e0aef6ae1e1c0dc2b32682c5e6cc3b1cc26498d6",
-      "text": "バージョン読み取り",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
-    },
-    "home.sections.2.clusters.7.items.2": {
-      "source": "Merkle Trie",
-      "sourceHash": "4d583aaa4b9579196b7b0942bac05e6bdfca6b917eb46fefdec1d46d94c6f1cd",
-      "text": "Merkle トライ",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
-    },
-    "home.sections.2.clusters.7.items.3": {
-      "source": "Atomic Commit",
-      "sourceHash": "f1d6d835904d87cce0bbafb56ba19c31ffd5153e2d9fce39e5f58bf1a5c44d49",
-      "text": "アトミックコミット",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
-    },
-    "home.sections.2.clusters.7.label": {
-      "source": "State Layer",
-      "sourceHash": "a6de87e87c5d25f4cc470a892adfc7175ee9dddddf8d6219b00c7019b7e480f2",
-      "text": "状態レイヤー",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
-    },
-    "home.sections.2.clusters.7.runtimeBusiness": {
-      "source": "Services get durable public-chain memory that validators can reconstruct and audit.",
-      "sourceHash": "8183974e089009c0305ea9c991679b20dfcb6f0eaf18b15115def15ba1d7ffa6",
-      "text": "サービスは永続的なパブリックチェーン上のメモリを得られ、バリデータはその状態を再構成して監査できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
-    },
-    "home.sections.2.clusters.7.runtimeLabel": {
-      "source": "State Layer",
-      "sourceHash": "a6de87e87c5d25f4cc470a892adfc7175ee9dddddf8d6219b00c7019b7e480f2",
-      "text": "状態レイヤー",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
-    },
-    "home.sections.2.clusters.7.runtimeTechnical": {
-      "source": "Versioned tuple-space resources commit through trie-backed storage, so execution, replay, block merge, and finality read the same verifiable views.",
-      "sourceHash": "3ae073bda86635eec560c8600dffb92bb769e3833cb355e58dd3b4b5878bf578",
-      "text": "バージョン管理されたタプル空間リソースは、トライ基盤のストレージを通じてコミットされます。そのため、実行、リプレイ、ブロックマージ、ファイナリティが同じ検証可能なビューを参照できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
-    },
-    "home.sections.2.clusters.7.runtimeTitle": {
-      "source": "Replay keeps state verifiable",
-      "sourceHash": "e989fce5f4a0ebc88d8bca1b34fee981941359ce0b04f8d658d76ed0352aca40",
-      "text": "リプレイにより状態の検証可能性を保つ",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
-    },
-    "home.sections.2.clusters.7.text": {
-      "source": "Versioned tuple-space resources are committed through trie-backed storage, so replay, block merge, and finalized state share verifiable views.",
-      "sourceHash": "059170da0c4a949562f625cb5dd7c3373e3c8e1d8b502141f47f4a9ddb5e1e03",
-      "text": "バージョン管理されたタプル空間リソースは、トライ基盤のストレージを通じてコミットされます。そのため、リプレイ、ブロックマージ、確定済み状態が同じ検証可能なビューを共有できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
-    },
-    "home.sections.2.clusters.7.title": {
-      "source": "Verifiable State",
-      "sourceHash": "75287c0372584778084c03e29dca2eef093826fb1570d44979ab52c9cfb8c51e",
-      "text": "検証可能な状態",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
-    },
-    "home.sections.2.clusters.8.items.0": {
       "source": "BranchId",
       "sourceHash": "a7d1daf5f5b1b7daecb5b29f1a851568fe11b98ab543eac8f22f29d535f58058",
       "text": "BranchId",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.8.items.1": {
+    "home.sections.2.clusters.7.items.1": {
       "source": "COMM Events",
       "sourceHash": "0debb172cc432fa1696baa877835ee18c30c95a20923ed03c1f217c3a5e22f77",
       "text": "COMM イベント",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.8.items.2": {
+    "home.sections.2.clusters.7.items.2": {
       "source": "Replay Log",
       "sourceHash": "5f15c1d5c40d170448af7b473b6252b144e2445852c0711c8b3f46b49484f96e",
       "text": "リプレイログ",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.8.items.3": {
+    "home.sections.2.clusters.7.items.3": {
       "source": "Deterministic Replay",
       "sourceHash": "b9ba97dcd9b12127e54bd2d8b1482d11cb27d830145d11cea2177a94ee9eb2c2",
       "text": "決定論的リプレイ",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.8.label": {
+    "home.sections.2.clusters.7.label": {
       "source": "Validator Proof",
       "sourceHash": "65f940d2afb4e31adfdd47dabac0266a1d006331fb49babda678a8ad6a95ff61",
       "text": "バリデータによる証明",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.8.text": {
+    "home.sections.2.clusters.7.text": {
       "source": "Branch identifiers and replay logs let validators reproduce non-deterministic COMM events deterministically.",
       "sourceHash": "c87dec4b639e8114057510ab97cd2028799b1952de73e72dc83e197494b8996b",
-      "text": "BranchId とリプレイログにより、バリデータは非決定的な COMM イベントを決定論的に再現できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "text": "ブランチ識別子とリプレイログにより、バリデータは非決定的な COMM イベントを決定論的に再現できます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.8.title": {
+    "home.sections.2.clusters.7.title": {
       "source": "Replay + Trace",
       "sourceHash": "70ce8e57fde2f5154a3bae92ff9d16e3e1f7544ef2f70aee8dbfa15901ce87dd",
       "text": "リプレイ + トレース",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.9.items.0": {
+    "home.sections.2.clusters.8.items.0": {
       "source": "Diagnostics",
       "sourceHash": "268f14bbfe119c1e92150583af960a086d7db9619a097f8aa72ff6779842f610",
       "text": "診断",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.9.items.1": {
+    "home.sections.2.clusters.8.items.1": {
       "source": "Expand",
       "sourceHash": "07548c2c6511d4d1780564de8a237a1966cf9c99a97cf5c8a185e6c2aeacff09",
       "text": "展開",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.9.items.2": {
+    "home.sections.2.clusters.8.items.2": {
       "source": "Compiler Format",
       "sourceHash": "860f09eb8585d28b34df9ca135b935c2377421c833b80fe5fc74795e89c194b0",
       "text": "コンパイラ整形",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.9.items.3": {
+    "home.sections.2.clusters.8.items.3": {
       "source": "Run / Simulate",
       "sourceHash": "fd811d046fcad57c21b25a6828eecd460f86690b5f855b6ee542923ca1b75f53",
       "text": "実行 / シミュレーション",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.9.label": {
+    "home.sections.2.clusters.8.label": {
       "source": "Developer Tooling",
       "sourceHash": "5019fbfb8b82150ccc1385e6c3e8c47e50713b01540929f69d2d08f302119184",
       "text": "開発者ツール",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.9.text": {
+    "home.sections.2.clusters.8.text": {
       "source": "Compiler diagnostics, expand, format, and playground runs make service logic visible before it reaches a live node.",
       "sourceHash": "05a7ab2ea6fe36d0a2445d33aa9454e7f5c38bf25664b011bd830ec5c91d9409",
-      "text": "コンパイラ診断、展開、フォーマット、Playground での実行により、サービスロジックを稼働中のノードへ送る前に確認できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "text": "コンパイラ診断、展開、整形、Playground での実行により、サービスロジックを実ノードへ投入する前に可視化できます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.2.clusters.9.title": {
+    "home.sections.2.clusters.8.title": {
       "source": "LSP + Playground",
       "sourceHash": "2360602921505c6f01232eba07a7cbda0b0744052534db0c6d51ba565c75dac4",
       "text": "LSP + Playground",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.combinations.0.business": {
       "source": "Replaces shared API keys with explicitly passed, attenuated authority; budget and time-window policy remain product-layer targets.",
@@ -3444,12 +3332,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.2.combinations.4.business": {
-      "source": "Lets service work pause for real-world inputs, resume later, and still settle against a verifiable public-chain record.",
-      "sourceHash": "7344e653146eb22e23b574e79ec826459431e41483192ccb368ad049ed8525e4",
-      "text": "サービスの処理は現実世界の入力を待って一時停止し、後から再開したうえで、検証可能なパブリックチェーン上の記録に基づいて決済できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T15:13:47.780Z",
-      "reviewerNotes": "Native Japanese incremental review after English source rescan; Long Transactions, GLVM, and bit-exact replay verified."
+      "source": "Lets service work pause for real-world inputs, resume later, and still settle as one replayable atomic result.",
+      "sourceHash": "1b75e690fdd34012eb39415fcc157398acc6a02301ee8e1f76f180c98e5bd79f",
+      "text": "サービス処理は現実世界からの入力を待つ間に一時停止し、後から再開しても、リプレイ可能なひとつのアトミックな結果として確定できます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.combinations.4.label": {
       "source": "Cross-Block Scheduler",
@@ -3476,36 +3364,36 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.2.combinations.5.business": {
-      "source": "Lets teams ship service infrastructure without private servers becoming the trust anchor.",
-      "sourceHash": "fbbea7ac2d2b43a1ecb4cfa45c6693553a2ca49e64dc88400c270ac16068a41c",
-      "text": "チームは私有サーバーを信頼の中心にせず、サービス基盤を提供できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Complex applications coordinate many live processes without being reduced to a chain of one-shot transactions.",
+      "sourceHash": "aa756e442d0e4de42536f3ad02c0767847f60e7e78e171c324e6fb9321d868cb",
+      "text": "複雑なアプリケーションは、多数の稼働中プロセスを、単発トランザクションの連鎖へ還元することなく協調させられます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.combinations.5.label": {
-      "source": "Public Service Backbone",
-      "sourceHash": "85796c4de12147274f0b2cf493987387a943bea18ca15b046b0730288bb7649b",
-      "text": "パブリックサービス基盤",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Process Orchestration",
+      "sourceHash": "51d0ebc669a03d60e011d6ddc22122915da6f7254e8286c5b31f82689a70fec2",
+      "text": "プロセスオーケストレーション",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.combinations.5.technical": {
-      "source": "Typed KV, trie state, RPC, P2P, and storage context create a public backend for persistent services.",
-      "sourceHash": "b77e2bab87a9039f32eaa0c9e13f7460e65c1d60e993cf0a91810aa80205036c",
-      "text": "型付き KV、トライ状態、RPC、P2P、ストレージコンテキストが、永続サービス向けのパブリックなバックエンドを構成します。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Concurrent TVM processes can fork, wait, join multiple channel results, or select the first event that becomes ready.",
+      "sourceHash": "95c673c6249b80485d4f9f82711ba9a866ca0bf7071ad95c68b033502c238e34",
+      "text": "並行動作する TVM プロセスは、フォーク、待機、複数チャネルの結果の結合（join）、または最初に準備が整ったイベントの選択（select）を実行できます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.combinations.5.title": {
-      "source": "Verifiable state with standard access",
-      "sourceHash": "ec4cdd69f457221ac2207db6863077adfb250c86883e72db242ab1fc84b2e9b9",
-      "text": "標準アクセスを備えた検証可能な状態",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Join and select across channels",
+      "sourceHash": "355eb5624e5093ecb7f61883667b56e6bfb7622768ab75b11e331975937b9d2f",
+      "text": "チャネルをまたぐ join と select",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.combinations.6.business": {
       "source": "AI/API workflows can run asynchronously while producing replay evidence that validators can reproduce.",
@@ -3636,12 +3524,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.2.comboDefault": {
-      "source": "Drop a module onto ALUX Runtime to see how it becomes part of the public-chain service runtime.",
-      "sourceHash": "bc6b04bc40cd50432341b317891a2fdb21e1a35bf5f62fb942a102daf8b662ae",
-      "text": "モジュールを ALUX ランタイムへドロップすると、それがパブリックチェーンのサービスランタイムで果たす役割を確認できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Drop a module onto ALUX Runtime to see how it composes inside the global VM.",
+      "sourceHash": "dcbfefc02a09539895b7951f6a033167578f744b925e3f21a168e39a3f02606e",
+      "text": "モジュールを ALUX Runtime にドロップすると、グローバル VM の内部でどのように構成されるかを確認できます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.comboLabel": {
       "source": "Runtime Connection",
@@ -3660,100 +3548,100 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.2.core.detailBusiness": {
-      "source": "Teams can build services that keep running, hold limited authority, and settle against verifiable public-chain records.",
-      "sourceHash": "869aafadc6e601af37274d257cbedf40cf6b378aff2db3c0edf28cf4c0289590",
-      "text": "チームは、稼働を続け、範囲を限定した権限を持ち、検証可能なパブリックチェーン上の記録に基づいて決済するサービスを構築できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T15:13:47.780Z",
-      "reviewerNotes": "Native Japanese incremental review after English source rescan; Long Transactions, GLVM, and bit-exact replay verified."
+      "source": "Developers write one program and choose where it runs as configuration, while its parts still commit together atomically.",
+      "sourceHash": "88d4e735f755233139f5f0e0ec8cf9630f2f5f57a450d0c74d2ed8d922d5f4a5",
+      "text": "開発者はひとつのプログラムを記述し、実行先を設定として選択できます。それでも各部分は、ひとつの単位としてアトミックにコミットされます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.detailTechnical": {
-      "source": "ALUX treats execution, authority, state, and finality as one runtime surface rather than separate application patches.",
-      "sourceHash": "5b9e2d53447fb3898207382ba049bdb617d129e6ff56fd47a33ff3791a0cffcb",
-      "text": "ALUX は、実行、権限、状態、ファイナリティを、アプリケーション側で別々に補うのではなく、1つのランタイムインターフェースとして扱います。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "ALUX abstracts the state, threads, replication, and consensus beneath a single concurrent execution model.",
+      "sourceHash": "464b0a1eb7319ad16b76eac6bb9c83adc4c35007c545ac5de461bf75a0518eb3",
+      "text": "ALUX は、ひとつの並行実行モデルの下にある状態、スレッド、レプリケーション、コンセンサスを抽象化します。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.detailTitle": {
-      "source": "A public chain for live services",
-      "sourceHash": "b075d3ad819fefcd1adcb4ecc9ef52be8db656404fa56889963b14dbaa47c7d6",
-      "text": "継続稼働するサービス向けパブリックチェーン",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "One concurrent program, anywhere",
+      "sourceHash": "6ff83e212db16a377ad9a1014f2e56ef1fcb6118b6fdb235f93a90ef5e65d797",
+      "text": "どこでも動く、ひとつの並行プログラム",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.items.0": {
-      "source": "Public Chain",
-      "sourceHash": "16db026e54a86c4dd3f03425aab30eacc07b4c2741ef410d7710678b57f0b21a",
-      "text": "パブリックチェーン",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "One Logical VM",
+      "sourceHash": "12fe36781df2a3046f44dc95bc89498757b029bc3577e052d2fc1157c7c79a7a",
+      "text": "ひとつの論理 VM",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.items.1": {
-      "source": "Composable Runtime",
-      "sourceHash": "d138e18ce0bde4d2a2d10ab9377781da61c2827a8fe200a034a9146d78f5074a",
-      "text": "コンポーザブルなランタイム",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Concurrent Runtime",
+      "sourceHash": "4947a2c08f12b5b5de120266d6b6dadfb7ed92997ecb9b72dbdc4488d06f1951",
+      "text": "並行ランタイム",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.items.2": {
-      "source": "Service Primitives",
-      "sourceHash": "e1aa60a2187f4cf0c8cbeacada1597e73c5e4de04fd3334c662aee9647df2a26",
-      "text": "サービスプリミティブ",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Atomic Commit",
+      "sourceHash": "f1d6d835904d87cce0bbafb56ba19c31ffd5153e2d9fce39e5f58bf1a5c44d49",
+      "text": "アトミックコミット",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.label": {
-      "source": "ALUX Public Chain",
-      "sourceHash": "cd616a0c2a2155842837352456999987b2a0782df74f44f851873a680360e673",
-      "text": "ALUX パブリックチェーン",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Virtual Machine Abstraction",
+      "sourceHash": "4a024c42f0e278b92a2953820d1bd6b89d9cffc986f81b24ca3af0da1a6749a8",
+      "text": "仮想マシン抽象化",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.runtimeBusiness": {
-      "source": "That is the public-chain layer for services that must keep running, carry scoped authority, and settle with verifiable finality.",
-      "sourceHash": "f58744fc779a165eadc82bd585ee310f102f2174501ccc6adda0e5f830eaf32e",
-      "text": "これは、実行を続け、限定された権限を持ち、検証可能なファイナリティで決済するサービスのためのパブリックチェーン層です。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "The same concurrent program can target public blockchains, private clusters, and client hardware without becoming three architectures.",
+      "sourceHash": "1f130e8448a6e3dc35ccbb17f3b5e02983f983416edc40a17eab8fdd1ba193cb",
+      "text": "同じ並行プログラムを、3つの別々のアーキテクチャへ分断することなく、パブリックブロックチェーン、プライベートクラスター、クライアントハードウェアに展開できます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.runtimeLabel": {
-      "source": "ALUX Public Chain",
-      "sourceHash": "cd616a0c2a2155842837352456999987b2a0782df74f44f851873a680360e673",
-      "text": "ALUX パブリックチェーン",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Virtual Machine Abstraction",
+      "sourceHash": "4a024c42f0e278b92a2953820d1bd6b89d9cffc986f81b24ca3af0da1a6749a8",
+      "text": "仮想マシン抽象化",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.runtimeTechnical": {
-      "source": "TVM execution, OCAP authority, verifiable state, cross-block commit logic, and BlockGit finality meet in one runtime.",
-      "sourceHash": "5926dec79fa2771ba9ac58b309332a177084ded8c8c5d30d9c536d2ad26194bb",
-      "text": "TVM 実行、OCAP 権限、検証可能な状態、クロスブロックのコミットロジック、BlockGit ファイナリティが一つのランタイムで合流します。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "TVM execution, Native OCAP Support, cross-block commit logic, and BlockGit finality meet inside one runtime abstraction.",
+      "sourceHash": "8245d06d62a087a1ec2a52f21f6a3531274f12c633b77ea6c2d0b2e2f2125e26",
+      "text": "TVM 実行、OCAP のネイティブサポート、クロスブロックのコミットロジック、BlockGit ファイナリティが、ひとつのランタイム抽象化の中で統合されます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.runtimeTitle": {
-      "source": "ALUX Runtime\nforms the public chain",
-      "sourceHash": "7f6272305b25178b361eb7cadd5029244e8e7be29a87eb83bfb4dde2ad9103e8",
-      "text": "ALUX ランタイムが\nパブリックチェーンを構成",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "ALUX Runtime\nforms one logical VM",
+      "sourceHash": "1fa69e26ebc8713f3fc4dac143643fdd39677a248654e6b1662422d5d3a00968",
+      "text": "ALUX Runtime が\nひとつの論理 VM を形成",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.text": {
-      "source": "A service-native public chain where TVM execution, capability authority, verifiable state, and BlockGit finality compose into one runtime.",
-      "sourceHash": "a74bb80fbfb66bd857672dacf6dcc6ea5ace4a4ba50e8bbdd8f5e1318294f965",
-      "text": "TVM 実行、ケイパビリティに基づく権限、検証可能な状態、BlockGit ファイナリティが1つのランタイムを構成する、サービスネイティブなパブリックチェーンです。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "One logical VM where concurrent TVM execution, Native OCAP Support, cross-block atomicity, and BlockGit finality compose across deployment environments.",
+      "sourceHash": "9ad34ac695172adc51009da9a02b231d6f84f4d4a71ce8cdebec152ad5578a09",
+      "text": "並行 TVM 実行、OCAP のネイティブサポート、クロスブロックのアトミック性、BlockGit ファイナリティが、デプロイ環境をまたいで構成される、ひとつの論理 VM。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.title": {
       "source": "ALUX Runtime",
@@ -3812,12 +3700,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.2.mapIntro": {
-      "source": "Drag modules into ALUX Runtime to reveal their public-chain role.\nDouble-click any card for the deeper note.",
-      "sourceHash": "b7afa3e68c782724f33163493f035700aa01a5a5ef10867259eef35c47c82a4c",
-      "text": "モジュールを ALUX ランタイムへドラッグし、パブリックチェーン上での役割を確認します。\nカードをダブルクリックすると、さらに詳しい説明を読めます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Drag modules into ALUX Runtime to see how they compose inside one logical VM.\nDouble-click any card for the deeper note.",
+      "sourceHash": "e2812b3ee56295daad0a77b7e0be19d79f2d8a251bcd394f0904579559a9e972",
+      "text": "モジュールを ALUX Runtime へドラッグすると、ひとつの論理 VM の内部でどのように構成されるかを確認できます。\nカードをダブルクリックすると、より詳しい説明が開きます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.mapTitle": {
       "source": "ALUX Capability Map",
@@ -3916,12 +3804,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.2.text": {
-      "source": "Drag modules into ALUX Runtime to reveal their public-chain role.\nDouble-click any card for the deeper note.",
-      "sourceHash": "b7afa3e68c782724f33163493f035700aa01a5a5ef10867259eef35c47c82a4c",
-      "text": "モジュールを ALUX ランタイムへドラッグし、パブリックチェーン上での役割を確認します。\nカードをダブルクリックすると、さらに詳しい説明を読めます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Drag modules into ALUX Runtime to see how they compose inside one logical VM.\nDouble-click any card for the deeper note.",
+      "sourceHash": "e2812b3ee56295daad0a77b7e0be19d79f2d8a251bcd394f0904579559a9e972",
+      "text": "モジュールを ALUX Runtime へドラッグすると、ひとつの論理 VM の内部でどのように構成されるかを確認できます。\nカードをダブルクリックすると、より詳しい説明が開きます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.title": {
       "source": "ALUX Runtime Capability Map",
@@ -3932,12 +3820,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.6.cta.eyebrow": {
-      "source": "Build past the one-shot transaction",
-      "sourceHash": "b2f9dae6e99daa33e7ae71c20ad775d9eafec0ef198fbc04ba3e2b94ff6958cc",
-      "text": "一度きりのトランザクションを超えて",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Build beyond the one-shot transaction",
+      "sourceHash": "7d921728ddd577dd145307b9d84333995edb9d8328fcb485970b27d25115df7d",
+      "text": "単発トランザクションの先へ",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.cta.label": {
       "source": "Open Runtime Lab",
@@ -3948,20 +3836,20 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.6.cta.text": {
-      "source": "Use Runtime Lab to inspect current execution primitives and the target composition model.",
-      "sourceHash": "763fcab8477ceca69d5373f95552d0b5f8742e59a19184a61b13b5d07d49d379",
-      "text": "ランタイム・ラボで、現行の実行プリミティブと、目標とするコンポーザビリティ・モデルを確認できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Use Runtime Lab to inspect fork, wait, join, select, replay, and atomic commit across the ALUX execution model.",
+      "sourceHash": "0d9111beabe957b21809ce6fd01e855558eaf96dc7af456cde0919933993bd9a",
+      "text": "Runtime Lab で、ALUX の実行モデルにおける fork、wait、join、select、リプレイ、アトミックコミットを確認できます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.cta.title": {
-      "source": "Explore a service that can wait, resume, coordinate, and settle.",
-      "sourceHash": "fcc2d6c7974316b6bf4a38cb43d5ed89ee3703e907d1ed595384132fd056728f",
-      "text": "待機、再開、協調、決済ができるサービスを体験する。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Explore concurrent programs that orchestrate and commit atomically.",
+      "sourceHash": "c0c5f11afa2a6f44dbaaba36bf125798ec26a24769e5d4ee2a936bf8c655ea78",
+      "text": "オーケストレーションを行い、アトミックにコミットする並行プログラムを試す。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.demos.0.label": {
       "source": "reservation.tox",
@@ -3972,20 +3860,20 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.6.demos.0.status": {
-      "source": "WAITING",
-      "sourceHash": "77aaf105c28c4c82ea7b2e0627b92fdff753c249771e7d2ab4a6f7ec6a5f400f",
-      "text": "待機中",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "LIVE TRACE",
+      "sourceHash": "b553a3650c45b7438000814f482dcef4257e01ae0a15c3e9d6d048359bf860d2",
+      "text": "ライブトレース",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.demos.0.steps.0": {
-      "source": "Request",
-      "sourceHash": "59f03d642b41e22f4575061e817f9e87c3ced5a0e77d5c92364bd45b7f90d0c9",
-      "text": "要求",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Spawn",
+      "sourceHash": "0fc12ed14135db008d0eb5b87113feec1e3871ba7b35373cd20aebd119a69896",
+      "text": "生成",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.demos.0.steps.1": {
       "source": "Wait",
@@ -3996,20 +3884,28 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.6.demos.0.steps.2": {
-      "source": "Resume",
-      "sourceHash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
-      "text": "再開",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Join",
+      "sourceHash": "fd30fe681b4b2d9e55f851cb34641f907401aa43e9d80f5b1e14ce714ef00497",
+      "text": "結合",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.demos.0.steps.3": {
-      "source": "Settle",
-      "sourceHash": "a0c79a8531e1feaabb997bc20b88d1db6896b8cdce1b22af71e9d665f2405e25",
-      "text": "決済",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Select",
+      "sourceHash": "2a78025de6aae5e7ff88e5a951bb3a78ddd67388913529cf9e2dd9653e62b02d",
+      "text": "選択",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
+    },
+    "home.sections.6.demos.0.steps.4": {
+      "source": "Commit",
+      "sourceHash": "82a9c46ffa4789945d9f2359d75891558ef6faa8dee09e4b25e4e0597704f5bd",
+      "text": "コミット",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.demos.1.core": {
       "source": "TVM / TSAC",
@@ -4180,20 +4076,20 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.6.items.0.0": {
-      "source": "Bookings, Approvals, and Escrow",
-      "sourceHash": "1ebb72bccc018bc2426ea534f6c1b38c82b8e01527c4a5ae4381c3ab3d915ab6",
-      "text": "予約・承認・エスクロー",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Long-Running Process Orchestration",
+      "sourceHash": "ce71b56e880f973e3f98d6bfd09eccd6afd6b7cc318ea39cb44b8cdda23d8489",
+      "text": "長期実行プロセスのオーケストレーション",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.items.0.1": {
-      "source": "Build workflows that pause for inventory, a signature, or payment, then resume and settle without restarting the service.",
-      "sourceHash": "14d9bf64a22e2534773475b857715e36a2d474cc4c635324d96452ec71f807db",
-      "text": "在庫、署名、支払いを待ち、条件がそろったら再開して決済するワークフローを構築できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Fork processes, wait for inputs, join results from multiple channels, or select whichever event becomes ready first—without restarting the transaction.",
+      "sourceHash": "d9bdaa277475a00e01f784f896d56d97c5aed82c5402ffb349dcf92a12860f85",
+      "text": "プロセスをフォークし、入力を待ち、複数チャネルの結果を join するか、最初に準備が整ったイベントを select できます。トランザクションを再起動する必要はありません。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.items.1.0": {
       "source": "Concurrent EVM Applications",
@@ -4204,52 +4100,52 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.6.items.1.1": {
-      "source": "Run isolated EVM applications concurrently and coordinate shared resources through TVM and TSAC.",
-      "sourceHash": "a31442d64343c143cc3202698ff73c0fe9b3a8e9bb03bc32f8c20612d3d46f05",
-      "text": "分離された EVM アプリケーションを並行実行し、TVM と TSAC で共有リソースを調整します。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Run EVM bytecode inside isolated sandboxes, coordinate concurrent workloads through TVM, and migrate supported contracts through familiar Ethereum-facing interfaces.",
+      "sourceHash": "7129801cbf6bfb2a9f762408fdd81ace6452596e9b01ebddf173409c46bd68d0",
+      "text": "分離されたサンドボックス内で EVM バイトコードを実行し、TVM を介して並行ワークロードを協調させ、対応するコントラクトを使い慣れた Ethereum 向けインターフェースから移行できます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.items.2.0": {
-      "source": "Cross-System Service Workflows",
-      "sourceHash": "6acda05ea030addc1d756270919673237d42dcc2dd34571c5fddec7fbef6b3b8",
-      "text": "システム横断サービスワークフロー",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Atomic Cross-System Workflows",
+      "sourceHash": "fd54302666522ebfa7eb8959aab99018fdecbc535a2d23678a933c3dc17c3993",
+      "text": "システム横断のアトミックワークフロー",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.items.2.1": {
-      "source": "Connect on-chain logic with verified HTTPS inputs today, while broader database and external-system adapters remain part of the target architecture.",
-      "sourceHash": "89e31ab58f082e45acffb769372074af430739a4fa604385397cac50c5ed7951",
-      "text": "現在は、オンチェーンロジックを検証済みの HTTPS 入力と接続できます。より広範なデータベースおよび外部システム向けアダプターは、引き続き目標アーキテクチャの一部です。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:53:26.079Z",
-      "reviewerNotes": "Native final review against the current English source, ALUX knowledge base, and official terminology."
+      "source": "Stage work across blocks and connected systems, then commit the complete transaction all-or-nothing instead of exposing partial state.",
+      "sourceHash": "0e0f2eb2b4c2295ec78f1488a9dac8eafc3fe1661e35c5d5b11263c34329d2b9",
+      "text": "ブロックと接続先システムをまたいで処理をステージし、部分状態を公開することなく、トランザクション全体を全か無かでコミットします。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.items.3.0": {
-      "source": "Capability-Native Applications",
-      "sourceHash": "5c5319c58115f397156ccb407ef34664c83055ecbea18588eb6f442466ba2948",
-      "text": "ケイパビリティネイティブなアプリ",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Native OCAP Applications",
+      "sourceHash": "b432db53ec8bd15229e87ed9b26893d7e364aaeecae0c625ab65ff9327abe377",
+      "text": "OCAP ネイティブアプリケーション",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.items.3.1": {
-      "source": "Pass task-specific, unforgeable capabilities between services instead of letting identity carry unrelated ambient authority into every task.",
-      "sourceHash": "9b131888c20ce31779c3fe56bdf6261d1d430c21c1722ffd150104c8372e6889",
-      "text": "広い権限を持つ ID が無関係な環境権限を毎回のタスクへ持ち込むのではなく、タスク固有の偽造不能なケイパビリティをサービス間で渡します。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-14T16:34:17.746Z",
-      "reviewerNotes": "Reviewed for task-scoped OCAP and ambient-authority semantics."
+      "source": "Compose task-specific, unforgeable capabilities between processes instead of letting identity carry unrelated ambient authority into every task.",
+      "sourceHash": "ae1087aa3abe62594aaa9e0f8647674283f1fd0582850ebf9e30da964dd58a5a",
+      "text": "アイデンティティが無関係なアンビエント権限をあらゆるタスクへ持ち込むのではなく、プロセス間でタスク固有の偽造不能なケイパビリティを構成します。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.text": {
-      "source": "Start with familiar EVM tooling, then build public-chain services that stay alive across blocks, coordinate with external systems, and carry explicit authority.",
-      "sourceHash": "1965ef5474b1c78f7254fedb4e14fa3d99d7447aab3b071e3d60ced0c421f250",
-      "text": "使い慣れた EVM ツールから始め、ブロックをまたいで動き続け、外部システムと連携し、明示的な権限を持つパブリックチェーンサービスを構築できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Build decentralized applications as concurrent programs: processes can fork, wait, join multiple channels, select the first available event, coordinate across blocks, and commit all-or-nothing.",
+      "sourceHash": "ea9f783a586ab857b57f153f82eca9581d2a11822f00fefd8dd1d6816ad496ad",
+      "text": "分散型アプリケーションを並行プログラムとして構築します。プロセスはフォークと待機ができ、複数チャネルを join し、最初に利用可能になったイベントを select し、ブロックをまたいで協調したうえで、全か無かでコミットできます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.6.title": {
       "source": "What You Can\nBuild on ALUX",
@@ -4284,12 +4180,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.9.items.0.1": {
-      "source": "No. Faster L1s accelerate the same abstraction: one-shot state updates. ALUX is a decentralized concurrent runtime for services that wait, resume, coordinate, and carry authority across time. Its GLVM architecture is designed to extend that logical execution model across blockchain nodes, cloud servers, and personal devices.",
-      "sourceHash": "439126b5c82b0e14b41d0ef51edffef02f551a6a87d05fc2104d67f86d1786b4",
-      "text": "いいえ。高速な L1 が速めるのは、一度きりの状態更新という同じ抽象化です。ALUX は、待機、再開、協調ができ、時間をまたいで権限を保持するサービス向けの分散型並行ランタイムです。GLVM アーキテクチャは、この論理実行モデルをブロックチェーンノード、クラウドサーバー、個人デバイスへ拡張することを目指しています。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "No. Faster L1s accelerate the same abstraction: one-shot state updates that happen within one block. ALUX is a decentralized concurrent runtime for Long Transactions that can wait, resume, join across multiple channels, or select whichever channel becomes ready first; their state updates are no longer constrained by a block boundary. Through its GLVM architecture—Virtual Machine Abstraction—the same logical transaction is designed to extend beyond block boundaries toward shard and system boundaries.",
+      "sourceHash": "11adb65fa335cf45d8242c52f7bb560d93a05f7a0f4d63dd3d3386b667980ae3",
+      "text": "いいえ。高速な L1 が加速するのは、ひとつのブロック内で完結する単発の状態更新という、同じ抽象化です。ALUX は、待機、再開、複数チャネルにまたがる join、または最初に準備が整ったチャネルの select が可能な長期トランザクション（Long Transaction）のための分散型並行ランタイムです。その状態更新は、もはやブロック境界に制約されません。GLVM アーキテクチャ——Virtual Machine Abstraction（仮想マシン抽象化）——により、同じ論理トランザクションをブロック境界の先へ、シャード境界やシステム境界にまで拡張できるよう設計されています。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.1.0": {
       "source": "What becomes possible on ALUX that ordinary smart contracts cannot do?",
@@ -4300,12 +4196,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.9.items.1.1": {
-      "source": "A transaction can suspend across block boundaries, preserve its execution context, and resume when the awaited input arrives. Replay and commit mechanisms let validators reproduce the same outcome and finalize bounded work atomically.",
-      "sourceHash": "5022f2f7558ccde4e640169b67208fa45932d86562da6a2df7ff91195ed5ce2f",
-      "text": "トランザクションはブロック境界をまたいで一時停止し、実行コンテキストを保持したまま、待っていた入力が届くと再開できます。リプレイとコミットの仕組みにより、バリデータは同じ結果を再現し、範囲を定めた処理をアトミックに確定できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "ALUX programs can fork into concurrent processes, wait for external inputs, join results from multiple channels, select the first event that becomes ready, and still commit the complete transaction atomically. Replay and commit mechanisms let validators reproduce the same outcome without exposing partial state.",
+      "sourceHash": "f7f758c66e44ea5e25ebc3be9b4a201c9d83621304d4774030035d88feff88e6",
+      "text": "ALUX のプログラムは並行プロセスへフォークし、外部入力を待ち、複数チャネルの結果を join し、最初に準備が整ったイベントを select しながら、トランザクション全体をアトミックにコミットできます。リプレイとコミットの仕組みにより、部分状態を公開することなく、バリデータは同じ結果を再現できます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.2.0": {
       "source": "Why is ALUX built for AI agents?",
@@ -4316,28 +4212,28 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.9.items.2.1": {
-      "source": "Agents need more than wallets. They need scoped access to tools and services, context across multi-step work, and async coordination. In ALUX, a process cannot forge arbitrary channel references; it can act only through references it created or was explicitly passed.",
-      "sourceHash": "1e7860fe3a8e9a881c6c5bf0504214fd4fbbf9cf823ef76cd6fa1c200dbe6f7c",
-      "text": "エージェントに必要なのはウォレットだけではありません。ツールやサービスへの範囲を限定したアクセス権、複数ステップにわたるコンテキスト、非同期協調が必要です。ALUX では、プロセスは任意のチャネル参照を偽造できず、自ら作成した参照か、明示的に渡された参照を通じてのみ動作します。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "An on-chain agent is naturally a Long Transaction. Calling an LLM or a tool takes time; it cannot complete instantly—one only has to look at a Claude Code or Codex session. In other words, ALUX is a decentralized durable execution engine for agents.",
+      "sourceHash": "f49b9c95957b3abbc06f4eb3ea41e6fa378d7d0ae1031744f6ecfcb1ac5c5823",
+      "text": "オンチェーンエージェントは、その性質上、長期トランザクション（Long Transaction）です。LLM やツールの呼び出しには時間がかかり、瞬時には完了しません。Claude Code や Codex のセッションを見れば明らかです。言い換えれば、ALUX はエージェントのための分散型永続実行エンジンです。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.3.0": {
-      "source": "What is a capability in ALUX?",
-      "sourceHash": "bc79e852feef70a6362035be08e873ce5469a6de84ed09aa8c7f343dc82af005",
-      "text": "ALUX におけるケイパビリティとは何ですか？",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "What is Object Capability (OCAP)?",
+      "sourceHash": "6a6bfe6952509bafc7fa9e58c047837482f40b5f8fb3758a06ea8aec588b91dd",
+      "text": "オブジェクトケイパビリティ（OCAP）とは何ですか？",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.3.1": {
-      "source": "In the current runtime, a capability is an unforgeable channel reference that can be held, passed, and attenuated. General-purpose expiry, revocation, and usage quotas remain planned until they are implemented and tested.",
-      "sourceHash": "b99bb66a2ac4de36b8b1330872438af9adfe1ce5fa23c19319f8dc03f19ce9f4",
-      "text": "現行ランタイムにおけるケイパビリティは、保持、受け渡し、権限縮小が可能な、偽造不能のチャネル参照です。汎用的な有効期限、失効、利用上限は、実装とテストが完了するまで計画段階にあります。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Technical details are being finalized and will be added shortly.",
+      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe",
+      "text": "技術的な詳細は現在最終調整中で、近日中に追記します。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T03:20:12.428Z",
+      "reviewerNotes": "Reviewed against the current English source."
     },
     "home.sections.9.items.4.0": {
       "source": "How does ALUX keep Long Transactions deterministic?",
@@ -4364,44 +4260,60 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "home.sections.9.items.5.1": {
-      "source": "ALUX exposes a growing set of eth_* JSON-RPC methods and runs EVM and Solidity workloads through its EVM path. Compatibility depends on the RPC methods and EVM features currently implemented; Tolang is available for concurrency-native services.",
-      "sourceHash": "26a24715b9cffdffcfab014c7465c29a5612157167ebc1ee31872862cc099095",
-      "text": "ALUX は eth_* JSON-RPC メソッドへの対応を拡充しており、EVM 実行経路を通じて EVM と Solidity のワークロードを実行します。互換性の範囲は、現在実装されている RPC メソッドと EVM 機能に依存します。並行性をネイティブに扱うサービスには Tolang を利用できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "TVM runs EVM bytecode inside isolated sandboxes, so most EVM contracts can be migrated to ALUX with minimal changes. ALUX also presents an Ethereum-compatible view through a set of commonly used eth_* JSON-RPC methods.",
+      "sourceHash": "49ae7c5406ea4b32ea374ef2354de314b26f4ec2a9857ee052e1c3560c2b0a99",
+      "text": "TVM は分離されたサンドボックス内で EVM バイトコードを実行するため、ほとんどの EVM コントラクトは最小限の変更で ALUX へ移行できます。また ALUX は、一般的に利用される一連の eth_* JSON-RPC メソッドを通じて、Ethereum 互換のビューを提供します。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.6.0": {
-      "source": "What is ALUX's OpenClaw?",
-      "sourceHash": "c5f164ea3a6d295843766bb3d017afdb69f7fdc7b923e56ff5ed2f0f9e6bb70a",
-      "text": "ALUX の OpenClaw とは何ですか？",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Some other chains also claim to support cross-block transactions. How is ALUX different?",
+      "sourceHash": "9f932c7d7e55e031f5c2364e2cfb8ceb9cdc28fd4a0dd9df0b21381cd659539b",
+      "text": "他のチェーンもクロスブロックトランザクション対応をうたっています。ALUX は何が違うのですか？",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.6.1": {
-      "source": "OpenClaw is the endgame: an open capability layer for the agent world, where agents discover, request, delegate, and combine what they are allowed to do. The internet connected information; blockchains connected assets; agent networks must connect capability.",
-      "sourceHash": "1fe828f6e02e1fcaa888055741ddc307270513401b8599e96bf267f5c665bbf3",
-      "text": "OpenClaw は最終目標です。エージェントの世界に向けたオープンなケイパビリティ・レイヤーとして、エージェントが許可された操作を発見、要求、委任、組み合わせられるようにします。インターネットは情報をつなぎ、ブロックチェーンは資産をつなぎました。エージェント・ネットワークはケイパビリティをつなぐ必要があります。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "<strong>The keyword is atomicity.</strong><br><br><strong>Compensation / Saga:</strong> <code>commit → commit → ✗ fail → run compensating undo</code><br>Each step commits locally, intermediate states are visible, compensation can also fail, and external effects cannot always be reversed. This is eventual consistency. Some asynchronous chains, including ICP and Rialo, lean on this model. It is easier to implement, but unsuitable for applications that require stronger ACID guarantees.<br><br><strong>ALUX all-or-nothing:</strong> <code>stage → stage → ✗ fail → discard everything</code><br>Nothing commits until the whole transaction commits. On abort, uncommitted effects are discarded and no partial state becomes observable. That is true ACID atomicity across block heights.",
+      "sourceHash": "0b903c35ac399aec4fcbbaef8979f7d72f530e7b6bce101ffb21e39da45b9e96",
+      "text": "<strong>鍵となるのはアトミック性です。</strong><br><br><strong>補償 / Saga:</strong> <code>commit → commit → ✗ fail → run compensating undo</code><br>各ステップはローカルでコミットされるため、中間状態が可視化されます。補償処理も失敗する可能性があり、外部への副作用を常に取り消せるとは限りません。これは結果整合性です。ICP や Rialo を含む一部の非同期チェーンは、このモデルに依存しています。実装は容易ですが、より強い ACID 保証を必要とするアプリケーションには適しません。<br><br><strong>ALUX の all-or-nothing:</strong> <code>stage → stage → ✗ fail → discard everything</code><br>トランザクション全体がコミットされるまで、何もコミットされません。中止時には未コミットの効果が破棄され、部分状態が可視化されることはありません。これが、ブロック高をまたぐ真の ACID アトミック性です。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.7.0": {
-      "source": "How is ALUX different from agent frameworks like LangGraph or Temporal?",
-      "sourceHash": "65e4de795ecbe7556515192129d33488c5298391ddbc98ed96494967bb1bd001",
-      "text": "ALUX は LangGraph や Temporal などのエージェント・フレームワークと何が違うのですか？",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Why is OCAP a stronger and composable security model?",
+      "sourceHash": "a3482e3eef954139b968cd38f0d5ee947a43362320973b9d9b566973c520cea5",
+      "text": "OCAP が、より強力でコンポーザブルなセキュリティモデルであるのはなぜですか？",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.7.1": {
-      "source": "LangGraph and Temporal are application frameworks for coordinating workflows you control. ALUX is a public runtime designed for work across trust boundaries: validators can reproduce recorded COMM choices, processes act through explicit channel capabilities, and cross-block execution can preserve context through defined replay and commit paths.",
-      "sourceHash": "ca5d61a06fc7bf1ba2ad5c97310883958b276845e06f3ee0c7352373edfd151f",
-      "text": "LangGraph と Temporal は、自分たちが管理するワークフローを協調させるアプリケーションフレームワークです。ALUX は、信頼境界を越える処理向けに設計されたパブリックランタイムです。バリデータは記録された COMM の選択を再現でき、プロセスは明示的なチャネル・ケイパビリティを通じて動作します。また、クロスブロック実行は、定義済みのリプレイ経路とコミット経路を通じてコンテキストを保持できます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "Technical details are being finalized and will be added shortly.",
+      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe",
+      "text": "技術的な詳細は現在最終調整中で、近日中に追記します。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T03:20:12.428Z",
+      "reviewerNotes": "Reviewed against the current English source."
+    },
+    "home.sections.9.items.8.0": {
+      "source": "What does it mean for OCAP to be natively supported in ALUX?",
+      "sourceHash": "248e74389c85b31700b030cf2d3828b0adc188f0d2677575ede7fa339b64d00d",
+      "text": "ALUX が OCAP をネイティブサポートするとは、どういう意味ですか？",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
+    },
+    "home.sections.9.items.8.1": {
+      "source": "Technical details are being finalized and will be added shortly.",
+      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe",
+      "text": "技術的な詳細は現在最終調整中で、近日中に追記します。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T03:20:12.428Z",
+      "reviewerNotes": "Reviewed against the current English source."
     },
     "home.sections.9.title": {
       "source": "FAQ",
@@ -4460,13 +4372,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "inlineUiLabels.capabilityMapMobileIntro": {
-      "source": "Tap once to open a module’s deeper note.\nDouble-tap to connect it to ALUX Runtime and reveal its public-chain role in the composed result.",
-      "sourceHash": "b46bf930e74f0b359fc59920335593a522892dab3d3d9a69fdfe7f0cda8cfb74",
-      "text": "1回タップすると、モジュールの詳しい説明が開きます。\nダブルタップすると、そのモジュールが ALUX ランタイムに接続され、構成結果にパブリックチェーン上で担う役割が表示されます。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-14T23:46:41.271Z",
-      "reviewerNotes": "Native Japanese mobile-interaction review aligned to the current English source and ALUX terminology.",
-      "previousSource": "Tap a module to explore its role.\nDouble-tap it to connect to ALUX Runtime and see the composed result."
+      "source": "Tap once to open a module’s deeper note.\nDouble-tap to connect it to ALUX Runtime and see its role inside the composed VM.",
+      "sourceHash": "9cb4cc9860af0e3f8c775b42b0f3259202eb6b4aab086912d2ce85bd80800eb4",
+      "text": "1回タップすると、モジュールの詳しい説明が開きます。\nダブルタップすると、モジュールが ALUX Runtime に接続され、構成された VM の中で果たす役割を確認できます。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "inlineUiLabels.capabilityMapMobileTapConnect": {
       "source": "Double-tap · Connect to Runtime",
@@ -4474,8 +4385,7 @@
       "text": "ダブルタップ · ランタイムに接続",
       "status": "ai-reviewed",
       "reviewedAt": "2026-07-14T23:46:41.271Z",
-      "reviewerNotes": "Native Japanese mobile-interaction review aligned to the current English source and ALUX terminology.",
-      "previousSource": "Double-tap to connect"
+      "reviewerNotes": "Native Japanese mobile-interaction review aligned to the current English source and ALUX terminology."
     },
     "inlineUiLabels.capabilityMapMobileTapDetail": {
       "source": "Tap once · View details",
@@ -4483,8 +4393,7 @@
       "text": "1回タップ · 詳細を見る",
       "status": "ai-reviewed",
       "reviewedAt": "2026-07-14T23:46:41.271Z",
-      "reviewerNotes": "Native Japanese mobile-interaction review aligned to the current English source and ALUX terminology.",
-      "previousSource": "Tap a module for details"
+      "reviewerNotes": "Native Japanese mobile-interaction review aligned to the current English source and ALUX terminology."
     },
     "inlineUiLabels.constraint": {
       "source": "Constraint",
@@ -4943,12 +4852,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "parallelConcurrentComposable.foundations.text": {
-      "source": "A long-running service stays coherent because every step can run, interact, carry explicit authority, replay deterministically, and settle along one verifiable public-chain path.",
-      "sourceHash": "10218a9ed2aed5fc694afe1eb504ed6685778732c65cc23245e474ebd6d6b272",
-      "text": "長期稼働サービスの一貫性が保たれるのは、すべての段階が1つの検証可能なパブリックチェーン経路上で、実行、相互作用、明示的な権限の保持、決定的リプレイ、決済を行えるためです。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "A long-running service stays coherent because every step can run, interact, carry explicit authority, replay deterministically, and settle along one verifiable atomic path.",
+      "sourceHash": "fd931f3df6844dc0ae7543a89cf10c50b53a8e981dafb1e307d43b2516a2c35e",
+      "text": "長期稼働するサービスの一貫性が保たれるのは、各ステップが実行、相互作用、明示的な権限の保持、決定論的リプレイを行い、ひとつの検証可能なアトミックな経路に沿って確定できるためです。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "parallelConcurrentComposable.foundations.title": {
       "source": "What keeps a service alive",
@@ -7239,12 +7148,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "vs.metaDescription": {
-      "source": "How ALUX gives production AI agents cross-block continuity, tuple-space coordination, OCAP authority, and an EVM path through TSAC.",
-      "sourceHash": "6dc5bc9799600883ca72b3521f87498e74bf345921998086faca6a728454d4db",
-      "text": "ALUX が、本番 AIエージェントにクロスブロック継続、タプル空間による協調、OCAP に基づく権限、TSAC を介した EVM 実行経路を提供する仕組みを紹介します。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "source": "How ALUX gives production AI agents cross-block continuity, tuple-space coordination, native OCAP support, and an EVM path through TSAC.",
+      "sourceHash": "8bee3bb0cc4eca78690789da1ee3c73e0b8b9c87f5040b1459db67478d5b90f9",
+      "text": "ALUX が本番環境の AI エージェントに、クロスブロックの継続性、タプル空間による協調、ネイティブ OCAP サポート、TSAC を介した EVM への経路を提供する仕組みを紹介します。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T03:20:12.428Z",
+      "reviewerNotes": "Reviewed against the current English source."
     },
     "vs.metaTitle": {
       "source": "For AI Agents | ALUX Network",

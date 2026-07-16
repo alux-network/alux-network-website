@@ -3807,6 +3807,13 @@ body[data-page="home"] .hero-home h1 {
   text-shadow: 0 4px 18px rgba(255, 251, 243, 0.88);
 }
 
+body[data-page="home"] .hero-home h1.hero-home-title--statement {
+  max-width: 11.5ch;
+  font-size: clamp(3.45rem, 7.2vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
 body[data-page="home"] .hero-home-brand {
   display: inline-block;
   color: #25384c;
@@ -6259,7 +6266,7 @@ body[data-page="home"] .showcase-demo-head > strong {
 
 body[data-page="home"] .showcase-demo-steps {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--step-count, 4), minmax(0, 1fr));
   gap: 8px;
   align-items: center;
 }
@@ -6277,13 +6284,6 @@ body[data-page="home"] .showcase-demo-steps span {
   text-align: center;
 }
 
-body[data-page="home"] .showcase-demo-steps span.is-active {
-  border-color: rgba(166, 121, 81, 0.34);
-  background: rgba(231, 207, 174, 0.42);
-  color: #6f4c30;
-  font-weight: 700;
-}
-
 body[data-page="home"] .showcase-demo-progress {
   height: 5px;
   overflow: hidden;
@@ -6293,10 +6293,12 @@ body[data-page="home"] .showcase-demo-progress {
 
 body[data-page="home"] .showcase-demo-progress span {
   display: block;
-  width: 48%;
+  width: 100%;
   height: 100%;
   border-radius: inherit;
   background: linear-gradient(90deg, #a67951, #d2ad7f);
+  transform: scaleX(1);
+  transform-origin: left center;
 }
 
 body[data-page="home"] .showcase-demo-lanes {
@@ -6502,8 +6504,12 @@ html[dir="rtl"] body[data-page="home"] .showcase-use-cases-cta > a span {
 
 @media (prefers-reduced-motion: no-preference) {
   body[data-page="home"] .showcase-demo-progress span {
-    animation: showcaseDemoWait 3.8s ease-in-out infinite;
-    transform-origin: left center;
+    animation: showcaseDemoOrchestrationProgress 10s linear infinite;
+  }
+
+  body[data-page="home"] .showcase-demo-steps span {
+    animation: showcaseDemoOrchestrationStep 10s linear infinite;
+    animation-delay: calc(var(--step-index, 0) * 2s);
   }
 
   body[data-page="home"] .showcase-demo-lanes i::after {
@@ -6521,14 +6527,66 @@ html[dir="rtl"] body[data-page="home"] .showcase-use-cases-cta > a span {
   }
 }
 
-@keyframes showcaseDemoWait {
+@keyframes showcaseDemoOrchestrationProgress {
   0%,
-  100% {
-    transform: scaleX(0.76);
+  19.999% {
+    transform: scaleX(0.2);
   }
 
-  50% {
+  20%,
+  39.999% {
+    transform: scaleX(0.4);
+  }
+
+  40%,
+  59.999% {
+    transform: scaleX(0.6);
+  }
+
+  60%,
+  79.999% {
+    transform: scaleX(0.8);
+  }
+
+  80%,
+  100% {
     transform: scaleX(1);
+  }
+}
+
+@keyframes showcaseDemoOrchestrationStep {
+  0%,
+  19.999% {
+    border-color: rgba(166, 121, 81, 0.34);
+    background: rgba(231, 207, 174, 0.42);
+    color: #6f4c30;
+    box-shadow: inset 0 0 0 1px rgba(166, 121, 81, 0.08);
+  }
+
+  20%,
+  100% {
+    border-color: rgba(83, 104, 123, 0.14);
+    background: rgba(255, 255, 255, 0.72);
+    color: #53687b;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 720px) {
+  body[data-page="home"] .hero-home h1.hero-home-title--statement {
+    max-width: calc(100% - 84px);
+    font-size: clamp(2.75rem, 13vw, 3.7rem);
+    line-height: 1;
+  }
+
+  body[data-page="home"] .showcase-demo-steps {
+    gap: 5px;
+  }
+
+  body[data-page="home"] .showcase-demo-steps span {
+    min-height: 50px;
+    padding-inline: 4px;
+    font-size: 0.68rem;
   }
 }
 
@@ -15152,7 +15210,7 @@ html[dir="rtl"] body[data-page="home"] .capability-mindmap-node li::before {
   }
 }
 
-/* Capability map: interactive public-chain runtime diagram. */
+/* Capability map: interactive global-runtime composition diagram. */
 body[data-page="home"] .capability-map-panel {
   overflow: hidden;
 }
