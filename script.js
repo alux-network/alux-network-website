@@ -2159,6 +2159,26 @@ const teamPageEn = {
 pageData.team = teamPageEn;
 pages.team.en = teamPageEn;
 
+function renderHomeHeroTitle(value = "", lang = "en") {
+  const localizedLines = {
+    en: value === "Building the global VM" ? ["Building", "the", "global VM"] : null,
+    zh: value === "构建全局虚拟机" ? ["构建全局", "虚拟机"] : null,
+    ko: value === "전역 VM 구축" ? ["전역 VM", "구축"] : null,
+    ja: value === "グローバル VM を構築する" ? ["グローバル VM", "を構築する"] : null,
+    ar: value === "نبني الآلة الافتراضية العالمية" ? ["نبني", "الآلة الافتراضية", "العالمية"] : null
+  };
+  const lines = localizedLines[lang];
+
+  if (lines) {
+    const separator = lang === "zh" ? "" : " ";
+    return lines
+      .map((line) => `<span class="hero-home-title-line">${line}</span>`)
+      .join(separator);
+  }
+
+  return value.replace(/^ALUX\b/, '<span class="hero-home-brand">ALUX</span>');
+}
+
 function renderHero(hero, lang) {
   if (!hero || hero.hidden) return "";
   const renderHeroCopy = (value = "") => escapeAttribute(value).split(/\n+/).join("<br>");
@@ -2166,7 +2186,7 @@ function renderHero(hero, lang) {
   const text = hero.text ? `<p class="hero-text">${renderHeroCopy(hero.text)}</p>` : "";
   const eyebrow = hero.eyebrow ? `<p class="eyebrow">${renderHeroCopy(hero.eyebrow)}</p>` : "";
   const title = currentPage === "home"
-    ? hero.title.replace(/^ALUX\b/, '<span class="hero-home-brand">ALUX</span>')
+    ? renderHomeHeroTitle(hero.title, lang)
     : hero.title;
   if (currentPage === "home") {
     const titleClass = /^ALUX\b/.test(hero.title) ? "" : " class=\"hero-home-title--statement\"";
