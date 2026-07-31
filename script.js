@@ -20,10 +20,13 @@ const mobileQuery = window.matchMedia("(max-width: 960px)");
 const ui = {
   en: {
     languageLabel: "Language",
+    primaryNavigationLabel: "Primary navigation",
+    menuToggleLabel: "Toggle navigation menu",
     nav: {
       home: "Home",
       vs: "For AI Agents",
       learn: "Learn",
+      learnGlvm: "GLVM",
       blog: "Blog",
       learnAlux: "ALUX VS Others",
       learnPcc: "Runtime Lab",
@@ -76,20 +79,20 @@ const homeFaqItems = {
 
 const pageData = {
   home: {
-    metaTitle: "ALUX Network — Building the Global VM",
-    metaDescription: "ALUX is building one logical virtual machine that runs across public blockchains, private clusters, and client hardware while preserving atomic commit.",
+    metaTitle: "ALUX Network — Building GLVM",
+    metaDescription: "GLVM is ALUX's architecture for one logical execution layer across physically distributed TVMs, coordinating concurrency, replay, authority, finalization, replication, and consensus.",
     hero: {
       eyebrow: "ALUX Network",
-      title: "Building the global VM",
+      title: "Building GLVM",
       loop: "",
-      text: "Imagine one logical virtual machine that runs everywhere—on a public blockchain, on a private cluster, and on client hardware such as phones and browsers—while abstracting away the state, threads, replication, and consensus underneath. Developers write one concurrent program; where it runs becomes a configuration choice, not an architecture. Its parts still commit together, atomically. That is Virtual Machine Abstraction, and ALUX is building it."
+      text: "GLVM is ALUX’s unified execution abstraction for developers. Each machine runs a TVM; together they form one logical execution layer. The runtime coordinates replay, authority, finalization, replication, and consensus beneath the application. The chain runtime is the current foundation; private cloud is the next integration surface, while client-device execution remains on the roadmap."
     },
     sections: [
       {
         type: "architecture",
         eyebrow: "Virtual Machine Abstraction",
-        title: "One logical virtual machine.<br>Everywhere.",
-        text: "GLVM abstracts the state, threads, replication, and consensus beneath one concurrent program, so deployment becomes a configuration choice rather than a new application architecture.",
+        title: "One logical execution layer.<br>Physically distributed.",
+        text: "GLVM gives developers one concurrent execution model above many TVMs. The ALUX chain runtime is the current foundation; private cloud is the next integration surface, while client-device deployment remains on the roadmap.",
         architecture: {
           world: {
             label: "Layer 3",
@@ -103,10 +106,10 @@ const pageData = {
           runtime: {
             label: "Layer 2",
             title: "ALUX — Decentralized Concurrent Runtime",
-            vm: "Unified World VM",
+            vm: "GLVM",
             controls: ["State + Threads", "Replication", "Consensus"],
             tvms: ["TVM", "TVM", "TVM"],
-            caption: "TVM abstraction — each TVM is abstracted into the Unified World VM above."
+            caption: "Each machine runs one TVM; together they form GLVM."
           },
           infrastructure: {
             label: "Layer 1",
@@ -129,12 +132,12 @@ const pageData = {
         title: "ALUX Runtime Capability Map",
         mapKicker: "",
         mapTitle: "ALUX Capability Map",
-        mapIntro: "Drag modules into ALUX Runtime to see how they compose inside one logical VM.\nDouble-click any card for the deeper note.",
-        text: "Drag modules into ALUX Runtime to see how they compose inside one logical VM.\nDouble-click any card for the deeper note.",
+        mapIntro: "Drag modules into ALUX Runtime to see how they compose inside one GLVM model.\nDouble-click any card for the deeper note.",
+        text: "Drag modules into ALUX Runtime to see how they compose inside one GLVM model.\nDouble-click any card for the deeper note.",
         guideSteps: ["Drag into ALUX Runtime", "Double-click for detail"],
         comboLabel: "Runtime Connection",
         comboTitle: "Connect a module to ALUX",
-        comboDefault: "Drop a module onto ALUX Runtime to see how it composes inside the global VM.",
+        comboDefault: "Drop a module onto ALUX Runtime to see how it composes inside GLVM.",
         inspectorLabel: "Module Trace",
         inspectorTitle: "Open a module",
         inspectorDefault: "Double-click a card to flip it into a short note on what it does, why it matters, and where it touches real services.",
@@ -142,15 +145,15 @@ const pageData = {
         core: {
           label: "Virtual Machine Abstraction",
           title: "ALUX Runtime",
-          text: "One logical VM where concurrent TVM execution, Native OCAP Support, cross-block atomicity, and BlockGit finality compose across deployment environments.",
-          items: ["One Logical VM", "Concurrent Runtime", "Atomic Commit"],
-          detailTitle: "One concurrent program, anywhere",
+          text: "One logical execution layer where concurrent TVM execution, Native OCAP Support, cross-block atomicity, and BlockGit finality compose beneath the developer-facing GLVM abstraction.",
+          items: ["One Logical Layer", "Concurrent Runtime", "Atomic Commit"],
+          detailTitle: "One logical model across environments",
           detailTechnical: "ALUX abstracts the state, threads, replication, and consensus beneath a single concurrent execution model.",
-          detailBusiness: "Developers write one program and choose where it runs as configuration, while its parts still commit together atomically.",
+          detailBusiness: "Developers target one concurrent model while the runtime coordinates execution across an expanding set of environments.",
           runtimeLabel: "Virtual Machine Abstraction",
-          runtimeTitle: "ALUX Runtime\nforms\u00A0one\u00A0logical\u00A0VM",
+          runtimeTitle: "ALUX Runtime\nforms\u00A0one\u00A0logical\u00A0layer",
           runtimeTechnical: "TVM execution, Native OCAP Support, cross-block commit logic, and BlockGit finality meet inside one runtime abstraction.",
-          runtimeBusiness: "The same concurrent program can target public blockchains, private clusters, and client hardware without becoming three architectures."
+          runtimeBusiness: "The architecture keeps one developer model across chain, private cloud, and future client-device execution surfaces."
         },
         clusters: [
           {
@@ -665,7 +668,7 @@ const pageData = {
       title: "One logical runtime across many environments",
       text: "Runtime Lab shows current parallel and message-driven execution, then illustrates the target atomic composition model. GLVM describes the broader architecture for extending that logical model across blockchain nodes, cloud services, and personal devices.",
       label: "Explore GLVM",
-      href: "glvm.html"
+      href: "glvm.html#architecture"
     },
     close: {
       eyebrow: "Why it matters",
@@ -721,170 +724,264 @@ const pageData = {
 
 const glvmPageEn = {
   metaTitle: "GLVM | ALUX Network",
-  metaDescription: "Explore the Global Logical Virtual Machine: ALUX's architecture for connecting TVMs across blockchain, cloud, and personal devices into one verifiable logical execution layer.",
+  metaDescription: "Explore GLVM, ALUX's developer-facing logical execution model built on TVM concurrency, replay, object capabilities, atomic finalization, replication, and consensus.",
   hero: {
     eyebrow: "Learn / GLVM",
     title: "GLVM",
     fullName: "Global Logical Virtual Machine",
-    tagline: "Many machines. One logical world.",
-    text: "GLVM is designed to coordinate TVMs across blockchain, cloud, and personal devices as one verifiable logical machine.",
+    tagline: "One logical execution layer, coordinated across many machines.",
+    text: "GLVM is the developer-facing execution abstraction ALUX is building from its concurrent runtime. A TVM provides the concrete engine on each participating machine; the GLVM model brings execution state, processes, replay, replication, and consensus into one logical layer.",
     visual: {
       poster: "assets/glvm/20260712_GLVM_全局逻辑主视觉_4K.webp",
       video: "assets/glvm/20260712_GLVM_全局逻辑动效_1080P.mp4",
-      alt: "A transparent global logical computer connecting blockchain validators, cloud servers, and personal devices through visible execution rails."
+      alt: "A warm technical cutaway showing multiple physical machines connected beneath one GLVM execution layer."
     },
     signals: [
-      ["Logical scope", "Chain · Cloud · Device"],
-      ["Execution engine", "TVM"],
-      ["Proof path", "Replay · Merge · Commit"]
+      ["Physical model", "One TVM per machine"],
+      ["Logical model", "One GLVM above them"],
+      ["Direction", "Chain to cloud to device"]
     ]
   },
   definition: {
-    eyebrow: "The relationship",
-    title: "TVM is the engine. GLVM is the system.",
-    text: "GLVM is not a second bytecode VM and it is not a crate in the current repository. It is the global architecture designed to abstract many physical TVMs into one logical execution world.",
+    eyebrow: "The core definition",
+    title: "One TVM per machine, coordinated through one logical execution model.",
+    text: "TVM is the bytecode execution engine on one machine. GLVM defines the system-level execution abstraction across participating TVMs. It is not another bytecode VM; developers target one logical model while deterministic replay, recovery, replication, finalization, and consensus are coordinated beneath the abstraction.",
     comparison: [
       {
         label: "TVM",
         title: "Tuple-space Virtual Machine",
-        text: "The concrete ALUX execution engine. It runs Tolang bytecode, coordinates independent processes through channels and COMM events, and records the non-deterministic choices needed for deterministic replay.",
-        note: "Runs inside each execution environment"
+        text: "The concrete ALUX execution engine. It runs Tolang bytecode, coordinates independent processes through channels and COMM events, and records the non-deterministic choices required for deterministic replay.",
+        note: "One concrete engine inside a machine"
       },
       {
         label: "GLVM",
         title: "Global Logical Virtual Machine",
-        text: "The system architecture designed to make TVMs on chain, in the cloud, and on personal devices behave like parts of one global computer, with a common model for orchestration, capability, and verifiable state.",
-        note: "Target: unify many environments into one logical world"
+        text: "GLVM defines the developer-facing logical model across participating TVMs. It provides one boundary for execution state and processes while replay, replication, finalization, and consensus remain beneath the abstraction.",
+        note: "One logical system above many machines"
       }
     ],
     axis: [
-      ["Where collaboration happens", "GLVM"],
-      ["What can be used — and where it must stop", "Programmable capability"]
-    ]
+      ["VM abstraction", "Expanding"],
+      ["Vertical atomicity", "Core runtime"],
+      ["Horizontal atomicity", "Roadmap"],
+      ["Composable security", "Core runtime"]
+    ],
+    payoff: {
+      label: "One logical layer",
+      title: "One logical layer—not one physical machine.",
+      text: "Developers target one concurrent execution model while the runtime handles scheduling, replay, capability checks, replication, and finalization."
+    }
   },
   architecture: {
     eyebrow: "Three-layer architecture",
-    title: "From real machines to one logical world",
-    text: "Select a layer to see what each target layer contributes. The lower layers ground execution in real machines; the upper layer is designed to turn that execution into discoverable, orchestrated, permissioned services.",
+    title: "Three layers, one developer-facing execution model",
+    text: "Physical machines run TVMs; in the GLVM architecture, those engines participate in one shared logical execution model. A future World OS will organize that layer into discoverable, orchestrated services governed by explicit capabilities.",
     layers: [
       {
         id: "world",
         index: "03",
         label: "Layer 3",
         title: "World Operating System",
-        text: "The target agent-facing service layer: registration and finding, orchestration, and programmable capability. This is where services are designed to become discoverable and collaboration rules become explicit.",
-        items: ["Service / agent discovery", "Orchestration", "Programmable capability"],
-        status: "Architecture target"
+        text: "The future service layer for agents and applications: registration and discovery, orchestration, and programmable capabilities. It makes services discoverable and collaboration rules explicit.",
+        items: ["Service and agent discovery", "Orchestration", "Programmable capabilities"],
+        status: "Roadmap"
       },
       {
         id: "runtime",
         index: "02",
         label: "Layer 2",
-        title: "ALUX decentralized concurrent runtime",
-        text: "The target logical coordination layer. VM abstraction, concurrency control, capability management, replay, and shared commit semantics are designed to make multiple TVMs look like one Unified World VM.",
-        items: ["Unified World VM", "Concurrency control", "Capability management"],
-        status: "Core available · system expanding"
+        title: "GLVM concurrent runtime",
+        text: "The logical coordination layer. VM abstraction, concurrency control, object capabilities, deterministic replay, and finalization semantics form the shared execution model for participating TVMs.",
+        items: ["GLVM abstraction", "Concurrency and replay", "Capability and finalization"],
+        status: "Core runtime · expanding"
       },
       {
         id: "physical",
         index: "01",
         label: "Layer 1",
         title: "Physical infrastructure",
-        text: "The machines that do the work: blockchain validators, cloud servers, and personal devices. In the target architecture, each environment runs a TVM and exposes only the capabilities it has been given.",
-        items: ["Blockchain TVM", "Cloud TVM", "Personal-device TVM"],
-        status: "Mixed deployment target"
+        text: "The machines that do the work. Public-chain nodes provide the current execution foundation. Private or cloud TVMs are the next integration surface; client-device TVMs remain a roadmap path toward local execution.",
+        items: ["Public-chain TVM", "Private or cloud TVM", "Client-device TVM"],
+        status: "Core · integration · roadmap"
       }
     ]
   },
+  continuity: {
+    eyebrow: "Execution and atomicity",
+    title: "A transaction can wait across blocks, then settle as one.",
+    text: "Execution evolves from sequential and parallel work to concurrent processes that communicate, wait, and resume. Composite execution extends the model so multiple concurrent transactions can share a higher-level settlement boundary; cross-block continuity provides the vertical foundation for that direction.",
+    modes: [
+      { id: "sequential", label: "Sequential", text: "One transition follows another.", status: "Baseline" },
+      { id: "parallel", label: "Parallel", text: "Independent transitions advance at the same time.", status: "Core runtime" },
+      { id: "concurrent", label: "Concurrent", text: "Processes communicate, wait, and resume through channels.", status: "Core runtime" },
+      { id: "composite", label: "Composite", text: "Multiple concurrent transactions share a higher-level atomic objective.", status: "Roadmap" }
+    ],
+    diagram: {
+      laneA: "LANE A",
+      laneB: "LANE B",
+      laneC: "LANE C",
+      merge: "MERGE",
+      processA: "PROCESS A",
+      processB: "PROCESS B",
+      wait: "WAIT",
+      comm: "COMM",
+      send: "SEND",
+      resume: "RESUME",
+      atomicObjective: "ONE ATOMIC OBJECTIVE",
+      ready: "READY",
+      allOrNone: "ALL / NONE",
+      oneCommit: "ONE COMMIT",
+      roadmap: "ROADMAP",
+      blockN: "BLOCK N",
+      blockN1: "BLOCK N + 1",
+      blockN2: "BLOCK N + 2",
+      start: "START",
+      contextPreserved: "CONTEXT PRESERVED",
+      settle: "SETTLE",
+      state01: "STATE 01",
+      state02: "STATE 02",
+      state03: "STATE 03",
+      commit: "COMMIT"
+    },
+    atomicity: {
+      label: "Vertical atomicity · core runtime",
+      title: "Cross-block execution preserves one transaction context."
+    },
+    steps: [
+      { label: "Start", title: "Begin once", text: "Start one transaction with one scoped set of capabilities." },
+      { label: "Suspend", title: "Wait without partial settlement", text: "If an answer or channel match is missing, preserve the continuation instead of finalizing early." },
+      { label: "Record", title: "Capture the choice", text: "ReplayTrie records the non-deterministic choice or authenticated response required to reproduce the path." },
+      { label: "Resume", title: "Continue the same transaction", text: "A matching COMM event or recorded response wakes the preserved continuation in a later block." },
+      { label: "Finalize", title: "Commit or discard", text: "At the finalization boundary, eligible state is committed; rejected tentative state is discarded." }
+    ],
+    notes: [
+      { tone: "current", label: "Core execution path", text: "Concurrent TVM execution · COMM wait and resume · ReplayTrie · cross-block continuation and finalization" },
+      { tone: "current", label: "Atomicity model", text: "Tentative intermediate state does not become confirmed state until finalization; a failed path is discarded instead of repaired later through compensating transactions." },
+      { tone: "boundary", label: "Native off-chain read", text: "An authenticated HTTPS GET can suspend, record the response, replay, and resume. The data source still determines truth, and irreversible off-chain side effects remain outside rollback." },
+      { tone: "roadmap", label: "Horizontal atomicity", text: "Cross-shard atomic execution and composition with independent external systems define the next expansion of the model." }
+    ]
+  },
+  ocapStory: {
+    eyebrow: "Object-capability security",
+    title: "Give the task one key—not the user’s badge.",
+    text: "In the CEO–Bob example, identity-based access can carry the ambient authority represented by the CEO’s badge into the task. With object capabilities, the task receives only one key that names Bob’s record. The TVM enforces the reachable boundary at runtime. Without a capability reference to another pre-existing object, the task cannot name or reach it.",
+    alt: "A CEO and Bob meet; the identity badge on the left represents broad access, while one OCAP key on the right names only Bob’s record.",
+    caption: "CEO + Bob · OCAP key = unforgeable name, not a cryptographic key",
+    comparison: [
+      {
+        tone: "ambient",
+        label: "Broad identity authority",
+        title: "The badge carries unrelated access into the task",
+        text: "Even when the task concerns Bob alone, the identity authority represented by the CEO’s badge can still cover Financials and the records of Alice, Carol, and Bob."
+      },
+      {
+        tone: "explicit",
+        label: "Explicit object capability",
+        title: "The task receives one key that names Bob’s record",
+        text: "This key represents an unforgeable name that identifies Bob’s record. Without a capability reference to another pre-existing object, the task cannot name or reach it. The TVM checks that boundary at runtime."
+      }
+    ],
+    takeaway: {
+      label: "POLA · Principle of least authority",
+      text: "Model safeguards can reduce unsafe behavior, but capability boundaries enforce least authority at runtime. If an agent has only the key that names Bob’s record, compromise stays within that object instead of expanding to all the identity authority represented by the CEO’s badge."
+    },
+    boundary: {
+      label: "Terminology",
+      text: "Here, “key” visually represents an OCAP unforgeable name—a capability reference. It is not a cryptographic key. This guarantee applies to TVM-native, capability-mediated interactions; hosted EVM permissions and external services need their own controls."
+    }
+  },
   journey: {
-    eyebrow: "One task, three substrates",
-    title: "Trust, speed, and locality decide where work runs",
-    text: "Imagine a cross-company equipment repair. Escrow must be verifiable, diagnosis needs fast compute, and the device owner must approve access locally. GLVM describes one workflow across all three environments without turning them into one unsafe shared machine.",
+    eyebrow: "Workflow explorer",
+    title: "Choose the execution surface by trust, response time, and data locality",
+    text: "Consider a cross-company device repair: escrow needs independent verification, diagnostics need elastic compute, and the device owner should approve local access. In the GLVM model, each task maps to the execution surface that matches its trust, latency, and data boundary while authority remains explicit.",
     routeLabel: "Choose a requirement",
     routes: [
       {
         id: "trust",
         label: "Needs trust",
-        title: "On-chain TVM + EVM",
-        text: "Hold the warranty escrow and record the approval path where independent validators can verify it.",
-        status: "EVM today"
+        title: "Public-chain TVM + EVM host",
+        text: "Hold the warranty escrow and record its approval path where independent validators can verify the transition.",
+        status: "Core runtime"
       },
       {
         id: "speed",
         label: "Needs speed",
-        title: "Cloud TVM",
-        text: "Run the heavy diagnostic workload near elastic compute while keeping its authority narrow and explicit.",
-        status: "GLVM architecture path"
+        title: "Private or cloud TVM",
+        text: "Run heavy diagnostics near elastic compute while keeping authority narrow and explicit.",
+        status: "Integration"
       },
       {
         id: "locality",
         label: "Needs locality",
-        title: "Personal-device TVM",
+        title: "Client-device TVM",
         text: "Read local sensor data and request the owner’s confirmation without exporting every private input.",
-        status: "GLVM architecture path"
+        status: "Roadmap"
       }
     ],
-    playLabel: "Follow the execution",
-    actions: { play: "Run the workflow", reset: "Reset" },
+    playLabel: "Follow the target flow",
+    actions: { play: "Simulate the workflow", reset: "Reset" },
     railLabels: ["Replay", "Commit"],
     steps: [
       { id: "authorize", label: "01", title: "Scoped capability", text: "The repair agent receives only the rights required for this job." },
-      { id: "dispatch", label: "02", title: "Dispatch", text: "Subtasks are described for chain, cloud, and device execution environments." },
-      { id: "wait", label: "03", title: "Wait / suspend", text: "When a reply is missing, the TVM preserves the execution context instead of blocking the whole machine." },
+      { id: "dispatch", label: "02", title: "Plan the dispatch", text: "The workflow maps bounded subtasks to chain, private or cloud, and client-device TVMs." },
+      { id: "wait", label: "03", title: "Wait / suspend", text: "On the chain runtime, a missing reply preserves the continuation instead of finalizing the transaction early." },
       { id: "match", label: "04", title: "COMM match", text: "A produced result meets the waiting continuation on a channel; the workflow resumes." },
       { id: "replay", label: "05", title: "Replay proof", text: "ReplayTrie records the choices needed for another validator to reproduce the run." },
-      { id: "commit", label: "06", title: "Merge / commit", text: "BlockGit and Block Merge turn concurrent work into a verifiable state transition." }
+      { id: "commit", label: "06", title: "Finalization boundary", text: "BlockGit and Block Merge converge verifiable chain-side results. Extending one atomic commit across every execution surface is the GLVM horizon." }
     ],
     messages: [
-      "Ready. Start the workflow to see the logical machine move.",
+      "Ready. Start the simulation to see the target logical flow.",
       "Authority is scoped before work begins.",
-      "Three execution paths receive their own bounded task.",
-      "The workflow is suspended safely while it waits.",
+      "Each execution surface receives a bounded task.",
+      "The chain runtime preserves a waiting continuation.",
       "A matching message wakes the continuation.",
       "Replay evidence makes the path reproducible.",
-      "Concurrent results converge into a verified commit."
+      "Chain-side results converge; cross-surface atomic commit is the next horizon."
     ]
   },
   stack: {
-    eyebrow: "Under the glass",
-    title: "What GLVM is built from",
-    text: "GLVM is a system architecture, not a second bytecode VM. The map below ties that architecture to mechanisms in the current ALUX codebase and clearly marks what is still planned.",
+    eyebrow: "Runtime anatomy",
+    title: "Nine capability areas behind the GLVM abstraction",
+    text: "GLVM is not a second bytecode VM. These nine architecture views—from TVM execution, object capabilities, and replay to BlockGit, guest VMs, and developer tooling—show the capability system behind its logical execution model.",
     items: [
-      { status: "Current", label: "Language", title: "Tolang → tolangc → .tox", text: "Tolang describes concurrent processes; the compiler lowers source into TVM executable bytecode." },
-      { status: "Current", label: "Runtime", title: "TVM · Tuple space · COMM", text: "Independent processes exchange data and continuations through typed channels instead of sharing memory." },
-      { status: "Today", label: "Guest VM", title: "EVM through TSAC", text: "EVM runs in an isolated sandbox; global storage and calls are coordinated through tuple-space adapter contracts." },
-      { status: "Planned", label: "Guest VM", title: "WASM", text: "WASM belongs to the heterogeneous-VM direction, but it is not shipped in the current baseline." },
-      { status: "Current", label: "Durability", title: "ExeContext · ReplayTrie · cross-block resume", text: "A task can wait across blocks, resume from a preserved branch, and remain reproducible." },
-      { status: "Current", label: "Agreement", title: "BlockGit · Fringe · Block Merge", text: "A block DAG with deterministic rotating leaders and merge rules finalizes concurrent work without a permanent leader." }
+      { status: "Core runtime", label: "Bytecode VM", title: "TVM · tuple space · COMM", text: "The concrete concurrent engine runs bytecode and lets independent processes exchange data and continuations through channels." },
+      { status: "Core runtime", label: "Security", title: "Native object capabilities", text: "Unforgeable references make reachable authority explicit and let the runtime enforce least-authority boundaries." },
+      { status: "Core runtime", label: "Atomicity", title: "Cross-block atomic execution", text: "Execution contexts can suspend across blocks, resume from preserved continuations, and reach a deferred finalization boundary." },
+      { status: "Core runtime", label: "Finality", title: "BlockGit · fringe · merge", text: "A block DAG, deterministic leader rotation, and merge rules converge concurrent chain-side work without a permanent leader." },
+      { status: "Core runtime", label: "Replay", title: "ReplayTrie · trace", text: "Recorded non-deterministic choices and execution traces let validators reproduce the accepted path." },
+      { status: "Core runtime", label: "Network", title: "Peer and validator network", text: "The node layer carries proposals, blocks, state evidence, and validator coordination beneath the execution abstraction." },
+      { status: "Core runtime", label: "Language", title: "Tolang → tolangc → .tox", text: "Tolang describes concurrent processes; the compiler lowers source into TVM-executable bytecode." },
+      { status: "EVM core · WASM roadmap", label: "Guest VMs", title: "EVM host · WASM roadmap", text: "The EVM runs as a stateful guest through TSAC-style coordination. WASM extends the heterogeneous-VM direction." },
+      { status: "Developer surface", label: "Tooling", title: "Compiler · LSP · playground", text: "The compiler, LSP, playground, test suite, and diagnostics bring the execution model into developer workflows." }
     ]
   },
   status: {
-    eyebrow: "Reality check",
-    title: "The core is running.<br>The system is still expanding.",
-    text: "GLVM is the system-level destination. The current ALUX codebase already supplies its hardest execution primitives, while cross-substrate productization and the full World OS remain active architecture work.",
+    eyebrow: "Build horizon",
+    title: "The core runtime is taking shape. GLVM is expanding across environments.",
+    text: "GLVM grows outward from ALUX’s concurrent chain runtime. Private cloud is the next integration surface; client-device and cross-shard execution remain on the roadmap. The map below separates the core runtime, the surfaces now being extended, and the next architectural horizon.",
     groups: [
       {
         tone: "built",
-        label: "Current engine",
-        items: ["Concurrent TVM execution", "EVM through TSAC", "Cross-block suspend / resume", "OCAP and deterministic replay", "BlockGit DAG + merge"]
+        label: "Core runtime",
+        items: ["Concurrent TVM and COMM", "ReplayTrie and execution traces", "Cross-block suspend / resume paths", "Native OCAP foundations", "EVM host path", "BlockGit DAG, fringe, and merge"]
       },
       {
         tone: "designed",
-        label: "Designed / expanding",
-        items: ["VM abstraction across chain, cloud, and device", "Richer per-operation policy gates", "Session-type collaboration protocols", "Production scale hardening"]
+        label: "Expanding the system",
+        items: ["Private or cloud engine deployment", "GLVM abstraction across deployment surfaces", "Production-scale hardening", "Richer policy and guarded-channel controls", "Operator recovery and observability"]
       },
       {
         tone: "planned",
-        label: "Planned",
-        items: ["WASM guest VM", "Cross-shard execution", "Complete agent and World OS layer"]
+        label: "Roadmap",
+        items: ["Cross-shard horizontal atomicity", "WASM guest VM", "Client-device TVM deployment", "Account abstraction and capability registry", "Peer resynchronization after failure and dynamic validator-set changes", "Programmable World OS layer"]
       }
     ]
   },
   close: {
-    eyebrow: "Next / Runtime Lab",
-    title: "See what GLVM builds on today.",
-    text: "GLVM describes the logical execution architecture ALUX is building. Runtime Lab shows the core mechanisms in the current ALUX engine that support parallel execution, concurrency, and composability.",
-    links: [["Open Runtime Lab", "runtime-lab.html"], ["For AI Agents", "for-ai-agents.html"]]
+    eyebrow: "Continue learning",
+    title: "Explore the runtime, agent workloads, and system comparisons.",
+    text: "Runtime Lab explains the execution model. For AI Agents shows the workload pattern. ALUX VS Others compares architecture and capabilities across systems.",
+    links: [["Runtime Lab", "runtime-lab.html"], ["For AI Agents", "for-ai-agents.html"], ["ALUX VS Others", "alux-vs-others.html"]]
   }
 };
 
@@ -2095,7 +2192,7 @@ const teamPageEn = {
             "That career left him with one conviction: the synchronous execution model has reached its end. ALUX is his answer. He led the design of its core stack:"
           ],
           highlights: [
-            ["TVM tuple-space virtual machine", "Processes interact concurrently through channels; pattern matching is scheduling; capability credentials are authorization."],
+            ["TVM tuple-space virtual machine", "Processes interact concurrently through channels; pattern matching drives scheduling; unforgeable capability references make authority explicit."],
             ["Tolang concurrent programming language", "Tolang encodes channel descriptors and behavioral types so some misuse can be caught early, while the runtime enforces lifecycle constraints."],
             ["OCAP object-capability security model", "A channel reference is unforgeable and transferable; scope and lifecycle rules limit authority without relying on address-based access alone."],
             ["BlockGit DAG consensus protocol", "Validators produce DAG blocks concurrently. BlockGit uses rotating leader selection for finality, while Block Merge resolves overlapping work."],
@@ -2161,11 +2258,11 @@ pages.team.en = teamPageEn;
 
 function renderHomeHeroTitle(value = "", lang = "en") {
   const localizedLines = {
-    en: value === "Building the global VM" ? ["Building", "the", "global VM"] : null,
-    zh: value === "构建全局虚拟机" ? ["构建全局", "虚拟机"] : null,
-    ko: value === "전역 VM 구축" ? ["전역 VM", "구축"] : null,
-    ja: value === "グローバル VM を構築する" ? ["グローバル VM", "を構築する"] : null,
-    ar: value === "نبني الآلة الافتراضية العالمية" ? ["نبني", "الآلة الافتراضية", "العالمية"] : null
+    en: value === "Building GLVM" ? ["Building", "GLVM"] : null,
+    zh: value === "构建 GLVM" ? ["构建", "GLVM"] : null,
+    ko: value === "GLVM 구축" ? ["GLVM", "구축"] : null,
+    ja: value === "GLVM を構築する" ? ["GLVM", "を構築する"] : null,
+    ar: value === "نبني GLVM" ? ["نبني", "GLVM"] : null
   };
   const lines = localizedLines[lang];
 
@@ -2247,7 +2344,43 @@ function sanitizeRenderedExternalProjectNames(root, lang) {
   });
 }
 
-const LOCALIZED_UNBREAKABLE_PHRASES = /JSON-RPC|Tuple-space|Web (?:2(?:\.0)?|3)|跨底座产品化|服务原生公链|有边界的权限|原地重启|真正需要的权限|旨在(?=把多个物理环境中的 TVM)|这些(?=执行转化为)|具体机制(?=，并明确标出)/g;
+const LOCALIZED_UNBREAKABLE_PHRASES = /HTTPS GET|Block Merge|JSON-RPC|Tuple-space|ReplayTrie|BlockGit|Web (?:2(?:\.0)?|3)|受明确权限约束的服务|受权限约束的服务|应用边界之下|执行上下文之外|共同组成|系统边界|应用之下|字节码执行引擎|元组空间虚拟机|并发执行模型|数据本地性|执行载体|运行时模块|物理基础设施|客户端设备|面向开发者|能力检查|协调模型|执行机制|工作负载|AI 智能体|其他系统|指向 Bob 记录|必要的对象能力|身份权限|不可伪造能力引用|其他人员记录|其他资源|不可伪造的引用|不可伪造引用|基于身份的环境权限|采用对象能力后|端到端原子组合|非确定性选择|全局逻辑虚拟机|世界操作系统|系统继续扩展|生产规模部署|生产部署|访问权限|财务档案|模型层防御|控制机制|链下副作用|授权路径|后续执行|保留延续，?|永久领导者|完整系统|执行过程|状态变化|逻辑执行层|多台物理机器|逻辑世界|跨环境|部署范围|去中心化|并发运行时|执行环境|个人设备|确定性重放|显式对象能力|最小授权原则|跨底座产品化|跨分片执行|源码已包含|共同结算|最终状态|执行上下文|局部提交|提前完成最终确认。?|完成最终确认|最终确认|元组空间|区块链|对象能力|字节码|另一位|发动机|虚拟机|显式能力|环境权限|运行时能力|能力引用|架构扩展中|当前基础|不只需要|一个结果|服务原生公链|有边界的权限|原地重启|真正需要的权限|仍可能|复制|机制|具备|约束|之下|用户|人员|密钥|合并|引擎|ALUX|GLVM|TVM|COMM|OCAP|POLA|EVM|TSAC|WASM|CEO|Bob|Alice|Carol|旨在(?=把多个物理环境中的 TVM)|这些(?=执行转化为)|具体机制(?=，并明确标出)/g;
+
+function protectChineseSemanticWords(root, lang) {
+  if (lang !== "zh" || typeof Intl?.Segmenter !== "function") return;
+
+  const segmenter = new Intl.Segmenter("zh-CN", { granularity: "word" });
+
+  getTextNodes(root).forEach((node) => {
+    if (node.parentElement?.closest(".technical-token")) return;
+
+    const segments = [...segmenter.segment(node.nodeValue || "")];
+    const hasMultiCharacterWord = segments.some(({ segment, isWordLike }) =>
+      isWordLike &&
+      /[\u3400-\u9fff]/u.test(segment) &&
+      [...segment].length > 1
+    );
+    if (!hasMultiCharacterWord) return;
+
+    const fragment = document.createDocumentFragment();
+    segments.forEach(({ segment, isWordLike }) => {
+      if (
+        isWordLike &&
+        /[\u3400-\u9fff]/u.test(segment) &&
+        [...segment].length > 1
+      ) {
+        const protectedWord = document.createElement("span");
+        protectedWord.className = "technical-token";
+        protectedWord.textContent = segment;
+        fragment.append(protectedWord);
+      } else {
+        fragment.append(segment);
+      }
+    });
+
+    node.replaceWith(fragment);
+  });
+}
 
 function protectLocalizedTechnicalTokens(root, lang) {
   if (lang === "en") return;
@@ -2277,6 +2410,8 @@ function protectLocalizedTechnicalTokens(root, lang) {
     fragment.append(value.slice(cursor));
     node.replaceWith(fragment);
   });
+
+  protectChineseSemanticWords(root, lang);
 }
 
 const ARABIC_TECHNICAL_RUN = /\([^()\n]*[A-Za-z0-9][^()\n]*\)|[A-Za-z0-9]+(?:[+./:_-][A-Za-z0-9]+)*(?:[ \u00A0]+[A-Za-z0-9]+(?:[+./:_-][A-Za-z0-9]+)*)*/g;
@@ -2284,7 +2419,7 @@ const ARABIC_TECHNICAL_RUN = /\([^()\n]*[A-Za-z0-9][^()\n]*\)|[A-Za-z0-9]+(?:[+.
 function isolateArabicTechnicalRuns(root, lang) {
   if (lang !== "ar") return;
 
-  root.querySelectorAll(".roadmap-bullet-list li, .agent-difference-node").forEach((scope) => {
+  root.querySelectorAll(".roadmap-bullet-list li, .agent-difference-node, .glvm-page p, .glvm-page h1, .glvm-page h2, .glvm-page h3, .glvm-page span, .glvm-page strong, .glvm-page small, .glvm-page li, .glvm-page code, .glvm-page a, .glvm-page button").forEach((scope) => {
     getTextNodes(scope).forEach((node) => {
       if (node.parentElement?.closest("bdi, [dir='ltr']")) return;
 
@@ -2508,7 +2643,7 @@ function renderHomeCapabilityMapSection(section) {
     .replace(/BlockGit finality/g, "BlockGit&nbsp;finality")
     .replace(/one runtime/g, "one&nbsp;runtime");
   const coreText = core.text ? `<p>${renderFrontCopy(core.text)}</p>` : "";
-  const coreItems = core.items || ["One Logical VM", "Concurrent Runtime", "Atomic Commit"];
+  const coreItems = core.items || ["One Logical Layer", "Concurrent Runtime", "Atomic Commit"];
   const outcomeItems = outcome.items || ["Discover", "Delegate", "Compose", "Audit"];
   const outcomeChips = outcomeItems.map((item) => `<li>${item}</li>`).join("");
   const linkPaths = [
@@ -2518,7 +2653,7 @@ function renderHomeCapabilityMapSection(section) {
   const comboTemplates = (section.combinations || []).map((combo) => `<template data-combo-key="${attr(comboKey(combo.nodes || []))}" data-combo-label="${attr(combo.label)}" data-combo-title="${attr(combo.title)}" data-combo-technical="${attr(combo.technical)}" data-combo-business="${attr(combo.business)}"></template>`).join("");
   const comboLabel = section.comboLabel || "Runtime Connection";
   const comboTitle = section.comboTitle || "Connect a module to ALUX";
-  const comboDefault = section.comboDefault || "Drag a capability card into ALUX Runtime to reveal its role inside the global VM.";
+  const comboDefault = section.comboDefault || "Drag a capability card into ALUX Runtime to reveal its role inside GLVM.";
   const inspectorDefault = section.inspectorDefault || "Double-click a module for detail, or drag it into ALUX Runtime to connect it.";
   const ariaLabel = [
     section.mapKicker,
@@ -2979,7 +3114,329 @@ function renderAluxVsOthersCapability(block, index) {
   return `<article class="alux-vs-capability alux-vs-capability--${index + 1}"><span>${label}</span><div><h3>${block.heading.replace(/:$/, "")}</h3><p>${block.text}</p></div></article>`;
 }
 
-function renderGlvmPage(page) {
+function protectGlvmPhrases(line = "", phrases = []) {
+  const pattern = [...new Set(phrases)]
+    .filter(Boolean)
+    .sort((a, b) => b.length - a.length)
+    .map((phrase) => phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join("|");
+
+  if (!pattern) return line;
+
+  return line.replace(
+    new RegExp(`(?:${pattern})(?:[，。；：！？、])?`, "g"),
+    (phrase) => `<span class="glvm-keep">${phrase}</span>`
+  );
+}
+
+function renderGlvmSemanticHeading(title = "", key = "", lang = "en") {
+  if (lang !== "zh") return title;
+
+  const keepPhrases = [
+    "逻辑执行层",
+    "多台机器",
+    "一台 TVM",
+    "多台 TVM",
+    "同一逻辑模型",
+    "逻辑执行模型",
+    "三层架构",
+    "面向开发者",
+    "一笔交易",
+    "跨区块等待",
+    "跨区块",
+    "一个整体",
+    "一把钥匙",
+    "用户的工牌",
+    "执行载体取决于",
+    "信任要求",
+    "响应速度",
+    "数据本地性",
+    "核心运行时",
+    "已初步成形",
+    "更多执行环境",
+    "正在接入"
+  ];
+  const linesByKey = {
+    hero: ["一个逻辑执行层，", "跨多台机器协调执行。"],
+    definition: ["每台机器运行一台 TVM，", "多台 TVM 协同组成一个逻辑执行层。"],
+    architecture: ["三层架构，面向开发者", "呈现为一套执行模型。"],
+    continuity: ["一笔交易可以跨区块等待，", "随后作为一个整体结算。"],
+    ocap: ["只把一把钥匙交给任务，", "而不是用户的工牌。"],
+    journey: ["执行载体取决于信任要求、", "响应速度与数据本地性。"],
+    status: ["核心运行时已初步成形，", "更多执行环境正在接入。"]
+  };
+  const lines = linesByKey[key];
+  if (!lines || lines.join("") !== title) return title;
+
+  return lines
+    .map((line) => `<span class="glvm-semantic-line">${protectGlvmPhrases(line, keepPhrases)}</span>`)
+    .join("");
+}
+
+function renderGlvmSemanticCopy(text = "", key = "", lang = "en") {
+  if (lang !== "zh") return text;
+
+  const keepPhrases = [
+    "并发运行时",
+    "执行抽象",
+    "一台 TVM",
+    "执行状态",
+    "字节码执行引擎",
+    "系统级执行抽象",
+    "逻辑执行模型",
+    "确定性重放",
+    "最终确认",
+    "会将 CEO 工牌代表的环境权限",
+    "CEO 工牌代表的环境权限",
+    "工牌代表的环境权限",
+    "会把 CEO 工牌所代表的环境权限",
+    "CEO 工牌所代表的环境权限",
+    "基于身份的访问",
+    "工牌所代表的环境权限",
+    "环境权限",
+    "一并带入任务。",
+    "一并带入任务",
+    "CEO 的工牌",
+    "采用对象能力后",
+    "任务只获得",
+    "对象能力只给任务",
+    "对象能力",
+    "只给任务",
+    "一把指向 Bob 记录的钥匙",
+    "指向 Bob 记录的钥匙",
+    "没有指向其他既有对象的钥匙，",
+    "没有指向其他既有对象的钥匙",
+    "指向其他既有对象的钥匙",
+    "一个不可伪造的名字：",
+    "一个不可伪造的名字",
+    "不可伪造的名字",
+    "它只指向 Bob 的记录。",
+    "它只指向 Bob 的记录",
+    "其他既有对象",
+    "命名或访问",
+    "那些未被显式授予的对象",
+    "未被显式授予的对象",
+    "密码学密钥",
+    "这条边界由 TVM 在运行时检查",
+    "TVM 会在运行时",
+    "检查这一边界",
+    "运行时",
+    "其他资源"
+  ];
+  const linesByKey = {
+    hero: [
+      "GLVM 是 ALUX 基于并发运行时构建、面向开发者的执行抽象。",
+      "每台参与执行的机器运行一台 TVM。",
+      "GLVM 为跨机器的执行状态与进程提供统一的逻辑边界；",
+      "重放、复制、最终确认与共识在这一抽象之下协调。"
+    ],
+    definition: [
+      "TVM 是运行在单台机器上的字节码执行引擎；",
+      "GLVM 定义跨多台 TVM 的系统级执行抽象。",
+      "它不是另一种字节码虚拟机。开发者面向统一的逻辑执行模型，",
+      "确定性重放、恢复、复制、最终确认与共识则在这一抽象之下协调。"
+    ],
+    ocapIntro: [
+      "基于身份的访问会将 CEO 工牌代表的环境权限一并带入任务。",
+      "对象能力只给任务一把指向 Bob 记录的钥匙，这条边界由 TVM 在运行时检查。",
+      "没有其他对象能力，任务便无法命名或访问其他既有对象。"
+    ],
+    ocapExplicit: [
+      "这把钥匙代表一个不可伪造的名字：它只指向 Bob 的记录。",
+      "没有指向其他既有对象的钥匙，任务便无法命名或访问那些未被显式授予的对象。",
+      "TVM 会在运行时检查这一边界。"
+    ]
+  };
+  const lines = linesByKey[key];
+  if (!lines || lines.join("") !== text) return text;
+
+  return lines
+    .map((line) => `<span class="glvm-semantic-copy-line">${protectGlvmPhrases(line, keepPhrases)}</span>`)
+    .join("");
+}
+
+function renderGlvmContinuityScene(id, diagram = {}) {
+  const labels = {
+    laneA: "LANE A",
+    laneB: "LANE B",
+    laneC: "LANE C",
+    merge: "MERGE",
+    processA: "PROCESS A",
+    processB: "PROCESS B",
+    wait: "WAIT",
+    comm: "COMM",
+    send: "SEND",
+    resume: "RESUME",
+    atomicObjective: "ONE ATOMIC OBJECTIVE",
+    ready: "READY",
+    allOrNone: "ALL / NONE",
+    oneCommit: "ONE COMMIT",
+    roadmap: "ROADMAP",
+    blockN: "BLOCK N",
+    blockN1: "BLOCK N + 1",
+    blockN2: "BLOCK N + 2",
+    start: "START",
+    contextPreserved: "CONTEXT PRESERVED",
+    settle: "SETTLE",
+    state01: "STATE 01",
+    state02: "STATE 02",
+    state03: "STATE 03",
+    commit: "COMMIT",
+    ...diagram
+  };
+  const label = (value) => `<bdi dir="auto">${escapeAttribute(value)}</bdi>`;
+  const node = (value, tone = "") => `<span class="glvm-continuity-node${tone ? ` glvm-continuity-node--${tone}` : ""}">${label(value)}</span>`;
+
+  if (id === "parallel") {
+    return `
+      <div class="glvm-continuity-scene glvm-continuity-scene--parallel" aria-hidden="true">
+        <div><small>${label(labels.laneA)}</small>${node("TX A", "green")}</div>
+        <div><small>${label(labels.laneB)}</small>${node("TX B", "blue")}</div>
+        <div><small>${label(labels.laneC)}</small>${node("TX C", "purple")}</div>
+        <i></i>
+        ${node(labels.merge, "commit")}
+      </div>
+    `;
+  }
+
+  if (id === "concurrent") {
+    return `
+      <div class="glvm-continuity-scene glvm-continuity-scene--concurrent" aria-hidden="true">
+        <div class="glvm-continuity-process">${node(labels.processA, "blue")}<i></i>${node(labels.wait, "muted")}</div>
+        <span class="glvm-continuity-message">${label(labels.comm)}</span>
+        <div class="glvm-continuity-process">${node(labels.processB, "green")}<i></i>${node(labels.send, "green")}</div>
+        <div class="glvm-continuity-resume">${node(labels.resume, "commit")}</div>
+      </div>
+    `;
+  }
+
+  if (id === "composite") {
+    return `
+      <div class="glvm-continuity-scene glvm-continuity-scene--composite" aria-hidden="true">
+        <div class="glvm-composite-objective">
+          <small>${label(labels.atomicObjective)}</small>
+          <div class="glvm-composite-transactions">
+            <span>${label("TX A")}<i></i>${label(labels.ready)}</span>
+            <span>${label("TX B")}<i></i>${label(labels.wait)}</span>
+            <span>${label("TX C")}<i></i>${label(labels.ready)}</span>
+          </div>
+        </div>
+        <div class="glvm-composite-gate"><span></span><small>${label(labels.allOrNone)}</small></div>
+        ${node(labels.oneCommit, "commit")}
+        <em>${label(labels.roadmap)}</em>
+      </div>
+    `;
+  }
+
+  if (id === "crossBlock") {
+    return `
+      <div class="glvm-continuity-scene glvm-continuity-scene--cross-block" aria-hidden="true">
+        <div class="glvm-continuity-block"><small>${label(labels.blockN)}</small>${node(labels.start, "brown")}</div>
+        <div class="glvm-continuity-block"><small>${label(labels.blockN1)}</small>${node(labels.wait, "muted")}<span class="glvm-continuity-suspended">${label(labels.contextPreserved)}</span></div>
+        <div class="glvm-continuity-block"><small>${label(labels.blockN2)}</small>${node(labels.resume, "green")}${node(labels.settle, "commit")}</div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="glvm-continuity-scene glvm-continuity-scene--sequential" aria-hidden="true">
+      ${node(labels.state01, "brown")}<i></i>${node(labels.state02, "blue")}<i></i>${node(labels.state03, "green")}<i></i>${node(labels.commit, "commit")}
+    </div>
+  `;
+}
+
+function renderGlvmContinuitySection(section = {}, lang = "en") {
+  const modes = Array.isArray(section.modes) ? section.modes : [];
+  const steps = Array.isArray(section.steps) ? section.steps : [];
+  const notes = Array.isArray(section.notes) ? section.notes : [];
+  if (!section.title || !modes.length) return "";
+  const active = modes.find((item) => item.id === "concurrent") || modes[0];
+  const tabs = modes.map((item, index) => `
+    <button class="glvm-continuity-tab${item.id === active.id ? " is-active" : ""}" type="button" role="tab" id="glvm-continuity-tab-${escapeAttribute(item.id)}" aria-controls="glvm-continuity-panel-${escapeAttribute(item.id)}" aria-selected="${item.id === active.id ? "true" : "false"}" tabindex="${item.id === active.id ? "0" : "-1"}" data-glvm-continuity="${escapeAttribute(item.id)}">
+      <span>${String(index + 1).padStart(2, "0")}</span>
+      <strong>${item.label}</strong>
+      <small>${item.status}</small>
+    </button>
+  `).join("");
+  const panels = modes.map((item) => `
+    <article class="glvm-continuity-panel${item.id === active.id ? " is-active" : ""}" role="tabpanel" id="glvm-continuity-panel-${escapeAttribute(item.id)}" aria-labelledby="glvm-continuity-tab-${escapeAttribute(item.id)}" data-glvm-continuity-panel="${escapeAttribute(item.id)}"${item.id === active.id ? "" : " hidden"}>
+      <div class="glvm-continuity-visual">${renderGlvmContinuityScene(item.id, section.diagram || {})}</div>
+      <div class="glvm-continuity-panel-copy"><span>${item.status}</span><h3>${item.label}</h3><p>${item.text}</p></div>
+    </article>
+  `).join("");
+  const stepRail = steps.map((item, index) => `
+    <li>
+      <span>${String(index + 1).padStart(2, "0")} · ${item.label}</span>
+      <strong>${item.title}</strong>
+      <p>${item.text}</p>
+    </li>
+  `).join("");
+  const noteCards = notes.map((item) => `
+    <article class="glvm-continuity-note glvm-continuity-note--${escapeAttribute(item.tone || "")}">
+      <span>${item.label}</span>
+      <p>${item.text}</p>
+    </article>
+  `).join("");
+
+  return `
+    <section class="glvm-extension glvm-continuity fade-in" id="execution-continuity">
+      <header class="glvm-extension-header">
+        <div><p class="eyebrow">${section.eyebrow}</p><h2 class="glvm-semantic-heading">${renderGlvmSemanticHeading(section.title, "continuity", lang)}</h2></div>
+        <p>${section.text}</p>
+      </header>
+      <div class="glvm-continuity-frame">
+        <div class="glvm-continuity-tabs" role="tablist" aria-label="${escapeAttribute(section.title)}">${tabs}</div>
+        <div class="glvm-continuity-panels">${panels}</div>
+        <div class="glvm-atomicity">
+          ${section.atomicity ? `<div class="glvm-atomicity-heading"><span>${section.atomicity.label || ""}</span><strong>${section.atomicity.title || ""}</strong></div>` : ""}
+          <ol class="glvm-atomicity-rail">${stepRail}</ol>
+        </div>
+      </div>
+      <div class="glvm-continuity-notes">${noteCards}</div>
+    </section>
+  `;
+}
+
+function renderGlvmOcapStorySection(section = {}, lang = "en") {
+  const comparison = Array.isArray(section.comparison) ? section.comparison : [];
+  if (!section.title || !comparison.length) return "";
+  const visuals = [
+    "assets/glvm/20260731_GLVM_OCAP_身份权限.svg?v=20260801-direct13",
+    "assets/glvm/20260731_GLVM_OCAP_对象能力.svg?v=20260801-direct13"
+  ];
+  const cards = comparison.map((item, index) => `
+    <article class="glvm-ocap-card glvm-ocap-card--${escapeAttribute(item.tone || "")}">
+      <div class="glvm-ocap-card-visual" aria-hidden="true">
+        <img src="${visuals[index] || visuals[0]}" alt="" width="600" height="360" loading="eager" decoding="async">
+      </div>
+      <div class="glvm-ocap-card-copy">
+        <span>${item.label}</span>
+        <h3>${item.title}</h3>
+        <p>${renderGlvmSemanticCopy(item.text, index === 1 ? "ocapExplicit" : "", lang)}</p>
+      </div>
+    </article>
+  `).join("");
+
+  return `
+    <section class="glvm-extension glvm-ocap-story fade-in" id="object-capability">
+      <header class="glvm-extension-header">
+        <div><p class="eyebrow">${section.eyebrow}</p><h2 class="glvm-semantic-heading">${renderGlvmSemanticHeading(section.title, "ocap", lang)}</h2></div>
+        <p class="glvm-semantic-copy">${renderGlvmSemanticCopy(section.text, "ocapIntro", lang)}</p>
+      </header>
+      <div class="glvm-ocap-body">
+        <div class="glvm-ocap-copy">
+          <div class="glvm-ocap-compare">${cards}</div>
+          <aside class="glvm-ocap-takeaway"><span>${section.takeaway?.label || ""}</span><p>${section.takeaway?.text || ""}</p></aside>
+          <div class="glvm-ocap-boundary"><strong>${section.boundary?.label || ""}</strong><p>${section.boundary?.text || ""}</p></div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderGlvmPage(page, lang = "en") {
+  const continuitySection = renderGlvmContinuitySection(page.continuity || {}, lang);
+  const ocapStorySection = renderGlvmOcapStorySection(page.ocapStory || {}, lang);
   const heroSignals = (page.hero.signals || [])
     .map(([label, value]) => `<div class="glvm-signal"><span>${label}</span><strong>${value}</strong></div>`)
     .join("");
@@ -2995,6 +3452,12 @@ function renderGlvmPage(page) {
   const axes = (page.definition.axis || [])
     .map(([label, value]) => `<div class="glvm-axis-row"><span>${label}</span><strong>${value}</strong></div>`)
     .join("");
+  const definitionPayoff = page.definition.payoff ? `
+    <aside class="glvm-definition-payoff">
+      <span>${page.definition.payoff.label || ""}</span>
+      <div><h3>${page.definition.payoff.title || ""}</h3><p>${page.definition.payoff.text || ""}</p></div>
+    </aside>
+  ` : "";
 
   const layers = Array.isArray(page.architecture.layers) ? page.architecture.layers : [];
   const activeLayer = layers.find((layer) => layer.id === "runtime") || layers[0] || {};
@@ -3047,12 +3510,28 @@ function renderGlvmPage(page) {
     `<svg viewBox="0 0 120 72" aria-hidden="true"><rect x="9" y="9" width="102" height="54" rx="13"/><path class="glvm-glyph-flow" d="M25 36h22m27 0h21"/><path d="M60 20l15 9v17l-15 9-15-9V29zM45 29l15 9 15-9M60 38v17"/><circle class="glvm-glyph-pulse" cx="99" cy="36" r="5"/></svg>`,
     `<svg class="is-planned" viewBox="0 0 120 72" aria-hidden="true"><rect x="9" y="9" width="102" height="54" rx="13"/><path class="glvm-glyph-flow" d="M22 36h24m28 0h24"/><path d="M60 19l16 9v18l-16 9-16-9V28zM44 28l16 10 16-10M60 38v17"/><circle cx="101" cy="36" r="5"/></svg>`,
     `<svg viewBox="0 0 120 72" aria-hidden="true"><path class="glvm-glyph-flow" d="M21 48C9 23 34 11 55 21c17 8 13 27 30 30 10 2 18-3 23-11"/><path d="M20 39l1 10 10-2M101 34l7 6-6 7"/><circle cx="55" cy="21" r="6"/><circle class="glvm-glyph-pulse" cx="85" cy="51" r="6"/></svg>`,
-    `<svg viewBox="0 0 120 72" aria-hidden="true"><path class="glvm-glyph-flow" d="M16 18l31 18-31 18M47 36l28-18m-28 18 28 18M75 18l29 18-29 18"/><circle cx="16" cy="18" r="5"/><circle cx="16" cy="54" r="5"/><circle cx="47" cy="36" r="6"/><circle cx="75" cy="18" r="5"/><circle cx="75" cy="54" r="5"/><rect class="glvm-glyph-pulse" x="98" y="29" width="13" height="14" rx="3"/></svg>`
+    `<svg viewBox="0 0 120 72" aria-hidden="true"><path class="glvm-glyph-flow" d="M16 18l31 18-31 18M47 36l28-18m-28 18 28 18M75 18l29 18-29 18"/><circle cx="16" cy="18" r="5"/><circle cx="16" cy="54" r="5"/><circle cx="47" cy="36" r="6"/><circle cx="75" cy="18" r="5"/><circle cx="75" cy="54" r="5"/><rect class="glvm-glyph-pulse" x="98" y="29" width="13" height="14" rx="3"/></svg>`,
+    `<svg viewBox="0 0 120 72" aria-hidden="true"><path d="M60 9 91 22v18c0 15-12 24-31 28-19-4-31-13-31-28V22Z"/><circle cx="49" cy="35" r="10"/><path class="glvm-glyph-flow" d="M59 35h29m-9 0v13m-10-13v8"/><circle class="glvm-glyph-pulse" cx="49" cy="35" r="4"/></svg>`,
+    `<svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="60" cy="36" r="12"/><circle cx="19" cy="18" r="7"/><circle cx="101" cy="18" r="7"/><circle cx="19" cy="54" r="7"/><circle cx="101" cy="54" r="7"/><path class="glvm-glyph-flow" d="M25 21 49 31M95 21 71 31M25 51l24-10m46 10L71 41"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="5"/></svg>`,
+    `<svg viewBox="0 0 120 72" aria-hidden="true"><rect x="12" y="10" width="96" height="52" rx="8"/><path d="M12 24h96M21 17h4m7 0h4m7 0h4"/><path class="glvm-glyph-flow" d="m29 35 9 7-9 7m18 0h24"/><circle class="glvm-glyph-pulse" cx="92" cy="43" r="6"/></svg>`
   ];
+  const stackState = (item = {}, index = 0) => {
+    const normalized = String(item.status || "").toLowerCase();
+    if (/planned|roadmap|规划|路线图|ロードマップ|計画|로드맵|계획|خارطة الطريق|مخطط/.test(normalized)) {
+      return "planned";
+    }
+    if (/mixed|integration|混合|集成|整合|混在|統合|連携|혼합|통합|연동|مختلط|تكامل/.test(normalized)) {
+      return "mixed";
+    }
+    // Keep guest VMs and tooling as the two integration-stage tail modules
+    // in the shared runtime order across every locale.
+    if (index >= 7) return "mixed";
+    return "current";
+  };
 
   const stackItems = (page.stack.items || [])
     .map((item, index) => `
-      <li class="glvm-stack-item" data-stack-index="${index}" data-stack-state="${index === 3 ? "planned" : "current"}" data-stack-status="${escapeAttribute(item.status.toLowerCase())}">
+      <li class="glvm-stack-item" data-stack-index="${index}" data-stack-state="${stackState(item, index)}" data-stack-status="${escapeAttribute(String(item.status || "").toLowerCase())}">
         <span class="glvm-stack-number">${String(index + 1).padStart(2, "0")}</span>
         <div class="glvm-stack-label"><span>${item.label}</span><strong>${item.status}</strong></div>
         <div class="glvm-stack-glyph">${stackGlyphs[index] || stackGlyphs[0]}</div>
@@ -3062,7 +3541,7 @@ function renderGlvmPage(page) {
     .join("");
   const stackFlow = (page.stack.items || [])
     .map((item, index) => `
-      <button type="button" class="glvm-stack-flow-node" data-stack-index="${index}" data-flow-state="${index === 3 ? "planned" : "current"}" data-flow-status="${escapeAttribute(item.status.toLowerCase())}" aria-pressed="${index === 0 ? "true" : "false"}" aria-label="${escapeAttribute(`${item.label}: ${item.title}`)}">
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="${index}" data-flow-state="${stackState(item, index)}" data-flow-status="${escapeAttribute(String(item.status || "").toLowerCase())}" aria-pressed="${index === 0 ? "true" : "false"}" aria-label="${escapeAttribute(`${item.label}: ${item.title}`)}">
         <span>${String(index + 1).padStart(2, "0")}</span><strong>${item.label}</strong><small>${item.status}</small>
       </button>
     `)
@@ -3070,7 +3549,7 @@ function renderGlvmPage(page) {
   const statusGroups = (page.status.groups || [])
     .map((group) => `
       <article class="glvm-status-group glvm-status-group--${escapeAttribute(group.tone)}">
-        <h3><span aria-hidden="true"></span>${group.label}</h3>
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">${group.label}</span></h3>
         <ul>${(group.items || []).map((item) => `<li>${item}</li>`).join("")}</ul>
       </article>
     `)
@@ -3085,9 +3564,9 @@ function renderGlvmPage(page) {
     .join("");
   const closeLinks = page.close && Array.isArray(page.close.links)
     ? page.close.links
-      .slice(0, 2)
+      .slice(0, 3)
       .map(([label, href], index) => `
-        <a class="glvm-next-link glvm-next-link--${index === 0 ? "primary" : "secondary"}" href="${escapeAttribute(href)}">
+        <a class="glvm-next-link glvm-next-link--${index === 0 ? "primary" : index === 1 ? "secondary" : "tertiary"}" href="${escapeAttribute(href)}">
           <span class="glvm-next-index" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>
           <span class="glvm-next-label">${label}</span>
           <span class="glvm-next-arrow" aria-hidden="true"></span>
@@ -3100,6 +3579,7 @@ function renderGlvmPage(page) {
       <div class="glvm-next-copy">
         <p class="eyebrow">${page.close.eyebrow}</p>
         <h2 id="glvm-next-title">${page.close.title}</h2>
+        ${page.close.text ? `<p>${page.close.text}</p>` : ""}
       </div>
       <nav class="glvm-next-links" aria-labelledby="glvm-next-title">${closeLinks}</nav>
     </section>
@@ -3111,8 +3591,8 @@ function renderGlvmPage(page) {
           <p class="eyebrow">${page.hero.eyebrow}</p>
           <h1>${page.hero.title}</h1>
           <p class="glvm-full-name">${page.hero.fullName}</p>
-          <p class="glvm-tagline">${page.hero.tagline}</p>
-          <p class="glvm-hero-text">${page.hero.text}</p>
+          <p class="glvm-tagline glvm-semantic-heading">${renderGlvmSemanticHeading(page.hero.tagline, "hero", lang)}</p>
+          <p class="glvm-hero-text glvm-semantic-copy">${renderGlvmSemanticCopy(page.hero.text, "hero", lang)}</p>
         </div>
         <figure class="glvm-hero-visual">
           <div class="glvm-hero-media">
@@ -3129,17 +3609,18 @@ function renderGlvmPage(page) {
       <section class="glvm-definition fade-in">
         <div class="section-heading glvm-section-heading">
           <p class="eyebrow">${page.definition.eyebrow}</p>
-          <h2>${page.definition.title}</h2>
-          <p>${page.definition.text}</p>
+          <h2 class="glvm-semantic-heading">${renderGlvmSemanticHeading(page.definition.title, "definition", lang)}</h2>
+          <p class="glvm-semantic-copy">${renderGlvmSemanticCopy(page.definition.text, "definition", lang)}</p>
         </div>
         <div class="glvm-comparison">${comparison}</div>
         <div class="glvm-axis">${axes}</div>
+        ${definitionPayoff}
       </section>
 
-      <section class="glvm-architecture fade-in">
+      <section class="glvm-architecture fade-in" id="architecture">
         <div class="section-heading glvm-section-heading">
           <p class="eyebrow">${page.architecture.eyebrow}</p>
-          <h2>${page.architecture.title}</h2>
+          <h2 class="glvm-semantic-heading">${renderGlvmSemanticHeading(page.architecture.title, "architecture", lang)}</h2>
           <p>${page.architecture.text}</p>
         </div>
         <div class="glvm-architecture-stage">
@@ -3153,10 +3634,13 @@ function renderGlvmPage(page) {
         </div>
       </section>
 
+      ${continuitySection}
+      ${ocapStorySection}
+
       <section class="glvm-journey fade-in">
         <div class="section-heading glvm-section-heading">
           <p class="eyebrow">${journey.eyebrow}</p>
-          <h2>${journey.title}</h2>
+          <h2 class="glvm-semantic-heading">${renderGlvmSemanticHeading(journey.title, "journey", lang)}</h2>
           <p>${journey.text}</p>
         </div>
         <div class="glvm-route-toolbar"><span>${journey.routeLabel}</span><div>${routeButtons}</div></div>
@@ -3197,7 +3681,7 @@ function renderGlvmPage(page) {
       <section class="glvm-status fade-in">
         <div class="section-heading glvm-section-heading">
           <p class="eyebrow">${page.status.eyebrow}</p>
-          <h2>${page.status.title}</h2>
+          <h2 class="glvm-semantic-heading">${renderGlvmSemanticHeading(page.status.title, "status", lang)}</h2>
           <div class="glvm-status-intro">
             <p>${page.status.text}</p>
             <div class="glvm-status-summary" aria-hidden="true">${statusSummary}</div>
@@ -3286,7 +3770,7 @@ function renderParallelConcurrentComposablePage(page) {
         <h2>${page.glvmBridge.title}</h2>
         <p>${page.glvmBridge.text}</p>
       </div>
-      <a class="button secondary pcc-glvm-bridge-link" href="${escapeAttribute(page.glvmBridge.href || "glvm.html")}">${page.glvmBridge.label}<span aria-hidden="true">→</span></a>
+      <a class="button secondary pcc-glvm-bridge-link" href="${escapeAttribute(page.glvmBridge.href || "glvm.html#architecture")}">${page.glvmBridge.label}<span aria-hidden="true">→</span></a>
     </section>
   ` : "";
   const closeLinks = page.close.links
@@ -3625,6 +4109,13 @@ function setupGlvmPage() {
   if (!pageContent) return;
   const root = pageContent.querySelector("[data-glvm-root]");
   if (!root) return;
+  const language = document.documentElement.lang || "en";
+  const reapplyLocalizedProtection = (...nodes) => {
+    nodes.filter(Boolean).forEach((node) => {
+      protectLocalizedTechnicalTokens(node, language);
+      isolateArabicTechnicalRuns(node, language);
+    });
+  };
 
   if (Array.isArray(window.__glvmTimers)) {
     window.__glvmTimers.forEach((timer) => window.clearTimeout(timer));
@@ -3654,17 +4145,19 @@ function setupGlvmPage() {
       const labels = Array.from(button.querySelectorAll(".glvm-layer-items i")).map((item) => item.textContent || "");
       layerItems.innerHTML = labels.map((label) => `<li>${label}</li>`).join("");
     }
+    reapplyLocalizedProtection(layerStatus, layerTitle, layerText, layerItems);
     if (focus) button.focus();
   };
 
   layerButtons.forEach((button, index) => {
     button.addEventListener("click", () => activateLayer(button));
     button.addEventListener("keydown", (event) => {
+      const inlineStep = document.documentElement.dir === "rtl" ? -1 : 1;
       const keyMap = {
         ArrowDown: (index + 1) % layerButtons.length,
-        ArrowRight: (index + 1) % layerButtons.length,
+        ArrowRight: (index + inlineStep + layerButtons.length) % layerButtons.length,
         ArrowUp: (index - 1 + layerButtons.length) % layerButtons.length,
-        ArrowLeft: (index - 1 + layerButtons.length) % layerButtons.length,
+        ArrowLeft: (index - inlineStep + layerButtons.length) % layerButtons.length,
         Home: 0,
         End: layerButtons.length - 1
       };
@@ -3693,16 +4186,18 @@ function setupGlvmPage() {
     if (routeTitle) routeTitle.textContent = button.dataset.routeTitle || "";
     if (routeText) routeText.textContent = button.dataset.routeText || "";
     if (routeStatus) routeStatus.textContent = button.dataset.routeStatus || "";
+    reapplyLocalizedProtection(routeStatus, routeTitle, routeText);
     if (focus) button.focus();
   };
 
   routeButtons.forEach((button, index) => {
     button.addEventListener("click", () => activateRoute(button));
     button.addEventListener("keydown", (event) => {
+      const inlineStep = document.documentElement.dir === "rtl" ? -1 : 1;
       const keyMap = {
-        ArrowRight: (index + 1) % routeButtons.length,
+        ArrowRight: (index + inlineStep + routeButtons.length) % routeButtons.length,
         ArrowDown: (index + 1) % routeButtons.length,
-        ArrowLeft: (index - 1 + routeButtons.length) % routeButtons.length,
+        ArrowLeft: (index - inlineStep + routeButtons.length) % routeButtons.length,
         ArrowUp: (index - 1 + routeButtons.length) % routeButtons.length,
         Home: 0,
         End: routeButtons.length - 1
@@ -3710,6 +4205,41 @@ function setupGlvmPage() {
       if (!(event.key in keyMap)) return;
       event.preventDefault();
       activateRoute(routeButtons[keyMap[event.key]], true);
+    });
+  });
+
+  const continuityTabs = Array.from(root.querySelectorAll("[data-glvm-continuity]"));
+  const continuityPanels = Array.from(root.querySelectorAll("[data-glvm-continuity-panel]"));
+  const activateContinuity = (tab, focus = false) => {
+    if (!tab) return;
+    const id = tab.dataset.glvmContinuity || "";
+    continuityTabs.forEach((candidate) => {
+      const active = candidate === tab;
+      candidate.classList.toggle("is-active", active);
+      candidate.setAttribute("aria-selected", String(active));
+      candidate.tabIndex = active ? 0 : -1;
+    });
+    continuityPanels.forEach((panel) => {
+      const active = panel.dataset.glvmContinuityPanel === id;
+      panel.classList.toggle("is-active", active);
+      panel.hidden = !active;
+    });
+    if (focus) tab.focus();
+  };
+  continuityTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => activateContinuity(tab));
+    tab.addEventListener("keydown", (event) => {
+      const inlineStep = document.documentElement.dir === "rtl" ? -1 : 1;
+      let nextIndex = index;
+      if (event.key === "ArrowRight") nextIndex = index + inlineStep;
+      if (event.key === "ArrowLeft") nextIndex = index - inlineStep;
+      if (event.key === "ArrowDown") nextIndex = index + 1;
+      if (event.key === "ArrowUp") nextIndex = index - 1;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = continuityTabs.length - 1;
+      if (nextIndex === index) return;
+      event.preventDefault();
+      activateContinuity(continuityTabs[(nextIndex + continuityTabs.length) % continuityTabs.length], true);
     });
   });
 
@@ -3739,6 +4269,7 @@ function setupGlvmPage() {
     });
     if (progress) progress.textContent = `${normalized} / ${stepCards.length}`;
     if (message) message.textContent = messages[normalized] || messages[0] || "";
+    reapplyLocalizedProtection(progress, message);
     if (playButton) playButton.disabled = normalized > 0 && normalized < stepCards.length;
   };
 
@@ -3779,10 +4310,11 @@ function setupGlvmPage() {
   stackFlowNodes.forEach((node, index) => {
     node.addEventListener("click", () => activateStack(index));
     node.addEventListener("keydown", (event) => {
+      const inlineStep = document.documentElement.dir === "rtl" ? -1 : 1;
       const keyMap = {
-        ArrowRight: (index + 1) % stackFlowNodes.length,
+        ArrowRight: (index + inlineStep + stackFlowNodes.length) % stackFlowNodes.length,
         ArrowDown: (index + 1) % stackFlowNodes.length,
-        ArrowLeft: (index - 1 + stackFlowNodes.length) % stackFlowNodes.length,
+        ArrowLeft: (index - inlineStep + stackFlowNodes.length) % stackFlowNodes.length,
         ArrowUp: (index - 1 + stackFlowNodes.length) % stackFlowNodes.length,
         Home: 0,
         End: stackFlowNodes.length - 1
@@ -3809,8 +4341,10 @@ function setupGlvmPage() {
 
   const initialLayer = layerButtons.find((button) => button.classList.contains("is-active")) || layerButtons[0];
   const initialRoute = routeButtons.find((button) => button.classList.contains("is-active")) || routeButtons[0];
+  const initialContinuity = continuityTabs.find((tab) => tab.classList.contains("is-active")) || continuityTabs[0];
   activateLayer(initialLayer);
   activateRoute(initialRoute);
+  activateContinuity(initialContinuity);
   activateStack(0);
   setJourneyStep(0);
 }
@@ -3979,7 +4513,7 @@ function updateActiveNavigation() {
     roadmap: "roadmap.html"
   };
   const activeHref = activeHrefByPage[currentPage];
-  const learnPages = new Set(["aluxVsOthers", "parallelConcurrentComposable", "glvm"]);
+  const learnPages = new Set(["glvm", "aluxVsOthers", "parallelConcurrentComposable"]);
 
   document.querySelectorAll(".site-nav a").forEach((anchor) => {
     const isActive = anchor.getAttribute("href") === activeHref;
@@ -4026,7 +4560,7 @@ function renderPage(lang) {
         : page.sections
     };
   }
-  const orderedSections = currentPage === "aluxVsOthers" || currentPage === "parallelConcurrentComposable" || currentPage === "glvm"
+  const orderedSections = currentPage === "glvm" || currentPage === "aluxVsOthers" || currentPage === "parallelConcurrentComposable"
     ? []
     : currentPage === "vs"
     ? [...page.sections].sort((a, b) => {
@@ -4042,6 +4576,13 @@ function renderPage(lang) {
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   document.title = sanitizeExternalProjectNames(page.metaTitle, lang);
+
+  if (siteNav) {
+    siteNav.setAttribute("aria-label", visibleChrome.primaryNavigationLabel || ui.en.primaryNavigationLabel);
+  }
+  if (menuToggle) {
+    menuToggle.setAttribute("aria-label", visibleChrome.menuToggleLabel || ui.en.menuToggleLabel);
+  }
 
   const meta = document.querySelector('meta[name="description"]');
   if (meta) meta.setAttribute("content", sanitizeExternalProjectNames(page.metaDescription, lang));
@@ -4073,12 +4614,12 @@ function renderPage(lang) {
     node.textContent = chrome.cookie.button;
   });
 
-  if (currentPage === "aluxVsOthers") {
+  if (currentPage === "glvm") {
+    pageContent.innerHTML = renderGlvmPage(page, lang);
+  } else if (currentPage === "aluxVsOthers") {
     pageContent.innerHTML = renderAluxVsOthersPage(page);
   } else if (currentPage === "parallelConcurrentComposable") {
     pageContent.innerHTML = renderParallelConcurrentComposablePage(page);
-  } else if (currentPage === "glvm") {
-    pageContent.innerHTML = renderGlvmPage(page);
   } else if (!isStaticRoadmap) {
     pageContent.innerHTML = renderHero(page.hero, lang) + orderedSections.map((section, index) => renderSection(section, section.__renderIndex ?? index)).join("");
   }
@@ -4099,8 +4640,8 @@ function renderPage(lang) {
   protectLocalizedTechnicalTokens(pageContent, lang);
   isolateArabicTechnicalRuns(pageContent, lang);
   initCapabilityMindmaps();
-  setupParallelConcurrentComposablePage();
   setupGlvmPage();
+  setupParallelConcurrentComposablePage();
 
   langButtons.forEach((button) => {
     button.textContent = visibleLanguageButtonLabels[button.dataset.lang] || (button.dataset.lang || "").toUpperCase();

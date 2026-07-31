@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T03:21:12.091Z",
+  "generatedAt": "2026-07-31T05:16:59.553Z",
   "source": "script.js:all active English page and shared UI data; roadmap.html static roadmap text nodes",
   "entries": {
     "aluxVsOthers.article.closingText": {
@@ -451,28 +451,28 @@
       "sourceHash": "0b8efa5a3bf104413a725c6ff0459a6be12b1fd33314cbb138745baf39504ae5"
     },
     "glvm.architecture.layers.0.items.0": {
-      "source": "Service / agent discovery",
-      "sourceHash": "ab8628a7ccd9044787275dd15f8de8bd069286d4ca14bd2ea2fca408b50312ca"
+      "source": "Service and agent discovery",
+      "sourceHash": "0d34772f99a268e26e3a675a46350ab7f14a2afbbb168a5bc171b30a868edc88"
     },
     "glvm.architecture.layers.0.items.1": {
       "source": "Orchestration",
       "sourceHash": "ed4fdd1721677737cffb2862fe34d5b63901c7cc76b8c67c51e92a467b31a5e7"
     },
     "glvm.architecture.layers.0.items.2": {
-      "source": "Programmable capability",
-      "sourceHash": "d9a98a837a7428b9c0f700d242bdffec9736fee161c0e3b2b1cf79baae4e1cef"
+      "source": "Programmable capabilities",
+      "sourceHash": "a8651a3f0f201a1585652177ac552ed959a6a8944b4e458b3f8c4bc77865e0f4"
     },
     "glvm.architecture.layers.0.label": {
       "source": "Layer 3",
       "sourceHash": "fae4c3c8cd8779d65395d18aac1cdff8850245d51576addcc43f85c805ecea80"
     },
     "glvm.architecture.layers.0.status": {
-      "source": "Architecture target",
-      "sourceHash": "5097e924712f4a2dea1abdd343f75b6a64228c0f34b756f7955c3bb68a305cf9"
+      "source": "Roadmap",
+      "sourceHash": "92375f997ffe65ab7f04eeda8cb2d7f69ebea949a06132afd53c83fff276ef54"
     },
     "glvm.architecture.layers.0.text": {
-      "source": "The target agent-facing service layer: registration and finding, orchestration, and programmable capability. This is where services are designed to become discoverable and collaboration rules become explicit.",
-      "sourceHash": "ded29d0b8cbf56070ab2e4b849ba6c8e5203eceea1bb17486caa614983e34f9d"
+      "source": "The future service layer for agents and applications: registration and discovery, orchestration, and programmable capabilities. It makes services discoverable and collaboration rules explicit.",
+      "sourceHash": "5d3bf6fe27905f6b2f4e0b4fa18f8671335637a2affa2783b4d5cd5723fb9383"
     },
     "glvm.architecture.layers.0.title": {
       "source": "World Operating System",
@@ -483,120 +483,400 @@
       "sourceHash": "a953f09a1b6b6725b81956e9ad0b1eb49e3ad40004c04307ef8af6246a054116"
     },
     "glvm.architecture.layers.1.items.0": {
-      "source": "Unified World VM",
-      "sourceHash": "67a4257643771a6bcd0f0a4da8044256e8fbc1647eed74e710c8c44005d57c80"
+      "source": "GLVM abstraction",
+      "sourceHash": "941ad0e111b231bd7c7287703a87f6f8b46e3749c8ff64a04da8e268a598d90c"
     },
     "glvm.architecture.layers.1.items.1": {
-      "source": "Concurrency control",
-      "sourceHash": "73e78c47aa95256b21ddd78578820cacbd4305738620bff28384fee2a182f351"
+      "source": "Concurrency and replay",
+      "sourceHash": "241fc30f8fba769534b7a65198fb66c7f8a156665947d2c17eb97b2a53447a67"
     },
     "glvm.architecture.layers.1.items.2": {
-      "source": "Capability management",
-      "sourceHash": "96d14fd4d5328f0633b4ecce68ffe609bcfbb5002c450ef4311fcfab769c31bd"
+      "source": "Capability and finalization",
+      "sourceHash": "204c495e0081874bdc9df655ecc8a42baf184990fedbc539ca8368ce3e49f57a"
     },
     "glvm.architecture.layers.1.label": {
       "source": "Layer 2",
       "sourceHash": "620558ceadc1cb03ef33fb6cdf2a638743d565dfe40a5c8966f060012a6ca5e4"
     },
     "glvm.architecture.layers.1.status": {
-      "source": "Core available · system expanding",
-      "sourceHash": "571982ef10d9d0070e29e72f39c035eff008eb2ef39da65aec0f76a0639a9ba1"
+      "source": "Core runtime · expanding",
+      "sourceHash": "1d986bb78605cdf721f4ebe616bea2959c1b8c42b0e6cfcc4349638f4052326b"
     },
     "glvm.architecture.layers.1.text": {
-      "source": "The target logical coordination layer. VM abstraction, concurrency control, capability management, replay, and shared commit semantics are designed to make multiple TVMs look like one Unified World VM.",
-      "sourceHash": "a9db26c0228c3b460556e3f0ecf65f2a8f982beb55e201b671fc07a550928f02"
+      "source": "The logical coordination layer. VM abstraction, concurrency control, object capabilities, deterministic replay, and finalization semantics form the shared execution model for participating TVMs.",
+      "sourceHash": "a0aca6853f76e8773c00709a3a64a6a1cb3218deb7278f2694ea7fb8fdefdb31"
     },
     "glvm.architecture.layers.1.title": {
-      "source": "ALUX decentralized concurrent runtime",
-      "sourceHash": "743c3b4d9fb72eff882afa96f0e8f3f47417b62922ca4eca3daf83fcf1d9bf01"
+      "source": "GLVM concurrent runtime",
+      "sourceHash": "c4fde37e425dfccee6bc2a42f5e5e4b767d7143d811a5e85d931141eb3364422"
     },
     "glvm.architecture.layers.2.index": {
       "source": "01",
       "sourceHash": "938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4"
     },
     "glvm.architecture.layers.2.items.0": {
-      "source": "Blockchain TVM",
-      "sourceHash": "12eba590437491570bcca05fa768ab776483b68d19e08a146a5f75066b50b73d"
+      "source": "Public-chain TVM",
+      "sourceHash": "bad4fca03480321f8688b6e3acb40bb6da9bbc57eafdab2e20323bc61035b8cf"
     },
     "glvm.architecture.layers.2.items.1": {
-      "source": "Cloud TVM",
-      "sourceHash": "6e9c244c7e84b9f7ca1ab92019a9d458353db6e661cdcafe23613d6fe05ad8de"
+      "source": "Private or cloud TVM",
+      "sourceHash": "893650e9b59fac7cf01c3958b8030299af939c4f09c94b91f40f025a2665114b"
     },
     "glvm.architecture.layers.2.items.2": {
-      "source": "Personal-device TVM",
-      "sourceHash": "003ef60ebbeb452b6ee4ef01d349ac3bfd197b931d8845a4fe96d039a1212e12"
+      "source": "Client-device TVM",
+      "sourceHash": "b8444af56c33842f2bf34cefb99c5f00e9148675cf0099f15f7580274221d5ad"
     },
     "glvm.architecture.layers.2.label": {
       "source": "Layer 1",
       "sourceHash": "ca900bb0437e1b6c3df9f9591b5393553738dd8cb25cd66d43b2ef1745ac1bf3"
     },
     "glvm.architecture.layers.2.status": {
-      "source": "Mixed deployment target",
-      "sourceHash": "eb4e77294147605df7248cf029ae815fd813cceebccab31335c059adc6faf9de"
+      "source": "Core · integration · roadmap",
+      "sourceHash": "3c7850008155d805ac28b6c65943eabb10b2650a426142af49c2b4bf965e0f88"
     },
     "glvm.architecture.layers.2.text": {
-      "source": "The machines that do the work: blockchain validators, cloud servers, and personal devices. In the target architecture, each environment runs a TVM and exposes only the capabilities it has been given.",
-      "sourceHash": "5a56929725e0c49e86542a2dad4a033f7b998e4a67a9cef85aaf7885ba042bf1"
+      "source": "The machines that do the work. Public-chain nodes provide the current execution foundation. Private or cloud TVMs are the next integration surface; client-device TVMs remain a roadmap path toward local execution.",
+      "sourceHash": "7387bb0f811192684a7f44a34ec3f777de59261d517b665629eff415bbf81743"
     },
     "glvm.architecture.layers.2.title": {
       "source": "Physical infrastructure",
       "sourceHash": "bcc21603dfd671b3215ec37ac338eaf60fb960aaed9c268be76705abb13484b7"
     },
     "glvm.architecture.text": {
-      "source": "Select a layer to see what each target layer contributes. The lower layers ground execution in real machines; the upper layer is designed to turn that execution into discoverable, orchestrated, permissioned services.",
-      "sourceHash": "f5a8dbfed0bca547d11ba9ce3ea5e5e57237511c2633b3283e64ecdf05caef2e"
+      "source": "Physical machines run TVMs; in the GLVM architecture, those engines participate in one shared logical execution model. A future World OS will organize that layer into discoverable, orchestrated services governed by explicit capabilities.",
+      "sourceHash": "a6e5176fd6c39ca14d50da4127096425f317eeac95cf10f0cb106da5016a7199"
     },
     "glvm.architecture.title": {
-      "source": "From real machines to one logical world",
-      "sourceHash": "7964e40f917167d8cc81fe9aa3ae388dcf66cb5f346b224a0e53c124ca1acfdb"
+      "source": "Three layers, one developer-facing execution model",
+      "sourceHash": "793773a3a494a63fc87a195ba4a12e74ee47137699d4f98aab09372c443beee5"
     },
     "glvm.close.eyebrow": {
-      "source": "Next / Runtime Lab",
-      "sourceHash": "2ca0079e4b70d1a30b1055f7b5e49f4c6a66c26059c31e399a9ccc43b4965358"
+      "source": "Continue learning",
+      "sourceHash": "26e5b147b6230987157228e88aa404ab99148aba65ccdf5ac9262c477935a2a9"
     },
     "glvm.close.links.0.0": {
-      "source": "Open Runtime Lab",
-      "sourceHash": "7e81d37d3872708e1f38f25a5cc37c70e5ab56ec2b83016ba38585bd787dc869"
+      "source": "Runtime Lab",
+      "sourceHash": "ea2d547f1cc2c87a2f634635e2923655db93627c7c17458da90feb153ca0e96c"
     },
     "glvm.close.links.1.0": {
       "source": "For AI Agents",
       "sourceHash": "0758b35faccf817dcc802aa45560f2cd2a0ae8eb405fc79b8cd1257c0170c41b"
     },
+    "glvm.close.links.2.0": {
+      "source": "ALUX VS Others",
+      "sourceHash": "eb4b3f01c8ece1d0aedb62d3feb2142e1879e19355434ab4ed0336c129231d62"
+    },
     "glvm.close.text": {
-      "source": "GLVM describes the logical execution architecture ALUX is building. Runtime Lab shows the core mechanisms in the current ALUX engine that support parallel execution, concurrency, and composability.",
-      "sourceHash": "81e82bd82bbab46a3d1746e92629272b55c86eeacb8de66a05185ee117e213b1"
+      "source": "Runtime Lab explains the execution model. For AI Agents shows the workload pattern. ALUX VS Others compares architecture and capabilities across systems.",
+      "sourceHash": "015cc615b5f87813ba1d3bb1e947ac75c792b8c02c0d06c65e09f591a37dbec2"
     },
     "glvm.close.title": {
-      "source": "See what GLVM builds on today.",
-      "sourceHash": "dc3e70b4af46db7540ef656c79ece672b62d771b6b3bb0a014400fd4855a3bb4"
+      "source": "Explore the runtime, agent workloads, and system comparisons.",
+      "sourceHash": "ab76ddcde696819b25513aca69f2bdc8218ac33705896ee1a2223895d4aca9bc"
+    },
+    "glvm.continuity.atomicity.label": {
+      "source": "Vertical atomicity · core runtime",
+      "sourceHash": "ba3dad599bf3a508a1645623d023c54cf7cf4d02abc91a08188988437447217c"
+    },
+    "glvm.continuity.atomicity.title": {
+      "source": "Cross-block execution preserves one transaction context.",
+      "sourceHash": "ca95e2f3799eb62a3c1806800521dbe368c7258bfb385440086beeb65460f4ff"
+    },
+    "glvm.continuity.diagram.allOrNone": {
+      "source": "ALL / NONE",
+      "sourceHash": "70b9169dd07c7400b9b0252753597aa9c3bd53cafe12f1d1009e5d0cca77d82b"
+    },
+    "glvm.continuity.diagram.atomicObjective": {
+      "source": "ONE ATOMIC OBJECTIVE",
+      "sourceHash": "7ed3c1ec4f9dbff25093b668200aa51ef67fb92402fc787597152f7afb999d76"
+    },
+    "glvm.continuity.diagram.blockN": {
+      "source": "BLOCK N",
+      "sourceHash": "ca59a1bf84efd251ac56ea7a3ed6d8895e5dd95fe834f18efe2ba6c023b7aeb8"
+    },
+    "glvm.continuity.diagram.blockN1": {
+      "source": "BLOCK N + 1",
+      "sourceHash": "85417a77ad080ac0d313aabc82d67711c5559909b79b6e09ba7e5e4d60769310"
+    },
+    "glvm.continuity.diagram.blockN2": {
+      "source": "BLOCK N + 2",
+      "sourceHash": "f1e79ecd7b293853b46d4c25796b9394b47e72fd632f7c74b7bd32118e1d504f"
+    },
+    "glvm.continuity.diagram.comm": {
+      "source": "COMM",
+      "sourceHash": "4c52d4874a1b76b8532f918cda0bdb1b557be1905dc649dbb6e9ca7b47d6fc0b"
+    },
+    "glvm.continuity.diagram.commit": {
+      "source": "COMMIT",
+      "sourceHash": "79663c1d3b43ceaf9ee728e501c64b57ae2e4d6cb36ff5c65eddcda1de27342f"
+    },
+    "glvm.continuity.diagram.contextPreserved": {
+      "source": "CONTEXT PRESERVED",
+      "sourceHash": "b54fb1aab19a8e3e9b3936a54bb6268e36b363de8ec10dce509e227e97e16678"
+    },
+    "glvm.continuity.diagram.laneA": {
+      "source": "LANE A",
+      "sourceHash": "54e413377666157236a8da024a601b87fc2dc634d5308bf18753e4edaf0d18d0"
+    },
+    "glvm.continuity.diagram.laneB": {
+      "source": "LANE B",
+      "sourceHash": "94d9a69b88cb04265d6b8986652246ad8cc6fe4f636f12f240a67a8168d99b25"
+    },
+    "glvm.continuity.diagram.laneC": {
+      "source": "LANE C",
+      "sourceHash": "70c317b8d966de9fefc75adc1b904629326b07be47debecb401c9b21128c0dd9"
+    },
+    "glvm.continuity.diagram.merge": {
+      "source": "MERGE",
+      "sourceHash": "fc2b737d854489622d7138e5364e3cd0d9c538f509a5b684bd4ada8e43ace8da"
+    },
+    "glvm.continuity.diagram.oneCommit": {
+      "source": "ONE COMMIT",
+      "sourceHash": "6c1b3a3324637583ffba69e5a9742dcddbd29cb762562d9431e373f8435ef948"
+    },
+    "glvm.continuity.diagram.processA": {
+      "source": "PROCESS A",
+      "sourceHash": "800d79816391198500ce06b3bc91bfac8c548a7b8332b45c5f7e4a5bef3c24ec"
+    },
+    "glvm.continuity.diagram.processB": {
+      "source": "PROCESS B",
+      "sourceHash": "5e5c1a1efaef54e6db3603b6cde5e065078d3bb42cdca794a5df6f3eedac423b"
+    },
+    "glvm.continuity.diagram.ready": {
+      "source": "READY",
+      "sourceHash": "c2e3ac47f4a325469c1a2d5f117e463ec943c721986d5d9f09ac4540b7d80526"
+    },
+    "glvm.continuity.diagram.resume": {
+      "source": "RESUME",
+      "sourceHash": "0747c96a23dbfa586507337fc4ed4bdddb7b05833243622c4e6bb357b87adb0c"
+    },
+    "glvm.continuity.diagram.roadmap": {
+      "source": "ROADMAP",
+      "sourceHash": "020784845889124b43389c30cbfd03c3b9662f5e17671583a8dc283c24cb6ea3"
+    },
+    "glvm.continuity.diagram.send": {
+      "source": "SEND",
+      "sourceHash": "2a8eaacaedc663bc499d8b669e4c7bff3335ef622d206f42833de3408e3e2a80"
+    },
+    "glvm.continuity.diagram.settle": {
+      "source": "SETTLE",
+      "sourceHash": "1a070fdcde5b1b1075d1fd8119f2baddc493eb20e9a1827243b4a4c6eca5dab8"
+    },
+    "glvm.continuity.diagram.start": {
+      "source": "START",
+      "sourceHash": "39f17ec6ebcf3cec37a06d85dc61882be3898d7573f284b7b41222087b6b6a2c"
+    },
+    "glvm.continuity.diagram.state01": {
+      "source": "STATE 01",
+      "sourceHash": "16898d2bf76e08c82b93a68f9f468d0277911df4792b810589017eb99875c6af"
+    },
+    "glvm.continuity.diagram.state02": {
+      "source": "STATE 02",
+      "sourceHash": "825c23fcf629998e4d7befe2dfdf11c7ce47107a62411a8cc40eb3b96d23db06"
+    },
+    "glvm.continuity.diagram.state03": {
+      "source": "STATE 03",
+      "sourceHash": "d1b48ca7d4aa2f2b44e686078f933ab413bff411e7222f3e342b0546cf056d47"
+    },
+    "glvm.continuity.diagram.wait": {
+      "source": "WAIT",
+      "sourceHash": "4f618185f2ea5253635939166e5196b74642977aa2b03835f8b87277a8130f33"
+    },
+    "glvm.continuity.eyebrow": {
+      "source": "Execution and atomicity",
+      "sourceHash": "fbd8796e99a18575ed61d05c4515939d0e56d4fc8a44b194c165222144a5b24b"
+    },
+    "glvm.continuity.modes.0.label": {
+      "source": "Sequential",
+      "sourceHash": "332ddf8b25deb00c623e0ddb232301303c84dd522f6097911154d706366f3b2c"
+    },
+    "glvm.continuity.modes.0.status": {
+      "source": "Baseline",
+      "sourceHash": "cc9ea7f7c64e772c81eb80854c0e7db8f504943549c0675d893a983b8f545152"
+    },
+    "glvm.continuity.modes.0.text": {
+      "source": "One transition follows another.",
+      "sourceHash": "73f6b2591d34cf71d887832fe0c88306479a4d534036c8593ca4772f3a5978fa"
+    },
+    "glvm.continuity.modes.1.label": {
+      "source": "Parallel",
+      "sourceHash": "d97c090927f2006c71193f88b06678915dcfccb1d884fd4b669f6c1ab2f5068a"
+    },
+    "glvm.continuity.modes.1.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255"
+    },
+    "glvm.continuity.modes.1.text": {
+      "source": "Independent transitions advance at the same time.",
+      "sourceHash": "3b3abf8d4a4f74530a55add4ac919f27e75936a90f16bb6afc0f65ebe62846b7"
+    },
+    "glvm.continuity.modes.2.label": {
+      "source": "Concurrent",
+      "sourceHash": "06242b467eca75273bde1381377d484634e6ca6617386b5f4936069f206fc0c8"
+    },
+    "glvm.continuity.modes.2.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255"
+    },
+    "glvm.continuity.modes.2.text": {
+      "source": "Processes communicate, wait, and resume through channels.",
+      "sourceHash": "94012441aef7ca5a1fdb7c4334a752eaa03ae8aaf401d3a45fda0d9c70128717"
+    },
+    "glvm.continuity.modes.3.label": {
+      "source": "Composite",
+      "sourceHash": "8e3588157fcf8d7c32058feba195c8dfa8c61248b12807b660562c1997d2ce6a"
+    },
+    "glvm.continuity.modes.3.status": {
+      "source": "Roadmap",
+      "sourceHash": "92375f997ffe65ab7f04eeda8cb2d7f69ebea949a06132afd53c83fff276ef54"
+    },
+    "glvm.continuity.modes.3.text": {
+      "source": "Multiple concurrent transactions share a higher-level atomic objective.",
+      "sourceHash": "35c0c297ef85e68d00b12c42aff0d1fc68fc5aaf4e0e0a7b75238ef6d9ac3fd3"
+    },
+    "glvm.continuity.notes.0.label": {
+      "source": "Core execution path",
+      "sourceHash": "8b9fc487d42a7456df789877475e759bcc469f599c15adb6612e24dbc15ae1ee"
+    },
+    "glvm.continuity.notes.0.text": {
+      "source": "Concurrent TVM execution · COMM wait and resume · ReplayTrie · cross-block continuation and finalization",
+      "sourceHash": "514fe015f9fcd02c2c559ad32409fe6fd48604d6eb04cdf44ab67d33122cfd5e"
+    },
+    "glvm.continuity.notes.1.label": {
+      "source": "Atomicity model",
+      "sourceHash": "e562e1c277952b7b1ce9747a048aca1937f4ef6f13d7adb0263aa95b39302f24"
+    },
+    "glvm.continuity.notes.1.text": {
+      "source": "Tentative intermediate state does not become confirmed state until finalization; a failed path is discarded instead of repaired later through compensating transactions.",
+      "sourceHash": "5e4fca316defc468e3196ec17c1eb2ef452fed536591b29f9fa6d249751f9d86"
+    },
+    "glvm.continuity.notes.2.label": {
+      "source": "Native off-chain read",
+      "sourceHash": "a5e0e1615558c10c536fd6a2d95dbcf16a8fd8d9fdacb889531adac5c189a99f"
+    },
+    "glvm.continuity.notes.2.text": {
+      "source": "An authenticated HTTPS GET can suspend, record the response, replay, and resume. The data source still determines truth, and irreversible off-chain side effects remain outside rollback.",
+      "sourceHash": "92dca6762287ba3e76e4e57166deb8bc94a1277ddc2520c174f7584524781a7f"
+    },
+    "glvm.continuity.notes.3.label": {
+      "source": "Horizontal atomicity",
+      "sourceHash": "a14c016a406aa0998e199475f1ea5f9e9736ec9cdd6175a09a83f3c65bfa27bb"
+    },
+    "glvm.continuity.notes.3.text": {
+      "source": "Cross-shard atomic execution and composition with independent external systems define the next expansion of the model.",
+      "sourceHash": "ba181665400ce05f1a11bfde5085efa86f48a324ce63bd8a9accac9368bc5d81"
+    },
+    "glvm.continuity.steps.0.label": {
+      "source": "Start",
+      "sourceHash": "e4bb9f1ece9af9264a3b9e3913bbdb2cf497457167b14ced5f85688bfde74644"
+    },
+    "glvm.continuity.steps.0.text": {
+      "source": "Start one transaction with one scoped set of capabilities.",
+      "sourceHash": "b7d0d414baaa65ba2bd6b66d3dac378d1c0ef4bf7f97dc6120f86b34f2ad2a6c"
+    },
+    "glvm.continuity.steps.0.title": {
+      "source": "Begin once",
+      "sourceHash": "351583e2c7e60f109471e05c139d3f1cbea6213f9ba1cfc55c4d36c868f5894a"
+    },
+    "glvm.continuity.steps.1.label": {
+      "source": "Suspend",
+      "sourceHash": "4948e134182f84200d4e8197f88fd1d8510a7004f281222325311858b969380a"
+    },
+    "glvm.continuity.steps.1.text": {
+      "source": "If an answer or channel match is missing, preserve the continuation instead of finalizing early.",
+      "sourceHash": "b5a60573e6b382c671e5022d3a2c545950bb7601b2cc8c7442f3a809da36fe51"
+    },
+    "glvm.continuity.steps.1.title": {
+      "source": "Wait without partial settlement",
+      "sourceHash": "7a23dc8e52d1c9d0a7737182602aa57498827ec1625906cc9b21b0c33cf8160b"
+    },
+    "glvm.continuity.steps.2.label": {
+      "source": "Record",
+      "sourceHash": "bfdd510698ef3ccbf17f2c67fc47790e1ba72894fb74fe284bbc136b47ef73e6"
+    },
+    "glvm.continuity.steps.2.text": {
+      "source": "ReplayTrie records the non-deterministic choice or authenticated response required to reproduce the path.",
+      "sourceHash": "0c6ec87102589dd8dbb2c95228bfc0a47fd3f3693b63d3233a7a4ac08074f1a1"
+    },
+    "glvm.continuity.steps.2.title": {
+      "source": "Capture the choice",
+      "sourceHash": "a482acfe781a7bbb09ce0cab005a948e943a3f0c72d01d4d7ce492e4b54deb5c"
+    },
+    "glvm.continuity.steps.3.label": {
+      "source": "Resume",
+      "sourceHash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d"
+    },
+    "glvm.continuity.steps.3.text": {
+      "source": "A matching COMM event or recorded response wakes the preserved continuation in a later block.",
+      "sourceHash": "4ed12812a90da3bf87a291aff6e5a3fb08d6ea3e4eff58c005775f5f0075f310"
+    },
+    "glvm.continuity.steps.3.title": {
+      "source": "Continue the same transaction",
+      "sourceHash": "339aa85b7742d5ca2cc13dcdef98dceb8b30e37e2f6a617a7a4b86c31748976c"
+    },
+    "glvm.continuity.steps.4.label": {
+      "source": "Finalize",
+      "sourceHash": "bcc55d805d23a518e5cce819ea93f6a1296c558f365f9551676f8e67f83b5e99"
+    },
+    "glvm.continuity.steps.4.text": {
+      "source": "At the finalization boundary, eligible state is committed; rejected tentative state is discarded.",
+      "sourceHash": "6b5855f25954813ec2eb66d1ca7180a0c9498207ae06bd5379aaf2c4d42b38e2"
+    },
+    "glvm.continuity.steps.4.title": {
+      "source": "Commit or discard",
+      "sourceHash": "ec49a412d50dd2e7bfd3507ea06116cb9274c8dea9e230aa736b260394afb26c"
+    },
+    "glvm.continuity.text": {
+      "source": "Execution evolves from sequential and parallel work to concurrent processes that communicate, wait, and resume. Composite execution extends the model so multiple concurrent transactions can share a higher-level settlement boundary; cross-block continuity provides the vertical foundation for that direction.",
+      "sourceHash": "31a40cb294ea110af5db98fa4ac991ecb8df1421211bc57d1ddb1cca4bb7ba37"
+    },
+    "glvm.continuity.title": {
+      "source": "A transaction can wait across blocks, then settle as one.",
+      "sourceHash": "97f4032ab3ef0e115b8d99fc2ccd6ceea49f96fc783cf7f9624608d1ff2ec3e5"
     },
     "glvm.definition.axis.0.0": {
-      "source": "Where collaboration happens",
-      "sourceHash": "599a21c3f14766e29f6a91db97620a3273fee14d94d618e185c51201de5ad34a"
+      "source": "VM abstraction",
+      "sourceHash": "2b864016ca66f6d354d0e2a8e4d25a8dff40fcc6a7f4b33f51bb49c2eb45d71d"
     },
     "glvm.definition.axis.0.1": {
-      "source": "GLVM",
-      "sourceHash": "0f8f70627eedcfd6ad43a1deab4d039373bb8bfa8fadffe5012c59ea7b4be117"
+      "source": "Expanding",
+      "sourceHash": "3179a80f1ff31dd9e169490ccac428de7ba356bca79507570a826951d47e436b"
     },
     "glvm.definition.axis.1.0": {
-      "source": "What can be used — and where it must stop",
-      "sourceHash": "ee971fee526319f5b4ee0b7cc63911f4e016862ee19c5c5603f3eea223780d9e"
+      "source": "Vertical atomicity",
+      "sourceHash": "d120460e7ce4f2700f8fe09fe7ce72795b6c5f424e95c2074315b19d161d5e47"
     },
     "glvm.definition.axis.1.1": {
-      "source": "Programmable capability",
-      "sourceHash": "d9a98a837a7428b9c0f700d242bdffec9736fee161c0e3b2b1cf79baae4e1cef"
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255"
+    },
+    "glvm.definition.axis.2.0": {
+      "source": "Horizontal atomicity",
+      "sourceHash": "a14c016a406aa0998e199475f1ea5f9e9736ec9cdd6175a09a83f3c65bfa27bb"
+    },
+    "glvm.definition.axis.2.1": {
+      "source": "Roadmap",
+      "sourceHash": "92375f997ffe65ab7f04eeda8cb2d7f69ebea949a06132afd53c83fff276ef54"
+    },
+    "glvm.definition.axis.3.0": {
+      "source": "Composable security",
+      "sourceHash": "330cf007869f5baefb7d6ff79dbde5bdbbc992e8743ea9f37a5a5371351a88f3"
+    },
+    "glvm.definition.axis.3.1": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255"
     },
     "glvm.definition.comparison.0.label": {
       "source": "TVM",
       "sourceHash": "76eb15e8431fba04a71e88d1e4f3d13aed307c375a6b71f40400cea9680c4e36"
     },
     "glvm.definition.comparison.0.note": {
-      "source": "Runs inside each execution environment",
-      "sourceHash": "7d057913cc70485943fa0764ba0f24d28f03612128c96af0ae5903f0f1524b30"
+      "source": "One concrete engine inside a machine",
+      "sourceHash": "e83f3f3489441c22f005ef66f4a451a2880097e937334ffe18a56e60fadc82ba"
     },
     "glvm.definition.comparison.0.text": {
-      "source": "The concrete ALUX execution engine. It runs Tolang bytecode, coordinates independent processes through channels and COMM events, and records the non-deterministic choices needed for deterministic replay.",
-      "sourceHash": "6140bf04df17bd0fd0ca1ff6eee049e6bcba4fad8ebd0a8f1d5dea587da54997"
+      "source": "The concrete ALUX execution engine. It runs Tolang bytecode, coordinates independent processes through channels and COMM events, and records the non-deterministic choices required for deterministic replay.",
+      "sourceHash": "e5f71631eadba7d725dd6ecb5defe6d67398725baf61c3c677bf3fa47ba7e5a4"
     },
     "glvm.definition.comparison.0.title": {
       "source": "Tuple-space Virtual Machine",
@@ -607,28 +887,40 @@
       "sourceHash": "0f8f70627eedcfd6ad43a1deab4d039373bb8bfa8fadffe5012c59ea7b4be117"
     },
     "glvm.definition.comparison.1.note": {
-      "source": "Target: unify many environments into one logical world",
-      "sourceHash": "89770d980ef5b6b5655ec2cf9ead721802ebef4caa8f33a9d29c43d3d3506a79"
+      "source": "One logical system above many machines",
+      "sourceHash": "a5c9904395269abdab62651e5f8408d06fb52fe6f27ab9992d32ae42145a6652"
     },
     "glvm.definition.comparison.1.text": {
-      "source": "The system architecture designed to make TVMs on chain, in the cloud, and on personal devices behave like parts of one global computer, with a common model for orchestration, capability, and verifiable state.",
-      "sourceHash": "0f3557058bcf84e1103787baa87e6767a1ad102e2f20f8141f64d1b0b89eba15"
+      "source": "GLVM defines the developer-facing logical model across participating TVMs. It provides one boundary for execution state and processes while replay, replication, finalization, and consensus remain beneath the abstraction.",
+      "sourceHash": "1c0c30e7139251a1b520a2e7560060e2493b39369fec8f21ccb4712338ad4485"
     },
     "glvm.definition.comparison.1.title": {
       "source": "Global Logical Virtual Machine",
       "sourceHash": "b6bb7b9f9a2ca6aa1205187ba03d3a39c54fbb0e69b5e81db17285605078dd8b"
     },
     "glvm.definition.eyebrow": {
-      "source": "The relationship",
-      "sourceHash": "7292ff933d9fa177a5d12a087e5e1b232e2355a14993570405650350d7602645"
+      "source": "The core definition",
+      "sourceHash": "d0e47580ae00918b94fe7eaf4e8c13862894f4c7ee95dbbccad36bdc35966a5b"
+    },
+    "glvm.definition.payoff.label": {
+      "source": "One logical layer",
+      "sourceHash": "6aa385bebd7954cc32aa7e3bade416c6404cb409fc94429b60fd1d7ec9f618c2"
+    },
+    "glvm.definition.payoff.text": {
+      "source": "Developers target one concurrent execution model while the runtime handles scheduling, replay, capability checks, replication, and finalization.",
+      "sourceHash": "84bf6a1c2102da9d833003085af7a44fca6c4042d682127cc03f91748abae5b1"
+    },
+    "glvm.definition.payoff.title": {
+      "source": "One logical layer—not one physical machine.",
+      "sourceHash": "45f6486151560c3848542911e0b678641299353f62423373677ca409039b6ab3"
     },
     "glvm.definition.text": {
-      "source": "GLVM is not a second bytecode VM and it is not a crate in the current repository. It is the global architecture designed to abstract many physical TVMs into one logical execution world.",
-      "sourceHash": "cd16d313a408a8fbe911eba0a20809e379823719412debc1fbabfa1620992921"
+      "source": "TVM is the bytecode execution engine on one machine. GLVM defines the system-level execution abstraction across participating TVMs. It is not another bytecode VM; developers target one logical model while deterministic replay, recovery, replication, finalization, and consensus are coordinated beneath the abstraction.",
+      "sourceHash": "347cb5c9accab39dcf7754d9a8b8c9be4e68a2d12269c66bf14573dc802f3474"
     },
     "glvm.definition.title": {
-      "source": "TVM is the engine. GLVM is the system.",
-      "sourceHash": "3c26986d749493968fcc4cf837f9ecdad99cee774575c515a03838bcf629011c"
+      "source": "One TVM per machine, coordinated through one logical execution model.",
+      "sourceHash": "b232c1fde7c4c395df8888aca59a98bda2dd3f6806b3bcf7de8170e89ccbd390"
     },
     "glvm.hero.eyebrow": {
       "source": "Learn / GLVM",
@@ -639,72 +931,72 @@
       "sourceHash": "b6bb7b9f9a2ca6aa1205187ba03d3a39c54fbb0e69b5e81db17285605078dd8b"
     },
     "glvm.hero.signals.0.0": {
-      "source": "Logical scope",
-      "sourceHash": "ba14329d7654c3eed4cb46db5f28fb444d5a13eee71e3fb33cc13e4ba22d7132"
+      "source": "Physical model",
+      "sourceHash": "91034b17486f9ff5f5fd23c8ef92b286994d0dec35d11b28bd2340212fa4b764"
     },
     "glvm.hero.signals.0.1": {
-      "source": "Chain · Cloud · Device",
-      "sourceHash": "c99dd566969205bc538721b4d75c002205423aafd9be61e5faa245e4986b06cc"
+      "source": "One TVM per machine",
+      "sourceHash": "4e4157595e4008471d63e554df460ce75dc795a9e02f89eadd2429533e437203"
     },
     "glvm.hero.signals.1.0": {
-      "source": "Execution engine",
-      "sourceHash": "da96ed44c9414cb498a8711dfb2d8efcab054c62bdbf3e058438bae1bf58aa48"
+      "source": "Logical model",
+      "sourceHash": "941148f09b36a14a11fe98c7ac45106e84cb0e15f55644689384cda091517e58"
     },
     "glvm.hero.signals.1.1": {
-      "source": "TVM",
-      "sourceHash": "76eb15e8431fba04a71e88d1e4f3d13aed307c375a6b71f40400cea9680c4e36"
+      "source": "One GLVM above them",
+      "sourceHash": "176a5f3340f00aa8f2c43514a209e2ae0bc72047fae391f20ae48191d00a2ffc"
     },
     "glvm.hero.signals.2.0": {
-      "source": "Proof path",
-      "sourceHash": "b1e6c1c1afe7b7fa1790cd053b45daab063ad636986c54b1e5d300ff3e306763"
+      "source": "Direction",
+      "sourceHash": "9c8a9579abe55bdc8a7b97031705e2738d912de38a35262863d8f47e05d3d641"
     },
     "glvm.hero.signals.2.1": {
-      "source": "Replay · Merge · Commit",
-      "sourceHash": "7c1bd919d2405511a0504e85135185d487bab538f8ad8612d2daa64d529eed98"
+      "source": "Chain to cloud to device",
+      "sourceHash": "2342d4eecbbb23cc526d5ab1fe603cff3f1c1e28f0af92f51ea7c89a71478bac"
     },
     "glvm.hero.tagline": {
-      "source": "Many machines. One logical world.",
-      "sourceHash": "7a0a0794db62ddd8fea920f52f04e54a9fdd1b25f19f6831faf146f0b3907186"
+      "source": "One logical execution layer, coordinated across many machines.",
+      "sourceHash": "a2d19f9009f5816fbd9301356a429306ef4d6f027685d948ffeebf2250ff7653"
     },
     "glvm.hero.text": {
-      "source": "GLVM is designed to coordinate TVMs across blockchain, cloud, and personal devices as one verifiable logical machine.",
-      "sourceHash": "9a5d44fba9ba485eb1b908ec9b6225b8deeb6cd3b127bdfb184116572004116a"
+      "source": "GLVM is the developer-facing execution abstraction ALUX is building from its concurrent runtime. A TVM provides the concrete engine on each participating machine; the GLVM model brings execution state, processes, replay, replication, and consensus into one logical layer.",
+      "sourceHash": "5b2bd1cd5982338944bb2baa4a8ce62dcf8908a8f4fb7a75d4143127796c2a9b"
     },
     "glvm.hero.title": {
       "source": "GLVM",
       "sourceHash": "0f8f70627eedcfd6ad43a1deab4d039373bb8bfa8fadffe5012c59ea7b4be117"
     },
     "glvm.hero.visual.alt": {
-      "source": "A transparent global logical computer connecting blockchain validators, cloud servers, and personal devices through visible execution rails.",
-      "sourceHash": "5d8e7738632c55879e9606f3fc6277ef0f6ed1666d4fde55d96308472b179de2"
+      "source": "A warm technical cutaway showing multiple physical machines connected beneath one GLVM execution layer.",
+      "sourceHash": "239fa46a19f03f3dc22d55afe704e4639da09bcd0a578c717e40ffaef2239ebd"
     },
     "glvm.journey.actions.play": {
-      "source": "Run the workflow",
-      "sourceHash": "308b45fccef561b1b389dc5013961fb3cece8372cc6adda038da9d1bcb8e18db"
+      "source": "Simulate the workflow",
+      "sourceHash": "1899c52c1b797d35a60a27096f5b74f9cd3b21084318fd65f3eb7ab45c77092c"
     },
     "glvm.journey.actions.reset": {
       "source": "Reset",
       "sourceHash": "daee7606b339f3c339076fe2c9f372a3ff40c8ee896005d829c7481b64ca5303"
     },
     "glvm.journey.eyebrow": {
-      "source": "One task, three substrates",
-      "sourceHash": "deabcea5eb7f6029d8d01b14e3e3ddcb0d769aecb9fb1d15d3a5557b3ecb5d7a"
+      "source": "Workflow explorer",
+      "sourceHash": "7a5fd6296986146c706f3ef30288e637b886b0d3e36971fb3e3f13eb59e5198d"
     },
     "glvm.journey.messages.0": {
-      "source": "Ready. Start the workflow to see the logical machine move.",
-      "sourceHash": "2a4ffa11fbd7730ef9d223afccfa7bfe35fc4fcf6ec7b76fb5c2433e9615c684"
+      "source": "Ready. Start the simulation to see the target logical flow.",
+      "sourceHash": "6ee251de1ff70429a2aa5f11a64f7dcef49d087d915a062103ad49fe68106aea"
     },
     "glvm.journey.messages.1": {
       "source": "Authority is scoped before work begins.",
       "sourceHash": "592ca4429ea76e47fe8f966970efc45ac2641cb137d9882c928e0f764df7afbf"
     },
     "glvm.journey.messages.2": {
-      "source": "Three execution paths receive their own bounded task.",
-      "sourceHash": "0a7328c4d357f3a2c3fbed1689d5475160f667b870e4360d46a4ae24c04e0ed0"
+      "source": "Each execution surface receives a bounded task.",
+      "sourceHash": "309b0dabfb5ed59f5ab628edf8b4403eb3420ec0156517e261e18d2c57f927a3"
     },
     "glvm.journey.messages.3": {
-      "source": "The workflow is suspended safely while it waits.",
-      "sourceHash": "17b47429a94e5474b29a93ea524c94aeb93be86c70b68014c41d2a7a72fef6de"
+      "source": "The chain runtime preserves a waiting continuation.",
+      "sourceHash": "1caa57529b4c4ccb8e22e89959609d7d0920cbabc3310e4230e636ffff3d65ab"
     },
     "glvm.journey.messages.4": {
       "source": "A matching message wakes the continuation.",
@@ -715,12 +1007,12 @@
       "sourceHash": "6a4e05d13f222309ef507a724dff8654db89e35bcd075cceddbbf4a4c032b73a"
     },
     "glvm.journey.messages.6": {
-      "source": "Concurrent results converge into a verified commit.",
-      "sourceHash": "90c5c02e559ce9e9fd2d7bc70a8b11a421d3f5e35ca75886a08083ff9e700db1"
+      "source": "Chain-side results converge; cross-surface atomic commit is the next horizon.",
+      "sourceHash": "49de5b57bd3c109f79425fe27c71b45630a5ffc300edf8a962c03f4d19e0d7c9"
     },
     "glvm.journey.playLabel": {
-      "source": "Follow the execution",
-      "sourceHash": "99d570257c505690c4fa6719adc42277f9e9fc12bf97d8f7b84c7aa6a49707e2"
+      "source": "Follow the target flow",
+      "sourceHash": "1406aeb6e21c7fc05b1ed8352ca745f3a9330d652e9c91842f4627c688a98e3d"
     },
     "glvm.journey.railLabels.0": {
       "source": "Replay",
@@ -739,48 +1031,48 @@
       "sourceHash": "b67981f5d1438f7c8368032535101cb6ebd4dd2dc62d87aa6f8ee2ed2d361c64"
     },
     "glvm.journey.routes.0.status": {
-      "source": "EVM today",
-      "sourceHash": "aeda27c372a8a49edf612a63a2c3e7ef06f380aa67c56814d74f6906233c28e9"
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255"
     },
     "glvm.journey.routes.0.text": {
-      "source": "Hold the warranty escrow and record the approval path where independent validators can verify it.",
-      "sourceHash": "ee48ea682387cefce7c5f8480a1d4187e5226963fc96b48af01f625b21f29c94"
+      "source": "Hold the warranty escrow and record its approval path where independent validators can verify the transition.",
+      "sourceHash": "a1a5aff58ab764054e7e5dc1c69a4311d8992a8d87eed6103b040721184ff8db"
     },
     "glvm.journey.routes.0.title": {
-      "source": "On-chain TVM + EVM",
-      "sourceHash": "90cc2feb83e890aea74dc4409b808bb251c5060888fd64fdf9b1a65fafc528f7"
+      "source": "Public-chain TVM + EVM host",
+      "sourceHash": "bdd5f964811a8f83db70e4b8317de56b8507500dee139c0cdfd68514a68c0c4d"
     },
     "glvm.journey.routes.1.label": {
       "source": "Needs speed",
       "sourceHash": "bf4ddf1024ea9792b8156aaf84dfb8d375dbce0045cda328f1434b0b1b572e21"
     },
     "glvm.journey.routes.1.status": {
-      "source": "GLVM architecture path",
-      "sourceHash": "49ae3b653fe8f53a6d295931134e833ee81e7f4f9c4baa55cb9abaf275c84614"
+      "source": "Integration",
+      "sourceHash": "9a42d40a3f319da59ce05d08f77f348f7a4ae965ff3e8251334adf67432b011d"
     },
     "glvm.journey.routes.1.text": {
-      "source": "Run the heavy diagnostic workload near elastic compute while keeping its authority narrow and explicit.",
-      "sourceHash": "b00048762aa3e8bd82e3da70e3be41197b4df7673646d29ce6ad4a0edb396b52"
+      "source": "Run heavy diagnostics near elastic compute while keeping authority narrow and explicit.",
+      "sourceHash": "eaf82bc75bf0001c06f030d40975fe041548e9e53c9d2dd41e2e51caee292631"
     },
     "glvm.journey.routes.1.title": {
-      "source": "Cloud TVM",
-      "sourceHash": "6e9c244c7e84b9f7ca1ab92019a9d458353db6e661cdcafe23613d6fe05ad8de"
+      "source": "Private or cloud TVM",
+      "sourceHash": "893650e9b59fac7cf01c3958b8030299af939c4f09c94b91f40f025a2665114b"
     },
     "glvm.journey.routes.2.label": {
       "source": "Needs locality",
       "sourceHash": "5010b2d8e548cc52cebfd944082b7ada7d8c4fdec53c5077f482515e45a3fd31"
     },
     "glvm.journey.routes.2.status": {
-      "source": "GLVM architecture path",
-      "sourceHash": "49ae3b653fe8f53a6d295931134e833ee81e7f4f9c4baa55cb9abaf275c84614"
+      "source": "Roadmap",
+      "sourceHash": "92375f997ffe65ab7f04eeda8cb2d7f69ebea949a06132afd53c83fff276ef54"
     },
     "glvm.journey.routes.2.text": {
       "source": "Read local sensor data and request the owner’s confirmation without exporting every private input.",
       "sourceHash": "c3f05a7f6c029477f12ece0035d83cf5e8b4ca2dd26ff36986f0c3ddd015d4c3"
     },
     "glvm.journey.routes.2.title": {
-      "source": "Personal-device TVM",
-      "sourceHash": "003ef60ebbeb452b6ee4ef01d349ac3bfd197b931d8845a4fe96d039a1212e12"
+      "source": "Client-device TVM",
+      "sourceHash": "b8444af56c33842f2bf34cefb99c5f00e9148675cf0099f15f7580274221d5ad"
     },
     "glvm.journey.steps.0.label": {
       "source": "01",
@@ -799,20 +1091,20 @@
       "sourceHash": "a953f09a1b6b6725b81956e9ad0b1eb49e3ad40004c04307ef8af6246a054116"
     },
     "glvm.journey.steps.1.text": {
-      "source": "Subtasks are described for chain, cloud, and device execution environments.",
-      "sourceHash": "cd47a4ef707d6a0ed984cbc552dddb5ef215760d2b2a9b0ae542007e70899315"
+      "source": "The workflow maps bounded subtasks to chain, private or cloud, and client-device TVMs.",
+      "sourceHash": "428094bddcde0c8a34131acc90c951d8b77ee56d93bb809402d0df3c43822063"
     },
     "glvm.journey.steps.1.title": {
-      "source": "Dispatch",
-      "sourceHash": "811ace97bcf2c6d6a25db8bde24dd00c39040fedde80e78e70733e362791ead6"
+      "source": "Plan the dispatch",
+      "sourceHash": "cffdabdd3f1a6fbf942428627f33033ad16e87adfb9a7059600a18fc173f1679"
     },
     "glvm.journey.steps.2.label": {
       "source": "03",
       "sourceHash": "0b8efa5a3bf104413a725c6ff0459a6be12b1fd33314cbb138745baf39504ae5"
     },
     "glvm.journey.steps.2.text": {
-      "source": "When a reply is missing, the TVM preserves the execution context instead of blocking the whole machine.",
-      "sourceHash": "a7c28c13c42953acd7d317946fb3de77266170e38f2a94ac3433e6d7853e21c9"
+      "source": "On the chain runtime, a missing reply preserves the continuation instead of finalizing the transaction early.",
+      "sourceHash": "098f168695d88e01056c52ac868a3bbd1ae2d8b3eba494b7a5193ed6cee283b2"
     },
     "glvm.journey.steps.2.title": {
       "source": "Wait / suspend",
@@ -847,228 +1139,356 @@
       "sourceHash": "aacd834b5cdc64a329e27649143406dd068306542988dfc250d6184745894849"
     },
     "glvm.journey.steps.5.text": {
-      "source": "BlockGit and Block Merge turn concurrent work into a verifiable state transition.",
-      "sourceHash": "748347e45c7611cfe8db717b93fe97639a19536ce87a2041ee9c07bc3918f759"
+      "source": "BlockGit and Block Merge converge verifiable chain-side results. Extending one atomic commit across every execution surface is the GLVM horizon.",
+      "sourceHash": "3b57ec93ac94a3bad6ee3c7c5108851caf4a98cb8dd92b90d6f2e1afe8432f58"
     },
     "glvm.journey.steps.5.title": {
-      "source": "Merge / commit",
-      "sourceHash": "b62ef683983ee1aa21eed72bf4c44be0e614a583629dab8031122f64b9a65a08"
+      "source": "Finalization boundary",
+      "sourceHash": "61e4e99696ed5622231ef0abf28a26b5208d00f08130672d344d09c19d79a3e8"
     },
     "glvm.journey.text": {
-      "source": "Imagine a cross-company equipment repair. Escrow must be verifiable, diagnosis needs fast compute, and the device owner must approve access locally. GLVM describes one workflow across all three environments without turning them into one unsafe shared machine.",
-      "sourceHash": "bc77740c5994cb2af7b6d573fef90e355d72a0214f492f4f83c1fb399d26603e"
+      "source": "Consider a cross-company device repair: escrow needs independent verification, diagnostics need elastic compute, and the device owner should approve local access. In the GLVM model, each task maps to the execution surface that matches its trust, latency, and data boundary while authority remains explicit.",
+      "sourceHash": "83b8841ffd76125feb46bd2507093b1f2aacb99291a234496ccf94cbc2a11e2c"
     },
     "glvm.journey.title": {
-      "source": "Trust, speed, and locality decide where work runs",
-      "sourceHash": "6913ec1f21b805a8b83d0348bba11440b33580c1196c7a2aacc71851552cf2a4"
+      "source": "Choose the execution surface by trust, response time, and data locality",
+      "sourceHash": "15abb739e7275e89442f5dd21ac9f73c0fce5e58cbbe7e4a860d9424b4c73d55"
     },
     "glvm.metaDescription": {
-      "source": "Explore the Global Logical Virtual Machine: ALUX's architecture for connecting TVMs across blockchain, cloud, and personal devices into one verifiable logical execution layer.",
-      "sourceHash": "cd7128025a660fb07cce969824ccc2be0c66b863622914b271d3e742d9d44ccc"
+      "source": "Explore GLVM, ALUX's developer-facing logical execution model built on TVM concurrency, replay, object capabilities, atomic finalization, replication, and consensus.",
+      "sourceHash": "75e99917da452dc7b4f418a7f88f3e9be7f4466811d75bb312f8a6d527cfa29c"
     },
     "glvm.metaTitle": {
       "source": "GLVM | ALUX Network",
       "sourceHash": "f00a93b9981277c85809c9ea289e2414f429d04adce5b929b5324f666e82f3b3"
     },
+    "glvm.ocapStory.alt": {
+      "source": "A CEO and Bob meet; the identity badge on the left represents broad access, while one OCAP key on the right names only Bob’s record.",
+      "sourceHash": "e115f6c27c33f30ac86eda28b278717fe75c63d7a4bb8588aae0ce94e84c629d"
+    },
+    "glvm.ocapStory.boundary.label": {
+      "source": "Terminology",
+      "sourceHash": "9615bd0ba9f0c510594876bfb4bd0d2341a3eb5d140ba36bd9341ac9aada9a3c"
+    },
+    "glvm.ocapStory.boundary.text": {
+      "source": "Here, “key” visually represents an OCAP unforgeable name—a capability reference. It is not a cryptographic key. This guarantee applies to TVM-native, capability-mediated interactions; hosted EVM permissions and external services need their own controls.",
+      "sourceHash": "fcf304bc1dac69a5d92ef905b9e7093da181a0206cacb469f59b759c0b0bce80"
+    },
+    "glvm.ocapStory.caption": {
+      "source": "CEO + Bob · OCAP key = unforgeable name, not a cryptographic key",
+      "sourceHash": "1779c439cc5fe670e3910fcd7f6fea464d57a155598177e48246ddd9af32e064"
+    },
+    "glvm.ocapStory.comparison.0.label": {
+      "source": "Broad identity authority",
+      "sourceHash": "132fc15fc8361bdf38f69fb8f4e244a2e34c0fe289e7d422cce0734256366c45"
+    },
+    "glvm.ocapStory.comparison.0.text": {
+      "source": "Even when the task concerns Bob alone, the identity authority represented by the CEO’s badge can still cover Financials and the records of Alice, Carol, and Bob.",
+      "sourceHash": "b492843425bce75d9dc15dae9f8e4c7d729c208d119d1612af166f96a5e9e8c0"
+    },
+    "glvm.ocapStory.comparison.0.title": {
+      "source": "The badge carries unrelated access into the task",
+      "sourceHash": "e9787af416e84c3b4476282b9a8dccd5ca40f763433a9c4c82cd2a991ecd85a2"
+    },
+    "glvm.ocapStory.comparison.1.label": {
+      "source": "Explicit object capability",
+      "sourceHash": "5c30d23e83f123be031e642d690e7f5c6e870ccf83257d3e604f6b837ee15786"
+    },
+    "glvm.ocapStory.comparison.1.text": {
+      "source": "This key represents an unforgeable name that identifies Bob’s record. Without a capability reference to another pre-existing object, the task cannot name or reach it. The TVM checks that boundary at runtime.",
+      "sourceHash": "de89ab53adbd70eb84af8cceeffe669dcd8c7b5f79c73b775d570ae40b87f90d"
+    },
+    "glvm.ocapStory.comparison.1.title": {
+      "source": "The task receives one key that names Bob’s record",
+      "sourceHash": "0433bf57a7d6baead31e4c236599cb37e3e26f27922dfd95b5772285ebeaec5e"
+    },
+    "glvm.ocapStory.eyebrow": {
+      "source": "Object-capability security",
+      "sourceHash": "ce0555dd88901a5b700cc20888572641b765576577b9bb6f9fc7e9b631dc951f"
+    },
+    "glvm.ocapStory.takeaway.label": {
+      "source": "POLA · Principle of least authority",
+      "sourceHash": "bf24dfea3c537200e9f82b28a7e791f982fa4dee0a470bbca0f06f7c4d428631"
+    },
+    "glvm.ocapStory.takeaway.text": {
+      "source": "Model safeguards can reduce unsafe behavior, but capability boundaries enforce least authority at runtime. If an agent has only the key that names Bob’s record, compromise stays within that object instead of expanding to all the identity authority represented by the CEO’s badge.",
+      "sourceHash": "0e55ad93bcf62bba32b02baec8effc446ca5d60b60c1845b7a462638a7abf2e8"
+    },
+    "glvm.ocapStory.text": {
+      "source": "In the CEO–Bob example, identity-based access can carry the ambient authority represented by the CEO’s badge into the task. With object capabilities, the task receives only one key that names Bob’s record. The TVM enforces the reachable boundary at runtime. Without a capability reference to another pre-existing object, the task cannot name or reach it.",
+      "sourceHash": "cbc576605911f94b6a78716a5d7a9cdf58324bdbf47a4bcdca1a63d79ee4873e"
+    },
+    "glvm.ocapStory.title": {
+      "source": "Give the task one key—not the user’s badge.",
+      "sourceHash": "0619dac626585f411ab421490b6b0486c0a5bbe22897830714949f91cd6498cf"
+    },
     "glvm.stack.eyebrow": {
-      "source": "Under the glass",
-      "sourceHash": "f7f3c0c2c044ec1398e8c53d8996b8f03e9a92dbd9d620a298432367a9585734"
+      "source": "Runtime anatomy",
+      "sourceHash": "a7242fe42f667a55876f0e7ff6ebfb443d2efcf60f47f86235e9cf9540fc965b"
     },
     "glvm.stack.items.0.label": {
+      "source": "Bytecode VM",
+      "sourceHash": "990c94510f107d74042707fccda44e0a38073b46e68b7efdbc00eee5c70e45d5"
+    },
+    "glvm.stack.items.0.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255"
+    },
+    "glvm.stack.items.0.text": {
+      "source": "The concrete concurrent engine runs bytecode and lets independent processes exchange data and continuations through channels.",
+      "sourceHash": "fcd2676d828a5c7ad31cda24c6d395b0d4a818815e855d82594d48d7e51e9e3f"
+    },
+    "glvm.stack.items.0.title": {
+      "source": "TVM · tuple space · COMM",
+      "sourceHash": "03919fa3c67fdb1b7cdd3f11a38b16b6f7bc116be388162035bb138ba6dc9bdb"
+    },
+    "glvm.stack.items.1.label": {
+      "source": "Security",
+      "sourceHash": "8f6fb4eb7f42c0e245e29e63f5b82cc3ba19852681d1ed9aed291f59cf75ec0e"
+    },
+    "glvm.stack.items.1.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255"
+    },
+    "glvm.stack.items.1.text": {
+      "source": "Unforgeable references make reachable authority explicit and let the runtime enforce least-authority boundaries.",
+      "sourceHash": "35aff70c2ba210a3d7b95fb683297bfcfe5fc2287433faa3600272c01c7de560"
+    },
+    "glvm.stack.items.1.title": {
+      "source": "Native object capabilities",
+      "sourceHash": "ae11170e4b8f2e2e1e8026e7f012b8b317de86f730fbd980f0ff467af97e116a"
+    },
+    "glvm.stack.items.2.label": {
+      "source": "Atomicity",
+      "sourceHash": "cd614d71b9d86a64404676112b1668fc18d0f1a0d1e3b96cdaf3b136eecbbdc5"
+    },
+    "glvm.stack.items.2.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255"
+    },
+    "glvm.stack.items.2.text": {
+      "source": "Execution contexts can suspend across blocks, resume from preserved continuations, and reach a deferred finalization boundary.",
+      "sourceHash": "37e6f0f1bd5ecb75b5cd961c5728ec6c12089108f945f2c91f8b6483ba347830"
+    },
+    "glvm.stack.items.2.title": {
+      "source": "Cross-block atomic execution",
+      "sourceHash": "ba4d6cc3ca486b5aca5303de4e0d67c4761b91500d5ae2844227887c09750005"
+    },
+    "glvm.stack.items.3.label": {
+      "source": "Finality",
+      "sourceHash": "98606421f2e4eeb1f9068b19fa6e2872901bd399265cd7f49eefbe51eb5b3c45"
+    },
+    "glvm.stack.items.3.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255"
+    },
+    "glvm.stack.items.3.text": {
+      "source": "A block DAG, deterministic leader rotation, and merge rules converge concurrent chain-side work without a permanent leader.",
+      "sourceHash": "2b3a4c4efebb045a53d7bf3e856201a5ca0fa9c158d8032ba5a86ed08eaa805a"
+    },
+    "glvm.stack.items.3.title": {
+      "source": "BlockGit · fringe · merge",
+      "sourceHash": "d5b546f2d9a0156c8e4ffe49dd0925a5eb25b1cf91712edc5ce16ca8489ddd91"
+    },
+    "glvm.stack.items.4.label": {
+      "source": "Replay",
+      "sourceHash": "c8dae6371b33b8d67fdbd138fd28e89eefbd7af6b764f282b0872812b06a150c"
+    },
+    "glvm.stack.items.4.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255"
+    },
+    "glvm.stack.items.4.text": {
+      "source": "Recorded non-deterministic choices and execution traces let validators reproduce the accepted path.",
+      "sourceHash": "d88808bb9c6b94d6af02b5278bacd2fd5da1bff362042b63e91b7b341515083d"
+    },
+    "glvm.stack.items.4.title": {
+      "source": "ReplayTrie · trace",
+      "sourceHash": "cbe7fa6f3572ba3d28515b08fecab9fb3241c0181c71d0676648127b30d743ec"
+    },
+    "glvm.stack.items.5.label": {
+      "source": "Network",
+      "sourceHash": "1744b96470b51bf30935e2748b237a708d226a0430063f92accf90961cd28d86"
+    },
+    "glvm.stack.items.5.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255"
+    },
+    "glvm.stack.items.5.text": {
+      "source": "The node layer carries proposals, blocks, state evidence, and validator coordination beneath the execution abstraction.",
+      "sourceHash": "efea89926228376979657e5f0952b915214219d4a0d843430eac31056162bdf1"
+    },
+    "glvm.stack.items.5.title": {
+      "source": "Peer and validator network",
+      "sourceHash": "546da370e4f1ab453340d349867533675f451e5c508ddc0e18845895043e2deb"
+    },
+    "glvm.stack.items.6.label": {
       "source": "Language",
       "sourceHash": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1"
     },
-    "glvm.stack.items.0.status": {
-      "source": "Current",
-      "sourceHash": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
+    "glvm.stack.items.6.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255"
     },
-    "glvm.stack.items.0.text": {
-      "source": "Tolang describes concurrent processes; the compiler lowers source into TVM executable bytecode.",
-      "sourceHash": "1c1b8697f2680e1cf4cf5f3d9a8c269fb3cda84be69fb9fdceba92bb8b0a0032"
+    "glvm.stack.items.6.text": {
+      "source": "Tolang describes concurrent processes; the compiler lowers source into TVM-executable bytecode.",
+      "sourceHash": "9335e9efd1a9dc8459a48974313834059bef65f85ea5fcd3a6f2c3ea5ba0dd47"
     },
-    "glvm.stack.items.0.title": {
+    "glvm.stack.items.6.title": {
       "source": "Tolang → tolangc → .tox",
       "sourceHash": "e0db64594d3a5a3499de8819f6ee501e5e938ba3afdd5dc60e5f27436e0ffb28"
     },
-    "glvm.stack.items.1.label": {
-      "source": "Runtime",
-      "sourceHash": "1093115897879aa3ad9511a1dc2850929cfb60ba45ec741605f69f5d20203472"
+    "glvm.stack.items.7.label": {
+      "source": "Guest VMs",
+      "sourceHash": "4b31c61fb6db30e3235443002977b39c3b82105952bc2eae576ee010d60d0ba0"
     },
-    "glvm.stack.items.1.status": {
-      "source": "Current",
-      "sourceHash": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
+    "glvm.stack.items.7.status": {
+      "source": "EVM core · WASM roadmap",
+      "sourceHash": "81276bfcac6291378d6bbcb912d72f006aed13bc13e1ba417ed9503c061ce8ac"
     },
-    "glvm.stack.items.1.text": {
-      "source": "Independent processes exchange data and continuations through typed channels instead of sharing memory.",
-      "sourceHash": "68daa94e42b6b8376d4cc70934d6a77c45f8675002b86f9d0c66aa66be3d938b"
+    "glvm.stack.items.7.text": {
+      "source": "The EVM runs as a stateful guest through TSAC-style coordination. WASM extends the heterogeneous-VM direction.",
+      "sourceHash": "9947520b939e0502383535249f165dc102d8203d8a94b054922d6e1fe5123b23"
     },
-    "glvm.stack.items.1.title": {
-      "source": "TVM · Tuple space · COMM",
-      "sourceHash": "ecaf10b9109b0b2ffa765c5d15bb765277a866f7e009a4fde1c8e447bc145f60"
+    "glvm.stack.items.7.title": {
+      "source": "EVM host · WASM roadmap",
+      "sourceHash": "77fde891dc361c324056288fbacde0325d8760c80c39d130065b9f12ddb54eec"
     },
-    "glvm.stack.items.2.label": {
-      "source": "Guest VM",
-      "sourceHash": "eb83200c3880960392a32ae0a9c5cc5bb8186be2231af331c3ae51c6322aa8f4"
+    "glvm.stack.items.8.label": {
+      "source": "Tooling",
+      "sourceHash": "71ef53929575897ba4dd000853053e9543cbc705dcd4d95a11f60d0c7eef0c0d"
     },
-    "glvm.stack.items.2.status": {
-      "source": "Today",
-      "sourceHash": "2b065c7c9ce466e5ebcad757987d5d660ee4c9ea708bc62c43444b53334738ba"
+    "glvm.stack.items.8.status": {
+      "source": "Developer surface",
+      "sourceHash": "79c47dc28514620ea895e673af224e92ad7a4d0dd41c35ce91a55321e91d8f74"
     },
-    "glvm.stack.items.2.text": {
-      "source": "EVM runs in an isolated sandbox; global storage and calls are coordinated through tuple-space adapter contracts.",
-      "sourceHash": "6df72b5cb7148f0a08dcba49c774b9dd68b2740cbacb2f913ee2347ce0f5aa69"
+    "glvm.stack.items.8.text": {
+      "source": "The compiler, LSP, playground, test suite, and diagnostics bring the execution model into developer workflows.",
+      "sourceHash": "fbca777fbdd14f8dc0c09d7adc311c4cc1d05bc25369c20b1af15290776d63b8"
     },
-    "glvm.stack.items.2.title": {
-      "source": "EVM through TSAC",
-      "sourceHash": "042e2c9d23a0921c116af91e9077453fbec24869fb334aea20a5cd8c8190c8e3"
-    },
-    "glvm.stack.items.3.label": {
-      "source": "Guest VM",
-      "sourceHash": "eb83200c3880960392a32ae0a9c5cc5bb8186be2231af331c3ae51c6322aa8f4"
-    },
-    "glvm.stack.items.3.status": {
-      "source": "Planned",
-      "sourceHash": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225"
-    },
-    "glvm.stack.items.3.text": {
-      "source": "WASM belongs to the heterogeneous-VM direction, but it is not shipped in the current baseline.",
-      "sourceHash": "ff551340c41a795224a6fc5639e771103da4e89f55a4869d29b6407094ba511c"
-    },
-    "glvm.stack.items.3.title": {
-      "source": "WASM",
-      "sourceHash": "4bec5a51a3d35e535a536b987d7a904ffd7b81130379af69a3f8690371a7e6f6"
-    },
-    "glvm.stack.items.4.label": {
-      "source": "Durability",
-      "sourceHash": "f05a9541d5080a974e3013663f0780de06342b6b803fa52d57ad772aa1ce46f2"
-    },
-    "glvm.stack.items.4.status": {
-      "source": "Current",
-      "sourceHash": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
-    },
-    "glvm.stack.items.4.text": {
-      "source": "A task can wait across blocks, resume from a preserved branch, and remain reproducible.",
-      "sourceHash": "98d4fb770f3262791a5877102e83e8bc7089524b50c14300f447b5d2a9fee1d5"
-    },
-    "glvm.stack.items.4.title": {
-      "source": "ExeContext · ReplayTrie · cross-block resume",
-      "sourceHash": "e0c9a19b063b5e7339bf7390b5a9c7025f9390612f83f60f1e33e4fe651bae19"
-    },
-    "glvm.stack.items.5.label": {
-      "source": "Agreement",
-      "sourceHash": "2dff10f6a8b7e6985b6ad779a205a3cf95f95d5966402e50d288696519bbe2ac"
-    },
-    "glvm.stack.items.5.status": {
-      "source": "Current",
-      "sourceHash": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
-    },
-    "glvm.stack.items.5.text": {
-      "source": "A block DAG with deterministic rotating leaders and merge rules finalizes concurrent work without a permanent leader.",
-      "sourceHash": "9aa81f7c47b2bf27211afd2a027bc4e5c46c830a57db0408f1469ceb66705653"
-    },
-    "glvm.stack.items.5.title": {
-      "source": "BlockGit · Fringe · Block Merge",
-      "sourceHash": "12f242a1020a92f2bf2b53570b24be5c189a924732d69604b193633341af68d2"
+    "glvm.stack.items.8.title": {
+      "source": "Compiler · LSP · playground",
+      "sourceHash": "e50ef2fe1ee7804ea104634bea3fb85c73a5f0476b60bd45aa97cfd0c4c7efb9"
     },
     "glvm.stack.text": {
-      "source": "GLVM is a system architecture, not a second bytecode VM. The map below ties that architecture to mechanisms in the current ALUX codebase and clearly marks what is still planned.",
-      "sourceHash": "88f9ed3c27f77c299bd69c4e43a353a6d033903c629abc32d9485fde24047313"
+      "source": "GLVM is not a second bytecode VM. These nine architecture views—from TVM execution, object capabilities, and replay to BlockGit, guest VMs, and developer tooling—show the capability system behind its logical execution model.",
+      "sourceHash": "35362835fc751bf877ced87b01c86635b574d0c95654b64a7677a6ac0cd1c6a6"
     },
     "glvm.stack.title": {
-      "source": "What GLVM is built from",
-      "sourceHash": "b8967f5f7ef6cf6c135da1c7fff3223a71b0b698ac5becf8dd5e869f9190ed80"
+      "source": "Nine capability areas behind the GLVM abstraction",
+      "sourceHash": "e5bfb468c2559721574e1a3825c9abb67d4785490f2fa2e987c5d5b4d08c24ce"
     },
     "glvm.status.eyebrow": {
-      "source": "Reality check",
-      "sourceHash": "92ba2811deadff10ed2371628fc6d5b6c0fa072b5df0b2673af4a9c77f9efd99"
+      "source": "Build horizon",
+      "sourceHash": "0a5fbecabffb0832e997b2d6143cf88e90574d053374a771ee27bc38628beace"
     },
     "glvm.status.groups.0.items.0": {
-      "source": "Concurrent TVM execution",
-      "sourceHash": "67a305169a27547ed9d29bf7befac37c31bd4fad31473dd22616d80ce09eabd3"
+      "source": "Concurrent TVM and COMM",
+      "sourceHash": "6f718d2ed581b695740e2b2d0dfe561418c2b4bf18206aa9bf6f7c180f29a60f"
     },
     "glvm.status.groups.0.items.1": {
-      "source": "EVM through TSAC",
-      "sourceHash": "042e2c9d23a0921c116af91e9077453fbec24869fb334aea20a5cd8c8190c8e3"
+      "source": "ReplayTrie and execution traces",
+      "sourceHash": "17b3ed6ea1e7d1286d8ea83eab3ce1245cce359845994409068e0fcc52ff0a47"
     },
     "glvm.status.groups.0.items.2": {
-      "source": "Cross-block suspend / resume",
-      "sourceHash": "280165c3bc918132677ba10d47d78aa03a26e3f54997d1523be68a47fa253801"
+      "source": "Cross-block suspend / resume paths",
+      "sourceHash": "4bd45f420202e2c806835898255a5bebb342fd221fc30dd688d87dd3f7d1c2c0"
     },
     "glvm.status.groups.0.items.3": {
-      "source": "OCAP and deterministic replay",
-      "sourceHash": "828d6f2790b8bbb47c2db10afedcf3b6cb3bc2020918e26ea60772c906a7acae"
+      "source": "Native OCAP foundations",
+      "sourceHash": "ec35422f1912ac2c7111ce45b601fc7e1bd723da744c5feb7bf26145deacde7e"
     },
     "glvm.status.groups.0.items.4": {
-      "source": "BlockGit DAG + merge",
-      "sourceHash": "22658ade3e1ce7360e23c4d14bc9b9eec20706f6de877787d60d3700e988f4b0"
+      "source": "EVM host path",
+      "sourceHash": "384ba5bbfe210ef12f881f36b10b07ad852299515d4f9c9ef3499a2f86133270"
+    },
+    "glvm.status.groups.0.items.5": {
+      "source": "BlockGit DAG, fringe, and merge",
+      "sourceHash": "0f105ba1a4563e98d4c8fce12f4957412a1f23dfe7b118bf96a062e7f7590a93"
     },
     "glvm.status.groups.0.label": {
-      "source": "Current engine",
-      "sourceHash": "6cbbcbea1d299f63f96603d1605ec22decdc3f0e6b6bd302f9f9c7df3e1ef036"
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255"
     },
     "glvm.status.groups.1.items.0": {
-      "source": "VM abstraction across chain, cloud, and device",
-      "sourceHash": "0b486d0c685511d40a1250cf81acf8baa7d2e3deef7c02a8badfe7ae967d9006"
+      "source": "Private or cloud engine deployment",
+      "sourceHash": "68d651f88b465bd0972ca500aad9754137cf14df32c0600473c84e98baa14548"
     },
     "glvm.status.groups.1.items.1": {
-      "source": "Richer per-operation policy gates",
-      "sourceHash": "4a9867253d8c04035567d00acd66db17f3b9537a34f08c126b5a3ba7d9df01d9"
+      "source": "GLVM abstraction across deployment surfaces",
+      "sourceHash": "3f0315ef73ee140054b46eb2e5977a31515a117be951bed2471347c3ae5c5845"
     },
     "glvm.status.groups.1.items.2": {
-      "source": "Session-type collaboration protocols",
-      "sourceHash": "90640f2635a9ba23ace9d7cfe9f2139f65a4bdd77fe403a828780dc10bc07f58"
+      "source": "Production-scale hardening",
+      "sourceHash": "e6e04a4a6af4e20256e82a5a9bb741a9bddcc6ae3f5ae984ee43470c10a12216"
     },
     "glvm.status.groups.1.items.3": {
-      "source": "Production scale hardening",
-      "sourceHash": "6723a11ba7b281c7314692ad614de137ee966e901a429c31f3d2c95beaa9ac96"
+      "source": "Richer policy and guarded-channel controls",
+      "sourceHash": "e5faa4f3712d32d46b6861fb43ff5d7e3039aff6937444f628ac77d109e9e25e"
+    },
+    "glvm.status.groups.1.items.4": {
+      "source": "Operator recovery and observability",
+      "sourceHash": "a037f7eaf8b7984cdcd17e4a08ec762a93907a8d357f38b8968fc4237d57e1b4"
     },
     "glvm.status.groups.1.label": {
-      "source": "Designed / expanding",
-      "sourceHash": "b7730d21f2eec08cd4ef9af4726ed7f2044f31982f24ea21b3556dd9d532e406"
+      "source": "Expanding the system",
+      "sourceHash": "059ef39278278ce0463e68e0eef481eb41957ae81122f6fbd0601e6304cb0e05"
     },
     "glvm.status.groups.2.items.0": {
+      "source": "Cross-shard horizontal atomicity",
+      "sourceHash": "5f76ed30ca6d400cd2c706d803cea143d9da47e56bc4a900af02e713be89ba04"
+    },
+    "glvm.status.groups.2.items.1": {
       "source": "WASM guest VM",
       "sourceHash": "80ae00aff741f282a0e3d554924aa68f70fb68abee99bbe7ff54cbf8bf2e0154"
     },
-    "glvm.status.groups.2.items.1": {
-      "source": "Cross-shard execution",
-      "sourceHash": "a5bffab6ff0432a42f2345e46163e80e29c7db97857717d7675464cf1a12e30b"
-    },
     "glvm.status.groups.2.items.2": {
-      "source": "Complete agent and World OS layer",
-      "sourceHash": "c918e20a1536dc8e6db4918beff0b78d4b62b7ee91be2c6208d7cd121e1c9907"
+      "source": "Client-device TVM deployment",
+      "sourceHash": "545fb8f1a999bd4e93b1410603b986eabb9b1b4ac7dbd54cdcfc270564730000"
+    },
+    "glvm.status.groups.2.items.3": {
+      "source": "Account abstraction and capability registry",
+      "sourceHash": "2d843bcbcd3e1ee3d23e5df78103954b3f241dda873a474041b9b90da7359d1d"
+    },
+    "glvm.status.groups.2.items.4": {
+      "source": "Peer resynchronization after failure and dynamic validator-set changes",
+      "sourceHash": "7e63bf50495208aabb278eae8cddfcf9ba657359ae1fe849113732826b4b523f"
+    },
+    "glvm.status.groups.2.items.5": {
+      "source": "Programmable World OS layer",
+      "sourceHash": "69843965f19d65af2088201fc4319b6536cc507f57c7a4dbc494eaa41e01957d"
     },
     "glvm.status.groups.2.label": {
-      "source": "Planned",
-      "sourceHash": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225"
+      "source": "Roadmap",
+      "sourceHash": "92375f997ffe65ab7f04eeda8cb2d7f69ebea949a06132afd53c83fff276ef54"
     },
     "glvm.status.text": {
-      "source": "GLVM is the system-level destination. The current ALUX codebase already supplies its hardest execution primitives, while cross-substrate productization and the full World OS remain active architecture work.",
-      "sourceHash": "2577f609e2132cb36eb6c0fe4e3614bea810e2faee263f382e94e2d377de3f5b"
+      "source": "GLVM grows outward from ALUX’s concurrent chain runtime. Private cloud is the next integration surface; client-device and cross-shard execution remain on the roadmap. The map below separates the core runtime, the surfaces now being extended, and the next architectural horizon.",
+      "sourceHash": "af831bcaa9e833f017c4d9d06ed1ebf1e6c669fe8e7482a0eec4b74803a192de"
     },
     "glvm.status.title": {
-      "source": "The core is running.<br>The system is still expanding.",
-      "sourceHash": "9230fe4de325552fe4fff9d84b74db2e237bc4ec1a6095020a5bedf2cab3bb0a"
+      "source": "The core runtime is taking shape. GLVM is expanding across environments.",
+      "sourceHash": "9d36082d170e5b9cb38b438ee6a7bd90b97014d61569210ec5504363e83c04d3"
     },
     "home.hero.eyebrow": {
       "source": "ALUX Network",
       "sourceHash": "5e3100ea2c1cd77ed74f2927a8c5225a3d0c9f7bf89622ef6345166f2238f18f"
     },
     "home.hero.text": {
-      "source": "Imagine one logical virtual machine that runs everywhere—on a public blockchain, on a private cluster, and on client hardware such as phones and browsers—while abstracting away the state, threads, replication, and consensus underneath. Developers write one concurrent program; where it runs becomes a configuration choice, not an architecture. Its parts still commit together, atomically. That is Virtual Machine Abstraction, and ALUX is building it.",
-      "sourceHash": "9326167f58de3c37f370880a293374e93144e2faafc3255063ec74199ff5e021"
+      "source": "GLVM is ALUX’s unified execution abstraction for developers. Each machine runs a TVM; together they form one logical execution layer. The runtime coordinates replay, authority, finalization, replication, and consensus beneath the application. The chain runtime is the current foundation; private cloud is the next integration surface, while client-device execution remains on the roadmap.",
+      "sourceHash": "04b5acc4bfbc05bce5ac8e406690a7b0f78197aa4697b2b167cd87f8afa5a929"
     },
     "home.hero.title": {
-      "source": "Building the global VM",
-      "sourceHash": "1d3ec87e2a532c895cc3fbcfb41e48696c9fa5267510a7a15b033e216ed44b51"
+      "source": "Building GLVM",
+      "sourceHash": "139cabb83084107831e9a354ca9fd483f184cd5cd0154fe051ab4fff0f5aad05"
     },
     "home.metaDescription": {
-      "source": "ALUX is building one logical virtual machine that runs across public blockchains, private clusters, and client hardware while preserving atomic commit.",
-      "sourceHash": "3ff23dd31f2a9bb673555c76e3ea3c4b82961a47ccf043da535ae803fe5979cc"
+      "source": "GLVM is ALUX's architecture for one logical execution layer across physically distributed TVMs, coordinating concurrency, replay, authority, finalization, replication, and consensus.",
+      "sourceHash": "d93c8c7861244466e5b1efdc84e0d79c3402f093cfae6b5f1e40ab03e3dda2f2"
     },
     "home.metaTitle": {
-      "source": "ALUX Network — Building the Global VM",
-      "sourceHash": "d632055d3369f4e87597857b3e023cfa4a79adc265bee2146049d0ced4c83636"
+      "source": "ALUX Network — Building GLVM",
+      "sourceHash": "844a106d7546ff7697122e62a80ba30c7492b090a0e6bc576ca121dad39c4ec1"
     },
     "home.sections.0.architecture.infrastructure.groups.0.0": {
       "source": "Public Blockchain",
@@ -1103,8 +1523,8 @@
       "sourceHash": "9b59e1eadb7e3c320d41fd296022ed50a6888a61ce5b91e4ac1d3a263d191ed1"
     },
     "home.sections.0.architecture.runtime.caption": {
-      "source": "TVM abstraction — each TVM is abstracted into the Unified World VM above.",
-      "sourceHash": "9c98a8c45b3694e95cf98365ffbe7d02737350f8bb1a5baa456ed87e10b70409"
+      "source": "Each machine runs one TVM; together they form GLVM.",
+      "sourceHash": "7d3354e1f75097720d7cbd50f7b2a1675062900b4f75005abc2c94400113a1ab"
     },
     "home.sections.0.architecture.runtime.controls.0": {
       "source": "State + Threads",
@@ -1139,8 +1559,8 @@
       "sourceHash": "76eb15e8431fba04a71e88d1e4f3d13aed307c375a6b71f40400cea9680c4e36"
     },
     "home.sections.0.architecture.runtime.vm": {
-      "source": "Unified World VM",
-      "sourceHash": "67a4257643771a6bcd0f0a4da8044256e8fbc1647eed74e710c8c44005d57c80"
+      "source": "GLVM",
+      "sourceHash": "0f8f70627eedcfd6ad43a1deab4d039373bb8bfa8fadffe5012c59ea7b4be117"
     },
     "home.sections.0.architecture.world.items.0": {
       "source": "Service/Agent<br>Registration & Finding",
@@ -1167,12 +1587,12 @@
       "sourceHash": "4a024c42f0e278b92a2953820d1bd6b89d9cffc986f81b24ca3af0da1a6749a8"
     },
     "home.sections.0.text": {
-      "source": "GLVM abstracts the state, threads, replication, and consensus beneath one concurrent program, so deployment becomes a configuration choice rather than a new application architecture.",
-      "sourceHash": "c1d100d1588d1eafb235efae4bd2bb99c45984f48157ee321381d2bf829878ae"
+      "source": "GLVM gives developers one concurrent execution model above many TVMs. The ALUX chain runtime is the current foundation; private cloud is the next integration surface, while client-device deployment remains on the roadmap.",
+      "sourceHash": "2213a9543c6ba02a48308fd52b4c4b0a4255927556684abf23813a2d0e7b7392"
     },
     "home.sections.0.title": {
-      "source": "One logical virtual machine.<br>Everywhere.",
-      "sourceHash": "95e9685a95040abf3dba09d1cf1b2da178a221da7f82bdbc0217b3c76c207c6e"
+      "source": "One logical execution layer.<br>Physically distributed.",
+      "sourceHash": "70ffaf00086e3eaca1ca40c36c60bca455ecad0406557763fa9ddfee9c8b3562"
     },
     "home.sections.10.eyebrow": {
       "source": "Learn More",
@@ -1763,8 +2183,8 @@
       "sourceHash": "4bb9bcc8a0aec0df0b172d1c6b6795eb85be4bad9ead9fbd9f74147cb29b97c8"
     },
     "home.sections.2.comboDefault": {
-      "source": "Drop a module onto ALUX Runtime to see how it composes inside the global VM.",
-      "sourceHash": "dcbfefc02a09539895b7951f6a033167578f744b925e3f21a168e39a3f02606e"
+      "source": "Drop a module onto ALUX Runtime to see how it composes inside GLVM.",
+      "sourceHash": "bab939bc9fa4324c23d4cea2cf22ab2dd97ca507882f9477085f090a3790ba4e"
     },
     "home.sections.2.comboLabel": {
       "source": "Runtime Connection",
@@ -1775,20 +2195,20 @@
       "sourceHash": "2823a75057bbd404c38c20d9b43082bfe93594e5b0dea6db511d3fa90d401b02"
     },
     "home.sections.2.core.detailBusiness": {
-      "source": "Developers write one program and choose where it runs as configuration, while its parts still commit together atomically.",
-      "sourceHash": "88d4e735f755233139f5f0e0ec8cf9630f2f5f57a450d0c74d2ed8d922d5f4a5"
+      "source": "Developers target one concurrent model while the runtime coordinates execution across an expanding set of environments.",
+      "sourceHash": "cd1d4ad3df7d1acdd018b31e72b220ca7798a9d6bbbfbb38704c07ac38b1e62e"
     },
     "home.sections.2.core.detailTechnical": {
       "source": "ALUX abstracts the state, threads, replication, and consensus beneath a single concurrent execution model.",
       "sourceHash": "464b0a1eb7319ad16b76eac6bb9c83adc4c35007c545ac5de461bf75a0518eb3"
     },
     "home.sections.2.core.detailTitle": {
-      "source": "One concurrent program, anywhere",
-      "sourceHash": "6ff83e212db16a377ad9a1014f2e56ef1fcb6118b6fdb235f93a90ef5e65d797"
+      "source": "One logical model across environments",
+      "sourceHash": "60cad5519bce5ba645a8622bbd5eaf127999122758d5c5a7f0e1ff9e291fe898"
     },
     "home.sections.2.core.items.0": {
-      "source": "One Logical VM",
-      "sourceHash": "12fe36781df2a3046f44dc95bc89498757b029bc3577e052d2fc1157c7c79a7a"
+      "source": "One Logical Layer",
+      "sourceHash": "ba1a11ad4227e5a94ac9b70bc2214cfac124de46dc86d25f1f13c40b58229a72"
     },
     "home.sections.2.core.items.1": {
       "source": "Concurrent Runtime",
@@ -1803,8 +2223,8 @@
       "sourceHash": "4a024c42f0e278b92a2953820d1bd6b89d9cffc986f81b24ca3af0da1a6749a8"
     },
     "home.sections.2.core.runtimeBusiness": {
-      "source": "The same concurrent program can target public blockchains, private clusters, and client hardware without becoming three architectures.",
-      "sourceHash": "1f130e8448a6e3dc35ccbb17f3b5e02983f983416edc40a17eab8fdd1ba193cb"
+      "source": "The architecture keeps one developer model across chain, private cloud, and future client-device execution surfaces.",
+      "sourceHash": "73cad96761c006f29578844bd4480b256ea8914ed7a1056b799d6e9dba5b9cf8"
     },
     "home.sections.2.core.runtimeLabel": {
       "source": "Virtual Machine Abstraction",
@@ -1815,12 +2235,12 @@
       "sourceHash": "8245d06d62a087a1ec2a52f21f6a3531274f12c633b77ea6c2d0b2e2f2125e26"
     },
     "home.sections.2.core.runtimeTitle": {
-      "source": "ALUX Runtime\nforms one logical VM",
-      "sourceHash": "1fa69e26ebc8713f3fc4dac143643fdd39677a248654e6b1662422d5d3a00968"
+      "source": "ALUX Runtime\nforms one logical layer",
+      "sourceHash": "8aa7a8d9daa56a46cde35e272528d04a053ff0e136b879da42b0f2dc1b774dc7"
     },
     "home.sections.2.core.text": {
-      "source": "One logical VM where concurrent TVM execution, Native OCAP Support, cross-block atomicity, and BlockGit finality compose across deployment environments.",
-      "sourceHash": "9ad34ac695172adc51009da9a02b231d6f84f4d4a71ce8cdebec152ad5578a09"
+      "source": "One logical execution layer where concurrent TVM execution, Native OCAP Support, cross-block atomicity, and BlockGit finality compose beneath the developer-facing GLVM abstraction.",
+      "sourceHash": "9c89b76617ff0dc2f72b59dd6e9726d36a4cfd6fdc969241fff2ed786613fe08"
     },
     "home.sections.2.core.title": {
       "source": "ALUX Runtime",
@@ -1851,8 +2271,8 @@
       "sourceHash": "146f7a926ba99d69b85a148fe016c9206eb8af35d6640eb996badaaf0d0d6b23"
     },
     "home.sections.2.mapIntro": {
-      "source": "Drag modules into ALUX Runtime to see how they compose inside one logical VM.\nDouble-click any card for the deeper note.",
-      "sourceHash": "e2812b3ee56295daad0a77b7e0be19d79f2d8a251bcd394f0904579559a9e972"
+      "source": "Drag modules into ALUX Runtime to see how they compose inside one GLVM model.\nDouble-click any card for the deeper note.",
+      "sourceHash": "0d27a45cdfc098401b93cfbb3f8f822a34a18818d1f6a1a83c91de39caab9c99"
     },
     "home.sections.2.mapTitle": {
       "source": "ALUX Capability Map",
@@ -1903,8 +2323,8 @@
       "sourceHash": "0eeeb5f9db0568e1ce8dc0e15159ad3ff77872d39920b7772c5944d050c75c9f"
     },
     "home.sections.2.text": {
-      "source": "Drag modules into ALUX Runtime to see how they compose inside one logical VM.\nDouble-click any card for the deeper note.",
-      "sourceHash": "e2812b3ee56295daad0a77b7e0be19d79f2d8a251bcd394f0904579559a9e972"
+      "source": "Drag modules into ALUX Runtime to see how they compose inside one GLVM model.\nDouble-click any card for the deeper note.",
+      "sourceHash": "0d27a45cdfc098401b93cfbb3f8f822a34a18818d1f6a1a83c91de39caab9c99"
     },
     "home.sections.2.title": {
       "source": "ALUX Runtime Capability Map",
@@ -3319,8 +3739,8 @@
       "sourceHash": "2b5a6aef707ecdbba176e9663f3e792e34c64893e14c09683318a51a5ad1c330"
     },
     "team.sections.0.items.0.highlights.0.1": {
-      "source": "Processes interact concurrently through channels; pattern matching is scheduling; capability credentials are authorization.",
-      "sourceHash": "d0db2f59f8d654bc07a18e6045b96f993220e3a18c9399d15291670ba2bd07c2"
+      "source": "Processes interact concurrently through channels; pattern matching drives scheduling; unforgeable capability references make authority explicit.",
+      "sourceHash": "cdf0645100cd204953775df3b9695a2f0fdd1ac5efda2d0fff4fc163cf1e90c6"
     },
     "team.sections.0.items.0.highlights.1.0": {
       "source": "Tolang concurrent programming language",
@@ -3538,6 +3958,10 @@
       "source": "Language",
       "sourceHash": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1"
     },
+    "ui.menuToggleLabel": {
+      "source": "Toggle navigation menu",
+      "sourceHash": "510648371eef863dbf25b05370cd96fa8014c26afa92f3d3d800e6c9415c330f"
+    },
     "ui.nav.blog": {
       "source": "Blog",
       "sourceHash": "8c6bc099534a0251b576f6b88bd2db124ae9497c64bd9242e92a6aec23e6a73a"
@@ -3558,6 +3982,10 @@
       "source": "ALUX VS Others",
       "sourceHash": "eb4b3f01c8ece1d0aedb62d3feb2142e1879e19355434ab4ed0336c129231d62"
     },
+    "ui.nav.learnGlvm": {
+      "source": "GLVM",
+      "sourceHash": "0f8f70627eedcfd6ad43a1deab4d039373bb8bfa8fadffe5012c59ea7b4be117"
+    },
     "ui.nav.learnPcc": {
       "source": "Runtime Lab",
       "sourceHash": "ea2d547f1cc2c87a2f634635e2923655db93627c7c17458da90feb153ca0e96c"
@@ -3573,6 +4001,10 @@
     "ui.nav.vs": {
       "source": "For AI Agents",
       "sourceHash": "0758b35faccf817dcc802aa45560f2cd2a0ae8eb405fc79b8cd1257c0170c41b"
+    },
+    "ui.primaryNavigationLabel": {
+      "source": "Primary navigation",
+      "sourceHash": "e1bfe7eccc45465f536688db2ec9f2cc8a09819fe80bdd9f4dc098363eb9f0b4"
     },
     "vs.metaDescription": {
       "source": "How ALUX gives production AI agents cross-block continuity, tuple-space coordination, native OCAP support, and an EVM path through TSAC.",

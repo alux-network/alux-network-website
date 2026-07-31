@@ -14,6 +14,11 @@ const preservedTokens = [
   "ALUX", "TVM", "TSAC", "BlockGit", "Tolang", "OpenClaw", "OCAP",
   "EVM", "Solidity", "MetaMask", "Hardhat", "ReplayTrie", "COMM"
 ];
+
+function containsTechnicalToken(value, token) {
+  const escaped = token.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(^|[^A-Za-z0-9_])${escaped}(?=$|[^A-Za-z0-9_])`).test(String(value || ""));
+}
 const officialTermPatterns = {
   zh: {
     longTransaction: /长交易/,
@@ -38,7 +43,6 @@ const officialTermPatterns = {
 };
 
 const localeOnlyMarkup = new Map([
-  ["zh:glvm.hero.tagline", ["<br>"]],
   ["zh:parallelConcurrentComposable.close.title", ["<span class=\"no-break\">", "</span>"]],
   ["zh:parallelConcurrentComposable.foundations.text", ["<span class=\"no-break\">", "</span>"]],
   ["zh:parallelConcurrentComposable.foundations.title", ["<span class=\"no-break\">", "</span>"]],
@@ -128,7 +132,7 @@ for (const lang of languages) {
     }
 
     for (const token of preservedTokens) {
-      if (source.source.includes(token) && !String(entry.text || "").includes(token)) {
+      if (containsTechnicalToken(source.source, token) && !containsTechnicalToken(entry.text, token)) {
         tokenLoss += 1;
         errors.push(`${lang}: missing technical token ${token}: ${key}`);
       }
