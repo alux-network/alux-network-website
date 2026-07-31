@@ -28,7 +28,7 @@ const now = new Date().toISOString();
 
 const skipKeys = new Set([
   "type", "href", "src", "image", "poster", "video", "variant", "hidden",
-  "id", "email", "state", "kind", "tone", "portrait"
+  "id", "email", "state", "kind", "tone", "portrait", "primaryHref", "secondaryHref"
 ]);
 const publishableStatuses = new Set(["ai-reviewed", "human-reviewed"]);
 const publishGroups = {

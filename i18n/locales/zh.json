@@ -1,7 +1,7 @@
 {
   "language": "zh",
   "target": "Chinese, polished Simplified Chinese product/protocol copy",
-  "updatedAt": "2026-07-16T03:21:12.091Z",
+  "updatedAt": "2026-07-29T14:43:11.538Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -750,7 +750,7 @@
     "aluxVsOthers.what.items.2.1": {
       "source": "OCAP-style references make authority explicit and unforgeable, so processes can pass and attenuate what they are allowed to do.",
       "sourceHash": "30e3d365778699bf0985a3cce87454e592c0f86886bb919546fb4e6864156523",
-      "text": "OCAP 风格的引用让权限明确且不可伪造，进程可以传递获准使用的能力凭证，并进一步收窄其权限范围。",
+      "text": "OCAP 风格的引用让权限明确且不可伪造，进程可以传递获准使用的对象能力，并进一步收窄其权限范围。",
       "status": "ai-reviewed",
       "reviewedAt": "2026-07-13T13:21:05.596Z",
       "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX baseline."
@@ -900,12 +900,12 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.architecture.layers.0.items.0": {
-      "source": "Service / agent discovery",
-      "sourceHash": "ab8628a7ccd9044787275dd15f8de8bd069286d4ca14bd2ea2fca408b50312ca",
-      "text": "服务 / 智能体发现",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Service and agent discovery",
+      "sourceHash": "0d34772f99a268e26e3a675a46350ab7f14a2afbbb168a5bc171b30a868edc88",
+      "text": "服务与智能体发现",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.architecture.layers.0.items.1": {
       "source": "Orchestration",
@@ -916,12 +916,12 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.architecture.layers.0.items.2": {
-      "source": "Programmable capability",
-      "sourceHash": "d9a98a837a7428b9c0f700d242bdffec9736fee161c0e3b2b1cf79baae4e1cef",
+      "source": "Programmable capabilities",
+      "sourceHash": "a8651a3f0f201a1585652177ac552ed959a6a8944b4e458b3f8c4bc77865e0f4",
       "text": "可编程能力",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.architecture.layers.0.label": {
       "source": "Layer 3",
@@ -932,20 +932,20 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.architecture.layers.0.status": {
-      "source": "Architecture target",
-      "sourceHash": "5097e924712f4a2dea1abdd343f75b6a64228c0f34b756f7955c3bb68a305cf9",
-      "text": "目标架构",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Roadmap",
+      "sourceHash": "92375f997ffe65ab7f04eeda8cb2d7f69ebea949a06132afd53c83fff276ef54",
+      "text": "路线图",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.architecture.layers.0.text": {
-      "source": "The target agent-facing service layer: registration and finding, orchestration, and programmable capability. This is where services are designed to become discoverable and collaboration rules become explicit.",
-      "sourceHash": "ded29d0b8cbf56070ab2e4b849ba6c8e5203eceea1bb17486caa614983e34f9d",
-      "text": "目标架构中面向智能体的服务层：负责服务注册与发现、编排，并提供可编程能力；这一层旨在让服务可被发现，让协作规则清晰明确。",
+      "source": "The future service layer for agents and applications: registration and discovery, orchestration, and programmable capabilities. It makes services discoverable and collaboration rules explicit.",
+      "sourceHash": "5d3bf6fe27905f6b2f4e0b4fa18f8671335637a2affa2783b4d5cd5723fb9383",
+      "text": "面向智能体与应用的未来服务层：负责注册与发现、编排和可编程能力，让服务可被发现，也让协作规则清晰可见。",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:53:26.079Z",
-      "reviewerNotes": "Native final review against the current English source, ALUX knowledge base, and official terminology."
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.architecture.layers.0.title": {
       "source": "World Operating System",
@@ -964,28 +964,28 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.architecture.layers.1.items.0": {
-      "source": "Unified World VM",
-      "sourceHash": "67a4257643771a6bcd0f0a4da8044256e8fbc1647eed74e710c8c44005d57c80",
-      "text": "统一世界虚拟机",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "GLVM abstraction",
+      "sourceHash": "941ad0e111b231bd7c7287703a87f6f8b46e3749c8ff64a04da8e268a598d90c",
+      "text": "GLVM 抽象",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.architecture.layers.1.items.1": {
-      "source": "Concurrency control",
-      "sourceHash": "73e78c47aa95256b21ddd78578820cacbd4305738620bff28384fee2a182f351",
-      "text": "并发控制",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Concurrency and replay",
+      "sourceHash": "241fc30f8fba769534b7a65198fb66c7f8a156665947d2c17eb97b2a53447a67",
+      "text": "并发与重放",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.architecture.layers.1.items.2": {
-      "source": "Capability management",
-      "sourceHash": "96d14fd4d5328f0633b4ecce68ffe609bcfbb5002c450ef4311fcfab769c31bd",
-      "text": "能力管理",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Capability and finalization",
+      "sourceHash": "204c495e0081874bdc9df655ecc8a42baf184990fedbc539ca8368ce3e49f57a",
+      "text": "能力与最终确认",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.architecture.layers.1.label": {
       "source": "Layer 2",
@@ -996,28 +996,28 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.architecture.layers.1.status": {
-      "source": "Core available · system expanding",
-      "sourceHash": "571982ef10d9d0070e29e72f39c035eff008eb2ef39da65aec0f76a0639a9ba1",
-      "text": "核心已具备 · 系统继续扩展",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Core runtime · expanding",
+      "sourceHash": "1d986bb78605cdf721f4ebe616bea2959c1b8c42b0e6cfcc4349638f4052326b",
+      "text": "核心运行时 · 持续扩展",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.architecture.layers.1.text": {
-      "source": "The target logical coordination layer. VM abstraction, concurrency control, capability management, replay, and shared commit semantics are designed to make multiple TVMs look like one Unified World VM.",
-      "sourceHash": "a9db26c0228c3b460556e3f0ecf65f2a8f982beb55e201b671fc07a550928f02",
-      "text": "目标架构中的逻辑协调层。虚拟机抽象、并发控制、能力管理、重放与统一提交语义，旨在让多台 TVM 呈现为一台统一世界虚拟机。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:53:26.079Z",
-      "reviewerNotes": "Native final review against the current English source, ALUX knowledge base, and official terminology."
+      "source": "The logical coordination layer. VM abstraction, concurrency control, object capabilities, deterministic replay, and finalization semantics form the shared execution model for participating TVMs.",
+      "sourceHash": "a0aca6853f76e8773c00709a3a64a6a1cb3218deb7278f2694ea7fb8fdefdb31",
+      "text": "面向多台 TVM 的逻辑协调层。虚拟机抽象、并发控制、对象能力、确定性重放与最终确认语义，共同定义开发者看到的统一执行模型。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T03:00:00.000Z",
+      "reviewerNotes": "Official-site wording reviewed against the current GLVM maturity boundary."
     },
     "glvm.architecture.layers.1.title": {
-      "source": "ALUX decentralized concurrent runtime",
-      "sourceHash": "743c3b4d9fb72eff882afa96f0e8f3f47417b62922ca4eca3daf83fcf1d9bf01",
-      "text": "ALUX 去中心化并发运行时",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "GLVM concurrent runtime",
+      "sourceHash": "c4fde37e425dfccee6bc2a42f5e5e4b767d7143d811a5e85d931141eb3364422",
+      "text": "GLVM 逻辑执行层",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.architecture.layers.2.index": {
       "source": "01",
@@ -1028,28 +1028,28 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.architecture.layers.2.items.0": {
-      "source": "Blockchain TVM",
-      "sourceHash": "12eba590437491570bcca05fa768ab776483b68d19e08a146a5f75066b50b73d",
-      "text": "区块链 TVM",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Public-chain TVM",
+      "sourceHash": "bad4fca03480321f8688b6e3acb40bb6da9bbc57eafdab2e20323bc61035b8cf",
+      "text": "公链 TVM",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.architecture.layers.2.items.1": {
-      "source": "Cloud TVM",
-      "sourceHash": "6e9c244c7e84b9f7ca1ab92019a9d458353db6e661cdcafe23613d6fe05ad8de",
-      "text": "云端 TVM",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Private or cloud TVM",
+      "sourceHash": "893650e9b59fac7cf01c3958b8030299af939c4f09c94b91f40f025a2665114b",
+      "text": "私有或云端 TVM",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.architecture.layers.2.items.2": {
-      "source": "Personal-device TVM",
-      "sourceHash": "003ef60ebbeb452b6ee4ef01d349ac3bfd197b931d8845a4fe96d039a1212e12",
-      "text": "个人设备 TVM",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Client-device TVM",
+      "sourceHash": "b8444af56c33842f2bf34cefb99c5f00e9148675cf0099f15f7580274221d5ad",
+      "text": "客户端设备 TVM",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.architecture.layers.2.label": {
       "source": "Layer 1",
@@ -1060,20 +1060,20 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.architecture.layers.2.status": {
-      "source": "Mixed deployment target",
-      "sourceHash": "eb4e77294147605df7248cf029ae815fd813cceebccab31335c059adc6faf9de",
-      "text": "混合部署目标",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Core · integration · roadmap",
+      "sourceHash": "3c7850008155d805ac28b6c65943eabb10b2650a426142af49c2b4bf965e0f88",
+      "text": "核心 · 集成 · 路线图",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.architecture.layers.2.text": {
-      "source": "The machines that do the work: blockchain validators, cloud servers, and personal devices. In the target architecture, each environment runs a TVM and exposes only the capabilities it has been given.",
-      "sourceHash": "5a56929725e0c49e86542a2dad4a033f7b998e4a67a9cef85aaf7885ba042bf1",
-      "text": "真正执行任务的机器：区块链验证节点、云服务器和个人设备。在目标架构中，每个环境都会运行一台 TVM，并且只暴露获授的能力。",
+      "source": "The machines that do the work. Public-chain nodes provide the current execution foundation. Private or cloud TVMs are the next integration surface; client-device TVMs remain a roadmap path toward local execution.",
+      "sourceHash": "7387bb0f811192684a7f44a34ec3f777de59261d517b665629eff415bbf81743",
+      "text": "真正执行工作的机器。公链节点构成当前执行基础；私有或云端 TVM 是下一步集成方向，客户端设备 TVM 则属于路线图，未来可把这套模型延伸到本地执行。",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:53:26.079Z",
-      "reviewerNotes": "Native final review against the current English source, ALUX knowledge base, and official terminology."
+      "reviewedAt": "2026-07-26T12:20:00.000Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; maturity boundaries and terminology verified."
     },
     "glvm.architecture.layers.2.title": {
       "source": "Physical infrastructure",
@@ -1084,36 +1084,36 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.architecture.text": {
-      "source": "Select a layer to see what each target layer contributes. The lower layers ground execution in real machines; the upper layer is designed to turn that execution into discoverable, orchestrated, permissioned services.",
-      "sourceHash": "f5a8dbfed0bca547d11ba9ce3ea5e5e57237511c2633b3283e64ecdf05caef2e",
-      "text": "选择一个层级，查看目标架构中每一层的作用。下层让执行落到真实机器上；上层则旨在把这些执行转化为可发现、可编排且受权限约束的服务。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:53:26.079Z",
-      "reviewerNotes": "Native final review against the current English source, ALUX knowledge base, and official terminology."
+      "source": "Physical machines run TVMs; in the GLVM architecture, those engines participate in one shared logical execution model. A future World OS will organize that layer into discoverable, orchestrated services governed by explicit capabilities.",
+      "sourceHash": "a6e5176fd6c39ca14d50da4127096425f317eeac95cf10f0cb106da5016a7199",
+      "text": "物理机器运行 TVM；这些 TVM 共同参与一套逻辑执行模型。未来，World OS 将进一步把这一层组织为可发现、可编排且受显式能力约束的服务。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T03:00:00.000Z",
+      "reviewerNotes": "Official-site wording reviewed against the current GLVM maturity boundary."
     },
     "glvm.architecture.title": {
-      "source": "From real machines to one logical world",
-      "sourceHash": "7964e40f917167d8cc81fe9aa3ae388dcf66cb5f346b224a0e53c124ca1acfdb",
-      "text": "从真实机器，到统一逻辑世界",
+      "source": "Three layers, one developer-facing execution model",
+      "sourceHash": "793773a3a494a63fc87a195ba4a12e74ee47137699d4f98aab09372c443beee5",
+      "text": "三层架构，面向开发者呈现为一套执行模型。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
     },
     "glvm.close.eyebrow": {
-      "source": "Next / Runtime Lab",
-      "sourceHash": "2ca0079e4b70d1a30b1055f7b5e49f4c6a66c26059c31e399a9ccc43b4965358",
-      "text": "下一步 / Runtime Lab",
+      "source": "Continue learning",
+      "sourceHash": "26e5b147b6230987157228e88aa404ab99148aba65ccdf5ac9262c477935a2a9",
+      "text": "继续学习",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:21:05.596Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX baseline."
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.close.links.0.0": {
-      "source": "Open Runtime Lab",
-      "sourceHash": "7e81d37d3872708e1f38f25a5cc37c70e5ab56ec2b83016ba38585bd787dc869",
-      "text": "打开 Runtime Lab",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Runtime Lab",
+      "sourceHash": "ea2d547f1cc2c87a2f634635e2923655db93627c7c17458da90feb153ca0e96c",
+      "text": "Runtime Lab",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.close.links.1.0": {
       "source": "For AI Agents",
@@ -1123,53 +1123,613 @@
       "reviewedAt": "2026-07-13T13:03:29.193Z",
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
-    "glvm.close.text": {
-      "source": "GLVM describes the logical execution architecture ALUX is building. Runtime Lab shows the core mechanisms in the current ALUX engine that support parallel execution, concurrency, and composability.",
-      "sourceHash": "81e82bd82bbab46a3d1746e92629272b55c86eeacb8de66a05185ee117e213b1",
-      "text": "GLVM 描述 ALUX 正在构建的逻辑执行架构；Runtime Lab 展示当前 ALUX 引擎中支撑并行、并发与组合的核心机制。",
+    "glvm.close.links.2.0": {
+      "source": "ALUX VS Others",
+      "sourceHash": "eb4b3f01c8ece1d0aedb62d3feb2142e1879e19355434ab4ed0336c129231d62",
+      "text": "ALUX 与其他系统",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:21:05.596Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX baseline."
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.close.text": {
+      "source": "Runtime Lab explains the execution model. For AI Agents shows the workload pattern. ALUX VS Others compares architecture and capabilities across systems.",
+      "sourceHash": "015cc615b5f87813ba1d3bb1e947ac75c792b8c02c0d06c65e09f591a37dbec2",
+      "text": "Runtime Lab 详解执行模型；“面向 AI 智能体”展示工作负载模式；“ALUX 与其他系统”对比不同系统的架构与能力。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.close.title": {
-      "source": "See what GLVM builds on today.",
-      "sourceHash": "dc3e70b4af46db7540ef656c79ece672b62d771b6b3bb0a014400fd4855a3bb4",
-      "text": "查看 GLVM 当前的运行基础",
+      "source": "Explore the runtime, agent workloads, and system comparisons.",
+      "sourceHash": "ab76ddcde696819b25513aca69f2bdc8218ac33705896ee1a2223895d4aca9bc",
+      "text": "继续探索运行时、智能体工作负载与系统对比。",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-14T00:00:00.000Z",
-      "reviewerNotes": "Aligned with the current ALUX implementation boundary and native product language."
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.continuity.atomicity.label": {
+      "source": "Vertical atomicity · core runtime",
+      "sourceHash": "ba3dad599bf3a508a1645623d023c54cf7cf4d02abc91a08188988437447217c",
+      "text": "纵向原子性 · 核心运行时",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.continuity.atomicity.title": {
+      "source": "Cross-block execution preserves one transaction context.",
+      "sourceHash": "ca95e2f3799eb62a3c1806800521dbe368c7258bfb385440086beeb65460f4ff",
+      "text": "跨区块执行保留同一个交易上下文。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.diagram.allOrNone": {
+      "source": "ALL / NONE",
+      "sourceHash": "70b9169dd07c7400b9b0252753597aa9c3bd53cafe12f1d1009e5d0cca77d82b",
+      "text": "全部生效 / 全部不生效",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.atomicObjective": {
+      "source": "ONE ATOMIC OBJECTIVE",
+      "sourceHash": "7ed3c1ec4f9dbff25093b668200aa51ef67fb92402fc787597152f7afb999d76",
+      "text": "同一个原子目标",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.blockN": {
+      "source": "BLOCK N",
+      "sourceHash": "ca59a1bf84efd251ac56ea7a3ed6d8895e5dd95fe834f18efe2ba6c023b7aeb8",
+      "text": "区块 N",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.blockN1": {
+      "source": "BLOCK N + 1",
+      "sourceHash": "85417a77ad080ac0d313aabc82d67711c5559909b79b6e09ba7e5e4d60769310",
+      "text": "区块 N + 1",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.blockN2": {
+      "source": "BLOCK N + 2",
+      "sourceHash": "f1e79ecd7b293853b46d4c25796b9394b47e72fd632f7c74b7bd32118e1d504f",
+      "text": "区块 N + 2",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.comm": {
+      "source": "COMM",
+      "sourceHash": "4c52d4874a1b76b8532f918cda0bdb1b557be1905dc649dbb6e9ca7b47d6fc0b",
+      "text": "COMM",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.commit": {
+      "source": "COMMIT",
+      "sourceHash": "79663c1d3b43ceaf9ee728e501c64b57ae2e4d6cb36ff5c65eddcda1de27342f",
+      "text": "提交",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.contextPreserved": {
+      "source": "CONTEXT PRESERVED",
+      "sourceHash": "b54fb1aab19a8e3e9b3936a54bb6268e36b363de8ec10dce509e227e97e16678",
+      "text": "上下文已保留",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.laneA": {
+      "source": "LANE A",
+      "sourceHash": "54e413377666157236a8da024a601b87fc2dc634d5308bf18753e4edaf0d18d0",
+      "text": "路径 A",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.laneB": {
+      "source": "LANE B",
+      "sourceHash": "94d9a69b88cb04265d6b8986652246ad8cc6fe4f636f12f240a67a8168d99b25",
+      "text": "路径 B",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.laneC": {
+      "source": "LANE C",
+      "sourceHash": "70c317b8d966de9fefc75adc1b904629326b07be47debecb401c9b21128c0dd9",
+      "text": "路径 C",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.merge": {
+      "source": "MERGE",
+      "sourceHash": "fc2b737d854489622d7138e5364e3cd0d9c538f509a5b684bd4ada8e43ace8da",
+      "text": "汇合",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.oneCommit": {
+      "source": "ONE COMMIT",
+      "sourceHash": "6c1b3a3324637583ffba69e5a9742dcddbd29cb762562d9431e373f8435ef948",
+      "text": "统一提交",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.processA": {
+      "source": "PROCESS A",
+      "sourceHash": "800d79816391198500ce06b3bc91bfac8c548a7b8332b45c5f7e4a5bef3c24ec",
+      "text": "进程 A",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.processB": {
+      "source": "PROCESS B",
+      "sourceHash": "5e5c1a1efaef54e6db3603b6cde5e065078d3bb42cdca794a5df6f3eedac423b",
+      "text": "进程 B",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.ready": {
+      "source": "READY",
+      "sourceHash": "c2e3ac47f4a325469c1a2d5f117e463ec943c721986d5d9f09ac4540b7d80526",
+      "text": "就绪",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.resume": {
+      "source": "RESUME",
+      "sourceHash": "0747c96a23dbfa586507337fc4ed4bdddb7b05833243622c4e6bb357b87adb0c",
+      "text": "恢复",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.roadmap": {
+      "source": "ROADMAP",
+      "sourceHash": "020784845889124b43389c30cbfd03c3b9662f5e17671583a8dc283c24cb6ea3",
+      "text": "路线图",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.send": {
+      "source": "SEND",
+      "sourceHash": "2a8eaacaedc663bc499d8b669e4c7bff3335ef622d206f42833de3408e3e2a80",
+      "text": "发送",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.settle": {
+      "source": "SETTLE",
+      "sourceHash": "1a070fdcde5b1b1075d1fd8119f2baddc493eb20e9a1827243b4a4c6eca5dab8",
+      "text": "结算",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.start": {
+      "source": "START",
+      "sourceHash": "39f17ec6ebcf3cec37a06d85dc61882be3898d7573f284b7b41222087b6b6a2c",
+      "text": "开始",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.state01": {
+      "source": "STATE 01",
+      "sourceHash": "16898d2bf76e08c82b93a68f9f468d0277911df4792b810589017eb99875c6af",
+      "text": "状态 01",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.state02": {
+      "source": "STATE 02",
+      "sourceHash": "825c23fcf629998e4d7befe2dfdf11c7ce47107a62411a8cc40eb3b96d23db06",
+      "text": "状态 02",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.state03": {
+      "source": "STATE 03",
+      "sourceHash": "d1b48ca7d4aa2f2b44e686078f933ab413bff411e7222f3e342b0546cf056d47",
+      "text": "状态 03",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.diagram.wait": {
+      "source": "WAIT",
+      "sourceHash": "4f618185f2ea5253635939166e5196b74642977aa2b03835f8b87277a8130f33",
+      "text": "等待",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
+    },
+    "glvm.continuity.eyebrow": {
+      "source": "Execution and atomicity",
+      "sourceHash": "fbd8796e99a18575ed61d05c4515939d0e56d4fc8a44b194c165222144a5b24b",
+      "text": "执行与原子性",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.modes.0.label": {
+      "source": "Sequential",
+      "sourceHash": "332ddf8b25deb00c623e0ddb232301303c84dd522f6097911154d706366f3b2c",
+      "text": "顺序",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.continuity.modes.0.status": {
+      "source": "Baseline",
+      "sourceHash": "cc9ea7f7c64e772c81eb80854c0e7db8f504943549c0675d893a983b8f545152",
+      "text": "基础模式",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.continuity.modes.0.text": {
+      "source": "One transition follows another.",
+      "sourceHash": "73f6b2591d34cf71d887832fe0c88306479a4d534036c8593ca4772f3a5978fa",
+      "text": "一次状态转换完成后，再进行下一次。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.continuity.modes.1.label": {
+      "source": "Parallel",
+      "sourceHash": "d97c090927f2006c71193f88b06678915dcfccb1d884fd4b669f6c1ab2f5068a",
+      "text": "并行",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.continuity.modes.1.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255",
+      "text": "核心运行时",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.continuity.modes.1.text": {
+      "source": "Independent transitions advance at the same time.",
+      "sourceHash": "3b3abf8d4a4f74530a55add4ac919f27e75936a90f16bb6afc0f65ebe62846b7",
+      "text": "相互独立的状态转换同时推进。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.modes.2.label": {
+      "source": "Concurrent",
+      "sourceHash": "06242b467eca75273bde1381377d484634e6ca6617386b5f4936069f206fc0c8",
+      "text": "并发",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.continuity.modes.2.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255",
+      "text": "核心运行时",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.continuity.modes.2.text": {
+      "source": "Processes communicate, wait, and resume through channels.",
+      "sourceHash": "94012441aef7ca5a1fdb7c4334a752eaa03ae8aaf401d3a45fda0d9c70128717",
+      "text": "进程通过通道通信、等待并恢复。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.modes.3.label": {
+      "source": "Composite",
+      "sourceHash": "8e3588157fcf8d7c32058feba195c8dfa8c61248b12807b660562c1997d2ce6a",
+      "text": "组合式",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.modes.3.status": {
+      "source": "Roadmap",
+      "sourceHash": "92375f997ffe65ab7f04eeda8cb2d7f69ebea949a06132afd53c83fff276ef54",
+      "text": "路线图",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.modes.3.text": {
+      "source": "Multiple concurrent transactions share a higher-level atomic objective.",
+      "sourceHash": "35c0c297ef85e68d00b12c42aff0d1fc68fc5aaf4e0e0a7b75238ef6d9ac3fd3",
+      "text": "多笔并发交易共享一个更高层的原子目标。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.notes.0.label": {
+      "source": "Core execution path",
+      "sourceHash": "8b9fc487d42a7456df789877475e759bcc469f599c15adb6612e24dbc15ae1ee",
+      "text": "核心执行路径",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.continuity.notes.0.text": {
+      "source": "Concurrent TVM execution · COMM wait and resume · ReplayTrie · cross-block continuation and finalization",
+      "sourceHash": "514fe015f9fcd02c2c559ad32409fe6fd48604d6eb04cdf44ab67d33122cfd5e",
+      "text": "TVM 并发执行 · COMM 等待与恢复 · ReplayTrie · 跨区块延续与最终确认",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.continuity.notes.1.label": {
+      "source": "Atomicity model",
+      "sourceHash": "e562e1c277952b7b1ce9747a048aca1937f4ef6f13d7adb0263aa95b39302f24",
+      "text": "原子性模型",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.continuity.notes.1.text": {
+      "source": "Tentative intermediate state does not become confirmed state until finalization; a failed path is discarded instead of repaired later through compensating transactions.",
+      "sourceHash": "5e4fca316defc468e3196ec17c1eb2ef452fed536591b29f9fa6d249751f9d86",
+      "text": "暂定状态在最终确认前不会成为已确认状态；失败路径会被直接丢弃，而不是事后通过补偿交易修复。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T12:20:00.000Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; maturity boundaries and terminology verified."
+    },
+    "glvm.continuity.notes.2.label": {
+      "source": "Native off-chain read",
+      "sourceHash": "a5e0e1615558c10c536fd6a2d95dbcf16a8fd8d9fdacb889531adac5c189a99f",
+      "text": "原生链下读取",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.notes.2.text": {
+      "source": "An authenticated HTTPS GET can suspend, record the response, replay, and resume. The data source still determines truth, and irreversible off-chain side effects remain outside rollback.",
+      "sourceHash": "92dca6762287ba3e76e4e57166deb8bc94a1277ddc2520c174f7584524781a7f",
+      "text": "经过认证的 HTTPS GET 可以挂起执行、记录响应、重放并恢复。数据的真实性仍由数据源决定；不可逆的链下副作用仍不在回滚范围内。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.notes.3.label": {
+      "source": "Horizontal atomicity",
+      "sourceHash": "a14c016a406aa0998e199475f1ea5f9e9736ec9cdd6175a09a83f3c65bfa27bb",
+      "text": "横向原子性",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.notes.3.text": {
+      "source": "Cross-shard atomic execution and composition with independent external systems define the next expansion of the model.",
+      "sourceHash": "ba181665400ce05f1a11bfde5085efa86f48a324ce63bd8a9accac9368bc5d81",
+      "text": "跨分片原子执行与独立外部系统的组合，定义了这套模型下一步的扩展方向。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.continuity.steps.0.label": {
+      "source": "Start",
+      "sourceHash": "e4bb9f1ece9af9264a3b9e3913bbdb2cf497457167b14ced5f85688bfde74644",
+      "text": "开始",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.continuity.steps.0.text": {
+      "source": "Start one transaction with one scoped set of capabilities.",
+      "sourceHash": "b7d0d414baaa65ba2bd6b66d3dac378d1c0ef4bf7f97dc6120f86b34f2ad2a6c",
+      "text": "以一笔交易和一组范围明确的能力开始。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.steps.0.title": {
+      "source": "Begin once",
+      "sourceHash": "351583e2c7e60f109471e05c139d3f1cbea6213f9ba1cfc55c4d36c868f5894a",
+      "text": "只开始一次",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.continuity.steps.1.label": {
+      "source": "Suspend",
+      "sourceHash": "4948e134182f84200d4e8197f88fd1d8510a7004f281222325311858b969380a",
+      "text": "挂起",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.continuity.steps.1.text": {
+      "source": "If an answer or channel match is missing, preserve the continuation instead of finalizing early.",
+      "sourceHash": "b5a60573e6b382c671e5022d3a2c545950bb7601b2cc8c7442f3a809da36fe51",
+      "text": "如果尚无答案或通道匹配，便保留延续，而不是提前完成最终确认。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.steps.1.title": {
+      "source": "Wait without partial settlement",
+      "sourceHash": "7a23dc8e52d1c9d0a7737182602aa57498827ec1625906cc9b21b0c33cf8160b",
+      "text": "等待，但不局部结算",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.steps.2.label": {
+      "source": "Record",
+      "sourceHash": "bfdd510698ef3ccbf17f2c67fc47790e1ba72894fb74fe284bbc136b47ef73e6",
+      "text": "记录",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.continuity.steps.2.text": {
+      "source": "ReplayTrie records the non-deterministic choice or authenticated response required to reproduce the path.",
+      "sourceHash": "0c6ec87102589dd8dbb2c95228bfc0a47fd3f3693b63d3233a7a4ac08074f1a1",
+      "text": "ReplayTrie 会记录非确定性选择或经过认证的响应，以便重放该执行路径。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.steps.2.title": {
+      "source": "Capture the choice",
+      "sourceHash": "a482acfe781a7bbb09ce0cab005a948e943a3f0c72d01d4d7ce492e4b54deb5c",
+      "text": "记录选择",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.continuity.steps.3.label": {
+      "source": "Resume",
+      "sourceHash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "text": "恢复",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.continuity.steps.3.text": {
+      "source": "A matching COMM event or recorded response wakes the preserved continuation in a later block.",
+      "sourceHash": "4ed12812a90da3bf87a291aff6e5a3fb08d6ea3e4eff58c005775f5f0075f310",
+      "text": "匹配的 COMM 事件或已记录的响应，会在后续区块中唤醒此前保留的延续。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.steps.3.title": {
+      "source": "Continue the same transaction",
+      "sourceHash": "339aa85b7742d5ca2cc13dcdef98dceb8b30e37e2f6a617a7a4b86c31748976c",
+      "text": "继续同一笔交易",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.steps.4.label": {
+      "source": "Finalize",
+      "sourceHash": "bcc55d805d23a518e5cce819ea93f6a1296c558f365f9551676f8e67f83b5e99",
+      "text": "最终确认",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.steps.4.text": {
+      "source": "At the finalization boundary, eligible state is committed; rejected tentative state is discarded.",
+      "sourceHash": "6b5855f25954813ec2eb66d1ca7180a0c9498207ae06bd5379aaf2c4d42b38e2",
+      "text": "在最终确认边界，符合条件的状态会被提交；被拒绝的暂定状态会被丢弃。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.continuity.steps.4.title": {
+      "source": "Commit or discard",
+      "sourceHash": "ec49a412d50dd2e7bfd3507ea06116cb9274c8dea9e230aa736b260394afb26c",
+      "text": "提交或丢弃",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.continuity.text": {
+      "source": "Execution evolves from sequential and parallel work to concurrent processes that communicate, wait, and resume. Composite execution extends the model so multiple concurrent transactions can share a higher-level settlement boundary; cross-block continuity provides the vertical foundation for that direction.",
+      "sourceHash": "31a40cb294ea110af5db98fa4ac991ecb8df1421211bc57d1ddb1cca4bb7ba37",
+      "text": "执行从顺序与并行模式，演进为能够通信、等待和恢复的并发进程。进一步的组合式执行，目标是让多笔并发交易共享更高层的结算边界；跨区块连续性为这一方向提供纵向基础。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T04:00:00.000Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.continuity.title": {
+      "source": "A transaction can wait across blocks, then settle as one.",
+      "sourceHash": "97f4032ab3ef0e115b8d99fc2ccd6ceea49f96fc783cf7f9624608d1ff2ec3e5",
+      "text": "一笔交易可以跨区块等待，随后作为一个整体结算。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.definition.axis.0.0": {
-      "source": "Where collaboration happens",
-      "sourceHash": "599a21c3f14766e29f6a91db97620a3273fee14d94d618e185c51201de5ad34a",
-      "text": "智能体在哪里协作",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "VM abstraction",
+      "sourceHash": "2b864016ca66f6d354d0e2a8e4d25a8dff40fcc6a7f4b33f51bb49c2eb45d71d",
+      "text": "虚拟机抽象",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.definition.axis.0.1": {
-      "source": "GLVM",
-      "sourceHash": "0f8f70627eedcfd6ad43a1deab4d039373bb8bfa8fadffe5012c59ea7b4be117",
-      "text": "GLVM",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Expanding",
+      "sourceHash": "3179a80f1ff31dd9e169490ccac428de7ba356bca79507570a826951d47e436b",
+      "text": "持续扩展",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.definition.axis.1.0": {
-      "source": "What can be used — and where it must stop",
-      "sourceHash": "ee971fee526319f5b4ee0b7cc63911f4e016862ee19c5c5603f3eea223780d9e",
-      "text": "智能体能使用什么、不能越过哪里",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Vertical atomicity",
+      "sourceHash": "d120460e7ce4f2700f8fe09fe7ce72795b6c5f424e95c2074315b19d161d5e47",
+      "text": "纵向原子性",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.definition.axis.1.1": {
-      "source": "Programmable capability",
-      "sourceHash": "d9a98a837a7428b9c0f700d242bdffec9736fee161c0e3b2b1cf79baae4e1cef",
-      "text": "可编程能力",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255",
+      "text": "核心运行时",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.definition.axis.2.0": {
+      "source": "Horizontal atomicity",
+      "sourceHash": "a14c016a406aa0998e199475f1ea5f9e9736ec9cdd6175a09a83f3c65bfa27bb",
+      "text": "横向原子性",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.definition.axis.2.1": {
+      "source": "Roadmap",
+      "sourceHash": "92375f997ffe65ab7f04eeda8cb2d7f69ebea949a06132afd53c83fff276ef54",
+      "text": "路线图",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.definition.axis.3.0": {
+      "source": "Composable security",
+      "sourceHash": "330cf007869f5baefb7d6ff79dbde5bdbbc992e8743ea9f37a5a5371351a88f3",
+      "text": "可组合安全",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.definition.axis.3.1": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255",
+      "text": "核心运行时",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.definition.comparison.0.label": {
       "source": "TVM",
@@ -1180,20 +1740,20 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.definition.comparison.0.note": {
-      "source": "Runs inside each execution environment",
-      "sourceHash": "7d057913cc70485943fa0764ba0f24d28f03612128c96af0ae5903f0f1524b30",
-      "text": "运行在每一个执行环境里",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "One concrete engine inside a machine",
+      "sourceHash": "e83f3f3489441c22f005ef66f4a451a2880097e937334ffe18a56e60fadc82ba",
+      "text": "单台机器内的一套具体引擎",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.definition.comparison.0.text": {
-      "source": "The concrete ALUX execution engine. It runs Tolang bytecode, coordinates independent processes through channels and COMM events, and records the non-deterministic choices needed for deterministic replay.",
-      "sourceHash": "6140bf04df17bd0fd0ca1ff6eee049e6bcba4fad8ebd0a8f1d5dea587da54997",
-      "text": "ALUX 的具体执行引擎。它运行 Tolang 字节码，让独立进程通过通道与 COMM 事件协作，并记录确定性重放所需的非确定选择。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "The concrete ALUX execution engine. It runs Tolang bytecode, coordinates independent processes through channels and COMM events, and records the non-deterministic choices required for deterministic replay.",
+      "sourceHash": "e5f71631eadba7d725dd6ecb5defe6d67398725baf61c3c677bf3fa47ba7e5a4",
+      "text": "ALUX 的具体执行引擎。它运行 Tolang 字节码，让独立进程通过通道与 COMM 事件协作，并记录确定性重放所需的非确定性选择。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.definition.comparison.0.title": {
       "source": "Tuple-space Virtual Machine",
@@ -1207,161 +1767,185 @@
       "source": "GLVM",
       "sourceHash": "0f8f70627eedcfd6ad43a1deab4d039373bb8bfa8fadffe5012c59ea7b4be117",
       "text": "GLVM",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:36:46.018Z",
+      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
     },
     "glvm.definition.comparison.1.note": {
-      "source": "Target: unify many environments into one logical world",
-      "sourceHash": "89770d980ef5b6b5655ec2cf9ead721802ebef4caa8f33a9d29c43d3d3506a79",
-      "text": "目标：将多个环境统一为一个逻辑世界",
+      "source": "One logical system above many machines",
+      "sourceHash": "a5c9904395269abdab62651e5f8408d06fb52fe6f27ab9992d32ae42145a6652",
+      "text": "位于多台机器之上的一个逻辑系统",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:53:26.079Z",
-      "reviewerNotes": "Native final review against the current English source, ALUX knowledge base, and official terminology."
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.definition.comparison.1.text": {
-      "source": "The system architecture designed to make TVMs on chain, in the cloud, and on personal devices behave like parts of one global computer, with a common model for orchestration, capability, and verifiable state.",
-      "sourceHash": "0f3557058bcf84e1103787baa87e6767a1ad102e2f20f8141f64d1b0b89eba15",
-      "text": "这套系统架构旨在让链上、云端和个人设备上的 TVM 像一台全局计算机的组成部分一样协同运行，并为编排、能力与可验证状态提供统一模型。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:53:26.079Z",
-      "reviewerNotes": "Native final review against the current English source, ALUX knowledge base, and official terminology."
+      "source": "GLVM defines the developer-facing logical model across participating TVMs. It provides one boundary for execution state and processes while replay, replication, finalization, and consensus remain beneath the abstraction.",
+      "sourceHash": "1c0c30e7139251a1b520a2e7560060e2493b39369fec8f21ccb4712338ad4485",
+      "text": "GLVM 为参与执行的多台 TVM 定义一套面向开发者的逻辑执行模型。它以统一边界承载执行状态与进程，重放、复制、最终确认与共识则由下层运行时协调。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T03:00:00.000Z",
+      "reviewerNotes": "Official-site wording reviewed against the current GLVM maturity boundary."
     },
     "glvm.definition.comparison.1.title": {
       "source": "Global Logical Virtual Machine",
       "sourceHash": "b6bb7b9f9a2ca6aa1205187ba03d3a39c54fbb0e69b5e81db17285605078dd8b",
-      "text": "全局逻辑虚拟机（Global Logical Virtual Machine）",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "text": "全局逻辑虚拟机",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:52:19.111Z",
+      "reviewerNotes": "Final native Chinese semantic and terminology polish."
     },
     "glvm.definition.eyebrow": {
-      "source": "The relationship",
-      "sourceHash": "7292ff933d9fa177a5d12a087e5e1b232e2355a14993570405650350d7602645",
-      "text": "二者的关系",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "The core definition",
+      "sourceHash": "d0e47580ae00918b94fe7eaf4e8c13862894f4c7ee95dbbccad36bdc35966a5b",
+      "text": "核心定义",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.definition.payoff.label": {
+      "source": "One logical layer",
+      "sourceHash": "6aa385bebd7954cc32aa7e3bade416c6404cb409fc94429b60fd1d7ec9f618c2",
+      "text": "一个逻辑层",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.definition.payoff.text": {
+      "source": "Developers target one concurrent execution model while the runtime handles scheduling, replay, capability checks, replication, and finalization.",
+      "sourceHash": "84bf6a1c2102da9d833003085af7a44fca6c4042d682127cc03f91748abae5b1",
+      "text": "开发者只需面向一套并发执行模型；调度、重放、能力检查、复制与最终确认在这一逻辑抽象之下协调。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-27T01:05:00.000Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; redundant maturity copy removed from the definition section."
+    },
+    "glvm.definition.payoff.title": {
+      "source": "One logical layer—not one physical machine.",
+      "sourceHash": "45f6486151560c3848542911e0b678641299353f62423373677ca409039b6ab3",
+      "text": "一个逻辑层，而不是一台物理机器。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.definition.text": {
-      "source": "GLVM is not a second bytecode VM and it is not a crate in the current repository. It is the global architecture designed to abstract many physical TVMs into one logical execution world.",
-      "sourceHash": "cd16d313a408a8fbe911eba0a20809e379823719412debc1fbabfa1620992921",
-      "text": "GLVM 不是第二种字节码虚拟机，也不是当前代码库中的一个 crate。它是一套全局架构，旨在把多个物理环境中的 TVM 抽象为一个逻辑执行世界。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:53:26.079Z",
-      "reviewerNotes": "Native final review against the current English source, ALUX knowledge base, and official terminology."
+      "source": "TVM is the bytecode execution engine on one machine. GLVM defines the system-level execution abstraction across participating TVMs. It is not another bytecode VM; developers target one logical model while deterministic replay, recovery, replication, finalization, and consensus are coordinated beneath the abstraction.",
+      "sourceHash": "347cb5c9accab39dcf7754d9a8b8c9be4e68a2d12269c66bf14573dc802f3474",
+      "text": "TVM 是运行在单台机器上的字节码执行引擎；GLVM 定义跨多台 TVM 的系统级执行抽象。它不是另一种字节码虚拟机。开发者面向统一的逻辑执行模型，确定性重放、恢复、复制、最终确认与共识则在这一抽象之下协调。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T03:00:00.000Z",
+      "reviewerNotes": "Official-site wording reviewed against the current GLVM maturity boundary."
     },
     "glvm.definition.title": {
-      "source": "TVM is the engine. GLVM is the system.",
-      "sourceHash": "3c26986d749493968fcc4cf837f9ecdad99cee774575c515a03838bcf629011c",
-      "text": "TVM 是发动机，GLVM 是整台系统。",
+      "source": "One TVM per machine, coordinated through one logical execution model.",
+      "sourceHash": "b232c1fde7c4c395df8888aca59a98bda2dd3f6806b3bcf7de8170e89ccbd390",
+      "text": "每台机器运行一台 TVM，多台 TVM 协同组成一个逻辑执行层。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-07-29T03:00:00.000Z",
+      "reviewerNotes": "Official-site wording reviewed for technical accuracy and semantic line balance."
     },
     "glvm.hero.eyebrow": {
       "source": "Learn / GLVM",
       "sourceHash": "df71fa827fe49904b62d73787d5cbbdc44c1bfd7e82c30cbaae6f37af3859782",
       "text": "了解 / GLVM",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
     },
     "glvm.hero.fullName": {
       "source": "Global Logical Virtual Machine",
       "sourceHash": "b6bb7b9f9a2ca6aa1205187ba03d3a39c54fbb0e69b5e81db17285605078dd8b",
       "text": "全局逻辑虚拟机",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:21:05.596Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX baseline."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按官方术语译为“全局逻辑虚拟机”，全称字段不重复缩写。"
     },
     "glvm.hero.signals.0.0": {
-      "source": "Logical scope",
-      "sourceHash": "ba14329d7654c3eed4cb46db5f28fb444d5a13eee71e3fb33cc13e4ba22d7132",
-      "text": "逻辑范围",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Physical model",
+      "sourceHash": "91034b17486f9ff5f5fd23c8ef92b286994d0dec35d11b28bd2340212fa4b764",
+      "text": "物理模型",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.hero.signals.0.1": {
-      "source": "Chain · Cloud · Device",
-      "sourceHash": "c99dd566969205bc538721b4d75c002205423aafd9be61e5faa245e4986b06cc",
-      "text": "链 · 云 · 设备",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "One TVM per machine",
+      "sourceHash": "4e4157595e4008471d63e554df460ce75dc795a9e02f89eadd2429533e437203",
+      "text": "每台机器一台 TVM",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.hero.signals.1.0": {
-      "source": "Execution engine",
-      "sourceHash": "da96ed44c9414cb498a8711dfb2d8efcab054c62bdbf3e058438bae1bf58aa48",
-      "text": "执行引擎",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Logical model",
+      "sourceHash": "941148f09b36a14a11fe98c7ac45106e84cb0e15f55644689384cda091517e58",
+      "text": "逻辑模型",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.hero.signals.1.1": {
-      "source": "TVM",
-      "sourceHash": "76eb15e8431fba04a71e88d1e4f3d13aed307c375a6b71f40400cea9680c4e36",
-      "text": "TVM",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "One GLVM above them",
+      "sourceHash": "176a5f3340f00aa8f2c43514a209e2ae0bc72047fae391f20ae48191d00a2ffc",
+      "text": "多台 TVM，一个逻辑执行层",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:52:19.111Z",
+      "reviewerNotes": "Final native Chinese semantic and terminology polish."
     },
     "glvm.hero.signals.2.0": {
-      "source": "Proof path",
-      "sourceHash": "b1e6c1c1afe7b7fa1790cd053b45daab063ad636986c54b1e5d300ff3e306763",
-      "text": "验证路径",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Direction",
+      "sourceHash": "9c8a9579abe55bdc8a7b97031705e2738d912de38a35262863d8f47e05d3d641",
+      "text": "扩展方向",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.hero.signals.2.1": {
-      "source": "Replay · Merge · Commit",
-      "sourceHash": "7c1bd919d2405511a0504e85135185d487bab538f8ad8612d2daa64d529eed98",
-      "text": "重放 · 合并 · 提交",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Chain to cloud to device",
+      "sourceHash": "2342d4eecbbb23cc526d5ab1fe603cff3f1c1e28f0af92f51ea7c89a71478bac",
+      "text": "从链到云，再到设备",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.hero.tagline": {
-      "source": "Many machines. One logical world.",
-      "sourceHash": "7a0a0794db62ddd8fea920f52f04e54a9fdd1b25f19f6831faf146f0b3907186",
-      "text": "许多机器，<br>一个逻辑世界。",
+      "source": "One logical execution layer, coordinated across many machines.",
+      "sourceHash": "a2d19f9009f5816fbd9301356a429306ef4d6f027685d948ffeebf2250ff7653",
+      "text": "一个逻辑执行层，跨多台机器协调执行。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-07-28T13:50:00.000Z",
+      "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
     },
     "glvm.hero.text": {
-      "source": "GLVM is designed to coordinate TVMs across blockchain, cloud, and personal devices as one verifiable logical machine.",
-      "sourceHash": "9a5d44fba9ba485eb1b908ec9b6225b8deeb6cd3b127bdfb184116572004116a",
-      "text": "GLVM 旨在协调区块链、云和个人设备上的 TVM，使其作为一台可验证的逻辑机器运行。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:53:26.079Z",
-      "reviewerNotes": "Native final review against the current English source, ALUX knowledge base, and official terminology."
+      "source": "GLVM is the developer-facing execution abstraction ALUX is building from its concurrent runtime. A TVM provides the concrete engine on each participating machine; the GLVM model brings execution state, processes, replay, replication, and consensus into one logical layer.",
+      "sourceHash": "5b2bd1cd5982338944bb2baa4a8ce62dcf8908a8f4fb7a75d4143127796c2a9b",
+      "text": "GLVM 是 ALUX 基于并发运行时构建、面向开发者的执行抽象。每台参与执行的机器运行一台 TVM。GLVM 为跨机器的执行状态与进程提供统一的逻辑边界；重放、复制、最终确认与共识在这一抽象之下协调。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T03:00:00.000Z",
+      "reviewerNotes": "Official-site wording reviewed against the current GLVM maturity boundary."
     },
     "glvm.hero.title": {
       "source": "GLVM",
       "sourceHash": "0f8f70627eedcfd6ad43a1deab4d039373bb8bfa8fadffe5012c59ea7b4be117",
       "text": "GLVM",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:36:46.018Z",
+      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
     },
     "glvm.hero.visual.alt": {
-      "source": "A transparent global logical computer connecting blockchain validators, cloud servers, and personal devices through visible execution rails.",
-      "sourceHash": "5d8e7738632c55879e9606f3fc6277ef0f6ed1666d4fde55d96308472b179de2",
-      "text": "一台透明的全局逻辑计算机，通过可见的执行轨道连接区块链验证节点、云服务器和个人设备。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "A warm technical cutaway showing multiple physical machines connected beneath one GLVM execution layer.",
+      "sourceHash": "239fa46a19f03f3dc22d55afe704e4639da09bcd0a578c717e40ffaef2239ebd",
+      "text": "一幅暖色技术剖面图：多台物理机器连接在同一个 GLVM 执行层之下。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.journey.actions.play": {
-      "source": "Run the workflow",
-      "sourceHash": "308b45fccef561b1b389dc5013961fb3cece8372cc6adda038da9d1bcb8e18db",
-      "text": "运行工作流",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Simulate the workflow",
+      "sourceHash": "1899c52c1b797d35a60a27096f5b74f9cd3b21084318fd65f3eb7ab45c77092c",
+      "text": "模拟工作流",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.journey.actions.reset": {
       "source": "Reset",
@@ -1372,20 +1956,20 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.journey.eyebrow": {
-      "source": "One task, three substrates",
-      "sourceHash": "deabcea5eb7f6029d8d01b14e3e3ddcb0d769aecb9fb1d15d3a5557b3ecb5d7a",
-      "text": "一个任务，三种底座",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Workflow explorer",
+      "sourceHash": "7a5fd6296986146c706f3ef30288e637b886b0d3e36971fb3e3f13eb59e5198d",
+      "text": "工作流探索器",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.journey.messages.0": {
-      "source": "Ready. Start the workflow to see the logical machine move.",
-      "sourceHash": "2a4ffa11fbd7730ef9d223afccfa7bfe35fc4fcf6ec7b76fb5c2433e9615c684",
-      "text": "已就绪。运行工作流，看看这台逻辑机器如何行动。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Ready. Start the simulation to see the target logical flow.",
+      "sourceHash": "6ee251de1ff70429a2aa5f11a64f7dcef49d087d915a062103ad49fe68106aea",
+      "text": "已就绪。启动模拟，查看目标逻辑流程。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.journey.messages.1": {
       "source": "Authority is scoped before work begins.",
@@ -1396,20 +1980,20 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.journey.messages.2": {
-      "source": "Three execution paths receive their own bounded task.",
-      "sourceHash": "0a7328c4d357f3a2c3fbed1689d5475160f667b870e4360d46a4ae24c04e0ed0",
-      "text": "三条执行路径收到各自边界明确的子任务。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Each execution surface receives a bounded task.",
+      "sourceHash": "309b0dabfb5ed59f5ab628edf8b4403eb3420ec0156517e261e18d2c57f927a3",
+      "text": "每个执行载体都会收到边界明确的任务。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.journey.messages.3": {
-      "source": "The workflow is suspended safely while it waits.",
-      "sourceHash": "17b47429a94e5474b29a93ea524c94aeb93be86c70b68014c41d2a7a72fef6de",
-      "text": "工作流在等待期间被安全挂起。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "The chain runtime preserves a waiting continuation.",
+      "sourceHash": "1caa57529b4c4ccb8e22e89959609d7d0920cbabc3310e4230e636ffff3d65ab",
+      "text": "链上运行时会保留处于等待状态的延续。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.journey.messages.4": {
       "source": "A matching message wakes the continuation.",
@@ -1428,20 +2012,20 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.journey.messages.6": {
-      "source": "Concurrent results converge into a verified commit.",
-      "sourceHash": "90c5c02e559ce9e9fd2d7bc70a8b11a421d3f5e35ca75886a08083ff9e700db1",
-      "text": "并发结果汇入一次经过验证的提交。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Chain-side results converge; cross-surface atomic commit is the next horizon.",
+      "sourceHash": "49de5b57bd3c109f79425fe27c71b45630a5ffc300edf8a962c03f4d19e0d7c9",
+      "text": "链上结果逐步收敛；跨执行载体的原子提交是下一阶段。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.journey.playLabel": {
-      "source": "Follow the execution",
-      "sourceHash": "99d570257c505690c4fa6719adc42277f9e9fc12bf97d8f7b84c7aa6a49707e2",
-      "text": "跟随一次执行",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Follow the target flow",
+      "sourceHash": "1406aeb6e21c7fc05b1ed8352ca745f3a9330d652e9c91842f4627c688a98e3d",
+      "text": "跟随目标流程",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.journey.railLabels.0": {
       "source": "Replay",
@@ -1470,66 +2054,66 @@
     "glvm.journey.routes.0.label": {
       "source": "Needs trust",
       "sourceHash": "b67981f5d1438f7c8368032535101cb6ebd4dd2dc62d87aa6f8ee2ed2d361c64",
-      "text": "需要可信",
+      "text": "需要独立验证",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-13T13:03:29.193Z",
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.journey.routes.0.status": {
-      "source": "EVM today",
-      "sourceHash": "aeda27c372a8a49edf612a63a2c3e7ef06f380aa67c56814d74f6906233c28e9",
-      "text": "EVM 当前可用",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255",
+      "text": "核心运行时",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.journey.routes.0.text": {
-      "source": "Hold the warranty escrow and record the approval path where independent validators can verify it.",
-      "sourceHash": "ee48ea682387cefce7c5f8480a1d4187e5226963fc96b48af01f625b21f29c94",
-      "text": "托管质保押金并记录授权路径，让独立验证者能够复核。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Hold the warranty escrow and record its approval path where independent validators can verify the transition.",
+      "sourceHash": "a1a5aff58ab764054e7e5dc1c69a4311d8992a8d87eed6103b040721184ff8db",
+      "text": "托管质保金并记录批准路径，让独立验证者能够验证这次状态转换。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.journey.routes.0.title": {
-      "source": "On-chain TVM + EVM",
-      "sourceHash": "90cc2feb83e890aea74dc4409b808bb251c5060888fd64fdf9b1a65fafc528f7",
-      "text": "链上 TVM + EVM",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Public-chain TVM + EVM host",
+      "sourceHash": "bdd5f964811a8f83db70e4b8317de56b8507500dee139c0cdfd68514a68c0c4d",
+      "text": "公链 TVM + EVM 宿主",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.journey.routes.1.label": {
       "source": "Needs speed",
       "sourceHash": "bf4ddf1024ea9792b8156aaf84dfb8d375dbce0045cda328f1434b0b1b572e21",
-      "text": "需要速度",
+      "text": "需要低延迟",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-13T13:03:29.193Z",
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.journey.routes.1.status": {
-      "source": "GLVM architecture path",
-      "sourceHash": "49ae3b653fe8f53a6d295931134e833ee81e7f4f9c4baa55cb9abaf275c84614",
-      "text": "GLVM 架构路径",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Integration",
+      "sourceHash": "9a42d40a3f319da59ce05d08f77f348f7a4ae965ff3e8251334adf67432b011d",
+      "text": "集成中",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.journey.routes.1.text": {
-      "source": "Run the heavy diagnostic workload near elastic compute while keeping its authority narrow and explicit.",
-      "sourceHash": "b00048762aa3e8bd82e3da70e3be41197b4df7673646d29ce6ad4a0edb396b52",
-      "text": "把高负载诊断放到弹性算力附近，同时让它拿到的权限保持狭窄而明确。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Run heavy diagnostics near elastic compute while keeping authority narrow and explicit.",
+      "sourceHash": "eaf82bc75bf0001c06f030d40975fe041548e9e53c9d2dd41e2e51caee292631",
+      "text": "在弹性算力附近运行高负载诊断，同时让权限范围保持有限且明确。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.journey.routes.1.title": {
-      "source": "Cloud TVM",
-      "sourceHash": "6e9c244c7e84b9f7ca1ab92019a9d458353db6e661cdcafe23613d6fe05ad8de",
-      "text": "云端 TVM",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Private or cloud TVM",
+      "sourceHash": "893650e9b59fac7cf01c3958b8030299af939c4f09c94b91f40f025a2665114b",
+      "text": "私有或云端 TVM",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.journey.routes.2.label": {
       "source": "Needs locality",
@@ -1540,28 +2124,28 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.journey.routes.2.status": {
-      "source": "GLVM architecture path",
-      "sourceHash": "49ae3b653fe8f53a6d295931134e833ee81e7f4f9c4baa55cb9abaf275c84614",
-      "text": "GLVM 架构路径",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Roadmap",
+      "sourceHash": "92375f997ffe65ab7f04eeda8cb2d7f69ebea949a06132afd53c83fff276ef54",
+      "text": "路线图",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.journey.routes.2.text": {
       "source": "Read local sensor data and request the owner’s confirmation without exporting every private input.",
       "sourceHash": "c3f05a7f6c029477f12ece0035d83cf5e8b4ca2dd26ff36986f0c3ddd015d4c3",
-      "text": "读取本地传感器并请求所有者确认，不把每一份隐私输入都上传出去。",
+      "text": "读取本地传感器数据并请求所有者确认，无需上传全部私密输入。",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-13T13:03:29.193Z",
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.journey.routes.2.title": {
-      "source": "Personal-device TVM",
-      "sourceHash": "003ef60ebbeb452b6ee4ef01d349ac3bfd197b931d8845a4fe96d039a1212e12",
-      "text": "个人设备 TVM",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Client-device TVM",
+      "sourceHash": "b8444af56c33842f2bf34cefb99c5f00e9148675cf0099f15f7580274221d5ad",
+      "text": "客户端设备 TVM",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.journey.steps.0.label": {
       "source": "01",
@@ -1574,7 +2158,7 @@
     "glvm.journey.steps.0.text": {
       "source": "The repair agent receives only the rights required for this job.",
       "sourceHash": "08feaea60db08067726668a34ab93e420c20c85463a5c963c3b0d3a2e443eebe",
-      "text": "维修智能体只拿到这项任务真正需要的权限。",
+      "text": "维修智能体只获得完成这项任务所需的权限。",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-13T13:03:29.193Z",
       "reviewerNotes": "Imported from the existing in-script localized copy."
@@ -1596,20 +2180,20 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.journey.steps.1.text": {
-      "source": "Subtasks are described for chain, cloud, and device execution environments.",
-      "sourceHash": "cd47a4ef707d6a0ed984cbc552dddb5ef215760d2b2a9b0ae542007e70899315",
-      "text": "子任务分别被描述给链、云和设备执行环境。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "The workflow maps bounded subtasks to chain, private or cloud, and client-device TVMs.",
+      "sourceHash": "428094bddcde0c8a34131acc90c951d8b77ee56d93bb809402d0df3c43822063",
+      "text": "工作流将边界明确的子任务分别映射到链上、私有或云端，以及客户端设备 TVM。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.journey.steps.1.title": {
-      "source": "Dispatch",
-      "sourceHash": "811ace97bcf2c6d6a25db8bde24dd00c39040fedde80e78e70733e362791ead6",
-      "text": "任务分派",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Plan the dispatch",
+      "sourceHash": "cffdabdd3f1a6fbf942428627f33033ad16e87adfb9a7059600a18fc173f1679",
+      "text": "规划分派",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.journey.steps.2.label": {
       "source": "03",
@@ -1620,12 +2204,12 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.journey.steps.2.text": {
-      "source": "When a reply is missing, the TVM preserves the execution context instead of blocking the whole machine.",
-      "sourceHash": "a7c28c13c42953acd7d317946fb3de77266170e38f2a94ac3433e6d7853e21c9",
-      "text": "回复尚未到达时，TVM 保存执行上下文，而不是堵住整台机器。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "On the chain runtime, a missing reply preserves the continuation instead of finalizing the transaction early.",
+      "sourceHash": "098f168695d88e01056c52ac868a3bbd1ae2d8b3eba494b7a5193ed6cee283b2",
+      "text": "在链上运行时中，若回复尚未到达，系统会保留延续，而不是提前完成交易的最终确认。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.journey.steps.2.title": {
       "source": "Wait / suspend",
@@ -1646,7 +2230,7 @@
     "glvm.journey.steps.3.text": {
       "source": "A produced result meets the waiting continuation on a channel; the workflow resumes.",
       "sourceHash": "8155fd6662e302df0226bc304704afef7dd359f0a9bce33df4728ad72228b420",
-      "text": "结果与通道上等待的后续执行相遇，工作流从原处恢复。",
+      "text": "结果与通道中等待的延续完成匹配，工作流随即从原处恢复。",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-13T13:03:29.193Z",
       "reviewerNotes": "Imported from the existing in-script localized copy."
@@ -1670,10 +2254,10 @@
     "glvm.journey.steps.4.text": {
       "source": "ReplayTrie records the choices needed for another validator to reproduce the run.",
       "sourceHash": "92a0cce1b22aee0eb40319ac8948042b7a8e5fdb98dbc715762344a571ccb680",
-      "text": "ReplayTrie 记录必要选择，让其他验证者能够复现这次执行。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "text": "ReplayTrie 记录必要的选择，使其他验证者能够重放这次执行。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:52:19.111Z",
+      "reviewerNotes": "Final native Chinese semantic and terminology polish."
     },
     "glvm.journey.steps.4.title": {
       "source": "Replay proof",
@@ -1692,412 +2276,668 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.journey.steps.5.text": {
-      "source": "BlockGit and Block Merge turn concurrent work into a verifiable state transition.",
-      "sourceHash": "748347e45c7611cfe8db717b93fe97639a19536ce87a2041ee9c07bc3918f759",
-      "text": "BlockGit 与 Block Merge 把并发工作收束成可验证的状态变化。",
+      "source": "BlockGit and Block Merge converge verifiable chain-side results. Extending one atomic commit across every execution surface is the GLVM horizon.",
+      "sourceHash": "3b57ec93ac94a3bad6ee3c7c5108851caf4a98cb8dd92b90d6f2e1afe8432f58",
+      "text": "BlockGit 与 Block Merge 让链上结果收敛。将原子提交扩展到更多执行载体，是 GLVM 的下一阶段。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-07-29T04:00:00.000Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.journey.steps.5.title": {
-      "source": "Merge / commit",
-      "sourceHash": "b62ef683983ee1aa21eed72bf4c44be0e614a583629dab8031122f64b9a65a08",
-      "text": "合并 / 提交",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Finalization boundary",
+      "sourceHash": "61e4e99696ed5622231ef0abf28a26b5208d00f08130672d344d09c19d79a3e8",
+      "text": "最终确认边界",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.journey.text": {
-      "source": "Imagine a cross-company equipment repair. Escrow must be verifiable, diagnosis needs fast compute, and the device owner must approve access locally. GLVM describes one workflow across all three environments without turning them into one unsafe shared machine.",
-      "sourceHash": "bc77740c5994cb2af7b6d573fef90e355d72a0214f492f4f83c1fb399d26603e",
-      "text": "设想一次跨公司的设备维修：质保押金必须可验证，故障诊断需要快速计算，设备所有者又必须在本地确认授权。GLVM 用一条工作流连接三个环境，同时不把它们变成一台毫无边界的共享机器。",
+      "source": "Consider a cross-company device repair: escrow needs independent verification, diagnostics need elastic compute, and the device owner should approve local access. In the GLVM model, each task maps to the execution surface that matches its trust, latency, and data boundary while authority remains explicit.",
+      "sourceHash": "83b8841ffd76125feb46bd2507093b1f2aacb99291a234496ccf94cbc2a11e2c",
+      "text": "设想一次跨公司的设备维修：托管资金需要独立验证，诊断需要弹性算力，设备所有者需要批准本地访问。在 GLVM 模型中，每项任务根据其信任要求、延迟与数据边界选择合适的执行载体，同时保持权限明确。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-07-29T03:00:00.000Z",
+      "reviewerNotes": "Official-site wording reviewed against the current GLVM maturity boundary."
     },
     "glvm.journey.title": {
-      "source": "Trust, speed, and locality decide where work runs",
-      "sourceHash": "6913ec1f21b805a8b83d0348bba11440b33580c1196c7a2aacc71851552cf2a4",
-      "text": "信任、速度与本地性，决定任务落点",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Choose the execution surface by trust, response time, and data locality",
+      "sourceHash": "15abb739e7275e89442f5dd21ac9f73c0fce5e58cbbe7e4a860d9424b4c73d55",
+      "text": "执行载体取决于信任要求、响应速度与数据本地性。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.metaDescription": {
-      "source": "Explore the Global Logical Virtual Machine: ALUX's architecture for connecting TVMs across blockchain, cloud, and personal devices into one verifiable logical execution layer.",
-      "sourceHash": "cd7128025a660fb07cce969824ccc2be0c66b863622914b271d3e742d9d44ccc",
-      "text": "了解全局逻辑虚拟机（GLVM）：ALUX 的这套架构旨在将区块链、云和个人设备上的 TVM 连接成一个可验证的逻辑执行层。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:53:26.079Z",
-      "reviewerNotes": "Native final review against the current English source, ALUX knowledge base, and official terminology."
+      "source": "Explore GLVM, ALUX's developer-facing logical execution model built on TVM concurrency, replay, object capabilities, atomic finalization, replication, and consensus.",
+      "sourceHash": "75e99917da452dc7b4f418a7f88f3e9be7f4466811d75bb312f8a6d527cfa29c",
+      "text": "探索 GLVM：ALUX 以 TVM 的并发、重放、对象能力、原子最终确认、复制与共识为基础，构建面向开发者的逻辑执行模型。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T03:00:00.000Z",
+      "reviewerNotes": "Official-site metadata reviewed against the current GLVM maturity boundary."
     },
     "glvm.metaTitle": {
       "source": "GLVM | ALUX Network",
       "sourceHash": "f00a93b9981277c85809c9ea289e2414f429d04adce5b929b5324f666e82f3b3",
-      "text": "GLVM 全局逻辑虚拟机 | ALUX Network",
+      "text": "GLVM | ALUX Network",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.ocapStory.alt": {
+      "source": "A CEO and Bob meet; the identity badge on the left represents broad access, while one OCAP key on the right names only Bob’s record.",
+      "sourceHash": "e115f6c27c33f30ac86eda28b278717fe75c63d7a4bb8588aae0ce94e84c629d",
+      "text": "CEO 与 Bob 会面；左侧工牌代表广泛的身份权限，右侧一把 OCAP 钥匙只指向 Bob 的记录。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T06:30:00.000Z",
+      "reviewerNotes": "工牌是身份权限的视觉符号，不是对象能力。"
+    },
+    "glvm.ocapStory.boundary.label": {
+      "source": "Terminology",
+      "sourceHash": "9615bd0ba9f0c510594876bfb4bd0d2341a3eb5d140ba36bd9341ac9aada9a3c",
+      "text": "术语说明",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T00:00:00.000Z",
+      "reviewerNotes": "Public terminology note distinguishes the OCAP key metaphor from a cryptographic key."
+    },
+    "glvm.ocapStory.boundary.text": {
+      "source": "Here, “key” visually represents an OCAP unforgeable name—a capability reference. It is not a cryptographic key. This guarantee applies to TVM-native, capability-mediated interactions; hosted EVM permissions and external services need their own controls.",
+      "sourceHash": "fcf304bc1dac69a5d92ef905b9e7093da181a0206cacb469f59b759c0b0bce80",
+      "text": "这里用“钥匙”呈现 OCAP 中不可伪造的名字，也就是对象能力引用；它不是密码学密钥。该保证适用于 TVM 原生、以能力为中介的交互；托管型 EVM 权限和外部服务仍需各自的控制机制。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T06:30:00.000Z",
+      "reviewerNotes": "钥匙是 OCAP 不可伪造名字的视觉表达，不是密码学密钥。"
+    },
+    "glvm.ocapStory.caption": {
+      "source": "CEO + Bob · OCAP key = unforgeable name, not a cryptographic key",
+      "sourceHash": "1779c439cc5fe670e3910fcd7f6fea464d57a155598177e48246ddd9af32e064",
+      "text": "CEO + Bob · OCAP 钥匙＝不可伪造的名字，不是密码学密钥",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T06:30:00.000Z",
+      "reviewerNotes": "图片近旁明确注明 OCAP 钥匙不等于密码学密钥。"
+    },
+    "glvm.ocapStory.comparison.0.label": {
+      "source": "Broad identity authority",
+      "sourceHash": "132fc15fc8361bdf38f69fb8f4e244a2e34c0fe289e7d422cce0734256366c45",
+      "text": "宽泛的身份权限",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.ocapStory.comparison.0.text": {
+      "source": "Even when the task concerns Bob alone, the identity authority represented by the CEO’s badge can still cover Financials and the records of Alice, Carol, and Bob.",
+      "sourceHash": "b492843425bce75d9dc15dae9f8e4c7d729c208d119d1612af166f96a5e9e8c0",
+      "text": "即使任务只涉及 Bob，CEO 工牌所代表的环境权限仍可能覆盖财务档案，以及 Alice、Carol 和 Bob 的人员记录。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T00:00:00.000Z",
+      "reviewerNotes": "The badge represents identity-based ambient authority; the OCAP key represents a capability reference."
+    },
+    "glvm.ocapStory.comparison.0.title": {
+      "source": "The badge carries unrelated access into the task",
+      "sourceHash": "e9787af416e84c3b4476282b9a8dccd5ca40f763433a9c4c82cd2a991ecd85a2",
+      "text": "工牌会带入无关权限",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T00:00:00.000Z",
+      "reviewerNotes": "Identity-based authority is expressed as a badge."
+    },
+    "glvm.ocapStory.comparison.1.label": {
+      "source": "Explicit object capability",
+      "sourceHash": "5c30d23e83f123be031e642d690e7f5c6e870ccf83257d3e604f6b837ee15786",
+      "text": "显式传入的对象能力",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.ocapStory.comparison.1.text": {
+      "source": "This key represents an unforgeable name that identifies Bob’s record. Without a capability reference to another pre-existing object, the task cannot name or reach it. The TVM checks that boundary at runtime.",
+      "sourceHash": "de89ab53adbd70eb84af8cceeffe669dcd8c7b5f79c73b775d570ae40b87f90d",
+      "text": "这把钥匙代表一个不可伪造的名字：它只指向 Bob 的记录。没有指向其他既有对象的钥匙，任务便无法命名或访问那些未被显式授予的对象。TVM 会在运行时检查这一边界。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T07:10:00.000Z",
+      "reviewerNotes": "明确区分视觉中的 OCAP 钥匙、不可伪造的名字与密码学密钥。"
+    },
+    "glvm.ocapStory.comparison.1.title": {
+      "source": "The task receives one key that names Bob’s record",
+      "sourceHash": "0433bf57a7d6baead31e4c236599cb37e3e26f27922dfd95b5772285ebeaec5e",
+      "text": "只把指向 Bob 记录的钥匙交给任务",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T06:30:00.000Z",
+      "reviewerNotes": "消除“Bob 记录的钥匙”的所有关系歧义。"
+    },
+    "glvm.ocapStory.eyebrow": {
+      "source": "Object-capability security",
+      "sourceHash": "ce0555dd88901a5b700cc20888572641b765576577b9bb6f9fc7e9b631dc951f",
+      "text": "对象能力安全",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.ocapStory.takeaway.label": {
+      "source": "POLA · Principle of least authority",
+      "sourceHash": "bf24dfea3c537200e9f82b28a7e791f982fa4dee0a470bbca0f06f7c4d428631",
+      "text": "POLA · 最小权限原则",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
+    },
+    "glvm.ocapStory.takeaway.text": {
+      "source": "Model safeguards can reduce unsafe behavior, but capability boundaries enforce least authority at runtime. If an agent has only the key that names Bob’s record, compromise stays within that object instead of expanding to all the identity authority represented by the CEO’s badge.",
+      "sourceHash": "0e55ad93bcf62bba32b02baec8effc446ca5d60b60c1845b7a462638a7abf2e8",
+      "text": "模型层防护可以降低不安全行为的发生概率；对象能力边界则在运行时落实最小权限。任务若只有指向 Bob 记录的钥匙，即使遭到劫持，影响也会被限制在这一对象范围内，不会扩展到 CEO 工牌所代表的其他环境权限。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T06:30:00.000Z",
+      "reviewerNotes": "明确钥匙的指向关系，并把工牌定位为身份权限的视觉符号。"
+    },
+    "glvm.ocapStory.text": {
+      "source": "In the CEO–Bob example, identity-based access can carry the ambient authority represented by the CEO’s badge into the task. With object capabilities, the task receives only one key that names Bob’s record. The TVM enforces the reachable boundary at runtime. Without a capability reference to another pre-existing object, the task cannot name or reach it.",
+      "sourceHash": "cbc576605911f94b6a78716a5d7a9cdf58324bdbf47a4bcdca1a63d79ee4873e",
+      "text": "基于身份的访问会将 CEO 工牌代表的环境权限一并带入任务。对象能力只给任务一把指向 Bob 记录的钥匙，这条边界由 TVM 在运行时检查。没有其他对象能力，任务便无法命名或访问其他既有对象。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-31T05:55:00.000Z",
+      "reviewerNotes": "按官网展示语气压缩为三个语义单元，去除冗余示例引导与分号孤行。"
+    },
+    "glvm.ocapStory.title": {
+      "source": "Give the task one key—not the user’s badge.",
+      "sourceHash": "0619dac626585f411ab421490b6b0486c0a5bbe22897830714949f91cd6498cf",
+      "text": "只把一把钥匙交给任务，而不是用户的工牌。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T00:00:00.000Z",
+      "reviewerNotes": "Founder-corrected distinction: key is OCAP; badge is identity-based access."
     },
     "glvm.stack.eyebrow": {
-      "source": "Under the glass",
-      "sourceHash": "f7f3c0c2c044ec1398e8c53d8996b8f03e9a92dbd9d620a298432367a9585734",
-      "text": "玻璃机舱之下",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Runtime anatomy",
+      "sourceHash": "a7242fe42f667a55876f0e7ff6ebfb443d2efcf60f47f86235e9cf9540fc965b",
+      "text": "运行时剖面",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.stack.items.0.label": {
+      "source": "Bytecode VM",
+      "sourceHash": "990c94510f107d74042707fccda44e0a38073b46e68b7efdbc00eee5c70e45d5",
+      "text": "字节码虚拟机",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.0.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255",
+      "text": "核心运行时",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.stack.items.0.text": {
+      "source": "The concrete concurrent engine runs bytecode and lets independent processes exchange data and continuations through channels.",
+      "sourceHash": "fcd2676d828a5c7ad31cda24c6d395b0d4a818815e855d82594d48d7e51e9e3f",
+      "text": "具体的并发引擎负责运行字节码，并让独立进程通过通道交换数据与延续。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.0.title": {
+      "source": "TVM · tuple space · COMM",
+      "sourceHash": "03919fa3c67fdb1b7cdd3f11a38b16b6f7bc116be388162035bb138ba6dc9bdb",
+      "text": "TVM · 元组空间 · COMM",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.1.label": {
+      "source": "Security",
+      "sourceHash": "8f6fb4eb7f42c0e245e29e63f5b82cc3ba19852681d1ed9aed291f59cf75ec0e",
+      "text": "安全",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.1.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255",
+      "text": "核心运行时",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.stack.items.1.text": {
+      "source": "Unforgeable references make reachable authority explicit and let the runtime enforce least-authority boundaries.",
+      "sourceHash": "35aff70c2ba210a3d7b95fb683297bfcfe5fc2287433faa3600272c01c7de560",
+      "text": "不可伪造的引用让可达权限显式化，并使运行时能够执行最小权限边界。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.1.title": {
+      "source": "Native object capabilities",
+      "sourceHash": "ae11170e4b8f2e2e1e8026e7f012b8b317de86f730fbd980f0ff467af97e116a",
+      "text": "原生对象能力",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.2.label": {
+      "source": "Atomicity",
+      "sourceHash": "cd614d71b9d86a64404676112b1668fc18d0f1a0d1e3b96cdaf3b136eecbbdc5",
+      "text": "原子性",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.2.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255",
+      "text": "核心运行时",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.stack.items.2.text": {
+      "source": "Execution contexts can suspend across blocks, resume from preserved continuations, and reach a deferred finalization boundary.",
+      "sourceHash": "37e6f0f1bd5ecb75b5cd961c5728ec6c12089108f945f2c91f8b6483ba347830",
+      "text": "执行上下文可以跨区块挂起，从保留的延续中恢复，并抵达延后的最终确认边界。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.2.title": {
+      "source": "Cross-block atomic execution",
+      "sourceHash": "ba4d6cc3ca486b5aca5303de4e0d67c4761b91500d5ae2844227887c09750005",
+      "text": "跨区块原子执行",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T03:00:00.000Z",
+      "reviewerNotes": "Scoped to the atomic execution and finalization mechanism proven by the current source."
+    },
+    "glvm.stack.items.3.label": {
+      "source": "Finality",
+      "sourceHash": "98606421f2e4eeb1f9068b19fa6e2872901bd399265cd7f49eefbe51eb5b3c45",
+      "text": "最终性",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.3.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255",
+      "text": "核心运行时",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.stack.items.3.text": {
+      "source": "A block DAG, deterministic leader rotation, and merge rules converge concurrent chain-side work without a permanent leader.",
+      "sourceHash": "2b3a4c4efebb045a53d7bf3e856201a5ca0fa9c158d8032ba5a86ed08eaa805a",
+      "text": "区块 DAG、确定性领导者轮换与合并规则，使链侧并发工作得以收敛，而不依赖永久领导者。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.3.title": {
+      "source": "BlockGit · fringe · merge",
+      "sourceHash": "d5b546f2d9a0156c8e4ffe49dd0925a5eb25b1cf91712edc5ce16ca8489ddd91",
+      "text": "BlockGit · Fringe · 合并",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.4.label": {
+      "source": "Replay",
+      "sourceHash": "c8dae6371b33b8d67fdbd138fd28e89eefbd7af6b764f282b0872812b06a150c",
+      "text": "重放",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.4.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255",
+      "text": "核心运行时",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.stack.items.4.text": {
+      "source": "Recorded non-deterministic choices and execution traces let validators reproduce the accepted path.",
+      "sourceHash": "d88808bb9c6b94d6af02b5278bacd2fd5da1bff362042b63e91b7b341515083d",
+      "text": "已记录的非确定性选择与执行轨迹，使验证者能够重放被接受的路径。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.4.title": {
+      "source": "ReplayTrie · trace",
+      "sourceHash": "cbe7fa6f3572ba3d28515b08fecab9fb3241c0181c71d0676648127b30d743ec",
+      "text": "ReplayTrie · 执行轨迹",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.5.label": {
+      "source": "Network",
+      "sourceHash": "1744b96470b51bf30935e2748b237a708d226a0430063f92accf90961cd28d86",
+      "text": "网络",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.5.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255",
+      "text": "核心运行时",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.stack.items.5.text": {
+      "source": "The node layer carries proposals, blocks, state evidence, and validator coordination beneath the execution abstraction.",
+      "sourceHash": "efea89926228376979657e5f0952b915214219d4a0d843430eac31056162bdf1",
+      "text": "节点层在执行抽象之下传递提案、区块、状态证据，并协调验证者。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.5.title": {
+      "source": "Peer and validator network",
+      "sourceHash": "546da370e4f1ab453340d349867533675f451e5c508ddc0e18845895043e2deb",
+      "text": "对等节点与验证者网络",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.6.label": {
       "source": "Language",
       "sourceHash": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1",
       "text": "语言",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.0.status": {
-      "source": "Current",
-      "sourceHash": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a",
-      "text": "当前",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.0.text": {
-      "source": "Tolang describes concurrent processes; the compiler lowers source into TVM executable bytecode.",
-      "sourceHash": "1c1b8697f2680e1cf4cf5f3d9a8c269fb3cda84be69fb9fdceba92bb8b0a0032",
-      "text": "Tolang 描述并发进程，编译器将源码编译为 TVM 可执行字节码。",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:49:18.632Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology baseline."
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
-    "glvm.stack.items.0.title": {
+    "glvm.stack.items.6.status": {
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255",
+      "text": "核心运行时",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.stack.items.6.text": {
+      "source": "Tolang describes concurrent processes; the compiler lowers source into TVM-executable bytecode.",
+      "sourceHash": "9335e9efd1a9dc8459a48974313834059bef65f85ea5fcd3a6f2c3ea5ba0dd47",
+      "text": "Tolang 描述并发进程；编译器将源码转换为 TVM 可执行字节码。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.6.title": {
       "source": "Tolang → tolangc → .tox",
       "sourceHash": "e0db64594d3a5a3499de8819f6ee501e5e938ba3afdd5dc60e5f27436e0ffb28",
       "text": "Tolang → tolangc → .tox",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:21:05.596Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX baseline."
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
-    "glvm.stack.items.1.label": {
-      "source": "Runtime",
-      "sourceHash": "1093115897879aa3ad9511a1dc2850929cfb60ba45ec741605f69f5d20203472",
-      "text": "运行时",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.1.status": {
-      "source": "Current",
-      "sourceHash": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a",
-      "text": "当前",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.1.text": {
-      "source": "Independent processes exchange data and continuations through typed channels instead of sharing memory.",
-      "sourceHash": "68daa94e42b6b8376d4cc70934d6a77c45f8675002b86f9d0c66aa66be3d938b",
-      "text": "独立进程通过带类型的通道交换数据与后续执行，而不是共享内存。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.1.title": {
-      "source": "TVM · Tuple space · COMM",
-      "sourceHash": "ecaf10b9109b0b2ffa765c5d15bb765277a866f7e009a4fde1c8e447bc145f60",
-      "text": "TVM · 元组空间 · COMM",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.2.label": {
-      "source": "Guest VM",
-      "sourceHash": "eb83200c3880960392a32ae0a9c5cc5bb8186be2231af331c3ae51c6322aa8f4",
+    "glvm.stack.items.7.label": {
+      "source": "Guest VMs",
+      "sourceHash": "4b31c61fb6db30e3235443002977b39c3b82105952bc2eae576ee010d60d0ba0",
       "text": "客体虚拟机",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.2.status": {
-      "source": "Today",
-      "sourceHash": "2b065c7c9ce466e5ebcad757987d5d660ee4c9ea708bc62c43444b53334738ba",
-      "text": "已支持",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.2.text": {
-      "source": "EVM runs in an isolated sandbox; global storage and calls are coordinated through tuple-space adapter contracts.",
-      "sourceHash": "6df72b5cb7148f0a08dcba49c774b9dd68b2740cbacb2f913ee2347ce0f5aa69",
-      "text": "EVM 在隔离沙箱中执行；全局存储与调用通过元组空间适配器合约协调。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.2.title": {
-      "source": "EVM through TSAC",
-      "sourceHash": "042e2c9d23a0921c116af91e9077453fbec24869fb334aea20a5cd8c8190c8e3",
-      "text": "EVM 通过 TSAC 接入",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.3.label": {
-      "source": "Guest VM",
-      "sourceHash": "eb83200c3880960392a32ae0a9c5cc5bb8186be2231af331c3ae51c6322aa8f4",
-      "text": "客体虚拟机",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.3.status": {
-      "source": "Planned",
-      "sourceHash": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225",
-      "text": "规划中",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.3.text": {
-      "source": "WASM belongs to the heterogeneous-VM direction, but it is not shipped in the current baseline.",
-      "sourceHash": "ff551340c41a795224a6fc5639e771103da4e89f55a4869d29b6407094ba511c",
-      "text": "WASM 属于异构虚拟机方向，但当前基线尚未交付。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.3.title": {
-      "source": "WASM",
-      "sourceHash": "4bec5a51a3d35e535a536b987d7a904ffd7b81130379af69a3f8690371a7e6f6",
-      "text": "WASM",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.4.label": {
-      "source": "Durability",
-      "sourceHash": "f05a9541d5080a974e3013663f0780de06342b6b803fa52d57ad772aa1ce46f2",
-      "text": "持久执行",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.4.status": {
-      "source": "Current",
-      "sourceHash": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a",
-      "text": "当前",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.4.text": {
-      "source": "A task can wait across blocks, resume from a preserved branch, and remain reproducible.",
-      "sourceHash": "98d4fb770f3262791a5877102e83e8bc7089524b50c14300f447b5d2a9fee1d5",
-      "text": "任务可以跨区块等待、从保存的分支恢复，并保持可复现。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.4.title": {
-      "source": "ExeContext · ReplayTrie · cross-block resume",
-      "sourceHash": "e0c9a19b063b5e7339bf7390b5a9c7025f9390612f83f60f1e33e4fe651bae19",
-      "text": "ExeContext · ReplayTrie · 跨区块恢复",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.5.label": {
-      "source": "Agreement",
-      "sourceHash": "2dff10f6a8b7e6985b6ad779a205a3cf95f95d5966402e50d288696519bbe2ac",
-      "text": "达成一致",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.5.status": {
-      "source": "Current",
-      "sourceHash": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a",
-      "text": "当前",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.stack.items.5.text": {
-      "source": "A block DAG with deterministic rotating leaders and merge rules finalizes concurrent work without a permanent leader.",
-      "sourceHash": "9aa81f7c47b2bf27211afd2a027bc4e5c46c830a57db0408f1469ceb66705653",
-      "text": "区块 DAG 通过确定性轮转领导者与合并规则完成并发工作的最终确认，同时不依赖永久领导者。",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:38:44.312Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology."
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
-    "glvm.stack.items.5.title": {
-      "source": "BlockGit · Fringe · Block Merge",
-      "sourceHash": "12f242a1020a92f2bf2b53570b24be5c189a924732d69604b193633341af68d2",
-      "text": "BlockGit · Fringe · Block Merge",
+    "glvm.stack.items.7.status": {
+      "source": "EVM core · WASM roadmap",
+      "sourceHash": "81276bfcac6291378d6bbcb912d72f006aed13bc13e1ba417ed9503c061ce8ac",
+      "text": "EVM 核心 · WASM 路线图",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:21:05.596Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX baseline."
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.stack.items.7.text": {
+      "source": "The EVM runs as a stateful guest through TSAC-style coordination. WASM extends the heterogeneous-VM direction.",
+      "sourceHash": "9947520b939e0502383535249f165dc102d8203d8a94b054922d6e1fe5123b23",
+      "text": "EVM 通过 TSAC 式协调，以有状态客体虚拟机的形式运行；WASM 则把这套架构延伸到异构虚拟机。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.stack.items.7.title": {
+      "source": "EVM host · WASM roadmap",
+      "sourceHash": "77fde891dc361c324056288fbacde0325d8760c80c39d130065b9f12ddb54eec",
+      "text": "EVM 宿主 · WASM 路线图",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.8.label": {
+      "source": "Tooling",
+      "sourceHash": "71ef53929575897ba4dd000853053e9543cbc705dcd4d95a11f60d0c7eef0c0d",
+      "text": "工具链",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.stack.items.8.status": {
+      "source": "Developer surface",
+      "sourceHash": "79c47dc28514620ea895e673af224e92ad7a4d0dd41c35ce91a55321e91d8f74",
+      "text": "开发者工具",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.stack.items.8.text": {
+      "source": "The compiler, LSP, playground, test suite, and diagnostics bring the execution model into developer workflows.",
+      "sourceHash": "fbca777fbdd14f8dc0c09d7adc311c4cc1d05bc25369c20b1af15290776d63b8",
+      "text": "编译器、LSP、Playground、验证套件与诊断工具，让这套执行模型进入日常开发。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T04:00:00.000Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+    },
+    "glvm.stack.items.8.title": {
+      "source": "Compiler · LSP · playground",
+      "sourceHash": "e50ef2fe1ee7804ea104634bea3fb85c73a5f0476b60bd45aa97cfd0c4c7efb9",
+      "text": "编译器 · LSP · Playground",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.stack.text": {
-      "source": "GLVM is a system architecture, not a second bytecode VM. The map below ties that architecture to mechanisms in the current ALUX codebase and clearly marks what is still planned.",
-      "sourceHash": "88f9ed3c27f77c299bd69c4e43a353a6d033903c629abc32d9485fde24047313",
-      "text": "GLVM 是系统架构，不是第二套字节码虚拟机。下面这张图把架构逐层对应到 ALUX 当前代码中的具体机制，并明确标出仍在规划中的部分。",
+      "source": "GLVM is not a second bytecode VM. These nine architecture views—from TVM execution, object capabilities, and replay to BlockGit, guest VMs, and developer tooling—show the capability system behind its logical execution model.",
+      "sourceHash": "35362835fc751bf877ced87b01c86635b574d0c95654b64a7677a6ac0cd1c6a6",
+      "text": "GLVM 不是另一种字节码虚拟机。以下九个架构切面从 TVM 执行、对象能力与重放，一路延伸到 BlockGit、客体虚拟机和开发者工具，共同呈现这一逻辑执行模型的能力体系。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-07-29T03:00:00.000Z",
+      "reviewerNotes": "Reframed as architecture views rather than a literal source-code module count."
     },
     "glvm.stack.title": {
-      "source": "What GLVM is built from",
-      "sourceHash": "b8967f5f7ef6cf6c135da1c7fff3223a71b0b698ac5becf8dd5e869f9190ed80",
-      "text": "GLVM 由什么构成",
+      "source": "Nine capability areas behind the GLVM abstraction",
+      "sourceHash": "e5bfb468c2559721574e1a3825c9abb67d4785490f2fa2e987c5d5b4d08c24ce",
+      "text": "九个关键能力，支撑同一逻辑执行模型",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-07-29T03:00:00.000Z",
+      "reviewerNotes": "Reframed as capability areas rather than a literal source-code module count."
     },
     "glvm.status.eyebrow": {
-      "source": "Reality check",
-      "sourceHash": "92ba2811deadff10ed2371628fc6d5b6c0fa072b5df0b2673af4a9c77f9efd99",
-      "text": "真实进度",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Build horizon",
+      "sourceHash": "0a5fbecabffb0832e997b2d6143cf88e90574d053374a771ee27bc38628beace",
+      "text": "扩展蓝图",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.status.groups.0.items.0": {
-      "source": "Concurrent TVM execution",
-      "sourceHash": "67a305169a27547ed9d29bf7befac37c31bd4fad31473dd22616d80ce09eabd3",
-      "text": "TVM 并发执行",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Concurrent TVM and COMM",
+      "sourceHash": "6f718d2ed581b695740e2b2d0dfe561418c2b4bf18206aa9bf6f7c180f29a60f",
+      "text": "TVM 并发执行与 COMM",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.status.groups.0.items.1": {
-      "source": "EVM through TSAC",
-      "sourceHash": "042e2c9d23a0921c116af91e9077453fbec24869fb334aea20a5cd8c8190c8e3",
-      "text": "EVM 通过 TSAC 接入",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "ReplayTrie and execution traces",
+      "sourceHash": "17b3ed6ea1e7d1286d8ea83eab3ce1245cce359845994409068e0fcc52ff0a47",
+      "text": "ReplayTrie 与执行轨迹",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.status.groups.0.items.2": {
-      "source": "Cross-block suspend / resume",
-      "sourceHash": "280165c3bc918132677ba10d47d78aa03a26e3f54997d1523be68a47fa253801",
-      "text": "跨区块挂起 / 恢复",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Cross-block suspend / resume paths",
+      "sourceHash": "4bd45f420202e2c806835898255a5bebb342fd221fc30dd688d87dd3f7d1c2c0",
+      "text": "跨区块挂起 / 恢复路径",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.status.groups.0.items.3": {
-      "source": "OCAP and deterministic replay",
-      "sourceHash": "828d6f2790b8bbb47c2db10afedcf3b6cb3bc2020918e26ea60772c906a7acae",
-      "text": "OCAP 与确定性重放",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Native OCAP foundations",
+      "sourceHash": "ec35422f1912ac2c7111ce45b601fc7e1bd723da744c5feb7bf26145deacde7e",
+      "text": "原生 OCAP 基础",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.status.groups.0.items.4": {
-      "source": "BlockGit DAG + merge",
-      "sourceHash": "22658ade3e1ce7360e23c4d14bc9b9eec20706f6de877787d60d3700e988f4b0",
-      "text": "BlockGit DAG 与合并",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "EVM host path",
+      "sourceHash": "384ba5bbfe210ef12f881f36b10b07ad852299515d4f9c9ef3499a2f86133270",
+      "text": "EVM 宿主路径",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.status.groups.0.items.5": {
+      "source": "BlockGit DAG, fringe, and merge",
+      "sourceHash": "0f105ba1a4563e98d4c8fce12f4957412a1f23dfe7b118bf96a062e7f7590a93",
+      "text": "BlockGit DAG、Fringe 与合并",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.status.groups.0.label": {
-      "source": "Current engine",
-      "sourceHash": "6cbbcbea1d299f63f96603d1605ec22decdc3f0e6b6bd302f9f9c7df3e1ef036",
-      "text": "当前引擎",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Core runtime",
+      "sourceHash": "0c413144012d4907b460c8b78c1211ee28d9003552912be20e6c788975bb5255",
+      "text": "核心运行时",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.status.groups.1.items.0": {
-      "source": "VM abstraction across chain, cloud, and device",
-      "sourceHash": "0b486d0c685511d40a1250cf81acf8baa7d2e3deef7c02a8badfe7ae967d9006",
-      "text": "链、云、设备之间的虚拟机抽象",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Private or cloud engine deployment",
+      "sourceHash": "68d651f88b465bd0972ca500aad9754137cf14df32c0600473c84e98baa14548",
+      "text": "私有或云端引擎部署",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.status.groups.1.items.1": {
-      "source": "Richer per-operation policy gates",
-      "sourceHash": "4a9867253d8c04035567d00acd66db17f3b9537a34f08c126b5a3ba7d9df01d9",
-      "text": "更细粒度的操作级策略控制",
+      "source": "GLVM abstraction across deployment surfaces",
+      "sourceHash": "3f0315ef73ee140054b46eb2e5977a31515a117be951bed2471347c3ae5c5845",
+      "text": "跨部署载体的 GLVM 抽象",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:49:18.632Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology baseline."
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.status.groups.1.items.2": {
-      "source": "Session-type collaboration protocols",
-      "sourceHash": "90640f2635a9ba23ace9d7cfe9f2139f65a4bdd77fe403a828780dc10bc07f58",
-      "text": "会话类型协作协议",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Production-scale hardening",
+      "sourceHash": "e6e04a4a6af4e20256e82a5a9bb741a9bddcc6ae3f5ae984ee43470c10a12216",
+      "text": "生产规模加固",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.status.groups.1.items.3": {
-      "source": "Production scale hardening",
-      "sourceHash": "6723a11ba7b281c7314692ad614de137ee966e901a429c31f3d2c95beaa9ac96",
-      "text": "面向生产规模的加固",
+      "source": "Richer policy and guarded-channel controls",
+      "sourceHash": "e5faa4f3712d32d46b6861fb43ff5d7e3039aff6937444f628ac77d109e9e25e",
+      "text": "更丰富的策略与受控通道机制",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:49:18.632Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology baseline."
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.status.groups.1.items.4": {
+      "source": "Operator recovery and observability",
+      "sourceHash": "a037f7eaf8b7984cdcd17e4a08ec762a93907a8d357f38b8968fc4237d57e1b4",
+      "text": "运维恢复与可观测性",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.status.groups.1.label": {
-      "source": "Designed / expanding",
-      "sourceHash": "b7730d21f2eec08cd4ef9af4726ed7f2044f31982f24ea21b3556dd9d532e406",
-      "text": "已设计 / 扩展中",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Expanding the system",
+      "sourceHash": "059ef39278278ce0463e68e0eef481eb41957ae81122f6fbd0601e6304cb0e05",
+      "text": "系统扩展",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.status.groups.2.items.0": {
+      "source": "Cross-shard horizontal atomicity",
+      "sourceHash": "5f76ed30ca6d400cd2c706d803cea143d9da47e56bc4a900af02e713be89ba04",
+      "text": "跨分片横向原子性",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.status.groups.2.items.1": {
       "source": "WASM guest VM",
       "sourceHash": "80ae00aff741f282a0e3d554924aa68f70fb68abee99bbe7ff54cbf8bf2e0154",
       "text": "WASM 客体虚拟机",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
-    },
-    "glvm.status.groups.2.items.1": {
-      "source": "Cross-shard execution",
-      "sourceHash": "a5bffab6ff0432a42f2345e46163e80e29c7db97857717d7675464cf1a12e30b",
-      "text": "跨分片执行",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.status.groups.2.items.2": {
-      "source": "Complete agent and World OS layer",
-      "sourceHash": "c918e20a1536dc8e6db4918beff0b78d4b62b7ee91be2c6208d7cd121e1c9907",
-      "text": "完整的智能体层与世界操作系统",
+      "source": "Client-device TVM deployment",
+      "sourceHash": "545fb8f1a999bd4e93b1410603b986eabb9b1b4ac7dbd54cdcfc270564730000",
+      "text": "客户端设备 TVM 部署",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.status.groups.2.items.3": {
+      "source": "Account abstraction and capability registry",
+      "sourceHash": "2d843bcbcd3e1ee3d23e5df78103954b3f241dda873a474041b9b90da7359d1d",
+      "text": "账户抽象与能力注册表",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
+    },
+    "glvm.status.groups.2.items.4": {
+      "source": "Peer resynchronization after failure and dynamic validator-set changes",
+      "sourceHash": "7e63bf50495208aabb278eae8cddfcf9ba657359ae1fe849113732826b4b523f",
+      "text": "节点故障重同步与验证者集合动态变更",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-07-29T03:00:00.000Z",
+      "reviewerNotes": "Distinguishes roadmap validator-set changes from implemented deterministic leader rotation."
+    },
+    "glvm.status.groups.2.items.5": {
+      "source": "Programmable World OS layer",
+      "sourceHash": "69843965f19d65af2088201fc4319b6536cc507f57c7a4dbc494eaa41e01957d",
+      "text": "可编程 World OS 层",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.status.groups.2.label": {
-      "source": "Planned",
-      "sourceHash": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225",
-      "text": "规划中",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "source": "Roadmap",
+      "sourceHash": "92375f997ffe65ab7f04eeda8cb2d7f69ebea949a06132afd53c83fff276ef54",
+      "text": "路线图",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:35:06.203Z",
+      "reviewerNotes": "自然、准确"
     },
     "glvm.status.text": {
-      "source": "GLVM is the system-level destination. The current ALUX codebase already supplies its hardest execution primitives, while cross-substrate productization and the full World OS remain active architecture work.",
-      "sourceHash": "2577f609e2132cb36eb6c0fe4e3614bea810e2faee263f382e94e2d377de3f5b",
-      "text": "GLVM 是系统层目标。当前 ALUX 代码已经具备最难的执行原语；跨底座产品化和完整世界操作系统仍属于正在推进的架构工作。",
+      "source": "GLVM grows outward from ALUX’s concurrent chain runtime. Private cloud is the next integration surface; client-device and cross-shard execution remain on the roadmap. The map below separates the core runtime, the surfaces now being extended, and the next architectural horizon.",
+      "sourceHash": "af831bcaa9e833f017c4d9d06ed1ebf1e6c669fe8e7482a0eec4b74803a192de",
+      "text": "GLVM 正从 ALUX 的链上并发运行时向更多执行环境扩展。本节区分已形成的核心能力、正在推进的系统扩展与后续路线图。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-07-29T04:00:00.000Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; maturity boundaries and terminology verified."
     },
     "glvm.status.title": {
-      "source": "The core is running.<br>The system is still expanding.",
-      "sourceHash": "9230fe4de325552fe4fff9d84b74db2e237bc4ec1a6095020a5bedf2cab3bb0a",
-      "text": "核心已经运行，<br>系统仍在扩展",
+      "source": "The core runtime is taking shape. GLVM is expanding across environments.",
+      "sourceHash": "9d36082d170e5b9cb38b438ee6a7bd90b97014d61569210ec5504363e83c04d3",
+      "text": "核心运行时已初步成形，更多执行环境正在接入。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-07-28T00:00:00.000Z",
+      "reviewerNotes": "Official-site wording refined for semantic three-line composition without changing the source meaning."
     },
     "home.hero.eyebrow": {
       "source": "ALUX Network",
@@ -2108,36 +2948,36 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.hero.text": {
-      "source": "Imagine one logical virtual machine that runs everywhere—on a public blockchain, on a private cluster, and on client hardware such as phones and browsers—while abstracting away the state, threads, replication, and consensus underneath. Developers write one concurrent program; where it runs becomes a configuration choice, not an architecture. Its parts still commit together, atomically. That is Virtual Machine Abstraction, and ALUX is building it.",
-      "sourceHash": "9326167f58de3c37f370880a293374e93144e2faafc3255063ec74199ff5e021",
-      "text": "设想一个无处不在的逻辑虚拟机——运行在公有区块链、私有集群，以及手机和浏览器等客户端硬件上，同时把底层的状态、线程、复制与共识全部抽象起来。开发者只需编写一套并发程序；程序运行在哪里，只是配置选择，而不再决定应用架构。各个部分仍然一起提交，并保持原子性。这就是虚拟机抽象，而 ALUX 正在构建它。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "source": "GLVM is ALUX’s unified execution abstraction for developers. Each machine runs a TVM; together they form one logical execution layer. The runtime coordinates replay, authority, finalization, replication, and consensus beneath the application. The chain runtime is the current foundation; private cloud is the next integration surface, while client-device execution remains on the roadmap.",
+      "sourceHash": "04b5acc4bfbc05bce5ac8e406690a7b0f78197aa4697b2b167cd87f8afa5a929",
+      "text": "全局逻辑虚拟机（GLVM）是 ALUX 面向开发者的统一执行抽象。每台机器运行一台 TVM，共同组成一个逻辑执行层。运行时在应用之下协调重放、权限、最终确认、复制与共识。链上运行时构成当前基础；私有云是下一步集成方向，客户端设备执行仍属于路线图。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T12:20:00.000Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; maturity boundaries and terminology verified."
     },
     "home.hero.title": {
-      "source": "Building the global VM",
-      "sourceHash": "1d3ec87e2a532c895cc3fbcfb41e48696c9fa5267510a7a15b033e216ed44b51",
-      "text": "构建全局虚拟机",
+      "source": "Building GLVM",
+      "sourceHash": "139cabb83084107831e9a354ca9fd483f184cd5cd0154fe051ab4fff0f5aad05",
+      "text": "构建 GLVM",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-07-25T05:08:59.338Z",
+      "reviewerNotes": "按 GLVM 独立品牌名精校；保留架构含义，避免回退为“全局虚拟机”等泛称。"
     },
     "home.metaDescription": {
-      "source": "ALUX is building one logical virtual machine that runs across public blockchains, private clusters, and client hardware while preserving atomic commit.",
-      "sourceHash": "3ff23dd31f2a9bb673555c76e3ea3c4b82961a47ccf043da535ae803fe5979cc",
-      "text": "ALUX 正在构建一个横跨公有区块链、私有集群与客户端硬件运行，同时保持原子提交的逻辑虚拟机。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "source": "GLVM is ALUX's architecture for one logical execution layer across physically distributed TVMs, coordinating concurrency, replay, authority, finalization, replication, and consensus.",
+      "sourceHash": "d93c8c7861244466e5b1efdc84e0d79c3402f093cfae6b5f1e40ab03e3dda2f2",
+      "text": "全局逻辑虚拟机（GLVM）是 ALUX 的架构：它将物理分布的 TVM 组织成一个逻辑执行层，并统一协调并发、重放、权限、最终确认、复制与共识。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "home.metaTitle": {
-      "source": "ALUX Network — Building the Global VM",
-      "sourceHash": "d632055d3369f4e87597857b3e023cfa4a79adc265bee2146049d0ced4c83636",
-      "text": "ALUX Network — 构建全局虚拟机",
+      "source": "ALUX Network — Building GLVM",
+      "sourceHash": "844a106d7546ff7697122e62a80ba30c7492b090a0e6bc576ca121dad39c4ec1",
+      "text": "ALUX Network — 构建 GLVM",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-07-25T05:08:59.338Z",
+      "reviewerNotes": "按 GLVM 独立品牌名精校；保留架构含义，避免回退为“全局虚拟机”等泛称。"
     },
     "home.sections.0.architecture.infrastructure.groups.0.0": {
       "source": "Public Blockchain",
@@ -2204,12 +3044,12 @@
       "reviewerNotes": "Synchronized with current English architecture section; AI-assisted native-language review in Codex."
     },
     "home.sections.0.architecture.runtime.caption": {
-      "source": "TVM abstraction — each TVM is abstracted into the Unified World VM above.",
-      "sourceHash": "9c98a8c45b3694e95cf98365ffbe7d02737350f8bb1a5baa456ed87e10b70409",
-      "text": "TVM 抽象：将各物理节点上的 TVM 抽象为上层统一的世界虚拟机。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-15T00:00:00.000Z",
-      "reviewerNotes": "Aligned with the canonical three-layer GLVM model."
+      "source": "Each machine runs one TVM; together they form GLVM.",
+      "sourceHash": "7d3354e1f75097720d7cbd50f7b2a1675062900b4f75005abc2c94400113a1ab",
+      "text": "每台机器运行一个 TVM；它们共同构成 GLVM。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:36:46.018Z",
+      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
     },
     "home.sections.0.architecture.runtime.controls.0": {
       "source": "State + Threads",
@@ -2276,12 +3116,12 @@
       "reviewerNotes": "Synchronized with current English architecture section; AI-assisted native-language review in Codex."
     },
     "home.sections.0.architecture.runtime.vm": {
-      "source": "Unified World VM",
-      "sourceHash": "67a4257643771a6bcd0f0a4da8044256e8fbc1647eed74e710c8c44005d57c80",
-      "text": "统一世界虚拟机",
+      "source": "GLVM",
+      "sourceHash": "0f8f70627eedcfd6ad43a1deab4d039373bb8bfa8fadffe5012c59ea7b4be117",
+      "text": "GLVM",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:49:18.632Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology baseline."
+      "reviewedAt": "2026-07-26T08:36:46.018Z",
+      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
     },
     "home.sections.0.architecture.world.items.0": {
       "source": "Service/Agent<br>Registration & Finding",
@@ -2332,20 +3172,20 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.0.text": {
-      "source": "GLVM abstracts the state, threads, replication, and consensus beneath one concurrent program, so deployment becomes a configuration choice rather than a new application architecture.",
-      "sourceHash": "c1d100d1588d1eafb235efae4bd2bb99c45984f48157ee321381d2bf829878ae",
-      "text": "GLVM 在一套并发程序之下抽象状态、线程、复制与共识，让部署位置成为配置选择，而不再要求全新的应用架构。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "source": "GLVM gives developers one concurrent execution model above many TVMs. The ALUX chain runtime is the current foundation; private cloud is the next integration surface, while client-device deployment remains on the roadmap.",
+      "sourceHash": "2213a9543c6ba02a48308fd52b4c4b0a4255927556684abf23813a2d0e7b7392",
+      "text": "全局逻辑虚拟机（GLVM）在多台 TVM 之上，为开发者提供一套统一的并发执行模型。ALUX 链上运行时构成当前基础；私有云是下一步集成方向，客户端设备部署仍属于路线图。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T12:20:00.000Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; maturity boundaries and terminology verified."
     },
     "home.sections.0.title": {
-      "source": "One logical virtual machine.<br>Everywhere.",
-      "sourceHash": "95e9685a95040abf3dba09d1cf1b2da178a221da7f82bdbc0217b3c76c207c6e",
-      "text": "一个逻辑虚拟机。<br>无处不在。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "source": "One logical execution layer.<br>Physically distributed.",
+      "sourceHash": "70ffaf00086e3eaca1ca40c36c60bca455ecad0406557763fa9ddfee9c8b3562",
+      "text": "一个逻辑执行层。<br>物理上分布运行。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:36:46.018Z",
+      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
     },
     "home.sections.10.eyebrow": {
       "source": "Learn More",
@@ -3524,12 +4364,12 @@
       "reviewerNotes": "Human-reviewed semi-automatic sync for the added Home capability tooling node."
     },
     "home.sections.2.comboDefault": {
-      "source": "Drop a module onto ALUX Runtime to see how it composes inside the global VM.",
-      "sourceHash": "dcbfefc02a09539895b7951f6a033167578f744b925e3f21a168e39a3f02606e",
-      "text": "将模块拖放到 ALUX Runtime，查看它如何在全局虚拟机中完成组合。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "source": "Drop a module onto ALUX Runtime to see how it composes inside GLVM.",
+      "sourceHash": "bab939bc9fa4324c23d4cea2cf22ab2dd97ca507882f9477085f090a3790ba4e",
+      "text": "将模块拖放到 ALUX Runtime，查看它如何在 GLVM 中与其他模块组合。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:36:46.018Z",
+      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
     },
     "home.sections.2.comboLabel": {
       "source": "Runtime Connection",
@@ -3548,12 +4388,12 @@
       "reviewerNotes": "Codex refreshed existing home translation."
     },
     "home.sections.2.core.detailBusiness": {
-      "source": "Developers write one program and choose where it runs as configuration, while its parts still commit together atomically.",
-      "sourceHash": "88d4e735f755233139f5f0e0ec8cf9630f2f5f57a450d0c74d2ed8d922d5f4a5",
-      "text": "开发者只需编写一套程序，并通过配置选择它的运行位置，而各个部分仍然一起进行原子提交。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "source": "Developers target one concurrent model while the runtime coordinates execution across an expanding set of environments.",
+      "sourceHash": "cd1d4ad3df7d1acdd018b31e72b220ca7798a9d6bbbfbb38704c07ac38b1e62e",
+      "text": "开发者面向一套统一的并发模型，而运行时负责在不断扩展的执行环境之间协调工作。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "home.sections.2.core.detailTechnical": {
       "source": "ALUX abstracts the state, threads, replication, and consensus beneath a single concurrent execution model.",
@@ -3564,20 +4404,20 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.detailTitle": {
-      "source": "One concurrent program, anywhere",
-      "sourceHash": "6ff83e212db16a377ad9a1014f2e56ef1fcb6118b6fdb235f93a90ef5e65d797",
-      "text": "一套并发程序，随处运行",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "source": "One logical model across environments",
+      "sourceHash": "60cad5519bce5ba645a8622bbd5eaf127999122758d5c5a7f0e1ff9e291fe898",
+      "text": "跨环境使用同一套逻辑模型",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:36:46.018Z",
+      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
     },
     "home.sections.2.core.items.0": {
-      "source": "One Logical VM",
-      "sourceHash": "12fe36781df2a3046f44dc95bc89498757b029bc3577e052d2fc1157c7c79a7a",
-      "text": "一个逻辑虚拟机",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "source": "One Logical Layer",
+      "sourceHash": "ba1a11ad4227e5a94ac9b70bc2214cfac124de46dc86d25f1f13c40b58229a72",
+      "text": "一个逻辑执行层",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:36:46.018Z",
+      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
     },
     "home.sections.2.core.items.1": {
       "source": "Concurrent Runtime",
@@ -3604,12 +4444,12 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.runtimeBusiness": {
-      "source": "The same concurrent program can target public blockchains, private clusters, and client hardware without becoming three architectures.",
-      "sourceHash": "1f130e8448a6e3dc35ccbb17f3b5e02983f983416edc40a17eab8fdd1ba193cb",
-      "text": "同一套并发程序可以面向公有区块链、私有集群与客户端硬件部署，而不必演变成三套架构。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "source": "The architecture keeps one developer model across chain, private cloud, and future client-device execution surfaces.",
+      "sourceHash": "73cad96761c006f29578844bd4480b256ea8914ed7a1056b799d6e9dba5b9cf8",
+      "text": "这套架构让链上、私有云与未来的客户端设备执行载体共享同一套开发者模型。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T11:33:06.682Z",
+      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "home.sections.2.core.runtimeLabel": {
       "source": "Virtual Machine Abstraction",
@@ -3628,20 +4468,20 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.runtimeTitle": {
-      "source": "ALUX Runtime\nforms one logical VM",
-      "sourceHash": "1fa69e26ebc8713f3fc4dac143643fdd39677a248654e6b1662422d5d3a00968",
-      "text": "ALUX Runtime\n构成一个逻辑虚拟机",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "source": "ALUX Runtime\nforms one logical layer",
+      "sourceHash": "8aa7a8d9daa56a46cde35e272528d04a053ff0e136b879da42b0f2dc1b774dc7",
+      "text": "ALUX Runtime\n构成一个逻辑执行层",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:36:46.018Z",
+      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
     },
     "home.sections.2.core.text": {
-      "source": "One logical VM where concurrent TVM execution, Native OCAP Support, cross-block atomicity, and BlockGit finality compose across deployment environments.",
-      "sourceHash": "9ad34ac695172adc51009da9a02b231d6f84f4d4a71ce8cdebec152ad5578a09",
-      "text": "在一个逻辑虚拟机中，并发 TVM 执行、原生 OCAP 支持、跨区块原子性与 BlockGit 最终性可以跨部署环境完成组合。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "source": "One logical execution layer where concurrent TVM execution, Native OCAP Support, cross-block atomicity, and BlockGit finality compose beneath the developer-facing GLVM abstraction.",
+      "sourceHash": "9c89b76617ff0dc2f72b59dd6e9726d36a4cfd6fdc969241fff2ed786613fe08",
+      "text": "一个逻辑执行层：并发 TVM 执行、原生 OCAP 支持、跨区块原子性与 BlockGit 最终性，都在面向开发者的 GLVM 抽象之下协同组合。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:36:46.018Z",
+      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
     },
     "home.sections.2.core.title": {
       "source": "ALUX Runtime",
@@ -3700,12 +4540,12 @@
       "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
     },
     "home.sections.2.mapIntro": {
-      "source": "Drag modules into ALUX Runtime to see how they compose inside one logical VM.\nDouble-click any card for the deeper note.",
-      "sourceHash": "e2812b3ee56295daad0a77b7e0be19d79f2d8a251bcd394f0904579559a9e972",
-      "text": "将模块拖入 ALUX Runtime，查看它们如何在一个逻辑虚拟机中完成组合。\n双击任意卡片，查看更深入的说明。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "source": "Drag modules into ALUX Runtime to see how they compose inside one GLVM model.\nDouble-click any card for the deeper note.",
+      "sourceHash": "0d27a45cdfc098401b93cfbb3f8f822a34a18818d1f6a1a83c91de39caab9c99",
+      "text": "将模块拖入 ALUX Runtime，查看它们如何在同一个 GLVM 模型中组合。\n双击任意卡片可查看更深入的说明。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:36:46.018Z",
+      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
     },
     "home.sections.2.mapTitle": {
       "source": "ALUX Capability Map",
@@ -3804,12 +4644,12 @@
       "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
     },
     "home.sections.2.text": {
-      "source": "Drag modules into ALUX Runtime to see how they compose inside one logical VM.\nDouble-click any card for the deeper note.",
-      "sourceHash": "e2812b3ee56295daad0a77b7e0be19d79f2d8a251bcd394f0904579559a9e972",
-      "text": "将模块拖入 ALUX Runtime，查看它们如何在一个逻辑虚拟机中完成组合。\n双击任意卡片，查看更深入的说明。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "source": "Drag modules into ALUX Runtime to see how they compose inside one GLVM model.\nDouble-click any card for the deeper note.",
+      "sourceHash": "0d27a45cdfc098401b93cfbb3f8f822a34a18818d1f6a1a83c91de39caab9c99",
+      "text": "将模块拖入 ALUX Runtime，查看它们如何在同一个 GLVM 模型中组合。\n双击任意卡片可查看更深入的说明。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:36:46.018Z",
+      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
     },
     "home.sections.2.title": {
       "source": "ALUX Runtime Capability Map",
@@ -4878,18 +5718,18 @@
     "parallelConcurrentComposable.glvmBridge.label": {
       "source": "Explore GLVM",
       "sourceHash": "cef5026596d180177c377e9a0cac4c3f8ab74b64f8d1dbc3dec010628764894a",
-      "text": "了解 GLVM",
+      "text": "探索 GLVM",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
     },
     "parallelConcurrentComposable.glvmBridge.text": {
       "source": "Runtime Lab shows current parallel and message-driven execution, then illustrates the target atomic composition model. GLVM describes the broader architecture for extending that logical model across blockchain nodes, cloud services, and personal devices.",
       "sourceHash": "d7d2cc77556ecac79217d72a87b7de1a1b654135dc6caa94ce3b48ec0f6e3319",
-      "text": "Runtime Lab 先展示当前的并行执行和消息驱动协作，再演示目标原子组合模型。GLVM 则描述如何把这套逻辑模型扩展到区块链节点、云服务与个人设备的更广泛架构。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:21:05.596Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX baseline."
+      "text": "Runtime Lab 展示当前的并行执行与消息驱动并发，并说明目标中的原子组合模型。GLVM 则描述更广泛的架构：如何将这套逻辑模型扩展到区块链节点、云服务和个人设备。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-25T04:52:09.782Z",
+      "reviewerNotes": "按 ALUX 官网技术文案精校，确保术语准确、语义完整且中文自然。"
     },
     "parallelConcurrentComposable.glvmBridge.title": {
       "source": "One logical runtime across many environments",
@@ -6636,12 +7476,12 @@
       "reviewerNotes": "Manual Codex localization pass: synced from the current English Team page and reviewed for native fluency."
     },
     "team.sections.0.items.0.highlights.0.1": {
-      "source": "Processes interact concurrently through channels; pattern matching is scheduling; capability credentials are authorization.",
-      "sourceHash": "d0db2f59f8d654bc07a18e6045b96f993220e3a18c9399d15291670ba2bd07c2",
-      "text": "进程通过通道并发交互，模式匹配即调度，能力凭证即授权。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:49:18.632Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology baseline."
+      "source": "Processes interact concurrently through channels; pattern matching drives scheduling; unforgeable capability references make authority explicit.",
+      "sourceHash": "cdf0645100cd204953775df3b9695a2f0fdd1ac5efda2d0fff4fc163cf1e90c6",
+      "text": "进程通过通道并发交互，模式匹配驱动调度；不可伪造的能力引用让权限边界保持明确。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-28T00:00:00.000Z",
+      "reviewerNotes": "Founder-corrected OCAP terminology: capability references are not credentials."
     },
     "team.sections.0.items.0.highlights.1.0": {
       "source": "Tolang concurrent programming language",
@@ -7075,6 +7915,14 @@
       "reviewedAt": "2026-07-13T13:03:29.193Z",
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
+    "ui.menuToggleLabel": {
+      "source": "Toggle navigation menu",
+      "sourceHash": "510648371eef863dbf25b05370cd96fa8014c26afa92f3d3d800e6c9415c330f",
+      "text": "切换导航菜单",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T06:00:00.000Z",
+      "reviewerNotes": "本地化无障碍名称。"
+    },
     "ui.nav.blog": {
       "source": "Blog",
       "sourceHash": "8c6bc099534a0251b576f6b88bd2db124ae9497c64bd9242e92a6aec23e6a73a",
@@ -7115,6 +7963,14 @@
       "reviewedAt": "2026-07-13T13:03:29.193Z",
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
+    "ui.nav.learnGlvm": {
+      "source": "GLVM",
+      "sourceHash": "0f8f70627eedcfd6ad43a1deab4d039373bb8bfa8fadffe5012c59ea7b4be117",
+      "text": "GLVM",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-26T08:36:46.018Z",
+      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
+    },
     "ui.nav.learnPcc": {
       "source": "Runtime Lab",
       "sourceHash": "ea2d547f1cc2c87a2f634635e2923655db93627c7c17458da90feb153ca0e96c",
@@ -7146,6 +8002,14 @@
       "status": "human-reviewed",
       "reviewedAt": "2026-07-13T13:03:29.193Z",
       "reviewerNotes": "Imported from the existing in-script localized copy."
+    },
+    "ui.primaryNavigationLabel": {
+      "source": "Primary navigation",
+      "sourceHash": "e1bfe7eccc45465f536688db2ec9f2cc8a09819fe80bdd9f4dc098363eb9f0b4",
+      "text": "主导航",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-29T06:00:00.000Z",
+      "reviewerNotes": "本地化无障碍名称。"
     },
     "vs.metaDescription": {
       "source": "How ALUX gives production AI agents cross-block continuity, tuple-space coordination, native OCAP support, and an EVM path through TSAC.",

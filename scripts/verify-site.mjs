@@ -6,9 +6,9 @@ const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const activePages = [
   "index.html",
   "for-ai-agents.html",
+  "glvm.html",
   "alux-vs-others.html",
   "runtime-lab.html",
-  "glvm.html",
   "team.html",
   "roadmap.html"
 ];
@@ -112,6 +112,27 @@ for (const obsolete of [
     errors.push(`obsolete asset still present: ${obsolete}`);
   } catch {
     // Expected: current Runtime Lab diagrams are SVG.
+  }
+}
+
+for (const duplicatePage of ["global-vm.html", "the-global-vm.html"]) {
+  try {
+    await fs.stat(path.join(rootDir, duplicatePage));
+    errors.push(`duplicate GLVM page still present: ${duplicatePage}`);
+  } catch {
+    // Expected: glvm.html is the single canonical GLVM page.
+  }
+}
+
+for (const legacyShareCard of [
+  "assets/social/share-cards/alux-website-share-card-1200x630-20260716.jpg",
+  "assets/social/share-cards/alux-website-share-card-3840x2016-20260716.jpg"
+]) {
+  try {
+    await fs.stat(path.join(rootDir, legacyShareCard));
+    errors.push(`legacy Global VM share card still present: ${legacyShareCard}`);
+  } catch {
+    // Expected: public share assets use the GLVM name.
   }
 }
 
