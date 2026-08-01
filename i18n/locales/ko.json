@@ -1,7 +1,7 @@
 {
   "language": "ko",
   "target": "Korean, polished native Korean product/protocol copy",
-  "updatedAt": "2026-07-29T14:43:11.538Z",
+  "updatedAt": "2026-08-01T15:00:55.692Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -5062,18 +5062,18 @@
     "home.sections.9.items.3.0": {
       "source": "What is Object Capability (OCAP)?",
       "sourceHash": "6a6bfe6952509bafc7fa9e58c047837482f40b5f8fb3758a06ea8aec588b91dd",
-      "text": "객체 권한(OCAP)이란 무엇입니까?",
+      "text": "객체 권한(Object Capability, OCAP)이란 무엇입니까?",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-16T02:53:05.677Z",
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.3.1": {
-      "source": "Technical details are being finalized and will be added shortly.",
-      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe",
-      "text": "관련 기술 세부 사항을 최종 정리 중이며 곧 추가할 예정입니다.",
+      "source": "Object Capability (OCAP) is a security model where the only way a piece of code can access a resource is by being explicitly given a reference (a capability) to that resource. In an OCAP system, the same object reference both identifies a resource (designation) and grants permission to use it (authorization).",
+      "sourceHash": "93e65e043629b9a8c165b89d697e4c704315bf04c907aac71c2f1ef2e2cacebe",
+      "text": "객체 권한(Object Capability, OCAP)은 코드가 어떤 리소스에 접근하려면 그 리소스에 대한 참조, 즉 권한(capability)을 명시적으로 전달받아야만 하는 보안 모델입니다. OCAP 시스템에서는 동일한 객체 참조가 리소스를 지정(designation)하는 동시에 그 리소스를 사용할 권한을 부여(authorization)합니다.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T03:20:12.428Z",
-      "reviewerNotes": "Reviewed against the current English source."
+      "reviewedAt": "2026-08-01T14:16:32.737Z",
+      "reviewerNotes": "Human-reviewed against Frank He's approved OCAP FAQ answer and ALUX terminology."
     },
     "home.sections.9.items.4.0": {
       "source": "How does ALUX keep Long Transactions deterministic?",
@@ -5132,12 +5132,12 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.7.1": {
-      "source": "Technical details are being finalized and will be added shortly.",
-      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe",
-      "text": "관련 기술 세부 사항을 최종 정리 중이며 곧 추가할 예정입니다.",
+      "source": "Object Capability (OCAP) is a stronger security model because authority is represented by explicit, unforgeable capabilities rather than global identities or access control lists. It follows the principle that designation is authorization: possessing a capability both identifies a resource and grants permission to use it, eliminating ambient authority and reducing the attack surface. Because capabilities can be safely delegated, attenuated, and revoked, security policies become local to the objects involved instead of being scattered across a centralized permission system. This makes OCAP naturally composable, allowing complex applications, smart contracts, and AI agent workflows to be built from independently secure components while preserving the principle of least privilege.",
+      "sourceHash": "ea41cc4bf0f833106e0c06953c4652215ab35b8efb34c8f50f8b659c98220e42",
+      "text": "객체 권한(OCAP)이 더 강력한 보안 모델인 이유는 권한을 전역 ID나 접근 제어 목록이 아니라 명시적이고 위조할 수 없는 capability로 표현하기 때문입니다. OCAP은 ‘지정이 곧 권한 부여다(designation is authorization)’라는 원칙을 따릅니다. capability를 보유하면 리소스를 식별하는 동시에 해당 리소스의 사용 권한을 얻으므로, 주변 권한(ambient authority)을 제거하고 공격 표면을 줄일 수 있습니다. capability는 안전하게 위임·축소·회수할 수 있어 보안 정책이 중앙 집중식 권한 시스템 전반에 흩어지지 않고 관련 객체에 국소화됩니다. 따라서 OCAP은 자연스럽게 조합 가능하며, 최소 권한 원칙을 유지하면서 독립적으로 안전한 구성 요소로 복잡한 애플리케이션, 스마트 컨트랙트, AI 에이전트 워크플로를 구축할 수 있습니다.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T03:20:12.428Z",
-      "reviewerNotes": "Reviewed against the current English source."
+      "reviewedAt": "2026-08-01T14:16:32.737Z",
+      "reviewerNotes": "Human-reviewed against Frank He's approved OCAP FAQ answer and ALUX terminology."
     },
     "home.sections.9.items.8.0": {
       "source": "What does it mean for OCAP to be natively supported in ALUX?",
@@ -5148,12 +5148,12 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.8.1": {
-      "source": "Technical details are being finalized and will be added shortly.",
-      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe",
-      "text": "관련 기술 세부 사항을 최종 정리 중이며 곧 추가할 예정입니다.",
+      "source": "ALUX’s Tuple-Space Virtual Machine (TVM) implements the Object Capability (OCAP) model directly at the bytecode level. The instruction set contains no operations for forging or constructing arbitrary object references, ensuring that capabilities can only be acquired through explicit delegation. This guarantees that all authority is both unforgeable and explicitly transferred.",
+      "sourceHash": "852a9d848e7be75a47fe408e5bdc6efbd2b50eb92aefdd97fa4afb69a4a047b0",
+      "text": "ALUX의 튜플 공간 가상 머신(TVM)은 객체 권한(OCAP) 모델을 바이트코드 수준에서 직접 구현합니다. 명령어 집합에는 임의의 객체 참조를 위조하거나 생성하는 연산이 없으므로, 권한은 명시적 위임을 통해서만 획득할 수 있습니다. 따라서 모든 권한이 위조 불가능하고 명시적으로 이전된다는 점이 보장됩니다.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T03:20:12.428Z",
-      "reviewerNotes": "Reviewed against the current English source."
+      "reviewedAt": "2026-08-01T14:16:32.737Z",
+      "reviewerNotes": "Human-reviewed against Frank He's approved OCAP FAQ answer and the canonical Tuple-Space Virtual Machine name."
     },
     "home.sections.9.title": {
       "source": "FAQ",

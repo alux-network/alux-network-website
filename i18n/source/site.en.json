@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T05:16:59.553Z",
+  "generatedAt": "2026-08-01T15:00:55.975Z",
   "source": "script.js:all active English page and shared UI data; roadmap.html static roadmap text nodes",
   "entries": {
     "aluxVsOthers.article.closingText": {
@@ -2535,8 +2535,8 @@
       "sourceHash": "6a6bfe6952509bafc7fa9e58c047837482f40b5f8fb3758a06ea8aec588b91dd"
     },
     "home.sections.9.items.3.1": {
-      "source": "Technical details are being finalized and will be added shortly.",
-      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe"
+      "source": "Object Capability (OCAP) is a security model where the only way a piece of code can access a resource is by being explicitly given a reference (a capability) to that resource. In an OCAP system, the same object reference both identifies a resource (designation) and grants permission to use it (authorization).",
+      "sourceHash": "93e65e043629b9a8c165b89d697e4c704315bf04c907aac71c2f1ef2e2cacebe"
     },
     "home.sections.9.items.4.0": {
       "source": "How does ALUX keep Long Transactions deterministic?",
@@ -2567,16 +2567,16 @@
       "sourceHash": "a3482e3eef954139b968cd38f0d5ee947a43362320973b9d9b566973c520cea5"
     },
     "home.sections.9.items.7.1": {
-      "source": "Technical details are being finalized and will be added shortly.",
-      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe"
+      "source": "Object Capability (OCAP) is a stronger security model because authority is represented by explicit, unforgeable capabilities rather than global identities or access control lists. It follows the principle that designation is authorization: possessing a capability both identifies a resource and grants permission to use it, eliminating ambient authority and reducing the attack surface. Because capabilities can be safely delegated, attenuated, and revoked, security policies become local to the objects involved instead of being scattered across a centralized permission system. This makes OCAP naturally composable, allowing complex applications, smart contracts, and AI agent workflows to be built from independently secure components while preserving the principle of least privilege.",
+      "sourceHash": "ea41cc4bf0f833106e0c06953c4652215ab35b8efb34c8f50f8b659c98220e42"
     },
     "home.sections.9.items.8.0": {
       "source": "What does it mean for OCAP to be natively supported in ALUX?",
       "sourceHash": "248e74389c85b31700b030cf2d3828b0adc188f0d2677575ede7fa339b64d00d"
     },
     "home.sections.9.items.8.1": {
-      "source": "Technical details are being finalized and will be added shortly.",
-      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe"
+      "source": "ALUX’s Tuple-Space Virtual Machine (TVM) implements the Object Capability (OCAP) model directly at the bytecode level. The instruction set contains no operations for forging or constructing arbitrary object references, ensuring that capabilities can only be acquired through explicit delegation. This guarantees that all authority is both unforgeable and explicitly transferred.",
+      "sourceHash": "852a9d848e7be75a47fe408e5bdc6efbd2b50eb92aefdd97fa4afb69a4a047b0"
     },
     "home.sections.9.title": {
       "source": "FAQ",

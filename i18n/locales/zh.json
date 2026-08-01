@@ -1,7 +1,7 @@
 {
   "language": "zh",
   "target": "Chinese, polished Simplified Chinese product/protocol copy",
-  "updatedAt": "2026-07-29T14:43:11.538Z",
+  "updatedAt": "2026-08-01T15:00:55.692Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -5068,12 +5068,12 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.3.1": {
-      "source": "Technical details are being finalized and will be added shortly.",
-      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe",
-      "text": "相关技术细节正在完善，将于近期补充。",
+      "source": "Object Capability (OCAP) is a security model where the only way a piece of code can access a resource is by being explicitly given a reference (a capability) to that resource. In an OCAP system, the same object reference both identifies a resource (designation) and grants permission to use it (authorization).",
+      "sourceHash": "93e65e043629b9a8c165b89d697e4c704315bf04c907aac71c2f1ef2e2cacebe",
+      "text": "对象能力（OCAP）是一种安全模型：一段代码只有在被明确授予某项资源的引用（即能力）后，才能访问该资源。在 OCAP 系统中，同一个对象引用既标识资源（designation），也授予使用该资源的权限（authorization）。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T03:20:12.428Z",
-      "reviewerNotes": "Reviewed against the current English source."
+      "reviewedAt": "2026-08-01T14:16:32.737Z",
+      "reviewerNotes": "Human-reviewed against Frank He's approved OCAP FAQ answer and ALUX terminology."
     },
     "home.sections.9.items.4.0": {
       "source": "How does ALUX keep Long Transactions deterministic?",
@@ -5132,12 +5132,12 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.7.1": {
-      "source": "Technical details are being finalized and will be added shortly.",
-      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe",
-      "text": "相关技术细节正在完善，将于近期补充。",
+      "source": "Object Capability (OCAP) is a stronger security model because authority is represented by explicit, unforgeable capabilities rather than global identities or access control lists. It follows the principle that designation is authorization: possessing a capability both identifies a resource and grants permission to use it, eliminating ambient authority and reducing the attack surface. Because capabilities can be safely delegated, attenuated, and revoked, security policies become local to the objects involved instead of being scattered across a centralized permission system. This makes OCAP naturally composable, allowing complex applications, smart contracts, and AI agent workflows to be built from independently secure components while preserving the principle of least privilege.",
+      "sourceHash": "ea41cc4bf0f833106e0c06953c4652215ab35b8efb34c8f50f8b659c98220e42",
+      "text": "对象能力（OCAP）之所以是一种更强的安全模型，是因为权限由显式且不可伪造的能力来表示，而不是依赖全局身份或访问控制列表。它遵循“指称即授权”（designation is authorization）原则：持有某项能力既标识相应资源，也授予使用该资源的权限，从而消除环境权限（ambient authority）并缩小攻击面。由于能力可以被安全地委托、衰减和撤销，安全策略会局部化到相关对象，而不是散落在中心化权限系统中。这使 OCAP 天然具备可组合性：复杂应用、智能合约和 AI Agent 工作流可以由各自安全的组件构建，同时仍然遵循最小权限原则。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T03:20:12.428Z",
-      "reviewerNotes": "Reviewed against the current English source."
+      "reviewedAt": "2026-08-01T14:16:32.737Z",
+      "reviewerNotes": "Human-reviewed against Frank He's approved OCAP FAQ answer and ALUX terminology."
     },
     "home.sections.9.items.8.0": {
       "source": "What does it mean for OCAP to be natively supported in ALUX?",
@@ -5148,12 +5148,12 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.9.items.8.1": {
-      "source": "Technical details are being finalized and will be added shortly.",
-      "sourceHash": "c7e7026bca4a72d361adabcbaa3d3cd30051d74368bb1f53fc8ffe8d983291fe",
-      "text": "相关技术细节正在完善，将于近期补充。",
+      "source": "ALUX’s Tuple-Space Virtual Machine (TVM) implements the Object Capability (OCAP) model directly at the bytecode level. The instruction set contains no operations for forging or constructing arbitrary object references, ensuring that capabilities can only be acquired through explicit delegation. This guarantees that all authority is both unforgeable and explicitly transferred.",
+      "sourceHash": "852a9d848e7be75a47fe408e5bdc6efbd2b50eb92aefdd97fa4afb69a4a047b0",
+      "text": "ALUX 的元组空间虚拟机（TVM）在字节码层直接实现对象能力（OCAP）模型。其指令集不包含任何可伪造或任意构造对象引用的操作，因此能力只能通过显式委托获得。这保证了所有权限既不可伪造，也只能被明确转移。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T03:20:12.428Z",
-      "reviewerNotes": "Reviewed against the current English source."
+      "reviewedAt": "2026-08-01T14:16:32.737Z",
+      "reviewerNotes": "Human-reviewed against Frank He's approved OCAP FAQ answer and the canonical Tuple-Space Virtual Machine name."
     },
     "home.sections.9.title": {
       "source": "FAQ",
