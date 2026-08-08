@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1200, initial-scale=1">
+  <title>ALUX Network — Building GLVM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f8f4ea;
+      --paper-deep: #efe6d8;
+      --ink: #1d3448;
+      --copy: #4c6273;
+      --brown: #5d402d;
+      --brown-soft: #8f6b50;
+      --line: rgba(111, 83, 60, 0.16);
+      --mint: #8bcfbd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 1200px;
+      height: 630px;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: "Inter", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 85% 9%, rgba(246, 201, 115, 0.22), transparent 30%),
+        radial-gradient(circle at 70% 94%, rgba(127, 192, 172, 0.16), transparent 34%),
+        linear-gradient(135deg, #fbf8f1 0%, var(--paper) 54%, #f1ebdf 100%);
+    }
+
+    .canvas {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .canvas::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background-image:
+        linear-gradient(rgba(86, 64, 46, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(86, 64, 46, 0.045) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.68) 60%, transparent 100%);
+    }
+
+    .ambient {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(0.2px);
+      opacity: 0.72;
+      z-index: -2;
+    }
+
+    .ambient.a {
+      width: 168px;
+      height: 24px;
+      left: 54px;
+      top: 50px;
+      background: rgba(122, 191, 169, 0.22);
+    }
+
+    .ambient.b {
+      width: 220px;
+      height: 30px;
+      left: 490px;
+      top: 70px;
+      background: rgba(190, 164, 206, 0.17);
+    }
+
+    .ambient.c {
+      width: 150px;
+      height: 28px;
+      right: 30px;
+      bottom: 60px;
+      background: rgba(124, 197, 178, 0.17);
+    }
+
+    .frame {
+      position: absolute;
+      inset: 28px;
+      border: 1px solid rgba(117, 84, 58, 0.17);
+      border-radius: 36px;
+      background: rgba(255, 253, 248, 0.56);
+      box-shadow:
+        0 26px 70px rgba(74, 49, 33, 0.09),
+        inset 0 1px rgba(255, 255, 255, 0.86);
+      overflow: hidden;
+    }
+
+    .frame::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(122, 93, 71, 0.08);
+      border-radius: 26px;
+      pointer-events: none;
+    }
+
+    .brand {
+      position: absolute;
+      left: 72px;
+      top: 58px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      z-index: 5;
+    }
+
+    .brand img {
+      width: 68px;
+      height: 68px;
+      border-radius: 17px;
+      box-shadow: 0 11px 20px rgba(67, 42, 27, 0.2);
+    }
+
+    .brand-name {
+      font-size: 31px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -0.045em;
+    }
+
+    .brand-note {
+      margin-top: 10px;
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--brown-soft);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .copy {
+      position: absolute;
+      left: 72px;
+      top: 190px;
+      width: 630px;
+      z-index: 4;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      height: 38px;
+      padding: 0 19px;
+      border: 1px solid rgba(152, 105, 70, 0.28);
+      border-radius: 999px;
+      background: rgba(255, 252, 246, 0.78);
+      color: var(--brown-soft);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0 13px;
+      color: var(--brown);
+      font-size: 79px;
+      line-height: 0.98;
+      letter-spacing: -0.07em;
+      font-weight: 800;
+    }
+
+    .statement {
+      max-width: 600px;
+      margin: 0;
+      color: var(--ink);
+      font-size: 28px;
+      line-height: 1.28;
+      letter-spacing: -0.033em;
+      font-weight: 650;
+    }
+
+    .scope {
+      display: flex;
+      gap: 9px;
+      margin-top: 25px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.055em;
+      text-transform: uppercase;
+    }
+
+    .scope span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border: 1px solid rgba(79, 99, 114, 0.15);
+      border-radius: 999px;
+      color: var(--copy);
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .scope span:first-child {
+      border-color: rgba(96, 145, 131, 0.24);
+      background: rgba(136, 203, 184, 0.15);
+      color: #355f58;
+    }
+
+    .site {
+      position: absolute;
+      left: 74px;
+      bottom: 56px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      z-index: 5;
+    }
+
+    .site::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 0 8px rgba(139, 207, 189, 0.17);
+    }
+
+    .stage {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .stage::before {
+      content: "";
+      position: absolute;
+      width: 470px;
+      height: 470px;
+      right: 40px;
+      top: 88px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.74), rgba(255, 250, 239, 0.2) 56%, transparent 72%);
+      z-index: -1;
+    }
+
+    .stage img {
+      position: absolute;
+      display: block;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 22px rgba(93, 67, 46, 0.1));
+    }
+
+    .sun {
+      width: 132px;
+      height: 132px;
+      right: 86px;
+      top: 50px;
+    }
+
+    .upper {
+      width: 325px;
+      height: auto;
+      right: 48px;
+      top: 182px;
+      transform: rotate(2deg);
+    }
+
+    .node {
+      width: 106px;
+      height: 106px;
+      left: 676px;
+      top: 224px;
+      opacity: 0.92;
+    }
+
+    .lower {
+      width: 480px;
+      height: auto;
+      right: 26px;
+      bottom: 38px;
+    }
+
+    .connector {
+      position: absolute;
+      right: 244px;
+      top: 316px;
+      width: 2px;
+      height: 76px;
+      background: repeating-linear-gradient(to bottom, rgba(117, 92, 71, 0.28) 0 4px, transparent 4px 12px);
+      opacity: 0.62;
+    }
+
+    .connector::before,
+    .connector::after {
+      content: "";
+      position: absolute;
+      left: -4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(139, 207, 189, 0.72);
+      box-shadow: 0 0 0 6px rgba(139, 207, 189, 0.12);
+    }
+
+    .connector::before {
+      top: -5px;
+    }
+
+    .connector::after {
+      bottom: -5px;
+    }
+  </style>
+</head>
+<body>
+  <main class="canvas" aria-label="ALUX Network GLVM social share card">
+    <span class="ambient a"></span>
+    <span class="ambient b"></span>
+    <span class="ambient c"></span>
+
+    <section class="frame">
+      <header class="brand">
+        <img src="../../../alux-favicon.png" alt="ALUX Network logo">
+        <div>
+          <div class="brand-name">ALUX Network</div>
+          <div class="brand-note">One logical execution layer</div>
+        </div>
+      </header>
+
+      <div class="copy">
+        <div class="eyebrow">Global Logical Virtual Machine</div>
+        <h1>Building GLVM</h1>
+        <p class="statement">Each machine runs a TVM; together,<br>they form one logical execution layer.</p>
+        <div class="scope" aria-label="ALUX GLVM delivery scope">
+          <span>Chain runtime now</span>
+          <span>Private cloud next</span>
+          <span>Client execution roadmap</span>
+        </div>
+      </div>
+
+      <div class="site">alux.network</div>
+
+      <div class="stage" aria-hidden="true">
+        <img class="sun" src="../../../home/hero/alux-hero-3d-sun-pixel.png" alt="">
+        <img class="upper" src="../../../home/hero/alux-hero-3d-upper-brick.png" alt="">
+        <img class="node" src="../../../home/hero/alux-hero-3d-blue-node.png" alt="">
+        <span class="connector"></span>
+        <img class="lower" src="../../../home/hero/alux-hero-3d-lower-assembly.png" alt="">
+      </div>
+    </section>
+  </main>
+</body>
+</html>
