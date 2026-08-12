@@ -26662,6 +26662,10 @@ body[data-page="glvm"] .glvm-architecture-stage {
   align-items: stretch;
 }
 
+body[data-page="glvm"] .glvm-architecture > .glvm-section-heading {
+  margin-bottom: clamp(18px, 2vw, 28px);
+}
+
 body[data-page="glvm"] .glvm-layer-stack {
   display: grid;
   gap: 12px;
@@ -26723,9 +26727,9 @@ body[data-page="glvm"] .glvm-layer-instruction {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 0 0 14px;
-  color: var(--glvm-muted);
-  font-size: 0.82rem;
+  margin: 0 0 18px;
+  color: var(--glvm-text);
+  font-size: 0.88rem;
   line-height: 1.5;
 }
 

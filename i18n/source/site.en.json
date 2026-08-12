@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T11:53:19.132Z",
+  "generatedAt": "2026-08-12T13:30:05.192Z",
   "source": "script.js:all active English page and shared UI data; roadmap.html static roadmap text nodes",
   "entries": {
     "aluxVsOthers.article.closingText": {
@@ -447,8 +447,8 @@
       "sourceHash": "1feb888e6b627770ff3869c9697e3a5a5f12070d9e08b99e1e6eb5370e5692cb"
     },
     "glvm.architecture.instruction": {
-      "source": "Select a layer to view its details.",
-      "sourceHash": "267c55ee4c1036ba31ebf3d06cee1343a1bf0fd07da2756a1bcf9767eb5471c1"
+      "source": "Select any layer to update the detail panel.",
+      "sourceHash": "38b8339887cff6066d159f16228c17c36dd1c8d4fbab1dd086dadc5e03fb65e0"
     },
     "glvm.architecture.layers.0.index": {
       "source": "03",

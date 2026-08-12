@@ -786,7 +786,7 @@ const glvmPageEn = {
     eyebrow: "Three-layer architecture",
     title: "Three layers, one developer-facing execution model",
     text: "Physical machines run TVMs; in the GLVM architecture, those engines participate in one shared logical execution model. A future World OS will organize that layer into discoverable, orchestrated services governed by explicit capabilities.",
-    instruction: "Select a layer to view its details.",
+    instruction: "Select any layer to update the detail panel.",
     layers: [
       {
         id: "world",

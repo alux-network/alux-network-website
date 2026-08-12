@@ -892,9 +892,9 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "glvm.architecture.instruction": {
-      "source": "Select a layer to view its details.",
-      "sourceHash": "267c55ee4c1036ba31ebf3d06cee1343a1bf0fd07da2756a1bcf9767eb5471c1",
-      "text": "选择一个层级，查看对应说明。",
+      "source": "Select any layer to update the detail panel.",
+      "sourceHash": "38b8339887cff6066d159f16228c17c36dd1c8d4fbab1dd086dadc5e03fb65e0",
+      "text": "选择任一层级，详情面板将同步更新。",
       "status": "human-reviewed",
       "reviewedAt": "2026-08-12T10:00:00.000Z",
       "reviewerNotes": "Native Chinese interface instruction reviewed for clarity and brevity."
