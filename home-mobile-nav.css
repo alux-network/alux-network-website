@@ -136,10 +136,3 @@
     box-shadow: none;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  body[data-page] .menu-toggle,
-  body[data-page] .menu-toggle span {
-    transition: none;
-  }
-}

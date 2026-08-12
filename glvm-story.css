@@ -4,12 +4,14 @@
 
 body[data-page="glvm"] .glvm-definition-payoff {
   display: grid;
-  grid-template-columns: minmax(150px, 0.28fr) minmax(0, 1fr);
-  gap: clamp(20px, 3.4vw, 42px);
+  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
   align-items: start;
-  margin-top: 18px;
-  padding: 20px 0 0;
+  gap: clamp(28px, 4vw, 52px);
+  width: 100%;
+  margin-top: 24px;
+  padding: clamp(18px, 1.8vw, 24px) 0 clamp(20px, 2vw, 26px);
   border-top: 1px solid var(--glvm-line);
+  border-bottom: 1px solid var(--glvm-line);
 }
 
 body[data-page="glvm"] .glvm-page .technical-token {
@@ -49,6 +51,13 @@ html[lang="zh"] body[data-page="glvm"] .glvm-hero-text .glvm-semantic-copy-line 
   display: inline;
 }
 
+@media (min-width: 1281px) {
+  html[lang="zh"] body[data-page="glvm"] .glvm-hero-text .glvm-semantic-copy-line,
+  html[lang="zh"] body[data-page="glvm"] .glvm-ocap-card--explicit .glvm-semantic-copy-line {
+    display: block;
+  }
+}
+
 html[lang="zh"] body[data-page="glvm"] .glvm-status .glvm-semantic-heading {
   max-width: none;
 }
@@ -85,35 +94,59 @@ html[lang="zh"] body[data-page="glvm"] .glvm-page p:not(.eyebrow):not(.glvm-full
   }
 
   body[data-page="glvm"] .glvm-definition-payoff {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    display: block;
+    width: 100%;
+    padding-block: 22px 24px;
   }
 }
 
-body[data-page="glvm"] .glvm-definition-payoff > span {
+body[data-page="glvm"] .glvm-definition-payoff-heading > span {
+  display: block;
+  margin-bottom: 9px;
   color: var(--glvm-teal-dark);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.7rem;
+  font-size: clamp(0.64rem, 0.55vw, 0.68rem);
   font-weight: 700;
   letter-spacing: 0.08em;
-  line-height: 1.5;
+  line-height: 1.4;
   text-transform: uppercase;
 }
 
 body[data-page="glvm"] .glvm-definition-payoff h3 {
-  max-width: 34ch;
+  max-width: 28ch;
   margin: 0;
   color: var(--glvm-ink);
-  font-size: clamp(1.18rem, 1.65vw, 1.55rem);
-  line-height: 1.24;
+  font-size: clamp(1.25rem, 1.55vw, 1.55rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
-body[data-page="glvm"] .glvm-definition-payoff p {
-  max-width: 68ch;
-  margin: 10px 0 0;
+body[data-page="glvm"] .glvm-definition-payoff > p {
+  max-width: 62ch;
+  margin: 24px 0 0;
   color: var(--glvm-text);
-  line-height: 1.68;
+  font-size: clamp(0.9rem, 0.88vw, 0.95rem);
+  line-height: 1.62;
+  text-wrap: pretty;
+}
+
+body[data-page="glvm"] .glvm-architecture > .glvm-section-heading > h2,
+body[data-page="glvm"] .glvm-architecture > .glvm-section-heading > p:last-child {
+  margin-inline: 0;
+}
+
+@media (min-width: 1100px) {
+  html[lang="zh"] body[data-page="glvm"] .glvm-architecture .glvm-semantic-copy-line {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 800px) {
+  body[data-page="glvm"] .glvm-definition-payoff > p {
+    max-width: 65ch;
+    margin-top: 14px;
+  }
 }
 
 body[data-page="glvm"] .glvm-extension {
@@ -180,8 +213,7 @@ body[data-page="glvm"] .glvm-extension-header > p {
   }
 
   html[lang="zh"] body[data-page="glvm"] .glvm-ocap-story .glvm-extension-header > p {
-    display: grid;
-    gap: clamp(5px, 0.55vw, 8px);
+    display: block;
     max-width: none;
     margin-top: clamp(29px, 2.45vw, 36px);
     font-size: clamp(0.98rem, 1.02vw, 1.05rem);
@@ -190,7 +222,7 @@ body[data-page="glvm"] .glvm-extension-header > p {
   }
 
   html[lang="zh"] body[data-page="glvm"] .glvm-ocap-story .glvm-extension-header > p .glvm-semantic-copy-line {
-    display: block;
+    display: inline;
   }
 }
 
@@ -258,7 +290,7 @@ body[data-page="glvm"] .glvm-continuity-tab {
   background: transparent;
   text-align: left;
   cursor: pointer;
-  transition: color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+  transition: color 160ms ease, background 160ms ease;
 }
 
 html[dir="rtl"] body[data-page="glvm"] .glvm-continuity-tab {
@@ -1148,14 +1180,6 @@ html[dir="rtl"] body[data-page="glvm"] .glvm-extension {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  body[data-page="glvm"] .glvm-extension *,
-  body[data-page="glvm"] .glvm-extension *::before,
-  body[data-page="glvm"] .glvm-extension *::after {
-    scroll-behavior: auto !important;
-    transition: none !important;
-  }
-}
 
 body[data-page="glvm"] .glvm-page {
   padding-bottom: clamp(32px, 4vw, 48px);
@@ -1387,43 +1411,77 @@ body[data-page="glvm"] .glvm-stack-item[data-stack-state="mixed"].is-active {
 }
 
 body[data-page="glvm"] .glvm-next-copy > p:last-child {
-  max-width: 60ch;
+  max-width: none;
   margin: 12px 0 0;
   color: var(--glvm-text);
-  font-size: 0.88rem;
-  line-height: 1.58;
+  font-size: 0.92rem;
+  line-height: 1.62;
+  text-wrap: pretty;
+}
+
+body[data-page="glvm"] .glvm-next-clause {
+  white-space: nowrap;
+}
+
+html:is([lang="zh"], [lang="ja"], [lang="ko"], [lang="ar"])
+  body[data-page="glvm"] .glvm-next-copy-line {
+  display: block;
+}
+
+body[data-page="glvm"] .glvm-next {
+  grid-template-columns: 1fr;
+  row-gap: clamp(20px, 1.8vw, 28px);
+  margin-top: clamp(48px, 5.4vw, 76px);
+  padding-block: clamp(28px, 2.6vw, 36px);
 }
 
 body[data-page="glvm"] .glvm-next-copy {
   grid-column: 1 / -1;
-  max-width: 860px;
+  max-width: none;
 }
 
 body[data-page="glvm"] .glvm-next h2 {
-  max-width: 38ch;
+  max-width: none;
 }
 
 body[data-page="glvm"] .glvm-next-links {
   grid-column: 1 / -1;
   width: 100%;
-  margin-top: 6px;
+  margin-top: 0;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+body[data-page="glvm"] .glvm-next-link--primary,
+body[data-page="glvm"] .glvm-next-link--secondary,
 body[data-page="glvm"] .glvm-next-link--tertiary {
-  border-color: rgba(111, 95, 79, 0.22);
-  color: #5b5148;
+  border-color: rgba(111, 95, 79, 0.2);
+  color: var(--glvm-ink);
   background: #fffdf8;
 }
 
+body[data-page="glvm"] .glvm-next-link .glvm-next-index {
+  color: #a97950;
+}
+
+body[data-page="glvm"] .glvm-next-link .glvm-next-arrow {
+  color: #6f6257;
+}
+
 @media (hover: hover) and (pointer: fine) {
+  body[data-page="glvm"] .glvm-next-link--primary:hover,
+  body[data-page="glvm"] .glvm-next-link--secondary:hover,
   body[data-page="glvm"] .glvm-next-link--tertiary:hover {
-    border-color: rgba(47, 146, 139, 0.32);
-    color: var(--glvm-teal-dark);
+    border-color: rgba(111, 95, 79, 0.34);
+    color: #313742;
+    background: #fffaf3;
   }
 }
 
 @media (max-width: 1100px) {
+  body[data-page="glvm"] .glvm-next-copy > p:last-child {
+    max-width: 66ch;
+  }
+
   body[data-page="glvm"] .glvm-continuity-notes {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1652,4 +1710,414 @@ html[dir="rtl"] body[data-page="glvm"] .glvm-stack-flow-node[data-stack-index="6
       "speed";
     grid-template-columns: 1fr;
   }
+}
+
+/* Editorial pairs use bounded tracks so translated copy does not drift into empty space. */
+@media (min-width: 801px) {
+  body[data-page="glvm"] .glvm-definition-payoff {
+    width: 100%;
+  }
+
+  html:not([lang="en"]) body[data-page="glvm"] .glvm-extension-header {
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+    gap: 48px;
+    align-items: start;
+  }
+
+  html:not([lang="en"]) body[data-page="glvm"] .glvm-extension-header h2 {
+    max-width: none;
+    font-size: clamp(2.05rem, 2.6vw, 2.65rem);
+  }
+
+  html:not([lang="en"]) body[data-page="glvm"] .glvm-extension-header > p {
+    align-self: start;
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 1051px) {
+  html[lang="zh"] body[data-page="glvm"] .glvm-continuity .glvm-extension-header {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    align-items: start;
+  }
+
+  html[lang="zh"] body[data-page="glvm"] .glvm-continuity .glvm-extension-header > p {
+    align-self: start;
+    margin-top: clamp(48px, 3vw, 56px);
+    text-wrap: pretty;
+  }
+
+  html:not([lang="en"]) body[data-page="glvm"] .glvm-ocap-story .glvm-extension-header {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(40px, 4.2vw, 64px);
+    align-items: start;
+  }
+
+  html:not([lang="en"]) body[data-page="glvm"] .glvm-ocap-story .glvm-extension-header h2 {
+    font-size: clamp(2rem, 2.35vw, 2.45rem);
+  }
+
+  html:not([lang="en"]) body[data-page="glvm"] .glvm-ocap-story .glvm-extension-header > p {
+    align-self: start;
+    margin-top: 31px;
+  }
+
+  html[lang="zh"] body[data-page="glvm"] .glvm-ocap-story .glvm-semantic-line {
+    white-space: nowrap;
+  }
+}
+
+/* Keep the closing learning links on a clean warm-paper ground. */
+body[data-page="glvm"] {
+  --glvm-bg: #fcf8f2;
+}
+
+body[data-page="glvm"] .glvm-next-link--primary,
+body[data-page="glvm"] .glvm-next-link--secondary,
+body[data-page="glvm"] .glvm-next-link--tertiary {
+  background: #fffdfa;
+}
+
+@media (min-width: 801px) and (max-width: 1050px) {
+  html[lang="zh"] body[data-page="glvm"] .glvm-continuity .glvm-extension-header {
+    grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+    gap: clamp(28px, 3.5vw, 38px);
+  }
+
+  html[lang="zh"] body[data-page="glvm"] .glvm-continuity .glvm-extension-header > p {
+    margin-top: 31px;
+  }
+
+  html:not([lang="en"]) body[data-page="glvm"] .glvm-ocap-story .glvm-extension-header {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  html:not([lang="en"]) body[data-page="glvm"] .glvm-ocap-story .glvm-extension-header > p {
+    margin-top: 0;
+  }
+
+  html[lang="zh"] body[data-page="glvm"] .glvm-ocap-story .glvm-semantic-line {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 1101px) {
+  html:not([lang="en"]) body[data-page="glvm"] .glvm-status > .glvm-section-heading {
+    grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+    column-gap: 48px;
+  }
+
+  html:not([lang="en"]) body[data-page="glvm"] .glvm-status > .glvm-section-heading h2 {
+    max-width: none;
+    font-size: clamp(2.05rem, 2.6vw, 2.65rem);
+  }
+
+  html:not([lang="en"]) body[data-page="glvm"] .glvm-status-intro {
+    align-self: start;
+    margin-top: 10px;
+  }
+
+  html[lang="zh"] body[data-page="glvm"] .glvm-status-intro > p {
+    max-width: none;
+  }
+}
+
+/* Interaction restoration: mode changes now replay a short, explanatory path
+   instead of replacing one static diagram with another. */
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-panel-copy {
+  animation: glvm-continuity-copy-in 320ms ease-out both;
+}
+
+/* The capability stack represents a live execution system. Keep its motion
+   legible at a glance without turning the table into decorative noise. */
+body[data-page="glvm"] .glvm-stack-flow::before {
+  height: 2px;
+  background: linear-gradient(90deg, rgba(47, 146, 139, 0.18), rgba(47, 146, 139, 0.9), rgba(184, 134, 84, 0.5), rgba(47, 146, 139, 0.18));
+  background-size: 220% 100%;
+  animation: glvm-stack-scan 3.2s linear infinite paused;
+}
+
+body[data-page="glvm"] .glvm-stack-flow::after {
+  animation-duration: 4.8s;
+  animation-play-state: paused;
+}
+
+body[data-page="glvm"] .glvm-glyph-flow {
+  stroke-dasharray: 7 7;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 2px rgba(47, 146, 139, 0.22));
+  animation-duration: 1.35s;
+  animation-play-state: paused;
+}
+
+body[data-page="glvm"] .glvm-glyph-track {
+  opacity: 0.24;
+  stroke-width: 1.4;
+}
+
+body[data-page="glvm"] .glvm-glyph-pulse {
+  animation-duration: 1.8s;
+  animation-play-state: paused;
+}
+
+body[data-page="glvm"] .glvm-stack.is-motion-active .glvm-stack-flow::before,
+body[data-page="glvm"] .glvm-stack.is-motion-active .glvm-stack-flow::after,
+body[data-page="glvm"] .glvm-stack.is-motion-active .glvm-glyph-flow,
+body[data-page="glvm"] .glvm-stack.is-motion-active .glvm-glyph-pulse {
+  animation-play-state: running;
+}
+
+body[data-page="glvm"] .glvm-stack-item.is-active .glvm-glyph-flow {
+  stroke-width: 2.25;
+}
+
+body[data-page="glvm"] [data-glvm-route].is-route-confirmed {
+  animation: glvm-route-confirmed 360ms ease-out both;
+}
+
+body[data-page="glvm"] [data-glvm-step="3"] .glvm-route-packet {
+  opacity: 0;
+}
+
+body[data-page="glvm"] [data-glvm-step="3"] .glvm-route-core i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 36px;
+  height: 8px;
+  background: transparent;
+  box-shadow: none;
+}
+
+body[data-page="glvm"] .glvm-route-core i > b {
+  display: none;
+}
+
+body[data-page="glvm"] [data-glvm-step="3"] .glvm-route-core i > b {
+  display: block;
+  flex: 0 0 auto;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d9b17b;
+  box-shadow: 0 0 0 4px rgba(217, 177, 123, 0.08);
+  animation: glvm-wait-dot 900ms ease-in-out infinite;
+}
+
+body[data-page="glvm"] [data-glvm-step="3"] .glvm-route-core i > b:nth-child(1) {
+  animation-delay: -300ms;
+}
+
+body[data-page="glvm"] [data-glvm-step="3"] .glvm-route-core i > b:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+@keyframes glvm-route-confirmed {
+  0% { transform: translateY(0) scale(0.985); }
+  55% { transform: translateY(-2px) scale(1.018); box-shadow: 0 0 0 5px rgba(47, 146, 139, 0.1); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes glvm-wait-dot {
+  0%, 100% { opacity: 0.48; }
+  50% { opacity: 1; }
+}
+
+body[data-page="glvm"] .glvm-stack.is-motion-active .glvm-stack-glyph {
+  animation: glvm-stack-icon-breathe 3.4s ease-in-out infinite;
+}
+
+body[data-page="glvm"] .glvm-stack-list > .glvm-stack-item:nth-child(2) .glvm-stack-glyph { animation-delay: -0.38s; }
+body[data-page="glvm"] .glvm-stack-list > .glvm-stack-item:nth-child(3) .glvm-stack-glyph { animation-delay: -0.76s; }
+body[data-page="glvm"] .glvm-stack-list > .glvm-stack-item:nth-child(4) .glvm-stack-glyph { animation-delay: -1.14s; }
+body[data-page="glvm"] .glvm-stack-list > .glvm-stack-item:nth-child(5) .glvm-stack-glyph { animation-delay: -1.52s; }
+body[data-page="glvm"] .glvm-stack-list > .glvm-stack-item:nth-child(6) .glvm-stack-glyph { animation-delay: -1.9s; }
+body[data-page="glvm"] .glvm-stack-list > .glvm-stack-item:nth-child(7) .glvm-stack-glyph { animation-delay: -2.28s; }
+body[data-page="glvm"] .glvm-stack-list > .glvm-stack-item:nth-child(8) .glvm-stack-glyph { animation-delay: -2.66s; }
+body[data-page="glvm"] .glvm-stack-list > .glvm-stack-item:nth-child(9) .glvm-stack-glyph { animation-delay: -3.04s; }
+
+body[data-page="glvm"] .glvm-stack-item.is-stack-stepping .glvm-stack-number,
+body[data-page="glvm"] .glvm-stack-flow-node.is-active > span {
+  animation: glvm-stack-number-beat 620ms cubic-bezier(0.2, 0.78, 0.22, 1) both;
+}
+
+body[data-page="glvm"] .glvm-stack-item.is-stack-stepping .glvm-stack-glyph {
+  animation: glvm-stack-glyph-beat 620ms cubic-bezier(0.2, 0.78, 0.22, 1) both;
+}
+
+@keyframes glvm-stack-scan {
+  from { background-position: 180% 0; }
+  to { background-position: -40% 0; }
+}
+
+@keyframes glvm-stack-icon-breathe {
+  0%, 100% {
+    transform: translateY(-1px) scale(0.992);
+    filter: saturate(0.96);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.022);
+    filter: saturate(1.08);
+    box-shadow: 0 15px 34px rgba(47, 146, 139, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.88);
+  }
+}
+
+@keyframes glvm-stack-number-beat {
+  0% { transform: translateY(0) scale(0.92); opacity: 0.7; }
+  52% { transform: translateY(-4px) scale(1.08); opacity: 1; }
+  100% { transform: translateY(-2px) scale(1); opacity: 1; }
+}
+
+@keyframes glvm-stack-glyph-beat {
+  0% { transform: translateY(0) scale(0.97); }
+  52% { transform: translateY(-6px) scale(1.035); }
+  100% { transform: translateY(-2px) scale(1); }
+}
+
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--sequential > .glvm-continuity-node,
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--parallel > div,
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-process,
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-composite-transactions > span {
+  animation: glvm-continuity-node-in 420ms cubic-bezier(0.22, 0.75, 0.24, 1) both;
+}
+
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--sequential > i,
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--parallel > i,
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-process > i {
+  transform-origin: left center;
+  animation: glvm-continuity-trace 360ms ease-out both;
+}
+
+html[dir="rtl"] body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--sequential > i,
+html[dir="rtl"] body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--parallel > i,
+html[dir="rtl"] body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-process > i {
+  transform-origin: right center;
+}
+
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--sequential > :nth-child(2) { animation-delay: 110ms; }
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--sequential > :nth-child(3) { animation-delay: 220ms; }
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--sequential > :nth-child(4) { animation-delay: 330ms; }
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--sequential > :nth-child(5) { animation-delay: 440ms; }
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--sequential > :nth-child(6) { animation-delay: 550ms; }
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--sequential > :nth-child(7) { animation-delay: 660ms; }
+
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--parallel > div:nth-child(2) { animation-delay: 80ms; }
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--parallel > div:nth-child(3) { animation-delay: 160ms; }
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--parallel > i { animation-delay: 300ms; }
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--parallel > .glvm-continuity-node {
+  animation: glvm-continuity-commit 680ms ease-out 520ms both;
+}
+
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-process:nth-of-type(2) { animation-delay: 360ms; }
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-message {
+  animation: glvm-continuity-signal 620ms cubic-bezier(0.22, 0.75, 0.24, 1) 210ms both;
+}
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-resume {
+  animation: glvm-continuity-commit 680ms ease-out 760ms both;
+}
+
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-composite-transactions > span:nth-child(2) { animation-delay: 100ms; }
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-composite-transactions > span:nth-child(3) { animation-delay: 200ms; }
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-composite-gate {
+  animation: glvm-continuity-node-in 420ms ease-out 420ms both;
+}
+body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-scene--composite > .glvm-continuity-node {
+  animation: glvm-continuity-commit 720ms ease-out 680ms both;
+}
+
+@keyframes glvm-continuity-copy-in {
+  from { opacity: 0.45; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glvm-continuity-node-in {
+  from { opacity: 0.28; transform: translateY(9px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes glvm-continuity-trace {
+  from { opacity: 0.2; transform: scaleX(0); }
+  to { opacity: 1; transform: scaleX(1); }
+}
+
+@keyframes glvm-continuity-signal {
+  0% { opacity: 0; transform: translateX(-12px) scale(0.82); }
+  55% { opacity: 1; transform: translateX(5px) scale(1.05); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+html[dir="rtl"] body[data-page="glvm"] .glvm-continuity-panel.is-demonstrating .glvm-continuity-message {
+  animation-name: glvm-continuity-signal-rtl;
+}
+
+@keyframes glvm-continuity-signal-rtl {
+  0% { opacity: 0; transform: translateX(12px) scale(0.82); }
+  55% { opacity: 1; transform: translateX(-5px) scale(1.05); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes glvm-continuity-commit {
+  0% { opacity: 0.35; transform: scale(0.94); }
+  56% { opacity: 1; transform: scale(1.045); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Make the selected execution surface and workflow state legible even when
+   the moving packets are between beats. */
+body[data-page="glvm"] .glvm-route-lines span {
+  opacity: 0.28;
+  transition: opacity 220ms ease;
+}
+
+body[data-page="glvm"] [data-glvm-root][data-glvm-active-route="trust"] .glvm-route-lines span:nth-child(1),
+body[data-page="glvm"] [data-glvm-root][data-glvm-active-route="speed"] .glvm-route-lines span:nth-child(2),
+body[data-page="glvm"] [data-glvm-root][data-glvm-active-route="locality"] .glvm-route-lines span:nth-child(3) {
+  opacity: 1;
+  box-shadow: 0 0 12px rgba(47, 146, 139, 0.2);
+}
+
+body[data-page="glvm"] .glvm-journey-board.is-route-changing .glvm-substrate.is-active {
+  animation: glvm-route-selected 360ms ease-out both;
+}
+
+body[data-page="glvm"] .glvm-journey-board.is-route-changing .glvm-route-detail > * {
+  animation: glvm-route-detail-in 300ms ease-out both;
+}
+
+body[data-page="glvm"] .glvm-journey-board.is-route-changing .glvm-route-detail > :nth-child(2) { animation-delay: 45ms; }
+body[data-page="glvm"] .glvm-journey-board.is-route-changing .glvm-route-detail > :nth-child(3) { animation-delay: 90ms; }
+
+body[data-page="glvm"] .glvm-journey-board.is-running .glvm-route-map {
+  border-color: rgba(47, 146, 139, 0.34);
+}
+
+body[data-page="glvm"] .glvm-journey-board.is-running [data-glvm-action="play"] {
+  box-shadow: 0 0 0 4px rgba(47, 146, 139, 0.1);
+}
+
+body[data-page="glvm"] .glvm-journey-board.is-step-advancing .glvm-journey-step.is-current {
+  animation: glvm-journey-step-beat 420ms cubic-bezier(0.22, 0.75, 0.24, 1) both;
+}
+
+body[data-page="glvm"] .glvm-journey-board.is-complete .glvm-route-core {
+  box-shadow: 0 0 0 18px rgba(66, 126, 119, 0.09), 0 18px 44px rgba(47, 112, 105, 0.2);
+}
+
+@keyframes glvm-route-selected {
+  0% { opacity: 0.62; }
+  50% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@keyframes glvm-route-detail-in {
+  from { opacity: 0.25; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glvm-journey-step-beat {
+  0% { transform: translateY(0); }
+  55% { transform: translateY(-9px); }
+  100% { transform: translateY(-5px); }
 }

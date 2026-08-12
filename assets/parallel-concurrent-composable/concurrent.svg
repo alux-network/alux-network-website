@@ -123,13 +123,6 @@
       87%, 94% { transform: translate(1435px,286px) scale(1); opacity: 1; }
       99%, 100% { transform: translate(1435px,286px) scale(.96); opacity: 0; }
     }
-    @media (prefers-reduced-motion: reduce) {
-      .cx-source-a, .cx-wait, .cx-source-b, .cx-message, .cx-comm, .cx-continuation { animation: none !important; }
-      .cx-source-a, .cx-wait, .cx-message { opacity: 0; }
-      .cx-source-b { transform: translate(1260px,662px); opacity: 1; }
-      .cx-comm { opacity: .22; transform: scale(1); }
-      .cx-continuation { transform: translate(1280px,286px); opacity: 1; }
-    }
   </style>
 
   <rect width="1672" height="941" fill="url(#cx-bg)"/>

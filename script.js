@@ -66,8 +66,8 @@ const homeHeroActions = {
 const homeFaqItems = {
   en: [
     ["Is ALUX just another faster L1?", "No. Faster L1s accelerate the same abstraction: one-shot state updates that happen within one block. ALUX is a decentralized concurrent runtime for Long Transactions that can wait, resume, join across multiple channels, or select whichever channel becomes ready first; their state updates are no longer constrained by a block boundary. Through its GLVM architecture—Virtual Machine Abstraction—the same logical transaction is designed to extend beyond block boundaries toward shard and system boundaries."],
-    ["What becomes possible on ALUX that ordinary smart contracts cannot do?", "ALUX programs can fork into concurrent processes, wait for external inputs, join results from multiple channels, select the first event that becomes ready, and still commit the complete transaction atomically. Replay and commit mechanisms let validators reproduce the same outcome without exposing partial state."],
-    ["Why is ALUX built for AI agents?", "An on-chain agent is naturally a Long Transaction. Calling an LLM or a tool takes time; it cannot complete instantly—one only has to look at a Claude Code or Codex session. In other words, ALUX is a decentralized durable execution engine for agents."],
+    ["What becomes possible on ALUX that ordinary smart contracts cannot do?", "ALUX extends the smart-contract model into a decentralized durable execution engine for long-running jobs. A workflow can run concurrent processes, suspend across blocks, wait for external tools or people, resume, and join results without exposing half-completed state. Runtime-mediated external channels can interact with supported off-chain services without separate oracle-and-relayer choreography. The architecture is designed to extend the same atomic model horizontally, so cross-shard effects commit or abort together; cross-shard execution remains on the roadmap."],
+    ["Why is ALUX built for AI agents?", "An on-chain agent is naturally a Long Transaction. Calling an LLM or a tool takes time; waiting for a human response also takes time. The workflow cannot be forced into an instant, one-block call. ALUX lets it preserve execution context, suspend, resume when inputs arrive, coordinate concurrent agents, and finalize through replayable execution."],
     ["What is Object Capability (OCAP)?", "Object Capability (OCAP) is a security model where the only way a piece of code can access a resource is by being explicitly given a reference (a capability) to that resource. In an OCAP system, the same object reference both identifies a resource (designation) and grants permission to use it (authorization)."],
     ["How does ALUX keep Long Transactions deterministic?", "ReplayTrie records the non-deterministic COMM choices that affect execution, enabling bit-exact deterministic replay inside the ALUX runtime so validators can reproduce the same execution outcome."],
     ["Can existing smart contract developers use it?", "TVM runs EVM bytecode inside isolated sandboxes, so most EVM contracts can be migrated to ALUX with minimal changes. ALUX also presents an Ethereum-compatible view through a set of commonly used eth_* JSON-RPC methods."],
@@ -83,19 +83,18 @@ const pageData = {
     metaDescription: "GLVM is ALUX's architecture for one logical execution layer across physically distributed TVMs, coordinating concurrency, replay, authority, finalization, replication, and consensus.",
     hero: {
       eyebrow: "ALUX Network",
-      title: "Building GLVM",
+      title: "Building the global VM",
       loop: "",
-      text: "GLVM is ALUX’s unified execution abstraction for developers. Each machine runs a TVM; together they form one logical execution layer. The runtime coordinates replay, authority, finalization, replication, and consensus beneath the application. The chain runtime is the current foundation; private cloud is the next integration surface, while client-device execution remains on the roadmap."
+      text: "Imagine one logical virtual machine that runs everywhere—on a public blockchain, on a private cluster, and on client hardware such as phones and browsers—while abstracting away the state, threads, replication, and consensus underneath. Developers write one concurrent program; where it runs becomes a configuration choice, not an architecture. Its parts still commit together, atomically. That is Virtual Machine Abstraction, and ALUX is building it."
     },
     sections: [
       {
         type: "architecture",
         eyebrow: "Virtual Machine Abstraction",
-        title: "One logical execution layer.<br>Physically distributed.",
+        title: "One logical execution layer<br>Physically distributed",
         text: "GLVM gives developers one concurrent execution model above many TVMs. The ALUX chain runtime is the current foundation; private cloud is the next integration surface, while client-device deployment remains on the roadmap.",
         architecture: {
           world: {
-            label: "Layer 3",
             title: "World Operating System",
             items: [
               "Service/Agent<br>Registration & Finding",
@@ -104,7 +103,6 @@ const pageData = {
             ]
           },
           runtime: {
-            label: "Layer 2",
             title: "ALUX — Decentralized Concurrent Runtime",
             vm: "GLVM",
             controls: ["State + Threads", "Replication", "Consensus"],
@@ -112,7 +110,6 @@ const pageData = {
             caption: "Each machine runs one TVM; together they form GLVM."
           },
           infrastructure: {
-            label: "Layer 1",
             title: "Physical Infrastructure",
             groups: [
               ["Public Blockchain", "Blockchain Nodes"],
@@ -141,17 +138,17 @@ const pageData = {
         inspectorLabel: "Module Trace",
         inspectorTitle: "Open a module",
         inspectorDefault: "Double-click a card to flip it into a short note on what it does, why it matters, and where it touches real services.",
-        featuredClusterIds: ["execution", "authority", "transaction", "consensus", "build"],
+        featuredClusterIds: ["execution", "authority", "transaction", "consensus", "build", "data"],
         core: {
           label: "Virtual Machine Abstraction",
           title: "ALUX Runtime",
-          text: "One logical execution layer where concurrent TVM execution, Native OCAP Support, cross-block atomicity, and BlockGit finality compose beneath the developer-facing GLVM abstraction.",
+          text: "GLVM brings concurrent TVM execution, native OCAP support, cross-block atomicity, and BlockGit finality together as one logical execution layer.",
           items: ["One Logical Layer", "Concurrent Runtime", "Atomic Commit"],
           detailTitle: "One logical model across environments",
           detailTechnical: "ALUX abstracts the state, threads, replication, and consensus beneath a single concurrent execution model.",
           detailBusiness: "Developers target one concurrent model while the runtime coordinates execution across an expanding set of environments.",
-          runtimeLabel: "Virtual Machine Abstraction",
-          runtimeTitle: "ALUX Runtime\nforms\u00A0one\u00A0logical\u00A0layer",
+          runtimeLabel: "ALUX Runtime",
+          runtimeTitle: "One logical execution layer",
           runtimeTechnical: "TVM execution, Native OCAP Support, cross-block commit logic, and BlockGit finality meet inside one runtime abstraction.",
           runtimeBusiness: "The architecture keeps one developer model across chain, private cloud, and future client-device execution surfaces."
         },
@@ -187,16 +184,16 @@ const pageData = {
           {
             id: "transaction",
             label: "Transaction Layer",
-            title: "Cross-Block ACID",
-            text: "Segments and commit points let service work suspend across block boundaries, then settle atomically with replay and isolation evidence.",
-            items: ["Segments", "Commit Points", "ReplayTrie", "Isolation"],
-            detailTitle: "Work crosses blocks",
-            detailTechnical: "Segments preserve progress. ReplayTrie, isolation, rollback, and commit points bound how suspended work resumes and settles.",
-            detailBusiness: "A service can wait for delivery, approval, oracle data, or an agent action, then complete settlement with a verifiable audit trail.",
+            title: "Vertical Atomicity",
+            text: "A Long Transaction can suspend at a block boundary, resume in a later block, and still finalize as one ALUX transaction. Its ALUX state changes remain staged until commit; on abort, uncommitted effects are discarded.",
+            items: ["Cross-Block", "Suspend / Resume", "Atomic Finalization", "Replay Evidence"],
+            detailTitle: "One transaction across many block heights",
+            detailTechnical: "Segments and partitions preserve progress at suspension points. ReplayTrie, isolation, and commit rules let validators resume and reproduce the same transaction across later blocks.",
+            detailBusiness: "Wait for approvals, external data, or another service without exposing a chain of partially committed ALUX states.",
             runtimeLabel: "Transaction Layer",
-          runtimeTitle: "Services cross block boundaries",
-          runtimeTechnical: "Segments, ReplayTrie, isolation, and commit points let work suspend, resume, and settle atomically after a bounded checkpoint.",
-          runtimeBusiness: "Long-running workflows can wait for real-world inputs and still settle atomically across block heights."
+          runtimeTitle: "Vertical atomicity\nacross block heights",
+          runtimeTechnical: "Segments, partitions, ReplayTrie, isolation, and commit rules preserve one transaction across suspension and later-block resumption.",
+          runtimeBusiness: "Long-running workflows can wait without exposing partially committed ALUX state."
           },
           {
             id: "framework",
@@ -221,17 +218,17 @@ const pageData = {
           },
           {
             id: "build",
-            label: "Build Surface",
-            title: "Tolang + TSAC",
-            text: "Tolang compiles to TVM bytecode, while TSAC adapters route Ethereum-facing contracts into the tuple-space runtime.",
-            items: ["Tolang", "TSAC", "Solidity Entry", "EVM Adapters"],
-            detailTitle: "Clear path for builders",
-            detailTechnical: "Tolang targets TVM directly. TSAC adapts Solidity and EVM-facing calls into tuple-space execution.",
-            detailBusiness: "Teams can start from familiar Web3 tooling, then move toward ALUX-native service composition.",
-            runtimeLabel: "Build Surface",
-          runtimeTitle: "Contracts get a runtime path",
-          runtimeTechnical: "Tolang targets TVM directly, while TSAC adapts EVM-facing calls into tuple-space execution through isolated adapters.",
-          runtimeBusiness: "Builders can start from familiar Web3 tooling and grow into ALUX-native service composition."
+            label: "Compatibility Layer",
+            title: "Heterogeneous VM Sandbox",
+            text: "Supported EVM workloads run in isolated sandboxes today and coordinate with the concurrent TVM through TSAC adapters. The same compatibility layer is designed to host additional guest VMs; WASM remains on the roadmap.",
+            items: ["EVM Today", "Isolated Sandboxes", "TSAC Adapters", "WASM Planned"],
+            detailTitle: "Sequential VMs, concurrent coordination",
+            detailTechnical: "Each EVM instance keeps its own stack and memory. Reads, writes, and contract calls that touch global state pass through TSAC, where TVM can coordinate them with other live processes.",
+            detailBusiness: "Bring supported EVM contracts into ALUX while the runtime handles concurrency at the coordination layer.",
+            runtimeLabel: "Compatibility Layer",
+          runtimeTitle: "Guest VMs run\nin isolated sandboxes",
+          runtimeTechnical: "Supported EVM instances keep their own stack and memory while TSAC routes global-state operations into concurrent TVM coordination. Additional guest VMs remain an expansion path.",
+          runtimeBusiness: "Builders can bring supported EVM contracts into ALUX today; WASM remains on the roadmap."
           },
           {
             id: "node",
@@ -253,6 +250,20 @@ const pageData = {
             title: "LSP + Playground",
             text: "Compiler diagnostics, expand, format, and playground runs make service logic visible before it reaches a live node.",
             items: ["Diagnostics", "Expand", "Compiler Format", "Run / Simulate"]
+          },
+          {
+            id: "data",
+            label: "Roadmap · Sharding",
+            title: "Horizontal Atomicity",
+            text: "Design target: extend the same all-or-nothing transaction boundary across shards. Every shard-local effect commits together or none does, and unrelated transactions should never observe a partial cross-shard result.",
+            items: ["Cross-Shard", "One Transaction", "All-or-Nothing", "No Partial State"],
+            detailTitle: "One transaction across many shards — Roadmap",
+            detailTechnical: "The target model stages updates on every participating shard behind one transaction boundary. If any shard-local call fails, all staged updates are discarded before becoming observable. Cross-shard execution is not implemented in the current runtime.",
+            detailBusiness: "Scale horizontally without asking applications to repair partially committed state with Saga compensation.",
+            runtimeLabel: "Architecture Target",
+          runtimeTitle: "Horizontal atomicity\nacross shards",
+          runtimeTechnical: "The design requires all participating shard-local effects to commit together or abort together, while tentative intermediate state remains unobservable. Cross-shard execution remains on the roadmap.",
+          runtimeBusiness: "Horizontal scale should not force applications to recover from half-completed shard interactions."
           }
         ],
         combinations: [
@@ -354,23 +365,23 @@ const pageData = {
         type: "cards",
         eyebrow: "Use Cases",
         title: "What You Can\nBuild on ALUX",
-        text: "Build decentralized applications as concurrent programs: processes can fork, wait, join multiple channels, select the first available event, coordinate across blocks, and commit all-or-nothing.",
+        text: "Build workflows that keep their context while they wait, coordinate parallel work, and settle as one result. Current capabilities and roadmap targets are labeled separately.",
         items: [
-          ["Long-Running Process Orchestration", "Fork processes, wait for inputs, join results from multiple channels, or select whichever event becomes ready first—without restarting the transaction."],
-          ["Concurrent EVM Applications", "Run EVM bytecode inside isolated sandboxes, coordinate concurrent workloads through TVM, and migrate supported contracts through familiar Ethereum-facing interfaces."],
-          ["Atomic Cross-System Workflows", "Stage work across blocks and connected systems, then commit the complete transaction all-or-nothing instead of exposing partial state."],
-          ["Native OCAP Applications", "Compose task-specific, unforgeable capabilities between processes instead of letting identity carry unrelated ambient authority into every task."]
+          ["Long-Running AI Agents on Chain", "A workflow starts several agents in parallel. Some call the Claude API, while other steps wait for user input. The main agent continues only after every branch finishes, even when the workflow runs for about 30 minutes. Claude and user input connect at the application layer; ALUX provides durable fork, wait, join, capability passing, and replayable execution."],
+          ["BTC Price Aggregation from Three Exchanges", "A contract starts three parallel processes through configured external-I/O adapters to read BTC prices from Binance, Coinbase, and Kraken. A fourth process waits for all three, joins their results, normalizes the quotes, computes the median, and then continues. ALUX makes the execution reproducible; the selected endpoints still determine source truth."],
+          ["Cross-Shard Atomic Execution", "Contract a on Shard A stages payment for a ticket managed by contract b on Shard B. If b fails because the ticket is already sold, a's payment is rolled back. Only when both steps succeed do payment and ticket ownership commit together; other transactions see neither partial state. Cross-shard atomic execution is a roadmap target, not a live capability today."],
+          ["Programmable Money with Composable Rules", "Alice gives Bob a purse containing 1 ALUX and adds a rule: the funds must be used within 10 days. When Bob gives the same purse to Carole, he adds a second rule: it may be used only to buy books. Carole must satisfy both rules, and passing the purse does not duplicate the funds. The time limit and spending rule are enforced by application logic."]
         ],
         demos: [
-          { type: "workflow", label: "reservation.tox", status: "LIVE TRACE", steps: ["Spawn", "Wait", "Join", "Select", "Commit"] },
-          { type: "parallel", label: "EVM workload", status: "3 INSTANCES", lanes: ["EVM 01", "EVM 02", "EVM 03"], core: "TVM / TSAC" },
-          { type: "systems", label: "service commit", status: "TARGET MODEL", nodes: ["CHAIN", "API", "DATABASE"], footer: "Target: settle together" },
-          { type: "capability", label: "capability", status: "DELEGATED", rows: [["namespace", "orders/write"], ["holder", "service-b"], ["rights", "scoped"]] }
+          { type: "workflow", label: "durable-agent.tox", status: "RUNTIME + APP INTEGRATION", steps: ["Fork agents", "Call Claude", "Wait for human", "Join all", "Continue"] },
+          { type: "parallel", label: "btc-median.tox", status: "SUPPORTED I/O PATH", lanes: ["BINANCE", "COINBASE", "KRAKEN"], core: "JOIN → MEDIAN" },
+          { type: "systems", label: "ticket settlement", status: "ROADMAP", nodes: ["PAYMENT / A", "ATOMIC LINK", "TICKET / B"], footer: "Both commit or both abort" },
+          { type: "capability", label: "Purse containing 1 ALUX", status: "APPLICATION POLICY", rows: [["Alice", "Use within 10 days"], ["Bob", "Books only"], ["Carole", "Both rules apply"]] }
         ],
         cta: {
           eyebrow: "Build beyond the one-shot transaction",
-          title: "Explore concurrent programs that orchestrate and commit atomically.",
-          text: "Use Runtime Lab to inspect fork, wait, join, select, replay, and atomic commit across the ALUX execution model.",
+          title: "Explore the runtime primitives behind long-running workflows.",
+          text: "Use Runtime Lab to inspect fork, wait, join, external input, replay, and atomic finalization across the ALUX execution model.",
           label: "Open Runtime Lab"
         }
       },
@@ -385,7 +396,7 @@ const pageData = {
         eyebrow: "Frequently Asked Questions",
         title: "FAQ",
         hint: "Click a question to view the answer",
-        faqOrder: [0, 1, 6, 4, 3, 7, 8, 2, 5],
+        faqOrder: [1, 2, 0, 6, 4, 3, 7, 8, 5],
         items: homeFaqItems.en
       },
       {
@@ -619,7 +630,7 @@ const pageData = {
         label: "Parallel",
         title: "Flight, hotel, transfer, and insurance<br>search at the same time",
         cue: "Four travel searches finish independently",
-        image: "assets/parallel-concurrent-composable/parallel.svg?v=20260710-independent5",
+        image: "assets/parallel-concurrent-composable/parallel.svg?v=20260812-motion-restore4",
         alt: "Multiple isolated execution rails moving forward at the same time.",
         what: "Parallel execution means independent jobs run at the same time. A travel agent can search flights, rooms, transfers, and insurance without making one search wait behind another.",
         how: "Parallel execution is native to ALUX's process calculus: transactions share no memory, and any interaction is confined to tuple-space channels. Independent transactions therefore advance in separate TVM lanes, while Block Merge resolves state overlap at commit time.",
@@ -631,7 +642,7 @@ const pageData = {
         label: "Concurrent",
         title: "A booking waits for availability<br>and continues when the reply arrives",
         cue: "The booking waits; a hotel agent replies; the next step begins",
-        image: "assets/parallel-concurrent-composable/concurrent.svg?v=20260710-channelmatch5",
+        image: "assets/parallel-concurrent-composable/concurrent.svg?v=20260812-motion-restore4",
         alt: "Two transactions interact through a tuple-space channel: one waits for a matching message, the other sends it, and the waiting continuation resumes while unrelated work keeps moving.",
         what: "Concurrency begins when jobs interact. A booking can leave a waiting condition in a channel, and a hotel service can satisfy it later by sending the matching availability message.",
         how: "The waiting consume is stored as a resource in tuple space. A produce from another transaction matches it, triggering a COMM event that spawns the continuation and moves the Execution Context from Inactive back to Running. If more than one match is possible, ReplayTrie records the chosen COMM for deterministic replay.",
@@ -643,7 +654,7 @@ const pageData = {
         label: "Composable",
         title: "The room and payment<br>confirm together",
         cue: "The booking confirms only when reservation and payment both succeed",
-        image: "assets/parallel-concurrent-composable/composable.svg?v=20260710-bookingatomic3",
+        image: "assets/parallel-concurrent-composable/composable.svg?v=20260812-motion-restore4",
         alt: "A room reservation and payment authorization arrive from different systems. Only after both are ready does one booking confirmation leave the atomic boundary.",
         what: "Composition is not ordinary bundling. The target in this example is to commit the room hold and payment authorization together, or commit neither one.",
         how: "The current runtime provides tuple-space coordination, scoped OCAP references, cross-block continuation, ReplayTrie, and Block Merge. End-to-end atomic composition across independent external systems remains a design target built from those primitives.",
@@ -708,8 +719,7 @@ const pageData = {
         items: [
           ["Frank He (Atticbee)", "Frank He is a blockchain researcher and entrepreneur. His research includes concurrent virtual machine design and implementation. Prior to ConcurSys, he has been working for more than 15 years as a senior quantitative analyst/developer for Bloomberg, Lehman Brothers and Barclays Capital, building highly scalable risk computation systems. GitHub: github.com/atticbee | X: twitter.com/atticbeeus"],
           ["Tomislav Grospić", "I thrive on thinking outside the box, completely immersing myself in every project. I'm fueled by the innovative spirit of those who push the boundaries of technology and make it a force for good. My first attempt at a cardboard calculator at 5 might not have crunched numbers, but it sparked a lifelong fascination with computation. By 10, that fascination evolved into serious fun with assembly language programming on the C64c. For over a decade, I delved into the world of electronics. The past two decades have seen me become a polyglot programmer, fluent in languages ranging from JavaScript to the esoteric elegance of Haskell. Now, I'm on a mission to unlock the potential of concurrency with process calculus, aiming to revolutionize the ever-evolving blockchain landscape. GitHub: github.com/tgrospic | X: twitter.com/grospic | LinkedIn: linkedin.com/in/tgrospic"],
-          ["Tom Yi", "Tom Yi is a blockchain developer, focusing on consensus protocol research. Previously he has been working in the IPC industry for about ten years, responsible for system architecture design, and application development of various platforms, including: DApp, Android&iOS app, cloud service, website and desktop applicaton. His main development languages including C#, Java, Html, JS, OC, TS, C, C++, Solidity and Rust. GitHub: github.com/tom-yi-alux"],
-          ["Ben Li", "Ben Li, a seasoned blockchain developer since 2017, specializes in system and application design and development for Blockchain, Blockchain-based platforms, and DApps. With extensive experience in Linux kernel and application development, he is proficient in C, C++, Assembler, Solidity, Rust, Go, Python, and Java. GitHub: github.com/benli5510"]
+          ["Tom Yi", "Tom Yi is a blockchain developer, focusing on consensus protocol research. Previously he has been working in the IPC industry for about ten years, responsible for system architecture design, and application development of various platforms, including: DApp, Android&iOS app, cloud service, website and desktop applicaton. His main development languages including C#, Java, Html, JS, OC, TS, C, C++, Solidity and Rust. GitHub: github.com/tom-yi-alux"]
         ]
       }
     ]
@@ -744,8 +754,8 @@ const glvmPageEn = {
   },
   definition: {
     eyebrow: "The core definition",
-    title: "One TVM per machine, coordinated through one logical execution model.",
-    text: "TVM is the bytecode execution engine on one machine. GLVM defines the system-level execution abstraction across participating TVMs. It is not another bytecode VM; developers target one logical model while deterministic replay, recovery, replication, finalization, and consensus are coordinated beneath the abstraction.",
+    title: "One TVM per machine, coordinated through one logical execution model",
+    text: "TVM is the bytecode execution engine on one machine. GLVM defines the system-level execution abstraction across participating TVMs. It is not another bytecode VM; developers target one logical model while deterministic replay, execution continuity, replication, finalization, and consensus are coordinated beneath the abstraction.",
     comparison: [
       {
         label: "TVM",
@@ -767,8 +777,8 @@ const glvmPageEn = {
       ["Composable security", "Core runtime"]
     ],
     payoff: {
-      label: "One logical layer",
-      title: "One logical layer—not one physical machine.",
+      label: "Core idea",
+      title: "One logical execution layer, not one physical machine",
       text: "Developers target one concurrent execution model while the runtime handles scheduling, replay, capability checks, replication, and finalization."
     }
   },
@@ -776,6 +786,7 @@ const glvmPageEn = {
     eyebrow: "Three-layer architecture",
     title: "Three layers, one developer-facing execution model",
     text: "Physical machines run TVMs; in the GLVM architecture, those engines participate in one shared logical execution model. A future World OS will organize that layer into discoverable, orchestrated services governed by explicit capabilities.",
+    instruction: "Select a layer to view its details.",
     layers: [
       {
         id: "world",
@@ -808,7 +819,7 @@ const glvmPageEn = {
   },
   continuity: {
     eyebrow: "Execution and atomicity",
-    title: "A transaction can wait across blocks, then settle as one.",
+    title: "A transaction can wait across blocks, then settle as one",
     text: "Execution evolves from sequential and parallel work to concurrent processes that communicate, wait, and resume. Composite execution extends the model so multiple concurrent transactions can share a higher-level settlement boundary; cross-block continuity provides the vertical foundation for that direction.",
     modes: [
       { id: "sequential", label: "Sequential", text: "One transition follows another.", status: "Baseline" },
@@ -863,7 +874,7 @@ const glvmPageEn = {
   },
   ocapStory: {
     eyebrow: "Object-capability security",
-    title: "Give the task one key—not the user’s badge.",
+    title: "Give the task one key—not the user’s badge",
     text: "In the CEO–Bob example, identity-based access can carry the ambient authority represented by the CEO’s badge into the task. With object capabilities, the task receives only one key that names Bob’s record. The TVM enforces the reachable boundary at runtime. Without a capability reference to another pre-existing object, the task cannot name or reach it.",
     alt: "A CEO and Bob meet; the identity badge on the left represents broad access, while one OCAP key on the right names only Bob’s record.",
     caption: "CEO + Bob · OCAP key = unforgeable name, not a cryptographic key",
@@ -957,7 +968,7 @@ const glvmPageEn = {
   },
   status: {
     eyebrow: "Build horizon",
-    title: "The core runtime is taking shape. GLVM is expanding across environments.",
+    title: "The core runtime is taking shape as GLVM expands across environments",
     text: "GLVM grows outward from ALUX’s concurrent chain runtime. Private cloud is the next integration surface; client-device and cross-shard execution remain on the roadmap. The map below separates the core runtime, the surfaces now being extended, and the next architectural horizon.",
     groups: [
       {
@@ -968,7 +979,7 @@ const glvmPageEn = {
       {
         tone: "designed",
         label: "Expanding the system",
-        items: ["Private or cloud engine deployment", "GLVM abstraction across deployment surfaces", "Production-scale hardening", "Richer policy and guarded-channel controls", "Operator recovery and observability"]
+        items: ["Private or cloud engine deployment", "GLVM abstraction across deployment surfaces", "Production-scale hardening", "Richer policy and guarded-channel controls", "Runtime observability and operator tooling"]
       },
       {
         tone: "planned",
@@ -979,7 +990,7 @@ const glvmPageEn = {
   },
   close: {
     eyebrow: "Continue learning",
-    title: "Explore the runtime, agent workloads, and system comparisons.",
+    title: "Explore the runtime, agent workloads, and system comparisons",
     text: "Runtime Lab explains the execution model. For AI Agents shows the workload pattern. ALUX VS Others compares architecture and capabilities across systems.",
     links: [["Runtime Lab", "runtime-lab.html"], ["For AI Agents", "for-ai-agents.html"], ["ALUX VS Others", "alux-vs-others.html"]]
   }
@@ -1422,7 +1433,7 @@ function initCapabilityMindmaps() {
             composer.scrollIntoView({
               block: "center",
               inline: "nearest",
-              behavior: motionQuery?.matches ? "auto" : "smooth"
+              behavior: "smooth"
             });
           });
         }
@@ -1470,6 +1481,10 @@ function initCapabilityMindmaps() {
 
     const constrainExpandedNodeSlot = (node) => {
       if (!node || node === coreNode || !node.classList.contains("is-expanded")) return;
+      if (touchModeQuery?.matches) {
+        clearNodePosition(node);
+        return;
+      }
 
       const rect = node.getBoundingClientRect();
       const canvasRect = canvas.getBoundingClientRect();
@@ -1486,6 +1501,10 @@ function initCapabilityMindmaps() {
     };
 
     const pinExpandedNodeSlot = (node) => {
+      if (touchModeQuery?.matches) {
+        clearNodePosition(node);
+        return;
+      }
       if (!node || node === coreNode) {
         clearNodePosition(node);
         return;
@@ -1513,7 +1532,6 @@ function initCapabilityMindmaps() {
       node.style.setProperty("transform", "none", "important");
     };
 
-    const motionQuery = window.matchMedia?.("(prefers-reduced-motion: reduce)");
     const touchModeQuery = window.matchMedia?.("(max-width: 760px)");
     nodes.forEach((node) => {
       let dragging = false;
@@ -1570,7 +1588,7 @@ function initCapabilityMindmaps() {
           });
         };
 
-        if (Math.abs(dx) + Math.abs(dy) < 0.8 || motionQuery?.matches) {
+        if (Math.abs(dx) + Math.abs(dy) < 0.8) {
           settleHome();
           return;
         }
@@ -2192,7 +2210,7 @@ const teamPageEn = {
             "That career left him with one conviction: the synchronous execution model has reached its end. ALUX is his answer. He led the design of its core stack:"
           ],
           highlights: [
-            ["TVM tuple-space virtual machine", "Processes interact concurrently through channels; pattern matching drives scheduling; unforgeable capability references make authority explicit."],
+            ["TVM tuple-space virtual machine", "Processes interact concurrently through channels; pattern matching is scheduling; capability credentials are authorization."],
             ["Tolang concurrent programming language", "Tolang encodes channel descriptors and behavioral types so some misuse can be caught early, while the runtime enforces lifecycle constraints."],
             ["OCAP object-capability security model", "A channel reference is unforgeable and transferable; scope and lifecycle rules limit authority without relying on address-based access alone."],
             ["BlockGit DAG consensus protocol", "Validators produce DAG blocks concurrently. BlockGit uses rotating leader selection for finality, while Block Merge resolves overlapping work."],
@@ -2234,19 +2252,6 @@ const teamPageEn = {
             ["GitHub", "https://github.com/tom-yi-alux"]
           ],
           signals: ["Consensus", "System Architecture", "DApps"]
-        },
-        {
-          name: "Ben Li",
-          role: "Blockchain / Systems Developer",
-          portrait: "ben",
-          bio: [
-            "Ben has been building blockchain systems since 2017 — chains, platforms, and DApps — with deep roots in the Linux kernel and low-level development.",
-            "That systems background, from C and assembler up through Rust, Go, and Solidity, is the foundation his ALUX work stands on."
-          ],
-          links: [
-            ["GitHub", "https://github.com/benli5510"]
-          ],
-          signals: ["Linux Kernel", "Blockchain Systems", "DApps"]
         }
       ]
     }
@@ -2258,29 +2263,49 @@ pages.team.en = teamPageEn;
 
 function renderHomeHeroTitle(value = "", lang = "en") {
   const localizedLines = {
-    en: value === "Building GLVM" ? ["Building", "GLVM"] : null,
-    zh: value === "构建 GLVM" ? ["构建", "GLVM"] : null,
-    ko: value === "GLVM 구축" ? ["GLVM", "구축"] : null,
-    ja: value === "GLVM を構築する" ? ["GLVM", "を構築する"] : null,
-    ar: value === "نبني GLVM" ? ["نبني", "GLVM"] : null
+    en: value === "Building the global VM" ? ["Building the", "global VM"] : null,
+    zh: value === "构建全局虚拟机" ? ["构建全局虚拟机"] : null,
+    ko: value === "전역 VM 구축" ? ["전역 VM", "구축"] : null,
+    ja: value === "グローバル VM を構築する" ? ["グローバル VM を", "構築する"] : null,
+    ar: value === "نبني الآلة الافتراضية العالمية" ? ["نبني", "الآلة الافتراضية العالمية"] : null
   };
   const lines = localizedLines[lang];
 
   if (lines) {
-    const separator = lang === "zh" ? "" : " ";
     return lines
-      .map((line) => `<span class="hero-home-title-line">${line}</span>`)
-      .join(separator);
+      .map((line) => `<span class="hero-home-title-line">${escapeAttribute(line)}</span>`)
+      .join("");
   }
 
   return value.replace(/^ALUX\b/, '<span class="hero-home-brand">ALUX</span>');
+}
+
+function renderHomeHeroText(value = "", lang = "en") {
+  const zhLines = [
+    "全局逻辑虚拟机（GLVM）是 ALUX 面向开发者的统一执行抽象。",
+    "每台机器运行一台 TVM，共同组成一个逻辑执行层。",
+    "运行时在应用之下协调重放、权限、最终确认、复制与共识。",
+    "链上运行时构成当前基础；私有云是下一步集成方向，",
+    "客户端设备执行仍属于路线图。"
+  ];
+
+  if (lang === "zh" && zhLines.join("") === value) {
+    return zhLines
+      .map((line) => `<span class="home-hero-copy-line">${escapeAttribute(line)}</span>`)
+      .join("");
+  }
+
+  return escapeAttribute(value).split(/\n+/).join("<br>");
 }
 
 function renderHero(hero, lang) {
   if (!hero || hero.hidden) return "";
   const renderHeroCopy = (value = "") => escapeAttribute(value).split(/\n+/).join("<br>");
   const loop = hero.loop ? `<p class="hero-loop">${renderHeroCopy(hero.loop)}</p>` : "";
-  const text = hero.text ? `<p class="hero-text">${renderHeroCopy(hero.text)}</p>` : "";
+  const heroText = currentPage === "home"
+    ? renderHomeHeroText(hero.text || "", lang)
+    : renderHeroCopy(hero.text || "");
+  const text = hero.text ? `<p class="hero-text">${heroText}</p>` : "";
   const eyebrow = hero.eyebrow ? `<p class="eyebrow">${renderHeroCopy(hero.eyebrow)}</p>` : "";
   const title = currentPage === "home"
     ? renderHomeHeroTitle(hero.title, lang)
@@ -2316,8 +2341,7 @@ const externalProjectNameReplacements = {
     [/\bHardhat\b/gi, "standard developer tooling"],
     [/\bOpenAI\b/gi, "frontier AI systems"],
     [/\bDeFi\b/g, "programmable finance"],
-    [/\bBitcoin\b/gi, "scarce digital money"],
-    [/\bBTC\b/g, "external market data"]
+    [/\bBitcoin\b/gi, "scarce digital money"]
   ]
 };
 
@@ -2344,7 +2368,7 @@ function sanitizeRenderedExternalProjectNames(root, lang) {
   });
 }
 
-const LOCALIZED_UNBREAKABLE_PHRASES = /HTTPS GET|Block Merge|JSON-RPC|Tuple-space|ReplayTrie|BlockGit|Web (?:2(?:\.0)?|3)|受明确权限约束的服务|受权限约束的服务|应用边界之下|执行上下文之外|共同组成|系统边界|应用之下|字节码执行引擎|元组空间虚拟机|并发执行模型|数据本地性|执行载体|运行时模块|物理基础设施|客户端设备|面向开发者|能力检查|协调模型|执行机制|工作负载|AI 智能体|其他系统|指向 Bob 记录|必要的对象能力|身份权限|不可伪造能力引用|其他人员记录|其他资源|不可伪造的引用|不可伪造引用|基于身份的环境权限|采用对象能力后|端到端原子组合|非确定性选择|全局逻辑虚拟机|世界操作系统|系统继续扩展|生产规模部署|生产部署|访问权限|财务档案|模型层防御|控制机制|链下副作用|授权路径|后续执行|保留延续，?|永久领导者|完整系统|执行过程|状态变化|逻辑执行层|多台物理机器|逻辑世界|跨环境|部署范围|去中心化|并发运行时|执行环境|个人设备|确定性重放|显式对象能力|最小授权原则|跨底座产品化|跨分片执行|源码已包含|共同结算|最终状态|执行上下文|局部提交|提前完成最终确认。?|完成最终确认|最终确认|元组空间|区块链|对象能力|字节码|另一位|发动机|虚拟机|显式能力|环境权限|运行时能力|能力引用|架构扩展中|当前基础|不只需要|一个结果|服务原生公链|有边界的权限|原地重启|真正需要的权限|仍可能|复制|机制|具备|约束|之下|用户|人员|密钥|合并|引擎|ALUX|GLVM|TVM|COMM|OCAP|POLA|EVM|TSAC|WASM|CEO|Bob|Alice|Carol|旨在(?=把多个物理环境中的 TVM)|这些(?=执行转化为)|具体机制(?=，并明确标出)/g;
+const LOCALIZED_UNBREAKABLE_PHRASES = /HTTPS GET|Block Merge|JSON-RPC|Tuple-space|ReplayTrie|BlockGit|Web (?:2(?:\.0)?|3)|\d+(?:\u202F)?天|受明确权限约束的服务|受权限约束的服务|应用边界之下|执行上下文之外|共同组成|系统边界|应用之下|字节码执行引擎|元组空间虚拟机|并发执行模型|数据本地性|执行载体|运行时模块|物理基础设施|客户端设备|面向开发者|能力检查|协调模型|执行机制|工作负载|AI 智能体|其他系统|指向 Bob 记录|必要的对象能力|身份权限|不可伪造能力引用|其他人员记录|其他资源|不可伪造的引用|不可伪造引用|基于身份的环境权限|采用对象能力后|端到端原子组合|非确定性选择|全局逻辑虚拟机|世界操作系统|系统继续扩展|生产规模部署|生产部署|访问权限|财务档案|模型层防御|控制机制|链下副作用|授权路径|后续执行|保留延续，?|永久领导者|完整系统|执行过程|状态变化|逻辑执行层|多台物理机器|逻辑世界|跨环境|部署范围|去中心化|并发运行时|执行环境|个人设备|确定性重放|显式对象能力|最小授权原则|跨底座产品化|跨分片执行|源码已包含|共同结算|最终状态|执行上下文|局部提交|提前完成最终确认。?|完成最终确认|最终确认|元组空间|区块链|对象能力|字节码|另一位|发动机|虚拟机|显式能力|环境权限|运行时能力|能力引用|架构扩展中|当前基础|不只需要|一个结果|服务原生公链|有边界的权限|原地重启|真正需要的权限|仍可能|复制|机制|具备|约束|之下|用户|人员|密钥|合并|引擎|ALUX|GLVM|TVM|COMM|OCAP|POLA|EVM|TSAC|WASM|CEO|Bob|Alice|Carol|旨在(?=把多个物理环境中的 TVM)|这些(?=执行转化为)|具体机制(?=，并明确标出)/g;
 
 function protectChineseSemanticWords(root, lang) {
   if (lang !== "zh" || typeof Intl?.Segmenter !== "function") return;
@@ -2352,7 +2376,7 @@ function protectChineseSemanticWords(root, lang) {
   const segmenter = new Intl.Segmenter("zh-CN", { granularity: "word" });
 
   getTextNodes(root).forEach((node) => {
-    if (node.parentElement?.closest(".technical-token")) return;
+    if (node.parentElement?.closest(".technical-token, .no-break-token")) return;
 
     const segments = [...segmenter.segment(node.nodeValue || "")];
     const hasMultiCharacterWord = segments.some(({ segment, isWordLike }) =>
@@ -2386,10 +2410,19 @@ function protectLocalizedTechnicalTokens(root, lang) {
   if (lang === "en") return;
 
   getTextNodes(root).forEach((node) => {
-    if (node.parentElement?.closest(".technical-token")) return;
+    if (node.parentElement?.closest(".technical-token, .no-break-token")) return;
 
     const value = node.nodeValue;
-    const matches = [...value.matchAll(LOCALIZED_UNBREAKABLE_PHRASES)];
+    const matches = [...value.matchAll(LOCALIZED_UNBREAKABLE_PHRASES)].filter((match) => {
+      const start = match.index ?? 0;
+      const end = start + match[0].length;
+      const startsWithLatin = /^[A-Za-z0-9]/.test(match[0]);
+      const endsWithLatin = /[A-Za-z0-9]$/.test(match[0]);
+      return !(
+        (startsWithLatin && /[A-Za-z0-9]/.test(value[start - 1] || "")) ||
+        (endsWithLatin && /[A-Za-z0-9]/.test(value[end] || ""))
+      );
+    });
     if (!matches.length) return;
 
     const fragment = document.createDocumentFragment();
@@ -2411,7 +2444,6 @@ function protectLocalizedTechnicalTokens(root, lang) {
     node.replaceWith(fragment);
   });
 
-  protectChineseSemanticWords(root, lang);
 }
 
 const ARABIC_TECHNICAL_RUN = /\([^()\n]*[A-Za-z0-9][^()\n]*\)|[A-Za-z0-9]+(?:[+./:_-][A-Za-z0-9]+)*(?:[ \u00A0]+[A-Za-z0-9]+(?:[+./:_-][A-Za-z0-9]+)*)*/g;
@@ -2520,8 +2552,22 @@ function getHomeShowcaseKey(index) {
 function renderHomeShowcasePanel(section, index) {
   const labels = getInlineUiLabels();
   const showcaseKey = getHomeShowcaseKey(index);
-  const introText = section.text ? `<p class="showcase-intro">${section.text}</p>` : "";
-  const showcaseTitle = escapeAttribute(section.title || "").split(/\n+/).join("<br>");
+  const renderShowcaseCopy = (value = "", { multiline = false, bidi = false } = {}) => {
+    let html = escapeAttribute(value)
+      .replace(/\b(\d+(?:[.,]\d+)?)\s+ALUX\b/g, '<bdi class="no-break-token asset-amount" dir="ltr">$1&nbsp;ALUX</bdi>')
+      .replace(/\b(Shard|Contract)\s+([A-Za-z])\b/gi, '<bdi class="no-break-token" dir="ltr">$1&nbsp;$2</bdi>')
+      .replace(/(分片|合约)\s+([A-Za-z])/g, '<bdi class="no-break-token" dir="ltr">$1&nbsp;$2</bdi>');
+    if (multiline) {
+      html = html
+        .split(/\n+/)
+        .filter(Boolean)
+        .map((line) => `<span class="showcase-heading-line">${line}</span>`)
+        .join("");
+    }
+    return bidi ? `<bdi dir="auto">${html}</bdi>` : html;
+  };
+  const introText = section.text ? `<p class="showcase-intro">${renderShowcaseCopy(section.text)}</p>` : "";
+  const showcaseTitle = renderShowcaseCopy(section.title || "", { multiline: true });
   const headingClass = section.text
     ? "section-heading showcase-panel-heading showcase-panel-heading--split"
     : "section-heading showcase-panel-heading";
@@ -2539,23 +2585,23 @@ function renderHomeShowcasePanel(section, index) {
   }
 
   if (useCaseGrid) {
-    const renderDemoHead = (demo) => `<div class="showcase-demo-head"><span>${demo.label}</span><strong>${demo.status}</strong></div>`;
+    const renderDemoHead = (demo) => `<div class="showcase-demo-head"><span>${renderShowcaseCopy(demo.label)}</span><strong>${renderShowcaseCopy(demo.status)}</strong></div>`;
     const renderUseCaseDemo = (demo = {}) => {
       if (demo.type === "workflow") {
-        return `<div class="showcase-demo showcase-demo--workflow">${renderDemoHead(demo)}<div class="showcase-demo-steps" style="--step-count:${demo.steps.length}">${demo.steps.map((step, stepIndex) => `<span style="--step-index:${stepIndex}">${step}</span>`).join("")}</div><div class="showcase-demo-progress"><span></span></div></div>`;
+        return `<div class="showcase-demo showcase-demo--workflow">${renderDemoHead(demo)}<div class="showcase-demo-steps" style="--step-count:${demo.steps.length}">${demo.steps.map((step, stepIndex) => `<span style="--step-index:${stepIndex}">${renderShowcaseCopy(step)}</span>`).join("")}</div><div class="showcase-demo-progress"><span></span></div></div>`;
       }
       if (demo.type === "parallel") {
-        return `<div class="showcase-demo showcase-demo--parallel">${renderDemoHead(demo)}<div class="showcase-demo-lanes">${demo.lanes.map((lane, laneIndex) => `<div><span>${lane}</span><i style="--lane-progress:${72 - laneIndex * 14}%"></i></div>`).join("")}</div><strong class="showcase-demo-runtime">${demo.core}</strong></div>`;
+        return `<div class="showcase-demo showcase-demo--parallel">${renderDemoHead(demo)}<div class="showcase-demo-lanes">${demo.lanes.map((lane, laneIndex) => `<div><span>${renderShowcaseCopy(lane)}</span><i style="--lane-progress:${72 - laneIndex * 14}%"></i></div>`).join("")}</div><strong class="showcase-demo-runtime" dir="ltr"><bdi>${renderShowcaseCopy(demo.core)}</bdi></strong></div>`;
       }
       if (demo.type === "systems") {
-        return `<div class="showcase-demo showcase-demo--systems">${renderDemoHead(demo)}<div class="showcase-demo-system-nodes">${demo.nodes.map((node) => `<span>${node}</span>`).join("")}</div><strong class="showcase-demo-footer">${demo.footer}</strong></div>`;
+        return `<div class="showcase-demo showcase-demo--systems">${renderDemoHead(demo)}<div class="showcase-demo-system-nodes" dir="ltr">${demo.nodes.map((node) => `<span>${renderShowcaseCopy(node, { bidi: true })}</span>`).join("")}</div><strong class="showcase-demo-footer">${renderShowcaseCopy(demo.footer, { bidi: true })}</strong></div>`;
       }
       if (demo.type === "capability") {
-        return `<div class="showcase-demo showcase-demo--capability">${renderDemoHead(demo)}<div class="showcase-demo-capability-rows">${demo.rows.map(([label, value]) => `<div><span>${label}</span><code>${value}</code></div>`).join("")}</div></div>`;
+        return `<div class="showcase-demo showcase-demo--capability">${renderDemoHead(demo)}<div class="showcase-demo-capability-rows">${demo.rows.map(([label, value]) => `<div><span>${renderShowcaseCopy(label, { bidi: true })}</span><code>${renderShowcaseCopy(value, { bidi: true })}</code></div>`).join("")}</div></div>`;
       }
       return "";
     };
-    const useCaseCards = section.items.map(([title, text], itemIndex) => `<article class="showcase-card showcase-card--use-case showcase-card--${itemIndex + 1}"><div class="showcase-use-case-copy"><div class="showcase-card-top"><span class="showcase-chip">${String(itemIndex + 1).padStart(2, "0")}</span><h3>${title}</h3></div><p>${text}</p></div>${renderUseCaseDemo(section.demos?.[itemIndex])}</article>`).join("");
+    const useCaseCards = section.items.map(([title, text], itemIndex) => `<article class="showcase-card showcase-card--use-case showcase-card--${itemIndex + 1}"><div class="showcase-use-case-copy"><div class="showcase-card-top"><span class="showcase-chip">${String(itemIndex + 1).padStart(2, "0")}</span><h3>${renderShowcaseCopy(title)}</h3></div><p>${renderShowcaseCopy(text)}</p></div>${renderUseCaseDemo(section.demos?.[itemIndex])}</article>`).join("");
     const cta = section.cta ? `<div class="showcase-use-cases-cta"><div><span>${section.cta.eyebrow}</span><h3>${section.cta.title}</h3><p>${section.cta.text}</p></div><a href="runtime-lab.html">${section.cta.label}<span aria-hidden="true">→</span></a></div>` : "";
     return `<section class="section fade-in showcase-panel-section showcase-panel-section--${showcaseKey}"><div class="content-card showcase-panel showcase-panel--${showcaseKey}"><div class="${headingClass}"><p class="eyebrow">${section.eyebrow}</p><h2>${showcaseTitle}</h2>${introText}</div><div class="showcase-grid showcase-grid--use-cases">${useCaseCards}</div>${cta}</div></section>`;
   }
@@ -2706,23 +2752,20 @@ function renderHomeArchitectureSection(section) {
   const overviewCards = [
     {
       key: "world",
-      label: world.label,
       title: world.title,
       text: (world.items || []).map(stripBreaks).join(" / ")
     },
     {
       key: "runtime",
-      label: runtime.label,
       title: runtime.title,
       text: [runtime.vm, ...(runtime.controls || [])].map(stripBreaks).join(" / ")
     },
     {
       key: "infra",
-      label: infrastructure.label,
       title: infrastructure.title,
       text: (infrastructure.groups || []).map(([title]) => stripBreaks(title)).join(" / ")
     }
-  ].map((item) => `<article class="architecture-overview-card architecture-overview-card--${item.key}"><span>${item.label}</span><h3>${item.title}</h3><p>${item.text}</p></article>`).join("");
+  ].map((item) => `<article class="architecture-overview-card architecture-overview-card--${item.key}"><h3>${item.title}</h3><p>${item.text}</p></article>`).join("");
   const worldItems = (world.items || []).map((item) => `<article class="architecture-box architecture-box--world">${item}</article>`).join("");
   const runtimeLanes = (runtime.controls || []).map((item, index) => `<article class="architecture-runtime-lane"><article class="architecture-box architecture-box--control">${item}</article><span class="architecture-runtime-lane-link" aria-hidden="true"></span><article class="architecture-tvm-node"><strong>${runtime.tvms?.[index] || labels.tvm}</strong><span></span></article></article>`).join("");
   const infraGroups = (infrastructure.groups || []).map(([title, label], groupIndex) => {
@@ -2742,12 +2785,12 @@ function renderHomeArchitectureSection(section) {
   const introTitle = String(section.title || "")
     .split(/<br\s*\/?\s*>/i)
     .filter(Boolean)
-    .map((line) => `<span>${line}</span>`)
-    .join("");
+    .map((line) => `<span class="home-architecture-title-line">${line}</span>`)
+    .join(" ");
   const introCopy = `<div class="home-architecture-copy">${introParagraphs.map(renderIntroParagraph).join("")}</div>`;
   const intro = `<div class="home-architecture-head"><div class="home-architecture-intro${introDensityClass}"><h2>${introTitle}</h2>${introCopy}</div><div class="architecture-overview" aria-label="Architecture layers overview">${overviewCards}</div></div>`;
 
-  return `<section class="section fade-in home-architecture-section"><article class="content-card home-architecture-panel">${intro}<div class="architecture-diagram" aria-label="ALUX layered architecture"><section class="architecture-diagram-layer architecture-diagram-layer--world"><h3><span>${world.label} :</span> ${world.title}</h3><svg class="architecture-lines architecture-lines--world" viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true"><path d="M190 208 V244 H810 V208" /></svg><div class="architecture-world-row">${worldItems}</div></section><div class="architecture-layer-flow architecture-layer-flow--violet" aria-hidden="true"></div><section class="architecture-diagram-layer architecture-diagram-layer--runtime"><h3><span>${runtime.label} :</span> ${runtime.title}</h3><article class="architecture-world-vm">${runtime.vm}</article><svg class="architecture-runtime-branches" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 L150 100" /><path d="M500 0 V100" /><path d="M500 0 L850 100" /></svg><div class="architecture-runtime-lanes">${runtimeLanes}</div><p class="architecture-caption">${runtime.caption}</p></section><div class="architecture-layer-flow architecture-layer-flow--green" aria-hidden="true"></div><section class="architecture-diagram-layer architecture-diagram-layer--infra"><h3><span>${infrastructure.label} :</span> ${infrastructure.title}</h3><svg class="architecture-infra-branches" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 V14 M166.667 14 H833.333 M166.667 14 V40 M500 14 V40 M833.333 14 V40" /></svg><div class="architecture-infra-grid">${infraGroups}</div></section></div></article></section>`;
+  return `<section class="section fade-in home-architecture-section"><article class="content-card home-architecture-panel">${intro}<div class="architecture-diagram" aria-label="ALUX layered architecture"><section class="architecture-diagram-layer architecture-diagram-layer--world"><h3>${world.title}</h3><svg class="architecture-lines architecture-lines--world" viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true"><path d="M190 208 V244 H810 V208" /></svg><div class="architecture-world-row">${worldItems}</div></section><div class="architecture-layer-flow architecture-layer-flow--violet" aria-hidden="true"></div><section class="architecture-diagram-layer architecture-diagram-layer--runtime"><h3>${runtime.title}</h3><article class="architecture-world-vm">${runtime.vm}</article><svg class="architecture-runtime-branches" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 L150 100" /><path d="M500 0 V100" /><path d="M500 0 L850 100" /></svg><div class="architecture-runtime-lanes">${runtimeLanes}</div><p class="architecture-caption">${runtime.caption}</p></section><div class="architecture-layer-flow architecture-layer-flow--green" aria-hidden="true"></div><section class="architecture-diagram-layer architecture-diagram-layer--infra"><h3>${infrastructure.title}</h3><svg class="architecture-infra-branches" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 V14 M166.667 14 H833.333 M166.667 14 V40 M500 14 V40 M833.333 14 V40" /></svg><div class="architecture-infra-grid">${infraGroups}</div></section></div></article></section>`;
 }
 
 function renderHomeManifestoSection(section) {
@@ -2974,8 +3017,7 @@ function renderTeamPortrait(member, index) {
   const lidPrints = {
     frank: `<g fill="var(--lego-print)" opacity="0.95"><rect x="98" y="108" width="11" height="6.5" rx="1.5" /><rect x="111" y="108" width="11" height="6.5" rx="1.5" /><rect x="104.5" y="116.5" width="11" height="6.5" rx="1.5" /></g>`,
     tomislav: `<text x="110" y="117" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10.5" font-weight="700" fill="var(--lego-print)">C64</text>`,
-    tom: `<g stroke="var(--lego-print)" stroke-width="1.6" fill="none" opacity="0.95"><path d="M105 113.5 L115 108.5 M105 113.5 L115 118.5" /></g><g fill="var(--lego-print)" opacity="0.95"><circle cx="105" cy="113.5" r="2.6" /><circle cx="115" cy="108.5" r="2.6" /><circle cx="115" cy="118.5" r="2.6" /></g>`,
-    ben: `<text x="102" y="117" font-family="'IBM Plex Mono', monospace" font-size="10.5" font-weight="700" fill="var(--lego-print)">&gt;_</text>`
+    tom: `<g stroke="var(--lego-print)" stroke-width="1.6" fill="none" opacity="0.95"><path d="M105 113.5 L115 108.5 M105 113.5 L115 118.5" /></g><g fill="var(--lego-print)" opacity="0.95"><circle cx="105" cy="113.5" r="2.6" /><circle cx="115" cy="108.5" r="2.6" /><circle cx="115" cy="118.5" r="2.6" /></g>`
   };
   const preLaptop = "";
   const headAccessories = {
@@ -2996,12 +3038,7 @@ function renderTeamPortrait(member, index) {
       <rect x="128.5" y="61" width="7" height="15" rx="3.5" fill="#23201c" />`,
     tom: `
       <path d="M87.5 73.5 C85.5 70 85 66 85.8 59 C85.5 35 134.5 35 134.2 59 C135 66 134.5 70 132.5 73.5 L130 63 C127.5 56 122.5 57.5 117 54.5 C110.5 51.5 102.5 53 97 55 C94 56 91.5 57.5 90 63 Z" fill="#3d4348" />
-      <path d="M97 52 L99.5 47 M107 51 L109.5 46 M117 52 L119.5 47 M92 54 L94 49.5 M126 54 L128 49.5" stroke="#666e76" stroke-width="1.4" fill="none" stroke-linecap="round" />`,
-    ben: `
-      <path d="M90 47 L95 36 L99 42 L104 33 L109 41 L113 32 L118 40 L123 35 L127 45 L128 50 L91 50 Z" fill="#181a1e" />
-      <path d="M87 55 C88 44 98 41 110 41 C122 41 132 44 133 55 L133 58 C127 51 93 51 87 58 Z" fill="#181a1e" />
-      <g fill="none" stroke="${INK}" stroke-width="1.6"><circle cx="101" cy="65" r="6.8" /><circle cx="119" cy="65" r="6.8" /><path d="M107.8 65 L112.2 65 M94.2 63.5 L88 61.5 M125.8 63.5 L132 61.5" /></g>
-      <path d="M105 77.5 L115 77.5" stroke="${INK}" stroke-width="2.4" stroke-linecap="round" fill="none" />`
+      <path d="M97 52 L99.5 47 M107 51 L109.5 46 M117 52 L119.5 47 M92 54 L94 49.5 M126 54 L128 49.5" stroke="#666e76" stroke-width="1.4" fill="none" stroke-linecap="round" />`
   };
   const smiles = {
     frank: `<path d="M98 73.5 C102 80.5 118 80.5 122 73.5" fill="none" stroke="${INK}" stroke-width="2.6" stroke-linecap="round" />`,
@@ -3146,8 +3183,11 @@ function renderGlvmSemanticHeading(title = "", key = "", lang = "en") {
     "跨区块",
     "一个整体",
     "一把钥匙",
+    "交给任务，",
+    "交给任务",
     "用户的工牌",
     "执行载体取决于",
+    "信任要求、",
     "信任要求",
     "响应速度",
     "数据本地性",
@@ -3157,13 +3197,13 @@ function renderGlvmSemanticHeading(title = "", key = "", lang = "en") {
     "正在接入"
   ];
   const linesByKey = {
-    hero: ["一个逻辑执行层，", "跨多台机器协调执行。"],
-    definition: ["每台机器运行一台 TVM，", "多台 TVM 协同组成一个逻辑执行层。"],
-    architecture: ["三层架构，面向开发者", "呈现为一套执行模型。"],
-    continuity: ["一笔交易可以跨区块等待，", "随后作为一个整体结算。"],
-    ocap: ["只把一把钥匙交给任务，", "而不是用户的工牌。"],
-    journey: ["执行载体取决于信任要求、", "响应速度与数据本地性。"],
-    status: ["核心运行时已初步成形，", "更多执行环境正在接入。"]
+    hero: ["一个逻辑执行层，", "跨多台机器协调执行"],
+    definition: ["每台机器运行一台 TVM，", "多台 TVM 协同组成一个逻辑执行层"],
+    architecture: ["三层架构，", "面向开发者呈现为一套执行模型"],
+    continuity: ["一笔交易可以跨区块等待，", "随后作为一个整体结算"],
+    ocap: ["只把一把钥匙交给任务，", "而不是用户的工牌"],
+    journey: ["执行载体取决于信任要求、", "响应速度与数据本地性"],
+    status: ["核心运行时已初步成形，", "更多执行环境正在接入"]
   };
   const lines = linesByKey[key];
   if (!lines || lines.join("") !== title) return title;
@@ -3225,10 +3265,14 @@ function renderGlvmSemanticCopy(text = "", key = "", lang = "en") {
   ];
   const linesByKey = {
     hero: [
-      "GLVM 是 ALUX 基于并发运行时构建、面向开发者的执行抽象。",
-      "每台参与执行的机器运行一台 TVM。",
-      "GLVM 为跨机器的执行状态与进程提供统一的逻辑边界；",
+      "GLVM 是 ALUX 基于并发运行时构建的执行抽象。",
+      "它面向开发者，每台参与执行的机器运行一台 TVM。",
+      "GLVM 为跨机器的执行状态与进程提供统一逻辑边界；",
       "重放、复制、最终确认与共识在这一抽象之下协调。"
+    ],
+    status: [
+      "GLVM 正从 ALUX 的链上并发运行时向更多执行环境扩展。",
+      "本节区分已形成的核心能力、正在推进的系统扩展与后续路线图。"
     ],
     definition: [
       "TVM 是运行在单台机器上的字节码执行引擎；",
@@ -3236,19 +3280,23 @@ function renderGlvmSemanticCopy(text = "", key = "", lang = "en") {
       "它不是另一种字节码虚拟机。开发者面向统一的逻辑执行模型，",
       "确定性重放、恢复、复制、最终确认与共识则在这一抽象之下协调。"
     ],
+    architecture: [
+      "物理机器运行 TVM；这些 TVM 共同参与一套逻辑执行模型。",
+      "未来，World OS 将进一步把这一层组织为可发现、可编排且受显式能力约束的服务。"
+    ],
     ocapIntro: [
-      "基于身份的访问会将 CEO 工牌代表的环境权限一并带入任务。",
-      "对象能力只给任务一把指向 Bob 记录的钥匙，这条边界由 TVM 在运行时检查。",
-      "没有其他对象能力，任务便无法命名或访问其他既有对象。"
+      "基于身份的访问会把 CEO 工牌所代表的环境权限一并带入任务。",
+      "对象能力则只交给任务一把指向 Bob 记录的钥匙，边界由 TVM 在运行时检查。",
+      "没有相应能力引用，任务便无法命名或访问其他既有对象。"
     ],
     ocapExplicit: [
       "这把钥匙代表一个不可伪造的名字：它只指向 Bob 的记录。",
-      "没有指向其他既有对象的钥匙，任务便无法命名或访问那些未被显式授予的对象。",
-      "TVM 会在运行时检查这一边界。"
+      "没有指向其他既有对象的钥匙，任务便无法命名或访问",
+      "那些未被显式授予的对象。TVM 会在运行时检查这一边界。"
     ]
   };
   const lines = linesByKey[key];
-  if (!lines || lines.join("") !== text) return text;
+  if (!lines || lines.join("") !== text) return protectGlvmPhrases(text, keepPhrases);
 
   return lines
     .map((line) => `<span class="glvm-semantic-copy-line">${protectGlvmPhrases(line, keepPhrases)}</span>`)
@@ -3351,6 +3399,15 @@ function renderGlvmContinuitySection(section = {}, lang = "en") {
   const notes = Array.isArray(section.notes) ? section.notes : [];
   if (!section.title || !modes.length) return "";
   const active = modes.find((item) => item.id === "concurrent") || modes[0];
+  const introCopy = lang === "zh"
+    ? protectGlvmPhrases(section.text || "", [
+          "顺序、并行",
+          "可通信、可等待、可恢复的并发进程",
+          "多笔交易共享一个结算边界",
+        "跨区块连续性",
+        "后续区块"
+      ])
+    : (section.text || "");
   const tabs = modes.map((item, index) => `
     <button class="glvm-continuity-tab${item.id === active.id ? " is-active" : ""}" type="button" role="tab" id="glvm-continuity-tab-${escapeAttribute(item.id)}" aria-controls="glvm-continuity-panel-${escapeAttribute(item.id)}" aria-selected="${item.id === active.id ? "true" : "false"}" tabindex="${item.id === active.id ? "0" : "-1"}" data-glvm-continuity="${escapeAttribute(item.id)}">
       <span>${String(index + 1).padStart(2, "0")}</span>
@@ -3382,7 +3439,7 @@ function renderGlvmContinuitySection(section = {}, lang = "en") {
     <section class="glvm-extension glvm-continuity fade-in" id="execution-continuity">
       <header class="glvm-extension-header">
         <div><p class="eyebrow">${section.eyebrow}</p><h2 class="glvm-semantic-heading">${renderGlvmSemanticHeading(section.title, "continuity", lang)}</h2></div>
-        <p>${section.text}</p>
+        <p class="glvm-continuity-intro">${introCopy}</p>
       </header>
       <div class="glvm-continuity-frame">
         <div class="glvm-continuity-tabs" role="tablist" aria-label="${escapeAttribute(section.title)}">${tabs}</div>
@@ -3401,8 +3458,8 @@ function renderGlvmOcapStorySection(section = {}, lang = "en") {
   const comparison = Array.isArray(section.comparison) ? section.comparison : [];
   if (!section.title || !comparison.length) return "";
   const visuals = [
-    "assets/glvm/20260731_GLVM_OCAP_身份权限.svg?v=20260801-direct13",
-    "assets/glvm/20260731_GLVM_OCAP_对象能力.svg?v=20260801-direct13"
+    "assets/glvm/20260731_GLVM_OCAP_身份权限.svg?v=20260812-neck2",
+    "assets/glvm/20260731_GLVM_OCAP_对象能力.svg?v=20260812-neck2"
   ];
   const cards = comparison.map((item, index) => `
     <article class="glvm-ocap-card glvm-ocap-card--${escapeAttribute(item.tone || "")}">
@@ -3454,8 +3511,11 @@ function renderGlvmPage(page, lang = "en") {
     .join("");
   const definitionPayoff = page.definition.payoff ? `
     <aside class="glvm-definition-payoff">
-      <span>${page.definition.payoff.label || ""}</span>
-      <div><h3>${page.definition.payoff.title || ""}</h3><p>${page.definition.payoff.text || ""}</p></div>
+      <div class="glvm-definition-payoff-heading">
+        <span>${page.definition.payoff.label || ""}</span>
+        <h3>${page.definition.payoff.title || ""}</h3>
+      </div>
+      <p>${page.definition.payoff.text || ""}</p>
     </aside>
   ` : "";
 
@@ -3505,15 +3565,15 @@ function renderGlvmPage(page, lang = "en") {
   const journeyMessages = escapeAttribute(JSON.stringify(journey.messages || []));
 
   const stackGlyphs = [
-    `<svg viewBox="0 0 120 72" aria-hidden="true"><path class="glvm-glyph-flow" d="M31 36h20m18 0h20"/><path d="M20 23l-8 13 8 13M32 23l8 13-8 13"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="12"/><rect x="90" y="22" width="20" height="28" rx="4"/><path d="M95 31h10M95 37h10M95 43h7"/></svg>`,
-    `<svg viewBox="0 0 120 72" aria-hidden="true"><path class="glvm-glyph-flow" d="M18 18l32 18-32 18M70 36h32"/><circle cx="16" cy="18" r="5"/><circle cx="16" cy="54" r="5"/><rect class="glvm-glyph-pulse" x="49" y="25" width="22" height="22" rx="6"/><circle cx="104" cy="36" r="6"/></svg>`,
-    `<svg viewBox="0 0 120 72" aria-hidden="true"><rect x="9" y="9" width="102" height="54" rx="13"/><path class="glvm-glyph-flow" d="M25 36h22m27 0h21"/><path d="M60 20l15 9v17l-15 9-15-9V29zM45 29l15 9 15-9M60 38v17"/><circle class="glvm-glyph-pulse" cx="99" cy="36" r="5"/></svg>`,
-    `<svg class="is-planned" viewBox="0 0 120 72" aria-hidden="true"><rect x="9" y="9" width="102" height="54" rx="13"/><path class="glvm-glyph-flow" d="M22 36h24m28 0h24"/><path d="M60 19l16 9v18l-16 9-16-9V28zM44 28l16 10 16-10M60 38v17"/><circle cx="101" cy="36" r="5"/></svg>`,
-    `<svg viewBox="0 0 120 72" aria-hidden="true"><path class="glvm-glyph-flow" d="M21 48C9 23 34 11 55 21c17 8 13 27 30 30 10 2 18-3 23-11"/><path d="M20 39l1 10 10-2M101 34l7 6-6 7"/><circle cx="55" cy="21" r="6"/><circle class="glvm-glyph-pulse" cx="85" cy="51" r="6"/></svg>`,
-    `<svg viewBox="0 0 120 72" aria-hidden="true"><path class="glvm-glyph-flow" d="M16 18l31 18-31 18M47 36l28-18m-28 18 28 18M75 18l29 18-29 18"/><circle cx="16" cy="18" r="5"/><circle cx="16" cy="54" r="5"/><circle cx="47" cy="36" r="6"/><circle cx="75" cy="18" r="5"/><circle cx="75" cy="54" r="5"/><rect class="glvm-glyph-pulse" x="98" y="29" width="13" height="14" rx="3"/></svg>`,
-    `<svg viewBox="0 0 120 72" aria-hidden="true"><path d="M60 9 91 22v18c0 15-12 24-31 28-19-4-31-13-31-28V22Z"/><circle cx="49" cy="35" r="10"/><path class="glvm-glyph-flow" d="M59 35h29m-9 0v13m-10-13v8"/><circle class="glvm-glyph-pulse" cx="49" cy="35" r="4"/></svg>`,
-    `<svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="60" cy="36" r="12"/><circle cx="19" cy="18" r="7"/><circle cx="101" cy="18" r="7"/><circle cx="19" cy="54" r="7"/><circle cx="101" cy="54" r="7"/><path class="glvm-glyph-flow" d="M25 21 49 31M95 21 71 31M25 51l24-10m46 10L71 41"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="5"/></svg>`,
-    `<svg viewBox="0 0 120 72" aria-hidden="true"><rect x="12" y="10" width="96" height="52" rx="8"/><path d="M12 24h96M21 17h4m7 0h4m7 0h4"/><path class="glvm-glyph-flow" d="m29 35 9 7-9 7m18 0h24"/><circle class="glvm-glyph-pulse" cx="92" cy="43" r="6"/></svg>`
+    `<svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="21" width="25" height="30" rx="5"/><path d="M17 30h11M17 36h11M17 42h8"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="11"/><rect x="85" y="21" width="25" height="30" rx="5"/><path d="M92 30h11M92 36h11M92 42h8"/><path class="glvm-glyph-track" d="M35 36h14m22 0h14"/><path class="glvm-glyph-flow" d="M35 36h14m22 0h14"/></svg>`,
+    `<svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="17" cy="36" r="7"/><circle cx="17" cy="36" r="3"/><path d="M24 36h25m-8 0v7m-8-7v5"/><rect class="glvm-glyph-pulse" x="49" y="25" width="22" height="22" rx="6"/><circle cx="98" cy="36" r="8"/><circle cx="98" cy="36" r="3"/><path class="glvm-glyph-track" d="M24 36h25m22 0h19"/><path class="glvm-glyph-flow" d="M24 36h25m22 0h19"/></svg>`,
+    `<svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="17" width="100" height="38" rx="12"/><path class="glvm-glyph-track" d="M20 36h25m30 0h25"/><path class="glvm-glyph-flow" d="M20 36h25m30 0h25"/><path class="glvm-glyph-pulse" d="M60 22l15 8v13l-15 8-15-8V30zM45 30l15 8 15-8M60 38v13"/></svg>`,
+    `<svg class="is-planned" viewBox="0 0 120 72" aria-hidden="true"><circle cx="18" cy="22" r="5"/><circle cx="18" cy="50" r="5"/><path d="M55 26l11 10-11 10-11-10z"/><circle class="glvm-glyph-pulse" cx="98" cy="36" r="8"/><path d="m94 36 3 3 6-7"/><path class="glvm-glyph-track" d="M23 22l21 11M23 50l21-11m22-3h24"/><path class="glvm-glyph-flow" d="M23 22l21 11M23 50l21-11m22-3h24"/></svg>`,
+    `<svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="22" cy="45" r="5"/><circle cx="60" cy="45" r="5"/><circle class="glvm-glyph-pulse" cx="98" cy="45" r="5"/><path class="glvm-glyph-track" d="M27 45h28m10 0h28M98 37C94 14 31 14 22 37"/><path class="glvm-glyph-flow" d="M27 45h28m10 0h28M98 37C94 14 31 14 22 37"/><path d="m21 29 1 8 8-2"/></svg>`,
+    `<svg viewBox="0 0 120 72" aria-hidden="true"><circle class="glvm-glyph-pulse" cx="60" cy="36" r="9"/><circle cx="22" cy="18" r="5"/><circle cx="98" cy="18" r="5"/><circle cx="22" cy="54" r="5"/><circle cx="98" cy="54" r="5"/><path class="glvm-glyph-track" d="M27 21l25 11M93 21 68 32M27 51l25-11m41 11L68 40"/><path class="glvm-glyph-flow" d="M27 21l25 11M93 21 68 32M27 51l25-11m41 11L68 40"/></svg>`,
+    `<svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="24" width="26" height="24" rx="5"/><path d="M20 31l-5 5 5 5M27 31l5 5-5 5"/><rect class="glvm-glyph-pulse" x="47" y="24" width="26" height="24" rx="5"/><path d="M65 31c-2-2-8-2-10 1-2 4 1 9 5 9 2 0 4-1 5-2"/><rect x="84" y="24" width="26" height="24" rx="5"/><path d="M91 31h12M91 36h8M91 41h12"/><path class="glvm-glyph-track" d="M38 36h7m30 0h7"/><path class="glvm-glyph-flow" d="M38 36h7m30 0h7"/></svg>`,
+    `<svg viewBox="0 0 120 72" aria-hidden="true"><rect x="9" y="12" width="102" height="48" rx="10"/><rect x="20" y="23" width="32" height="26" rx="6"/><rect x="68" y="23" width="32" height="26" rx="6"/><circle cx="36" cy="36" r="6"/><path d="M33 33l6 6M39 33l-6 6M78 31l5 10 5-10"/><path class="glvm-glyph-track" d="M52 36h16m32 0h7"/><path class="glvm-glyph-flow" d="M52 36h16m32 0h7"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="3"/></svg>`,
+    `<svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="11" width="100" height="50" rx="8"/><path d="M10 25h100M20 18h3m7 0h3m7 0h3M24 35l7 6-7 6"/><path class="glvm-glyph-track" d="M40 47h50"/><path class="glvm-glyph-flow" d="M40 47h50"/><circle class="glvm-glyph-pulse" cx="97" cy="47" r="5"/></svg>`
   ];
   const stackState = (item = {}, index = 0) => {
     const normalized = String(item.status || "").toLowerCase();
@@ -3574,12 +3634,42 @@ function renderGlvmPage(page, lang = "en") {
       `)
       .join("")
     : "";
+  const closeText = page.close?.text
+    ? (() => {
+      let firstLine = "";
+      let secondLine = "";
+
+      if (lang === "zh") {
+        const clauses = page.close.text.match(/[^；]+；?/g) || [page.close.text];
+        firstLine = clauses.slice(0, 2).join("");
+        secondLine = clauses.slice(2).join("");
+      } else if (lang === "en") {
+        return page.close.text;
+      } else if (lang === "ja") {
+        const sentences = page.close.text.match(/[^。]+。/g) || [page.close.text];
+        [firstLine = "", secondLine = ""] = sentences;
+      } else if (lang === "ko") {
+        const sentences = page.close.text.match(/[^.]+\.(?:\s+|$)/g) || [page.close.text];
+        [firstLine = "", secondLine = ""] = sentences.map((sentence) => sentence.trim());
+      } else if (lang === "ar" && page.close.text.includes("، فيما")) {
+        const parts = page.close.text.split("، فيما");
+        firstLine = `${parts[0]}،`;
+        secondLine = `فيما${parts.slice(1).join("، فيما")}`;
+      } else {
+        return page.close.text;
+      }
+
+      return secondLine
+        ? `<span class="glvm-next-copy-line">${firstLine}</span><span class="glvm-next-copy-line">${secondLine}</span>`
+        : `<span class="glvm-next-copy-line">${firstLine}</span>`;
+    })()
+    : "";
   const closeSection = page.close && closeLinks ? `
     <section class="glvm-next fade-in" aria-labelledby="glvm-next-title">
       <div class="glvm-next-copy">
         <p class="eyebrow">${page.close.eyebrow}</p>
         <h2 id="glvm-next-title">${page.close.title}</h2>
-        ${page.close.text ? `<p>${page.close.text}</p>` : ""}
+        ${closeText ? `<p>${closeText}</p>` : ""}
       </div>
       <nav class="glvm-next-links" aria-labelledby="glvm-next-title">${closeLinks}</nav>
     </section>
@@ -3621,8 +3711,9 @@ function renderGlvmPage(page, lang = "en") {
         <div class="section-heading glvm-section-heading">
           <p class="eyebrow">${page.architecture.eyebrow}</p>
           <h2 class="glvm-semantic-heading">${renderGlvmSemanticHeading(page.architecture.title, "architecture", lang)}</h2>
-          <p>${page.architecture.text}</p>
+          <p class="glvm-semantic-copy">${renderGlvmSemanticCopy(page.architecture.text, "architecture", lang)}</p>
         </div>
+        <p class="glvm-layer-instruction">${page.architecture.instruction || ""}</p>
         <div class="glvm-architecture-stage">
           <div class="glvm-layer-stack" role="group" aria-label="${escapeAttribute(page.architecture.title)}">${layerButtons}</div>
           <aside class="glvm-layer-inspector" aria-live="polite">
@@ -3641,14 +3732,14 @@ function renderGlvmPage(page, lang = "en") {
         <div class="section-heading glvm-section-heading">
           <p class="eyebrow">${journey.eyebrow}</p>
           <h2 class="glvm-semantic-heading">${renderGlvmSemanticHeading(journey.title, "journey", lang)}</h2>
-          <p>${journey.text}</p>
+          <p>${lang === "zh" ? protectGlvmPhrases(journey.text, ["本地访问。"]) : journey.text}</p>
         </div>
         <div class="glvm-route-toolbar"><span>${journey.routeLabel}</span><div>${routeButtons}</div></div>
         <div class="glvm-journey-board" data-glvm-journey data-journey-messages="${journeyMessages}">
           <div class="glvm-route-map" aria-hidden="true">
             <div class="glvm-route-lines"><span></span><span></span><span></span></div>
             ${routeNodes}
-            <div class="glvm-route-core"><span>GLVM</span><strong>TVM × N</strong><i></i></div>
+            <div class="glvm-route-core"><span>GLVM</span><strong>TVM × N</strong><i aria-hidden="true"><b></b><b></b><b></b></i></div>
             <div class="glvm-route-packet glvm-route-packet--one"></div>
             <div class="glvm-route-packet glvm-route-packet--two"></div>
             <div class="glvm-route-packet glvm-route-packet--three"></div>
@@ -3672,7 +3763,7 @@ function renderGlvmPage(page, lang = "en") {
         <div class="section-heading glvm-section-heading">
           <p class="eyebrow">${page.stack.eyebrow}</p>
           <h2>${page.stack.title}</h2>
-          <p>${page.stack.text}</p>
+          <p>${lang === "zh" ? protectGlvmPhrases(page.stack.text, ["一路延伸到 BlockGit"]) : page.stack.text}</p>
         </div>
         <div class="glvm-stack-flow" aria-label="${escapeAttribute(page.stack.title)}">${stackFlow}</div>
         <ol class="glvm-stack-list">${stackItems}</ol>
@@ -3683,7 +3774,7 @@ function renderGlvmPage(page, lang = "en") {
           <p class="eyebrow">${page.status.eyebrow}</p>
           <h2 class="glvm-semantic-heading">${renderGlvmSemanticHeading(page.status.title, "status", lang)}</h2>
           <div class="glvm-status-intro">
-            <p>${page.status.text}</p>
+            <p class="glvm-semantic-copy">${renderGlvmSemanticCopy(page.status.text, "status", lang)}</p>
             <div class="glvm-status-summary" aria-hidden="true">${statusSummary}</div>
           </div>
         </div>
@@ -3695,7 +3786,16 @@ function renderGlvmPage(page, lang = "en") {
   `;
 }
 
-function renderParallelConcurrentComposablePage(page) {
+function renderPccLabIntro(text, lang) {
+  const value = String(text || "");
+  const secondLineMarker = "，留下房态等待条件";
+  const splitAt = lang === "zh" ? value.indexOf(secondLineMarker) : -1;
+  if (splitAt < 0) return value;
+
+  return `<span>${value.slice(0, splitAt + 1)}</span><span>${value.slice(splitAt + 1)}</span>`;
+}
+
+function renderParallelConcurrentComposablePage(page, lang = "en") {
   const modes = Array.isArray(page.modes) ? page.modes : [];
   const activeMode = modes[0] || {};
   const factLabels = {
@@ -3774,7 +3874,10 @@ function renderParallelConcurrentComposablePage(page) {
     </section>
   ` : "";
   const closeLinks = page.close.links
-    .map(([label, href], index) => `<a class="button ${index === 0 ? "primary" : "secondary"}" href="${href}">${label}</a>`)
+    .map(([label, href], index) => {
+      const visibleLabel = label.replace(/ALUX\s+VS/g, "ALUX&nbsp;VS");
+      return `<a class="button ${index === 0 ? "primary" : "secondary"}" href="${href}">${visibleLabel}</a>`;
+    })
     .join("");
   const closePoints = (page.close.points || [])
     .map(([label, text]) => `<article class="pcc-close-point"><span>${label}</span><p>${text}</p></article>`)
@@ -3820,7 +3923,7 @@ function renderParallelConcurrentComposablePage(page) {
         <div class="section-heading pcc-section-heading">
           <p class="eyebrow">${lab.eyebrow}</p>
           <h2>${lab.title}</h2>
-          <p>${lab.text}</p>
+          <p class="pcc-lab-intro">${renderPccLabIntro(lab.text, lang)}</p>
         </div>
         <div class="pcc-lab-board" data-pcc-lab data-lab-state="idle" data-msg-idle="${escapeAttribute(labMessages.idle || "")}" data-msg-parallel="${escapeAttribute(labMessages.parallel || "")}" data-msg-paused="${escapeAttribute(labMessages.paused || "")}" data-msg-resumed="${escapeAttribute(labMessages.resumed || "")}" data-msg-settled="${escapeAttribute(labMessages.settled || "")}">
           <div class="pcc-lab-steps">${labSteps}</div>
@@ -4094,15 +4197,9 @@ function renderSection(section, index = -1) {
 
 function orderHomeSections(sections = []) {
   const hiddenHomeSectionIds = new Set(["open-capability-layer", "our-thesis", "home-how-it-works"]);
-  const visibleSections = sections
+  return sections
     .map((section, index) => ({ ...section, __renderIndex: index }))
     .filter((section) => section.type !== "removed" && !hiddenHomeSectionIds.has(section.id));
-  const capabilityMap = visibleSections.find((section) => section.type === "capabilityMap");
-  if (!capabilityMap) return visibleSections;
-  return [
-    capabilityMap,
-    ...visibleSections.filter((section) => section !== capabilityMap)
-  ];
 }
 
 function setupGlvmPage() {
@@ -4122,7 +4219,14 @@ function setupGlvmPage() {
   }
   const timers = [];
   window.__glvmTimers = timers;
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const replayMotion = (node, className) => {
+    if (!node) return;
+    node.classList.remove(className);
+    // Force one local style flush so clicking the active option replays the demonstration.
+    void node.offsetWidth;
+    node.classList.add(className);
+  };
+  let resetJourneyState = () => {};
 
   const layerButtons = Array.from(root.querySelectorAll("[data-glvm-layer]"));
   const layerTitle = root.querySelector("[data-glvm-layer-title]");
@@ -4187,6 +4291,8 @@ function setupGlvmPage() {
     if (routeText) routeText.textContent = button.dataset.routeText || "";
     if (routeStatus) routeStatus.textContent = button.dataset.routeStatus || "";
     reapplyLocalizedProtection(routeStatus, routeTitle, routeText);
+    replayMotion(root.querySelector("[data-glvm-journey]"), "is-route-changing");
+    resetJourneyState();
     if (focus) button.focus();
   };
 
@@ -4219,11 +4325,14 @@ function setupGlvmPage() {
       candidate.setAttribute("aria-selected", String(active));
       candidate.tabIndex = active ? 0 : -1;
     });
+    let activePanel = null;
     continuityPanels.forEach((panel) => {
       const active = panel.dataset.glvmContinuityPanel === id;
       panel.classList.toggle("is-active", active);
       panel.hidden = !active;
+      if (active) activePanel = panel;
     });
+    replayMotion(activePanel, "is-demonstrating");
     if (focus) tab.focus();
   };
   continuityTabs.forEach((tab, index) => {
@@ -4270,33 +4379,43 @@ function setupGlvmPage() {
     if (progress) progress.textContent = `${normalized} / ${stepCards.length}`;
     if (message) message.textContent = messages[normalized] || messages[0] || "";
     reapplyLocalizedProtection(progress, message);
-    if (playButton) playButton.disabled = normalized > 0 && normalized < stepCards.length;
+    const running = normalized > 0 && normalized < stepCards.length;
+    const complete = stepCards.length > 0 && normalized === stepCards.length;
+    journey?.classList.toggle("is-running", running);
+    journey?.classList.toggle("is-complete", complete);
+    journey?.setAttribute("aria-busy", String(running));
+    if (playButton) playButton.disabled = stepCards.length === 0 || running;
+  };
+
+  resetJourneyState = () => {
+    clearJourneyTimers();
+    setJourneyStep(0);
+    if (playButton) playButton.disabled = false;
   };
 
   playButton?.addEventListener("click", () => {
     clearJourneyTimers();
     setJourneyStep(0);
-    if (reduceMotion) {
-      setJourneyStep(stepCards.length);
-      if (playButton) playButton.disabled = false;
-      return;
-    }
     stepCards.forEach((_, index) => {
       const timer = window.setTimeout(() => {
         setJourneyStep(index + 1);
+        replayMotion(journey, "is-step-advancing");
+        replayMotion(routeButtons.find((button) => button.classList.contains("is-active")), "is-route-confirmed");
         if (index === stepCards.length - 1 && playButton) playButton.disabled = false;
       }, 260 + index * 860);
       timers.push(timer);
     });
   });
   resetButton?.addEventListener("click", () => {
-    clearJourneyTimers();
-    setJourneyStep(0);
-    if (playButton) playButton.disabled = false;
+    resetJourneyState();
   });
 
   const stackFlowNodes = Array.from(root.querySelectorAll(".glvm-stack-flow-node"));
   const stackCards = Array.from(root.querySelectorAll(".glvm-stack-item"));
+  if (window.__glvmStackTimer) {
+    window.clearInterval(window.__glvmStackTimer);
+    window.__glvmStackTimer = 0;
+  }
   const activateStack = (index, focus = false) => {
     const normalized = Math.max(0, Math.min(stackCards.length - 1, Number(index) || 0));
     stackFlowNodes.forEach((node, nodeIndex) => {
@@ -4307,8 +4426,33 @@ function setupGlvmPage() {
     });
     stackCards.forEach((card, cardIndex) => card.classList.toggle("is-active", cardIndex === normalized));
   };
+  const stopStackAuto = () => {
+    if (!window.__glvmStackTimer) return;
+    window.clearInterval(window.__glvmStackTimer);
+    window.__glvmStackTimer = 0;
+  };
+  const replayStackStep = (card) => {
+    stackCards.forEach((candidate) => candidate.classList.remove("is-stack-stepping"));
+    replayMotion(card, "is-stack-stepping");
+    window.setTimeout(() => card?.classList.remove("is-stack-stepping"), 700);
+  };
+  const startStackAuto = () => {
+    stopStackAuto();
+    if (!stackCards.length) return;
+    let stackAutoIndex = 0;
+    activateStack(stackAutoIndex);
+    replayStackStep(stackCards[stackAutoIndex]);
+    window.__glvmStackTimer = window.setInterval(() => {
+      stackAutoIndex = (stackAutoIndex + 1) % stackCards.length;
+      activateStack(stackAutoIndex);
+      replayStackStep(stackCards[stackAutoIndex]);
+    }, 1150);
+  };
   stackFlowNodes.forEach((node, index) => {
-    node.addEventListener("click", () => activateStack(index));
+    node.addEventListener("click", () => {
+      stopStackAuto();
+      activateStack(index);
+    });
     node.addEventListener("keydown", (event) => {
       const inlineStep = document.documentElement.dir === "rtl" ? -1 : 1;
       const keyMap = {
@@ -4321,22 +4465,37 @@ function setupGlvmPage() {
       };
       if (!(event.key in keyMap)) return;
       event.preventDefault();
+      stopStackAuto();
       activateStack(keyMap[event.key], true);
     });
   });
   stackCards.forEach((card, index) => card.addEventListener("pointerenter", () => activateStack(index)));
 
+  const stackSection = root.querySelector(".glvm-stack");
+  if (window.__glvmStackObserver) window.__glvmStackObserver.disconnect();
+  if (stackSection && "IntersectionObserver" in window) {
+    window.__glvmStackObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          stopStackAuto();
+          stackSection.classList.remove("is-motion-active");
+          return;
+        }
+        stackSection.classList.remove("is-motion-active");
+        void stackSection.offsetWidth;
+        stackSection.classList.add("is-motion-active");
+        startStackAuto();
+      });
+    }, { threshold: 0.08 });
+    window.__glvmStackObserver.observe(stackSection);
+  }
+
   const video = root.querySelector("[data-glvm-video]");
   if (video) {
     const media = video.closest(".glvm-hero-media");
     video.addEventListener("error", () => media?.classList.add("is-video-missing"), { once: true });
-    if (reduceMotion) {
-      video.pause();
-      video.removeAttribute("autoplay");
-    } else {
-      const attempt = video.play();
-      if (attempt && typeof attempt.catch === "function") attempt.catch(() => media?.classList.add("is-video-missing"));
-    }
+    const attempt = video.play();
+    if (attempt && typeof attempt.catch === "function") attempt.catch(() => media?.classList.add("is-video-missing"));
   }
 
   const initialLayer = layerButtons.find((button) => button.classList.contains("is-active")) || layerButtons[0];
@@ -4410,8 +4569,7 @@ function setupParallelConcurrentComposablePage() {
         if (checkpointText) checkpointText.textContent = checkpointLabel || "";
         labCheckpoint.classList.toggle("is-verified", isSettled);
       };
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (isSettled && !reduceMotion) {
+      if (isSettled) {
         labCheckpoint.classList.remove("is-verified");
         checkpointTimer = window.setTimeout(applyCheckpointState, 720);
       } else {
@@ -4619,7 +4777,7 @@ function renderPage(lang) {
   } else if (currentPage === "aluxVsOthers") {
     pageContent.innerHTML = renderAluxVsOthersPage(page);
   } else if (currentPage === "parallelConcurrentComposable") {
-    pageContent.innerHTML = renderParallelConcurrentComposablePage(page);
+    pageContent.innerHTML = renderParallelConcurrentComposablePage(page, lang);
   } else if (!isStaticRoadmap) {
     pageContent.innerHTML = renderHero(page.hero, lang) + orderedSections.map((section, index) => renderSection(section, section.__renderIndex ?? index)).join("");
   }

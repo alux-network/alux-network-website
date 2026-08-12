@@ -1,7 +1,7 @@
 {
   "language": "zh",
   "target": "Chinese, polished Simplified Chinese product/protocol copy",
-  "updatedAt": "2026-08-01T15:00:55.692Z",
+  "updatedAt": "2026-08-12T11:20:47.405Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -891,6 +891,14 @@
       "reviewedAt": "2026-07-13T13:03:29.193Z",
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
+    "glvm.architecture.instruction": {
+      "source": "Select a layer to view its details.",
+      "sourceHash": "267c55ee4c1036ba31ebf3d06cee1343a1bf0fd07da2756a1bcf9767eb5471c1",
+      "text": "选择一个层级，查看对应说明。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-12T10:00:00.000Z",
+      "reviewerNotes": "Native Chinese interface instruction reviewed for clarity and brevity."
+    },
     "glvm.architecture.layers.0.index": {
       "source": "03",
       "sourceHash": "0b8efa5a3bf104413a725c6ff0459a6be12b1fd33314cbb138745baf39504ae5",
@@ -1094,7 +1102,7 @@
     "glvm.architecture.title": {
       "source": "Three layers, one developer-facing execution model",
       "sourceHash": "793773a3a494a63fc87a195ba4a12e74ee47137699d4f98aab09372c443beee5",
-      "text": "三层架构，面向开发者呈现为一套执行模型。",
+      "text": "三层架构，面向开发者呈现为一套执行模型",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-28T13:50:00.000Z",
       "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
@@ -1126,7 +1134,7 @@
     "glvm.close.links.2.0": {
       "source": "ALUX VS Others",
       "sourceHash": "eb4b3f01c8ece1d0aedb62d3feb2142e1879e19355434ab4ed0336c129231d62",
-      "text": "ALUX 与其他系统",
+      "text": "ALUX VS 其它",
       "status": "ai-reviewed",
       "reviewedAt": "2026-07-26T08:35:06.203Z",
       "reviewerNotes": "自然、准确"
@@ -1140,12 +1148,12 @@
       "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.close.title": {
-      "source": "Explore the runtime, agent workloads, and system comparisons.",
-      "sourceHash": "ab76ddcde696819b25513aca69f2bdc8218ac33705896ee1a2223895d4aca9bc",
-      "text": "继续探索运行时、智能体工作负载与系统对比。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T11:33:06.682Z",
-      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+      "source": "Explore the runtime, agent workloads, and system comparisons",
+      "sourceHash": "82db601f2dfd02c5e80dff7166b8c6aa56186255857b34e049731c2051d25309",
+      "text": "继续探索运行时、智能体工作负载与系统对比",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Display heading reviewed without terminal punctuation."
     },
     "glvm.continuity.atomicity.label": {
       "source": "Vertical atomicity · core runtime",
@@ -1158,7 +1166,7 @@
     "glvm.continuity.atomicity.title": {
       "source": "Cross-block execution preserves one transaction context.",
       "sourceHash": "ca95e2f3799eb62a3c1806800521dbe368c7258bfb385440086beeb65460f4ff",
-      "text": "跨区块执行保留同一个交易上下文。",
+      "text": "跨区块执行保留同一个交易上下文",
       "status": "ai-reviewed",
       "reviewedAt": "2026-07-26T08:35:06.203Z",
       "reviewerNotes": "自然、准确"
@@ -1654,18 +1662,18 @@
     "glvm.continuity.text": {
       "source": "Execution evolves from sequential and parallel work to concurrent processes that communicate, wait, and resume. Composite execution extends the model so multiple concurrent transactions can share a higher-level settlement boundary; cross-block continuity provides the vertical foundation for that direction.",
       "sourceHash": "31a40cb294ea110af5db98fa4ac991ecb8df1421211bc57d1ddb1cca4bb7ba37",
-      "text": "执行从顺序与并行模式，演进为能够通信、等待和恢复的并发进程。进一步的组合式执行，目标是让多笔并发交易共享更高层的结算边界；跨区块连续性为这一方向提供纵向基础。",
+      "text": "执行模型从顺序、并行，演进为可通信、可等待、可恢复的并发进程。组合式执行让多笔交易共享一个结算边界；跨区块连续性再把这一边界延伸至后续区块。",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-29T04:00:00.000Z",
       "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "glvm.continuity.title": {
-      "source": "A transaction can wait across blocks, then settle as one.",
-      "sourceHash": "97f4032ab3ef0e115b8d99fc2ccd6ceea49f96fc783cf7f9624608d1ff2ec3e5",
-      "text": "一笔交易可以跨区块等待，随后作为一个整体结算。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:35:06.203Z",
-      "reviewerNotes": "自然、准确"
+      "source": "A transaction can wait across blocks, then settle as one",
+      "sourceHash": "efb5392f8da18ca033f0e9aece22460741a524fc4395b22230428e402232140b",
+      "text": "一笔交易可以跨区块等待，随后作为一个整体结算",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Display heading reviewed without terminal punctuation."
     },
     "glvm.definition.axis.0.0": {
       "source": "VM abstraction",
@@ -1804,44 +1812,44 @@
       "reviewerNotes": "自然、准确"
     },
     "glvm.definition.payoff.label": {
-      "source": "One logical layer",
-      "sourceHash": "6aa385bebd7954cc32aa7e3bade416c6404cb409fc94429b60fd1d7ec9f618c2",
-      "text": "一个逻辑层",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:35:06.203Z",
-      "reviewerNotes": "自然、准确"
+      "source": "Core idea",
+      "sourceHash": "bf6d24c42159831e1c07cb26fa0cea6ef40cd22642d5d583fdca094be9079c27",
+      "text": "核心结论",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Display label reviewed for concise Chinese editorial hierarchy."
     },
     "glvm.definition.payoff.text": {
       "source": "Developers target one concurrent execution model while the runtime handles scheduling, replay, capability checks, replication, and finalization.",
       "sourceHash": "84bf6a1c2102da9d833003085af7a44fca6c4042d682127cc03f91748abae5b1",
-      "text": "开发者只需面向一套并发执行模型；调度、重放、能力检查、复制与最终确认在这一逻辑抽象之下协调。",
+      "text": "开发者只需面向一套并发执行模型；调度、重放、能力检查、复制与最终确认，则由运行时在这一逻辑抽象之下协调。",
       "status": "ai-reviewed",
       "reviewedAt": "2026-07-27T01:05:00.000Z",
       "reviewerNotes": "AI-assisted official-site Chinese review; redundant maturity copy removed from the definition section."
     },
     "glvm.definition.payoff.title": {
-      "source": "One logical layer—not one physical machine.",
-      "sourceHash": "45f6486151560c3848542911e0b678641299353f62423373677ca409039b6ab3",
-      "text": "一个逻辑层，而不是一台物理机器。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:35:06.203Z",
-      "reviewerNotes": "自然、准确"
+      "source": "One logical execution layer, not one physical machine",
+      "sourceHash": "37a64f67d96bfe001b2145c01abccb4609660147b641870c664873f40851f9dd",
+      "text": "统一的是逻辑执行层，不是物理机器",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Display heading reviewed without terminal punctuation."
     },
     "glvm.definition.text": {
-      "source": "TVM is the bytecode execution engine on one machine. GLVM defines the system-level execution abstraction across participating TVMs. It is not another bytecode VM; developers target one logical model while deterministic replay, recovery, replication, finalization, and consensus are coordinated beneath the abstraction.",
-      "sourceHash": "347cb5c9accab39dcf7754d9a8b8c9be4e68a2d12269c66bf14573dc802f3474",
-      "text": "TVM 是运行在单台机器上的字节码执行引擎；GLVM 定义跨多台 TVM 的系统级执行抽象。它不是另一种字节码虚拟机。开发者面向统一的逻辑执行模型，确定性重放、恢复、复制、最终确认与共识则在这一抽象之下协调。",
+      "source": "TVM is the bytecode execution engine on one machine. GLVM defines the system-level execution abstraction across participating TVMs. It is not another bytecode VM; developers target one logical model while deterministic replay, execution continuity, replication, finalization, and consensus are coordinated beneath the abstraction.",
+      "sourceHash": "e87d8a77aa80327ff68672b7fa8061a203f0834a1f2b1ee70c46a7262764e1ef",
+      "text": "TVM 是运行在单台机器上的字节码执行引擎；GLVM 定义跨多台 TVM 的系统级执行抽象。它不是另一种字节码虚拟机。开发者面向统一的逻辑执行模型，确定性重放、执行连续性、复制、最终确认与共识则在这一抽象之下协调。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-29T03:00:00.000Z",
-      "reviewerNotes": "Official-site wording reviewed against the current GLVM maturity boundary."
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Maturity boundary reviewed: execution continuity, not crash recovery."
     },
     "glvm.definition.title": {
-      "source": "One TVM per machine, coordinated through one logical execution model.",
-      "sourceHash": "b232c1fde7c4c395df8888aca59a98bda2dd3f6806b3bcf7de8170e89ccbd390",
-      "text": "每台机器运行一台 TVM，多台 TVM 协同组成一个逻辑执行层。",
+      "source": "One TVM per machine, coordinated through one logical execution model",
+      "sourceHash": "f7dfaa09f8ce4a94a89336ea5d1aea8f300377d0c49a04314e1354656be40eb8",
+      "text": "每台机器运行一台 TVM，多台 TVM 协同组成一个逻辑执行层",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-29T03:00:00.000Z",
-      "reviewerNotes": "Official-site wording reviewed for technical accuracy and semantic line balance."
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Display heading reviewed without terminal punctuation."
     },
     "glvm.hero.eyebrow": {
       "source": "Learn / GLVM",
@@ -1910,7 +1918,7 @@
     "glvm.hero.tagline": {
       "source": "One logical execution layer, coordinated across many machines.",
       "sourceHash": "a2d19f9009f5816fbd9301356a429306ef4d6f027685d948ffeebf2250ff7653",
-      "text": "一个逻辑执行层，跨多台机器协调执行。",
+      "text": "一个逻辑执行层，跨多台机器协调执行",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-28T13:50:00.000Z",
       "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
@@ -1918,7 +1926,7 @@
     "glvm.hero.text": {
       "source": "GLVM is the developer-facing execution abstraction ALUX is building from its concurrent runtime. A TVM provides the concrete engine on each participating machine; the GLVM model brings execution state, processes, replay, replication, and consensus into one logical layer.",
       "sourceHash": "5b2bd1cd5982338944bb2baa4a8ce62dcf8908a8f4fb7a75d4143127796c2a9b",
-      "text": "GLVM 是 ALUX 基于并发运行时构建、面向开发者的执行抽象。每台参与执行的机器运行一台 TVM。GLVM 为跨机器的执行状态与进程提供统一的逻辑边界；重放、复制、最终确认与共识在这一抽象之下协调。",
+      "text": "GLVM 是 ALUX 基于并发运行时构建的执行抽象。它面向开发者，每台参与执行的机器运行一台 TVM。GLVM 为跨机器的执行状态与进程提供统一逻辑边界；重放、复制、最终确认与共识在这一抽象之下协调。",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-29T03:00:00.000Z",
       "reviewerNotes": "Official-site wording reviewed against the current GLVM maturity boundary."
@@ -2294,7 +2302,7 @@
     "glvm.journey.text": {
       "source": "Consider a cross-company device repair: escrow needs independent verification, diagnostics need elastic compute, and the device owner should approve local access. In the GLVM model, each task maps to the execution surface that matches its trust, latency, and data boundary while authority remains explicit.",
       "sourceHash": "83b8841ffd76125feb46bd2507093b1f2aacb99291a234496ccf94cbc2a11e2c",
-      "text": "设想一次跨公司的设备维修：托管资金需要独立验证，诊断需要弹性算力，设备所有者需要批准本地访问。在 GLVM 模型中，每项任务根据其信任要求、延迟与数据边界选择合适的执行载体，同时保持权限明确。",
+      "text": "以跨公司设备维修为例：托管资金需要独立验证，诊断需要弹性算力，设备所有者需要批准本地访问。GLVM 会为每项任务选择符合其信任要求、时延与数据边界的执行载体，同时保持权限明确。",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-29T03:00:00.000Z",
       "reviewerNotes": "Official-site wording reviewed against the current GLVM maturity boundary."
@@ -2302,7 +2310,7 @@
     "glvm.journey.title": {
       "source": "Choose the execution surface by trust, response time, and data locality",
       "sourceHash": "15abb739e7275e89442f5dd21ac9f73c0fce5e58cbbe7e4a860d9424b4c73d55",
-      "text": "执行载体取决于信任要求、响应速度与数据本地性。",
+      "text": "执行载体取决于信任要求、响应速度与数据本地性",
       "status": "ai-reviewed",
       "reviewedAt": "2026-07-26T11:33:06.682Z",
       "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
@@ -2430,18 +2438,18 @@
     "glvm.ocapStory.text": {
       "source": "In the CEO–Bob example, identity-based access can carry the ambient authority represented by the CEO’s badge into the task. With object capabilities, the task receives only one key that names Bob’s record. The TVM enforces the reachable boundary at runtime. Without a capability reference to another pre-existing object, the task cannot name or reach it.",
       "sourceHash": "cbc576605911f94b6a78716a5d7a9cdf58324bdbf47a4bcdca1a63d79ee4873e",
-      "text": "基于身份的访问会将 CEO 工牌代表的环境权限一并带入任务。对象能力只给任务一把指向 Bob 记录的钥匙，这条边界由 TVM 在运行时检查。没有其他对象能力，任务便无法命名或访问其他既有对象。",
+      "text": "基于身份的访问会把 CEO 工牌所代表的环境权限一并带入任务。对象能力则只交给任务一把指向 Bob 记录的钥匙，边界由 TVM 在运行时检查。没有相应能力引用，任务便无法命名或访问其他既有对象。",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-31T05:55:00.000Z",
       "reviewerNotes": "按官网展示语气压缩为三个语义单元，去除冗余示例引导与分号孤行。"
     },
     "glvm.ocapStory.title": {
-      "source": "Give the task one key—not the user’s badge.",
-      "sourceHash": "0619dac626585f411ab421490b6b0486c0a5bbe22897830714949f91cd6498cf",
-      "text": "只把一把钥匙交给任务，而不是用户的工牌。",
+      "source": "Give the task one key—not the user’s badge",
+      "sourceHash": "702b7eee6ea2163249229ba4dcdfa8b288201e93a53f317cb594596bf672f3cb",
+      "text": "只把一把钥匙交给任务，而不是用户的工牌",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-28T00:00:00.000Z",
-      "reviewerNotes": "Founder-corrected distinction: key is OCAP; badge is identity-based access."
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Display heading reviewed without terminal punctuation."
     },
     "glvm.stack.eyebrow": {
       "source": "Runtime anatomy",
@@ -2852,12 +2860,12 @@
       "reviewerNotes": "自然、准确"
     },
     "glvm.status.groups.1.items.4": {
-      "source": "Operator recovery and observability",
-      "sourceHash": "a037f7eaf8b7984cdcd17e4a08ec762a93907a8d357f38b8968fc4237d57e1b4",
-      "text": "运维恢复与可观测性",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:35:06.203Z",
-      "reviewerNotes": "自然、准确"
+      "source": "Runtime observability and operator tooling",
+      "sourceHash": "dabf04eacc7fffcf18d2c39fd17121bbbf82c6dabf54dbac4683e7d3536f48ee",
+      "text": "运行时可观测性与运维工具",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Maturity boundary reviewed: observability and tooling, not crash recovery."
     },
     "glvm.status.groups.1.label": {
       "source": "Expanding the system",
@@ -2932,12 +2940,12 @@
       "reviewerNotes": "AI-assisted official-site Chinese review; maturity boundaries and terminology verified."
     },
     "glvm.status.title": {
-      "source": "The core runtime is taking shape. GLVM is expanding across environments.",
-      "sourceHash": "9d36082d170e5b9cb38b438ee6a7bd90b97014d61569210ec5504363e83c04d3",
-      "text": "核心运行时已初步成形，更多执行环境正在接入。",
+      "source": "The core runtime is taking shape as GLVM expands across environments",
+      "sourceHash": "2d5d543bc0b7f78bd7468608b6639e4fb3439b6388af22437db2ecbfbb365d5b",
+      "text": "核心运行时已初步成形，更多执行环境正在接入",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-28T00:00:00.000Z",
-      "reviewerNotes": "Official-site wording refined for semantic three-line composition without changing the source meaning."
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Display heading reviewed without terminal punctuation."
     },
     "home.hero.eyebrow": {
       "source": "ALUX Network",
@@ -2948,20 +2956,20 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.hero.text": {
-      "source": "GLVM is ALUX’s unified execution abstraction for developers. Each machine runs a TVM; together they form one logical execution layer. The runtime coordinates replay, authority, finalization, replication, and consensus beneath the application. The chain runtime is the current foundation; private cloud is the next integration surface, while client-device execution remains on the roadmap.",
-      "sourceHash": "04b5acc4bfbc05bce5ac8e406690a7b0f78197aa4697b2b167cd87f8afa5a929",
-      "text": "全局逻辑虚拟机（GLVM）是 ALUX 面向开发者的统一执行抽象。每台机器运行一台 TVM，共同组成一个逻辑执行层。运行时在应用之下协调重放、权限、最终确认、复制与共识。链上运行时构成当前基础；私有云是下一步集成方向，客户端设备执行仍属于路线图。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T12:20:00.000Z",
-      "reviewerNotes": "AI-assisted official-site Chinese review; maturity boundaries and terminology verified."
+      "source": "Imagine one logical virtual machine that runs everywhere—on a public blockchain, on a private cluster, and on client hardware such as phones and browsers—while abstracting away the state, threads, replication, and consensus underneath. Developers write one concurrent program; where it runs becomes a configuration choice, not an architecture. Its parts still commit together, atomically. That is Virtual Machine Abstraction, and ALUX is building it.",
+      "sourceHash": "9326167f58de3c37f370880a293374e93144e2faafc3255063ec74199ff5e021",
+      "text": "设想一个无处不在的逻辑虚拟机——运行在公有区块链、私有集群，以及手机和浏览器等客户端硬件上，同时把底层的状态、线程、复制与共识全部抽象起来。开发者只需编写一套并发程序；程序运行在哪里，只是配置选择，而不再决定应用架构。各个部分仍然一起提交，并保持原子性。这就是虚拟机抽象，而 ALUX 正在构建它。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.hero.title": {
-      "source": "Building GLVM",
-      "sourceHash": "139cabb83084107831e9a354ca9fd483f184cd5cd0154fe051ab4fff0f5aad05",
-      "text": "构建 GLVM",
+      "source": "Building the global VM",
+      "sourceHash": "1d3ec87e2a532c895cc3fbcfb41e48696c9fa5267510a7a15b033e216ed44b51",
+      "text": "构建全局虚拟机",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-25T05:08:59.338Z",
-      "reviewerNotes": "按 GLVM 独立品牌名精校；保留架构含义，避免回退为“全局虚拟机”等泛称。"
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.metaDescription": {
       "source": "GLVM is ALUX's architecture for one logical execution layer across physically distributed TVMs, coordinating concurrency, replay, authority, finalization, replication, and consensus.",
@@ -3027,14 +3035,6 @@
       "reviewedAt": "2026-07-16T02:53:05.677Z",
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.0.architecture.infrastructure.label": {
-      "source": "Layer 1",
-      "sourceHash": "ca900bb0437e1b6c3df9f9591b5393553738dd8cb25cd66d43b2ef1745ac1bf3",
-      "text": "第 1 层",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-06-02T16:09:00.165Z",
-      "reviewerNotes": "Synchronized with current English architecture section; AI-assisted native-language review in Codex."
-    },
     "home.sections.0.architecture.infrastructure.title": {
       "source": "Physical Infrastructure",
       "sourceHash": "9b59e1eadb7e3c320d41fd296022ed50a6888a61ce5b91e4ac1d3a263d191ed1",
@@ -3074,14 +3074,6 @@
       "status": "human-reviewed",
       "reviewedAt": "2026-07-16T02:53:05.677Z",
       "reviewerNotes": "Reviewed against the current English homepage source."
-    },
-    "home.sections.0.architecture.runtime.label": {
-      "source": "Layer 2",
-      "sourceHash": "620558ceadc1cb03ef33fb6cdf2a638743d565dfe40a5c8966f060012a6ca5e4",
-      "text": "第 2 层",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-06-02T16:09:00.165Z",
-      "reviewerNotes": "Synchronized with current English architecture section; AI-assisted native-language review in Codex."
     },
     "home.sections.0.architecture.runtime.title": {
       "source": "ALUX — Decentralized Concurrent Runtime",
@@ -3147,14 +3139,6 @@
       "reviewedAt": "2026-06-02T16:09:00.165Z",
       "reviewerNotes": "Synchronized with current English architecture section; AI-assisted native-language review in Codex."
     },
-    "home.sections.0.architecture.world.label": {
-      "source": "Layer 3",
-      "sourceHash": "fae4c3c8cd8779d65395d18aac1cdff8850245d51576addcc43f85c805ecea80",
-      "text": "第 3 层",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-06-02T16:09:00.165Z",
-      "reviewerNotes": "Synchronized with current English architecture section; AI-assisted native-language review in Codex."
-    },
     "home.sections.0.architecture.world.title": {
       "source": "World Operating System",
       "sourceHash": "e6432937a3b45dc829a2b65e5d64405bcee3458d2d8a34688e59085b59261592",
@@ -3180,12 +3164,12 @@
       "reviewerNotes": "AI-assisted official-site Chinese review; maturity boundaries and terminology verified."
     },
     "home.sections.0.title": {
-      "source": "One logical execution layer.<br>Physically distributed.",
-      "sourceHash": "70ffaf00086e3eaca1ca40c36c60bca455ecad0406557763fa9ddfee9c8b3562",
-      "text": "一个逻辑执行层。<br>物理上分布运行。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:36:46.018Z",
-      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
+      "source": "One logical execution layer<br>Physically distributed",
+      "sourceHash": "405cc52831bc029306f1e410a35c8dba37c9c17843cc6758b920588f1d4ec94a",
+      "text": "一个逻辑执行层<br>物理分布运行",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.10.eyebrow": {
       "source": "Learn More",
@@ -3484,60 +3468,60 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.clusters.2.detailBusiness": {
-      "source": "A service can wait for delivery, approval, oracle data, or an agent action, then complete settlement with a verifiable audit trail.",
-      "sourceHash": "e4aac984720fd708f4b081d49b0d600026df9369839097c347e19773ca6c5ff9",
-      "text": "服务可以等待物流、审批、预言机数据或智能体操作，随后依托可追溯、可核验的记录完成结算。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T15:13:42.120Z",
-      "reviewerNotes": "Native zh review against the current English source and ALUX terminology baseline."
+      "source": "Wait for approvals, external data, or another service without exposing a chain of partially committed ALUX states.",
+      "sourceHash": "193d66cbb78235a267407e2dbd26ecbb0deab9123b853f00a710bbf3dff232d1",
+      "text": "等待审批、外部数据或其他服务时，不会暴露一连串仅部分提交的 ALUX 状态。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.detailTechnical": {
-      "source": "Segments preserve progress. ReplayTrie, isolation, rollback, and commit points bound how suspended work resumes and settles.",
-      "sourceHash": "e3663aaa89cbb40042ed97c0a9eeb98d3a51758590c1420fc05e987b8d1377f1",
-      "text": "执行片段保留进度；ReplayTrie、隔离、回滚与提交点共同约束暂停后的恢复与结算。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:49:18.632Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology baseline."
+      "source": "Segments and partitions preserve progress at suspension points. ReplayTrie, isolation, and commit rules let validators resume and reproduce the same transaction across later blocks.",
+      "sourceHash": "6c8a37ec900024edf1e37f3a8a1e68a28cd7fd0ff47fc743c227b391eff9288d",
+      "text": "执行片段与分区会在挂起点保留进度；ReplayTrie、隔离与提交规则使验证者能够在后续区块恢复并复现同一笔交易。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.detailTitle": {
-      "source": "Work crosses blocks",
-      "sourceHash": "59f77d83ca88059cf78b71890b7ef3b32007fa203dd2fb87542483f63228bbc4",
-      "text": "工作可跨区块继续",
+      "source": "One transaction across many block heights",
+      "sourceHash": "c3dfe55a4deb8dd704baad6286d9ecd5aed1ddb9732f97429051f17b08c1e121",
+      "text": "一笔交易跨越多个区块高度",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.items.0": {
-      "source": "Segments",
-      "sourceHash": "48c64fe09126a18f5b6d52ebbbc3ddf0aa1b45e446d86429fddd8ac67957e06b",
-      "text": "执行片段",
+      "source": "Cross-Block",
+      "sourceHash": "4e65ad05c7c481cbe7584eb998983c514f89e35386dc70ff3291fe7c6cdd3a9e",
+      "text": "跨区块",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.items.1": {
-      "source": "Commit Points",
-      "sourceHash": "e1e9e79f010064a97f54605909c65b90ba0ad703bca83eb3edc6d0791f8cb2cf",
-      "text": "提交点",
+      "source": "Suspend / Resume",
+      "sourceHash": "03bfd339c3f30290b5d53e0a37b4c3d3e0166b99b9ed285a25cf70268624eae9",
+      "text": "挂起 / 恢复",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.items.2": {
-      "source": "ReplayTrie",
-      "sourceHash": "d556f54e2420ff6d989b619c8b5dfce364a39b048874a39b8f53c7086cdad27f",
-      "text": "ReplayTrie",
+      "source": "Atomic Finalization",
+      "sourceHash": "17f5bb52e18a9374c1bc351c11935a6125422be7208f5677c1c541fbbd5a4234",
+      "text": "原子终结",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.items.3": {
-      "source": "Isolation",
-      "sourceHash": "45c4fc064e525974b1c12d9f7168edcde18dcbbf878aa21fd761da5cdfc59702",
-      "text": "隔离",
+      "source": "Replay Evidence",
+      "sourceHash": "bf454315a93b805d38f824cfac16a3209a37ae7667a1619beda87f08678c84a2",
+      "text": "重放证据",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.label": {
       "source": "Transaction Layer",
@@ -3548,12 +3532,12 @@
       "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
     },
     "home.sections.2.clusters.2.runtimeBusiness": {
-      "source": "Long-running workflows can wait for real-world inputs and still settle atomically across block heights.",
-      "sourceHash": "d6dc115c04fe4da4e7c1ddc5a4649eb28334e69e5261d4ec966847e8c74d44ae",
-      "text": "长时间运行的工作流可以等待现实世界的输入，并仍能跨区块高度进行原子结算。",
+      "source": "Long-running workflows can wait without exposing partially committed ALUX state.",
+      "sourceHash": "04c92b8d01ac9bbee158ea88cd782d6cc6f657684b7a0eb40f8bcd283c0019bf",
+      "text": "长时间运行的工作流可以等待，同时不暴露部分提交的 ALUX 状态。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.runtimeLabel": {
       "source": "Transaction Layer",
@@ -3564,36 +3548,36 @@
       "reviewerNotes": "Codex refreshed existing home translation."
     },
     "home.sections.2.clusters.2.runtimeTechnical": {
-      "source": "Segments, ReplayTrie, isolation, and commit points let work suspend, resume, and settle atomically after a bounded checkpoint.",
-      "sourceHash": "580c2fc3fe8fe26f1a805ed755edda0e49e2259b5259a0af60760c087b94a319",
-      "text": "执行片段、ReplayTrie、隔离规则与提交点让工作可以暂停、恢复，并在边界明确的检查点完成原子结算。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:49:18.632Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology baseline."
+      "source": "Segments, partitions, ReplayTrie, isolation, and commit rules preserve one transaction across suspension and later-block resumption.",
+      "sourceHash": "ceac97242aed80eb896db4f42532339c23832aa714c4faed30b073bf8c260771",
+      "text": "执行片段、分区、ReplayTrie、隔离与提交规则，使一笔交易能够跨越挂起与后续区块恢复保持连续。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.runtimeTitle": {
-      "source": "Services cross block boundaries",
-      "sourceHash": "ae2da6c20b1e58c3e3045026c7d99df07f48d784efaaef9e4e5f3fbe164d368d",
-      "text": "服务跨区块\n继续推进",
+      "source": "Vertical atomicity\nacross block heights",
+      "sourceHash": "1f68196a5fbf0bbd2dd22382cb294662991bf646605106af519ecd2f3f0a91f3",
+      "text": "跨区块高度的\n垂直原子性",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.text": {
-      "source": "Segments and commit points let service work suspend across block boundaries, then settle atomically with replay and isolation evidence.",
-      "sourceHash": "618f8a8d93311d68bdb353f63c2941e9c88a9c19ead40a868dc462359113722d",
-      "text": "执行片段与提交点让服务跨区块挂起和恢复，再以重放与隔离证据为依据完成原子结算。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:38:44.312Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology."
+      "source": "A Long Transaction can suspend at a block boundary, resume in a later block, and still finalize as one ALUX transaction. Its ALUX state changes remain staged until commit; on abort, uncommitted effects are discarded.",
+      "sourceHash": "1985e1aec2d8185ce8f17363b1bef7565cc1be5b87f705946887eeb5e40c618b",
+      "text": "长交易可以在区块边界挂起，在后续区块恢复，并最终仍作为一笔 ALUX 交易完成。其 ALUX 状态变更在提交前保持暂存；若交易中止，未提交的影响将被丢弃。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.title": {
-      "source": "Cross-Block ACID",
-      "sourceHash": "20838344b26509a5b08529d9fb17e63c7197ee4471331fae0105bb8182bd18b2",
-      "text": "跨区块 ACID 交易",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:49:18.632Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology baseline."
+      "source": "Vertical Atomicity",
+      "sourceHash": "a01ba4c0a43e805009b1fe4ffd9f95ce06635c06a6d157de925e897482b8b66b",
+      "text": "垂直原子性",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.3.items.0": {
       "source": "Segment Pool",
@@ -3764,284 +3748,396 @@
       "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
     },
     "home.sections.2.clusters.5.detailBusiness": {
-      "source": "Teams can start from familiar Web3 tooling, then move toward ALUX-native service composition.",
-      "sourceHash": "878a0f3e95813cd1172f80001619a9319e9aa0bfe2bfd2357d1dc72658942c17",
-      "text": "团队可以从熟悉的 Web3 工具起步，再逐步构建 ALUX 原生的组合式服务。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:49:18.632Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology baseline."
+      "source": "Bring supported EVM contracts into ALUX while the runtime handles concurrency at the coordination layer.",
+      "sourceHash": "5d9d836f7e14a1fd985dbddb170e7a7a5350ca99ae3a289436d96e9d40f5075e",
+      "text": "将受支持的 EVM 合约接入 ALUX，由运行时在协调层处理并发。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.detailTechnical": {
-      "source": "Tolang targets TVM directly. TSAC adapts Solidity and EVM-facing calls into tuple-space execution.",
-      "sourceHash": "0a55596e2b118d5b9d47d1f9d16f5b03f7786b7d7553651e2d92d8c89e0ba1bb",
-      "text": "Tolang 直接面向 TVM；TSAC 将 Solidity 与面向 EVM 的调用适配到元组空间执行。",
+      "source": "Each EVM instance keeps its own stack and memory. Reads, writes, and contract calls that touch global state pass through TSAC, where TVM can coordinate them with other live processes.",
+      "sourceHash": "e9ded9d1d4c974d1d148f8e726695295039633a22998390e132450d665827724",
+      "text": "每个 EVM 实例保留各自的栈与内存。涉及全局状态的读取、写入和合约调用都会经过 TSAC，由 TVM 与其他活跃进程协同调度。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.detailTitle": {
-      "source": "Clear path for builders",
-      "sourceHash": "cdd87a4b2a4902360042bff2091efbae89bbedb98f77fc44a26b2a34d15ad107",
-      "text": "构建入口清晰",
+      "source": "Sequential VMs, concurrent coordination",
+      "sourceHash": "2bdfcb5c015f1c14a5380928bab9c60c2e00a0c5b382e6273dc3f035ee37d182",
+      "text": "顺序执行的虚拟机，并发协调",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.items.0": {
-      "source": "Tolang",
-      "sourceHash": "b3d77b77dc0ef77902096e5c875a65398c2832a8ce46836867da811a4dc23fb6",
-      "text": "Tolang",
+      "source": "EVM Today",
+      "sourceHash": "f357d7b4268fcf87a6b5672a62c191cdd345e7fafe914ff83d5c3ae0b67a9150",
+      "text": "EVM（现已支持）",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.items.1": {
-      "source": "TSAC",
-      "sourceHash": "43dd7ca33f0c090837987dd99984011a436637d8df50547f9f6c0d33cb72122c",
-      "text": "TSAC",
+      "source": "Isolated Sandboxes",
+      "sourceHash": "5b2dda1a5d468c779f5647c8fe044faae8706947bf6f91af4a6490cfe6afa107",
+      "text": "隔离沙箱",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.items.2": {
-      "source": "Solidity Entry",
-      "sourceHash": "9f9f16ff2e0e0c57487abe4887c2b30925ad49f4938b53650e826309711094bf",
-      "text": "Solidity 入口",
+      "source": "TSAC Adapters",
+      "sourceHash": "afb332c7d0fd3e96d419f8063bb6cb88613caeb73b54a33d1896a820ab7f0ddd",
+      "text": "TSAC 适配器",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.items.3": {
-      "source": "EVM Adapters",
-      "sourceHash": "8297dbfd37a837c97718ef1db0b56df55ec6a2994ee6d847f7afdf548ece754e",
-      "text": "EVM 适配器",
+      "source": "WASM Planned",
+      "sourceHash": "061c996a0f2e49d0425f7ec6e44c1e825a2cf2879fc5fdb65d2d107965c2ef19",
+      "text": "WASM（规划中）",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-04T11:08:27.551Z",
-      "reviewerNotes": "Codex refreshed existing home translation."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.label": {
-      "source": "Build Surface",
-      "sourceHash": "a80dfed2762238ceb25d2df790adae7b4eb34d14357e29cabc4f2b714dd2a9e2",
-      "text": "构建入口",
+      "source": "Compatibility Layer",
+      "sourceHash": "4c2492dd2831eb45f8804e388fbb5cd510694c586c4112e33814c4b0ffae9124",
+      "text": "兼容层",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.runtimeBusiness": {
-      "source": "Builders can start from familiar Web3 tooling and grow into ALUX-native service composition.",
-      "sourceHash": "7e707da4218935a5db727a2aae94ad96fcd1e01a2771d5fbd3ac7b57c216d41d",
-      "text": "开发者可以从熟悉的 Web3 工具起步，再逐步构建 ALUX 原生的组合式服务。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:49:18.632Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology baseline."
+      "source": "Builders can bring supported EVM contracts into ALUX today; WASM remains on the roadmap.",
+      "sourceHash": "fc7d027c76e91f47f44b9c6f8c8898b80ac74a8ead1ee8b176276d1306d5a063",
+      "text": "开发者当前可以将受支持的 EVM 合约接入 ALUX；WASM 仍在路线图中。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.runtimeLabel": {
-      "source": "Build Surface",
-      "sourceHash": "a80dfed2762238ceb25d2df790adae7b4eb34d14357e29cabc4f2b714dd2a9e2",
-      "text": "构建入口",
+      "source": "Compatibility Layer",
+      "sourceHash": "4c2492dd2831eb45f8804e388fbb5cd510694c586c4112e33814c4b0ffae9124",
+      "text": "兼容层",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-04T11:08:27.551Z",
-      "reviewerNotes": "Codex refreshed existing home translation."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.runtimeTechnical": {
-      "source": "Tolang targets TVM directly, while TSAC adapts EVM-facing calls into tuple-space execution through isolated adapters.",
-      "sourceHash": "3d55384544702e06c841c11374eb10905eea77090845d1588462674d80c010a2",
-      "text": "Tolang 原生面向 TVM；TSAC 将面向 EVM 的调用通过隔离适配器接入元组空间执行。",
+      "source": "Supported EVM instances keep their own stack and memory while TSAC routes global-state operations into concurrent TVM coordination. Additional guest VMs remain an expansion path.",
+      "sourceHash": "4e11bb04b2696109aa4e9e91771a4be3a18bf43feb0381c50c986903597db5f7",
+      "text": "受支持的 EVM 实例保留各自的栈与内存，TSAC 则将全局状态操作接入 TVM 的并发协调。更多来宾虚拟机仍是后续扩展方向。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.runtimeTitle": {
-      "source": "Contracts get a runtime path",
-      "sourceHash": "b8c93a2363cfcee8645ef7544ee44177f108777633e146da162518a3c27c586b",
-      "text": "合约接入\n运行时",
+      "source": "Guest VMs run\nin isolated sandboxes",
+      "sourceHash": "342ffd787c1e2b3de8bb7c15f9eb444f3f16f38a91bcbf435847624df65eff84",
+      "text": "来宾虚拟机运行于\n隔离沙箱",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.text": {
-      "source": "Tolang compiles to TVM bytecode, while TSAC adapters route Ethereum-facing contracts into the tuple-space runtime.",
-      "sourceHash": "7c05b1f53a3f2a34979f7832f246091e28885f7796b606a1e7e4b4e61e7b5dd4",
-      "text": "Tolang 直接编译到 TVM 字节码；TSAC 将面向 EVM 的合约工作流接入元组空间运行时。",
+      "source": "Supported EVM workloads run in isolated sandboxes today and coordinate with the concurrent TVM through TSAC adapters. The same compatibility layer is designed to host additional guest VMs; WASM remains on the roadmap.",
+      "sourceHash": "8a4d9a24ce9c20a994532c44464f89e23bd2d6bcc3e794de3d5f41857150c993",
+      "text": "受支持的 EVM 工作负载现可在隔离沙箱中运行，并通过 TSAC 适配器与并发 TVM 协同。同一兼容层旨在承载更多来宾虚拟机；WASM 仍在路线图中。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-04T11:08:27.551Z",
-      "reviewerNotes": "Codex refreshed existing home translation."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.title": {
-      "source": "Tolang + TSAC",
-      "sourceHash": "a5e463ca5a74d028275df92255a25e555063dd0db279b671d2bc9219abc076de",
-      "text": "Tolang + TSAC",
+      "source": "Heterogeneous VM Sandbox",
+      "sourceHash": "91c219023738848f652f33d31af39f6857d9908c279418a71d4ec7ce95a6bd1e",
+      "text": "异构虚拟机沙箱",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.6.items.0": {
       "source": "eth_* RPC",
       "sourceHash": "36cde0cbd497b08790ec53204f1887edaeb3bcbc9e6b2fedcc7c4167abe6c101",
       "text": "eth_* RPC",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.6.items.1": {
       "source": "P2P Gossip",
       "sourceHash": "ab13fc32c79cbf6f7e68ecc33a554863c1cb2727a3fcd4d86cc62d3f9fb95558",
       "text": "P2P Gossip",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.6.items.2": {
       "source": "Storage Context",
       "sourceHash": "bbf8c2b79994fd9794686db19c3cd30a13eb2078caaf26dba8e953671e749965",
       "text": "存储上下文",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.6.items.3": {
       "source": "Static Site",
       "sourceHash": "e184c0ea5a3b0ee5cb891c7e0f2aa79e7f26cf7a08a5a7d6666afdb425ccedea",
       "text": "静态站点",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.6.label": {
       "source": "Node Network",
       "sourceHash": "400ec57d98ac71f4b17a7595e5b490a994772c2d43df55b0ce290915d5d165bc",
       "text": "节点网络",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.6.text": {
       "source": "The node layer exposes RPC, P2P, storage context, and static service surfaces around the runtime.",
       "sourceHash": "eef02775e9adf93dc82a2a4216026e658d949b1d2c006591c4d9ccea1982c30e",
       "text": "节点层围绕运行时开放 RPC、P2P、存储上下文和静态服务入口。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.6.title": {
       "source": "Full Node + RPC",
       "sourceHash": "fbd4362443a9c1517fe512f0d0b70d14c4f0334e0ff41ba81483f52724ac76c4",
       "text": "全节点 + RPC",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-01T13:41:07.538Z",
-      "reviewerNotes": "Human-reviewed semi-automatic sync for the expanded Home capability map."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.7.items.0": {
       "source": "BranchId",
       "sourceHash": "a7d1daf5f5b1b7daecb5b29f1a851568fe11b98ab543eac8f22f29d535f58058",
       "text": "BranchId",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.7.items.1": {
       "source": "COMM Events",
       "sourceHash": "0debb172cc432fa1696baa877835ee18c30c95a20923ed03c1f217c3a5e22f77",
       "text": "COMM 事件",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.7.items.2": {
       "source": "Replay Log",
       "sourceHash": "5f15c1d5c40d170448af7b473b6252b144e2445852c0711c8b3f46b49484f96e",
       "text": "重放日志",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.7.items.3": {
       "source": "Deterministic Replay",
       "sourceHash": "b9ba97dcd9b12127e54bd2d8b1482d11cb27d830145d11cea2177a94ee9eb2c2",
       "text": "确定性重放",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.7.label": {
       "source": "Validator Proof",
       "sourceHash": "65f940d2afb4e31adfdd47dabac0266a1d006331fb49babda678a8ad6a95ff61",
       "text": "验证者证明",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.7.text": {
       "source": "Branch identifiers and replay logs let validators reproduce non-deterministic COMM events deterministically.",
       "sourceHash": "c87dec4b639e8114057510ab97cd2028799b1952de73e72dc83e197494b8996b",
       "text": "分支标识符与重放日志让验证者能够以确定性方式复现非确定性的 COMM 事件。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.7.title": {
       "source": "Replay + Trace",
       "sourceHash": "70ce8e57fde2f5154a3bae92ff9d16e3e1f7544ef2f70aee8dbfa15901ce87dd",
       "text": "重放 + 追踪",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.8.items.0": {
       "source": "Diagnostics",
       "sourceHash": "268f14bbfe119c1e92150583af960a086d7db9619a097f8aa72ff6779842f610",
       "text": "诊断",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.8.items.1": {
       "source": "Expand",
       "sourceHash": "07548c2c6511d4d1780564de8a237a1966cf9c99a97cf5c8a185e6c2aeacff09",
       "text": "展开",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.8.items.2": {
       "source": "Compiler Format",
       "sourceHash": "860f09eb8585d28b34df9ca135b935c2377421c833b80fe5fc74795e89c194b0",
       "text": "编译器格式化",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.8.items.3": {
       "source": "Run / Simulate",
       "sourceHash": "fd811d046fcad57c21b25a6828eecd460f86690b5f855b6ee542923ca1b75f53",
       "text": "运行 / 模拟",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.8.label": {
       "source": "Developer Tooling",
       "sourceHash": "5019fbfb8b82150ccc1385e6c3e8c47e50713b01540929f69d2d08f302119184",
       "text": "开发者工具",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.8.text": {
       "source": "Compiler diagnostics, expand, format, and playground runs make service logic visible before it reaches a live node.",
       "sourceHash": "05a7ab2ea6fe36d0a2445d33aa9454e7f5c38bf25664b011bd830ec5c91d9409",
       "text": "编译器诊断、展开、格式化与 Playground 运行，让服务逻辑在进入真实节点之前就清晰可见。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.8.title": {
       "source": "LSP + Playground",
       "sourceHash": "2360602921505c6f01232eba07a7cbda0b0744052534db0c6d51ba565c75dac4",
       "text": "LSP + Playground",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.detailBusiness": {
+      "source": "Scale horizontally without asking applications to repair partially committed state with Saga compensation.",
+      "sourceHash": "f72b6475f41ca3a850aa0d0cdd2b6ec39be54f32015fc5d71d447b2a1be6548c",
+      "text": "在不要求应用通过 Saga 补偿来修复部分提交状态的前提下，实现横向扩展。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.detailTechnical": {
+      "source": "The target model stages updates on every participating shard behind one transaction boundary. If any shard-local call fails, all staged updates are discarded before becoming observable. Cross-shard execution is not implemented in the current runtime.",
+      "sourceHash": "caac41f8fa7c8c53d98cd3951b0bc8bf78734735d15c2f13f0c925c156480d44",
+      "text": "目标模型把每个参与分片上的更新都暂存于同一交易边界内。若任一分片内调用失败，所有暂存更新都会在可被观察前丢弃。当前运行时尚未实现跨分片执行。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.detailTitle": {
+      "source": "One transaction across many shards — Roadmap",
+      "sourceHash": "ba4e139e5bd4da13615d4e114f424e00813c50bb7f21834c020ad175b458f002",
+      "text": "一笔交易跨越多个分片——路线图",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.items.0": {
+      "source": "Cross-Shard",
+      "sourceHash": "683fde5d4338370dbaae46720063453cfa2d11de4a39fd483df91b232fbc0a03",
+      "text": "跨分片",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.items.1": {
+      "source": "One Transaction",
+      "sourceHash": "8195d5365f3d7200229a6636f233e600ab981894a078a5548d17c2851b773363",
+      "text": "一笔交易",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.items.2": {
+      "source": "All-or-Nothing",
+      "sourceHash": "20637fd27282632ef8cae3745e3b14b82ea032e2a4622ec08d84e7582b0d7a8c",
+      "text": "全有或全无",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T09:42:31.824Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.items.3": {
+      "source": "No Partial State",
+      "sourceHash": "901ca85b446a0c803924f3b98db8ca2db34a74d43b2d72e4c74275866c9ad55f",
+      "text": "无部分状态",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.label": {
+      "source": "Roadmap · Sharding",
+      "sourceHash": "368a29a848fa3631e3989369e5a5239712758ed5e1d89c3a5fbc58a3d6f84abc",
+      "text": "路线图 · 分片",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.runtimeBusiness": {
+      "source": "Horizontal scale should not force applications to recover from half-completed shard interactions.",
+      "sourceHash": "66f4f8802c15d835ba54b717fb0fd9e5f772e3d647f766aec00c366648bb37f0",
+      "text": "横向扩展不应迫使应用自行恢复仅完成一部分的跨分片交互。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.runtimeLabel": {
+      "source": "Architecture Target",
+      "sourceHash": "deeaa9c55f0c6ba3f3bafa3d02fee58fa1327f8f7f47ffc9d70cd156c7db1e17",
+      "text": "架构目标",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.runtimeTechnical": {
+      "source": "The design requires all participating shard-local effects to commit together or abort together, while tentative intermediate state remains unobservable. Cross-shard execution remains on the roadmap.",
+      "sourceHash": "7ec6a19b13cf440ecb4a5feac63fad6746b744c4910497b8d097a922748c309d",
+      "text": "该设计要求所有参与分片内的影响一同提交或一同中止，同时暂存的中间状态不可被观察。跨分片执行仍在路线图中。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.runtimeTitle": {
+      "source": "Horizontal atomicity\nacross shards",
+      "sourceHash": "0d88f7ab18f65dd7385c2e1977eb0667446e209d45cfcb00287645bbe8c058c4",
+      "text": "跨分片的\n水平原子性",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.text": {
+      "source": "Design target: extend the same all-or-nothing transaction boundary across shards. Every shard-local effect commits together or none does, and unrelated transactions should never observe a partial cross-shard result.",
+      "sourceHash": "38780bb0a313e9c654692d714f856c1b1a3bffd85f9577745111c4168272b47f",
+      "text": "设计目标：将同一个全有或全无的交易边界扩展至多个分片。每个分片内的影响要么一同提交，要么全部不提交，且无关交易不应观察到部分完成的跨分片结果。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.title": {
+      "source": "Horizontal Atomicity",
+      "sourceHash": "f30ca5a66d386d759ca910f70e80868ac27ea28fa1987ca0399b5b463167eb41",
+      "text": "水平原子性",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.combinations.0.business": {
       "source": "Replaces shared API keys with explicitly passed, attenuated authority; budget and time-window policy remain product-layer targets.",
@@ -4452,12 +4548,12 @@
       "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
     },
     "home.sections.2.core.runtimeLabel": {
-      "source": "Virtual Machine Abstraction",
-      "sourceHash": "4a024c42f0e278b92a2953820d1bd6b89d9cffc986f81b24ca3af0da1a6749a8",
-      "text": "虚拟机抽象",
+      "source": "ALUX Runtime",
+      "sourceHash": "9bc3aad42d6a21105af1f51de30c0eda6d3cc3263053398943c6eaea0040f231",
+      "text": "ALUX Runtime",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.2.core.runtimeTechnical": {
       "source": "TVM execution, Native OCAP Support, cross-block commit logic, and BlockGit finality meet inside one runtime abstraction.",
@@ -4468,20 +4564,20 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.runtimeTitle": {
-      "source": "ALUX Runtime\nforms one logical layer",
-      "sourceHash": "8aa7a8d9daa56a46cde35e272528d04a053ff0e136b879da42b0f2dc1b774dc7",
-      "text": "ALUX Runtime\n构成一个逻辑执行层",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:36:46.018Z",
-      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
+      "source": "One logical execution layer",
+      "sourceHash": "ea65ac170d44deeb89d3fd9f29b955932f558569866b899f198a808953189a86",
+      "text": "一个逻辑执行层",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.2.core.text": {
-      "source": "One logical execution layer where concurrent TVM execution, Native OCAP Support, cross-block atomicity, and BlockGit finality compose beneath the developer-facing GLVM abstraction.",
-      "sourceHash": "9c89b76617ff0dc2f72b59dd6e9726d36a4cfd6fdc969241fff2ed786613fe08",
-      "text": "一个逻辑执行层：并发 TVM 执行、原生 OCAP 支持、跨区块原子性与 BlockGit 最终性，都在面向开发者的 GLVM 抽象之下协同组合。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:36:46.018Z",
-      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
+      "source": "GLVM brings concurrent TVM execution, native OCAP support, cross-block atomicity, and BlockGit finality together as one logical execution layer.",
+      "sourceHash": "8b284cb4060d11d20a78200ff9da0cc550617fdcd25128a510202c5594f03edd",
+      "text": "GLVM 将并发 TVM、原生 OCAP、跨区块原子性与 BlockGit 最终性统一为一个逻辑执行层。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.2.core.title": {
       "source": "ALUX Runtime",
@@ -4676,236 +4772,236 @@
       "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
     },
     "home.sections.6.cta.text": {
-      "source": "Use Runtime Lab to inspect fork, wait, join, select, replay, and atomic commit across the ALUX execution model.",
-      "sourceHash": "0d9111beabe957b21809ce6fd01e855558eaf96dc7af456cde0919933993bd9a",
-      "text": "使用 Runtime Lab 查看 ALUX 执行模型中的分叉、等待、汇合、选择、重放与原子提交。",
+      "source": "Use Runtime Lab to inspect fork, wait, join, external input, replay, and atomic finalization across the ALUX execution model.",
+      "sourceHash": "d0a405f17fc378ecfc6eaeaea626debc2a9bba795e7002fa49f00be097a72d5f",
+      "text": "使用 Runtime Lab 检视 ALUX 执行模型中的分叉、等待、汇合、外部输入、重放与原子终结。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.6.cta.title": {
-      "source": "Explore concurrent programs that orchestrate and commit atomically.",
-      "sourceHash": "c0c5f11afa2a6f44dbaaba36bf125798ec26a24769e5d4ee2a936bf8c655ea78",
-      "text": "探索能够进行编排并原子提交的并发程序。",
+      "source": "Explore the runtime primitives behind long-running workflows.",
+      "sourceHash": "09fd30474a0f6cb9ca0b2d53052b07308d4c2a33099e86d46fae43bac1fcd725",
+      "text": "探索支撑长时间运行工作流的运行时原语。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.6.demos.0.label": {
-      "source": "reservation.tox",
-      "sourceHash": "b968241dd9e6caad3f4167c0da90feccbfb25c219db3f3837736ba66432db3f6",
-      "text": "reservation.tox",
+      "source": "durable-agent.tox",
+      "sourceHash": "7c52f3eed9f755861c8f921ae8e6f8afbc179071bec3d68c1112f37c7a986db2",
+      "text": "durable-agent.tox",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.0.status": {
-      "source": "LIVE TRACE",
-      "sourceHash": "b553a3650c45b7438000814f482dcef4257e01ae0a15c3e9d6d048359bf860d2",
-      "text": "实时轨迹",
+      "source": "RUNTIME + APP INTEGRATION",
+      "sourceHash": "d075e8f4465464a559d5a6282a707b83b52a7479427778925f5aa9a2b5bb4f2e",
+      "text": "运行时 + 应用集成",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.0.steps.0": {
-      "source": "Spawn",
-      "sourceHash": "0fc12ed14135db008d0eb5b87113feec1e3871ba7b35373cd20aebd119a69896",
-      "text": "创建进程",
+      "source": "Fork agents",
+      "sourceHash": "9a84a34048a001a91ee38db37c133a4b579a7c71b147b1dd56d1ee8ed81d24cb",
+      "text": "分叉 Agent",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.0.steps.1": {
-      "source": "Wait",
-      "sourceHash": "26b83994dca8b4b483edc45464ba07a5bde05cb7e6c5c61bb2e66da9d1e15fc7",
-      "text": "等待",
+      "source": "Call Claude",
+      "sourceHash": "3673ef9ffb0b913d27b563a3531ecbeb9301c8929154880ba8b93c6136bb8ccd",
+      "text": "调用 Claude",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.0.steps.2": {
-      "source": "Join",
-      "sourceHash": "fd30fe681b4b2d9e55f851cb34641f907401aa43e9d80f5b1e14ce714ef00497",
-      "text": "汇合",
+      "source": "Wait for human",
+      "sourceHash": "00f968a61d03216d28150644b97ac809489f3a4b085b987c3a14ff6d408ff2e9",
+      "text": "等待用户输入",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.0.steps.3": {
-      "source": "Select",
-      "sourceHash": "2a78025de6aae5e7ff88e5a951bb3a78ddd67388913529cf9e2dd9653e62b02d",
-      "text": "选择",
+      "source": "Join all",
+      "sourceHash": "522f0efb6c1348c636b2eb9b47239375fa48620a64ebd1c44a1091ecb3c06dc1",
+      "text": "汇合全部结果",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.0.steps.4": {
-      "source": "Commit",
-      "sourceHash": "82a9c46ffa4789945d9f2359d75891558ef6faa8dee09e4b25e4e0597704f5bd",
-      "text": "提交",
+      "source": "Continue",
+      "sourceHash": "31fbef162594de01bab0cd525c51f74de7bcb15063029fa1a54b2cf5944c80d8",
+      "text": "继续执行",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.1.core": {
-      "source": "TVM / TSAC",
-      "sourceHash": "a270b8a5a850ddef0afca4bf91ce98d5e4309f8c0bb364666d03f0ecc18f7320",
-      "text": "TVM / TSAC",
+      "source": "JOIN → MEDIAN",
+      "sourceHash": "fb53e6daefd52382fafbafcdf91dbfea3352c7a81539b79dafe3fc9d843275a3",
+      "text": "汇合 → 中位数",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.1.label": {
-      "source": "EVM workload",
-      "sourceHash": "0dc7f47c577a3a7df08c3b48e2964e4b343c08cd00dca34c1bfe59d218b93ed6",
-      "text": "EVM 工作负载",
+      "source": "btc-median.tox",
+      "sourceHash": "1a299b3aef3cb2d93d69c8fcaf7d99904e96daeca1e6020475dd0d5ac258ebaa",
+      "text": "btc-median.tox",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.1.lanes.0": {
-      "source": "EVM 01",
-      "sourceHash": "cd83f92882db05f9bd243f1c5a629472a76a83e20579792dadad986060da642d",
-      "text": "EVM 01",
+      "source": "BINANCE",
+      "sourceHash": "4c120812a73696ba998aeecab386d93a9b17332e36d6ef2c0294b8a6c6d03319",
+      "text": "BINANCE",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.1.lanes.1": {
-      "source": "EVM 02",
-      "sourceHash": "88ecf02ff7b5dc3e7d8970f190193043138f142729b265eeab315780adb8bebb",
-      "text": "EVM 02",
+      "source": "COINBASE",
+      "sourceHash": "d30a0534c66ec66cd5b828571a069bc70e8ae8d0fdbe46960d544d841afb7271",
+      "text": "COINBASE",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.1.lanes.2": {
-      "source": "EVM 03",
-      "sourceHash": "5d5e1708716cfcd52e5f19b772f7fb280860d06e6422991a1ccf162a388e997a",
-      "text": "EVM 03",
+      "source": "KRAKEN",
+      "sourceHash": "4af48028c201dbff2d25bb1d4b742f0944266107d09502270f7e2214b365a174",
+      "text": "KRAKEN",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.1.status": {
-      "source": "3 INSTANCES",
-      "sourceHash": "966bc109117521ade360db21dbc79a1612e4fcd73b022601ea1a24425f49d9d6",
-      "text": "3 个实例",
+      "source": "SUPPORTED I/O PATH",
+      "sourceHash": "80e14f06349654836e1d8f64d3705faec38bfaeab7b982a13b6f5c9d8cd0d07c",
+      "text": "受支持的 I/O 路径",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.2.footer": {
-      "source": "Target: settle together",
-      "sourceHash": "8cdfa9996dff51b5a5a1ca648ffca6a19c0534c9e6b2bddf3d9405085f9f6ae7",
-      "text": "目标：共同结算",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:21:05.596Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX baseline."
+      "source": "Both commit or both abort",
+      "sourceHash": "dc644194a5164b413691aa54c2b8df4aae599f2e3189b5c1b3d9a0118dfde1e5",
+      "text": "两者一同提交或一同中止",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.2.label": {
-      "source": "service commit",
-      "sourceHash": "a1cfea32fe28637e5ac043ed6f06c7180ebf82ccb81c3b15d072df58caf6c8b6",
-      "text": "服务提交",
+      "source": "ticket settlement",
+      "sourceHash": "e6a7f0ae4e573f8cc0c9247e4433d23e524e60bae51126912c977dd747317073",
+      "text": "跨分片票务结算",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.2.nodes.0": {
-      "source": "CHAIN",
-      "sourceHash": "945c72078d9c878587e1d29181b97a50b88187b7969792478a28ba1f512c5ca3",
-      "text": "公链",
+      "source": "PAYMENT / A",
+      "sourceHash": "656d9e483450b180def8e3af567f664b0f351ad05aca7038290163d3e2c4ad79",
+      "text": "付款 / A",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.2.nodes.1": {
-      "source": "API",
-      "sourceHash": "c8e5998f6a3955c21d858936fe05c69621724d7f825c6e17793002a0fa798bf9",
-      "text": "API",
+      "source": "ATOMIC LINK",
+      "sourceHash": "a05b2988333223cce773e5d70f4b7b64f06bad6bfe9525fc0158c2f18f3c4c4d",
+      "text": "原子关联",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.2.nodes.2": {
-      "source": "DATABASE",
-      "sourceHash": "8e66390792b30692e51e2a8c8cc72d201cf528592c72df8accfe2d9459a4eaee",
-      "text": "数据库",
+      "source": "TICKET / B",
+      "sourceHash": "6f390a1c305e7012b65b5ba22921ef3a3bdd13c4f1d3526a94a11c798983e06b",
+      "text": "票券 / B",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.2.status": {
-      "source": "TARGET MODEL",
-      "sourceHash": "96e166d56cc32dfc32edaaf99b43b0676266d0d5e2d7f6da2148bc2bc071bc17",
-      "text": "目标模型",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:21:05.596Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX baseline."
+      "source": "ROADMAP",
+      "sourceHash": "020784845889124b43389c30cbfd03c3b9662f5e17671583a8dc283c24cb6ea3",
+      "text": "路线图",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.label": {
-      "source": "capability",
-      "sourceHash": "38a5be91af79d7e5ba9809bf383c699b6864ee50446239fe56a45e32b84638fe",
-      "text": "能力",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:49:18.632Z",
-      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology baseline."
+      "source": "Purse containing 1 ALUX",
+      "sourceHash": "a2cb24bc1e098e08fcb1a896727caa0cec28d80fbc0da4c6648a08a0c825d9e2",
+      "text": "装有 1 ALUX 的钱包",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.rows.0.0": {
-      "source": "namespace",
-      "sourceHash": "9359f3bb2efa7aabd0264fb67fb1d99f91871778e9b887179d6b2debaa251ec6",
-      "text": "命名空间",
+      "source": "Alice",
+      "sourceHash": "3bc51062973c458d5a6f2d8d64a023246354ad7e064b1e4e009ec8a0699a3043",
+      "text": "Alice",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.rows.0.1": {
-      "source": "orders/write",
-      "sourceHash": "54873c0c92932eb1ae77fdc31433f179b46d77143184471afd257e404fb6951b",
-      "text": "orders/write",
+      "source": "Use within 10 days",
+      "sourceHash": "fc038b1e503b696198685305f208466de5788236449543ddb611dd5beb166d7e",
+      "text": "10天内使用",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.rows.1.0": {
-      "source": "holder",
-      "sourceHash": "6e45386daeb0b86da1ac4c609001d1e973f90314f0b709175264865c42dc6ba7",
-      "text": "持有者",
+      "source": "Bob",
+      "sourceHash": "cd9fb1e148ccd8442e5aa74904cc73bf6fb54d1d54d333bd596aa9bb4bb4e961",
+      "text": "Bob",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.rows.1.1": {
-      "source": "service-b",
-      "sourceHash": "8a3829c7b6f79a216413cdcc5e5fb213fa2e31d5c8f6e2c3fc20f4a62f2e1e42",
-      "text": "service-b",
+      "source": "Books only",
+      "sourceHash": "af3f3977d31ee417f487f86485cb33536174ecdaf2e723c482ab90dfb9105cf1",
+      "text": "仅限购书",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.rows.2.0": {
-      "source": "rights",
-      "sourceHash": "8c659fe8cb2e010d03e69f59a3de8d7c360480f85537f288067aee82fe98cf80",
-      "text": "权限",
+      "source": "Carole",
+      "sourceHash": "356f728ecebc056b9b0c68d8929a54aba7d858448c7412461b39c42f4e67e219",
+      "text": "Carole",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.rows.2.1": {
-      "source": "scoped",
-      "sourceHash": "abc3d82314f3edc1385fc7b9b0b092c801b9db30cefdc11fe04ee4be9685cd6d",
-      "text": "限定",
+      "source": "Both rules apply",
+      "sourceHash": "3ae40a89d557c2116c2367735b68402412f00347de243e75096ef1eeede437aa",
+      "text": "两项规则同时生效",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.status": {
-      "source": "DELEGATED",
-      "sourceHash": "cd49c5f8077b78ed0a20434daff7e8a2fc0b0691407fb33f144ff5f1b5673de7",
-      "text": "已委托",
+      "source": "APPLICATION POLICY",
+      "sourceHash": "c15de6fa8b1c753e536725256579f81a9d14a41c87a35acb4307f4c0c8c7a205",
+      "text": "应用逻辑",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.eyebrow": {
       "source": "Use Cases",
@@ -4916,76 +5012,76 @@
       "reviewerNotes": "Imported from the existing in-script localized copy."
     },
     "home.sections.6.items.0.0": {
-      "source": "Long-Running Process Orchestration",
-      "sourceHash": "ce71b56e880f973e3f98d6bfd09eccd6afd6b7cc318ea39cb44b8cdda23d8489",
-      "text": "长时间运行的进程编排",
+      "source": "Long-Running AI Agents on Chain",
+      "sourceHash": "e806408ae2a5d92e25595476610c668a7b0affb32a28e51e7820f1a411303377",
+      "text": "链上长时运行的 AI Agent",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.items.0.1": {
-      "source": "Fork processes, wait for inputs, join results from multiple channels, or select whichever event becomes ready first—without restarting the transaction.",
-      "sourceHash": "d9bdaa277475a00e01f784f896d56d97c5aed82c5402ffb349dcf92a12860f85",
-      "text": "分叉进程、等待输入、汇合多个通道的结果，或选择第一个就绪的事件——全程无需重新启动交易。",
+      "source": "A workflow starts several agents in parallel. Some call the Claude API, while other steps wait for user input. The main agent continues only after every branch finishes, even when the workflow runs for about 30 minutes. Claude and user input connect at the application layer; ALUX provides durable fork, wait, join, capability passing, and replayable execution.",
+      "sourceHash": "755f159b851633ea58ab36b0e302056d3fda460086aa70c69341ce85ba15a2b0",
+      "text": "一个工作流可以并发启动多个 Agent。部分 Agent 调用 Claude API，部分步骤等待用户输入；主 Agent 在所有分支完成后才继续执行。即使整个流程持续约 30 分钟，也不必重启。Claude API 与用户输入通过应用层接入；ALUX 提供持久化的 fork、wait、join、能力传递与可重放执行。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.items.1.0": {
-      "source": "Concurrent EVM Applications",
-      "sourceHash": "2c7c09363adbe81548c65850563fa85d33751f72805a9ce7ae86f44cd36fbf2f",
-      "text": "并发 EVM 应用",
+      "source": "BTC Price Aggregation from Three Exchanges",
+      "sourceHash": "1f14eb50c61fadeb3369db32f4c2a4578179fb39371081cc589050c0a9f6a297",
+      "text": "聚合三家交易所 BTC 价格的合约",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-12T00:00:00.000Z",
-      "reviewerNotes": "Human-reviewed developer demo copy aligned to the ALUX 20260630 architecture baseline."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.items.1.1": {
-      "source": "Run EVM bytecode inside isolated sandboxes, coordinate concurrent workloads through TVM, and migrate supported contracts through familiar Ethereum-facing interfaces.",
-      "sourceHash": "7129801cbf6bfb2a9f762408fdd81ace6452596e9b01ebddf173409c46bd68d0",
-      "text": "在隔离沙箱中运行 EVM 字节码，通过 TVM 协调并发工作负载，并借助熟悉的以太坊接口迁移受支持的合约。",
+      "source": "A contract starts three parallel processes through configured external-I/O adapters to read BTC prices from Binance, Coinbase, and Kraken. A fourth process waits for all three, joins their results, normalizes the quotes, computes the median, and then continues. ALUX makes the execution reproducible; the selected endpoints still determine source truth.",
+      "sourceHash": "33580b07be3aa7bc77b0df6c6bcb5c0f51ef672b05829f255741066f691f57ab",
+      "text": "合约通过已配置的外部 I/O 适配器，并发读取 Binance、Coinbase 和 Kraken 的 BTC 报价。第四个进程等待前三个全部返回，随后汇合结果、统一报价格式、计算中位价，再继续执行。ALUX 让执行过程可复现；数据源及其可信度仍由集成方选择。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.items.2.0": {
-      "source": "Atomic Cross-System Workflows",
-      "sourceHash": "fd54302666522ebfa7eb8959aab99018fdecbc535a2d23678a933c3dc17c3993",
-      "text": "跨系统原子工作流",
+      "source": "Cross-Shard Atomic Execution",
+      "sourceHash": "1e36711150e6555fd4acdf62650a8575c07043d2fc1602b19b5092520bf2b41c",
+      "text": "跨分片原子执行",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.items.2.1": {
-      "source": "Stage work across blocks and connected systems, then commit the complete transaction all-or-nothing instead of exposing partial state.",
-      "sourceHash": "0e0f2eb2b4c2295ec78f1488a9dac8eafc3fe1661e35c5d5b11263c34329d2b9",
-      "text": "将跨区块与关联型系统的工作分阶段执行，再以全有或全无的方式提交完整交易，而不暴露局部状态。",
+      "source": "Contract a on Shard A stages payment for a ticket managed by contract b on Shard B. If b fails because the ticket is already sold, a's payment is rolled back. Only when both steps succeed do payment and ticket ownership commit together; other transactions see neither partial state. Cross-shard atomic execution is a roadmap target, not a live capability today.",
+      "sourceHash": "1a73c5f8ee1e0bf02979036dea3087f955fef30321b76c61ac92943050ee614d",
+      "text": "分片 A 上的合约 a 付款购买分片 B 上合约 b 管理的门票。若 b 因门票已售出而失败，a 的付款也会回滚；只有两边都成功时，付款与门票所有权才一起提交。其他交易不会看到只完成一半的状态。跨分片原子执行仍属于路线图，当前尚未上线。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.items.3.0": {
-      "source": "Native OCAP Applications",
-      "sourceHash": "b432db53ec8bd15229e87ed9b26893d7e364aaeecae0c625ab65ff9327abe377",
-      "text": "原生 OCAP 应用",
+      "source": "Programmable Money with Composable Rules",
+      "sourceHash": "bde15bc939ed41ab86b5cff846e3f38a1cbcfa4e76ea4aeff115c564ddc70200",
+      "text": "可组合规则的可编程资金",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.items.3.1": {
-      "source": "Compose task-specific, unforgeable capabilities between processes instead of letting identity carry unrelated ambient authority into every task.",
-      "sourceHash": "ae1087aa3abe62594aaa9e0f8647674283f1fd0582850ebf9e30da964dd58a5a",
-      "text": "在进程之间组合面向特定任务、不可伪造的能力，而不是让身份把无关的环境权限带进每项任务。",
+      "source": "Alice gives Bob a purse containing 1 ALUX and adds a rule: the funds must be used within 10 days. When Bob gives the same purse to Carole, he adds a second rule: it may be used only to buy books. Carole must satisfy both rules, and passing the purse does not duplicate the funds. The time limit and spending rule are enforced by application logic.",
+      "sourceHash": "fa845cda7faef4b9037d602fc2d28f55e201e01d95806c8581011c2083653cae",
+      "text": "Alice 把一个装有 1 ALUX 的钱包交给 Bob，并规定这笔资金只能在 10 天内使用。Bob 将同一个钱包交给 Carole 时，又增加一条“仅限购书”的规则。Carole 必须同时遵守这两项限制，转交钱包也不会复制其中的资金。这里的期限与用途限制由应用逻辑执行。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.text": {
-      "source": "Build decentralized applications as concurrent programs: processes can fork, wait, join multiple channels, select the first available event, coordinate across blocks, and commit all-or-nothing.",
-      "sourceHash": "ea9f783a586ab857b57f153f82eca9581d2a11822f00fefd8dd1d6816ad496ad",
-      "text": "将去中心化应用构建为并发程序：进程可以分叉、等待、汇合多个通道、选择第一个可用事件、跨区块协调，并以全有或全无的方式提交。",
+      "source": "Build workflows that keep their context while they wait, coordinate parallel work, and settle as one result. Current capabilities and roadmap targets are labeled separately.",
+      "sourceHash": "aeccfc46565169a6d539fb201bd7e7a0b41ff9cb2e61ac2f0b29270651625978",
+      "text": "构建能够在等待期间保留上下文、协调并行工作，并最终结算为一个结果的工作流。当前能力与路线图目标会分别标注。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.6.title": {
       "source": "What You Can\nBuild on ALUX",
@@ -5036,12 +5132,12 @@
       "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology baseline."
     },
     "home.sections.9.items.1.1": {
-      "source": "ALUX programs can fork into concurrent processes, wait for external inputs, join results from multiple channels, select the first event that becomes ready, and still commit the complete transaction atomically. Replay and commit mechanisms let validators reproduce the same outcome without exposing partial state.",
-      "sourceHash": "f7f758c66e44ea5e25ebc3be9b4a201c9d83621304d4774030035d88feff88e6",
-      "text": "ALUX 程序可以分叉为并发进程、等待外部输入、汇合多个通道的结果、选择第一个就绪的事件，同时仍对完整交易进行原子提交。重放与提交机制让验证者能够复现相同结果，而不暴露局部状态。",
+      "source": "ALUX extends the smart-contract model into a decentralized durable execution engine for long-running jobs. A workflow can run concurrent processes, suspend across blocks, wait for external tools or people, resume, and join results without exposing half-completed state. Runtime-mediated external channels can interact with supported off-chain services without separate oracle-and-relayer choreography. The architecture is designed to extend the same atomic model horizontally, so cross-shard effects commit or abort together; cross-shard execution remains on the roadmap.",
+      "sourceHash": "d413c6111b1227eb5d9b78ea95f26f8dd09a3ce70967550fbd2a13c0d8b1f0e7",
+      "text": "ALUX 将智能合约模型扩展为面向长时间任务的去中心化持久执行引擎。工作流可以运行并发进程、跨区块挂起、等待外部工具或人工响应、恢复执行并汇合结果，同时不暴露半完成状态。由运行时介导的外部通道可与受支持的链下服务交互，无需单独编排预言机与中继器。该架构旨在把同一种原子模型横向扩展，使跨分片影响一同提交或一同中止；跨分片执行仍在路线图中。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.9.items.2.0": {
       "source": "Why is ALUX built for AI agents?",
@@ -5052,12 +5148,12 @@
       "reviewerNotes": "Human-reviewed FAQ sync for updated ALUX homepage copy."
     },
     "home.sections.9.items.2.1": {
-      "source": "An on-chain agent is naturally a Long Transaction. Calling an LLM or a tool takes time; it cannot complete instantly—one only has to look at a Claude Code or Codex session. In other words, ALUX is a decentralized durable execution engine for agents.",
-      "sourceHash": "f49b9c95957b3abbc06f4eb3ea41e6fa378d7d0ae1031744f6ecfcb1ac5c5823",
-      "text": "链上智能体天然就是一笔长交易（Long Transaction）。调用 LLM 或工具需要时间，不可能瞬间完成——看看一次 Claude Code 或 Codex 会话就能理解。换句话说，ALUX 是面向智能体的去中心化持久执行引擎。",
+      "source": "An on-chain agent is naturally a Long Transaction. Calling an LLM or a tool takes time; waiting for a human response also takes time. The workflow cannot be forced into an instant, one-block call. ALUX lets it preserve execution context, suspend, resume when inputs arrive, coordinate concurrent agents, and finalize through replayable execution.",
+      "sourceHash": "df333f66345d61258048f65cb633e52a05c3b00d8e55af7e07e078de81515eb5",
+      "text": "链上智能体天然是一笔长交易。调用 LLM 或工具需要时间，等待人工响应同样需要时间；这类工作流无法被压缩成瞬时完成的单区块调用。ALUX 使其能够保留执行上下文、挂起，并在输入到达后恢复，协调并发智能体，再通过可重放执行完成最终确定。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.9.items.3.0": {
       "source": "What is Object Capability (OCAP)?",
@@ -5072,8 +5168,8 @@
       "sourceHash": "93e65e043629b9a8c165b89d697e4c704315bf04c907aac71c2f1ef2e2cacebe",
       "text": "对象能力（OCAP）是一种安全模型：一段代码只有在被明确授予某项资源的引用（即能力）后，才能访问该资源。在 OCAP 系统中，同一个对象引用既标识资源（designation），也授予使用该资源的权限（authorization）。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-08-01T14:16:32.737Z",
-      "reviewerNotes": "Human-reviewed against Frank He's approved OCAP FAQ answer and ALUX terminology."
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Restored from Frank-approved OCAP FAQ copy after cross-session scope reconciliation."
     },
     "home.sections.9.items.4.0": {
       "source": "How does ALUX keep Long Transactions deterministic?",
@@ -5110,7 +5206,7 @@
     "home.sections.9.items.6.0": {
       "source": "Some other chains also claim to support cross-block transactions. How is ALUX different?",
       "sourceHash": "9f932c7d7e55e031f5c2364e2cfb8ceb9cdc28fd4a0dd9df0b21381cd659539b",
-      "text": "其他一些区块链也声称支持跨区块交易。ALUX 有何不同？",
+      "text": "其他一些区块链也声称支持跨区块交易，ALUX 有何不同？",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-16T02:53:05.677Z",
       "reviewerNotes": "Reviewed against the current English homepage source."
@@ -5136,8 +5232,8 @@
       "sourceHash": "ea41cc4bf0f833106e0c06953c4652215ab35b8efb34c8f50f8b659c98220e42",
       "text": "对象能力（OCAP）之所以是一种更强的安全模型，是因为权限由显式且不可伪造的能力来表示，而不是依赖全局身份或访问控制列表。它遵循“指称即授权”（designation is authorization）原则：持有某项能力既标识相应资源，也授予使用该资源的权限，从而消除环境权限（ambient authority）并缩小攻击面。由于能力可以被安全地委托、衰减和撤销，安全策略会局部化到相关对象，而不是散落在中心化权限系统中。这使 OCAP 天然具备可组合性：复杂应用、智能合约和 AI Agent 工作流可以由各自安全的组件构建，同时仍然遵循最小权限原则。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-08-01T14:16:32.737Z",
-      "reviewerNotes": "Human-reviewed against Frank He's approved OCAP FAQ answer and ALUX terminology."
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Restored from Frank-approved OCAP FAQ copy after cross-session scope reconciliation."
     },
     "home.sections.9.items.8.0": {
       "source": "What does it mean for OCAP to be natively supported in ALUX?",
@@ -5152,8 +5248,8 @@
       "sourceHash": "852a9d848e7be75a47fe408e5bdc6efbd2b50eb92aefdd97fa4afb69a4a047b0",
       "text": "ALUX 的元组空间虚拟机（TVM）在字节码层直接实现对象能力（OCAP）模型。其指令集不包含任何可伪造或任意构造对象引用的操作，因此能力只能通过显式委托获得。这保证了所有权限既不可伪造，也只能被明确转移。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-08-01T14:16:32.737Z",
-      "reviewerNotes": "Human-reviewed against Frank He's approved OCAP FAQ answer and the canonical Tuple-Space Virtual Machine name."
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Restored from Frank-approved OCAP FAQ copy after cross-session scope reconciliation."
     },
     "home.sections.9.title": {
       "source": "FAQ",
@@ -7476,12 +7572,12 @@
       "reviewerNotes": "Manual Codex localization pass: synced from the current English Team page and reviewed for native fluency."
     },
     "team.sections.0.items.0.highlights.0.1": {
-      "source": "Processes interact concurrently through channels; pattern matching drives scheduling; unforgeable capability references make authority explicit.",
-      "sourceHash": "cdf0645100cd204953775df3b9695a2f0fdd1ac5efda2d0fff4fc163cf1e90c6",
-      "text": "进程通过通道并发交互，模式匹配驱动调度；不可伪造的能力引用让权限边界保持明确。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-28T00:00:00.000Z",
-      "reviewerNotes": "Founder-corrected OCAP terminology: capability references are not credentials."
+      "source": "Processes interact concurrently through channels; pattern matching is scheduling; capability credentials are authorization.",
+      "sourceHash": "d0db2f59f8d654bc07a18e6045b96f993220e3a18c9399d15291670ba2bd07c2",
+      "text": "进程通过通道并发交互，模式匹配即调度，能力凭证即授权。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-13T13:49:18.632Z",
+      "reviewerNotes": "Native Simplified Chinese review against the current English source and ALUX terminology baseline."
     },
     "team.sections.0.items.0.highlights.1.0": {
       "source": "Tolang concurrent programming language",
@@ -7747,70 +7843,6 @@
       "reviewedAt": "2026-07-05T15:08:59.753Z",
       "reviewerNotes": "Manual Codex localization pass: synced from the current English Team page and reviewed for native fluency."
     },
-    "team.sections.0.items.3.bio.0": {
-      "source": "Ben has been building blockchain systems since 2017 — chains, platforms, and DApps — with deep roots in the Linux kernel and low-level development.",
-      "sourceHash": "d072e35b6e0ce2a6d04ca1491ea5880ece2d26b81fac1afc8b540ad775896926",
-      "text": "Ben 自 2017 年起构建区块链系统——链、平台与 DApp——根基扎在 Linux 内核与底层开发。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-05T15:08:59.753Z",
-      "reviewerNotes": "Manual Codex localization pass: synced from the current English Team page and reviewed for native fluency."
-    },
-    "team.sections.0.items.3.bio.1": {
-      "source": "That systems background, from C and assembler up through Rust, Go, and Solidity, is the foundation his ALUX work stands on.",
-      "sourceHash": "1bd05aea42b9ee79a6fdaba76a2f5e7141f28ba75845363b70b8c85d517c057c",
-      "text": "从 C、汇编到 Rust、Go、Solidity 的系统功底，正是他在 ALUX 工作的地基。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-05T15:08:59.753Z",
-      "reviewerNotes": "Manual Codex localization pass: synced from the current English Team page and reviewed for native fluency."
-    },
-    "team.sections.0.items.3.links.0.0": {
-      "source": "GitHub",
-      "sourceHash": "f911e414cf6bdfc595532ab166b5ba0f63d73c021452fcdacbda363dda6ad8fb",
-      "text": "GitHub",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-06-02T12:32:41.047Z",
-      "reviewerNotes": "Manual Codex localization pass: synced from the current English Team page and reviewed for native fluency."
-    },
-    "team.sections.0.items.3.name": {
-      "source": "Ben Li",
-      "sourceHash": "05f3b07ea12e23795e8641b3dbaf3a0888910f478abe513556a0365e5eaceeef",
-      "text": "Ben Li",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-06-02T12:32:41.047Z",
-      "reviewerNotes": "Manual Codex localization pass: synced from the current English Team page and reviewed for native fluency."
-    },
-    "team.sections.0.items.3.role": {
-      "source": "Blockchain / Systems Developer",
-      "sourceHash": "145e5f48b1e2f0b1f8a527f4bbd2e63f590d29687a448e134dccf66f576789f1",
-      "text": "区块链 / 系统开发者",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-06-02T12:32:41.047Z",
-      "reviewerNotes": "Manual Codex localization pass: synced from the current English Team page and reviewed for native fluency."
-    },
-    "team.sections.0.items.3.signals.0": {
-      "source": "Linux Kernel",
-      "sourceHash": "3d5dcb3212151a101a47673d421c62631e7cf15cd979a7302ddbe453ad9199d8",
-      "text": "Linux 内核",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-06-02T12:32:41.047Z",
-      "reviewerNotes": "Manual Codex localization pass: synced from the current English Team page and reviewed for native fluency."
-    },
-    "team.sections.0.items.3.signals.1": {
-      "source": "Blockchain Systems",
-      "sourceHash": "7868e41bac61a8a69d41e28f78a701824abf03bef3f19af7e9c5702c43f1268c",
-      "text": "区块链系统",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-06-02T12:32:41.047Z",
-      "reviewerNotes": "Manual Codex localization pass: synced from the current English Team page and reviewed for native fluency."
-    },
-    "team.sections.0.items.3.signals.2": {
-      "source": "DApps",
-      "sourceHash": "179d8f415ecc6b6d0dcf38cc9186f9a318832c33b4f2dbd8d9c06c346b153f3c",
-      "text": "DApps",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-06-02T12:32:41.047Z",
-      "reviewerNotes": "Manual Codex localization pass: synced from the current English Team page and reviewed for native fluency."
-    },
     "team.sections.0.stackLabel": {
       "source": "Team Stack",
       "sourceHash": "555df34e08db88eb7ad18252e8c9d833c5a84bb320c91251e23710e3ff18bb2d",
@@ -7958,10 +7990,10 @@
     "ui.nav.learnAlux": {
       "source": "ALUX VS Others",
       "sourceHash": "eb4b3f01c8ece1d0aedb62d3feb2142e1879e19355434ab4ed0336c129231d62",
-      "text": "ALUX VS Others",
+      "text": "ALUX VS 其它",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-08-12T10:00:00.000Z",
+      "reviewerNotes": "Native Chinese navigation label reviewed for clarity."
     },
     "ui.nav.learnGlvm": {
       "source": "GLVM",
@@ -7976,8 +8008,8 @@
       "sourceHash": "ea2d547f1cc2c87a2f634635e2923655db93627c7c17458da90feb153ca0e96c",
       "text": "Runtime Lab",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-13T13:03:29.193Z",
-      "reviewerNotes": "Imported from the existing in-script localized copy."
+      "reviewedAt": "2026-08-12T10:00:00.000Z",
+      "reviewerNotes": "Native Chinese navigation label reviewed for clarity."
     },
     "ui.nav.roadmap": {
       "source": "Roadmap",

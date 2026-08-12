@@ -164,9 +164,3 @@
     padding-left: 14px;
   }
 }
-
-@media (prefers-reduced-motion: reduce) and (max-width: 960px) {
-  body[data-page="home"] .floating-island {
-    animation: none;
-  }
-}
