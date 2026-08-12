@@ -24930,26 +24930,53 @@ body[data-page="parallelConcurrentComposable"] .pcc-hero-subtitle {
 }
 
 body[data-page="parallelConcurrentComposable"] .pcc-hero-text {
-  max-width: 34em;
+  max-width: 38em;
   margin: clamp(18px, 2.4vw, 28px) 0 0;
   color: #65707a;
   font-size: clamp(1rem, 1.16vw, 1.2rem);
   line-height: 1.62;
+  text-wrap: pretty;
+}
+
+/*
+ * The Runtime Lab lead has very different character densities across writing
+ * systems. Keep one left edge, but let every language occupy a natural measure
+ * instead of forcing the English line length onto CJK, Korean, or Arabic.
+ */
+html[lang="zh"] body[data-page="parallelConcurrentComposable"] .pcc-hero-text,
+html[lang="ja"] body[data-page="parallelConcurrentComposable"] .pcc-hero-text {
+  max-width: 30em;
+  line-break: strict;
+}
+
+html[lang="ko"] body[data-page="parallelConcurrentComposable"] .pcc-hero-text {
+  max-width: 34em;
+  word-break: keep-all;
+}
+
+html[lang="ar"] body[data-page="parallelConcurrentComposable"] .pcc-hero-text {
+  max-width: 38em;
 }
 
 body[data-page="parallelConcurrentComposable"] .pcc-hero-signals {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  align-items: stretch;
+  gap: 12px;
   margin-top: clamp(18px, 2.2vw, 26px);
 }
 
 body[data-page="parallelConcurrentComposable"] .pcc-signal {
-  min-height: 76px;
-  padding: 13px 14px;
+  display: grid;
+  grid-template-rows: minmax(0.8rem, auto) 1fr;
+  align-content: start;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 110px;
+  padding: 18px 20px 19px;
   border: 1px solid var(--pcc-line);
-  border-radius: 8px;
-  background: rgba(255, 250, 242, 0.66);
+  border-radius: 14px;
+  background: rgba(255, 252, 247, 0.82);
 }
 
 body[data-page="parallelConcurrentComposable"] .pcc-signal > span,
@@ -24966,15 +24993,19 @@ body[data-page="parallelConcurrentComposable"] .pcc-lab-benefit span {
 }
 
 body[data-page="parallelConcurrentComposable"] .pcc-signal > span {
+  display: block;
   font-family: inherit;
+  line-height: 1;
 }
 
 body[data-page="parallelConcurrentComposable"] .pcc-signal > strong {
   display: block;
-  margin-top: 9px;
+  align-self: start;
+  margin-top: 12px;
   color: #2f3741;
   font-size: clamp(0.96rem, 1vw, 1.08rem);
-  line-height: 1.18;
+  line-height: 1.24;
+  text-wrap: pretty;
 }
 
 /*
@@ -25968,6 +25999,10 @@ body[data-page="parallelConcurrentComposable"] .pcc-close-actions .button.second
     font-size: clamp(3.2rem, 9vw, 5rem);
   }
 
+  body[data-page="parallelConcurrentComposable"] .pcc-hero-copy {
+    max-width: 100%;
+  }
+
   body[data-page="parallelConcurrentComposable"] .pcc-lab-side {
     grid-column: auto;
     grid-row: auto;
@@ -25999,6 +26034,11 @@ body[data-page="parallelConcurrentComposable"] .pcc-close-actions .button.second
     width: min(var(--container), calc(100% - 24px)) !important;
   }
 
+  body[data-page="parallelConcurrentComposable"] .pcc-hero-text {
+    max-width: 100%;
+    text-wrap: pretty;
+  }
+
   body[data-page="parallelConcurrentComposable"] .pcc-page {
     padding-top: 28px;
   }
@@ -26021,6 +26061,11 @@ body[data-page="parallelConcurrentComposable"] .pcc-close-actions .button.second
   body[data-page="parallelConcurrentComposable"] .pcc-lab-benefits,
   body[data-page="parallelConcurrentComposable"] .pcc-foundation-grid {
     grid-template-columns: 1fr;
+  }
+
+  body[data-page="parallelConcurrentComposable"] .pcc-signal {
+    min-height: 88px;
+    padding: 16px 18px 18px;
   }
 
   body[data-page="parallelConcurrentComposable"] .pcc-mode-toolbar {

@@ -85,7 +85,7 @@ const pageData = {
       eyebrow: "ALUX Network",
       title: "Building the global VM",
       loop: "",
-      text: "Imagine one logical virtual machine that runs everywhere—on a public blockchain, on a private cluster, and on client hardware such as phones and browsers—while abstracting away the state, threads, replication, and consensus underneath. Developers write one concurrent program; where it runs becomes a configuration choice, not an architecture. Its parts still commit together, atomically. That is Virtual Machine Abstraction, and ALUX is building it."
+      text: "Imagine one logical virtual machine that runs everywhere—across public blockchains, private clusters, and client environments such as phones and browsers—while abstracting the underlying state, threads, replication, and consensus. Developers write one concurrent program; where it runs becomes a configuration choice rather than an architectural constraint. Its parts still commit together as one atomic result. That is Virtual Machine Abstraction, and ALUX is building it."
     },
     sections: [
       {

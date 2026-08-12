@@ -2956,12 +2956,12 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.hero.text": {
-      "source": "Imagine one logical virtual machine that runs everywhere—on a public blockchain, on a private cluster, and on client hardware such as phones and browsers—while abstracting away the state, threads, replication, and consensus underneath. Developers write one concurrent program; where it runs becomes a configuration choice, not an architecture. Its parts still commit together, atomically. That is Virtual Machine Abstraction, and ALUX is building it.",
-      "sourceHash": "9326167f58de3c37f370880a293374e93144e2faafc3255063ec74199ff5e021",
-      "text": "设想一个无处不在的逻辑虚拟机——运行在公有区块链、私有集群，以及手机和浏览器等客户端硬件上，同时把底层的状态、线程、复制与共识全部抽象起来。开发者只需编写一套并发程序；程序运行在哪里，只是配置选择，而不再决定应用架构。各个部分仍然一起提交，并保持原子性。这就是虚拟机抽象，而 ALUX 正在构建它。",
+      "source": "Imagine one logical virtual machine that runs everywhere—across public blockchains, private clusters, and client environments such as phones and browsers—while abstracting the underlying state, threads, replication, and consensus. Developers write one concurrent program; where it runs becomes a configuration choice rather than an architectural constraint. Its parts still commit together as one atomic result. That is Virtual Machine Abstraction, and ALUX is building it.",
+      "sourceHash": "52262ea8a3e006a4d7c6f3c00dabf38502dd62a82b132244b3d6354c93d57c1c",
+      "text": "设想一个无处不在的逻辑虚拟机——它可以运行在公有区块链、私有集群，以及手机、浏览器等客户端环境中，而底层的状态、线程、复制与共识都封装在统一抽象之下。开发者只需编写一套并发程序；在哪里运行，只是配置选择，而不再受限于特定架构。各部分仍会共同提交，形成一个原子结果。这就是虚拟机抽象，也是 ALUX 正在构建的系统。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-12T12:46:29Z",
+      "reviewerNotes": "Native-language review: clarified client environments, architectural constraint, and one atomic result."
     },
     "home.hero.title": {
       "source": "Building the global VM",

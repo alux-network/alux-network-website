@@ -2956,12 +2956,12 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.hero.text": {
-      "source": "Imagine one logical virtual machine that runs everywhere—on a public blockchain, on a private cluster, and on client hardware such as phones and browsers—while abstracting away the state, threads, replication, and consensus underneath. Developers write one concurrent program; where it runs becomes a configuration choice, not an architecture. Its parts still commit together, atomically. That is Virtual Machine Abstraction, and ALUX is building it.",
-      "sourceHash": "9326167f58de3c37f370880a293374e93144e2faafc3255063ec74199ff5e021",
-      "text": "あらゆる場所で動く、ひとつの論理仮想マシンを想像してください。パブリックブロックチェーン、プライベートクラスター、そしてスマートフォンやブラウザなどのクライアントハードウェアで実行され、その下にある状態、スレッド、レプリケーション、コンセンサスは抽象化されます。開発者が記述するのは、ひとつの並行プログラムだけです。どこで動かすかはアーキテクチャではなく、設定で選べます。それでも各部分は、ひとつの単位としてアトミックにコミットされます。これが Virtual Machine Abstraction であり、ALUX が構築しているものです。",
+      "source": "Imagine one logical virtual machine that runs everywhere—across public blockchains, private clusters, and client environments such as phones and browsers—while abstracting the underlying state, threads, replication, and consensus. Developers write one concurrent program; where it runs becomes a configuration choice rather than an architectural constraint. Its parts still commit together as one atomic result. That is Virtual Machine Abstraction, and ALUX is building it.",
+      "sourceHash": "52262ea8a3e006a4d7c6f3c00dabf38502dd62a82b132244b3d6354c93d57c1c",
+      "text": "パブリックブロックチェーン、プライベートクラスター、スマートフォンやブラウザなど、あらゆる環境で動くひとつの論理仮想マシンを想像してください。状態、スレッド、レプリケーション、コンセンサスといった基盤の違いは、共通の抽象化の下に隠されます。開発者が書く並行プログラムはひとつだけ。実行場所はアーキテクチャ上の制約ではなく、設定で選べます。各部分はひとつのアトミックな結果として、まとめてコミットされます。これが Virtual Machine Abstraction であり、ALUX が構築しているものです。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-12T12:46:29Z",
+      "reviewerNotes": "Native-language review: made the execution environments and architectural constraint idiomatic in Japanese."
     },
     "home.hero.title": {
       "source": "Building the global VM",

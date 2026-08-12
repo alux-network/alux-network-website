@@ -2956,12 +2956,12 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.hero.text": {
-      "source": "Imagine one logical virtual machine that runs everywhere—on a public blockchain, on a private cluster, and on client hardware such as phones and browsers—while abstracting away the state, threads, replication, and consensus underneath. Developers write one concurrent program; where it runs becomes a configuration choice, not an architecture. Its parts still commit together, atomically. That is Virtual Machine Abstraction, and ALUX is building it.",
-      "sourceHash": "9326167f58de3c37f370880a293374e93144e2faafc3255063ec74199ff5e021",
-      "text": "어디서나 실행되는 하나의 논리 가상 머신을 상상해 보십시오. 공용 블록체인, 프라이빗 클러스터, 그리고 휴대전화와 브라우저 같은 클라이언트 하드웨어 위에서 동작하면서 그 아래의 상태, 스레드, 복제, 합의를 추상화합니다. 개발자는 하나의 동시성 프로그램만 작성합니다. 실행 위치는 아키텍처가 아니라 구성 선택이 됩니다. 각 부분은 여전히 함께, 원자적으로 커밋됩니다. 이것이 가상 머신 추상화이며, ALUX가 구축하고 있는 것입니다.",
+      "source": "Imagine one logical virtual machine that runs everywhere—across public blockchains, private clusters, and client environments such as phones and browsers—while abstracting the underlying state, threads, replication, and consensus. Developers write one concurrent program; where it runs becomes a configuration choice rather than an architectural constraint. Its parts still commit together as one atomic result. That is Virtual Machine Abstraction, and ALUX is building it.",
+      "sourceHash": "52262ea8a3e006a4d7c6f3c00dabf38502dd62a82b132244b3d6354c93d57c1c",
+      "text": "퍼블릭 블록체인, 프라이빗 클러스터, 휴대전화와 브라우저 같은 클라이언트 환경까지 어디서나 실행되는 하나의 논리 가상 머신을 상상해 보십시오. 상태, 스레드, 복제, 합의 같은 기반의 차이는 하나의 추상화 아래 감춰집니다. 개발자는 동시성 프로그램 하나만 작성하면 됩니다. 실행 위치는 아키텍처의 제약이 아니라 설정으로 선택합니다. 각 부분은 하나의 원자적 결과로 함께 커밋됩니다. 이것이 가상 머신 추상화이며, ALUX가 구축하고 있는 것입니다.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-12T12:46:29Z",
+      "reviewerNotes": "Native-language review: replaced literal hardware/configuration phrasing with idiomatic Korean."
     },
     "home.hero.title": {
       "source": "Building the global VM",
