@@ -27885,29 +27885,17 @@ body[data-page="glvm"] .glvm-next-link {
   min-width: 0;
   min-height: 52px;
   padding: 0 16px;
-  border: 1px solid transparent;
+  border: 1px solid rgba(111, 95, 79, 0.18);
   border-radius: 10px;
-  color: #4d575f;
-  background: transparent;
+  color: #46515a;
+  background: rgba(255, 253, 248, 0.9);
   box-shadow: none;
   text-decoration: none;
   transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
 }
 
-body[data-page="glvm"] .glvm-next-link--primary {
-  border-color: rgba(111, 95, 79, 0.22);
-  color: #286b67;
-  background: #fffdf8;
-}
-
-body[data-page="glvm"] .glvm-next-link--secondary {
-  border-color: rgba(111, 95, 79, 0.22);
-  color: #46555e;
-  background: #fffdf8;
-}
-
 body[data-page="glvm"] .glvm-next-index {
-  color: var(--glvm-muted);
+  color: #a47752;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.64rem;
   letter-spacing: 0.08em;
@@ -27927,7 +27915,7 @@ body[data-page="glvm"] .glvm-next-arrow {
   width: 18px;
   height: 18px;
   place-items: center;
-  color: currentColor;
+  color: #776b5f;
   transition: transform 180ms ease;
 }
 
@@ -27945,12 +27933,11 @@ body[data-page="glvm"] .glvm-next-link:focus-visible {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  body[data-page="glvm"] .glvm-next-link--primary:hover,
-  body[data-page="glvm"] .glvm-next-link--secondary:hover {
-    border-color: rgba(47, 146, 139, 0.32);
-    color: var(--glvm-teal-dark);
-    background: #fffdf8;
-    box-shadow: none;
+  body[data-page="glvm"] .glvm-next-link:hover {
+    border-color: rgba(47, 128, 121, 0.28);
+    color: #315e5b;
+    background: rgba(253, 254, 250, 0.96);
+    box-shadow: 0 8px 20px rgba(67, 57, 47, 0.06);
   }
 
   body[data-page="glvm"] .glvm-next-link:hover .glvm-next-arrow {
