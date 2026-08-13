@@ -2686,10 +2686,10 @@
     "glvm.stack.items.7.label": {
       "source": "Guest VMs",
       "sourceHash": "4b31c61fb6db30e3235443002977b39c3b82105952bc2eae576ee010d60d0ba0",
-      "text": "客体虚拟机",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:35:06.203Z",
-      "reviewerNotes": "自然、准确"
+      "text": "来宾虚拟机",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-13T00:00:00.000Z",
+      "reviewerNotes": "Standardized Guest VM terminology to 来宾虚拟机 after its bilingual first exposure in the section introduction."
     },
     "glvm.stack.items.7.status": {
       "source": "EVM core · WASM roadmap",
@@ -2702,10 +2702,10 @@
     "glvm.stack.items.7.text": {
       "source": "The EVM runs as a stateful guest through TSAC-style coordination. WASM extends the heterogeneous-VM direction.",
       "sourceHash": "9947520b939e0502383535249f165dc102d8203d8a94b054922d6e1fe5123b23",
-      "text": "EVM 通过 TSAC 式协调，以有状态客体虚拟机的形式运行；WASM 则把这套架构延伸到异构虚拟机。",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T11:33:06.682Z",
-      "reviewerNotes": "AI-assisted official-site Chinese review; terminology and public-facing tone verified."
+      "text": "EVM 通过 TSAC 式协调，作为有状态来宾虚拟机运行；WASM 则把这套架构延伸到异构虚拟机。",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-13T00:00:00.000Z",
+      "reviewerNotes": "Standardized Guest VM terminology to 来宾虚拟机 after its bilingual first exposure."
     },
     "glvm.stack.items.7.title": {
       "source": "EVM host · WASM roadmap",
@@ -2750,10 +2750,10 @@
     "glvm.stack.text": {
       "source": "GLVM is not a second bytecode VM. These nine architecture views—from TVM execution, object capabilities, and replay to BlockGit, guest VMs, and developer tooling—show the capability system behind its logical execution model.",
       "sourceHash": "35362835fc751bf877ced87b01c86635b574d0c95654b64a7677a6ac0cd1c6a6",
-      "text": "GLVM 不是另一种字节码虚拟机。以下九个架构切面从 TVM 执行、对象能力与重放，一路延伸到 BlockGit、客体虚拟机和开发者工具，共同呈现这一逻辑执行模型的能力体系。",
+      "text": "GLVM 不是另一种字节码虚拟机。以下九个架构切面从 TVM 执行、对象能力与重放，一路延伸到 BlockGit、来宾虚拟机（Guest VM）和开发者工具，共同呈现这一逻辑执行模型的能力体系。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-29T03:00:00.000Z",
-      "reviewerNotes": "Reframed as architecture views rather than a literal source-code module count."
+      "reviewedAt": "2026-08-13T00:00:00.000Z",
+      "reviewerNotes": "Reframed as architecture views and defines 来宾虚拟机（Guest VM） at its first exposure."
     },
     "glvm.stack.title": {
       "source": "Nine capability areas behind the GLVM abstraction",
@@ -2886,10 +2886,10 @@
     "glvm.status.groups.2.items.1": {
       "source": "WASM guest VM",
       "sourceHash": "80ae00aff741f282a0e3d554924aa68f70fb68abee99bbe7ff54cbf8bf2e0154",
-      "text": "WASM 客体虚拟机",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:35:06.203Z",
-      "reviewerNotes": "自然、准确"
+      "text": "WASM 来宾虚拟机",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-13T00:00:00.000Z",
+      "reviewerNotes": "Standardized Guest VM terminology to 来宾虚拟机."
     },
     "glvm.status.groups.2.items.2": {
       "source": "Client-device TVM deployment",

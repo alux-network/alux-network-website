@@ -311,10 +311,10 @@ body[data-page="home"] .home-hero-actions > .button:focus-visible {
 
 @media (max-width: 720px) {
   body[data-page="home"] .orb-sun {
-    top: 0;
-    right: -72px;
-    width: 96px;
-    height: 96px;
+    top: 14px;
+    right: clamp(12px, 4vw, 18px);
+    width: clamp(76px, 20vw, 84px);
+    height: clamp(76px, 20vw, 84px);
     z-index: 4;
   }
 
@@ -346,9 +346,9 @@ body[data-page="home"] .home-hero-actions > .button:focus-visible {
   }
 
   html[dir="rtl"] body[data-page="home"] .orb-sun {
-    top: 0;
+    top: 14px;
     right: auto;
-    left: -78px;
+    left: clamp(12px, 4vw, 18px);
   }
 
   body[data-page="home"] .cloud-a,

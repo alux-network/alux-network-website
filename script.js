@@ -2368,7 +2368,7 @@ function sanitizeRenderedExternalProjectNames(root, lang) {
   });
 }
 
-const LOCALIZED_UNBREAKABLE_PHRASES = /HTTPS GET|Block Merge|JSON-RPC|Tuple-space|ReplayTrie|BlockGit|Web (?:2(?:\.0)?|3)|\d+(?:\u202F)?天|受明确权限约束的服务|受权限约束的服务|应用边界之下|执行上下文之外|共同组成|系统边界|应用之下|字节码执行引擎|元组空间虚拟机|并发执行模型|数据本地性|执行载体|运行时模块|物理基础设施|客户端设备|面向开发者|能力检查|协调模型|执行机制|工作负载|AI 智能体|其他系统|指向 Bob 记录|必要的对象能力|身份权限|不可伪造能力引用|其他人员记录|其他资源|不可伪造的引用|不可伪造引用|基于身份的环境权限|采用对象能力后|端到端原子组合|非确定性选择|全局逻辑虚拟机|世界操作系统|系统继续扩展|生产规模部署|生产部署|访问权限|财务档案|模型层防御|控制机制|链下副作用|授权路径|后续执行|保留延续，?|永久领导者|完整系统|执行过程|状态变化|逻辑执行层|多台物理机器|逻辑世界|跨环境|部署范围|去中心化|并发运行时|执行环境|个人设备|确定性重放|显式对象能力|最小授权原则|跨底座产品化|跨分片执行|源码已包含|共同结算|最终状态|执行上下文|局部提交|提前完成最终确认。?|完成最终确认|最终确认|元组空间|区块链|对象能力|字节码|另一位|发动机|虚拟机|显式能力|环境权限|运行时能力|能力引用|架构扩展中|当前基础|不只需要|一个结果|服务原生公链|有边界的权限|原地重启|真正需要的权限|仍可能|复制|机制|具备|约束|之下|用户|人员|密钥|合并|引擎|ALUX|GLVM|TVM|COMM|OCAP|POLA|EVM|TSAC|WASM|CEO|Bob|Alice|Carol|旨在(?=把多个物理环境中的 TVM)|这些(?=执行转化为)|具体机制(?=，并明确标出)/g;
+const LOCALIZED_UNBREAKABLE_PHRASES = /HTTPS GET|Block Merge|JSON-RPC|Tuple-space|ReplayTrie|BlockGit|Web (?:2(?:\.0)?|3)|\d+(?:\u202F)?天|来宾虚拟机(?:（Guest VM）)?|受明确权限约束的服务|受权限约束的服务|应用边界之下|执行上下文之外|共同组成|系统边界|应用之下|字节码执行引擎|元组空间虚拟机|并发执行模型|数据本地性|执行载体|运行时模块|物理基础设施|客户端设备|面向开发者|能力检查|协调模型|执行机制|工作负载|AI 智能体|其他系统|指向 Bob 记录|必要的对象能力|身份权限|不可伪造能力引用|其他人员记录|其他资源|不可伪造的引用|不可伪造引用|基于身份的环境权限|采用对象能力后|端到端原子组合|非确定性选择|全局逻辑虚拟机|世界操作系统|系统继续扩展|生产规模部署|生产部署|访问权限|财务档案|模型层防御|控制机制|链下副作用|授权路径|后续执行|保留延续，?|永久领导者|完整系统|执行过程|状态变化|逻辑执行层|多台物理机器|逻辑世界|跨环境|部署范围|去中心化|并发运行时|执行环境|个人设备|确定性重放|显式对象能力|最小授权原则|跨底座产品化|跨分片执行|源码已包含|共同结算|最终状态|执行上下文|局部提交|提前完成最终确认。?|完成最终确认|最终确认|元组空间|区块链|对象能力|字节码|另一位|发动机|虚拟机|显式能力|环境权限|运行时能力|能力引用|架构扩展中|当前基础|不只需要|一个结果|服务原生公链|有边界的权限|原地重启|真正需要的权限|仍可能|复制|机制|具备|约束|之下|用户|人员|密钥|合并|引擎|ALUX|GLVM|TVM|COMM|OCAP|POLA|EVM|TSAC|WASM|CEO|Bob|Alice|Carol|旨在(?=把多个物理环境中的 TVM)|这些(?=执行转化为)|具体机制(?=，并明确标出)/g;
 
 function protectChineseSemanticWords(root, lang) {
   if (lang !== "zh" || typeof Intl?.Segmenter !== "function") return;
@@ -3226,6 +3226,9 @@ function renderGlvmSemanticCopy(text = "", key = "", lang = "en") {
     "逻辑执行模型",
     "确定性重放",
     "最终确认",
+    "共同参与一套逻辑执行模型",
+    "可发现、可编排",
+    "受显式能力约束的服务",
     "会将 CEO 工牌代表的环境权限",
     "CEO 工牌代表的环境权限",
     "工牌代表的环境权限",
@@ -3795,6 +3798,16 @@ function renderPccLabIntro(text, lang) {
   return `<span>${value.slice(0, splitAt + 1)}</span><span>${value.slice(splitAt + 1)}</span>`;
 }
 
+function renderPccIntroClaim(text, lang) {
+  const value = String(text || "");
+  if (lang !== "zh") return value;
+
+  return value.replace(
+    /独立(?:任务|系统)/g,
+    (phrase) => `<span class="pcc-keep">${phrase}</span>`
+  );
+}
+
 function renderParallelConcurrentComposablePage(page, lang = "en") {
   const modes = Array.isArray(page.modes) ? page.modes : [];
   const activeMode = modes[0] || {};
@@ -3882,7 +3895,7 @@ function renderParallelConcurrentComposablePage(page, lang = "en") {
   const closePoints = (page.close.points || [])
     .map(([label, text]) => `<article class="pcc-close-point"><span>${label}</span><p>${text}</p></article>`)
     .join("");
-  const introClaim = page.intro.claim ? `<p class="pcc-intro-claim">${page.intro.claim}</p>` : "";
+  const introClaim = page.intro.claim ? `<p class="pcc-intro-claim">${renderPccIntroClaim(page.intro.claim, lang)}</p>` : "";
 
   return `
     <article class="pcc-page" data-pcc-root data-pcc-active="${escapeAttribute(activeMode.id || "")}">
