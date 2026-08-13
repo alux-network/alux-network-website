@@ -1,7 +1,7 @@
 {
   "language": "ar",
   "target": "Arabic, polished native Arabic product/protocol copy",
-  "updatedAt": "2026-08-01T15:00:55.692Z",
+  "updatedAt": "2026-08-12T11:20:47.405Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -891,6 +891,14 @@
       "reviewedAt": "2026-07-13T16:18:23.2662592Z",
       "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
+    "glvm.architecture.instruction": {
+      "source": "Select any layer to update the detail panel.",
+      "sourceHash": "38b8339887cff6066d159f16228c17c36dd1c8d4fbab1dd086dadc5e03fb65e0",
+      "text": "اختر أي طبقة لتحديث لوحة التفاصيل.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-12T10:00:00.000Z",
+      "reviewerNotes": "Native Arabic interface instruction reviewed for clarity and brevity."
+    },
     "glvm.architecture.layers.0.index": {
       "source": "03",
       "sourceHash": "0b8efa5a3bf104413a725c6ff0459a6be12b1fd33314cbb138745baf39504ae5",
@@ -1140,12 +1148,12 @@
       "reviewerNotes": "AI-assisted native Arabic review for official-site copy, terminology, and RTL."
     },
     "glvm.close.title": {
-      "source": "Explore the runtime, agent workloads, and system comparisons.",
-      "sourceHash": "ab76ddcde696819b25513aca69f2bdc8218ac33705896ee1a2223895d4aca9bc",
-      "text": "استكشف بيئة التشغيل، وأحمال عمل الوكلاء، والمقارنات بين الأنظمة.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T11:48:41.792Z",
-      "reviewerNotes": "AI-assisted native Arabic review for official-site copy, terminology, and RTL."
+      "source": "Explore the runtime, agent workloads, and system comparisons",
+      "sourceHash": "82db601f2dfd02c5e80dff7166b8c6aa56186255857b34e049731c2051d25309",
+      "text": "استكشف بيئة التشغيل، وأحمال عمل الوكلاء، والمقارنات بين الأنظمة",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Display heading reviewed without terminal punctuation."
     },
     "glvm.continuity.atomicity.label": {
       "source": "Vertical atomicity · core runtime",
@@ -1158,7 +1166,7 @@
     "glvm.continuity.atomicity.title": {
       "source": "Cross-block execution preserves one transaction context.",
       "sourceHash": "ca95e2f3799eb62a3c1806800521dbe368c7258bfb385440086beeb65460f4ff",
-      "text": "يحافظ التنفيذ عبر الكتل على سياق معاملة واحد.",
+      "text": "يحافظ التنفيذ عبر الكتل على سياق معاملة واحد",
       "status": "ai-reviewed",
       "reviewedAt": "2026-07-26T08:35:06.203Z",
       "reviewerNotes": "native and precise"
@@ -1660,12 +1668,12 @@
       "reviewerNotes": "AI-assisted native Arabic review for official-site copy, terminology, and RTL."
     },
     "glvm.continuity.title": {
-      "source": "A transaction can wait across blocks, then settle as one.",
-      "sourceHash": "97f4032ab3ef0e115b8d99fc2ccd6ceea49f96fc783cf7f9624608d1ff2ec3e5",
-      "text": "يمكن للمعاملة أن تنتظر عبر الكتل، ثم تُسوّى كوحدة واحدة.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:35:06.203Z",
-      "reviewerNotes": "native and precise"
+      "source": "A transaction can wait across blocks, then settle as one",
+      "sourceHash": "efb5392f8da18ca033f0e9aece22460741a524fc4395b22230428e402232140b",
+      "text": "يمكن للمعاملة أن تنتظر عبر الكتل، ثم تُسوّى كوحدة واحدة",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Display heading reviewed without terminal punctuation."
     },
     "glvm.definition.axis.0.0": {
       "source": "VM abstraction",
@@ -1804,12 +1812,12 @@
       "reviewerNotes": "native and precise"
     },
     "glvm.definition.payoff.label": {
-      "source": "One logical layer",
-      "sourceHash": "6aa385bebd7954cc32aa7e3bade416c6404cb409fc94429b60fd1d7ec9f618c2",
-      "text": "طبقة منطقية واحدة",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:35:06.203Z",
-      "reviewerNotes": "native and precise"
+      "source": "Core idea",
+      "sourceHash": "bf6d24c42159831e1c07cb26fa0cea6ef40cd22642d5d583fdca094be9079c27",
+      "text": "الخلاصة",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Display label reviewed for concise Arabic editorial hierarchy."
     },
     "glvm.definition.payoff.text": {
       "source": "Developers target one concurrent execution model while the runtime handles scheduling, replay, capability checks, replication, and finalization.",
@@ -1820,28 +1828,28 @@
       "reviewerNotes": "AI-assisted native Arabic review for official-site copy, terminology, and RTL."
     },
     "glvm.definition.payoff.title": {
-      "source": "One logical layer—not one physical machine.",
-      "sourceHash": "45f6486151560c3848542911e0b678641299353f62423373677ca409039b6ab3",
-      "text": "طبقة منطقية واحدة، لا آلة مادية واحدة.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:35:06.203Z",
-      "reviewerNotes": "native and precise"
+      "source": "One logical execution layer, not one physical machine",
+      "sourceHash": "37a64f67d96bfe001b2145c01abccb4609660147b641870c664873f40851f9dd",
+      "text": "ما يتوحّد هو طبقة التنفيذ المنطقية، لا الآلة المادية",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Display heading reviewed without terminal punctuation."
     },
     "glvm.definition.text": {
-      "source": "TVM is the bytecode execution engine on one machine. GLVM defines the system-level execution abstraction across participating TVMs. It is not another bytecode VM; developers target one logical model while deterministic replay, recovery, replication, finalization, and consensus are coordinated beneath the abstraction.",
-      "sourceHash": "347cb5c9accab39dcf7754d9a8b8c9be4e68a2d12269c66bf14573dc802f3474",
-      "text": "⁦TVM⁩ هو محرك تنفيذ الشفرة البايتية على آلة واحدة. وتعرّف ⁦GLVM⁩ تجريد التنفيذ على مستوى النظام عبر أنظمة ⁦TVM⁩ المشاركة. وليست ⁦GLVM⁩ آلة افتراضية أخرى للشفرة البايتية؛ إذ يتعامل المطورون مع نموذج منطقي واحد، بينما يجري تنسيق إعادة التشغيل الحتمية والتعافي والنسخ المتماثل والإنهاء والإجماع تحت مستوى هذا التجريد.",
+      "source": "TVM is the bytecode execution engine on one machine. GLVM defines the system-level execution abstraction across participating TVMs. It is not another bytecode VM; developers target one logical model while deterministic replay, execution continuity, replication, finalization, and consensus are coordinated beneath the abstraction.",
+      "sourceHash": "e87d8a77aa80327ff68672b7fa8061a203f0834a1f2b1ee70c46a7262764e1ef",
+      "text": "⁦TVM⁩ هو محرك تنفيذ الشفرة البايتية على آلة واحدة. وتعرّف ⁦GLVM⁩ تجريد التنفيذ على مستوى النظام عبر أنظمة ⁦TVM⁩ المشاركة. وليست ⁦GLVM⁩ آلة افتراضية أخرى للشفرة البايتية؛ إذ يتعامل المطورون مع نموذج منطقي واحد، بينما يجري تنسيق إعادة التشغيل الحتمية واستمرارية التنفيذ والنسخ المتماثل والإنهاء والإجماع تحت مستوى هذا التجريد.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-29T03:30:00.000Z",
-      "reviewerNotes": "官网成熟度与术语已校对。"
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Maturity boundary reviewed: execution continuity, not crash recovery."
     },
     "glvm.definition.title": {
-      "source": "One TVM per machine, coordinated through one logical execution model.",
-      "sourceHash": "b232c1fde7c4c395df8888aca59a98bda2dd3f6806b3bcf7de8170e89ccbd390",
-      "text": "تشغّل كل آلة نظام ⁦TVM⁩ واحدًا، وتُنسَّق هذه الأنظمة ضمن نموذج تنفيذ منطقي واحد.",
+      "source": "One TVM per machine, coordinated through one logical execution model",
+      "sourceHash": "f7dfaa09f8ce4a94a89336ea5d1aea8f300377d0c49a04314e1354656be40eb8",
+      "text": "تشغّل كل آلة نظام ⁦TVM⁩ واحدًا، وتُنسَّق هذه الأنظمة ضمن نموذج تنفيذ منطقي واحد",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-29T03:30:00.000Z",
-      "reviewerNotes": "官网成熟度与术语已校对。"
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Display heading reviewed without terminal punctuation."
     },
     "glvm.hero.eyebrow": {
       "source": "Learn / GLVM",
@@ -1910,7 +1918,7 @@
     "glvm.hero.tagline": {
       "source": "One logical execution layer, coordinated across many machines.",
       "sourceHash": "a2d19f9009f5816fbd9301356a429306ef4d6f027685d948ffeebf2250ff7653",
-      "text": "طبقة تنفيذ منطقية واحدة، منسّقة عبر آلات متعددة.",
+      "text": "طبقة تنفيذ منطقية واحدة، منسّقة عبر آلات متعددة",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-28T13:50:00.000Z",
       "reviewerNotes": "Reviewed for GLVM official-site terminology, semantic line integrity, and localized diagram clarity."
@@ -2374,7 +2382,7 @@
     "glvm.ocapStory.comparison.0.title": {
       "source": "The badge carries unrelated access into the task",
       "sourceHash": "e9787af416e84c3b4476282b9a8dccd5ca40f763433a9c4c82cd2a991ecd85a2",
-      "text": "تنقل بطاقة التعريف إلى المهمة صلاحيات لا علاقة لها بها.",
+      "text": "تنقل بطاقة التعريف إلى المهمة صلاحيات لا علاقة لها بها",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-28T00:00:00.000Z",
       "reviewerNotes": "مراجعة بشرية؛ العنوان يوضح أن بطاقة الهوية هي مصدر الصلاحيات المحيطة."
@@ -2398,7 +2406,7 @@
     "glvm.ocapStory.comparison.1.title": {
       "source": "The task receives one key that names Bob’s record",
       "sourceHash": "0433bf57a7d6baead31e4c236599cb37e3e26f27922dfd95b5772285ebeaec5e",
-      "text": "تتلقى المهمة مفتاحًا واحدًا يعيّن سجل ⁦Bob⁩.",
+      "text": "تتلقى المهمة مفتاحًا واحدًا يعيّن سجل ⁦Bob⁩",
       "status": "human-reviewed",
       "reviewedAt": "2026-07-29T06:30:00.000Z",
       "reviewerNotes": "Current OCAP terminology and technical scope were human-reviewed."
@@ -2436,12 +2444,12 @@
       "reviewerNotes": "Current OCAP terminology and technical scope were human-reviewed."
     },
     "glvm.ocapStory.title": {
-      "source": "Give the task one key—not the user’s badge.",
-      "sourceHash": "0619dac626585f411ab421490b6b0486c0a5bbe22897830714949f91cd6498cf",
-      "text": "امنح المهمة مفتاحًا واحدًا، لا بطاقة تعريف المستخدم.",
+      "source": "Give the task one key—not the user’s badge",
+      "sourceHash": "702b7eee6ea2163249229ba4dcdfa8b288201e93a53f317cb594596bf672f3cb",
+      "text": "امنح المهمة مفتاحًا واحدًا، لا بطاقة تعريف المستخدم",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-28T00:00:00.000Z",
-      "reviewerNotes": "مراجعة بشرية؛ المفتاح لـ OCAP وبطاقة التعريف للسلطة القائمة على الهوية."
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Display heading reviewed without terminal punctuation."
     },
     "glvm.stack.eyebrow": {
       "source": "Runtime anatomy",
@@ -2852,12 +2860,12 @@
       "reviewerNotes": "native and precise"
     },
     "glvm.status.groups.1.items.4": {
-      "source": "Operator recovery and observability",
-      "sourceHash": "a037f7eaf8b7984cdcd17e4a08ec762a93907a8d357f38b8968fc4237d57e1b4",
-      "text": "استعادة التشغيل وقابلية الرصد للمشغّلين",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:35:06.203Z",
-      "reviewerNotes": "native and precise"
+      "source": "Runtime observability and operator tooling",
+      "sourceHash": "dabf04eacc7fffcf18d2c39fd17121bbbf82c6dabf54dbac4683e7d3536f48ee",
+      "text": "قابلية رصد بيئة التشغيل وأدوات المشغّلين",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Maturity boundary reviewed: observability and tooling, not crash recovery."
     },
     "glvm.status.groups.1.label": {
       "source": "Expanding the system",
@@ -2932,12 +2940,12 @@
       "reviewerNotes": "AI-assisted native Arabic review for official-site copy, terminology, and RTL."
     },
     "glvm.status.title": {
-      "source": "The core runtime is taking shape. GLVM is expanding across environments.",
-      "sourceHash": "9d36082d170e5b9cb38b438ee6a7bd90b97014d61569210ec5504363e83c04d3",
-      "text": "تتبلور نواة التشغيل. وتتوسّع ⁦GLVM⁩ عبر البيئات.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T11:48:41.792Z",
-      "reviewerNotes": "AI-assisted native Arabic review for official-site copy, terminology, and RTL."
+      "source": "The core runtime is taking shape as GLVM expands across environments",
+      "sourceHash": "2d5d543bc0b7f78bd7468608b6639e4fb3439b6388af22437db2ecbfbb365d5b",
+      "text": "تتبلور نواة التشغيل وتتوسّع ⁦GLVM⁩ عبر البيئات",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Display heading reviewed without terminal punctuation."
     },
     "home.hero.eyebrow": {
       "source": "ALUX Network",
@@ -2948,20 +2956,20 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.hero.text": {
-      "source": "GLVM is ALUX’s unified execution abstraction for developers. Each machine runs a TVM; together they form one logical execution layer. The runtime coordinates replay, authority, finalization, replication, and consensus beneath the application. The chain runtime is the current foundation; private cloud is the next integration surface, while client-device execution remains on the roadmap.",
-      "sourceHash": "04b5acc4bfbc05bce5ac8e406690a7b0f78197aa4697b2b167cd87f8afa5a929",
-      "text": "⁦GLVM⁩ هي تجريد التنفيذ الموحّد الذي تقدّمه ⁦ALUX⁩ للمطورين. تشغّل كل آلة ⁦TVM⁩، وتشكّل جميعها معًا طبقة تنفيذ منطقية واحدة. وتنسّق بيئة التشغيل، تحت مستوى التطبيق، إعادة التشغيل والصلاحيات والإنهاء والنسخ المتماثل والإجماع. وتمثّل بيئة تشغيل سلسلة ⁦ALUX⁩ الأساس الحالي؛ وتأتي السحابة الخاصة بوصفها واجهة التكامل التالية، فيما يظل التنفيذ على أجهزة العملاء ضمن خارطة الطريق.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T12:42:17.608Z",
-      "reviewerNotes": "AI-assisted native Arabic review for official-site copy, terminology, and RTL."
+      "source": "Imagine one logical virtual machine that runs everywhere—across public blockchains, private clusters, and client environments such as phones and browsers—while abstracting the underlying state, threads, replication, and consensus. Developers write one concurrent program; where it runs becomes a configuration choice rather than an architectural constraint. Its parts still commit together as one atomic result. That is Virtual Machine Abstraction, and ALUX is building it.",
+      "sourceHash": "52262ea8a3e006a4d7c6f3c00dabf38502dd62a82b132244b3d6354c93d57c1c",
+      "text": "تخيّل آلة افتراضية منطقية واحدة تعمل في كل مكان—عبر شبكات البلوكشين العامة، والعناقيد الخاصة، وبيئات العميل مثل الهواتف والمتصفحات—بينما تُخفي تحت تجريد موحّد تفاصيل الحالة وخيوط التنفيذ والنسخ المتماثل والإجماع. يكتب المطوّرون برنامجًا متزامنًا واحدًا؛ ويصبح مكان تشغيله خيارًا في الإعدادات بدلًا من أن يكون قيدًا معماريًا. وتظل أجزاؤه تُثبَّت معًا بوصفها نتيجة ذرّية واحدة. هذا هو تجريد الآلة الافتراضية، وهذا ما تبنيه ALUX.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-12T12:46:29Z",
+      "reviewerNotes": "Native-language review: clarified client environments and the architectural constraint in formal Arabic."
     },
     "home.hero.title": {
-      "source": "Building GLVM",
-      "sourceHash": "139cabb83084107831e9a354ca9fd483f184cd5cd0154fe051ab4fff0f5aad05",
-      "text": "نبني GLVM",
+      "source": "Building the global VM",
+      "sourceHash": "1d3ec87e2a532c895cc3fbcfb41e48696c9fa5267510a7a15b033e216ed44b51",
+      "text": "نبني الآلة الافتراضية العالمية",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-25T00:00:00.000Z",
-      "reviewerNotes": "مراجعة بشرية؛ حُفظ GLVM كاسم علامة مستقل من دون ترجمته."
+      "reviewedAt": "2026-07-16T02:53:05.677Z",
+      "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.metaDescription": {
       "source": "GLVM is ALUX's architecture for one logical execution layer across physically distributed TVMs, coordinating concurrency, replay, authority, finalization, replication, and consensus.",
@@ -3027,14 +3035,6 @@
       "reviewedAt": "2026-07-16T02:53:05.677Z",
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
-    "home.sections.0.architecture.infrastructure.label": {
-      "source": "Layer 1",
-      "sourceHash": "ca900bb0437e1b6c3df9f9591b5393553738dd8cb25cd66d43b2ef1745ac1bf3",
-      "text": "الطبقة 1",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
-    },
     "home.sections.0.architecture.infrastructure.title": {
       "source": "Physical Infrastructure",
       "sourceHash": "9b59e1eadb7e3c320d41fd296022ed50a6888a61ce5b91e4ac1d3a263d191ed1",
@@ -3074,14 +3074,6 @@
       "status": "human-reviewed",
       "reviewedAt": "2026-07-16T02:53:05.677Z",
       "reviewerNotes": "Reviewed against the current English homepage source."
-    },
-    "home.sections.0.architecture.runtime.label": {
-      "source": "Layer 2",
-      "sourceHash": "620558ceadc1cb03ef33fb6cdf2a638743d565dfe40a5c8966f060012a6ca5e4",
-      "text": "الطبقة 2",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "home.sections.0.architecture.runtime.title": {
       "source": "ALUX — Decentralized Concurrent Runtime",
@@ -3147,14 +3139,6 @@
       "reviewedAt": "2026-07-13T16:18:23.2662592Z",
       "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
-    "home.sections.0.architecture.world.label": {
-      "source": "Layer 3",
-      "sourceHash": "fae4c3c8cd8779d65395d18aac1cdff8850245d51576addcc43f85c805ecea80",
-      "text": "الطبقة 3",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
-    },
     "home.sections.0.architecture.world.title": {
       "source": "World Operating System",
       "sourceHash": "e6432937a3b45dc829a2b65e5d64405bcee3458d2d8a34688e59085b59261592",
@@ -3180,12 +3164,12 @@
       "reviewerNotes": "AI-assisted native Arabic review for official-site copy, terminology, and RTL."
     },
     "home.sections.0.title": {
-      "source": "One logical execution layer.<br>Physically distributed.",
-      "sourceHash": "70ffaf00086e3eaca1ca40c36c60bca455ecad0406557763fa9ddfee9c8b3562",
-      "text": "طبقة تنفيذ منطقية واحدة.<br>موزّعة ماديًا.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:36:46.018Z",
-      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
+      "source": "One logical execution layer<br>Physically distributed",
+      "sourceHash": "405cc52831bc029306f1e410a35c8dba37c9c17843cc6758b920588f1d4ec94a",
+      "text": "طبقة تنفيذ منطقية واحدة<br>موزّعة ماديًا",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.10.eyebrow": {
       "source": "Learn More",
@@ -3484,60 +3468,60 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.clusters.2.detailBusiness": {
-      "source": "A service can wait for delivery, approval, oracle data, or an agent action, then complete settlement with a verifiable audit trail.",
-      "sourceHash": "e4aac984720fd708f4b081d49b0d600026df9369839097c347e19773ca6c5ff9",
-      "text": "يمكن للخدمة انتظار تسليم أو موافقة أو بيانات من أوراكل أو إجراء من وكيل، ثم إتمام التسوية بسجل تدقيق قابل للتحقق.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Wait for approvals, external data, or another service without exposing a chain of partially committed ALUX states.",
+      "sourceHash": "193d66cbb78235a267407e2dbd26ecbb0deab9123b853f00a710bbf3dff232d1",
+      "text": "انتظر الموافقات أو البيانات الخارجية أو خدمة أخرى من دون كشف سلسلة من حالات ALUX المثبّتة جزئيًا.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.detailTechnical": {
-      "source": "Segments preserve progress. ReplayTrie, isolation, rollback, and commit points bound how suspended work resumes and settles.",
-      "sourceHash": "e3663aaa89cbb40042ed97c0a9eeb98d3a51758590c1420fc05e987b8d1377f1",
-      "text": "تحفظ المقاطع (Segments) التقدم. ويضبط ReplayTrie والعزل والتراجع ونقاط التثبيت كيفية استئناف العمل المعلّق وتسويته.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Segments and partitions preserve progress at suspension points. ReplayTrie, isolation, and commit rules let validators resume and reproduce the same transaction across later blocks.",
+      "sourceHash": "6c8a37ec900024edf1e37f3a8a1e68a28cd7fd0ff47fc743c227b391eff9288d",
+      "text": "تحفظ المقاطع والتقسيمات التقدّم عند نقاط التعليق. وتتيح ReplayTrie وقواعد العزل والتثبيت للمدقّقين استئناف المعاملة نفسها وإعادة إنتاجها عبر كتل لاحقة.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.detailTitle": {
-      "source": "Work crosses blocks",
-      "sourceHash": "59f77d83ca88059cf78b71890b7ef3b32007fa203dd2fb87542483f63228bbc4",
-      "text": "عمل يعبر الكتل",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "One transaction across many block heights",
+      "sourceHash": "c3dfe55a4deb8dd704baad6286d9ecd5aed1ddb9732f97429051f17b08c1e121",
+      "text": "معاملة واحدة عبر ارتفاعات كتل متعددة",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.items.0": {
-      "source": "Segments",
-      "sourceHash": "48c64fe09126a18f5b6d52ebbbc3ddf0aa1b45e446d86429fddd8ac67957e06b",
-      "text": "المقاطع (Segments)",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Cross-Block",
+      "sourceHash": "4e65ad05c7c481cbe7584eb998983c514f89e35386dc70ff3291fe7c6cdd3a9e",
+      "text": "عبر الكتل",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.items.1": {
-      "source": "Commit Points",
-      "sourceHash": "e1e9e79f010064a97f54605909c65b90ba0ad703bca83eb3edc6d0791f8cb2cf",
-      "text": "نقاط التثبيت",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Suspend / Resume",
+      "sourceHash": "03bfd339c3f30290b5d53e0a37b4c3d3e0166b99b9ed285a25cf70268624eae9",
+      "text": "تعليق / استئناف",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.items.2": {
-      "source": "ReplayTrie",
-      "sourceHash": "d556f54e2420ff6d989b619c8b5dfce364a39b048874a39b8f53c7086cdad27f",
-      "text": "ReplayTrie",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Atomic Finalization",
+      "sourceHash": "17f5bb52e18a9374c1bc351c11935a6125422be7208f5677c1c541fbbd5a4234",
+      "text": "الإتمام الذرّي",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.items.3": {
-      "source": "Isolation",
-      "sourceHash": "45c4fc064e525974b1c12d9f7168edcde18dcbbf878aa21fd761da5cdfc59702",
-      "text": "عزل",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Replay Evidence",
+      "sourceHash": "bf454315a93b805d38f824cfac16a3209a37ae7667a1619beda87f08678c84a2",
+      "text": "أدلة إعادة التشغيل",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.label": {
       "source": "Transaction Layer",
@@ -3548,12 +3532,12 @@
       "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "home.sections.2.clusters.2.runtimeBusiness": {
-      "source": "Long-running workflows can wait for real-world inputs and still settle atomically across block heights.",
-      "sourceHash": "d6dc115c04fe4da4e7c1ddc5a4649eb28334e69e5261d4ec966847e8c74d44ae",
-      "text": "يمكن لمسارات العمل طويلة الأمد انتظار مدخلات من العالم الحقيقي، ثم تُسوّى ذريًا عبر ارتفاعات كتل متعددة.",
+      "source": "Long-running workflows can wait without exposing partially committed ALUX state.",
+      "sourceHash": "04c92b8d01ac9bbee158ea88cd782d6cc6f657684b7a0eb40f8bcd283c0019bf",
+      "text": "يمكن لمسارات العمل طويلة الأمد الانتظار من دون كشف حالة ALUX مثبّتة جزئيًا.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.runtimeLabel": {
       "source": "Transaction Layer",
@@ -3564,36 +3548,36 @@
       "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "home.sections.2.clusters.2.runtimeTechnical": {
-      "source": "Segments, ReplayTrie, isolation, and commit points let work suspend, resume, and settle atomically after a bounded checkpoint.",
-      "sourceHash": "580c2fc3fe8fe26f1a805ed755edda0e49e2259b5259a0af60760c087b94a319",
-      "text": "تتيح المقاطع وReplayTrie والعزل ونقاط التثبيت للعمل أن يتوقف مؤقتًا ويستأنف ويُسوّى ذريًا بعد نقطة تحقق محدودة.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Segments, partitions, ReplayTrie, isolation, and commit rules preserve one transaction across suspension and later-block resumption.",
+      "sourceHash": "ceac97242aed80eb896db4f42532339c23832aa714c4faed30b073bf8c260771",
+      "text": "تحافظ المقاطع والتقسيمات وReplayTrie وقواعد العزل والتثبيت على معاملة واحدة خلال التعليق والاستئناف في كتل لاحقة.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.runtimeTitle": {
-      "source": "Services cross block boundaries",
-      "sourceHash": "ae2da6c20b1e58c3e3045026c7d99df07f48d784efaaef9e4e5f3fbe164d368d",
-      "text": "تعبر الخدمات حدود الكتل",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Vertical atomicity\nacross block heights",
+      "sourceHash": "1f68196a5fbf0bbd2dd22382cb294662991bf646605106af519ecd2f3f0a91f3",
+      "text": "الذرّية العمودية\nعبر ارتفاعات الكتل",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.text": {
-      "source": "Segments and commit points let service work suspend across block boundaries, then settle atomically with replay and isolation evidence.",
-      "sourceHash": "618f8a8d93311d68bdb353f63c2941e9c88a9c19ead40a868dc462359113722d",
-      "text": "تتيح المقاطع ونقاط التثبيت لعمل الخدمات أن يتوقف مؤقتًا عبر حدود الكتل، ثم يُسوّى ذريًا استنادًا إلى أدلة إعادة التشغيل والعزل.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "A Long Transaction can suspend at a block boundary, resume in a later block, and still finalize as one ALUX transaction. Its ALUX state changes remain staged until commit; on abort, uncommitted effects are discarded.",
+      "sourceHash": "1985e1aec2d8185ce8f17363b1bef7565cc1be5b87f705946887eeb5e40c618b",
+      "text": "يمكن لمعاملة طويلة الأمد (Long Transaction) أن تتعلّق عند حدّ كتلة، ثم تُستأنف في كتلة لاحقة وتُستكمل مع ذلك كمعاملة ALUX واحدة. وتظل تغييرات حالة ALUX مجهّزة حتى التثبيت؛ وعند الإلغاء تُهمَل التأثيرات غير المثبّتة.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.2.title": {
-      "source": "Cross-Block ACID",
-      "sourceHash": "20838344b26509a5b08529d9fb17e63c7197ee4471331fae0105bb8182bd18b2",
-      "text": "خصائص ACID عبر الكتل",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Vertical Atomicity",
+      "sourceHash": "a01ba4c0a43e805009b1fe4ffd9f95ce06635c06a6d157de925e897482b8b66b",
+      "text": "الذرّية العمودية",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.3.items.0": {
       "source": "Segment Pool",
@@ -3764,284 +3748,396 @@
       "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "home.sections.2.clusters.5.detailBusiness": {
-      "source": "Teams can start from familiar Web3 tooling, then move toward ALUX-native service composition.",
-      "sourceHash": "878a0f3e95813cd1172f80001619a9319e9aa0bfe2bfd2357d1dc72658942c17",
-      "text": "يمكن للفرق البدء بأدوات Web3 المألوفة، ثم الانتقال إلى تركيب خدمات أصيل في ALUX.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Bring supported EVM contracts into ALUX while the runtime handles concurrency at the coordination layer.",
+      "sourceHash": "5d9d836f7e14a1fd985dbddb170e7a7a5350ca99ae3a289436d96e9d40f5075e",
+      "text": "انقل عقود EVM المدعومة إلى ALUX، بينما تتولى بيئة التشغيل معالجة التزامن في طبقة التنسيق.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.detailTechnical": {
-      "source": "Tolang targets TVM directly. TSAC adapts Solidity and EVM-facing calls into tuple-space execution.",
-      "sourceHash": "0a55596e2b118d5b9d47d1f9d16f5b03f7786b7d7553651e2d92d8c89e0ba1bb",
-      "text": "تستهدف Tolang منصة TVM مباشرة، فيما يكيّف TSAC استدعاءات Solidity والاستدعاءات الموجّهة إلى EVM لتنفيذها داخل فضاء الصفوف.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Each EVM instance keeps its own stack and memory. Reads, writes, and contract calls that touch global state pass through TSAC, where TVM can coordinate them with other live processes.",
+      "sourceHash": "e9ded9d1d4c974d1d148f8e726695295039633a22998390e132450d665827724",
+      "text": "يحتفظ كل مثيل EVM بالمكدس والذاكرة الخاصين به. وتمر عمليات القراءة والكتابة واستدعاءات العقود التي تمس الحالة العالمية عبر TSAC، حيث يستطيع TVM تنسيقها مع العمليات الحية الأخرى.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.detailTitle": {
-      "source": "Clear path for builders",
-      "sourceHash": "cdd87a4b2a4902360042bff2091efbae89bbedb98f77fc44a26b2a34d15ad107",
-      "text": "مسار واضح للمطورين",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Sequential VMs, concurrent coordination",
+      "sourceHash": "2bdfcb5c015f1c14a5380928bab9c60c2e00a0c5b382e6273dc3f035ee37d182",
+      "text": "آلات افتراضية تسلسلية، وتنسيق متزامن",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.items.0": {
-      "source": "Tolang",
-      "sourceHash": "b3d77b77dc0ef77902096e5c875a65398c2832a8ce46836867da811a4dc23fb6",
-      "text": "Tolang",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "EVM Today",
+      "sourceHash": "f357d7b4268fcf87a6b5672a62c191cdd345e7fafe914ff83d5c3ae0b67a9150",
+      "text": "EVM اليوم",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.items.1": {
-      "source": "TSAC",
-      "sourceHash": "43dd7ca33f0c090837987dd99984011a436637d8df50547f9f6c0d33cb72122c",
-      "text": "TSAC",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Isolated Sandboxes",
+      "sourceHash": "5b2dda1a5d468c779f5647c8fe044faae8706947bf6f91af4a6490cfe6afa107",
+      "text": "بيئات عزل مستقلة",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.items.2": {
-      "source": "Solidity Entry",
-      "sourceHash": "9f9f16ff2e0e0c57487abe4887c2b30925ad49f4938b53650e826309711094bf",
-      "text": "مدخل Solidity",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "TSAC Adapters",
+      "sourceHash": "afb332c7d0fd3e96d419f8063bb6cb88613caeb73b54a33d1896a820ab7f0ddd",
+      "text": "مهايئات TSAC",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.items.3": {
-      "source": "EVM Adapters",
-      "sourceHash": "8297dbfd37a837c97718ef1db0b56df55ec6a2994ee6d847f7afdf548ece754e",
-      "text": "محولات EVM",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "WASM Planned",
+      "sourceHash": "061c996a0f2e49d0425f7ec6e44c1e825a2cf2879fc5fdb65d2d107965c2ef19",
+      "text": "WASM ضمن الخطة",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.label": {
-      "source": "Build Surface",
-      "sourceHash": "a80dfed2762238ceb25d2df790adae7b4eb34d14357e29cabc4f2b714dd2a9e2",
-      "text": "واجهة التطوير",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Compatibility Layer",
+      "sourceHash": "4c2492dd2831eb45f8804e388fbb5cd510694c586c4112e33814c4b0ffae9124",
+      "text": "طبقة التوافق",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.runtimeBusiness": {
-      "source": "Builders can start from familiar Web3 tooling and grow into ALUX-native service composition.",
-      "sourceHash": "7e707da4218935a5db727a2aae94ad96fcd1e01a2771d5fbd3ac7b57c216d41d",
-      "text": "يمكن للمطورين البدء بأدوات Web3 المألوفة، ثم التوسع إلى تركيب خدمات أصيل في ALUX.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Builders can bring supported EVM contracts into ALUX today; WASM remains on the roadmap.",
+      "sourceHash": "fc7d027c76e91f47f44b9c6f8c8898b80ac74a8ead1ee8b176276d1306d5a063",
+      "text": "يمكن للمطورين إدخال عقود EVM المدعومة إلى ALUX اليوم؛ أما WASM فما يزال ضمن خارطة الطريق.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.runtimeLabel": {
-      "source": "Build Surface",
-      "sourceHash": "a80dfed2762238ceb25d2df790adae7b4eb34d14357e29cabc4f2b714dd2a9e2",
-      "text": "واجهة التطوير",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Compatibility Layer",
+      "sourceHash": "4c2492dd2831eb45f8804e388fbb5cd510694c586c4112e33814c4b0ffae9124",
+      "text": "طبقة التوافق",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.runtimeTechnical": {
-      "source": "Tolang targets TVM directly, while TSAC adapts EVM-facing calls into tuple-space execution through isolated adapters.",
-      "sourceHash": "3d55384544702e06c841c11374eb10905eea77090845d1588462674d80c010a2",
-      "text": "تستهدف Tolang منصة TVM مباشرة، فيما يكيّف TSAC الاستدعاءات الموجّهة إلى EVM لتنفيذها داخل فضاء الصفوف عبر محولات معزولة.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Supported EVM instances keep their own stack and memory while TSAC routes global-state operations into concurrent TVM coordination. Additional guest VMs remain an expansion path.",
+      "sourceHash": "4e11bb04b2696109aa4e9e91771a4be3a18bf43feb0381c50c986903597db5f7",
+      "text": "تحتفظ مثيلات EVM المدعومة بالمكدس والذاكرة الخاصين بها، بينما توجّه TSAC عمليات الحالة العالمية إلى تنسيق TVM المتزامن. وتظل إضافة آلات افتراضية ضيفة أخرى مسارًا للتوسّع.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.runtimeTitle": {
-      "source": "Contracts get a runtime path",
-      "sourceHash": "b8c93a2363cfcee8645ef7544ee44177f108777633e146da162518a3c27c586b",
-      "text": "تحصل العقود على مسار إلى بيئة التشغيل",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Guest VMs run\nin isolated sandboxes",
+      "sourceHash": "342ffd787c1e2b3de8bb7c15f9eb444f3f16f38a91bcbf435847624df65eff84",
+      "text": "تعمل الآلات الافتراضية الضيفة\nفي بيئات عزل مستقلة",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.text": {
-      "source": "Tolang compiles to TVM bytecode, while TSAC adapters route Ethereum-facing contracts into the tuple-space runtime.",
-      "sourceHash": "7c05b1f53a3f2a34979f7832f246091e28885f7796b606a1e7e4b4e61e7b5dd4",
-      "text": "تُصرَّف Tolang إلى شفرة TVM البايتية، فيما توجّه محولات TSAC العقود الموجّهة إلى Ethereum نحو بيئة تشغيل فضاء الصفوف.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Supported EVM workloads run in isolated sandboxes today and coordinate with the concurrent TVM through TSAC adapters. The same compatibility layer is designed to host additional guest VMs; WASM remains on the roadmap.",
+      "sourceHash": "8a4d9a24ce9c20a994532c44464f89e23bd2d6bcc3e794de3d5f41857150c993",
+      "text": "تعمل أحمال EVM المدعومة اليوم داخل بيئات عزل مستقلة، وتتنسّق مع TVM المتزامن عبر مهايئات TSAC. وصُممت طبقة التوافق نفسها لاستضافة آلات افتراضية ضيفة إضافية؛ أما WASM فما يزال ضمن خارطة الطريق.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.5.title": {
-      "source": "Tolang + TSAC",
-      "sourceHash": "a5e463ca5a74d028275df92255a25e555063dd0db279b671d2bc9219abc076de",
-      "text": "Tolang + TSAC",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Heterogeneous VM Sandbox",
+      "sourceHash": "91c219023738848f652f33d31af39f6857d9908c279418a71d4ec7ce95a6bd1e",
+      "text": "عزل الآلات الافتراضية غير المتجانسة",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T09:49:18.027Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.6.items.0": {
       "source": "eth_* RPC",
       "sourceHash": "36cde0cbd497b08790ec53204f1887edaeb3bcbc9e6b2fedcc7c4167abe6c101",
       "text": "eth_* RPC",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.6.items.1": {
       "source": "P2P Gossip",
       "sourceHash": "ab13fc32c79cbf6f7e68ecc33a554863c1cb2727a3fcd4d86cc62d3f9fb95558",
       "text": "بث P2P",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.6.items.2": {
       "source": "Storage Context",
       "sourceHash": "bbf8c2b79994fd9794686db19c3cd30a13eb2078caaf26dba8e953671e749965",
       "text": "سياق التخزين",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.6.items.3": {
       "source": "Static Site",
       "sourceHash": "e184c0ea5a3b0ee5cb891c7e0f2aa79e7f26cf7a08a5a7d6666afdb425ccedea",
       "text": "موقع ثابت",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.6.label": {
       "source": "Node Network",
       "sourceHash": "400ec57d98ac71f4b17a7595e5b490a994772c2d43df55b0ce290915d5d165bc",
       "text": "شبكة العقد",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.6.text": {
       "source": "The node layer exposes RPC, P2P, storage context, and static service surfaces around the runtime.",
       "sourceHash": "eef02775e9adf93dc82a2a4216026e658d949b1d2c006591c4d9ccea1982c30e",
-      "text": "تتيح طبقة العقد، حول بيئة التشغيل، واجهات RPC وP2P وسياق التخزين وواجهات الخدمات الثابتة.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "text": "تكشف طبقة العقد واجهات RPC وP2P وسياق التخزين وواجهات الخدمات الثابتة حول بيئة التشغيل.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.6.title": {
       "source": "Full Node + RPC",
       "sourceHash": "fbd4362443a9c1517fe512f0d0b70d14c4f0334e0ff41ba81483f52724ac76c4",
       "text": "عقدة كاملة + RPC",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.7.items.0": {
       "source": "BranchId",
       "sourceHash": "a7d1daf5f5b1b7daecb5b29f1a851568fe11b98ab543eac8f22f29d535f58058",
       "text": "BranchId",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.7.items.1": {
       "source": "COMM Events",
       "sourceHash": "0debb172cc432fa1696baa877835ee18c30c95a20923ed03c1f217c3a5e22f77",
       "text": "أحداث COMM",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.7.items.2": {
       "source": "Replay Log",
       "sourceHash": "5f15c1d5c40d170448af7b473b6252b144e2445852c0711c8b3f46b49484f96e",
       "text": "سجل إعادة التشغيل",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.7.items.3": {
       "source": "Deterministic Replay",
       "sourceHash": "b9ba97dcd9b12127e54bd2d8b1482d11cb27d830145d11cea2177a94ee9eb2c2",
-      "text": "إعادة التشغيل الحتمية",
+      "text": "إعادة تشغيل حتمية",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.7.label": {
       "source": "Validator Proof",
       "sourceHash": "65f940d2afb4e31adfdd47dabac0266a1d006331fb49babda678a8ad6a95ff61",
-      "text": "إثبات المدقّق",
+      "text": "دليل المدقّق",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.7.text": {
       "source": "Branch identifiers and replay logs let validators reproduce non-deterministic COMM events deterministically.",
       "sourceHash": "c87dec4b639e8114057510ab97cd2028799b1952de73e72dc83e197494b8996b",
       "text": "تتيح معرّفات الفروع وسجلات إعادة التشغيل للمدقّقين إعادة إنتاج أحداث COMM غير الحتمية بصورة حتمية.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.7.title": {
       "source": "Replay + Trace",
       "sourceHash": "70ce8e57fde2f5154a3bae92ff9d16e3e1f7544ef2f70aee8dbfa15901ce87dd",
       "text": "إعادة التشغيل + التتبّع",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.8.items.0": {
       "source": "Diagnostics",
       "sourceHash": "268f14bbfe119c1e92150583af960a086d7db9619a097f8aa72ff6779842f610",
       "text": "التشخيصات",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.8.items.1": {
       "source": "Expand",
       "sourceHash": "07548c2c6511d4d1780564de8a237a1966cf9c99a97cf5c8a185e6c2aeacff09",
       "text": "التوسيع",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.8.items.2": {
       "source": "Compiler Format",
       "sourceHash": "860f09eb8585d28b34df9ca135b935c2377421c833b80fe5fc74795e89c194b0",
       "text": "تنسيق المصرّف",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.8.items.3": {
       "source": "Run / Simulate",
       "sourceHash": "fd811d046fcad57c21b25a6828eecd460f86690b5f855b6ee542923ca1b75f53",
       "text": "تشغيل / محاكاة",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.8.label": {
       "source": "Developer Tooling",
       "sourceHash": "5019fbfb8b82150ccc1385e6c3e8c47e50713b01540929f69d2d08f302119184",
-      "text": "أدوات المطوّرين",
+      "text": "أدوات المطورين",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.8.text": {
       "source": "Compiler diagnostics, expand, format, and playground runs make service logic visible before it reaches a live node.",
       "sourceHash": "05a7ab2ea6fe36d0a2445d33aa9454e7f5c38bf25664b011bd830ec5c91d9409",
-      "text": "تكشف تشخيصات المصرّف والتوسيع والتنسيق وتشغيل Playground منطق الخدمة قبل وصوله إلى عقدة حية.",
+      "text": "تجعل تشخيصات المصرّف والتوسيع والتنسيق وعمليات التشغيل في Playground منطق الخدمة مرئيًا قبل وصوله إلى عقدة حية.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.clusters.8.title": {
       "source": "LSP + Playground",
       "sourceHash": "2360602921505c6f01232eba07a7cbda0b0744052534db0c6d51ba565c75dac4",
       "text": "LSP + Playground",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.detailBusiness": {
+      "source": "Scale horizontally without asking applications to repair partially committed state with Saga compensation.",
+      "sourceHash": "f72b6475f41ca3a850aa0d0cdd2b6ec39be54f32015fc5d71d447b2a1be6548c",
+      "text": "توسّع أفقيًا من دون إلزام التطبيقات بإصلاح حالة مثبّتة جزئيًا عبر تعويض Saga.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.detailTechnical": {
+      "source": "The target model stages updates on every participating shard behind one transaction boundary. If any shard-local call fails, all staged updates are discarded before becoming observable. Cross-shard execution is not implemented in the current runtime.",
+      "sourceHash": "caac41f8fa7c8c53d98cd3951b0bc8bf78734735d15c2f13f0c925c156480d44",
+      "text": "يجهّز النموذج المستهدف التحديثات على كل شاردة مشاركة خلف حدّ معاملة واحد. وإذا فشل أي استدعاء محلي داخل شاردة، تُهمَل جميع التحديثات المجهّزة قبل أن تصبح قابلة للملاحظة. التنفيذ العابر للشاردات غير مطبّق في بيئة التشغيل الحالية.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.detailTitle": {
+      "source": "One transaction across many shards — Roadmap",
+      "sourceHash": "ba4e139e5bd4da13615d4e114f424e00813c50bb7f21834c020ad175b458f002",
+      "text": "معاملة واحدة عبر شاردات متعددة — خارطة الطريق",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.items.0": {
+      "source": "Cross-Shard",
+      "sourceHash": "683fde5d4338370dbaae46720063453cfa2d11de4a39fd483df91b232fbc0a03",
+      "text": "عبر الشاردات",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.items.1": {
+      "source": "One Transaction",
+      "sourceHash": "8195d5365f3d7200229a6636f233e600ab981894a078a5548d17c2851b773363",
+      "text": "معاملة واحدة",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.items.2": {
+      "source": "All-or-Nothing",
+      "sourceHash": "20637fd27282632ef8cae3745e3b14b82ea032e2a4622ec08d84e7582b0d7a8c",
+      "text": "الكل أو لا شيء",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T09:42:31.824Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.items.3": {
+      "source": "No Partial State",
+      "sourceHash": "901ca85b446a0c803924f3b98db8ca2db34a74d43b2d72e4c74275866c9ad55f",
+      "text": "لا حالة جزئية",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.label": {
+      "source": "Roadmap · Sharding",
+      "sourceHash": "368a29a848fa3631e3989369e5a5239712758ed5e1d89c3a5fbc58a3d6f84abc",
+      "text": "خارطة الطريق · الشاردات",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.runtimeBusiness": {
+      "source": "Horizontal scale should not force applications to recover from half-completed shard interactions.",
+      "sourceHash": "66f4f8802c15d835ba54b717fb0fd9e5f772e3d647f766aec00c366648bb37f0",
+      "text": "لا ينبغي للتوسّع الأفقي أن يجبر التطبيقات على التعافي من تفاعلات بين الشاردات لم تكتمل إلا جزئيًا.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.runtimeLabel": {
+      "source": "Architecture Target",
+      "sourceHash": "deeaa9c55f0c6ba3f3bafa3d02fee58fa1327f8f7f47ffc9d70cd156c7db1e17",
+      "text": "هدف معماري",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.runtimeTechnical": {
+      "source": "The design requires all participating shard-local effects to commit together or abort together, while tentative intermediate state remains unobservable. Cross-shard execution remains on the roadmap.",
+      "sourceHash": "7ec6a19b13cf440ecb4a5feac63fad6746b744c4910497b8d097a922748c309d",
+      "text": "يشترط التصميم تثبيت جميع التأثيرات المحلية في الشاردات المشاركة معًا أو إلغاءها معًا، مع إبقاء الحالة المرحلية المؤقتة غير قابلة للملاحظة. ويظل التنفيذ عبر الشاردات ضمن خارطة الطريق.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.runtimeTitle": {
+      "source": "Horizontal atomicity\nacross shards",
+      "sourceHash": "0d88f7ab18f65dd7385c2e1977eb0667446e209d45cfcb00287645bbe8c058c4",
+      "text": "الذرّية الأفقية\nعبر الشاردات",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.text": {
+      "source": "Design target: extend the same all-or-nothing transaction boundary across shards. Every shard-local effect commits together or none does, and unrelated transactions should never observe a partial cross-shard result.",
+      "sourceHash": "38780bb0a313e9c654692d714f856c1b1a3bffd85f9577745111c4168272b47f",
+      "text": "هدف التصميم: توسيع حد المعاملة القائم على مبدأ الكل أو لا شيء عبر الشاردات. تُثبّت جميع التأثيرات المحلية في الشاردات معًا أو لا يُثبّت أيٌّ منها، ولا ينبغي للمعاملات غير المرتبطة أن ترى نتيجة جزئية عبر الشاردات.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+    },
+    "home.sections.2.clusters.9.title": {
+      "source": "Horizontal Atomicity",
+      "sourceHash": "f30ca5a66d386d759ca910f70e80868ac27ea28fa1987ca0399b5b463167eb41",
+      "text": "الذرّية الأفقية",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.2.combinations.0.business": {
       "source": "Replaces shared API keys with explicitly passed, attenuated authority; budget and time-window policy remain product-layer targets.",
@@ -4452,12 +4548,12 @@
       "reviewerNotes": "AI-assisted native Arabic review for official-site copy, terminology, and RTL."
     },
     "home.sections.2.core.runtimeLabel": {
-      "source": "Virtual Machine Abstraction",
-      "sourceHash": "4a024c42f0e278b92a2953820d1bd6b89d9cffc986f81b24ca3af0da1a6749a8",
-      "text": "تجريد الآلة الافتراضية",
+      "source": "ALUX Runtime",
+      "sourceHash": "9bc3aad42d6a21105af1f51de30c0eda6d3cc3263053398943c6eaea0040f231",
+      "text": "بيئة تشغيل ALUX",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.2.core.runtimeTechnical": {
       "source": "TVM execution, Native OCAP Support, cross-block commit logic, and BlockGit finality meet inside one runtime abstraction.",
@@ -4468,20 +4564,20 @@
       "reviewerNotes": "Reviewed against the current English homepage source."
     },
     "home.sections.2.core.runtimeTitle": {
-      "source": "ALUX Runtime\nforms one logical layer",
-      "sourceHash": "8aa7a8d9daa56a46cde35e272528d04a053ff0e136b879da42b0f2dc1b774dc7",
-      "text": "بيئة تشغيل ALUX\nتشكّل طبقة تنفيذ منطقية واحدة",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:36:46.018Z",
-      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
+      "source": "One logical execution layer",
+      "sourceHash": "ea65ac170d44deeb89d3fd9f29b955932f558569866b899f198a808953189a86",
+      "text": "طبقة تنفيذ منطقية واحدة",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.2.core.text": {
-      "source": "One logical execution layer where concurrent TVM execution, Native OCAP Support, cross-block atomicity, and BlockGit finality compose beneath the developer-facing GLVM abstraction.",
-      "sourceHash": "9c89b76617ff0dc2f72b59dd6e9726d36a4cfd6fdc969241fff2ed786613fe08",
-      "text": "طبقة تنفيذ منطقية واحدة يلتقي تحت تجريد GLVM الموجّه للمطورين فيها تنفيذ TVM المتزامن، والدعم الأصلي لـ OCAP، والذرية عبر الكتل، ونهائية BlockGit.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-26T08:36:46.018Z",
-      "reviewerNotes": "GLVM homepage terminology and maturity boundary aligned with the current technical memorandum."
+      "source": "GLVM brings concurrent TVM execution, native OCAP support, cross-block atomicity, and BlockGit finality together as one logical execution layer.",
+      "sourceHash": "8b284cb4060d11d20a78200ff9da0cc550617fdcd25128a510202c5594f03edd",
+      "text": "تجمع GLVM تنفيذ TVM المتزامن، والدعم الأصلي لـ OCAP، والذرّية عبر الكتل، ونهائية BlockGit في طبقة تنفيذ منطقية واحدة.",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.2.core.title": {
       "source": "ALUX Runtime",
@@ -4676,236 +4772,236 @@
       "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "home.sections.6.cta.text": {
-      "source": "Use Runtime Lab to inspect fork, wait, join, select, replay, and atomic commit across the ALUX execution model.",
-      "sourceHash": "0d9111beabe957b21809ce6fd01e855558eaf96dc7af456cde0919933993bd9a",
-      "text": "استخدم مختبر بيئة التشغيل لفحص التفرّع والانتظار والجمع والاختيار وإعادة التشغيل والتثبيت الذري ضمن نموذج تنفيذ ALUX.",
+      "source": "Use Runtime Lab to inspect fork, wait, join, external input, replay, and atomic finalization across the ALUX execution model.",
+      "sourceHash": "d0a405f17fc378ecfc6eaeaea626debc2a9bba795e7002fa49f00be097a72d5f",
+      "text": "استخدم Runtime Lab لفحص التفرّع والانتظار والجمع والمدخلات الخارجية وإعادة التشغيل والإتمام الذرّي عبر نموذج تنفيذ ALUX.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.6.cta.title": {
-      "source": "Explore concurrent programs that orchestrate and commit atomically.",
-      "sourceHash": "c0c5f11afa2a6f44dbaaba36bf125798ec26a24769e5d4ee2a936bf8c655ea78",
-      "text": "استكشف برامج متزامنة تنسّق العمليات وتثبّت نتائجها ذريًا.",
+      "source": "Explore the runtime primitives behind long-running workflows.",
+      "sourceHash": "09fd30474a0f6cb9ca0b2d53052b07308d4c2a33099e86d46fae43bac1fcd725",
+      "text": "استكشف بدائيات بيئة التشغيل التي تقوم عليها مسارات العمل طويلة الأمد.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.6.demos.0.label": {
-      "source": "reservation.tox",
-      "sourceHash": "b968241dd9e6caad3f4167c0da90feccbfb25c219db3f3837736ba66432db3f6",
-      "text": "reservation.tox",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "durable-agent.tox",
+      "sourceHash": "7c52f3eed9f755861c8f921ae8e6f8afbc179071bec3d68c1112f37c7a986db2",
+      "text": "durable-agent.tox",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.0.status": {
-      "source": "LIVE TRACE",
-      "sourceHash": "b553a3650c45b7438000814f482dcef4257e01ae0a15c3e9d6d048359bf860d2",
-      "text": "تتبّع مباشر",
+      "source": "RUNTIME + APP INTEGRATION",
+      "sourceHash": "d075e8f4465464a559d5a6282a707b83b52a7479427778925f5aa9a2b5bb4f2e",
+      "text": "بيئة التشغيل + تكامل تطبيقي",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.0.steps.0": {
-      "source": "Spawn",
-      "sourceHash": "0fc12ed14135db008d0eb5b87113feec1e3871ba7b35373cd20aebd119a69896",
-      "text": "إطلاق",
+      "source": "Fork agents",
+      "sourceHash": "9a84a34048a001a91ee38db37c133a4b579a7c71b147b1dd56d1ee8ed81d24cb",
+      "text": "تفريع الوكلاء",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.0.steps.1": {
-      "source": "Wait",
-      "sourceHash": "26b83994dca8b4b483edc45464ba07a5bde05cb7e6c5c61bb2e66da9d1e15fc7",
-      "text": "انتظار",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Call Claude",
+      "sourceHash": "3673ef9ffb0b913d27b563a3531ecbeb9301c8929154880ba8b93c6136bb8ccd",
+      "text": "استدعاء Claude",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.0.steps.2": {
-      "source": "Join",
-      "sourceHash": "fd30fe681b4b2d9e55f851cb34641f907401aa43e9d80f5b1e14ce714ef00497",
-      "text": "جمع",
+      "source": "Wait for human",
+      "sourceHash": "00f968a61d03216d28150644b97ac809489f3a4b085b987c3a14ff6d408ff2e9",
+      "text": "انتظار مدخل المستخدم",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.0.steps.3": {
-      "source": "Select",
-      "sourceHash": "2a78025de6aae5e7ff88e5a951bb3a78ddd67388913529cf9e2dd9653e62b02d",
-      "text": "اختيار",
+      "source": "Join all",
+      "sourceHash": "522f0efb6c1348c636b2eb9b47239375fa48620a64ebd1c44a1091ecb3c06dc1",
+      "text": "ضمّ جميع النتائج",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.0.steps.4": {
-      "source": "Commit",
-      "sourceHash": "82a9c46ffa4789945d9f2359d75891558ef6faa8dee09e4b25e4e0597704f5bd",
-      "text": "تثبيت",
+      "source": "Continue",
+      "sourceHash": "31fbef162594de01bab0cd525c51f74de7bcb15063029fa1a54b2cf5944c80d8",
+      "text": "المتابعة",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.1.core": {
-      "source": "TVM / TSAC",
-      "sourceHash": "a270b8a5a850ddef0afca4bf91ce98d5e4309f8c0bb364666d03f0ecc18f7320",
-      "text": "TVM / TSAC",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "JOIN → MEDIAN",
+      "sourceHash": "fb53e6daefd52382fafbafcdf91dbfea3352c7a81539b79dafe3fc9d843275a3",
+      "text": "JOIN → MEDIAN",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.1.label": {
-      "source": "EVM workload",
-      "sourceHash": "0dc7f47c577a3a7df08c3b48e2964e4b343c08cd00dca34c1bfe59d218b93ed6",
-      "text": "حمل EVM",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "btc-median.tox",
+      "sourceHash": "1a299b3aef3cb2d93d69c8fcaf7d99904e96daeca1e6020475dd0d5ac258ebaa",
+      "text": "btc-median.tox",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.1.lanes.0": {
-      "source": "EVM 01",
-      "sourceHash": "cd83f92882db05f9bd243f1c5a629472a76a83e20579792dadad986060da642d",
-      "text": "EVM 01",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "BINANCE",
+      "sourceHash": "4c120812a73696ba998aeecab386d93a9b17332e36d6ef2c0294b8a6c6d03319",
+      "text": "BINANCE",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.1.lanes.1": {
-      "source": "EVM 02",
-      "sourceHash": "88ecf02ff7b5dc3e7d8970f190193043138f142729b265eeab315780adb8bebb",
-      "text": "EVM 02",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "COINBASE",
+      "sourceHash": "d30a0534c66ec66cd5b828571a069bc70e8ae8d0fdbe46960d544d841afb7271",
+      "text": "COINBASE",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.1.lanes.2": {
-      "source": "EVM 03",
-      "sourceHash": "5d5e1708716cfcd52e5f19b772f7fb280860d06e6422991a1ccf162a388e997a",
-      "text": "EVM 03",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "KRAKEN",
+      "sourceHash": "4af48028c201dbff2d25bb1d4b742f0944266107d09502270f7e2214b365a174",
+      "text": "KRAKEN",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.1.status": {
-      "source": "3 INSTANCES",
-      "sourceHash": "966bc109117521ade360db21dbc79a1612e4fcd73b022601ea1a24425f49d9d6",
-      "text": "3 مثيلات",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "SUPPORTED I/O PATH",
+      "sourceHash": "80e14f06349654836e1d8f64d3705faec38bfaeab7b982a13b6f5c9d8cd0d07c",
+      "text": "مسار I/O مدعوم",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.2.footer": {
-      "source": "Target: settle together",
-      "sourceHash": "8cdfa9996dff51b5a5a1ca648ffca6a19c0534c9e6b2bddf3d9405085f9f6ae7",
-      "text": "المستهدف: التسوية معًا",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Both commit or both abort",
+      "sourceHash": "dc644194a5164b413691aa54c2b8df4aae599f2e3189b5c1b3d9a0118dfde1e5",
+      "text": "إما تثبيتهما معًا أو إلغاؤهما معًا",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.2.label": {
-      "source": "service commit",
-      "sourceHash": "a1cfea32fe28637e5ac043ed6f06c7180ebf82ccb81c3b15d072df58caf6c8b6",
-      "text": "تثبيت الخدمة",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "ticket settlement",
+      "sourceHash": "e6a7f0ae4e573f8cc0c9247e4433d23e524e60bae51126912c977dd747317073",
+      "text": "تسوية التذكرة عبر الشاردات",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.2.nodes.0": {
-      "source": "CHAIN",
-      "sourceHash": "945c72078d9c878587e1d29181b97a50b88187b7969792478a28ba1f512c5ca3",
-      "text": "السلسلة",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "PAYMENT / A",
+      "sourceHash": "656d9e483450b180def8e3af567f664b0f351ad05aca7038290163d3e2c4ad79",
+      "text": "الدفع / A",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.2.nodes.1": {
-      "source": "API",
-      "sourceHash": "c8e5998f6a3955c21d858936fe05c69621724d7f825c6e17793002a0fa798bf9",
-      "text": "API",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "ATOMIC LINK",
+      "sourceHash": "a05b2988333223cce773e5d70f4b7b64f06bad6bfe9525fc0158c2f18f3c4c4d",
+      "text": "رابط ذرّي",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.2.nodes.2": {
-      "source": "DATABASE",
-      "sourceHash": "8e66390792b30692e51e2a8c8cc72d201cf528592c72df8accfe2d9459a4eaee",
-      "text": "قاعدة البيانات",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "TICKET / B",
+      "sourceHash": "6f390a1c305e7012b65b5ba22921ef3a3bdd13c4f1d3526a94a11c798983e06b",
+      "text": "التذكرة / B",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.2.status": {
-      "source": "TARGET MODEL",
-      "sourceHash": "96e166d56cc32dfc32edaaf99b43b0676266d0d5e2d7f6da2148bc2bc071bc17",
-      "text": "النموذج المستهدف",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "ROADMAP",
+      "sourceHash": "020784845889124b43389c30cbfd03c3b9662f5e17671583a8dc283c24cb6ea3",
+      "text": "خارطة الطريق",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.label": {
-      "source": "capability",
-      "sourceHash": "38a5be91af79d7e5ba9809bf383c699b6864ee50446239fe56a45e32b84638fe",
-      "text": "صلاحية",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Purse containing 1 ALUX",
+      "sourceHash": "a2cb24bc1e098e08fcb1a896727caa0cec28d80fbc0da4c6648a08a0c825d9e2",
+      "text": "محفظة تحوي 1 ALUX",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.rows.0.0": {
-      "source": "namespace",
-      "sourceHash": "9359f3bb2efa7aabd0264fb67fb1d99f91871778e9b887179d6b2debaa251ec6",
-      "text": "مساحة الأسماء",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Alice",
+      "sourceHash": "3bc51062973c458d5a6f2d8d64a023246354ad7e064b1e4e009ec8a0699a3043",
+      "text": "أليس",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.rows.0.1": {
-      "source": "orders/write",
-      "sourceHash": "54873c0c92932eb1ae77fdc31433f179b46d77143184471afd257e404fb6951b",
-      "text": "orders/write",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Use within 10 days",
+      "sourceHash": "fc038b1e503b696198685305f208466de5788236449543ddb611dd5beb166d7e",
+      "text": "الاستخدام خلال 10 أيام",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.rows.1.0": {
-      "source": "holder",
-      "sourceHash": "6e45386daeb0b86da1ac4c609001d1e973f90314f0b709175264865c42dc6ba7",
-      "text": "الحامل",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Bob",
+      "sourceHash": "cd9fb1e148ccd8442e5aa74904cc73bf6fb54d1d54d333bd596aa9bb4bb4e961",
+      "text": "بوب",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.rows.1.1": {
-      "source": "service-b",
-      "sourceHash": "8a3829c7b6f79a216413cdcc5e5fb213fa2e31d5c8f6e2c3fc20f4a62f2e1e42",
-      "text": "service-b",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Books only",
+      "sourceHash": "af3f3977d31ee417f487f86485cb33536174ecdaf2e723c482ab90dfb9105cf1",
+      "text": "لشراء الكتب فقط",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.rows.2.0": {
-      "source": "rights",
-      "sourceHash": "8c659fe8cb2e010d03e69f59a3de8d7c360480f85537f288067aee82fe98cf80",
-      "text": "الحقوق",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Carole",
+      "sourceHash": "356f728ecebc056b9b0c68d8929a54aba7d858448c7412461b39c42f4e67e219",
+      "text": "كارول",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.rows.2.1": {
-      "source": "scoped",
-      "sourceHash": "abc3d82314f3edc1385fc7b9b0b092c801b9db30cefdc11fe04ee4be9685cd6d",
-      "text": "محددة النطاق",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "Both rules apply",
+      "sourceHash": "3ae40a89d557c2116c2367735b68402412f00347de243e75096ef1eeede437aa",
+      "text": "تُطبّق القاعدتان معًا",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.demos.3.status": {
-      "source": "DELEGATED",
-      "sourceHash": "cd49c5f8077b78ed0a20434daff7e8a2fc0b0691407fb33f144ff5f1b5673de7",
-      "text": "مفوّضة",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "APPLICATION POLICY",
+      "sourceHash": "c15de6fa8b1c753e536725256579f81a9d14a41c87a35acb4307f4c0c8c7a205",
+      "text": "منطق التطبيق",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.eyebrow": {
       "source": "Use Cases",
@@ -4916,81 +5012,81 @@
       "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "home.sections.6.items.0.0": {
-      "source": "Long-Running Process Orchestration",
-      "sourceHash": "ce71b56e880f973e3f98d6bfd09eccd6afd6b7cc318ea39cb44b8cdda23d8489",
-      "text": "تنسيق العمليات طويلة الأمد",
+      "source": "Long-Running AI Agents on Chain",
+      "sourceHash": "e806408ae2a5d92e25595476610c668a7b0affb32a28e51e7820f1a411303377",
+      "text": "وكلاء ذكاء اصطناعي يعملون طويلًا على السلسلة",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.items.0.1": {
-      "source": "Fork processes, wait for inputs, join results from multiple channels, or select whichever event becomes ready first—without restarting the transaction.",
-      "sourceHash": "d9bdaa277475a00e01f784f896d56d97c5aed82c5402ffb349dcf92a12860f85",
-      "text": "فرّع العمليات، وانتظر المدخلات، واجمع النتائج من قنوات متعددة، أو اختر الحدث الذي يصبح جاهزًا أولًا—من دون إعادة تشغيل المعاملة.",
+      "source": "A workflow starts several agents in parallel. Some call the Claude API, while other steps wait for user input. The main agent continues only after every branch finishes, even when the workflow runs for about 30 minutes. Claude and user input connect at the application layer; ALUX provides durable fork, wait, join, capability passing, and replayable execution.",
+      "sourceHash": "755f159b851633ea58ab36b0e302056d3fda460086aa70c69341ce85ba15a2b0",
+      "text": "تبدأ سيرورة العمل عدة وكلاء بالتوازي. يستدعي بعضهم واجهة Claude API، بينما تنتظر خطوات أخرى مدخلات المستخدم. ولا يواصل الوكيل الرئيسي عمله إلا بعد اكتمال جميع الفروع، حتى لو استغرقت السيرورة نحو 30 دقيقة. يتصل Claude ومدخلات المستخدم على مستوى التطبيق؛ ويوفّر ALUX عمليات fork وwait وjoin المستديمة، وتمرير القدرات، والتنفيذ القابل لإعادة التشغيل.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.items.1.0": {
-      "source": "Concurrent EVM Applications",
-      "sourceHash": "2c7c09363adbe81548c65850563fa85d33751f72805a9ce7ae86f44cd36fbf2f",
-      "text": "تطبيقات EVM متزامنة",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "source": "BTC Price Aggregation from Three Exchanges",
+      "sourceHash": "1f14eb50c61fadeb3369db32f4c2a4578179fb39371081cc589050c0a9f6a297",
+      "text": "تجميع سعر BTC من ثلاث منصات تداول",
+      "status": "human-reviewed",
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.items.1.1": {
-      "source": "Run EVM bytecode inside isolated sandboxes, coordinate concurrent workloads through TVM, and migrate supported contracts through familiar Ethereum-facing interfaces.",
-      "sourceHash": "7129801cbf6bfb2a9f762408fdd81ace6452596e9b01ebddf173409c46bd68d0",
-      "text": "شغّل شيفرة EVM البايتية داخل بيئات وضع حماية معزولة، ونسّق أحمال العمل المتزامنة عبر TVM، وانقل العقود المدعومة من خلال واجهات Ethereum المألوفة.",
+      "source": "A contract starts three parallel processes through configured external-I/O adapters to read BTC prices from Binance, Coinbase, and Kraken. A fourth process waits for all three, joins their results, normalizes the quotes, computes the median, and then continues. ALUX makes the execution reproducible; the selected endpoints still determine source truth.",
+      "sourceHash": "33580b07be3aa7bc77b0df6c6bcb5c0f51ef672b05829f255741066f691f57ab",
+      "text": "يبدأ العقد ثلاث عمليات متوازية عبر مهايئات إدخال/إخراج خارجية مهيّأة لقراءة أسعار BTC من Binance وCoinbase وKraken. وتنتظر عملية رابعة اكتمال العمليات الثلاث، ثم تضمّ نتائجها وتوحّد صيغ الأسعار وتحسب الوسيط قبل متابعة التنفيذ. يجعل ALUX التنفيذ قابلًا لإعادة الإنتاج، بينما تظل نقاط النهاية المختارة هي مصدر الحقيقة.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.items.2.0": {
-      "source": "Atomic Cross-System Workflows",
-      "sourceHash": "fd54302666522ebfa7eb8959aab99018fdecbc535a2d23678a933c3dc17c3993",
-      "text": "مسارات عمل ذرية بين الأنظمة",
+      "source": "Cross-Shard Atomic Execution",
+      "sourceHash": "1e36711150e6555fd4acdf62650a8575c07043d2fc1602b19b5092520bf2b41c",
+      "text": "تنفيذ ذرّي عبر الشاردات",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.items.2.1": {
-      "source": "Stage work across blocks and connected systems, then commit the complete transaction all-or-nothing instead of exposing partial state.",
-      "sourceHash": "0e0f2eb2b4c2295ec78f1488a9dac8eafc3fe1661e35c5d5b11263c34329d2b9",
-      "text": "حضّر العمل عبر الكتل والأنظمة المتصلة، ثم ثبّت المعاملة كاملة وفق مبدأ «الكل أو لا شيء» بدلًا من كشف حالة جزئية.",
+      "source": "Contract a on Shard A stages payment for a ticket managed by contract b on Shard B. If b fails because the ticket is already sold, a's payment is rolled back. Only when both steps succeed do payment and ticket ownership commit together; other transactions see neither partial state. Cross-shard atomic execution is a roadmap target, not a live capability today.",
+      "sourceHash": "1a73c5f8ee1e0bf02979036dea3087f955fef30321b76c61ac92943050ee614d",
+      "text": "يجهّز العقد a في الشاردة A دفعةً لتذكرة يديرها العقد b في الشاردة B. وإذا فشل b لأن التذكرة بيعت بالفعل، تُلغى دفعة a أيضًا. ولا يُثبّت الدفع وملكية التذكرة معًا إلا عند نجاح الخطوتين؛ لذلك لا ترى المعاملات الأخرى حالة جزئية. التنفيذ الذرّي عبر الشاردات هدف ضمن خارطة الطريق، وليس قدرة متاحة حاليًا.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.items.3.0": {
-      "source": "Native OCAP Applications",
-      "sourceHash": "b432db53ec8bd15229e87ed9b26893d7e364aaeecae0c625ab65ff9327abe377",
-      "text": "تطبيقات ذات دعم OCAP مدمج",
+      "source": "Programmable Money with Composable Rules",
+      "sourceHash": "bde15bc939ed41ab86b5cff846e3f38a1cbcfa4e76ea4aeff115c564ddc70200",
+      "text": "أموال قابلة للبرمجة بقواعد قابلة للتركيب",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.items.3.1": {
-      "source": "Compose task-specific, unforgeable capabilities between processes instead of letting identity carry unrelated ambient authority into every task.",
-      "sourceHash": "ae1087aa3abe62594aaa9e0f8647674283f1fd0582850ebf9e30da964dd58a5a",
-      "text": "ركّب قدرات خاصة بالمهمة وغير قابلة للتزوير بين العمليات، بدلًا من أن تحمل الهوية إلى كل مهمة صلاحيات محيطية لا علاقة لها بها.",
+      "source": "Alice gives Bob a purse containing 1 ALUX and adds a rule: the funds must be used within 10 days. When Bob gives the same purse to Carole, he adds a second rule: it may be used only to buy books. Carole must satisfy both rules, and passing the purse does not duplicate the funds. The time limit and spending rule are enforced by application logic.",
+      "sourceHash": "fa845cda7faef4b9037d602fc2d28f55e201e01d95806c8581011c2083653cae",
+      "text": "تعطي أليس بوب محفظة تحوي 1 ALUX، وتضيف قاعدةً تلزم باستخدام الأموال خلال 10 أيام. وعندما يعطي بوب المحفظة نفسها لكارول، يضيف قاعدةً ثانية تقصر استخدامها على شراء الكتب. يجب على كارول الالتزام بالقاعدتين، كما أن تمرير المحفظة لا ينسخ الأموال. تُنفَّذ قاعدة المدة وقاعدة الاستخدام بمنطق التطبيق.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T14:49:11.059Z",
+      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
     },
     "home.sections.6.text": {
-      "source": "Build decentralized applications as concurrent programs: processes can fork, wait, join multiple channels, select the first available event, coordinate across blocks, and commit all-or-nothing.",
-      "sourceHash": "ea9f783a586ab857b57f153f82eca9581d2a11822f00fefd8dd1d6816ad496ad",
-      "text": "ابنِ التطبيقات اللامركزية كبرامج متزامنة: يمكن للعمليات أن تتفرّع، وتنتظر، وتجمع نتائج قنوات متعددة، وتختار أول حدث متاح، وتنسّق العمل عبر الكتل، ثم تُثبّت النتيجة كاملة أو لا تُثبّت منها شيئًا.",
+      "source": "Build workflows that keep their context while they wait, coordinate parallel work, and settle as one result. Current capabilities and roadmap targets are labeled separately.",
+      "sourceHash": "aeccfc46565169a6d539fb201bd7e7a0b41ff9cb2e61ac2f0b29270651625978",
+      "text": "ابنِ مسارات عمل تحتفظ بسياقها أثناء الانتظار، وتنسّق العمل المتوازي، وتُسوّي كل ذلك كنتيجة واحدة. تُوسَم القدرات الحالية وأهداف خارطة الطريق كلٌّ على حدة.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.6.title": {
       "source": "What You Can\nBuild on ALUX",
       "sourceHash": "cc4ddf9d77ff27c6be307dec6023913df9d999a5fb88e076b8feb91430f0735a",
-      "text": "ما الذي يمكنك بناؤه\nعلى ALUX",
+      "text": "ما الذي يمكنك\nبناؤه على ALUX",
       "status": "ai-reviewed",
       "reviewedAt": "2026-07-14T22:00:46.081Z",
       "reviewerNotes": "Source line break updated for mobile semantic wrapping; the reviewed Arabic wording remains accurate."
@@ -5036,12 +5132,12 @@
       "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "home.sections.9.items.1.1": {
-      "source": "ALUX programs can fork into concurrent processes, wait for external inputs, join results from multiple channels, select the first event that becomes ready, and still commit the complete transaction atomically. Replay and commit mechanisms let validators reproduce the same outcome without exposing partial state.",
-      "sourceHash": "f7f758c66e44ea5e25ebc3be9b4a201c9d83621304d4774030035d88feff88e6",
-      "text": "يمكن لبرامج ALUX أن تتفرّع إلى عمليات متزامنة، وتنتظر مدخلات خارجية، وتجمع النتائج من قنوات متعددة، وتختار أول حدث يصبح جاهزًا، مع تثبيت المعاملة كاملة بصورة ذرية. وتتيح آليات إعادة التشغيل والتثبيت للمدقّقين إعادة إنتاج النتيجة نفسها من دون كشف أي حالة جزئية.",
+      "source": "ALUX extends the smart-contract model into a decentralized durable execution engine for long-running jobs. A workflow can run concurrent processes, suspend across blocks, wait for external tools or people, resume, and join results without exposing half-completed state. Runtime-mediated external channels can interact with supported off-chain services without separate oracle-and-relayer choreography. The architecture is designed to extend the same atomic model horizontally, so cross-shard effects commit or abort together; cross-shard execution remains on the roadmap.",
+      "sourceHash": "d413c6111b1227eb5d9b78ea95f26f8dd09a3ce70967550fbd2a13c0d8b1f0e7",
+      "text": "يوسّع ALUX نموذج العقود الذكية ليصبح محرك تنفيذ دائمًا ولا مركزيًا للمهام طويلة الأمد. ويمكن لمسار العمل تشغيل عمليات متزامنة، والتعليق عبر الكتل، وانتظار أدوات خارجية أو أشخاص، ثم الاستئناف وجمع النتائج من دون كشف حالة نصف مكتملة. كما تستطيع القنوات الخارجية التي تديرها بيئة التشغيل التفاعل مع الخدمات المدعومة خارج السلسلة من دون تنسيق منفصل بين أوراكل ومرحّل. وصُممت البنية لتمديد النموذج الذرّي نفسه أفقيًا، بحيث تُثبّت التأثيرات عبر الشاردات معًا أو تُلغى معًا؛ إلا أن التنفيذ عبر الشاردات لا يزال ضمن خارطة الطريق.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.9.items.2.0": {
       "source": "Why is ALUX built for AI agents?",
@@ -5052,12 +5148,12 @@
       "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "home.sections.9.items.2.1": {
-      "source": "An on-chain agent is naturally a Long Transaction. Calling an LLM or a tool takes time; it cannot complete instantly—one only has to look at a Claude Code or Codex session. In other words, ALUX is a decentralized durable execution engine for agents.",
-      "sourceHash": "f49b9c95957b3abbc06f4eb3ea41e6fa378d7d0ae1031744f6ecfcb1ac5c5823",
-      "text": "الوكيل العامل على السلسلة هو بطبيعته معاملة طويلة الأمد (Long Transaction). يستغرق استدعاء نموذج لغوي كبير (LLM) أو أداة وقتًا، ولا يمكن أن يكتمل فورًا—ويكفي النظر إلى جلسة Claude Code أو Codex. بعبارة أخرى، ALUX محرك تنفيذ دائم ولا مركزي للوكلاء.",
+      "source": "An on-chain agent is naturally a Long Transaction. Calling an LLM or a tool takes time; waiting for a human response also takes time. The workflow cannot be forced into an instant, one-block call. ALUX lets it preserve execution context, suspend, resume when inputs arrive, coordinate concurrent agents, and finalize through replayable execution.",
+      "sourceHash": "df333f66345d61258048f65cb633e52a05c3b00d8e55af7e07e078de81515eb5",
+      "text": "الوكيل العامل على السلسلة هو بطبيعته معاملة طويلة الأمد (Long Transaction). يستغرق استدعاء نموذج لغوي كبير (LLM) أو أداة وقتًا، كما يستغرق انتظار ردّ بشري وقتًا أيضًا. لذلك لا يمكن اختزال مسار العمل في استدعاء فوري ضمن كتلة واحدة. يتيح ALUX له الاحتفاظ بسياق التنفيذ، والتعليق، والاستئناف عند وصول المدخلات، وتنسيق وكلاء متزامنين، والإتمام عبر تنفيذ قابل لإعادة التشغيل.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "reviewedAt": "2026-08-11T08:47:31.738Z",
+      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
     },
     "home.sections.9.items.3.0": {
       "source": "What is Object Capability (OCAP)?",
@@ -5072,8 +5168,8 @@
       "sourceHash": "93e65e043629b9a8c165b89d697e4c704315bf04c907aac71c2f1ef2e2cacebe",
       "text": "نموذج الصلاحيات الكائنية (Object Capability أو OCAP) هو نموذج أمني لا يمكن فيه لأي جزء من الشفرة الوصول إلى مورد إلا إذا مُنح صراحةً مرجعًا إلى ذلك المورد، أي صلاحية (capability). وفي نظام OCAP، يحدد مرجع الكائن نفسه المورد (designation) ويمنح في الوقت ذاته إذن استخدامه (authorization).",
       "status": "human-reviewed",
-      "reviewedAt": "2026-08-01T14:16:32.737Z",
-      "reviewerNotes": "Human-reviewed against Frank He's approved OCAP FAQ answer and ALUX terminology."
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Restored from Frank-approved OCAP FAQ copy after cross-session scope reconciliation."
     },
     "home.sections.9.items.4.0": {
       "source": "How does ALUX keep Long Transactions deterministic?",
@@ -5136,8 +5232,8 @@
       "sourceHash": "ea41cc4bf0f833106e0c06953c4652215ab35b8efb34c8f50f8b659c98220e42",
       "text": "يُعد نموذج الصلاحيات الكائنية (OCAP) نموذجًا أمنيًا أقوى لأن السلطة تُمثَّل بصلاحيات صريحة غير قابلة للتزوير، بدلًا من الهويات العامة أو قوائم التحكم في الوصول. وهو يتبع مبدأ «التعيين هو التفويض» (designation is authorization): فامتلاك صلاحية ما يحدد المورد ويمنح الإذن باستخدامه في آن واحد، ما يلغي السلطة المحيطة (ambient authority) ويقلل سطح الهجوم. ولأن الصلاحيات يمكن تفويضها وتضييقها وإبطالها بأمان، تصبح السياسات الأمنية محلية للكائنات المعنية بدلًا من أن تكون موزعة داخل نظام مركزي للأذونات. وهذا يجعل OCAP قابلًا للتركيب بطبيعته، بحيث يمكن بناء تطبيقات معقدة وعقود ذكية ومسارات عمل لوكلاء الذكاء الاصطناعي من مكونات مستقلة وآمنة مع الحفاظ على مبدأ أقل قدر من الصلاحيات.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-08-01T14:16:32.737Z",
-      "reviewerNotes": "Human-reviewed against Frank He's approved OCAP FAQ answer and ALUX terminology."
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Restored from Frank-approved OCAP FAQ copy after cross-session scope reconciliation."
     },
     "home.sections.9.items.8.0": {
       "source": "What does it mean for OCAP to be natively supported in ALUX?",
@@ -5152,8 +5248,8 @@
       "sourceHash": "852a9d848e7be75a47fe408e5bdc6efbd2b50eb92aefdd97fa4afb69a4a047b0",
       "text": "تطبّق الآلة الافتراضية ذات فضاء الصفوف في ALUX ‏(TVM) نموذج الصلاحيات الكائنية (OCAP) مباشرةً على مستوى البايت كود. ولا تتضمن مجموعة التعليمات أي عمليات لتزوير مراجع كائنات عشوائية أو إنشائها، ما يضمن عدم اكتساب الصلاحيات إلا عبر تفويض صريح. ويضمن ذلك أن جميع الصلاحيات غير قابلة للتزوير ولا تُنقل إلا بصورة صريحة.",
       "status": "human-reviewed",
-      "reviewedAt": "2026-08-01T14:16:32.737Z",
-      "reviewerNotes": "Human-reviewed against Frank He's approved OCAP FAQ answer and the canonical Tuple-Space Virtual Machine name."
+      "reviewedAt": "2026-08-12T00:00:00.000Z",
+      "reviewerNotes": "Restored from Frank-approved OCAP FAQ copy after cross-session scope reconciliation."
     },
     "home.sections.9.title": {
       "source": "FAQ",
@@ -7476,12 +7572,12 @@
       "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "team.sections.0.items.0.highlights.0.1": {
-      "source": "Processes interact concurrently through channels; pattern matching drives scheduling; unforgeable capability references make authority explicit.",
-      "sourceHash": "cdf0645100cd204953775df3b9695a2f0fdd1ac5efda2d0fff4fc163cf1e90c6",
-      "text": "تتفاعل العمليات بالتوازي عبر القنوات؛ وتقود مطابقة الأنماط عملية الجدولة؛ وتجعل مراجع القدرات غير القابلة للتزوير حدود الصلاحية صريحة.",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-28T00:00:00.000Z",
-      "reviewerNotes": "Founder-corrected OCAP terminology: capability references are not credentials."
+      "source": "Processes interact concurrently through channels; pattern matching is scheduling; capability credentials are authorization.",
+      "sourceHash": "d0db2f59f8d654bc07a18e6045b96f993220e3a18c9399d15291670ba2bd07c2",
+      "text": "تتفاعل العمليات بصورة متزامنة عبر القنوات؛ ومطابقة الأنماط هي الجدولة؛ وبيانات اعتماد الصلاحيات هي التفويض.",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
+      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "team.sections.0.items.0.highlights.1.0": {
       "source": "Tolang concurrent programming language",
@@ -7740,70 +7836,6 @@
       "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "team.sections.0.items.2.signals.2": {
-      "source": "DApps",
-      "sourceHash": "179d8f415ecc6b6d0dcf38cc9186f9a318832c33b4f2dbd8d9c06c346b153f3c",
-      "text": "DApps",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
-    },
-    "team.sections.0.items.3.bio.0": {
-      "source": "Ben has been building blockchain systems since 2017 — chains, platforms, and DApps — with deep roots in the Linux kernel and low-level development.",
-      "sourceHash": "d072e35b6e0ce2a6d04ca1491ea5880ece2d26b81fac1afc8b540ad775896926",
-      "text": "يبني Ben أنظمة البلوكشين منذ 2017 — سلاسل ومنصات وDApps — وله جذور عميقة في نواة Linux والتطوير منخفض المستوى.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
-    },
-    "team.sections.0.items.3.bio.1": {
-      "source": "That systems background, from C and assembler up through Rust, Go, and Solidity, is the foundation his ALUX work stands on.",
-      "sourceHash": "1bd05aea42b9ee79a6fdaba76a2f5e7141f28ba75845363b70b8c85d517c057c",
-      "text": "وتشكّل خلفيته في الأنظمة، من C ولغة التجميع وصولًا إلى Rust وGo وSolidity، الأساس الذي يقوم عليه عمله في ALUX.",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
-    },
-    "team.sections.0.items.3.links.0.0": {
-      "source": "GitHub",
-      "sourceHash": "f911e414cf6bdfc595532ab166b5ba0f63d73c021452fcdacbda363dda6ad8fb",
-      "text": "GitHub",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
-    },
-    "team.sections.0.items.3.name": {
-      "source": "Ben Li",
-      "sourceHash": "05f3b07ea12e23795e8641b3dbaf3a0888910f478abe513556a0365e5eaceeef",
-      "text": "Ben Li",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
-    },
-    "team.sections.0.items.3.role": {
-      "source": "Blockchain / Systems Developer",
-      "sourceHash": "145e5f48b1e2f0b1f8a527f4bbd2e63f590d29687a448e134dccf66f576789f1",
-      "text": "مطور بلوكشين / أنظمة",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
-    },
-    "team.sections.0.items.3.signals.0": {
-      "source": "Linux Kernel",
-      "sourceHash": "3d5dcb3212151a101a47673d421c62631e7cf15cd979a7302ddbe453ad9199d8",
-      "text": "نواة Linux",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
-    },
-    "team.sections.0.items.3.signals.1": {
-      "source": "Blockchain Systems",
-      "sourceHash": "7868e41bac61a8a69d41e28f78a701824abf03bef3f19af7e9c5702c43f1268c",
-      "text": "أنظمة البلوكشين",
-      "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
-    },
-    "team.sections.0.items.3.signals.2": {
       "source": "DApps",
       "sourceHash": "179d8f415ecc6b6d0dcf38cc9186f9a318832c33b4f2dbd8d9c06c346b153f3c",
       "text": "DApps",

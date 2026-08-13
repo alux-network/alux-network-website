@@ -56,6 +56,11 @@ body[data-page="team"] .team-portrait-wrap--alice {
 }
 ```
 
+## Archived portrait asset
+
+- `ben.svg` is retained only as a historical character-design backup.
+- It is not rendered on the public Team page and has no live multilingual member profile.
+
 ## 导出静态 SVG
 
 把内联版输出的 SVG 中所有 `var(--xxx)` 替换为该成员的实际色值，外层补上卡片底和两个光晕，存为 `assets/team/<name>.svg`。现有四个文件即为此格式，可直接参照。

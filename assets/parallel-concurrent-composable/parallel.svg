@@ -115,15 +115,6 @@
     @keyframes p-result-3 { 0%, 40% { opacity: .22; transform: scale(.92); } 46%, 91% { opacity: 1; transform: scale(1); } 98%,100% { opacity: .22; transform: scale(.92); } }
     @keyframes p-result-4 { 0%, 63% { opacity: .22; transform: scale(.92); } 69%, 91% { opacity: 1; transform: scale(1); } 98%,100% { opacity: .22; transform: scale(.92); } }
 
-    @media (prefers-reduced-motion: reduce) {
-      .p-job-1, .p-job-2, .p-job-3, .p-job-4, .p-launch-pulse, .p-result-1, .p-result-2, .p-result-3, .p-result-4 { animation: none !important; }
-      .p-job-1 { transform: translateX(1240px); opacity: 1; }
-      .p-job-2 { transform: translateX(1390px); opacity: 1; }
-      .p-job-3 { transform: translateX(1130px); opacity: 1; }
-      .p-job-4 { transform: translateX(1450px); opacity: 1; }
-      .p-launch-pulse { opacity: 0; }
-      .p-result-1, .p-result-2, .p-result-3, .p-result-4 { opacity: 1; }
-    }
   </style>
 
   <rect width="1672" height="941" fill="url(#p-bg)"/>

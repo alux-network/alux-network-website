@@ -864,18 +864,3 @@ html[dir="rtl"] body[data-page="home"] .hero-home .island-c {
   0%, 100% { transform: translateX(0); opacity: 0.5; }
   50% { transform: translateX(2px); opacity: 0.86; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  body[data-page="home"] .hero-home .orb-sun,
-  body[data-page="home"] .hero-home .orb-moon,
-  body[data-page="home"] .hero-home .floating-island,
-  body[data-page="home"] .hero-home .island-b::before,
-  body[data-page="home"] .hero-home .island-c::before {
-    animation: none;
-    transform: none;
-  }
-
-  body[data-page="home"] .hero-home .home-hero-actions > .button {
-    transition: none;
-  }
-}

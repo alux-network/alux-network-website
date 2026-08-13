@@ -136,17 +136,6 @@
     }
     @keyframes mx-dock-light { 0%, 79% { fill: #81796c; } 86%, 94% { fill: #62bb8a; } 99%,100% { fill: #81796c; } }
 
-    @media (prefers-reduced-motion: reduce) {
-      .mx-booking-token, .mx-payment-token, .mx-ready-a, .mx-ready-b, .mx-lock, .mx-shackle, .mx-glow, .mx-confirmation, .mx-dock-light { animation: none !important; }
-      .mx-booking-token, .mx-payment-token { opacity: 0; }
-      .mx-ready-a { fill: #4b9f98; opacity: 1; }
-      .mx-ready-b { fill: #b27c43; opacity: 1; }
-      .mx-lock { opacity: 1; }
-      .mx-shackle { transform: translateY(-14px) rotate(9deg); }
-      .mx-glow { opacity: .18; transform: scale(1); }
-      .mx-confirmation { transform: translate(1320px,470px); opacity: 1; }
-      .mx-dock-light { fill: #62bb8a; }
-    }
   </style>
 
   <rect width="1672" height="941" fill="url(#mx-bg)"/>
