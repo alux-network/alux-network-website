@@ -120,6 +120,17 @@ html[lang="zh"] body[data-page="glvm"] .glvm-page p:not(.eyebrow):not(.glvm-full
   }
 }
 
+@media (max-width: 360px) {
+  html[lang="zh"] body[data-page="glvm"] .glvm-continuity .glvm-extension-header h2 {
+    font-size: clamp(1.5rem, 7.6vw, 1.62rem);
+  }
+
+  html[lang="zh"] body[data-page="glvm"] .glvm-continuity .glvm-semantic-line {
+    width: fit-content;
+    white-space: nowrap;
+  }
+}
+
 body[data-page="glvm"] .glvm-definition-payoff-heading > span {
   display: block;
   margin-bottom: 9px;
