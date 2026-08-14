@@ -2686,10 +2686,10 @@
     "glvm.stack.items.7.label": {
       "source": "Guest VMs",
       "sourceHash": "4b31c61fb6db30e3235443002977b39c3b82105952bc2eae576ee010d60d0ba0",
-      "text": "来宾虚拟机",
+      "text": "客户虚拟机",
       "status": "human-reviewed",
-      "reviewedAt": "2026-08-13T00:00:00.000Z",
-      "reviewerNotes": "Standardized Guest VM terminology to 来宾虚拟机 after its bilingual first exposure in the section introduction."
+      "reviewedAt": "2026-08-14T00:00:00.000Z",
+      "reviewerNotes": "Standardized Guest VM terminology to 客户虚拟机 after its bilingual first exposure in the section introduction."
     },
     "glvm.stack.items.7.status": {
       "source": "EVM core · WASM roadmap",
@@ -2702,10 +2702,10 @@
     "glvm.stack.items.7.text": {
       "source": "The EVM runs as a stateful guest through TSAC-style coordination. WASM extends the heterogeneous-VM direction.",
       "sourceHash": "9947520b939e0502383535249f165dc102d8203d8a94b054922d6e1fe5123b23",
-      "text": "EVM 通过 TSAC 式协调，作为有状态来宾虚拟机运行；WASM 则把这套架构延伸到异构虚拟机。",
+      "text": "EVM 通过 TSAC 式协调，作为有状态客户虚拟机运行；WASM 则把这套架构延伸到异构虚拟机。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-08-13T00:00:00.000Z",
-      "reviewerNotes": "Standardized Guest VM terminology to 来宾虚拟机 after its bilingual first exposure."
+      "reviewedAt": "2026-08-14T00:00:00.000Z",
+      "reviewerNotes": "Standardized Guest VM terminology to 客户虚拟机 after its bilingual first exposure."
     },
     "glvm.stack.items.7.title": {
       "source": "EVM host · WASM roadmap",
@@ -2750,10 +2750,10 @@
     "glvm.stack.text": {
       "source": "GLVM is not a second bytecode VM. These nine architecture views—from TVM execution, object capabilities, and replay to BlockGit, guest VMs, and developer tooling—show the capability system behind its logical execution model.",
       "sourceHash": "35362835fc751bf877ced87b01c86635b574d0c95654b64a7677a6ac0cd1c6a6",
-      "text": "GLVM 不是另一种字节码虚拟机。以下九个架构切面从 TVM 执行、对象能力与重放，一路延伸到 BlockGit、来宾虚拟机（Guest VM）和开发者工具，共同呈现这一逻辑执行模型的能力体系。",
+      "text": "GLVM 不是另一种字节码虚拟机。以下九个架构切面从 TVM 执行、对象能力与重放，一路延伸到 BlockGit、客户虚拟机（Guest VM）和开发者工具，共同呈现这一逻辑执行模型的能力体系。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-08-13T00:00:00.000Z",
-      "reviewerNotes": "Reframed as architecture views and defines 来宾虚拟机（Guest VM） at its first exposure."
+      "reviewedAt": "2026-08-14T00:00:00.000Z",
+      "reviewerNotes": "Reframed as architecture views and defines 客户虚拟机（Guest VM） at its first exposure."
     },
     "glvm.stack.title": {
       "source": "Nine capability areas behind the GLVM abstraction",
@@ -2886,10 +2886,10 @@
     "glvm.status.groups.2.items.1": {
       "source": "WASM guest VM",
       "sourceHash": "80ae00aff741f282a0e3d554924aa68f70fb68abee99bbe7ff54cbf8bf2e0154",
-      "text": "WASM 来宾虚拟机",
+      "text": "WASM 客户虚拟机",
       "status": "human-reviewed",
-      "reviewedAt": "2026-08-13T00:00:00.000Z",
-      "reviewerNotes": "Standardized Guest VM terminology to 来宾虚拟机."
+      "reviewedAt": "2026-08-14T00:00:00.000Z",
+      "reviewerNotes": "Standardized Guest VM terminology to 客户虚拟机."
     },
     "glvm.status.groups.2.items.2": {
       "source": "Client-device TVM deployment",
@@ -3830,26 +3830,26 @@
     "home.sections.2.clusters.5.runtimeTechnical": {
       "source": "Supported EVM instances keep their own stack and memory while TSAC routes global-state operations into concurrent TVM coordination. Additional guest VMs remain an expansion path.",
       "sourceHash": "4e11bb04b2696109aa4e9e91771a4be3a18bf43feb0381c50c986903597db5f7",
-      "text": "受支持的 EVM 实例保留各自的栈与内存，TSAC 则将全局状态操作接入 TVM 的并发协调。更多来宾虚拟机仍是后续扩展方向。",
+      "text": "受支持的 EVM 实例保留各自的栈与内存，TSAC 则将全局状态操作接入 TVM 的并发协调。更多客户虚拟机仍是后续扩展方向。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-08-11T08:47:31.738Z",
-      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+      "reviewedAt": "2026-08-14T00:00:00.000Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy with Guest VM standardized to 客户虚拟机."
     },
     "home.sections.2.clusters.5.runtimeTitle": {
       "source": "Guest VMs run\nin isolated sandboxes",
       "sourceHash": "342ffd787c1e2b3de8bb7c15f9eb444f3f16f38a91bcbf435847624df65eff84",
-      "text": "来宾虚拟机运行于\n隔离沙箱",
+      "text": "客户虚拟机运行于\n隔离沙箱",
       "status": "human-reviewed",
-      "reviewedAt": "2026-08-11T08:47:31.738Z",
-      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+      "reviewedAt": "2026-08-14T00:00:00.000Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy with Guest VM standardized to 客户虚拟机."
     },
     "home.sections.2.clusters.5.text": {
       "source": "Supported EVM workloads run in isolated sandboxes today and coordinate with the concurrent TVM through TSAC adapters. The same compatibility layer is designed to host additional guest VMs; WASM remains on the roadmap.",
       "sourceHash": "8a4d9a24ce9c20a994532c44464f89e23bd2d6bcc3e794de3d5f41857150c993",
-      "text": "受支持的 EVM 工作负载现可在隔离沙箱中运行，并通过 TSAC 适配器与并发 TVM 协同。同一兼容层旨在承载更多来宾虚拟机；WASM 仍在路线图中。",
+      "text": "受支持的 EVM 工作负载现可在隔离沙箱中运行，并通过 TSAC 适配器与并发 TVM 协同。同一兼容层旨在承载更多客户虚拟机；WASM 仍在路线图中。",
       "status": "human-reviewed",
-      "reviewedAt": "2026-08-11T08:47:31.738Z",
-      "reviewerNotes": "Human-reviewed Simplified Chinese copy aligned with the current English homepage source and ALUX maturity boundaries."
+      "reviewedAt": "2026-08-14T00:00:00.000Z",
+      "reviewerNotes": "Human-reviewed Simplified Chinese copy with Guest VM standardized to 客户虚拟机."
     },
     "home.sections.2.clusters.5.title": {
       "source": "Heterogeneous VM Sandbox",
