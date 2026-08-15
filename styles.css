@@ -24981,9 +24981,9 @@ body[data-page="parallelConcurrentComposable"] .pcc-signal {
 
 body[data-page="parallelConcurrentComposable"] .pcc-signal > span,
 body[data-page="parallelConcurrentComposable"] .pcc-mode-button span,
-body[data-page="parallelConcurrentComposable"] .pcc-foundation-item span,
-body[data-page="parallelConcurrentComposable"] .pcc-lab-step span,
-body[data-page="parallelConcurrentComposable"] .pcc-lab-benefit span {
+body[data-page="parallelConcurrentComposable"] .pcc-foundation-item > span,
+body[data-page="parallelConcurrentComposable"] .pcc-lab-step > span,
+body[data-page="parallelConcurrentComposable"] .pcc-lab-benefit > span {
   color: #9a7655;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.72rem;
@@ -25100,6 +25100,25 @@ body[data-page="parallelConcurrentComposable"] .pcc-section-heading .pcc-intro-c
   color: #40382f;
   font-weight: 700;
   line-height: 1.58;
+}
+
+body[data-page="parallelConcurrentComposable"] .pcc-keep {
+  white-space: nowrap;
+}
+
+/*
+ * Localization wrappers only protect semantic units from breaking. They must
+ * never become visual emphasis inside Runtime Lab copy or card titles.
+ */
+body[data-page="parallelConcurrentComposable"] .pcc-page .technical-token {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: inherit !important;
+  font: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
 }
 
 html[lang="zh"] body[data-page="parallelConcurrentComposable"] .pcc-lab-intro span {
@@ -25957,7 +25976,7 @@ body[data-page="parallelConcurrentComposable"] .pcc-close-point {
   background: rgba(255, 250, 242, 0.74);
 }
 
-body[data-page="parallelConcurrentComposable"] .pcc-close-point span {
+body[data-page="parallelConcurrentComposable"] .pcc-close-point > span {
   color: #8f5d34;
   font-weight: 900;
 }
@@ -26162,7 +26181,7 @@ body[data-page="parallelConcurrentComposable"] .pcc-close-actions .button.second
     padding: 14px 16px 16px;
   }
 
-  body[data-page="parallelConcurrentComposable"] .pcc-foundation-item span {
+  body[data-page="parallelConcurrentComposable"] .pcc-foundation-item > span {
     grid-row: auto;
     padding-top: 0;
   }

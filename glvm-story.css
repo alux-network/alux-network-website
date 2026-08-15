@@ -93,10 +93,41 @@ html[lang="zh"] body[data-page="glvm"] .glvm-page p:not(.eyebrow):not(.glvm-full
     display: block;
   }
 
+  html[lang="zh"] body[data-page="glvm"] .glvm-architecture .glvm-semantic-copy-line {
+    display: block;
+  }
+
+  html[lang="zh"] body[data-page="glvm"] .glvm-architecture .glvm-semantic-copy-line + .glvm-semantic-copy-line {
+    margin-top: 0.32em;
+  }
+
+  html[lang="zh"] body[data-page="glvm"] .glvm-continuity .glvm-extension-header h2 {
+    font-size: clamp(1.72rem, 7.1vw, 1.92rem);
+    line-height: 1.16;
+  }
+
+  html[lang="zh"] body[data-page="glvm"] .glvm-continuity .glvm-semantic-line {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    white-space: nowrap;
+  }
+
   body[data-page="glvm"] .glvm-definition-payoff {
     display: block;
     width: 100%;
     padding-block: 22px 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  html[lang="zh"] body[data-page="glvm"] .glvm-continuity .glvm-extension-header h2 {
+    font-size: clamp(1.5rem, 7.6vw, 1.62rem);
+  }
+
+  html[lang="zh"] body[data-page="glvm"] .glvm-continuity .glvm-semantic-line {
+    width: fit-content;
+    white-space: nowrap;
   }
 }
 
