@@ -3816,6 +3816,11 @@ body[data-page="home"] .hero-home h1.hero-home-title--statement {
   letter-spacing: -0.055em;
 }
 
+/* Keep the English display title airy at desktop, tablet, and mobile sizes. */
+html[lang="en"] body[data-page="home"] .hero-home h1.hero-home-title--statement {
+  line-height: 1.08;
+}
+
 body[data-page="home"] .hero-home-title-line {
   display: block;
   width: fit-content;
