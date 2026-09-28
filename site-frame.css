@@ -23,7 +23,7 @@ body[data-page] .brand {
      box-shadow leaves crescent gaps at the rounded corners). */
   border: 0 !important;
   border-bottom: 7px solid #2d2118 !important;
-  box-shadow: 0 12px 22px rgba(82, 56, 31, 0.22) !important;
+  box-shadow: 0 4px 8px rgba(82, 56, 31, 0.12) !important;
 }
 
 body[data-page] .brand-logo {
