@@ -2378,7 +2378,7 @@ body[data-page="roadmap"] .roadmap-year-section::before {
   background: linear-gradient(90deg, rgba(145, 118, 88, 0.18), rgba(221, 205, 186, 0.28), transparent 86%);
 }
 
-body[data-page="roadmap"] .roadmap-year-section--2026::before {
+body[data-page="roadmap"] .roadmap-year-section--2027::before {
   display: none;
 }
 

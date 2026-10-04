@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Roadmap | ALUX Network</title>
   <link rel="icon" href="assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
-  <meta name="description" content="ALUX Network development roadmap: quarterly milestones for the TVM runtime, BlockGit consensus, the Tolang toolchain, and EVM compatibility from 2023 through 2026.">
+  <meta name="description" content="ALUX Network development roadmap: quarterly milestones for the TVM runtime, BlockGit consensus, the Tolang toolchain, and EVM compatibility from 2023 through 2027.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
     rel="stylesheet"
   >
-<link rel="stylesheet" href="styles.css?v=20260812-motion-restore4">
+<link rel="stylesheet" href="styles.css?v=20261005-roadmap">
 <link rel="stylesheet" href="site-frame.css?v=20260927-logo-shadow">
 <link rel="stylesheet" href="home-mobile-nav.css?v=20260812-motion-restore4">
 </head>
@@ -52,7 +52,27 @@
         <div class="hero-copy roadmap-hero-copy">
           <span class="roadmap-kicker">ALUX</span>
           <h1>Roadmap</h1>
-          <p class="roadmap-updated">Last updated: July 6, 2026</p>
+          <p class="roadmap-updated">Last updated: October 5, 2026</p>
+        </div>
+      </section>
+
+      <section class="section fade-in roadmap-year-section roadmap-year-section--2027">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2027</span>
+          <span class="roadmap-kicker">Year 2027</span>
+          <h2>2027</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article class="roadmap-milestone roadmap-milestone--planned">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1">2027 Q1</p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">Planned</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Formal proofs in Lean of key system properties (Planned)</li>
+              <li>Testnet launch (Planned)</li>
+            </ul>
+          </article>
         </div>
       </section>
 
@@ -96,30 +116,38 @@
             </ul>
           </article>
 
-          <article class="roadmap-milestone roadmap-milestone--active">
+          <article class="roadmap-milestone roadmap-milestone--done">
             <div class="roadmap-milestone-head">
               <p class="roadmap-milestone-time" data-quarter="Q3">2026 Q3</p>
-              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">Planned</span></div>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Implement logical clock and isolation-level enforcement mechanisms (WIP)</li>
-              <li>A "GDB" like TVM debug and observability tool (WIP)</li>
-              <li>Support for synchronous function aside the existing asynchronous function (WIP)</li>
-              <li>System registry and account abstraction contracts (Planned)</li>
-              <li class="roadmap-break-bullet">Deliver Solidity examples demonstrating smart contract / agent orchestration <span class="roadmap-break-tail">(async/await, join, select) (Planned)</span></li>
-              <li>Design and implement cost accounting model (Planned)</li>
-              <li>Implement and test proof-of-stake (PoS) contract (Planned)</li>
+              <li>Support for synchronous functions alongside the existing asynchronous functions, with closures and partial application (Completed)</li>
+              <li>Initial system registry, account abstraction, and capability claim and delegation contracts (Completed)</li>
+              <li>Simplified the TVM task scheduler and made concurrent execution easier to test (Completed)</li>
+              <li>Ledger-based execution context tracking for reliable revert across nested contexts (Completed)</li>
+              <li>Tolang reference interpreter for verifying compiler output (Completed)</li>
+              <li>Tolang code formatter, tolang! Rust macro, and IDE go-to-definition and rename (Completed)</li>
+              <li>TypeScript API client with typed bindings generated from the node's RPC interface (Completed)</li>
+              <li>New TVM interpreter with nested collections, loops, closures and initial gas metering (In Review)</li>
+              <li>New trap based EVM sandbox (In Progress)</li>
             </ul>
           </article>
 
-          <article class="roadmap-milestone roadmap-milestone--planned">
+          <article class="roadmap-milestone roadmap-milestone--active">
             <div class="roadmap-milestone-head">
               <p class="roadmap-milestone-time" data-quarter="Q4">2026 Q4</p>
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">Planned</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Implement synchronization and fault recovery mechanisms</li>
-              <li>Implement garbage collection</li>
+              <li>Implement logical clock and isolation-level enforcement mechanisms (WIP)</li>
+              <li>A "GDB" like TVM debug and observability tool (WIP)</li>
+              <li>Complete the cost accounting model (WIP)</li>
+              <li>Integrate with Ethereum toolchain (WIP)</li>
+              <li>Implement and test proof-of-stake (PoS) contract (Planned)</li>
+              <li>Implement synchronization and fault recovery mechanisms (Planned)</li>
+              <li>Implement garbage collection (Planned)</li>
+              <li class="roadmap-break-bullet">Deliver Solidity examples demonstrating smart contract / agent orchestration <span class="roadmap-break-tail">(async/await, join, select) (Planned)</span></li>
             </ul>
           </article>
         </div>
@@ -310,7 +338,7 @@
       <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright"></p></div>
     </footer>
   </div>
-<script src="i18n/site.generated.js?v=20260812-motion-restore4"></script>
-<script src="script.js?v=20260812-motion-restore4"></script>
+<script src="i18n/site.generated.js?v=20261005-roadmap"></script>
+<script src="script.js?v=20261005-roadmap"></script>
 </body>
 </html>

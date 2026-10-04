@@ -726,7 +726,7 @@ const pageData = {
   },
   roadmap: {
     metaTitle: "Roadmap | ALUX Network",
-    metaDescription: "ALUX Network development roadmap: quarterly milestones for the TVM runtime, BlockGit consensus, the Tolang toolchain, and EVM compatibility from 2023 through 2026.",
+    metaDescription: "ALUX Network development roadmap: quarterly milestones for the TVM runtime, BlockGit consensus, the Tolang toolchain, and EVM compatibility from 2023 through 2027.",
     hero: { hidden: true },
     sections: []
   }
@@ -4802,7 +4802,7 @@ function renderPage(lang) {
     prepareRoadmapQuarterLabels(pageContent);
     if (lang === "en") {
       pageContent.querySelectorAll(".roadmap-bullet-list li").forEach((node) => {
-        node.innerHTML = node.innerHTML.replace(/\((Completed|Planned|In Progress|WIP)\)/g, "<strong>($1)</strong>");
+        node.innerHTML = node.innerHTML.replace(/\((Completed|Planned|In Progress|In Review|WIP)\)/g, "<strong>($1)</strong>");
       });
     }
   }
