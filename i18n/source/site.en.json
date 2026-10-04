@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T13:30:05.192Z",
+  "generatedAt": "2026-10-04T18:00:24.303Z",
   "source": "script.js:all active English page and shared UI data; roadmap.html static roadmap text nodes",
   "entries": {
     "aluxVsOthers.article.closingText": {
@@ -3279,8 +3279,8 @@
       "sourceHash": "714bfae203c19e417fc9492e6fefb489e86f79a042d81a1b82b6741932cec51e"
     },
     "roadmap.metaDescription": {
-      "source": "ALUX Network development roadmap: quarterly milestones for the TVM runtime, BlockGit consensus, the Tolang toolchain, and EVM compatibility from 2023 through 2026.",
-      "sourceHash": "937303f8214a12e52400e6e798f6de237f077c6b114681f2bad484ac0537ee1c"
+      "source": "ALUX Network development roadmap: quarterly milestones for the TVM runtime, BlockGit consensus, the Tolang toolchain, and EVM compatibility from 2023 through 2027.",
+      "sourceHash": "0ecd21706617299be25a0b0105197bc82751298b5e1350831b6854dc0755cdad"
     },
     "roadmap.metaTitle": {
       "source": "Roadmap | ALUX Network",
@@ -3295,460 +3295,520 @@
       "sourceHash": "92375f997ffe65ab7f04eeda8cb2d7f69ebea949a06132afd53c83fff276ef54"
     },
     "roadmapStatic.10": {
-      "source": "Refactored TVM consensus, database, and framework for better modularity (Completed)",
-      "sourceHash": "d3a9f013c69f8649b5e20503b13b721e3f2d05439c237a10074bcb605c4e1fcf"
+      "source": "2026",
+      "sourceHash": "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab"
     },
     "roadmapStatic.100": {
+      "source": "Execution context to support reverting a part of execution (Completed)",
+      "sourceHash": "f1d1b772a77331881a1ea3f7574e850fece1f999d12b0c790fcdd99fb0daf0c9"
+    },
+    "roadmapStatic.101": {
+      "source": "Designed and initial implementation of BlockGit, a new consensus protocol (Completed)",
+      "sourceHash": "7dc579992148339d2cad37089690f9e08c481286cd86a1967d75b800216aaf98"
+    },
+    "roadmapStatic.102": {
+      "source": "A discrete event simulator to test consensus protocol implementation (Completed)",
+      "sourceHash": "6496fa76320d9c78f506f577e6c8673cc58ef9a84de2aa78e9a668767aa44a20"
+    },
+    "roadmapStatic.103": {
+      "source": "P2P module with initial integration for BlockGit (Completed)",
+      "sourceHash": "ed6c1d90d180f783b21e6c1492ff69164dd32283671cd8285a10d2ceb81c2a82"
+    },
+    "roadmapStatic.104": {
+      "source": "2024 Q4",
+      "sourceHash": "2b3bf127cc0ae5b7e442f175edb3980da9949b69e4c6f33f64d823d77495b12d"
+    },
+    "roadmapStatic.105": {
+      "source": "Done",
+      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
+    },
+    "roadmapStatic.106": {
+      "source": "Integrated BlockGit into the node platform (Completed)",
+      "sourceHash": "f07327d9108ae5078c87cae5428ac174fa97924cb33503093a0faf8ab7ded19f"
+    },
+    "roadmapStatic.107": {
+      "source": "Tested consensus protocol on Docker network (Completed)",
+      "sourceHash": "81e9a0bdade53b3f79d83b0b70e7e1f917f688637fb24b9f1857e64d49c7f816"
+    },
+    "roadmapStatic.108": {
+      "source": "Implemented conflict resolution algorithm in block merge (Completed)",
+      "sourceHash": "84384ddfaf484bdce6dff52a6a0a4eaacb2b42e1b79542974efb0a05e3bbd74e"
+    },
+    "roadmapStatic.109": {
+      "source": "Refactored storage module to support query and state commitment (Completed)",
+      "sourceHash": "637812c321b0422f9a5783f93f3a22bb1911e5909706569e39aedd0f915ffc49"
+    },
+    "roadmapStatic.11": {
+      "source": "Year 2026",
+      "sourceHash": "d1c55d551e8a47216b331f34942659c4fa8a28a2297c62a76f2fb9e729c703e3"
+    },
+    "roadmapStatic.110": {
+      "source": "2023",
+      "sourceHash": "d398b29d3dbbb9bf201d4c7e1c19ff9d43c15fd45a0cec46fbe9885ec3f6e97f"
+    },
+    "roadmapStatic.111": {
+      "source": "Year 2023",
+      "sourceHash": "84f7dd10b58db93ef06d94637a7b56d489645511915406c4bee5d57e5e47c6b0"
+    },
+    "roadmapStatic.112": {
+      "source": "2023",
+      "sourceHash": "d398b29d3dbbb9bf201d4c7e1c19ff9d43c15fd45a0cec46fbe9885ec3f6e97f"
+    },
+    "roadmapStatic.113": {
+      "source": "2023 Q1",
+      "sourceHash": "61aa2073b02a45a3ff5f75d5f2565e2ab8d6ce5efd161c2712556f0735aea702"
+    },
+    "roadmapStatic.114": {
+      "source": "Done",
+      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
+    },
+    "roadmapStatic.115": {
       "source": "Concurrent virtual machine opcodes implementation & test (Completed)",
       "sourceHash": "0f43b7e1467cd73ad7462dbc1096feca71d846e317c11dc93ab3cd61b20f94e8"
     },
-    "roadmapStatic.101": {
+    "roadmapStatic.116": {
       "source": "Concurrent transaction deterministic replay data structure (Completed)",
       "sourceHash": "50733ed1828f8899019257b0741492acf6e841406d0b71cdab99552fb22d497f"
     },
-    "roadmapStatic.102": {
+    "roadmapStatic.117": {
       "source": "2023 Q2",
       "sourceHash": "398127bd8a1f616f79d39fa6636b016a740bd8f64ca4cf919003e9c57e749e27"
     },
-    "roadmapStatic.103": {
+    "roadmapStatic.118": {
       "source": "Done",
       "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
     },
-    "roadmapStatic.104": {
+    "roadmapStatic.119": {
       "source": "Concurrent virtual machine execution & replay implementation (Completed)",
       "sourceHash": "4d7f375648ad86f158b5299dc95a901218486868090b648718f41f64a9ddc44f"
     },
-    "roadmapStatic.105": {
+    "roadmapStatic.12": {
+      "source": "2026",
+      "sourceHash": "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab"
+    },
+    "roadmapStatic.120": {
       "source": "Storage layer specification and implementation (Completed)",
       "sourceHash": "1994fbe4bb89e38b0f3ecc08cdeae12b2619564e77c9049b67628cad5d9bb185"
     },
-    "roadmapStatic.106": {
+    "roadmapStatic.121": {
       "source": "2023 Q3",
       "sourceHash": "9f06b898fae195ba223c1a25016997181a6b06898de7f62b2880e4ba6dc727bd"
     },
-    "roadmapStatic.107": {
+    "roadmapStatic.122": {
       "source": "Done",
       "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
     },
-    "roadmapStatic.108": {
+    "roadmapStatic.123": {
       "source": "Storage layer test (Completed)",
       "sourceHash": "88a59efb8fa593a5547c6be1e43e9f031ed3545b1627cc8e775f6050f9cb190b"
     },
-    "roadmapStatic.109": {
+    "roadmapStatic.124": {
       "source": "Concurrent virtual machine execution & deterministic replay test (Completed)",
       "sourceHash": "d1b8fd890ef134be2c46b1f8382588c60536c43b301251ffc0fe8d5886b18c88"
     },
-    "roadmapStatic.11": {
-      "source": "Implemented tests for cross-block execution and replay by lazy validators (Completed)",
-      "sourceHash": "9b9e52195cd2dec1b7d41180b701f7a078491169175165d127a3697473cf719c"
-    },
-    "roadmapStatic.110": {
+    "roadmapStatic.125": {
       "source": "Special channel type specification and implementation (Completed)",
       "sourceHash": "2a978296647b74a634bbca9b41d8f4137b5817f1ba3b9f34a33c1481ca6866b6"
     },
-    "roadmapStatic.111": {
+    "roadmapStatic.126": {
       "source": "2023 Q4",
       "sourceHash": "bd3e5575ac8bc8f2d96babe5bd22c008d658bb4c68285e6a4cc2d8ce853da825"
     },
-    "roadmapStatic.112": {
+    "roadmapStatic.127": {
       "source": "Done",
       "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
     },
-    "roadmapStatic.113": {
+    "roadmapStatic.128": {
       "source": "Implemented new task manager for better error treatment and thread locality support (Completed)",
       "sourceHash": "69d70762d46349a14d237c3629c996f2ac069e4badabfd51a4c96a1c58d717f7"
     },
-    "roadmapStatic.114": {
+    "roadmapStatic.129": {
       "source": "Performance improved by introducing sequential computing support (Completed)",
       "sourceHash": "3988b6b8df36b0bc9223b48b275e076de0c517bf5565368f1be5c87134aec18a"
     },
-    "roadmapStatic.115": {
+    "roadmapStatic.13": {
+      "source": "2026 Q1",
+      "sourceHash": "3ddeca9b6b36f4d7fcde098fe91c3c290fb1db9ba9fb39104e180143fef2f3be"
+    },
+    "roadmapStatic.130": {
       "source": "Special channel type test (Completed)",
       "sourceHash": "da9deb2244aa5f79762e7fed2396bde1b5d126ee33b1212d2b4d13ef37c0e299"
     },
-    "roadmapStatic.116": {
+    "roadmapStatic.131": {
       "source": "Utilized special channel types to simplify replay log (Completed)",
       "sourceHash": "acd3f4e1eb5871ce5842011aa5e8bb524c57bf11a0c6789efe3e3f75ca8dcc08"
-    },
-    "roadmapStatic.12": {
-      "source": "Developed TupleSpace Explorer to visualize state and execution progress (Completed)",
-      "sourceHash": "d80d7daa688247d46c6afcf883bd1cb8b6d671fee0083e22c5bbe0b8648e1864"
-    },
-    "roadmapStatic.13": {
-      "source": "2026 Q2",
-      "sourceHash": "25166af545958bf246bcb1ccf01870b98eccfaddcc720591ee4753ed3ae70173"
     },
     "roadmapStatic.14": {
       "source": "Done",
       "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
     },
     "roadmapStatic.15": {
-      "source": "Native Tolang parser (Completed)",
-      "sourceHash": "3bf5b709e07bfc09fa1cae4771044ea88b1c756be861056efdbdfe2b3723cc79"
-    },
-    "roadmapStatic.16": {
-      "source": "Tolang compilation time const support (Completed)",
-      "sourceHash": "01064f5706d9376d9e261fa72744b7e1e88c4b093344a52958d48579d5b2e1ca"
-    },
-    "roadmapStatic.17": {
-      "source": "Tolang language server and Tolang VS Code extension (Completed)",
-      "sourceHash": "105ee8aa7df1a95478e88a405ea05763bf06216b75f1a076f5755582ff6a8b6d"
-    },
-    "roadmapStatic.18": {
-      "source": "Refactored test framework (Completed)",
-      "sourceHash": "283dfb0faa03433411d6a10a79a928d9cd11ed16e7d819cfbebeddbd0f9832ad"
-    },
-    "roadmapStatic.19": {
-      "source": "Conduct full end-to-end integration testing of the system including the consensus layer (Completed)",
-      "sourceHash": "bda0c865ba51f08ba883fa7a6257d54ad0284676a74269a63ef33dafb1762361"
-    },
-    "roadmapStatic.2": {
-      "source": "Last updated: July 6, 2026",
-      "sourceHash": "e0254f9a39e078a5e43f43115fa615b53fb02adaeab77181a9b3aa72054ae22c"
-    },
-    "roadmapStatic.20": {
-      "source": "Complete API implementation (Completed)",
-      "sourceHash": "6d7d40a2f01fb235621652b176c5c7e9e471885dffc7ce1b5acc5f622d691622"
-    },
-    "roadmapStatic.21": {
-      "source": "Develop node CLI (Completed)",
-      "sourceHash": "9e35a8d97e4153eeae230ff71f42634900c13398e116b2f0b188ab2f661d8e49"
-    },
-    "roadmapStatic.22": {
-      "source": "Customized blockchain explorer for cross-block execution and atomic finalization visualization (Completed)",
-      "sourceHash": "dc94f0eb83cc0559347090f3bac12db2c40b9af1f0a78df77b30cb4a2f732116"
-    },
-    "roadmapStatic.23": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622"
-    },
-    "roadmapStatic.24": {
-      "source": "Integrate with Ethereum toolchain (In Progress)",
-      "sourceHash": "f9d4831596c386bd6b33927caf730e38f5d6443ecd432314b9dc38be0713e8ae"
-    },
-    "roadmapStatic.25": {
-      "source": "2026 Q3",
-      "sourceHash": "f54a03386b5734520701a18e387626e6b3b30d1b63a9263104b83461242fc399"
-    },
-    "roadmapStatic.26": {
-      "source": "Planned",
-      "sourceHash": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225"
-    },
-    "roadmapStatic.27": {
-      "source": "Implement logical clock and isolation-level enforcement mechanisms (WIP)",
-      "sourceHash": "b2363cb46f870bb7ff12df9908a67e3745335a43f7b87bb6508693fcfc6e5105"
-    },
-    "roadmapStatic.28": {
-      "source": "A \"GDB\" like TVM debug and observability tool (WIP)",
-      "sourceHash": "cf2ee5400cdb37f36aaae3a9f7758bf6ef71aeb19a65baa66d22d270b012100b"
-    },
-    "roadmapStatic.29": {
-      "source": "Support for synchronous function aside the existing asynchronous function (WIP)",
-      "sourceHash": "b27600195e88b4871572aae6bf9e4bb24ca8cbb560bc66fb86c9a79e48f66a5e"
-    },
-    "roadmapStatic.3": {
-      "source": "2026",
-      "sourceHash": "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab"
-    },
-    "roadmapStatic.30": {
-      "source": "System registry and account abstraction contracts (Planned)",
-      "sourceHash": "faca77855b117993a3f8479d63a09188e113c8bf1a04ae281ab59890d8aa9788"
-    },
-    "roadmapStatic.31": {
-      "source": "Deliver Solidity examples demonstrating smart contract / agent orchestration",
-      "sourceHash": "66ca6125335e01d903c7d90961678c8cab4db9df68f0ff6c159f1d56b5e8e1a9"
-    },
-    "roadmapStatic.32": {
-      "source": "(async/await, join, select) (Planned)",
-      "sourceHash": "fc9c020d2e3ce12c2445e33b5c1ea2a5a9f944f871808f7503a58de7daf2754a"
-    },
-    "roadmapStatic.33": {
-      "source": "Design and implement cost accounting model (Planned)",
-      "sourceHash": "2ee7e47ea5edde0d38845581c48336480cc6d84ea1ed3bdedf0440175208c6c6"
-    },
-    "roadmapStatic.34": {
-      "source": "Implement and test proof-of-stake (PoS) contract (Planned)",
-      "sourceHash": "3250cd112ed42f303c204bdacf30bd89601d693b8281f823827ea691cc1e3a2c"
-    },
-    "roadmapStatic.35": {
-      "source": "2026 Q4",
-      "sourceHash": "997c19816a4fd82711a9ad77916238579d4cd155d4c80e77f717bee5b3b6cee7"
-    },
-    "roadmapStatic.36": {
-      "source": "Planned",
-      "sourceHash": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225"
-    },
-    "roadmapStatic.37": {
-      "source": "Implement synchronization and fault recovery mechanisms",
-      "sourceHash": "64a7bf4634343b149d7b55311255119c83e9f7b7efecd6b050c16981c3268934"
-    },
-    "roadmapStatic.38": {
-      "source": "Implement garbage collection",
-      "sourceHash": "2558801b987cc537d5310191a8c61d65851eecffe9febcb0f1d49f12e5dc8d55"
-    },
-    "roadmapStatic.39": {
-      "source": "2025",
-      "sourceHash": "b2b2f104d32c638903e151a9b20d6e27b41d8c0c84cf8458738f83ca2f1dd744"
-    },
-    "roadmapStatic.4": {
-      "source": "Year 2026",
-      "sourceHash": "d1c55d551e8a47216b331f34942659c4fa8a28a2297c62a76f2fb9e729c703e3"
-    },
-    "roadmapStatic.40": {
-      "source": "Year 2025",
-      "sourceHash": "f7af6ec9b593d9b7ad2c302d3525d9eafd0f7fbb47e3f7f2d76bef479838c9ac"
-    },
-    "roadmapStatic.41": {
-      "source": "2025",
-      "sourceHash": "b2b2f104d32c638903e151a9b20d6e27b41d8c0c84cf8458738f83ca2f1dd744"
-    },
-    "roadmapStatic.42": {
-      "source": "2025 Q1",
-      "sourceHash": "091b15af26595345fe2334b8fa991cc46f79f68f68cbfc32d14afdc40777ba1e"
-    },
-    "roadmapStatic.43": {
-      "source": "Done",
-      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
-    },
-    "roadmapStatic.44": {
-      "source": "Refactored the whole system to an event-driven framework to enable concurrent transaction execution, block replay, and block proposing for maximum concurrency (Completed)",
-      "sourceHash": "3f78d9b009d7698a4ae0f8644da9ff8235a2da7664b6b9cda8c6165bb54b4da8"
-    },
-    "roadmapStatic.45": {
-      "source": "Implemented RPC endpoints and updated BlockGit to handle missing blocks (Completed)",
-      "sourceHash": "82e19016fbb54a258a3a851690413437bc7e6172bb1a1565d551d136f37447c8"
-    },
-    "roadmapStatic.46": {
-      "source": "Fixed memory leaks in BlockGit and improved its performance (Completed)",
-      "sourceHash": "9c24c3695cfe2c35585b8b245fb70a7b4b8909f93ed08aa10cf4c81080ebd71c"
-    },
-    "roadmapStatic.47": {
-      "source": "Introduced Weaklink to the BlockGit protocol and partially implemented it (Completed)",
-      "sourceHash": "4830f768b88681a5ed58d3a9848f99674d5de2a892d4cc62230fdd66c8daf9a3"
-    },
-    "roadmapStatic.48": {
-      "source": "2025 Q2",
-      "sourceHash": "26ee00f6ee5281e026aa570392e4567cd534afe926336e8e184200211dc29f72"
-    },
-    "roadmapStatic.49": {
-      "source": "Done",
-      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
-    },
-    "roadmapStatic.5": {
-      "source": "2026",
-      "sourceHash": "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab"
-    },
-    "roadmapStatic.50": {
-      "source": "Implement and test Weaklink in the BlockGit protocol (Completed)",
-      "sourceHash": "63d8858c25993ee9de570af78e11eb892ef1498c8beaf14822bd77e938e617f0"
-    },
-    "roadmapStatic.51": {
-      "source": "Introduce simple channel behavioral types to simplify TVM architecture and improve reliability (Completed)",
-      "sourceHash": "c323d55459986d630d168e13023a51a5a91659084da47b6c640c9e60b86132c0"
-    },
-    "roadmapStatic.52": {
-      "source": "Introduce test framework for randomly generated Tolang codes and CI integration (Completed)",
-      "sourceHash": "d58a58e55f92cb5f33ac6a0b808e79d9518b316e8a0fb8ccf05d7b1ab6580ab9"
-    },
-    "roadmapStatic.53": {
-      "source": "Refactor replay logic (Completed)",
-      "sourceHash": "ba3ff77dc107646207c761b24962c71d9b37ad1376d38760c7adbed9fdcf18d5"
-    },
-    "roadmapStatic.54": {
-      "source": "2025 Q3",
-      "sourceHash": "7aea80bc693a93049790639a08b97db9446ed72cd4c407f3f500575ab96aa89c"
-    },
-    "roadmapStatic.55": {
-      "source": "Done",
-      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
-    },
-    "roadmapStatic.56": {
-      "source": "Implemented a mechanism to execute, wake up, pack, and replay long transactions spanning multiple blocks and finalization fringes (Completed)",
-      "sourceHash": "4cb56fe2ef6fa895ae19e0446443d4dfcd0f8af12e82b4ddbbe82d4da23d54d4"
-    },
-    "roadmapStatic.57": {
-      "source": "Refactored the database module to improve performance and efficiency (In Progress)",
-      "sourceHash": "ff5acea3d1efc0dc78f3b6e5c15daf68341257ea5b1e057e71e1e48906e013d6"
-    },
-    "roadmapStatic.58": {
-      "source": "Refactored the TVM framework for improved modularization (In Progress)",
-      "sourceHash": "2089149415b9de9739466c3d7e98523f4781dcd3eb1fc781ca6c5bc221815677"
-    },
-    "roadmapStatic.59": {
-      "source": "2025 Q4",
-      "sourceHash": "c8041d9f9718d2e8bf777a82b256e5d6f9cde7e2860be3700a53d02fcbcdf129"
-    },
-    "roadmapStatic.6": {
-      "source": "2026 Q1",
-      "sourceHash": "3ddeca9b6b36f4d7fcde098fe91c3c290fb1db9ba9fb39104e180143fef2f3be"
-    },
-    "roadmapStatic.60": {
-      "source": "Done",
-      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
-    },
-    "roadmapStatic.61": {
-      "source": "Test cross-block execution without consensus (Completed)",
-      "sourceHash": "6a961692c8e7fde0f5135292de5c3f6c001a8bba8b71f2c6700551285f8482b1"
-    },
-    "roadmapStatic.62": {
-      "source": "Refactor the TVM framework for improved modularization (In Progress)",
-      "sourceHash": "f43f11f0a195359a88a6fb5f1b5ef679d8d8adbd2cd9d5413d2da6dcae31913f"
-    },
-    "roadmapStatic.63": {
-      "source": "Specify and implement API endpoints (In Progress)",
-      "sourceHash": "46b42db0f05f71d41ddbf4d7e158c036c21a9a1daf42546a286ea5abca7c7c0b"
-    },
-    "roadmapStatic.64": {
-      "source": "Design the logical clock and isolation level enforcement mechanism (Completed)",
-      "sourceHash": "75a154b63a4874f36fb727ee37342ad34ecda44fae4f02acafc62cad1a0ff9ff"
-    },
-    "roadmapStatic.65": {
-      "source": "2024",
-      "sourceHash": "6557739a67283a8de383fc5c0997fbec7c5721a46f28f3235fc9607598d9016b"
-    },
-    "roadmapStatic.66": {
-      "source": "Year 2024",
-      "sourceHash": "10a1213477e142275560de22da9caf79fdba312c6a8e9b49d25afc1d6ac4bf5e"
-    },
-    "roadmapStatic.67": {
-      "source": "2024",
-      "sourceHash": "6557739a67283a8de383fc5c0997fbec7c5721a46f28f3235fc9607598d9016b"
-    },
-    "roadmapStatic.68": {
-      "source": "2024 Q1",
-      "sourceHash": "cb07bb8c5f6bc62d36808f0104a9561fe13fe2d224ebfd0499eaca27ff682bc8"
-    },
-    "roadmapStatic.69": {
-      "source": "Done",
-      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
-    },
-    "roadmapStatic.7": {
-      "source": "Done",
-      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
-    },
-    "roadmapStatic.70": {
-      "source": "Global registry implementation & testing (Completed)",
-      "sourceHash": "7815db544c358ed5484cec9cc7b5e1b673564647d2d30d7ca5d50077742fb996"
-    },
-    "roadmapStatic.71": {
-      "source": "Functional programming support from Tolang and TVM (Completed)",
-      "sourceHash": "91260b03c174dce1ac724e67f5633603db160d86a3e01c131610d093912ebebb"
-    },
-    "roadmapStatic.72": {
-      "source": "Supported thread-safe sequential computing on concurrent TVM (Completed)",
-      "sourceHash": "4c9d2ba34b4a0df11fc829fe2f9ac92dc1d6aa0db8876f532367feda20734e67"
-    },
-    "roadmapStatic.73": {
-      "source": "Conducted preliminary EVM compatibility test (Completed)",
-      "sourceHash": "d354a3a02aa20fd3ace1ad72ccf99d6caac92a8249c62e135430eda95ea2a041"
-    },
-    "roadmapStatic.74": {
-      "source": "Implemented EVM state storage to support read-committed isolation level (Completed)",
-      "sourceHash": "490223052c589a43290ebe958c47d4eff12dff080de4288cf2acf43f22466087"
-    },
-    "roadmapStatic.75": {
-      "source": "Refactored code & performed comprehensive testing of correctness and replayability in TVM (Completed)",
-      "sourceHash": "0f354ef0f7c78453f6e506a96462096d0e20e8b0db36d3ddc9dc3327d4611f85"
-    },
-    "roadmapStatic.76": {
-      "source": "2024 Q2",
-      "sourceHash": "2c6c6dd47a92b47e37156585281d7b97120184d3a0610c1b1873d9a20b7c46fd"
-    },
-    "roadmapStatic.77": {
-      "source": "Done",
-      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
-    },
-    "roadmapStatic.78": {
-      "source": "Refactored and unified the tuple space play and replay logic (Completed)",
-      "sourceHash": "98de25d360f66a3a2ecc745ddd99e6619915453775d2039a33f6b1f2f9b6dbe9"
-    },
-    "roadmapStatic.79": {
-      "source": "Implemented an external HTTPS call play and replay to demonstrate the capability to actively collaborate with Web 2.0 systems without oracles / relayers (Completed)",
-      "sourceHash": "252826327dbe6ace52b97cffc0e35588c0f77be2086add1810efff85d7fb2c66"
-    },
-    "roadmapStatic.8": {
       "source": "Simplified replay mechanism for cross-block execution (Completed)",
       "sourceHash": "493644f9ae1a5b9974e02f36a4f0946370ce1e4319be945ca4b01e57ccb2888d"
     },
+    "roadmapStatic.16": {
+      "source": "Introduced a new EVM sandbox for improved efficiency and simplicity (Completed)",
+      "sourceHash": "a00a40b4e426ebfa9d204c43c45d41e7e774037739b56af8deed6e13b6305fbc"
+    },
+    "roadmapStatic.17": {
+      "source": "Refactored TVM consensus, database, and framework for better modularity (Completed)",
+      "sourceHash": "d3a9f013c69f8649b5e20503b13b721e3f2d05439c237a10074bcb605c4e1fcf"
+    },
+    "roadmapStatic.18": {
+      "source": "Implemented tests for cross-block execution and replay by lazy validators (Completed)",
+      "sourceHash": "9b9e52195cd2dec1b7d41180b701f7a078491169175165d127a3697473cf719c"
+    },
+    "roadmapStatic.19": {
+      "source": "Developed TupleSpace Explorer to visualize state and execution progress (Completed)",
+      "sourceHash": "d80d7daa688247d46c6afcf883bd1cb8b6d671fee0083e22c5bbe0b8648e1864"
+    },
+    "roadmapStatic.2": {
+      "source": "Last updated: October 5, 2026",
+      "sourceHash": "a40554606b7488ce93c2340d005c8a9c3e0cdf41eb73141a5e9a18bc9913f0d2"
+    },
+    "roadmapStatic.20": {
+      "source": "2026 Q2",
+      "sourceHash": "25166af545958bf246bcb1ccf01870b98eccfaddcc720591ee4753ed3ae70173"
+    },
+    "roadmapStatic.21": {
+      "source": "Done",
+      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
+    },
+    "roadmapStatic.22": {
+      "source": "Native Tolang parser (Completed)",
+      "sourceHash": "3bf5b709e07bfc09fa1cae4771044ea88b1c756be861056efdbdfe2b3723cc79"
+    },
+    "roadmapStatic.23": {
+      "source": "Tolang compilation time const support (Completed)",
+      "sourceHash": "01064f5706d9376d9e261fa72744b7e1e88c4b093344a52958d48579d5b2e1ca"
+    },
+    "roadmapStatic.24": {
+      "source": "Tolang language server and Tolang VS Code extension (Completed)",
+      "sourceHash": "105ee8aa7df1a95478e88a405ea05763bf06216b75f1a076f5755582ff6a8b6d"
+    },
+    "roadmapStatic.25": {
+      "source": "Refactored test framework (Completed)",
+      "sourceHash": "283dfb0faa03433411d6a10a79a928d9cd11ed16e7d819cfbebeddbd0f9832ad"
+    },
+    "roadmapStatic.26": {
+      "source": "Conduct full end-to-end integration testing of the system including the consensus layer (Completed)",
+      "sourceHash": "bda0c865ba51f08ba883fa7a6257d54ad0284676a74269a63ef33dafb1762361"
+    },
+    "roadmapStatic.27": {
+      "source": "Complete API implementation (Completed)",
+      "sourceHash": "6d7d40a2f01fb235621652b176c5c7e9e471885dffc7ce1b5acc5f622d691622"
+    },
+    "roadmapStatic.28": {
+      "source": "Develop node CLI (Completed)",
+      "sourceHash": "9e35a8d97e4153eeae230ff71f42634900c13398e116b2f0b188ab2f661d8e49"
+    },
+    "roadmapStatic.29": {
+      "source": "Customized blockchain explorer for cross-block execution and atomic finalization visualization (Completed)",
+      "sourceHash": "dc94f0eb83cc0559347090f3bac12db2c40b9af1f0a78df77b30cb4a2f732116"
+    },
+    "roadmapStatic.3": {
+      "source": "2027",
+      "sourceHash": "5313e5bf17148de844ff74be3663d47c6e361ca469b30a36337701233c89a15e"
+    },
+    "roadmapStatic.30": {
+      "source": "New trap based EVM sandbox (In Progress)",
+      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622"
+    },
+    "roadmapStatic.31": {
+      "source": "Integrate with Ethereum toolchain (In Progress)",
+      "sourceHash": "f9d4831596c386bd6b33927caf730e38f5d6443ecd432314b9dc38be0713e8ae"
+    },
+    "roadmapStatic.32": {
+      "source": "2026 Q3",
+      "sourceHash": "f54a03386b5734520701a18e387626e6b3b30d1b63a9263104b83461242fc399"
+    },
+    "roadmapStatic.33": {
+      "source": "Done",
+      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
+    },
+    "roadmapStatic.34": {
+      "source": "Support for synchronous functions alongside the existing asynchronous functions, with closures and partial application (Completed)",
+      "sourceHash": "3666f89fe12552c8c64a79006c151fa033e163b531531b154e6401f2b1197f9b"
+    },
+    "roadmapStatic.35": {
+      "source": "Initial system registry, account abstraction, and capability claim and delegation contracts (Completed)",
+      "sourceHash": "946e8092e896fcda2efe09690f2b7fd3aa8765edc664db54516d62bcaf70cc1b"
+    },
+    "roadmapStatic.36": {
+      "source": "Simplified the TVM task scheduler and made concurrent execution easier to test (Completed)",
+      "sourceHash": "b68c3cce586b368f77c3f89d31347f4cf807623210ccb769ac9e89f8ef48b4ce"
+    },
+    "roadmapStatic.37": {
+      "source": "Ledger-based execution context tracking for reliable revert across nested contexts (Completed)",
+      "sourceHash": "5f7623efc68c7b95998acd7d6eed9b8bd6460f03402eae2aaf795be69cfe92e6"
+    },
+    "roadmapStatic.38": {
+      "source": "Tolang reference interpreter for verifying compiler output (Completed)",
+      "sourceHash": "5aeeed6db408c2ffef6f964540b9587d7d17b0830376564aced08d2e5f9dafe2"
+    },
+    "roadmapStatic.39": {
+      "source": "Tolang code formatter, tolang! Rust macro, and IDE go-to-definition and rename (Completed)",
+      "sourceHash": "f20798504964ef2ad943fff986a2c5ac55a31b670ce98e8f4324c0d45b4889ac"
+    },
+    "roadmapStatic.4": {
+      "source": "Year 2027",
+      "sourceHash": "83e560bf59fb4c46ada543ab5bf2895fcb0c0289c3b7dc54226523fc8c122a7d"
+    },
+    "roadmapStatic.40": {
+      "source": "TypeScript API client with typed bindings generated from the node's RPC interface (Completed)",
+      "sourceHash": "18550d8417cb3a922dcb13f617f8f39a4463953e1d9e09ea52bb82e6cfc7e082"
+    },
+    "roadmapStatic.41": {
+      "source": "New TVM interpreter with nested collections, loops, closures and initial gas metering (In Review)",
+      "sourceHash": "a195bdf6c6f55c4c9e95baeabb4101d4919097f828b10d4f95785b1f92d46339"
+    },
+    "roadmapStatic.42": {
+      "source": "New trap based EVM sandbox (In Progress)",
+      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622"
+    },
+    "roadmapStatic.43": {
+      "source": "2026 Q4",
+      "sourceHash": "997c19816a4fd82711a9ad77916238579d4cd155d4c80e77f717bee5b3b6cee7"
+    },
+    "roadmapStatic.44": {
+      "source": "Planned",
+      "sourceHash": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225"
+    },
+    "roadmapStatic.45": {
+      "source": "Implement logical clock and isolation-level enforcement mechanisms (WIP)",
+      "sourceHash": "b2363cb46f870bb7ff12df9908a67e3745335a43f7b87bb6508693fcfc6e5105"
+    },
+    "roadmapStatic.46": {
+      "source": "A \"GDB\" like TVM debug and observability tool (WIP)",
+      "sourceHash": "cf2ee5400cdb37f36aaae3a9f7758bf6ef71aeb19a65baa66d22d270b012100b"
+    },
+    "roadmapStatic.47": {
+      "source": "Complete the cost accounting model (WIP)",
+      "sourceHash": "0f4970c1c69c35b385ccc7116f9b8164dd0d1a778df1eeaf13b783a3775b6369"
+    },
+    "roadmapStatic.48": {
+      "source": "Integrate with Ethereum toolchain (WIP)",
+      "sourceHash": "fde57c3317cc01900fcf9068d5a48e647556fde6064b1e5f9e796d79fa8de293"
+    },
+    "roadmapStatic.49": {
+      "source": "Implement and test proof-of-stake (PoS) contract (Planned)",
+      "sourceHash": "3250cd112ed42f303c204bdacf30bd89601d693b8281f823827ea691cc1e3a2c"
+    },
+    "roadmapStatic.5": {
+      "source": "2027",
+      "sourceHash": "5313e5bf17148de844ff74be3663d47c6e361ca469b30a36337701233c89a15e"
+    },
+    "roadmapStatic.50": {
+      "source": "Implement synchronization and fault recovery mechanisms (Planned)",
+      "sourceHash": "c141491ae584f01af18bba96042782ebe571ca4c2b8fc3dde7b9509d0c75e809"
+    },
+    "roadmapStatic.51": {
+      "source": "Implement garbage collection (Planned)",
+      "sourceHash": "7ee9064d20bc406cb1b72be4d6556432b584d8034ef82a7c63ad469ae65196c4"
+    },
+    "roadmapStatic.52": {
+      "source": "Deliver Solidity examples demonstrating smart contract / agent orchestration",
+      "sourceHash": "66ca6125335e01d903c7d90961678c8cab4db9df68f0ff6c159f1d56b5e8e1a9"
+    },
+    "roadmapStatic.53": {
+      "source": "(async/await, join, select) (Planned)",
+      "sourceHash": "fc9c020d2e3ce12c2445e33b5c1ea2a5a9f944f871808f7503a58de7daf2754a"
+    },
+    "roadmapStatic.54": {
+      "source": "2025",
+      "sourceHash": "b2b2f104d32c638903e151a9b20d6e27b41d8c0c84cf8458738f83ca2f1dd744"
+    },
+    "roadmapStatic.55": {
+      "source": "Year 2025",
+      "sourceHash": "f7af6ec9b593d9b7ad2c302d3525d9eafd0f7fbb47e3f7f2d76bef479838c9ac"
+    },
+    "roadmapStatic.56": {
+      "source": "2025",
+      "sourceHash": "b2b2f104d32c638903e151a9b20d6e27b41d8c0c84cf8458738f83ca2f1dd744"
+    },
+    "roadmapStatic.57": {
+      "source": "2025 Q1",
+      "sourceHash": "091b15af26595345fe2334b8fa991cc46f79f68f68cbfc32d14afdc40777ba1e"
+    },
+    "roadmapStatic.58": {
+      "source": "Done",
+      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
+    },
+    "roadmapStatic.59": {
+      "source": "Refactored the whole system to an event-driven framework to enable concurrent transaction execution, block replay, and block proposing for maximum concurrency (Completed)",
+      "sourceHash": "3f78d9b009d7698a4ae0f8644da9ff8235a2da7664b6b9cda8c6165bb54b4da8"
+    },
+    "roadmapStatic.6": {
+      "source": "2027 Q1",
+      "sourceHash": "13bc928b5c7adc36914aa657ef3ab33871f03a2b0fd2c1d5f555ad03f62e6022"
+    },
+    "roadmapStatic.60": {
+      "source": "Implemented RPC endpoints and updated BlockGit to handle missing blocks (Completed)",
+      "sourceHash": "82e19016fbb54a258a3a851690413437bc7e6172bb1a1565d551d136f37447c8"
+    },
+    "roadmapStatic.61": {
+      "source": "Fixed memory leaks in BlockGit and improved its performance (Completed)",
+      "sourceHash": "9c24c3695cfe2c35585b8b245fb70a7b4b8909f93ed08aa10cf4c81080ebd71c"
+    },
+    "roadmapStatic.62": {
+      "source": "Introduced Weaklink to the BlockGit protocol and partially implemented it (Completed)",
+      "sourceHash": "4830f768b88681a5ed58d3a9848f99674d5de2a892d4cc62230fdd66c8daf9a3"
+    },
+    "roadmapStatic.63": {
+      "source": "2025 Q2",
+      "sourceHash": "26ee00f6ee5281e026aa570392e4567cd534afe926336e8e184200211dc29f72"
+    },
+    "roadmapStatic.64": {
+      "source": "Done",
+      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
+    },
+    "roadmapStatic.65": {
+      "source": "Implement and test Weaklink in the BlockGit protocol (Completed)",
+      "sourceHash": "63d8858c25993ee9de570af78e11eb892ef1498c8beaf14822bd77e938e617f0"
+    },
+    "roadmapStatic.66": {
+      "source": "Introduce simple channel behavioral types to simplify TVM architecture and improve reliability (Completed)",
+      "sourceHash": "c323d55459986d630d168e13023a51a5a91659084da47b6c640c9e60b86132c0"
+    },
+    "roadmapStatic.67": {
+      "source": "Introduce test framework for randomly generated Tolang codes and CI integration (Completed)",
+      "sourceHash": "d58a58e55f92cb5f33ac6a0b808e79d9518b316e8a0fb8ccf05d7b1ab6580ab9"
+    },
+    "roadmapStatic.68": {
+      "source": "Refactor replay logic (Completed)",
+      "sourceHash": "ba3ff77dc107646207c761b24962c71d9b37ad1376d38760c7adbed9fdcf18d5"
+    },
+    "roadmapStatic.69": {
+      "source": "2025 Q3",
+      "sourceHash": "7aea80bc693a93049790639a08b97db9446ed72cd4c407f3f500575ab96aa89c"
+    },
+    "roadmapStatic.7": {
+      "source": "Planned",
+      "sourceHash": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225"
+    },
+    "roadmapStatic.70": {
+      "source": "Done",
+      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
+    },
+    "roadmapStatic.71": {
+      "source": "Implemented a mechanism to execute, wake up, pack, and replay long transactions spanning multiple blocks and finalization fringes (Completed)",
+      "sourceHash": "4cb56fe2ef6fa895ae19e0446443d4dfcd0f8af12e82b4ddbbe82d4da23d54d4"
+    },
+    "roadmapStatic.72": {
+      "source": "Refactored the database module to improve performance and efficiency (In Progress)",
+      "sourceHash": "ff5acea3d1efc0dc78f3b6e5c15daf68341257ea5b1e057e71e1e48906e013d6"
+    },
+    "roadmapStatic.73": {
+      "source": "Refactored the TVM framework for improved modularization (In Progress)",
+      "sourceHash": "2089149415b9de9739466c3d7e98523f4781dcd3eb1fc781ca6c5bc221815677"
+    },
+    "roadmapStatic.74": {
+      "source": "2025 Q4",
+      "sourceHash": "c8041d9f9718d2e8bf777a82b256e5d6f9cde7e2860be3700a53d02fcbcdf129"
+    },
+    "roadmapStatic.75": {
+      "source": "Done",
+      "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
+    },
+    "roadmapStatic.76": {
+      "source": "Test cross-block execution without consensus (Completed)",
+      "sourceHash": "6a961692c8e7fde0f5135292de5c3f6c001a8bba8b71f2c6700551285f8482b1"
+    },
+    "roadmapStatic.77": {
+      "source": "Refactor the TVM framework for improved modularization (In Progress)",
+      "sourceHash": "f43f11f0a195359a88a6fb5f1b5ef679d8d8adbd2cd9d5413d2da6dcae31913f"
+    },
+    "roadmapStatic.78": {
+      "source": "Specify and implement API endpoints (In Progress)",
+      "sourceHash": "46b42db0f05f71d41ddbf4d7e158c036c21a9a1daf42546a286ea5abca7c7c0b"
+    },
+    "roadmapStatic.79": {
+      "source": "Design the logical clock and isolation level enforcement mechanism (Completed)",
+      "sourceHash": "75a154b63a4874f36fb727ee37342ad34ecda44fae4f02acafc62cad1a0ff9ff"
+    },
+    "roadmapStatic.8": {
+      "source": "Formal proofs in Lean of key system properties (Planned)",
+      "sourceHash": "0b789bccdeb185afceda5908be2bc565c3abf926ba4072e61dac268cc8971f6a"
+    },
     "roadmapStatic.80": {
-      "source": "Initial implementation of the Blocklace consensus protocol (Completed)",
-      "sourceHash": "1356c490aa5f087abe7edfacdd3ee70611bf21308a935f0207387040de834ba6"
+      "source": "2024",
+      "sourceHash": "6557739a67283a8de383fc5c0997fbec7c5721a46f28f3235fc9607598d9016b"
     },
     "roadmapStatic.81": {
-      "source": "Redesigned state management to reduce memory usage (Completed)",
-      "sourceHash": "0b3516bbf98116563234f0553103a5ac8cd47a86bcbdaa2654dd1cba35f1892f"
+      "source": "Year 2024",
+      "sourceHash": "10a1213477e142275560de22da9caf79fdba312c6a8e9b49d25afc1d6ac4bf5e"
     },
     "roadmapStatic.82": {
-      "source": "Designed logical clock data structure and algorithm used to enforce isolation levels (Completed)",
-      "sourceHash": "a0711aa69086fbd3fc607bfc4eac249bcbadf329bd5d22cd9de86c63129e158a"
+      "source": "2024",
+      "sourceHash": "6557739a67283a8de383fc5c0997fbec7c5721a46f28f3235fc9607598d9016b"
     },
     "roadmapStatic.83": {
-      "source": "2024 Q3",
-      "sourceHash": "5ec8219235658b3f237d93f00c321a636060268fcd66403154e18ee4118058f3"
+      "source": "2024 Q1",
+      "sourceHash": "cb07bb8c5f6bc62d36808f0104a9561fe13fe2d224ebfd0499eaca27ff682bc8"
     },
     "roadmapStatic.84": {
       "source": "Done",
       "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
     },
     "roadmapStatic.85": {
-      "source": "Execution context to support reverting a part of execution (Completed)",
-      "sourceHash": "f1d1b772a77331881a1ea3f7574e850fece1f999d12b0c790fcdd99fb0daf0c9"
+      "source": "Global registry implementation & testing (Completed)",
+      "sourceHash": "7815db544c358ed5484cec9cc7b5e1b673564647d2d30d7ca5d50077742fb996"
     },
     "roadmapStatic.86": {
-      "source": "Designed and initial implementation of BlockGit, a new consensus protocol (Completed)",
-      "sourceHash": "7dc579992148339d2cad37089690f9e08c481286cd86a1967d75b800216aaf98"
+      "source": "Functional programming support from Tolang and TVM (Completed)",
+      "sourceHash": "91260b03c174dce1ac724e67f5633603db160d86a3e01c131610d093912ebebb"
     },
     "roadmapStatic.87": {
-      "source": "A discrete event simulator to test consensus protocol implementation (Completed)",
-      "sourceHash": "6496fa76320d9c78f506f577e6c8673cc58ef9a84de2aa78e9a668767aa44a20"
+      "source": "Supported thread-safe sequential computing on concurrent TVM (Completed)",
+      "sourceHash": "4c9d2ba34b4a0df11fc829fe2f9ac92dc1d6aa0db8876f532367feda20734e67"
     },
     "roadmapStatic.88": {
-      "source": "P2P module with initial integration for BlockGit (Completed)",
-      "sourceHash": "ed6c1d90d180f783b21e6c1492ff69164dd32283671cd8285a10d2ceb81c2a82"
+      "source": "Conducted preliminary EVM compatibility test (Completed)",
+      "sourceHash": "d354a3a02aa20fd3ace1ad72ccf99d6caac92a8249c62e135430eda95ea2a041"
     },
     "roadmapStatic.89": {
-      "source": "2024 Q4",
-      "sourceHash": "2b3bf127cc0ae5b7e442f175edb3980da9949b69e4c6f33f64d823d77495b12d"
+      "source": "Implemented EVM state storage to support read-committed isolation level (Completed)",
+      "sourceHash": "490223052c589a43290ebe958c47d4eff12dff080de4288cf2acf43f22466087"
     },
     "roadmapStatic.9": {
-      "source": "Introduced a new EVM sandbox for improved efficiency and simplicity (Completed)",
-      "sourceHash": "a00a40b4e426ebfa9d204c43c45d41e7e774037739b56af8deed6e13b6305fbc"
+      "source": "Testnet launch (Planned)",
+      "sourceHash": "64122b17c0ba6ebfd49afae4bdb84c87e1e1bc4e03387191dfc7a54f7d8b8176"
     },
     "roadmapStatic.90": {
+      "source": "Refactored code & performed comprehensive testing of correctness and replayability in TVM (Completed)",
+      "sourceHash": "0f354ef0f7c78453f6e506a96462096d0e20e8b0db36d3ddc9dc3327d4611f85"
+    },
+    "roadmapStatic.91": {
+      "source": "2024 Q2",
+      "sourceHash": "2c6c6dd47a92b47e37156585281d7b97120184d3a0610c1b1873d9a20b7c46fd"
+    },
+    "roadmapStatic.92": {
       "source": "Done",
       "sourceHash": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
     },
-    "roadmapStatic.91": {
-      "source": "Integrated BlockGit into the node platform (Completed)",
-      "sourceHash": "f07327d9108ae5078c87cae5428ac174fa97924cb33503093a0faf8ab7ded19f"
-    },
-    "roadmapStatic.92": {
-      "source": "Tested consensus protocol on Docker network (Completed)",
-      "sourceHash": "81e9a0bdade53b3f79d83b0b70e7e1f917f688637fb24b9f1857e64d49c7f816"
-    },
     "roadmapStatic.93": {
-      "source": "Implemented conflict resolution algorithm in block merge (Completed)",
-      "sourceHash": "84384ddfaf484bdce6dff52a6a0a4eaacb2b42e1b79542974efb0a05e3bbd74e"
+      "source": "Refactored and unified the tuple space play and replay logic (Completed)",
+      "sourceHash": "98de25d360f66a3a2ecc745ddd99e6619915453775d2039a33f6b1f2f9b6dbe9"
     },
     "roadmapStatic.94": {
-      "source": "Refactored storage module to support query and state commitment (Completed)",
-      "sourceHash": "637812c321b0422f9a5783f93f3a22bb1911e5909706569e39aedd0f915ffc49"
+      "source": "Implemented an external HTTPS call play and replay to demonstrate the capability to actively collaborate with Web 2.0 systems without oracles / relayers (Completed)",
+      "sourceHash": "252826327dbe6ace52b97cffc0e35588c0f77be2086add1810efff85d7fb2c66"
     },
     "roadmapStatic.95": {
-      "source": "2023",
-      "sourceHash": "d398b29d3dbbb9bf201d4c7e1c19ff9d43c15fd45a0cec46fbe9885ec3f6e97f"
+      "source": "Initial implementation of the Blocklace consensus protocol (Completed)",
+      "sourceHash": "1356c490aa5f087abe7edfacdd3ee70611bf21308a935f0207387040de834ba6"
     },
     "roadmapStatic.96": {
-      "source": "Year 2023",
-      "sourceHash": "84f7dd10b58db93ef06d94637a7b56d489645511915406c4bee5d57e5e47c6b0"
+      "source": "Redesigned state management to reduce memory usage (Completed)",
+      "sourceHash": "0b3516bbf98116563234f0553103a5ac8cd47a86bcbdaa2654dd1cba35f1892f"
     },
     "roadmapStatic.97": {
-      "source": "2023",
-      "sourceHash": "d398b29d3dbbb9bf201d4c7e1c19ff9d43c15fd45a0cec46fbe9885ec3f6e97f"
+      "source": "Designed logical clock data structure and algorithm used to enforce isolation levels (Completed)",
+      "sourceHash": "a0711aa69086fbd3fc607bfc4eac249bcbadf329bd5d22cd9de86c63129e158a"
     },
     "roadmapStatic.98": {
-      "source": "2023 Q1",
-      "sourceHash": "61aa2073b02a45a3ff5f75d5f2565e2ab8d6ce5efd161c2712556f0735aea702"
+      "source": "2024 Q3",
+      "sourceHash": "5ec8219235658b3f237d93f00c321a636060268fcd66403154e18ee4118058f3"
     },
     "roadmapStatic.99": {
       "source": "Done",
