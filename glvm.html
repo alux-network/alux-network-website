@@ -70,12 +70,557 @@
         <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
       </div>
     </header>
-    <main id="page-content"></main>
+    <main id="page-content" data-prerendered="en">
+    <article class="glvm-page" data-glvm-root data-glvm-step="0">
+      <header class="glvm-hero fade-in">
+        <div class="glvm-hero-copy">
+          <p class="eyebrow">Learn / GLVM</p>
+          <h1>GLVM</h1>
+          <p class="glvm-full-name">Global Logical Virtual Machine</p>
+          <p class="glvm-tagline glvm-semantic-heading">One logical execution layer, coordinated across many machines.</p>
+          <p class="glvm-hero-text glvm-semantic-copy">GLVM is the developer-facing execution abstraction ALUX is building from its concurrent runtime. A TVM provides the concrete engine on each participating machine; the GLVM model brings execution state, processes, replay, replication, and consensus into one logical layer.</p>
+        </div>
+        <figure class="glvm-hero-visual">
+          <div class="glvm-hero-media">
+            <img src="assets/glvm/20260712_GLVM_全局逻辑主视觉_4K.webp" alt="" aria-hidden="true" class="glvm-hero-poster">
+            <video muted loop autoplay playsinline preload="metadata" poster="assets/glvm/20260712_GLVM_全局逻辑主视觉_4K.webp" aria-label="A warm technical cutaway showing multiple physical machines connected beneath one GLVM execution layer." data-glvm-video>
+              <source src="assets/glvm/20260712_GLVM_全局逻辑动效_1080P.mp4" type="video/mp4">
+            </video>
+            <div class="glvm-hero-overlay" aria-hidden="true"><span></span><span></span><span></span></div>
+          </div>
+        </figure>
+        <div class="glvm-hero-signals"><div class="glvm-signal"><span>Physical model</span><strong>One TVM per machine</strong></div><div class="glvm-signal"><span>Logical model</span><strong>One GLVM above them</strong></div><div class="glvm-signal"><span>Direction</span><strong>Chain to cloud to device</strong></div></div>
+      </header>
+
+      <section class="glvm-definition fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">The core definition</p>
+          <h2 class="glvm-semantic-heading">One TVM per machine, coordinated through one logical execution model</h2>
+          <p class="glvm-semantic-copy">TVM is the bytecode execution engine on one machine. GLVM defines the system-level execution abstraction across participating TVMs. It is not another bytecode VM; developers target one logical model while deterministic replay, execution continuity, replication, finalization, and consensus are coordinated beneath the abstraction.</p>
+        </div>
+        <div class="glvm-comparison">
+      <article class="glvm-comparison-card glvm-comparison-card--tvm">
+        <div class="glvm-comparison-heading"><span>TVM</span><h3>Tuple-space Virtual Machine</h3></div>
+        <p>The concrete ALUX execution engine. It runs Tolang bytecode, coordinates independent processes through channels and COMM events, and records the non-deterministic choices required for deterministic replay.</p>
+        <strong>One concrete engine inside a machine</strong>
+      </article>
+
+      <article class="glvm-comparison-card glvm-comparison-card--glvm">
+        <div class="glvm-comparison-heading"><span>GLVM</span><h3>Global Logical Virtual Machine</h3></div>
+        <p>GLVM defines the developer-facing logical model across participating TVMs. It provides one boundary for execution state and processes while replay, replication, finalization, and consensus remain beneath the abstraction.</p>
+        <strong>One logical system above many machines</strong>
+      </article>
+    </div>
+        <div class="glvm-axis"><div class="glvm-axis-row"><span>VM abstraction</span><strong>Expanding</strong></div><div class="glvm-axis-row"><span>Vertical atomicity</span><strong>Core runtime</strong></div><div class="glvm-axis-row"><span>Horizontal atomicity</span><strong>Roadmap</strong></div><div class="glvm-axis-row"><span>Composable security</span><strong>Core runtime</strong></div></div>
+
+    <aside class="glvm-definition-payoff">
+      <div class="glvm-definition-payoff-heading">
+        <span>Core idea</span>
+        <h3>One logical execution layer, not one physical machine</h3>
+      </div>
+      <p>Developers target one concurrent execution model while the runtime handles scheduling, replay, capability checks, replication, and finalization.</p>
+    </aside>
+
+      </section>
+
+      <section class="glvm-architecture fade-in" id="architecture">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">Three-layer architecture</p>
+          <h2 class="glvm-semantic-heading">Three layers, one developer-facing execution model</h2>
+          <p class="glvm-semantic-copy">Physical machines run TVMs; in the GLVM architecture, those engines participate in one shared logical execution model. A future World OS will organize that layer into discoverable, orchestrated services governed by explicit capabilities.</p>
+        </div>
+        <p class="glvm-layer-instruction">Select any layer to update the detail panel.</p>
+        <div class="glvm-architecture-stage">
+          <div class="glvm-layer-stack" role="group" aria-label="Three layers, one developer-facing execution model">
+      <button class="glvm-layer glvm-layer--world" type="button" data-glvm-layer="world" data-layer-title="World Operating System" data-layer-text="The future service layer for agents and applications: registration and discovery, orchestration, and programmable capabilities. It makes services discoverable and collaboration rules explicit." data-layer-status="Roadmap" aria-pressed="false">
+        <span class="glvm-layer-index">03</span>
+        <span class="glvm-layer-label">Layer 3</span>
+        <strong>World Operating System</strong>
+        <span class="glvm-layer-status">Roadmap</span>
+        <span class="glvm-layer-items"><i>Service and agent discovery</i><i>Orchestration</i><i>Programmable capabilities</i></span>
+      </button>
+
+      <button class="glvm-layer glvm-layer--runtime is-active" type="button" data-glvm-layer="runtime" data-layer-title="GLVM concurrent runtime" data-layer-text="The logical coordination layer. VM abstraction, concurrency control, object capabilities, deterministic replay, and finalization semantics form the shared execution model for participating TVMs." data-layer-status="Core runtime · expanding" aria-pressed="true">
+        <span class="glvm-layer-index">02</span>
+        <span class="glvm-layer-label">Layer 2</span>
+        <strong>GLVM concurrent runtime</strong>
+        <span class="glvm-layer-status">Core runtime · expanding</span>
+        <span class="glvm-layer-items"><i>GLVM abstraction</i><i>Concurrency and replay</i><i>Capability and finalization</i></span>
+      </button>
+
+      <button class="glvm-layer glvm-layer--physical" type="button" data-glvm-layer="physical" data-layer-title="Physical infrastructure" data-layer-text="The machines that do the work. Public-chain nodes provide the current execution foundation. Private or cloud TVMs are the next integration surface; client-device TVMs remain a roadmap path toward local execution." data-layer-status="Core · integration · roadmap" aria-pressed="false">
+        <span class="glvm-layer-index">01</span>
+        <span class="glvm-layer-label">Layer 1</span>
+        <strong>Physical infrastructure</strong>
+        <span class="glvm-layer-status">Core · integration · roadmap</span>
+        <span class="glvm-layer-items"><i>Public-chain TVM</i><i>Private or cloud TVM</i><i>Client-device TVM</i></span>
+      </button>
+    </div>
+          <aside class="glvm-layer-inspector" aria-live="polite">
+            <span data-glvm-layer-status>Core runtime · expanding</span>
+            <h3 data-glvm-layer-title>GLVM concurrent runtime</h3>
+            <p data-glvm-layer-text>The logical coordination layer. VM abstraction, concurrency control, object capabilities, deterministic replay, and finalization semantics form the shared execution model for participating TVMs.</p>
+            <ul data-glvm-layer-items><li>GLVM abstraction</li><li>Concurrency and replay</li><li>Capability and finalization</li></ul>
+          </aside>
+        </div>
+      </section>
+
+
+    <section class="glvm-extension glvm-continuity fade-in" id="execution-continuity">
+      <header class="glvm-extension-header">
+        <div><p class="eyebrow">Execution and atomicity</p><h2 class="glvm-semantic-heading">A transaction can wait across blocks, then settle as one</h2></div>
+        <p class="glvm-continuity-intro">Execution evolves from sequential and parallel work to concurrent processes that communicate, wait, and resume. Composite execution extends the model so multiple concurrent transactions can share a higher-level settlement boundary; cross-block continuity provides the vertical foundation for that direction.</p>
+      </header>
+      <div class="glvm-continuity-frame">
+        <div class="glvm-continuity-tabs" role="tablist" aria-label="A transaction can wait across blocks, then settle as one">
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-sequential" aria-controls="glvm-continuity-panel-sequential" aria-selected="false" tabindex="-1" data-glvm-continuity="sequential">
+      <span>01</span>
+      <strong>Sequential</strong>
+      <small>Baseline</small>
+    </button>
+
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-parallel" aria-controls="glvm-continuity-panel-parallel" aria-selected="false" tabindex="-1" data-glvm-continuity="parallel">
+      <span>02</span>
+      <strong>Parallel</strong>
+      <small>Core runtime</small>
+    </button>
+
+    <button class="glvm-continuity-tab is-active" type="button" role="tab" id="glvm-continuity-tab-concurrent" aria-controls="glvm-continuity-panel-concurrent" aria-selected="true" tabindex="0" data-glvm-continuity="concurrent">
+      <span>03</span>
+      <strong>Concurrent</strong>
+      <small>Core runtime</small>
+    </button>
+
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-composite" aria-controls="glvm-continuity-panel-composite" aria-selected="false" tabindex="-1" data-glvm-continuity="composite">
+      <span>04</span>
+      <strong>Composite</strong>
+      <small>Roadmap</small>
+    </button>
+  </div>
+        <div class="glvm-continuity-panels">
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-sequential" aria-labelledby="glvm-continuity-tab-sequential" data-glvm-continuity-panel="sequential" hidden>
+      <div class="glvm-continuity-visual">
+    <div class="glvm-continuity-scene glvm-continuity-scene--sequential" aria-hidden="true">
+      <span class="glvm-continuity-node glvm-continuity-node--brown"><bdi dir="auto">STATE 01</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">STATE 02</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">STATE 03</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">COMMIT</bdi></span>
+    </div>
+  </div>
+      <div class="glvm-continuity-panel-copy"><span>Baseline</span><h3>Sequential</h3><p>One transition follows another.</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-parallel" aria-labelledby="glvm-continuity-tab-parallel" data-glvm-continuity-panel="parallel" hidden>
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--parallel" aria-hidden="true">
+        <div><small><bdi dir="auto">LANE A</bdi></small><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">TX A</bdi></span></div>
+        <div><small><bdi dir="auto">LANE B</bdi></small><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">TX B</bdi></span></div>
+        <div><small><bdi dir="auto">LANE C</bdi></small><span class="glvm-continuity-node glvm-continuity-node--purple"><bdi dir="auto">TX C</bdi></span></div>
+        <i></i>
+        <span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">MERGE</bdi></span>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>Core runtime</span><h3>Parallel</h3><p>Independent transitions advance at the same time.</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel is-active" role="tabpanel" id="glvm-continuity-panel-concurrent" aria-labelledby="glvm-continuity-tab-concurrent" data-glvm-continuity-panel="concurrent">
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--concurrent" aria-hidden="true">
+        <div class="glvm-continuity-process"><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">PROCESS A</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--muted"><bdi dir="auto">WAIT</bdi></span></div>
+        <span class="glvm-continuity-message"><bdi dir="auto">COMM</bdi></span>
+        <div class="glvm-continuity-process"><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">PROCESS B</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">SEND</bdi></span></div>
+        <div class="glvm-continuity-resume"><span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">RESUME</bdi></span></div>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>Core runtime</span><h3>Concurrent</h3><p>Processes communicate, wait, and resume through channels.</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-composite" aria-labelledby="glvm-continuity-tab-composite" data-glvm-continuity-panel="composite" hidden>
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--composite" aria-hidden="true">
+        <div class="glvm-composite-objective">
+          <small><bdi dir="auto">ONE ATOMIC OBJECTIVE</bdi></small>
+          <div class="glvm-composite-transactions">
+            <span><bdi dir="auto">TX A</bdi><i></i><bdi dir="auto">READY</bdi></span>
+            <span><bdi dir="auto">TX B</bdi><i></i><bdi dir="auto">WAIT</bdi></span>
+            <span><bdi dir="auto">TX C</bdi><i></i><bdi dir="auto">READY</bdi></span>
+          </div>
+        </div>
+        <div class="glvm-composite-gate"><span></span><small><bdi dir="auto">ALL / NONE</bdi></small></div>
+        <span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">ONE COMMIT</bdi></span>
+        <em><bdi dir="auto">ROADMAP</bdi></em>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>Roadmap</span><h3>Composite</h3><p>Multiple concurrent transactions share a higher-level atomic objective.</p></div>
+    </article>
+  </div>
+        <div class="glvm-atomicity">
+          <div class="glvm-atomicity-heading"><span>Vertical atomicity · core runtime</span><strong>Cross-block execution preserves one transaction context.</strong></div>
+          <ol class="glvm-atomicity-rail">
+    <li>
+      <span>01 · Start</span>
+      <strong>Begin once</strong>
+      <p>Start one transaction with one scoped set of capabilities.</p>
+    </li>
+
+    <li>
+      <span>02 · Suspend</span>
+      <strong>Wait without partial settlement</strong>
+      <p>If an answer or channel match is missing, preserve the continuation instead of finalizing early.</p>
+    </li>
+
+    <li>
+      <span>03 · Record</span>
+      <strong>Capture the choice</strong>
+      <p>ReplayTrie records the non-deterministic choice or authenticated response required to reproduce the path.</p>
+    </li>
+
+    <li>
+      <span>04 · Resume</span>
+      <strong>Continue the same transaction</strong>
+      <p>A matching COMM event or recorded response wakes the preserved continuation in a later block.</p>
+    </li>
+
+    <li>
+      <span>05 · Finalize</span>
+      <strong>Commit or discard</strong>
+      <p>At the finalization boundary, eligible state is committed; rejected tentative state is discarded.</p>
+    </li>
+  </ol>
+        </div>
+      </div>
+      <div class="glvm-continuity-notes">
+    <article class="glvm-continuity-note glvm-continuity-note--current">
+      <span>Core execution path</span>
+      <p>Concurrent TVM execution · COMM wait and resume · ReplayTrie · cross-block continuation and finalization</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--current">
+      <span>Atomicity model</span>
+      <p>Tentative intermediate state does not become confirmed state until finalization; a failed path is discarded instead of repaired later through compensating transactions.</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--boundary">
+      <span>Native off-chain read</span>
+      <p>An authenticated HTTPS GET can suspend, record the response, replay, and resume. The data source still determines truth, and irreversible off-chain side effects remain outside rollback.</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--roadmap">
+      <span>Horizontal atomicity</span>
+      <p>Cross-shard atomic execution and composition with independent external systems define the next expansion of the model.</p>
+    </article>
+  </div>
+    </section>
+
+
+    <section class="glvm-extension glvm-ocap-story fade-in" id="object-capability">
+      <header class="glvm-extension-header">
+        <div><p class="eyebrow">Object-capability security</p><h2 class="glvm-semantic-heading">Give the task one key—not the user’s badge</h2></div>
+        <p class="glvm-semantic-copy">In the CEO–Bob example, identity-based access can carry the ambient authority represented by the CEO’s badge into the task. With object capabilities, the task receives only one key that names Bob’s record. The TVM enforces the reachable boundary at runtime. Without a capability reference to another pre-existing object, the task cannot name or reach it.</p>
+      </header>
+      <div class="glvm-ocap-body">
+        <div class="glvm-ocap-copy">
+          <div class="glvm-ocap-compare">
+    <article class="glvm-ocap-card glvm-ocap-card--ambient">
+      <div class="glvm-ocap-card-visual" aria-hidden="true">
+        <img src="assets/glvm/20260731_GLVM_OCAP_身份权限.svg?v=20260812-neck2" alt="" width="600" height="360" loading="eager" decoding="async">
+      </div>
+      <div class="glvm-ocap-card-copy">
+        <span>Broad identity authority</span>
+        <h3>The badge carries unrelated access into the task</h3>
+        <p>Even when the task concerns Bob alone, the identity authority represented by the CEO’s badge can still cover Financials and the records of Alice, Carol, and Bob.</p>
+      </div>
+    </article>
+
+    <article class="glvm-ocap-card glvm-ocap-card--explicit">
+      <div class="glvm-ocap-card-visual" aria-hidden="true">
+        <img src="assets/glvm/20260731_GLVM_OCAP_对象能力.svg?v=20260812-neck2" alt="" width="600" height="360" loading="eager" decoding="async">
+      </div>
+      <div class="glvm-ocap-card-copy">
+        <span>Explicit object capability</span>
+        <h3>The task receives one key that names Bob’s record</h3>
+        <p>This key represents an unforgeable name that identifies Bob’s record. Without a capability reference to another pre-existing object, the task cannot name or reach it. The TVM checks that boundary at runtime.</p>
+      </div>
+    </article>
+  </div>
+          <aside class="glvm-ocap-takeaway"><span>POLA · Principle of least authority</span><p>Model safeguards can reduce unsafe behavior, but capability boundaries enforce least authority at runtime. If an agent has only the key that names Bob’s record, compromise stays within that object instead of expanding to all the identity authority represented by the CEO’s badge.</p></aside>
+          <div class="glvm-ocap-boundary"><strong>Terminology</strong><p>Here, “key” visually represents an OCAP unforgeable name—a capability reference. It is not a cryptographic key. This guarantee applies to TVM-native, capability-mediated interactions; hosted EVM permissions and external services need their own controls.</p></div>
+        </div>
+      </div>
+    </section>
+
+
+      <section class="glvm-journey fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">Workflow explorer</p>
+          <h2 class="glvm-semantic-heading">Choose the execution surface by trust, response time, and data locality</h2>
+          <p>Consider a cross-company device repair: escrow needs independent verification, diagnostics need elastic compute, and the device owner should approve local access. In the GLVM model, each task maps to the execution surface that matches its trust, latency, and data boundary while authority remains explicit.</p>
+        </div>
+        <div class="glvm-route-toolbar"><span>Choose a requirement</span><div>
+      <button class="glvm-route-button is-active" type="button" data-glvm-route="trust" data-route-title="Public-chain TVM + EVM host" data-route-text="Hold the warranty escrow and record its approval path where independent validators can verify the transition." data-route-status="Core runtime" aria-pressed="true">
+        <span>01</span>
+        <strong>Needs trust</strong>
+      </button>
+
+      <button class="glvm-route-button" type="button" data-glvm-route="speed" data-route-title="Private or cloud TVM" data-route-text="Run heavy diagnostics near elastic compute while keeping authority narrow and explicit." data-route-status="Integration" aria-pressed="false">
+        <span>02</span>
+        <strong>Needs speed</strong>
+      </button>
+
+      <button class="glvm-route-button" type="button" data-glvm-route="locality" data-route-title="Client-device TVM" data-route-text="Read local sensor data and request the owner’s confirmation without exporting every private input." data-route-status="Roadmap" aria-pressed="false">
+        <span>03</span>
+        <strong>Needs locality</strong>
+      </button>
+    </div></div>
+        <div class="glvm-journey-board" data-glvm-journey data-journey-messages="[&quot;Ready. Start the simulation to see the target logical flow.&quot;,&quot;Authority is scoped before work begins.&quot;,&quot;Each execution surface receives a bounded task.&quot;,&quot;The chain runtime preserves a waiting continuation.&quot;,&quot;A matching message wakes the continuation.&quot;,&quot;Replay evidence makes the path reproducible.&quot;,&quot;Chain-side results converge; cross-surface atomic commit is the next horizon.&quot;]">
+          <div class="glvm-route-map" aria-hidden="true">
+            <div class="glvm-route-lines"><span></span><span></span><span></span></div>
+
+      <div class="glvm-substrate glvm-substrate--trust is-active" data-glvm-route-node="trust">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong>Public-chain TVM + EVM host</strong>
+        <small>Core runtime</small>
+      </div>
+
+      <div class="glvm-substrate glvm-substrate--speed" data-glvm-route-node="speed">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong>Private or cloud TVM</strong>
+        <small>Integration</small>
+      </div>
+
+      <div class="glvm-substrate glvm-substrate--locality" data-glvm-route-node="locality">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong>Client-device TVM</strong>
+        <small>Roadmap</small>
+      </div>
+
+            <div class="glvm-route-core"><span>GLVM</span><strong>TVM × N</strong><i aria-hidden="true"><b></b><b></b><b></b></i></div>
+            <div class="glvm-route-packet glvm-route-packet--one"></div>
+            <div class="glvm-route-packet glvm-route-packet--two"></div>
+            <div class="glvm-route-packet glvm-route-packet--three"></div>
+            <div class="glvm-commit-rail"><span>Replay</span><i></i><span>Commit</span></div>
+          </div>
+          <div class="glvm-route-detail" aria-live="polite">
+            <span data-glvm-route-status>Core runtime</span>
+            <h3 data-glvm-route-title>Public-chain TVM + EVM host</h3>
+            <p data-glvm-route-text>Hold the warranty escrow and record its approval path where independent validators can verify the transition.</p>
+          </div>
+          <div class="glvm-journey-control">
+            <div><span>Follow the target flow</span><strong data-glvm-progress>0 / 6</strong></div>
+            <div><button type="button" data-glvm-action="play">Simulate the workflow</button><button type="button" data-glvm-action="reset">Reset</button></div>
+            <p data-glvm-message aria-live="polite">Ready. Start the simulation to see the target logical flow.</p>
+          </div>
+          <div class="glvm-journey-steps">
+      <article class="glvm-journey-step is-current" data-glvm-step-card="1">
+        <span>01</span><h3>Scoped capability</h3><p>The repair agent receives only the rights required for this job.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="2">
+        <span>02</span><h3>Plan the dispatch</h3><p>The workflow maps bounded subtasks to chain, private or cloud, and client-device TVMs.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="3">
+        <span>03</span><h3>Wait / suspend</h3><p>On the chain runtime, a missing reply preserves the continuation instead of finalizing the transaction early.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="4">
+        <span>04</span><h3>COMM match</h3><p>A produced result meets the waiting continuation on a channel; the workflow resumes.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="5">
+        <span>05</span><h3>Replay proof</h3><p>ReplayTrie records the choices needed for another validator to reproduce the run.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="6">
+        <span>06</span><h3>Finalization boundary</h3><p>BlockGit and Block Merge converge verifiable chain-side results. Extending one atomic commit across every execution surface is the GLVM horizon.</p>
+      </article>
+    </div>
+        </div>
+      </section>
+
+      <section class="glvm-stack fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">Runtime anatomy</p>
+          <h2>Nine capability areas behind the GLVM abstraction</h2>
+          <p>GLVM is not a second bytecode VM. These nine architecture views—from TVM execution, object capabilities, and replay to BlockGit, guest VMs, and developer tooling—show the capability system behind its logical execution model.</p>
+        </div>
+        <div class="glvm-stack-flow" aria-label="Nine capability areas behind the GLVM abstraction">
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="0" data-flow-state="current" data-flow-status="core runtime" aria-pressed="true" aria-label="Bytecode VM: TVM · tuple space · COMM">
+        <span>01</span><strong>Bytecode VM</strong><small>Core runtime</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="1" data-flow-state="current" data-flow-status="core runtime" aria-pressed="false" aria-label="Security: Native object capabilities">
+        <span>02</span><strong>Security</strong><small>Core runtime</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="2" data-flow-state="current" data-flow-status="core runtime" aria-pressed="false" aria-label="Atomicity: Cross-block atomic execution">
+        <span>03</span><strong>Atomicity</strong><small>Core runtime</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="3" data-flow-state="current" data-flow-status="core runtime" aria-pressed="false" aria-label="Finality: BlockGit · fringe · merge">
+        <span>04</span><strong>Finality</strong><small>Core runtime</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="4" data-flow-state="current" data-flow-status="core runtime" aria-pressed="false" aria-label="Replay: ReplayTrie · trace">
+        <span>05</span><strong>Replay</strong><small>Core runtime</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="5" data-flow-state="current" data-flow-status="core runtime" aria-pressed="false" aria-label="Network: Peer and validator network">
+        <span>06</span><strong>Network</strong><small>Core runtime</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="6" data-flow-state="current" data-flow-status="core runtime" aria-pressed="false" aria-label="Language: Tolang → tolangc → .tox">
+        <span>07</span><strong>Language</strong><small>Core runtime</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="7" data-flow-state="planned" data-flow-status="evm core · wasm roadmap" aria-pressed="false" aria-label="Guest VMs: EVM host · WASM roadmap">
+        <span>08</span><strong>Guest VMs</strong><small>EVM core · WASM roadmap</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="8" data-flow-state="mixed" data-flow-status="developer surface" aria-pressed="false" aria-label="Tooling: Compiler · LSP · playground">
+        <span>09</span><strong>Tooling</strong><small>Developer surface</small>
+      </button>
+    </div>
+        <ol class="glvm-stack-list">
+      <li class="glvm-stack-item" data-stack-index="0" data-stack-state="current" data-stack-status="core runtime">
+        <span class="glvm-stack-number">01</span>
+        <div class="glvm-stack-label"><span>Bytecode VM</span><strong>Core runtime</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="21" width="25" height="30" rx="5"/><path d="M17 30h11M17 36h11M17 42h8"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="11"/><rect x="85" y="21" width="25" height="30" rx="5"/><path d="M92 30h11M92 36h11M92 42h8"/><path class="glvm-glyph-track" d="M35 36h14m22 0h14"/><path class="glvm-glyph-flow" d="M35 36h14m22 0h14"/></svg></div>
+        <div class="glvm-stack-copy"><h3>TVM · tuple space · COMM</h3><p>The concrete concurrent engine runs bytecode and lets independent processes exchange data and continuations through channels.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="1" data-stack-state="current" data-stack-status="core runtime">
+        <span class="glvm-stack-number">02</span>
+        <div class="glvm-stack-label"><span>Security</span><strong>Core runtime</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="17" cy="36" r="7"/><circle cx="17" cy="36" r="3"/><path d="M24 36h25m-8 0v7m-8-7v5"/><rect class="glvm-glyph-pulse" x="49" y="25" width="22" height="22" rx="6"/><circle cx="98" cy="36" r="8"/><circle cx="98" cy="36" r="3"/><path class="glvm-glyph-track" d="M24 36h25m22 0h19"/><path class="glvm-glyph-flow" d="M24 36h25m22 0h19"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Native object capabilities</h3><p>Unforgeable references make reachable authority explicit and let the runtime enforce least-authority boundaries.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="2" data-stack-state="current" data-stack-status="core runtime">
+        <span class="glvm-stack-number">03</span>
+        <div class="glvm-stack-label"><span>Atomicity</span><strong>Core runtime</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="17" width="100" height="38" rx="12"/><path class="glvm-glyph-track" d="M20 36h25m30 0h25"/><path class="glvm-glyph-flow" d="M20 36h25m30 0h25"/><path class="glvm-glyph-pulse" d="M60 22l15 8v13l-15 8-15-8V30zM45 30l15 8 15-8M60 38v13"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Cross-block atomic execution</h3><p>Execution contexts can suspend across blocks, resume from preserved continuations, and reach a deferred finalization boundary.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="3" data-stack-state="current" data-stack-status="core runtime">
+        <span class="glvm-stack-number">04</span>
+        <div class="glvm-stack-label"><span>Finality</span><strong>Core runtime</strong></div>
+        <div class="glvm-stack-glyph"><svg class="is-planned" viewBox="0 0 120 72" aria-hidden="true"><circle cx="18" cy="22" r="5"/><circle cx="18" cy="50" r="5"/><path d="M55 26l11 10-11 10-11-10z"/><circle class="glvm-glyph-pulse" cx="98" cy="36" r="8"/><path d="m94 36 3 3 6-7"/><path class="glvm-glyph-track" d="M23 22l21 11M23 50l21-11m22-3h24"/><path class="glvm-glyph-flow" d="M23 22l21 11M23 50l21-11m22-3h24"/></svg></div>
+        <div class="glvm-stack-copy"><h3>BlockGit · fringe · merge</h3><p>A block DAG, deterministic leader rotation, and merge rules converge concurrent chain-side work without a permanent leader.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="4" data-stack-state="current" data-stack-status="core runtime">
+        <span class="glvm-stack-number">05</span>
+        <div class="glvm-stack-label"><span>Replay</span><strong>Core runtime</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="22" cy="45" r="5"/><circle cx="60" cy="45" r="5"/><circle class="glvm-glyph-pulse" cx="98" cy="45" r="5"/><path class="glvm-glyph-track" d="M27 45h28m10 0h28M98 37C94 14 31 14 22 37"/><path class="glvm-glyph-flow" d="M27 45h28m10 0h28M98 37C94 14 31 14 22 37"/><path d="m21 29 1 8 8-2"/></svg></div>
+        <div class="glvm-stack-copy"><h3>ReplayTrie · trace</h3><p>Recorded non-deterministic choices and execution traces let validators reproduce the accepted path.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="5" data-stack-state="current" data-stack-status="core runtime">
+        <span class="glvm-stack-number">06</span>
+        <div class="glvm-stack-label"><span>Network</span><strong>Core runtime</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle class="glvm-glyph-pulse" cx="60" cy="36" r="9"/><circle cx="22" cy="18" r="5"/><circle cx="98" cy="18" r="5"/><circle cx="22" cy="54" r="5"/><circle cx="98" cy="54" r="5"/><path class="glvm-glyph-track" d="M27 21l25 11M93 21 68 32M27 51l25-11m41 11L68 40"/><path class="glvm-glyph-flow" d="M27 21l25 11M93 21 68 32M27 51l25-11m41 11L68 40"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Peer and validator network</h3><p>The node layer carries proposals, blocks, state evidence, and validator coordination beneath the execution abstraction.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="6" data-stack-state="current" data-stack-status="core runtime">
+        <span class="glvm-stack-number">07</span>
+        <div class="glvm-stack-label"><span>Language</span><strong>Core runtime</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="24" width="26" height="24" rx="5"/><path d="M20 31l-5 5 5 5M27 31l5 5-5 5"/><rect class="glvm-glyph-pulse" x="47" y="24" width="26" height="24" rx="5"/><path d="M53 32h12m0 0-3-3m3 3-3 3M67 40H55m0 0 3-3m-3 3 3 3"/><rect x="84" y="24" width="26" height="24" rx="5"/><path d="M91 31h12M91 36h8M91 41h12"/><path class="glvm-glyph-track" d="M38 36h7m30 0h7"/><path class="glvm-glyph-flow" d="M38 36h7m30 0h7"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Tolang → tolangc → .tox</h3><p>Tolang describes concurrent processes; the compiler lowers source into TVM-executable bytecode.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="7" data-stack-state="planned" data-stack-status="evm core · wasm roadmap">
+        <span class="glvm-stack-number">08</span>
+        <div class="glvm-stack-label"><span>Guest VMs</span><strong>EVM core · WASM roadmap</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="9" y="12" width="102" height="48" rx="10"/><rect x="20" y="23" width="32" height="26" rx="6"/><rect x="68" y="23" width="32" height="26" rx="6"/><circle cx="36" cy="36" r="6"/><path d="M33 33l6 6M39 33l-6 6M78 31l5 10 5-10"/><path class="glvm-glyph-track" d="M52 36h16m32 0h7"/><path class="glvm-glyph-flow" d="M52 36h16m32 0h7"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="3"/></svg></div>
+        <div class="glvm-stack-copy"><h3>EVM host · WASM roadmap</h3><p>The EVM runs as a stateful guest through TSAC-style coordination. WASM extends the heterogeneous-VM direction.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="8" data-stack-state="mixed" data-stack-status="developer surface">
+        <span class="glvm-stack-number">09</span>
+        <div class="glvm-stack-label"><span>Tooling</span><strong>Developer surface</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="11" width="100" height="50" rx="8"/><path d="M10 25h100M20 18h3m7 0h3m7 0h3M24 35l7 6-7 6"/><path class="glvm-glyph-track" d="M40 47h50"/><path class="glvm-glyph-flow" d="M40 47h50"/><circle class="glvm-glyph-pulse" cx="97" cy="47" r="5"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Compiler · LSP · playground</h3><p>The compiler, LSP, playground, test suite, and diagnostics bring the execution model into developer workflows.</p></div>
+      </li>
+    </ol>
+      </section>
+
+      <section class="glvm-status fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">Build horizon</p>
+          <h2 class="glvm-semantic-heading">The core runtime is taking shape as GLVM expands across environments</h2>
+          <div class="glvm-status-intro">
+            <p class="glvm-semantic-copy">GLVM grows outward from ALUX’s concurrent chain runtime. Private cloud is the next integration surface; client-device and cross-shard execution remain on the roadmap. The map below separates the core runtime, the surfaces now being extended, and the next architectural horizon.</p>
+            <div class="glvm-status-summary" aria-hidden="true">
+      <div class="glvm-status-summary-item glvm-status-summary-item--built" aria-label="Core runtime: 6">
+        <span>06</span>
+        <small>Core runtime</small>
+      </div>
+
+      <div class="glvm-status-summary-item glvm-status-summary-item--designed" aria-label="Expanding the system: 5">
+        <span>05</span>
+        <small>Expanding the system</small>
+      </div>
+
+      <div class="glvm-status-summary-item glvm-status-summary-item--planned" aria-label="Roadmap: 6">
+        <span>06</span>
+        <small>Roadmap</small>
+      </div>
+    </div>
+          </div>
+        </div>
+        <div class="glvm-status-grid">
+      <article class="glvm-status-group glvm-status-group--built">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">Core runtime</span></h3>
+        <ul><li>Concurrent TVM and COMM</li><li>ReplayTrie and execution traces</li><li>Cross-block suspend / resume paths</li><li>Native OCAP foundations</li><li>EVM host path</li><li>BlockGit DAG, fringe, and merge</li></ul>
+      </article>
+
+      <article class="glvm-status-group glvm-status-group--designed">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">Expanding the system</span></h3>
+        <ul><li>Private or cloud engine deployment</li><li>GLVM abstraction across deployment surfaces</li><li>Production-scale hardening</li><li>Richer policy and guarded-channel controls</li><li>Runtime observability and operator tooling</li></ul>
+      </article>
+
+      <article class="glvm-status-group glvm-status-group--planned">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">Roadmap</span></h3>
+        <ul><li>Cross-shard horizontal atomicity</li><li>WASM guest VM</li><li>Client-device TVM deployment</li><li>Account abstraction and capability registry</li><li>Peer resynchronization after failure and dynamic validator-set changes</li><li>Programmable World OS layer</li></ul>
+      </article>
+    </div>
+      </section>
+
+
+    <section class="glvm-next fade-in" aria-labelledby="glvm-next-title">
+      <div class="glvm-next-copy">
+        <p class="eyebrow">Continue learning</p>
+        <h2 id="glvm-next-title">Explore the runtime, agent workloads, and system comparisons</h2>
+        <p>Runtime Lab explains the execution model. For AI Agents shows the workload pattern. ALUX VS Others compares architecture and capabilities across systems.</p>
+      </div>
+      <nav class="glvm-next-links" aria-labelledby="glvm-next-title">
+        <a class="glvm-next-link glvm-next-link--primary" href="runtime-lab.html">
+          <span class="glvm-next-index" aria-hidden="true">01</span>
+          <span class="glvm-next-label">Runtime Lab</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+
+        <a class="glvm-next-link glvm-next-link--secondary" href="for-ai-agents.html">
+          <span class="glvm-next-index" aria-hidden="true">02</span>
+          <span class="glvm-next-label">For AI Agents</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+
+        <a class="glvm-next-link glvm-next-link--tertiary" href="alux-vs-others.html">
+          <span class="glvm-next-index" aria-hidden="true">03</span>
+          <span class="glvm-next-label">ALUX VS Others</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+      </nav>
+    </section>
+
+    </article>
+</main>
     <footer class="site-footer">
       <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright"></p></div>
     </footer>
   </div>
 <script src="i18n/site.generated.js?v=20260814-customer-vm1"></script>
-<script src="script.js?v=20260814-customer-vm1"></script>
+<script src="script.js?v=20261010-initial-content"></script>
 </body>
 </html>
