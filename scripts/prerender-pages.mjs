@@ -38,11 +38,12 @@ function render(page) {
     setTimeout() {}, clearTimeout() {},
     IntersectionObserver: class { observe() {} }
   });
-  vm.runInContext(`${source}\n;globalThis.sanitizeText = sanitizeExternalProjectNames;`, context, { timeout: 5000 });
+  vm.runInContext(`${source}\n;globalThis.sanitizeText = sanitizeExternalProjectNames; globalThis.languageName = visibleLanguageNames.en;`, context, { timeout: 5000 });
   // Mirror the runtime's English text-node cleanup, leaving attributes intact.
-  return main.innerHTML.replace(/(^|>)([^<]+)(?=<|$)/g,
+  const markup = main.innerHTML.replace(/(^|>)([^<]+)(?=<|$)/g,
     (_, boundary, text) => boundary + context.sanitizeText(text, "en"))
     .replace(/[\t ]+$/gm, "");
+  return { markup, languageName: context.languageName };
 }
 
 const stale = [];
@@ -51,11 +52,12 @@ for (const file of pages) {
   const html = await fs.readFile(filename, "utf8");
   const page = html.match(/<body\b[^>]*data-page="([^"]+)"/)?.[1];
   if (!page) throw new Error(`${file}: missing page identity`);
-  const markup = render(page);
+  const { markup, languageName } = render(page);
   if (!/<h[1-6]\b/.test(markup)) throw new Error(`${file}: renderer returned no heading`);
   const mainPattern = /<main\b[^>]*id="page-content"[^>]*>[\s\S]*?<\/main>/;
   if (!mainPattern.test(html)) throw new Error(`${file}: missing main content`);
-  const expected = html.replace(mainPattern, () => `<main id="page-content" data-prerendered="en">${markup}</main>`);
+  const expected = html.replace(mainPattern, () => `<main id="page-content" data-prerendered="en">${markup}</main>`)
+    .replace(/(data-lang-current>)[^<]*/g, (_, prefix) => prefix + languageName);
   if (html !== expected) {
     if (checkOnly) stale.push(file);
     else await fs.writeFile(filename, expected, "utf8");
