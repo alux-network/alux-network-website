@@ -12,9 +12,40 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
     rel="stylesheet"
   >
-<link rel="stylesheet" href="styles.css?v=20260812-motion-restore4">
+<link rel="stylesheet" href="styles.css?v=20261010-refresh-stability">
 <link rel="stylesheet" href="site-frame.css?v=20260927-logo-shadow">
-<link rel="stylesheet" href="home-mobile-nav.css?v=20260812-motion-restore4">
+<link rel="stylesheet" href="home-mobile-nav.css?v=20261010-localized-navigation">
+<script data-initial-navigation>
+(function initializeNavigation(catalog, languageNames) {
+  let language = "en";
+  try {
+    language = sessionStorage.getItem("alux-lang") || "en";
+  } catch {}
+  if (!Object.prototype.hasOwnProperty.call(catalog, language)) language = "en";
+  const chrome = catalog[language];
+  document.documentElement.lang = language;
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+  const observer = new MutationObserver(() => {
+    const header = document.querySelector(".site-header");
+    // The menu toggle is the last control in every header.
+    if (!header?.querySelector(".menu-toggle")) return;
+    header.querySelectorAll("[data-nav]").forEach((node) => {
+      node.textContent = chrome.nav[node.dataset.nav] || node.textContent;
+    });
+    header.querySelectorAll("[data-lang-label]").forEach((node) => {
+      node.textContent = chrome.languageLabel;
+    });
+    header.querySelectorAll("[data-lang-current]").forEach((node) => {
+      node.textContent = languageNames[language];
+    });
+    header.querySelector(".site-nav")?.setAttribute("aria-label", chrome.primaryNavigationLabel);
+    header.querySelector(".menu-toggle")?.setAttribute("aria-label", chrome.menuToggleLabel);
+    observer.disconnect();
+  });
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+})({"en":{"nav":{"home":"Home","vs":"For AI Agents","learn":"Learn","learnGlvm":"GLVM","blog":"Blog","learnAlux":"ALUX VS Others","learnPcc":"Runtime Lab","team":"Team","roadmap":"Roadmap","cta":"Contact Us"},"languageLabel":"Language","primaryNavigationLabel":"Primary navigation","menuToggleLabel":"Toggle navigation menu"},"ar":{"nav":{"home":"الرئيسية","vs":"لوكلاء الذكاء الاصطناعي","learn":"استكشف","learnGlvm":"GLVM","blog":"المدونة","learnAlux":"ALUX مقارنةً بالحلول الأخرى","learnPcc":"مختبر بيئة التشغيل","team":"الفريق","roadmap":"خارطة الطريق","cta":"تواصل معنا"},"languageLabel":"اللغة","primaryNavigationLabel":"التنقل الرئيسي","menuToggleLabel":"تبديل قائمة التنقل"},"ja":{"nav":{"home":"ホーム","vs":"AIエージェント向け","learn":"詳しく見る","learnGlvm":"GLVM","blog":"ブログ","learnAlux":"ALUX と他方式の比較","learnPcc":"ランタイム・ラボ","team":"チーム","roadmap":"ロードマップ","cta":"お問い合わせ"},"languageLabel":"言語","primaryNavigationLabel":"メインナビゲーション","menuToggleLabel":"ナビゲーションメニューを切り替える"},"ko":{"nav":{"home":"홈","vs":"AI 에이전트용","learn":"알아보기","learnGlvm":"GLVM","blog":"블로그","learnAlux":"ALUX와 다른 시스템","learnPcc":"런타임 랩","team":"팀","roadmap":"로드맵","cta":"문의하기"},"languageLabel":"언어","primaryNavigationLabel":"주요 탐색","menuToggleLabel":"탐색 메뉴 전환"},"zh":{"nav":{"home":"首页","vs":"面向 AI 智能体","learn":"了解","learnGlvm":"GLVM","blog":"博客","learnAlux":"ALUX VS 其它","learnPcc":"Runtime Lab","team":"团队","roadmap":"路线图","cta":"联系我们"},"languageLabel":"语言","primaryNavigationLabel":"主导航","menuToggleLabel":"切换导航菜单"}},{"en":"English","zh":"中文","ko":"한국어","ja":"日本語","ar":"العربية"});
+</script>
 </head>
 <body data-page="aluxVsOthers">
   <div class="bg-grid" aria-hidden="true"></div>
@@ -41,7 +72,7 @@
         <a href="roadmap.html" data-nav="roadmap">Roadmap</a>
       </nav>
       <div class="header-actions">
-        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Language</span><span class="lang-current" data-lang-current>EN</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><button class="lang-button" type="button" data-lang="en">EN</button><button class="lang-button" type="button" data-lang="zh">ZH</button><button class="lang-button" type="button" data-lang="ko">KO</button><button class="lang-button" type="button" data-lang="ja">JA</button><button class="lang-button" type="button" data-lang="ar">AR</button></div></div>
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Language</span><span class="lang-current" data-lang-current>English</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><button class="lang-button" type="button" data-lang="en">EN</button><button class="lang-button" type="button" data-lang="zh">ZH</button><button class="lang-button" type="button" data-lang="ko">KO</button><button class="lang-button" type="button" data-lang="ja">JA</button><button class="lang-button" type="button" data-lang="ar">AR</button></div></div>
         <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">Contact Us</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
       </div>
@@ -109,7 +140,7 @@
     </footer>
   </div>
 <script src="i18n/site.generated.js?v=20260812-motion-restore4"></script>
-<script src="script.js?v=20261010-initial-content"></script>
+<script src="script.js?v=20261010-localized-navigation"></script>
 </body>
 </html>
 
