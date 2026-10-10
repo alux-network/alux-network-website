@@ -46,13 +46,70 @@
         <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
       </div>
     </header>
-    <main id="page-content"></main>
+    <main id="page-content" data-prerendered="en">
+    <article class="alux-vs-page alux-vs-article">
+      <header class="alux-vs-article-header fade-in">
+        <div class="alux-vs-article-lede">
+          <h1>A Distributed Runtime to Unify Web 2 & 3</h1>
+          <p>Blockchains are essentially state transition machines. ALUX expands the model from short, isolated VM calls into replayable long transactions: cross-block execution and verifiable Web 2 I/O today, with cross-runtime and cross-shard composition as the broader architecture.</p>
+        </div>
+        <aside class="alux-vs-article-summary" aria-label="Article summary">
+          <span>Core difference</span>
+          <dl><div><dt>Most chains</dt><dd>Short, isolated VM calls</dd></div><div><dt>ALUX</dt><dd>Replayable long transactions</dd></div><div><dt>Execution</dt><dd>Parallel and concurrent today; composite is the target model</dd></div><div><dt>Transaction semantics</dt><dd>ACID-style semantics for long transactions</dd></div></dl>
+        </aside>
+      </header>
+
+      <div class="alux-vs-article-layout">
+        <aside class="alux-vs-article-nav" aria-label="In this article">
+          <span>In this article</span>
+          <a href="#problem">The Problem</a><a href="#universal">Long Transactions</a><a href="#execution">Execution Model</a><a href="#compatibility">Composite & Compatibility</a>
+        </aside>
+
+        <div class="alux-vs-article-body">
+          <section class="alux-vs-article-section fade-in" id="problem">
+            <h2>The Problem We Are Solving</h2>
+            <p>Many blockchain VMs focus on short, ordered state updates. ALUX extends that model for workflows that need to wait, resume, coordinate, or cross block boundaries.</p>
+            <ul><li>Blockchains are essentially state transition machines.</li><li>Many current blockchain VMs focus on a narrower class of short, ordered transitions.</li></ul>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--state"><div class="alux-vs-native-surface" role="img" aria-label="State transition model diagram">
+    <div class="alux-vs-original-image alux-vs-original-image--state">
+      <img src="assets/alux-vs-others/state-transitions-page-crop-transparent.png" alt="" width="2070" height="910" loading="lazy">
+    </div>
+  </div><figcaption>Figure 1. ALUX extends the Web3 execution model from short updates toward replayable long transactions.</figcaption><p class="alux-vs-figure-note"><strong>Takeaway:</strong> many chains center on short state updates; ALUX adds replayable long transactions.</p></figure>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="universal">
+            <h2>ALUX as a Distributed Runtime for Long Transactions</h2>
+            <p>ALUX models parallel, concurrent, and composite transition patterns beyond one-shot state updates.</p>
+            <p>Instead of treating every transaction as a short isolated state update, ALUX models execution as a runtime that can coordinate parallel, concurrent, and composite transitions.</p>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--types"><div class="alux-vs-native-surface" role="img" aria-label="Parallel, concurrent, and composite transition diagram"><div class="alux-vs-original-image alux-vs-original-image--types"><img src="assets/alux-vs-others/transition-types-transparent.png" alt="" width="3634" height="1353" loading="lazy"></div></div><figcaption>Figure 2. ALUX supports parallel and concurrent state transitions today and models composite transitions as the target architecture.</figcaption><p class="alux-vs-figure-note"><strong>Takeaway:</strong> parallelism advances independent work, concurrency enables wait and resume, and composition defines how related effects should settle together.</p></figure>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="execution">
+            <h2>Execution Model</h2>
+            <div class="alux-vs-capability-grid"><article class="alux-vs-capability alux-vs-capability--1"><span>Parallel</span><div><h3>Parallel Execution</h3><p>Isolated <span class="alux-vs-accent">EVM</span> instances can run in parallel today. WASM belongs to the planned heterogeneous-VM direction.</p></div></article><article class="alux-vs-capability alux-vs-capability--2"><span>Concurrent</span><div><h3>Concurrent Execution</h3><p>ALUX allows TXs to execute as <span class="alux-vs-accent">coroutines</span>, which can be suspended, awakened, and interleaved with each other. Nondeterministically executed, but deterministically replayed.</p></div></article><article class="alux-vs-capability alux-vs-capability--3"><span>Composite</span><div><h3>Composite Transitions</h3><p>TXs can span block heights and coordinate on-chain work with replayable HTTPS effects while preserving isolation and <span class="alux-vs-accent">atomic settlement</span> inside the ALUX transaction boundary. Cross-shard composition remains part of the architecture and roadmap.</p></div></article></div>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="compatibility">
+            <h2>Composite Transitions and Compatibility</h2>
+            <p>TXs can span block heights and coordinate on-chain work with replayable HTTPS effects while preserving isolation and <span class="alux-vs-accent">atomic settlement</span> inside the ALUX transaction boundary. Cross-shard composition remains part of the architecture and roadmap.</p>
+            <p>ALUX exposes an <span class="alux-vs-accent">EVM</span> path today through its sandbox and Ethereum JSON-RPC. WASM and broader heterogeneous-VM composition are planned; the current baseline does not ship them.</p>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--composite"><div class="alux-vs-native-surface" role="img" aria-label="Composite transaction runtime diagram">
+    <div class="alux-vs-original-image alux-vs-original-image--composite">
+      <img src="assets/alux-vs-others/composite-transitions-transparent.png" alt="" width="1570" height="1762" loading="lazy">
+    </div>
+  </div><figcaption>Figure 3. The composite-transition architecture connects on-chain work with Web 2 services; cross-shard composition remains on the roadmap.</figcaption><p class="alux-vs-figure-note"><strong>Takeaway:</strong> ALUX supports cross-block execution and replayable Web 2 I/O today; cross-shard composition remains planned.</p></figure>
+            <p class="alux-vs-article-close">In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.</p>
+          </section>
+        </div>
+      </div>
+    </article>
+</main>
     <footer class="site-footer">
       <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright"></p></div>
     </footer>
   </div>
 <script src="i18n/site.generated.js?v=20260812-motion-restore4"></script>
-<script src="script.js?v=20260812-motion-restore4"></script>
+<script src="script.js?v=20261010-initial-content"></script>
 </body>
 </html>
 

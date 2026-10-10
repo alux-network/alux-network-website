@@ -46,12 +46,192 @@
         <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
       </div>
     </header>
-    <main id="page-content"></main>
+    <main id="page-content" data-prerendered="en">
+    <article class="pcc-page" data-pcc-root data-pcc-active="parallel">
+      <header class="pcc-hero fade-in">
+        <div class="pcc-hero-copy">
+          <p class="eyebrow">Learn / Runtime Lab</p>
+          <h1>Runtime Lab</h1>
+          <p class="pcc-hero-subtitle">Parallel / Concurrent / Composable</p>
+          <p class="pcc-hero-text">ALUX supports replayable long transactions: independent tasks run together and transactions coordinate through messages. The booking scenario illustrates the target model for settling related cross-system effects as one atomic result.</p>
+          <div class="pcc-hero-signals" aria-label="Runtime signals"><div class="pcc-signal"><span>Positioning</span><strong>Decentralized concurrent runtime</strong></div><div class="pcc-signal"><span>Execution</span><strong>Run, interact, wait, settle</strong></div><div class="pcc-signal"><span>Boundary</span><strong>Capability-scoped workflows</strong></div></div>
+        </div>
+        <figure class="pcc-hero-visual">
+          <div class="pcc-image-frame pcc-image-frame--hero">
+            <img src="assets/parallel-concurrent-composable/alux-runtime.webp?v=20260708-heroimg1" alt="A premium technical illustration of the ALUX runtime connecting nodes, cloud services, devices, agents, capability tokens, and commit rails." loading="eager" fetchpriority="high" data-pcc-image>
+            <span class="pcc-image-fallback">A premium technical illustration of the ALUX runtime connecting nodes, cloud services, devices, agents, capability tokens, and commit rails.</span>
+          </div>
+        </figure>
+      </header>
+
+      <section class="pcc-intro-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">The simple difference</p>
+          <h2>Three words, three very different runtime jobs</h2>
+          <p>Parallel runs independent transactions at the same time. Concurrency lets transactions interact through channels: one transaction can wait for a matching message from another, then continue. Composability binds state transitions from different systems into one auditable atomic transition.</p>
+          <p class="pcc-intro-claim">In the current ALUX runtime, independent work can run in parallel, transactions coordinate through messages, and execution can resume across blocks. Atomic composition across independent systems remains an architecture target.</p>
+        </div>
+      </section>
+
+      <section class="pcc-mode-section fade-in" aria-label="Three words, three very different runtime jobs">
+        <div class="pcc-mode-toolbar" aria-label="Runtime mode selector"><button class="pcc-mode-button is-active" type="button" data-pcc-mode="parallel" aria-pressed="true"><span>01</span> Parallel</button><button class="pcc-mode-button" type="button" data-pcc-mode="concurrent" aria-pressed="false"><span>02</span> Concurrent</button><button class="pcc-mode-button" type="button" data-pcc-mode="composable" aria-pressed="false"><span>03</span> Composable</button></div>
+        <div class="pcc-mode-stage">
+          <div class="pcc-mode-visuals">
+      <figure class="pcc-mode-visual is-active" data-pcc-visual="parallel" aria-hidden="false">
+        <div class="pcc-image-frame">
+          <img src="assets/parallel-concurrent-composable/parallel.svg?v=20260812-motion-restore4" alt="Multiple isolated execution rails moving forward at the same time." loading="eager" data-pcc-image>
+          <span class="pcc-image-fallback">Multiple isolated execution rails moving forward at the same time.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>Parallel</span><strong>Four travel searches finish independently</strong></figcaption>
+        <div class="pcc-mode-impact"><span>What it enables</span><p>More independent work finishes in the same amount of time. But parallelism alone cannot make those jobs exchange messages or let a long transaction wait and continue.</p><strong>Parallelism finds several answers at once. It does not make those jobs interact.</strong></div>
+      </figure>
+
+      <figure class="pcc-mode-visual" data-pcc-visual="concurrent" aria-hidden="true">
+        <div class="pcc-image-frame">
+          <img src="assets/parallel-concurrent-composable/concurrent.svg?v=20260812-motion-restore4" alt="Two transactions interact through a tuple-space channel: one waits for a matching message, the other sends it, and the waiting continuation resumes while unrelated work keeps moving." loading="lazy" data-pcc-image>
+          <span class="pcc-image-fallback">Two transactions interact through a tuple-space channel: one waits for a matching message, the other sends it, and the waiting continuation resumes while unrelated work keeps moving.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>Concurrent</span><strong>The booking waits; a hotel agent replies; the next step begins</strong></figcaption>
+        <div class="pcc-mode-impact"><span>What it enables</span><p>A travel agent can keep one long transaction alive across blocks: it waits for room availability, an API response, or a user decision, then continues without blocking unrelated work.</p><strong>Concurrency turns a reply into the next step: the match creates a new continuation instead of merely restarting a stopped lane.</strong></div>
+      </figure>
+
+      <figure class="pcc-mode-visual" data-pcc-visual="composable" aria-hidden="true">
+        <div class="pcc-image-frame">
+          <img src="assets/parallel-concurrent-composable/composable.svg?v=20260812-motion-restore4" alt="A room reservation and payment authorization arrive from different systems. Only after both are ready does one booking confirmation leave the atomic boundary." loading="lazy" data-pcc-image>
+          <span class="pcc-image-fallback">A room reservation and payment authorization arrive from different systems. Only after both are ready does one booking confirmation leave the atomic boundary.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>Composable</span><strong>The booking confirms only when reservation and payment both succeed</strong></figcaption>
+        <div class="pcc-mode-impact"><span>What it enables</span><p>The intended result is to avoid a half-finished booking such as money charged without a room, or a room held without payment.</p><strong>The target composition model gives different systems one all-or-nothing result; concurrency carries the messages that lead up to that shared commit.</strong></div>
+      </figure>
+    </div>
+          <div class="pcc-mode-copy" aria-live="polite">
+      <article class="pcc-mode-panel is-active" data-pcc-panel="parallel" aria-hidden="false">
+        <p class="pcc-mode-kicker">Parallel</p>
+        <h3>Flight, hotel, transfer, and insurance<br>search at the same time</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>What it means</dt><dd>Parallel execution means independent jobs run at the same time. A travel agent can search flights, rooms, transfers, and insurance without making one search wait behind another.</dd></div>
+          <div><dt>How ALUX does it</dt><dd>Parallel execution is native to ALUX's process calculus: transactions share no memory, and any interaction is confined to tuple-space channels. Independent transactions therefore advance in separate TVM lanes, while Block Merge resolves state overlap at commit time.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>What it enables</dt><dd>More independent work finishes in the same amount of time. But parallelism alone cannot make those jobs exchange messages or let a long transaction wait and continue.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">Parallelism finds several answers at once. It does not make those jobs interact.</p>
+      </article>
+
+      <article class="pcc-mode-panel" data-pcc-panel="concurrent" aria-hidden="true">
+        <p class="pcc-mode-kicker">Concurrent</p>
+        <h3>A booking waits for availability<br>and continues when the reply arrives</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>What it means</dt><dd>Concurrency begins when jobs interact. A booking can leave a waiting condition in a channel, and a hotel service can satisfy it later by sending the matching availability message.</dd></div>
+          <div><dt>How ALUX does it</dt><dd>The waiting consume is stored as a resource in tuple space. A produce from another transaction matches it, triggering a COMM event that spawns the continuation and moves the Execution Context from Inactive back to Running. If more than one match is possible, ReplayTrie records the chosen COMM for deterministic replay.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>What it enables</dt><dd>A travel agent can keep one long transaction alive across blocks: it waits for room availability, an API response, or a user decision, then continues without blocking unrelated work.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">Concurrency turns a reply into the next step: the match creates a new continuation instead of merely restarting a stopped lane.</p>
+      </article>
+
+      <article class="pcc-mode-panel" data-pcc-panel="composable" aria-hidden="true">
+        <p class="pcc-mode-kicker">Composable</p>
+        <h3>The room and payment<br>confirm together</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>What it means</dt><dd>Composition is not ordinary bundling. The target in this example is to commit the room hold and payment authorization together, or commit neither one.</dd></div>
+          <div><dt>How ALUX does it</dt><dd>The current runtime provides tuple-space coordination, scoped OCAP references, cross-block continuation, ReplayTrie, and Block Merge. End-to-end atomic composition across independent external systems remains a design target built from those primitives.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>What it enables</dt><dd>The intended result is to avoid a half-finished booking such as money charged without a room, or a room held without payment.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">The target composition model gives different systems one all-or-nothing result; concurrency carries the messages that lead up to that shared commit.</p>
+      </article>
+    </div>
+        </div>
+      </section>
+
+      <section class="pcc-lab-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">Try the whole runtime</p>
+          <h2>Model one atomic booking</h2>
+          <p class="pcc-lab-intro">Use four actions to explore the target composition model: start reservation and payment checks, leave a room-availability wait, deliver the hotel's matching message, then model a joint confirmation.</p>
+        </div>
+        <div class="pcc-lab-board" data-pcc-lab data-lab-state="idle" data-msg-idle="Start with step 1. Reservation and payment are managed separately inside the same runtime." data-msg-parallel="Parallel: reservation and payment checks advance at the same time without sharing state." data-msg-paused="Concurrent wait: the reservation leaves a room-availability condition in the channel; payment work can keep moving." data-msg-resumed="Message matched: the hotel replies with availability. ALUX activates the booking continuation; if several matches were possible, ReplayTrie fixes the chosen one." data-msg-settled="Composition target: the room hold and payment authorization close together as one all-or-nothing booking result.">
+          <div class="pcc-lab-steps"><article class="pcc-lab-step" data-pcc-step="parallel"><span>01</span><strong>Start both checks</strong><p>Reservation and payment checks advance independently.</p></article><article class="pcc-lab-step" data-pcc-step="paused"><span>02</span><strong>Wait for a room</strong><p>The reservation leaves an availability condition in the channel.</p></article><article class="pcc-lab-step" data-pcc-step="resumed"><span>03</span><strong>Hotel replies</strong><p>The matching message activates the booking continuation.</p></article><article class="pcc-lab-step" data-pcc-step="settled"><span>04</span><strong>Confirm together</strong><p>Room hold and payment authorization commit as one result.</p></article></div>
+          <div class="pcc-lab-runtime" aria-hidden="true">
+            <div class="pcc-lab-lanes">
+      <div class="pcc-lab-lane pcc-lab-lane--1">
+        <span class="pcc-lab-lane-label">Reservation state</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--1" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--2">
+        <span class="pcc-lab-lane-label">Hotel message</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--2" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--3">
+        <span class="pcc-lab-lane-label">Payment state</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--3" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--4">
+        <span class="pcc-lab-lane-label">Booking confirmation</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--4" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+    <div class="pcc-lab-event" aria-hidden="true"><span>Message matched</span></div></div>
+            <div class="pcc-lab-checkpoint" data-pcc-lab-checkpoint data-checkpoint-idle="Awaiting both" data-checkpoint-settled="Booking confirmed"><span>Awaiting both</span></div>
+          </div>
+          <div class="pcc-lab-side">
+            <div class="pcc-lab-status">
+              <span>State</span>
+              <strong data-pcc-lab-score>0 / 4</strong>
+            </div>
+            <p class="pcc-lab-play-label">Play it in order</p>
+            <div class="pcc-lab-controls">
+              <button type="button" data-pcc-action="parallel">1. Start both checks</button>
+              <button type="button" data-pcc-action="pause" disabled>2. Wait for a room</button>
+              <button type="button" data-pcc-action="resume" disabled>3. Send hotel reply</button>
+              <button type="button" data-pcc-action="settle" disabled>4. Confirm booking</button>
+              <button type="button" data-pcc-action="reset">Reset</button>
+            </div>
+            <p class="pcc-lab-message" data-pcc-lab-message>Start with step 1. Reservation and payment are managed separately inside the same runtime.</p>
+          </div>
+          <div class="pcc-lab-benefits"><article class="pcc-lab-benefit" data-pcc-benefit="parallel"><span>Parallel</span><strong>Two checks run together</strong><p>Independent work does not wait behind one global queue.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="paused"><span>Concurrent</span><strong>The booking waits for the hotel</strong><p>The dependency lives in a channel instead of blocking the runtime.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="resumed"><span>Message match</span><strong>The reply creates the next step</strong><p>The COMM creates the continuation; ReplayTrie records the choice only when the match is non-deterministic.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="settled"><span>Composable</span><strong>Room and payment confirm together</strong><p>The target is one all-or-nothing result with reproducible settlement evidence.</p></article></div>
+        </div>
+      </section>
+
+      <section class="pcc-foundation-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">Runtime path</p>
+          <h2>What keeps a service alive</h2>
+          <p>A long-running service stays coherent because every step can run, interact, carry explicit authority, replay deterministically, and settle along one verifiable atomic path.</p>
+        </div>
+        <div class="pcc-foundation-grid"><article class="pcc-foundation-item"><span>Run</span><h3>TVM process lifecycle</h3><p>A process can fork, wait in one block, and resume in a later block without restarting its local execution context.</p></article><article class="pcc-foundation-item"><span>Interact</span><h3>Tuple space + COMM</h3><p>A waiting consume meets another transaction's produce. The match activates the continuation while unrelated work keeps moving.</p></article><article class="pcc-foundation-item"><span>Authorize</span><h3>OCAP boundaries</h3><p>Unforgeable capability references are passed explicitly, so each step receives only the authority it needs; identity does not automatically bring unrelated authority into scope.</p></article><article class="pcc-foundation-item"><span>Replay</span><h3>ReplayTrie</h3><p>Only the non-deterministic COMM choices that matter are recorded, so validators can reproduce the same execution.</p></article><article class="pcc-foundation-item"><span>Settle</span><h3>BlockGit + Block Merge</h3><p>Concurrent work enters verified fringes, where overlaps are classified as accepted, rejected, or undecided before finality.</p></article></div>
+      </section>
+
+
+    <section class="pcc-glvm-bridge fade-in">
+      <div class="pcc-glvm-bridge-copy">
+        <p class="eyebrow">Next layer</p>
+        <h2>One logical runtime across many environments</h2>
+        <p>Runtime Lab shows current parallel and message-driven execution, then illustrates the target atomic composition model. GLVM describes the broader architecture for extending that logical model across blockchain nodes, cloud services, and personal devices.</p>
+      </div>
+      <a class="button secondary pcc-glvm-bridge-link" href="glvm.html#architecture">Explore GLVM<span aria-hidden="true">→</span></a>
+    </section>
+
+
+      <section class="pcc-close-section fade-in">
+        <div class="pcc-close-copy">
+          <p class="eyebrow">Why it matters</p>
+          <h2>Not faster blocks. Long-running services.</h2>
+          <p>Parallelism handles independent execution. Concurrency handles message-driven interaction and wait/resume. ALUX implements those runtime foundations today and is building toward atomic composition across system boundaries.</p>
+        </div>
+        <div class="pcc-close-points"><article class="pcc-close-point"><span>Only parallel</span><p>More throughput, but no transaction dependency or message matching.</p></article><article class="pcc-close-point"><span>Only concurrent</span><p>Transactions can interact and wait, but cross-system effects may still settle separately.</p></article><article class="pcc-close-point"><span>Only composable</span><p>An atomic boundary exists, but without interaction and waiting it cannot carry long-running dependencies.</p></article></div>
+        <div class="hero-actions pcc-close-actions"><a class="button primary" href="alux-vs-others.html">Back to ALUX&nbsp;VS Others</a><a class="button secondary" href="for-ai-agents.html">For AI Agents</a></div>
+      </section>
+    </article>
+</main>
     <footer class="site-footer">
       <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright"></p></div>
     </footer>
   </div>
 <script src="i18n/site.generated.js?v=20260813-mobile-type1"></script>
-<script src="script.js?v=20260813-mobile-type1"></script>
+<script src="script.js?v=20261010-initial-content"></script>
 </body>
 </html>

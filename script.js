@@ -4785,14 +4785,20 @@ function renderPage(lang) {
     node.textContent = chrome.cookie.button;
   });
 
-  if (currentPage === "glvm") {
-    pageContent.innerHTML = renderGlvmPage(page, lang);
-  } else if (currentPage === "aluxVsOthers") {
-    pageContent.innerHTML = renderAluxVsOthersPage(page);
-  } else if (currentPage === "parallelConcurrentComposable") {
-    pageContent.innerHTML = renderParallelConcurrentComposablePage(page, lang);
-  } else if (!isStaticRoadmap) {
-    pageContent.innerHTML = renderHero(page.hero, lang) + orderedSections.map((section, index) => renderSection(section, section.__renderIndex ?? index)).join("");
+  // Keep the initial English DOM in place; bind the existing controls below.
+  // A saved language or a later language change still uses the normal renderer.
+  const reusePrerender = pageContent.dataset.prerendered === lang;
+  delete pageContent.dataset.prerendered;
+  if (!reusePrerender) {
+    if (currentPage === "glvm") {
+      pageContent.innerHTML = renderGlvmPage(page, lang);
+    } else if (currentPage === "aluxVsOthers") {
+      pageContent.innerHTML = renderAluxVsOthersPage(page);
+    } else if (currentPage === "parallelConcurrentComposable") {
+      pageContent.innerHTML = renderParallelConcurrentComposablePage(page, lang);
+    } else if (!isStaticRoadmap) {
+      pageContent.innerHTML = renderHero(page.hero, lang) + orderedSections.map((section, index) => renderSection(section, section.__renderIndex ?? index)).join("");
+    }
   }
 
   if (isStaticRoadmap) {

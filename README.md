@@ -23,6 +23,8 @@ It is built as a multilingual static website using HTML, CSS, and JavaScript. En
 
 No build step is required for local preview. Open `index.html` directly in a browser.
 
+Pages include their initial English content in HTML so navigation does not show an empty shell while JavaScript loads. The runtime then enables interactions and applies any language selected in the current session. After changing page content or renderers in `script.js`, refresh the initial HTML with `npm run pages:render`. The checks below reject stale generated content.
+
 Before publishing changes, run:
 
 ```bash
