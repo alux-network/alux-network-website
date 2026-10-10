@@ -1145,9 +1145,9 @@ function restoreHashScroll() {
     const scroller = document.scrollingElement || document.documentElement;
 
     if (scroller && typeof scroller.scrollTo === "function") {
-      scroller.scrollTo({ top: scrollTarget, behavior: "smooth" });
+      scroller.scrollTo({ top: scrollTarget, behavior: "auto" });
     } else if (typeof window.scrollTo === "function") {
-      window.scrollTo({ top: scrollTarget, behavior: "smooth" });
+      window.scrollTo({ top: scrollTarget, behavior: "auto" });
     }
   }, 80);
 }
@@ -4701,7 +4701,7 @@ function updateActiveNavigation() {
   }
 }
 
-function renderPage(lang) {
+function renderPage(lang, { restoreAnchor = true } = {}) {
   const chrome = ui[lang] || ui.en;
   const visibleChrome = chrome;
   let page = (pages[currentPage] && pages[currentPage][lang]) || (pages[currentPage] && pages[currentPage].en);
@@ -4825,7 +4825,33 @@ function renderPage(lang) {
     button.classList.toggle("active", button.dataset.lang === lang);
   });
 
-  restoreHashScroll();
+  if (restoreAnchor) restoreHashScroll();
+}
+
+function initHashNavigation() {
+  // Smooth scrolling belongs to a deliberate anchor click, not history restore.
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const link = event.target.closest?.("a[href]");
+    if (!link || link.hasAttribute("download") || (link.target && link.target !== "_self")) return;
+    const destination = new URL(link.href, window.location.href);
+    if (destination.origin !== window.location.origin || destination.pathname !== window.location.pathname || destination.search !== window.location.search || !destination.hash) return;
+    let id;
+    try {
+      id = decodeURIComponent(destination.hash.slice(1));
+    } catch {
+      return;
+    }
+    const target = document.getElementById(id);
+    if (!target) return;
+    event.preventDefault();
+    if (window.location.hash !== destination.hash) {
+      window.history.pushState(window.history.state, "", destination.hash);
+    }
+    target.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+    });
+  });
 }
 
 function initMenu() {
@@ -4905,7 +4931,9 @@ function initDropdown() {
 
 function initLanguage() {
   const initial = detectLanguage();
-  renderPage(initial);
+  // Initial HTML already contains the anchor targets. Native navigation handles
+  // deep links and restores refresh/history positions after this render.
+  renderPage(initial, { restoreAnchor: false });
 
   langButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -4964,4 +4992,5 @@ initDropdown();
 initLanguage();
 initLanguageDropdown();
 initCookieBanner();
+initHashNavigation();
 setTimeout(initReveal, 0);
