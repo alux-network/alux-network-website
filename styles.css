@@ -23,7 +23,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Let the browser restore refresh/back positions without an animation. */
+  scroll-behavior: auto;
 }
 
 [id] {

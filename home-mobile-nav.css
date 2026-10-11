@@ -1,4 +1,10 @@
 /* Shared mobile navigation. Page-specific hero and content styles remain untouched. */
+@media (min-width: 961px) {
+  body[data-page] .site-nav > .mobile-nav-cta {
+    display: none !important;
+  }
+}
+
 @media (max-width: 960px) {
   body[data-page] .menu-toggle {
     position: relative;
