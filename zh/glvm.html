@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = ["en", "zh", "ja", "ko", "ar"];
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(value => value.toLowerCase().split(/[-_]/)[0]).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLVM | ALUX Network</title>
+  <meta name="description" content="探索 GLVM：ALUX 以 TVM 的并发、重放、对象能力、原子最终确认、复制与共识为基础，构建面向开发者的逻辑执行模型。">
+  <link rel="canonical" href="https://www.alux.network/zh/glvm">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/glvm">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/glvm">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/glvm">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/glvm">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/glvm">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/glvm">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ALUX Network">
+  <meta property="og:title" content="GLVM | ALUX Network">
+  <meta property="og:description" content="探索 GLVM：ALUX 以 TVM 的并发、重放、对象能力、原子最终确认、复制与共识为基础，构建面向开发者的逻辑执行模型。">
+  <meta property="og:url" content="https://www.alux.network/zh/glvm">
+  <meta property="og:image" content="https://www.alux.network/assets/social/share-cards/alux-website-share-card-1200x630-20260725-glvm.jpg">
+  <meta property="og:image:secure_url" content="https://www.alux.network/assets/social/share-cards/alux-website-share-card-1200x630-20260725-glvm.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ALUX Network share card with modular runtime blocks and the statement: Building GLVM.">
+  <meta property="og:locale" content="zh_CN">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@alux_network">
+  <meta name="twitter:title" content="GLVM | ALUX Network">
+  <meta name="twitter:description" content="探索 GLVM：ALUX 以 TVM 的并发、重放、对象能力、原子最终确认、复制与共识为基础，构建面向开发者的逻辑执行模型。">
+  <meta name="twitter:image" content="https://www.alux.network/assets/social/share-cards/alux-website-share-card-1200x630-20260725-glvm.jpg">
+  <meta name="twitter:image:alt" content="ALUX Network share card with modular runtime blocks and the statement: Building GLVM.">
+
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+<link rel="stylesheet" href="/glvm-story.css?v=20260814-customer-vm2">
+
+</head>
+<body data-page="glvm">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/zh" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/alux-logo.png" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/zh" data-nav="home">首页</a>
+        <a href="/zh/for-ai-agents" data-nav="vs">面向 AI 智能体</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">了解</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/zh/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/zh/runtime-lab" data-nav="learnPcc">Runtime Lab</a>
+            <a href="/zh/alux-vs-others" data-nav="learnAlux">ALUX VS 其它</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">博客</a>
+        <a href="/zh/team" data-nav="team">团队</a>
+        <a href="/zh/roadmap" data-nav="roadmap">路线图</a>
+        <a class="mobile-nav-cta" href="mailto:info@alux.network" data-nav="cta">联系我们</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>语言</span><span class="lang-current" data-lang-current>中文</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/glvm" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/glvm" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/glvm" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/glvm" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/glvm" hreflang="ar">AR</a></div></div>
+        <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">联系我们</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="切换导航菜单"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="zh">
+    <article class="glvm-page" data-glvm-root data-glvm-step="0">
+      <header class="glvm-hero fade-in">
+        <div class="glvm-hero-copy">
+          <p class="eyebrow">了解 / GLVM</p>
+          <h1>GLVM</h1>
+          <p class="glvm-full-name">全局逻辑虚拟机</p>
+          <p class="glvm-tagline glvm-semantic-heading"><span class="glvm-semantic-line">一个<span class="glvm-keep">逻辑执行层，</span></span><span class="glvm-semantic-line">跨<span class="glvm-keep">多台机器</span>协调执行</span></p>
+          <p class="glvm-hero-text glvm-semantic-copy"><span class="glvm-semantic-copy-line">GLVM 是 ALUX 基于<span class="glvm-keep">并发运行时</span>构建的<span class="glvm-keep">执行抽象。</span></span><span class="glvm-semantic-copy-line">它面向开发者，每台参与执行的机器运行<span class="glvm-keep">一台 TVM。</span></span><span class="glvm-semantic-copy-line">GLVM 为跨机器的<span class="glvm-keep">执行状态</span>与进程提供统一逻辑边界；</span><span class="glvm-semantic-copy-line">重放、复制、<span class="glvm-keep">最终确认</span>与共识在这一抽象之下协调。</span></p>
+        </div>
+        <figure class="glvm-hero-visual">
+          <div class="glvm-hero-media">
+            <img src="/assets/glvm/20260712_GLVM_全局逻辑主视觉_4K.webp" alt="" aria-hidden="true" class="glvm-hero-poster">
+            <video muted loop autoplay playsinline preload="metadata" poster="/assets/glvm/20260712_GLVM_全局逻辑主视觉_4K.webp" aria-label="一幅暖色技术剖面图：多台物理机器连接在同一个 GLVM 执行层之下。" data-glvm-video>
+              <source src="/assets/glvm/20260712_GLVM_全局逻辑动效_1080P.mp4" type="video/mp4">
+            </video>
+            <div class="glvm-hero-overlay" aria-hidden="true"><span></span><span></span><span></span></div>
+          </div>
+        </figure>
+        <div class="glvm-hero-signals"><div class="glvm-signal"><span>物理模型</span><strong>每台机器一台 TVM</strong></div><div class="glvm-signal"><span>逻辑模型</span><strong>多台 TVM，一个逻辑执行层</strong></div><div class="glvm-signal"><span>扩展方向</span><strong>从链到云，再到设备</strong></div></div>
+      </header>
+
+      <section class="glvm-definition fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">核心定义</p>
+          <h2 class="glvm-semantic-heading"><span class="glvm-semantic-line">每台机器运行<span class="glvm-keep">一台 TVM，</span></span><span class="glvm-semantic-line"><span class="glvm-keep">多台 TVM</span> 协同组成一个<span class="glvm-keep">逻辑执行层</span></span></h2>
+          <p class="glvm-semantic-copy">TVM 是运行在单台机器上的<span class="glvm-keep">字节码执行引擎；</span>GLVM 定义跨多台 TVM 的<span class="glvm-keep">系统级执行抽象。</span>它不是另一种字节码虚拟机。开发者面向统一的<span class="glvm-keep">逻辑执行模型，</span><span class="glvm-keep">确定性重放、</span>执行连续性、复制、<span class="glvm-keep">最终确认</span>与共识则在这一抽象之下协调。</p>
+        </div>
+        <div class="glvm-comparison">
+      <article class="glvm-comparison-card glvm-comparison-card--tvm">
+        <div class="glvm-comparison-heading"><span>TVM</span><h3>元组空间虚拟机（Tuple-space Virtual Machine）</h3></div>
+        <p>ALUX 的具体执行引擎。它运行 Tolang 字节码，让独立进程通过通道与 COMM 事件协作，并记录确定性重放所需的非确定性选择。</p>
+        <strong>单台机器内的一套具体引擎</strong>
+      </article>
+
+      <article class="glvm-comparison-card glvm-comparison-card--glvm">
+        <div class="glvm-comparison-heading"><span>GLVM</span><h3>全局逻辑虚拟机</h3></div>
+        <p>GLVM 为参与执行的多台 TVM 定义一套面向开发者的逻辑执行模型。它以统一边界承载执行状态与进程，重放、复制、最终确认与共识则由下层运行时协调。</p>
+        <strong>位于多台机器之上的一个逻辑系统</strong>
+      </article>
+    </div>
+        <div class="glvm-axis"><div class="glvm-axis-row"><span>虚拟机抽象</span><strong>持续扩展</strong></div><div class="glvm-axis-row"><span>纵向原子性</span><strong>核心运行时</strong></div><div class="glvm-axis-row"><span>横向原子性</span><strong>路线图</strong></div><div class="glvm-axis-row"><span>可组合安全</span><strong>核心运行时</strong></div></div>
+
+    <aside class="glvm-definition-payoff">
+      <div class="glvm-definition-payoff-heading">
+        <span>核心结论</span>
+        <h3>统一的是逻辑执行层，不是物理机器</h3>
+      </div>
+      <p>开发者只需面向一套并发执行模型；调度、重放、能力检查、复制与最终确认，则由运行时在这一逻辑抽象之下协调。</p>
+    </aside>
+
+      </section>
+
+      <section class="glvm-architecture fade-in" id="architecture">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">三层架构</p>
+          <h2 class="glvm-semantic-heading"><span class="glvm-semantic-line"><span class="glvm-keep">三层架构，</span></span><span class="glvm-semantic-line"><span class="glvm-keep">面向开发者</span>呈现为一套执行模型</span></h2>
+          <p class="glvm-semantic-copy"><span class="glvm-semantic-copy-line">物理机器运行 TVM；这些 TVM <span class="glvm-keep">共同参与一套逻辑执行模型。</span></span><span class="glvm-semantic-copy-line">未来，World OS 将进一步把这一层组织为<span class="glvm-keep">可发现、可编排</span>且<span class="glvm-keep">受显式能力约束的服务。</span></span></p>
+        </div>
+        <p class="glvm-layer-instruction">选择任一层级，详情面板将同步更新。</p>
+        <div class="glvm-architecture-stage">
+          <div class="glvm-layer-stack" role="group" aria-label="三层架构，面向开发者呈现为一套执行模型">
+      <button class="glvm-layer glvm-layer--world" type="button" data-glvm-layer="world" data-layer-title="世界操作系统" data-layer-text="面向智能体与应用的未来服务层：负责注册与发现、编排和可编程能力，让服务可被发现，也让协作规则清晰可见。" data-layer-status="路线图" aria-pressed="false">
+        <span class="glvm-layer-index">03</span>
+        <span class="glvm-layer-label">第三层</span>
+        <strong>世界操作系统</strong>
+        <span class="glvm-layer-status">路线图</span>
+        <span class="glvm-layer-items"><i>服务与智能体发现</i><i>服务编排</i><i>可编程能力</i></span>
+      </button>
+
+      <button class="glvm-layer glvm-layer--runtime is-active" type="button" data-glvm-layer="runtime" data-layer-title="GLVM 逻辑执行层" data-layer-text="面向多台 TVM 的逻辑协调层。虚拟机抽象、并发控制、对象能力、确定性重放与最终确认语义，共同定义开发者看到的统一执行模型。" data-layer-status="核心运行时 · 持续扩展" aria-pressed="true">
+        <span class="glvm-layer-index">02</span>
+        <span class="glvm-layer-label">第二层</span>
+        <strong>GLVM 逻辑执行层</strong>
+        <span class="glvm-layer-status">核心运行时 · 持续扩展</span>
+        <span class="glvm-layer-items"><i>GLVM 抽象</i><i>并发与重放</i><i>能力与最终确认</i></span>
+      </button>
+
+      <button class="glvm-layer glvm-layer--physical" type="button" data-glvm-layer="physical" data-layer-title="物理基础设施" data-layer-text="真正执行工作的机器。公链节点构成当前执行基础；私有或云端 TVM 是下一步集成方向，客户端设备 TVM 则属于路线图，未来可把这套模型延伸到本地执行。" data-layer-status="核心 · 集成 · 路线图" aria-pressed="false">
+        <span class="glvm-layer-index">01</span>
+        <span class="glvm-layer-label">第一层</span>
+        <strong>物理基础设施</strong>
+        <span class="glvm-layer-status">核心 · 集成 · 路线图</span>
+        <span class="glvm-layer-items"><i>公链 TVM</i><i>私有或云端 TVM</i><i>客户端设备 TVM</i></span>
+      </button>
+    </div>
+          <aside class="glvm-layer-inspector" aria-live="polite">
+            <span data-glvm-layer-status>核心运行时 · 持续扩展</span>
+            <h3 data-glvm-layer-title>GLVM 逻辑执行层</h3>
+            <p data-glvm-layer-text>面向多台 TVM 的逻辑协调层。虚拟机抽象、并发控制、对象能力、确定性重放与最终确认语义，共同定义开发者看到的统一执行模型。</p>
+            <ul data-glvm-layer-items><li>GLVM 抽象</li><li>并发与重放</li><li>能力与最终确认</li></ul>
+          </aside>
+        </div>
+      </section>
+
+
+    <section class="glvm-extension glvm-continuity fade-in" id="execution-continuity">
+      <header class="glvm-extension-header">
+        <div><p class="eyebrow">执行与原子性</p><h2 class="glvm-semantic-heading"><span class="glvm-semantic-line"><span class="glvm-keep">一笔交易</span>可以<span class="glvm-keep">跨区块等待，</span></span><span class="glvm-semantic-line">随后作为<span class="glvm-keep">一个整体</span>结算</span></h2></div>
+        <p class="glvm-continuity-intro">执行模型从<span class="glvm-keep">顺序、并行，</span>演进为<span class="glvm-keep">可通信、可等待、可恢复的并发进程。</span>组合式执行让<span class="glvm-keep">多笔交易共享一个结算边界；</span><span class="glvm-keep">跨区块连续性</span>再把这一边界延伸至<span class="glvm-keep">后续区块。</span></p>
+      </header>
+      <div class="glvm-continuity-frame">
+        <div class="glvm-continuity-tabs" role="tablist" aria-label="一笔交易可以跨区块等待，随后作为一个整体结算">
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-sequential" aria-controls="glvm-continuity-panel-sequential" aria-selected="false" tabindex="-1" data-glvm-continuity="sequential">
+      <span>01</span>
+      <strong>顺序</strong>
+      <small>基础模式</small>
+    </button>
+
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-parallel" aria-controls="glvm-continuity-panel-parallel" aria-selected="false" tabindex="-1" data-glvm-continuity="parallel">
+      <span>02</span>
+      <strong>并行</strong>
+      <small>核心运行时</small>
+    </button>
+
+    <button class="glvm-continuity-tab is-active" type="button" role="tab" id="glvm-continuity-tab-concurrent" aria-controls="glvm-continuity-panel-concurrent" aria-selected="true" tabindex="0" data-glvm-continuity="concurrent">
+      <span>03</span>
+      <strong>并发</strong>
+      <small>核心运行时</small>
+    </button>
+
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-composite" aria-controls="glvm-continuity-panel-composite" aria-selected="false" tabindex="-1" data-glvm-continuity="composite">
+      <span>04</span>
+      <strong>组合式</strong>
+      <small>路线图</small>
+    </button>
+  </div>
+        <div class="glvm-continuity-panels">
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-sequential" aria-labelledby="glvm-continuity-tab-sequential" data-glvm-continuity-panel="sequential" hidden>
+      <div class="glvm-continuity-visual">
+    <div class="glvm-continuity-scene glvm-continuity-scene--sequential" aria-hidden="true">
+      <span class="glvm-continuity-node glvm-continuity-node--brown"><bdi dir="auto">状态 01</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">状态 02</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">状态 03</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">提交</bdi></span>
+    </div>
+  </div>
+      <div class="glvm-continuity-panel-copy"><span>基础模式</span><h3>顺序</h3><p>一次状态转换完成后，再进行下一次。</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-parallel" aria-labelledby="glvm-continuity-tab-parallel" data-glvm-continuity-panel="parallel" hidden>
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--parallel" aria-hidden="true">
+        <div><small><bdi dir="auto">路径 A</bdi></small><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">TX A</bdi></span></div>
+        <div><small><bdi dir="auto">路径 B</bdi></small><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">TX B</bdi></span></div>
+        <div><small><bdi dir="auto">路径 C</bdi></small><span class="glvm-continuity-node glvm-continuity-node--purple"><bdi dir="auto">TX C</bdi></span></div>
+        <i></i>
+        <span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">汇合</bdi></span>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>核心运行时</span><h3>并行</h3><p>相互独立的状态转换同时推进。</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel is-active" role="tabpanel" id="glvm-continuity-panel-concurrent" aria-labelledby="glvm-continuity-tab-concurrent" data-glvm-continuity-panel="concurrent">
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--concurrent" aria-hidden="true">
+        <div class="glvm-continuity-process"><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">进程 A</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--muted"><bdi dir="auto">等待</bdi></span></div>
+        <span class="glvm-continuity-message"><bdi dir="auto">COMM</bdi></span>
+        <div class="glvm-continuity-process"><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">进程 B</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">发送</bdi></span></div>
+        <div class="glvm-continuity-resume"><span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">恢复</bdi></span></div>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>核心运行时</span><h3>并发</h3><p>进程通过通道通信、等待并恢复。</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-composite" aria-labelledby="glvm-continuity-tab-composite" data-glvm-continuity-panel="composite" hidden>
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--composite" aria-hidden="true">
+        <div class="glvm-composite-objective">
+          <small><bdi dir="auto">同一个原子目标</bdi></small>
+          <div class="glvm-composite-transactions">
+            <span><bdi dir="auto">TX A</bdi><i></i><bdi dir="auto">就绪</bdi></span>
+            <span><bdi dir="auto">TX B</bdi><i></i><bdi dir="auto">等待</bdi></span>
+            <span><bdi dir="auto">TX C</bdi><i></i><bdi dir="auto">就绪</bdi></span>
+          </div>
+        </div>
+        <div class="glvm-composite-gate"><span></span><small><bdi dir="auto">全部生效 / 全部不生效</bdi></small></div>
+        <span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">统一提交</bdi></span>
+        <em><bdi dir="auto">路线图</bdi></em>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>路线图</span><h3>组合式</h3><p>多笔并发交易共享一个更高层的原子目标。</p></div>
+    </article>
+  </div>
+        <div class="glvm-atomicity">
+          <div class="glvm-atomicity-heading"><span>纵向原子性 · 核心运行时</span><strong>跨区块执行保留同一个交易上下文</strong></div>
+          <ol class="glvm-atomicity-rail">
+    <li>
+      <span>01 · 开始</span>
+      <strong>只开始一次</strong>
+      <p>以一笔交易和一组范围明确的能力开始。</p>
+    </li>
+
+    <li>
+      <span>02 · 挂起</span>
+      <strong>等待，但不局部结算</strong>
+      <p>如果尚无答案或通道匹配，便保留延续，而不是提前完成最终确认。</p>
+    </li>
+
+    <li>
+      <span>03 · 记录</span>
+      <strong>记录选择</strong>
+      <p>ReplayTrie 会记录非确定性选择或经过认证的响应，以便重放该执行路径。</p>
+    </li>
+
+    <li>
+      <span>04 · 恢复</span>
+      <strong>继续同一笔交易</strong>
+      <p>匹配的 COMM 事件或已记录的响应，会在后续区块中唤醒此前保留的延续。</p>
+    </li>
+
+    <li>
+      <span>05 · 最终确认</span>
+      <strong>提交或丢弃</strong>
+      <p>在最终确认边界，符合条件的状态会被提交；被拒绝的暂定状态会被丢弃。</p>
+    </li>
+  </ol>
+        </div>
+      </div>
+      <div class="glvm-continuity-notes">
+    <article class="glvm-continuity-note glvm-continuity-note--current">
+      <span>核心执行路径</span>
+      <p>TVM 并发执行 · COMM 等待与恢复 · ReplayTrie · 跨区块延续与最终确认</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--current">
+      <span>原子性模型</span>
+      <p>暂定状态在最终确认前不会成为已确认状态；失败路径会被直接丢弃，而不是事后通过补偿交易修复。</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--boundary">
+      <span>原生链下读取</span>
+      <p>经过认证的 HTTPS GET 可以挂起执行、记录响应、重放并恢复。数据的真实性仍由数据源决定；不可逆的链下副作用仍不在回滚范围内。</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--roadmap">
+      <span>横向原子性</span>
+      <p>跨分片原子执行与独立外部系统的组合，定义了这套模型下一步的扩展方向。</p>
+    </article>
+  </div>
+    </section>
+
+
+    <section class="glvm-extension glvm-ocap-story fade-in" id="object-capability">
+      <header class="glvm-extension-header">
+        <div><p class="eyebrow">对象能力安全</p><h2 class="glvm-semantic-heading"><span class="glvm-semantic-line">只把<span class="glvm-keep">一把钥匙</span><span class="glvm-keep">交给任务，</span></span><span class="glvm-semantic-line">而不是<span class="glvm-keep">用户的工牌</span></span></h2></div>
+        <p class="glvm-semantic-copy"><span class="glvm-semantic-copy-line"><span class="glvm-keep">基于身份的访问</span><span class="glvm-keep">会把 CEO 工牌所代表的环境权限</span><span class="glvm-keep">一并带入任务。</span></span><span class="glvm-semantic-copy-line"><span class="glvm-keep">对象能力</span>则只交给任务<span class="glvm-keep">一把指向 Bob 记录的钥匙，</span>边界由 TVM 在<span class="glvm-keep">运行时</span>检查。</span><span class="glvm-semantic-copy-line">没有相应能力引用，任务便无法<span class="glvm-keep">命名或访问</span><span class="glvm-keep">其他既有对象。</span></span></p>
+      </header>
+      <div class="glvm-ocap-body">
+        <div class="glvm-ocap-copy">
+          <div class="glvm-ocap-compare">
+    <article class="glvm-ocap-card glvm-ocap-card--ambient">
+      <div class="glvm-ocap-card-visual" aria-hidden="true">
+        <img src="/assets/glvm/20260731_GLVM_OCAP_身份权限.svg?v=20260812-neck2" alt="" width="600" height="360" loading="eager" decoding="async">
+      </div>
+      <div class="glvm-ocap-card-copy">
+        <span>宽泛的身份权限</span>
+        <h3>工牌会带入无关权限</h3>
+        <p>即使任务只涉及 Bob，<span class="glvm-keep">CEO 工牌所代表的环境权限</span>仍可能覆盖财务档案，以及 Alice、Carol 和 Bob 的人员记录。</p>
+      </div>
+    </article>
+
+    <article class="glvm-ocap-card glvm-ocap-card--explicit">
+      <div class="glvm-ocap-card-visual" aria-hidden="true">
+        <img src="/assets/glvm/20260731_GLVM_OCAP_对象能力.svg?v=20260812-neck2" alt="" width="600" height="360" loading="eager" decoding="async">
+      </div>
+      <div class="glvm-ocap-card-copy">
+        <span>显式传入的对象能力</span>
+        <h3>只把指向 Bob 记录的钥匙交给任务</h3>
+        <p><span class="glvm-semantic-copy-line">这把钥匙代表<span class="glvm-keep">一个不可伪造的名字：</span><span class="glvm-keep">它只指向 Bob 的记录。</span></span><span class="glvm-semantic-copy-line"><span class="glvm-keep">没有指向其他既有对象的钥匙，</span>任务便无法<span class="glvm-keep">命名或访问</span></span><span class="glvm-semantic-copy-line"><span class="glvm-keep">那些未被显式授予的对象。</span><span class="glvm-keep">TVM 会在运行时</span><span class="glvm-keep">检查这一边界。</span></span></p>
+      </div>
+    </article>
+  </div>
+          <aside class="glvm-ocap-takeaway"><span>POLA · 最小权限原则</span><p>模型层防护可以降低不安全行为的发生概率；对象能力边界则在运行时落实最小权限。任务若只有指向 Bob 记录的钥匙，即使遭到劫持，影响也会被限制在这一对象范围内，不会扩展到 CEO 工牌所代表的其他环境权限。</p></aside>
+          <div class="glvm-ocap-boundary"><strong>术语说明</strong><p>这里用“钥匙”呈现 OCAP 中不可伪造的名字，也就是对象能力引用；它不是密码学密钥。该保证适用于 TVM 原生、以能力为中介的交互；托管型 EVM 权限和外部服务仍需各自的控制机制。</p></div>
+        </div>
+      </div>
+    </section>
+
+
+      <section class="glvm-journey fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">工作流探索器</p>
+          <h2 class="glvm-semantic-heading"><span class="glvm-semantic-line"><span class="glvm-keep">执行载体取决于</span><span class="glvm-keep">信任要求、</span></span><span class="glvm-semantic-line"><span class="glvm-keep">响应速度</span>与<span class="glvm-keep">数据本地性</span></span></h2>
+          <p>以跨公司设备维修为例：托管资金需要独立验证，诊断需要弹性算力，设备所有者需要批准<span class="glvm-keep">本地访问。</span>GLVM 会为每项任务选择符合其信任要求、时延与数据边界的执行载体，同时保持权限明确。</p>
+        </div>
+        <div class="glvm-route-toolbar"><span>选择一项需求</span><div>
+      <button class="glvm-route-button is-active" type="button" data-glvm-route="trust" data-route-title="公链 TVM + EVM 宿主" data-route-text="托管质保金并记录批准路径，让独立验证者能够验证这次状态转换。" data-route-status="核心运行时" aria-pressed="true">
+        <span>01</span>
+        <strong>需要独立验证</strong>
+      </button>
+
+      <button class="glvm-route-button" type="button" data-glvm-route="speed" data-route-title="私有或云端 TVM" data-route-text="在弹性算力附近运行高负载诊断，同时让权限范围保持有限且明确。" data-route-status="集成中" aria-pressed="false">
+        <span>02</span>
+        <strong>需要低延迟</strong>
+      </button>
+
+      <button class="glvm-route-button" type="button" data-glvm-route="locality" data-route-title="客户端设备 TVM" data-route-text="读取本地传感器数据并请求所有者确认，无需上传全部私密输入。" data-route-status="路线图" aria-pressed="false">
+        <span>03</span>
+        <strong>需要本地性</strong>
+      </button>
+    </div></div>
+        <div class="glvm-journey-board" data-glvm-journey data-journey-messages="[&quot;已就绪。启动模拟，查看目标逻辑流程。&quot;,&quot;工作开始前，权限先被限定。&quot;,&quot;每个执行载体都会收到边界明确的任务。&quot;,&quot;链上运行时会保留处于等待状态的延续。&quot;,&quot;匹配消息唤醒了等待中的后续执行。&quot;,&quot;重放证据让整条路径可以复现。&quot;,&quot;链上结果逐步收敛；跨执行载体的原子提交是下一阶段。&quot;]">
+          <div class="glvm-route-map" aria-hidden="true">
+            <div class="glvm-route-lines"><span></span><span></span><span></span></div>
+
+      <div class="glvm-substrate glvm-substrate--trust is-active" data-glvm-route-node="trust">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong>公链 TVM + EVM 宿主</strong>
+        <small>核心运行时</small>
+      </div>
+
+      <div class="glvm-substrate glvm-substrate--speed" data-glvm-route-node="speed">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong>私有或云端 TVM</strong>
+        <small>集成中</small>
+      </div>
+
+      <div class="glvm-substrate glvm-substrate--locality" data-glvm-route-node="locality">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong>客户端设备 TVM</strong>
+        <small>路线图</small>
+      </div>
+
+            <div class="glvm-route-core"><span>GLVM</span><strong>TVM × N</strong><i aria-hidden="true"><b></b><b></b><b></b></i></div>
+            <div class="glvm-route-packet glvm-route-packet--one"></div>
+            <div class="glvm-route-packet glvm-route-packet--two"></div>
+            <div class="glvm-route-packet glvm-route-packet--three"></div>
+            <div class="glvm-commit-rail"><span>重放</span><i></i><span>提交</span></div>
+          </div>
+          <div class="glvm-route-detail" aria-live="polite">
+            <span data-glvm-route-status>核心运行时</span>
+            <h3 data-glvm-route-title>公链 TVM + EVM 宿主</h3>
+            <p data-glvm-route-text>托管质保金并记录批准路径，让独立验证者能够验证这次状态转换。</p>
+          </div>
+          <div class="glvm-journey-control">
+            <div><span>跟随目标流程</span><strong data-glvm-progress>0 / 6</strong></div>
+            <div><button type="button" data-glvm-action="play">模拟工作流</button><button type="button" data-glvm-action="reset">重置</button></div>
+            <p data-glvm-message aria-live="polite">已就绪。启动模拟，查看目标逻辑流程。</p>
+          </div>
+          <div class="glvm-journey-steps">
+      <article class="glvm-journey-step is-current" data-glvm-step-card="1">
+        <span>01</span><h3>限定能力</h3><p>维修智能体只获得完成这项任务所需的权限。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="2">
+        <span>02</span><h3>规划分派</h3><p>工作流将边界明确的子任务分别映射到链上、私有或云端，以及客户端设备 TVM。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="3">
+        <span>03</span><h3>等待 / 挂起</h3><p>在链上运行时中，若回复尚未到达，系统会保留延续，而不是提前完成交易的最终确认。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="4">
+        <span>04</span><h3>COMM 匹配</h3><p>结果与通道中等待的延续完成匹配，工作流随即从原处恢复。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="5">
+        <span>05</span><h3>重放证据</h3><p>ReplayTrie 记录必要的选择，使其他验证者能够重放这次执行。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="6">
+        <span>06</span><h3>最终确认边界</h3><p>BlockGit 与 Block Merge 让链上结果收敛。将原子提交扩展到更多执行载体，是 GLVM 的下一阶段。</p>
+      </article>
+    </div>
+        </div>
+      </section>
+
+      <section class="glvm-stack fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">运行时剖面</p>
+          <h2>九个关键能力，支撑同一逻辑执行模型</h2>
+          <p>GLVM 不是另一种字节码虚拟机。以下九个架构切面从 TVM 执行、对象能力与重放，<span class="glvm-keep">一路延伸到 BlockGit、</span>客户虚拟机（Guest VM）和开发者工具，共同呈现这一逻辑执行模型的能力体系。</p>
+        </div>
+        <div class="glvm-stack-flow" aria-label="九个关键能力，支撑同一逻辑执行模型">
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="0" data-flow-state="current" data-flow-status="核心运行时" aria-pressed="true" aria-label="字节码虚拟机: TVM · 元组空间 · COMM">
+        <span>01</span><strong>字节码虚拟机</strong><small>核心运行时</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="1" data-flow-state="current" data-flow-status="核心运行时" aria-pressed="false" aria-label="安全: 原生对象能力">
+        <span>02</span><strong>安全</strong><small>核心运行时</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="2" data-flow-state="current" data-flow-status="核心运行时" aria-pressed="false" aria-label="原子性: 跨区块原子执行">
+        <span>03</span><strong>原子性</strong><small>核心运行时</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="3" data-flow-state="current" data-flow-status="核心运行时" aria-pressed="false" aria-label="最终性: BlockGit · Fringe · 合并">
+        <span>04</span><strong>最终性</strong><small>核心运行时</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="4" data-flow-state="current" data-flow-status="核心运行时" aria-pressed="false" aria-label="重放: ReplayTrie · 执行轨迹">
+        <span>05</span><strong>重放</strong><small>核心运行时</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="5" data-flow-state="current" data-flow-status="核心运行时" aria-pressed="false" aria-label="网络: 对等节点与验证者网络">
+        <span>06</span><strong>网络</strong><small>核心运行时</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="6" data-flow-state="current" data-flow-status="核心运行时" aria-pressed="false" aria-label="语言: Tolang → tolangc → .tox">
+        <span>07</span><strong>语言</strong><small>核心运行时</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="7" data-flow-state="planned" data-flow-status="evm 核心 · wasm 路线图" aria-pressed="false" aria-label="客户虚拟机: EVM 宿主 · WASM 路线图">
+        <span>08</span><strong>客户虚拟机</strong><small>EVM 核心 · WASM 路线图</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="8" data-flow-state="mixed" data-flow-status="开发者工具" aria-pressed="false" aria-label="工具链: 编译器 · LSP · Playground">
+        <span>09</span><strong>工具链</strong><small>开发者工具</small>
+      </button>
+    </div>
+        <ol class="glvm-stack-list">
+      <li class="glvm-stack-item" data-stack-index="0" data-stack-state="current" data-stack-status="核心运行时">
+        <span class="glvm-stack-number">01</span>
+        <div class="glvm-stack-label"><span>字节码虚拟机</span><strong>核心运行时</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="21" width="25" height="30" rx="5"/><path d="M17 30h11M17 36h11M17 42h8"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="11"/><rect x="85" y="21" width="25" height="30" rx="5"/><path d="M92 30h11M92 36h11M92 42h8"/><path class="glvm-glyph-track" d="M35 36h14m22 0h14"/><path class="glvm-glyph-flow" d="M35 36h14m22 0h14"/></svg></div>
+        <div class="glvm-stack-copy"><h3>TVM · 元组空间 · COMM</h3><p>具体的并发引擎负责运行字节码，并让独立进程通过通道交换数据与延续。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="1" data-stack-state="current" data-stack-status="核心运行时">
+        <span class="glvm-stack-number">02</span>
+        <div class="glvm-stack-label"><span>安全</span><strong>核心运行时</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="17" cy="36" r="7"/><circle cx="17" cy="36" r="3"/><path d="M24 36h25m-8 0v7m-8-7v5"/><rect class="glvm-glyph-pulse" x="49" y="25" width="22" height="22" rx="6"/><circle cx="98" cy="36" r="8"/><circle cx="98" cy="36" r="3"/><path class="glvm-glyph-track" d="M24 36h25m22 0h19"/><path class="glvm-glyph-flow" d="M24 36h25m22 0h19"/></svg></div>
+        <div class="glvm-stack-copy"><h3>原生对象能力</h3><p>不可伪造的引用让可达权限显式化，并使运行时能够执行最小权限边界。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="2" data-stack-state="current" data-stack-status="核心运行时">
+        <span class="glvm-stack-number">03</span>
+        <div class="glvm-stack-label"><span>原子性</span><strong>核心运行时</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="17" width="100" height="38" rx="12"/><path class="glvm-glyph-track" d="M20 36h25m30 0h25"/><path class="glvm-glyph-flow" d="M20 36h25m30 0h25"/><path class="glvm-glyph-pulse" d="M60 22l15 8v13l-15 8-15-8V30zM45 30l15 8 15-8M60 38v13"/></svg></div>
+        <div class="glvm-stack-copy"><h3>跨区块原子执行</h3><p>执行上下文可以跨区块挂起，从保留的延续中恢复，并抵达延后的最终确认边界。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="3" data-stack-state="current" data-stack-status="核心运行时">
+        <span class="glvm-stack-number">04</span>
+        <div class="glvm-stack-label"><span>最终性</span><strong>核心运行时</strong></div>
+        <div class="glvm-stack-glyph"><svg class="is-planned" viewBox="0 0 120 72" aria-hidden="true"><circle cx="18" cy="22" r="5"/><circle cx="18" cy="50" r="5"/><path d="M55 26l11 10-11 10-11-10z"/><circle class="glvm-glyph-pulse" cx="98" cy="36" r="8"/><path d="m94 36 3 3 6-7"/><path class="glvm-glyph-track" d="M23 22l21 11M23 50l21-11m22-3h24"/><path class="glvm-glyph-flow" d="M23 22l21 11M23 50l21-11m22-3h24"/></svg></div>
+        <div class="glvm-stack-copy"><h3>BlockGit · Fringe · 合并</h3><p>区块 DAG、确定性领导者轮换与合并规则，使链侧并发工作得以收敛，而不依赖永久领导者。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="4" data-stack-state="current" data-stack-status="核心运行时">
+        <span class="glvm-stack-number">05</span>
+        <div class="glvm-stack-label"><span>重放</span><strong>核心运行时</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="22" cy="45" r="5"/><circle cx="60" cy="45" r="5"/><circle class="glvm-glyph-pulse" cx="98" cy="45" r="5"/><path class="glvm-glyph-track" d="M27 45h28m10 0h28M98 37C94 14 31 14 22 37"/><path class="glvm-glyph-flow" d="M27 45h28m10 0h28M98 37C94 14 31 14 22 37"/><path d="m21 29 1 8 8-2"/></svg></div>
+        <div class="glvm-stack-copy"><h3>ReplayTrie · 执行轨迹</h3><p>已记录的非确定性选择与执行轨迹，使验证者能够重放被接受的路径。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="5" data-stack-state="current" data-stack-status="核心运行时">
+        <span class="glvm-stack-number">06</span>
+        <div class="glvm-stack-label"><span>网络</span><strong>核心运行时</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle class="glvm-glyph-pulse" cx="60" cy="36" r="9"/><circle cx="22" cy="18" r="5"/><circle cx="98" cy="18" r="5"/><circle cx="22" cy="54" r="5"/><circle cx="98" cy="54" r="5"/><path class="glvm-glyph-track" d="M27 21l25 11M93 21 68 32M27 51l25-11m41 11L68 40"/><path class="glvm-glyph-flow" d="M27 21l25 11M93 21 68 32M27 51l25-11m41 11L68 40"/></svg></div>
+        <div class="glvm-stack-copy"><h3>对等节点与验证者网络</h3><p>节点层在执行抽象之下传递提案、区块、状态证据，并协调验证者。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="6" data-stack-state="current" data-stack-status="核心运行时">
+        <span class="glvm-stack-number">07</span>
+        <div class="glvm-stack-label"><span>语言</span><strong>核心运行时</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="24" width="26" height="24" rx="5"/><path d="M20 31l-5 5 5 5M27 31l5 5-5 5"/><rect class="glvm-glyph-pulse" x="47" y="24" width="26" height="24" rx="5"/><path d="M53 32h12m0 0-3-3m3 3-3 3M67 40H55m0 0 3-3m-3 3 3 3"/><rect x="84" y="24" width="26" height="24" rx="5"/><path d="M91 31h12M91 36h8M91 41h12"/><path class="glvm-glyph-track" d="M38 36h7m30 0h7"/><path class="glvm-glyph-flow" d="M38 36h7m30 0h7"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Tolang → tolangc → .tox</h3><p>Tolang 描述并发进程；编译器将源码转换为 TVM 可执行字节码。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="7" data-stack-state="planned" data-stack-status="evm 核心 · wasm 路线图">
+        <span class="glvm-stack-number">08</span>
+        <div class="glvm-stack-label"><span>客户虚拟机</span><strong>EVM 核心 · WASM 路线图</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="9" y="12" width="102" height="48" rx="10"/><rect x="20" y="23" width="32" height="26" rx="6"/><rect x="68" y="23" width="32" height="26" rx="6"/><circle cx="36" cy="36" r="6"/><path d="M33 33l6 6M39 33l-6 6M78 31l5 10 5-10"/><path class="glvm-glyph-track" d="M52 36h16m32 0h7"/><path class="glvm-glyph-flow" d="M52 36h16m32 0h7"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="3"/></svg></div>
+        <div class="glvm-stack-copy"><h3>EVM 宿主 · WASM 路线图</h3><p>EVM 通过 TSAC 式协调，作为有状态客户虚拟机运行；WASM 则把这套架构延伸到异构虚拟机。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="8" data-stack-state="mixed" data-stack-status="开发者工具">
+        <span class="glvm-stack-number">09</span>
+        <div class="glvm-stack-label"><span>工具链</span><strong>开发者工具</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="11" width="100" height="50" rx="8"/><path d="M10 25h100M20 18h3m7 0h3m7 0h3M24 35l7 6-7 6"/><path class="glvm-glyph-track" d="M40 47h50"/><path class="glvm-glyph-flow" d="M40 47h50"/><circle class="glvm-glyph-pulse" cx="97" cy="47" r="5"/></svg></div>
+        <div class="glvm-stack-copy"><h3>编译器 · LSP · Playground</h3><p>编译器、LSP、Playground、验证套件与诊断工具，让这套执行模型进入日常开发。</p></div>
+      </li>
+    </ol>
+      </section>
+
+      <section class="glvm-status fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">扩展蓝图</p>
+          <h2 class="glvm-semantic-heading"><span class="glvm-semantic-line"><span class="glvm-keep">核心运行时</span><span class="glvm-keep">已初步成形，</span></span><span class="glvm-semantic-line"><span class="glvm-keep">更多执行环境</span><span class="glvm-keep">正在接入</span></span></h2>
+          <div class="glvm-status-intro">
+            <p class="glvm-semantic-copy"><span class="glvm-semantic-copy-line">GLVM 正从 ALUX 的链上<span class="glvm-keep">并发运行时</span>向更多执行环境扩展。</span><span class="glvm-semantic-copy-line">本节区分已形成的核心能力、正在推进的系统扩展与后续路线图。</span></p>
+            <div class="glvm-status-summary" aria-hidden="true">
+      <div class="glvm-status-summary-item glvm-status-summary-item--built" aria-label="核心运行时: 6">
+        <span>06</span>
+        <small>核心运行时</small>
+      </div>
+
+      <div class="glvm-status-summary-item glvm-status-summary-item--designed" aria-label="系统扩展: 5">
+        <span>05</span>
+        <small>系统扩展</small>
+      </div>
+
+      <div class="glvm-status-summary-item glvm-status-summary-item--planned" aria-label="路线图: 6">
+        <span>06</span>
+        <small>路线图</small>
+      </div>
+    </div>
+          </div>
+        </div>
+        <div class="glvm-status-grid">
+      <article class="glvm-status-group glvm-status-group--built">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">核心运行时</span></h3>
+        <ul><li>TVM 并发执行与 COMM</li><li>ReplayTrie 与执行轨迹</li><li>跨区块挂起 / 恢复路径</li><li>原生 OCAP 基础</li><li>EVM 宿主路径</li><li>BlockGit DAG、Fringe 与合并</li></ul>
+      </article>
+
+      <article class="glvm-status-group glvm-status-group--designed">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">系统扩展</span></h3>
+        <ul><li>私有或云端引擎部署</li><li>跨部署载体的 GLVM 抽象</li><li>生产规模加固</li><li>更丰富的策略与受控通道机制</li><li>运行时可观测性与运维工具</li></ul>
+      </article>
+
+      <article class="glvm-status-group glvm-status-group--planned">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">路线图</span></h3>
+        <ul><li>跨分片横向原子性</li><li>WASM 客户虚拟机</li><li>客户端设备 TVM 部署</li><li>账户抽象与能力注册表</li><li>节点故障重同步与验证者集合动态变更</li><li>可编程 World OS 层</li></ul>
+      </article>
+    </div>
+      </section>
+
+
+    <section class="glvm-next fade-in" aria-labelledby="glvm-next-title">
+      <div class="glvm-next-copy">
+        <p class="eyebrow">继续学习</p>
+        <h2 id="glvm-next-title">继续探索运行时、智能体工作负载与系统对比</h2>
+        <p><span class="glvm-next-copy-line">Runtime Lab 详解执行模型；“面向 AI 智能体”展示工作负载模式；</span><span class="glvm-next-copy-line">“ALUX 与其他系统”对比不同系统的架构与能力。</span></p>
+      </div>
+      <nav class="glvm-next-links" aria-labelledby="glvm-next-title">
+        <a class="glvm-next-link glvm-next-link--primary" href="/zh/runtime-lab">
+          <span class="glvm-next-index" aria-hidden="true">01</span>
+          <span class="glvm-next-label">Runtime Lab</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+
+        <a class="glvm-next-link glvm-next-link--secondary" href="/zh/for-ai-agents">
+          <span class="glvm-next-index" aria-hidden="true">02</span>
+          <span class="glvm-next-label">面向 AI 智能体</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+
+        <a class="glvm-next-link glvm-next-link--tertiary" href="/zh/alux-vs-others">
+          <span class="glvm-next-index" aria-hidden="true">03</span>
+          <span class="glvm-next-label">ALUX VS 其它</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+      </nav>
+    </section>
+
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Copyright © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
+<script src="/script.js?v=20261012-language-routes"></script>
+</body>
+</html>

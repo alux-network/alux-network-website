@@ -1,10 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
+<script data-language-routing>
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = ["en", "zh", "ja", "ko", "ar"];
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(value => value.toLowerCase().split(/[-_]/)[0]).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ALUX Runtime Lab | ALUX Network</title>
-  <link rel="icon" href="assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+<link rel="canonical" href="https://www.alux.network/runtime-lab">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/runtime-lab">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/runtime-lab">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/runtime-lab">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/runtime-lab">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/runtime-lab">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/runtime-lab">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
   <meta name="description" content="A visual guide to ALUX's current parallel and message-driven execution, plus its target model for atomic composition across system boundaries.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,40 +63,10 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
     rel="stylesheet"
   >
-<link rel="stylesheet" href="styles.css?v=20261010-refresh-stability">
-<link rel="stylesheet" href="site-frame.css?v=20260927-logo-shadow">
-<link rel="stylesheet" href="home-mobile-nav.css?v=20261010-localized-navigation">
-<script data-initial-navigation>
-(function initializeNavigation(catalog, languageNames) {
-  let language = "en";
-  try {
-    language = sessionStorage.getItem("alux-lang") || "en";
-  } catch {}
-  if (!Object.prototype.hasOwnProperty.call(catalog, language)) language = "en";
-  const chrome = catalog[language];
-  document.documentElement.lang = language;
-  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
-  const observer = new MutationObserver(() => {
-    const header = document.querySelector(".site-header");
-    // The menu toggle is the last control in every header.
-    if (!header?.querySelector(".menu-toggle")) return;
-    header.querySelectorAll("[data-nav]").forEach((node) => {
-      node.textContent = chrome.nav[node.dataset.nav] || node.textContent;
-    });
-    header.querySelectorAll("[data-lang-label]").forEach((node) => {
-      node.textContent = chrome.languageLabel;
-    });
-    header.querySelectorAll("[data-lang-current]").forEach((node) => {
-      node.textContent = languageNames[language];
-    });
-    header.querySelector(".site-nav")?.setAttribute("aria-label", chrome.primaryNavigationLabel);
-    header.querySelector(".menu-toggle")?.setAttribute("aria-label", chrome.menuToggleLabel);
-    observer.disconnect();
-  });
-  observer.observe(document.documentElement, { childList: true, subtree: true });
-})({"en":{"nav":{"home":"Home","vs":"For AI Agents","learn":"Learn","learnGlvm":"GLVM","blog":"Blog","learnAlux":"ALUX VS Others","learnPcc":"Runtime Lab","team":"Team","roadmap":"Roadmap","cta":"Contact Us"},"languageLabel":"Language","primaryNavigationLabel":"Primary navigation","menuToggleLabel":"Toggle navigation menu"},"ar":{"nav":{"home":"الرئيسية","vs":"لوكلاء الذكاء الاصطناعي","learn":"استكشف","learnGlvm":"GLVM","blog":"المدونة","learnAlux":"ALUX مقارنةً بالحلول الأخرى","learnPcc":"مختبر بيئة التشغيل","team":"الفريق","roadmap":"خارطة الطريق","cta":"تواصل معنا"},"languageLabel":"اللغة","primaryNavigationLabel":"التنقل الرئيسي","menuToggleLabel":"تبديل قائمة التنقل"},"ja":{"nav":{"home":"ホーム","vs":"AIエージェント向け","learn":"詳しく見る","learnGlvm":"GLVM","blog":"ブログ","learnAlux":"ALUX と他方式の比較","learnPcc":"ランタイム・ラボ","team":"チーム","roadmap":"ロードマップ","cta":"お問い合わせ"},"languageLabel":"言語","primaryNavigationLabel":"メインナビゲーション","menuToggleLabel":"ナビゲーションメニューを切り替える"},"ko":{"nav":{"home":"홈","vs":"AI 에이전트용","learn":"알아보기","learnGlvm":"GLVM","blog":"블로그","learnAlux":"ALUX와 다른 시스템","learnPcc":"런타임 랩","team":"팀","roadmap":"로드맵","cta":"문의하기"},"languageLabel":"언어","primaryNavigationLabel":"주요 탐색","menuToggleLabel":"탐색 메뉴 전환"},"zh":{"nav":{"home":"首页","vs":"面向 AI 智能体","learn":"了解","learnGlvm":"GLVM","blog":"博客","learnAlux":"ALUX VS 其它","learnPcc":"Runtime Lab","team":"团队","roadmap":"路线图","cta":"联系我们"},"languageLabel":"语言","primaryNavigationLabel":"主导航","menuToggleLabel":"切换导航菜单"}},{"en":"English","zh":"中文","ko":"한국어","ja":"日本語","ar":"العربية"});
-</script>
 </head>
 <body data-page="parallelConcurrentComposable">
   <div class="bg-grid" aria-hidden="true"></div>
@@ -53,28 +74,28 @@
   <div class="bg-glow glow-two" aria-hidden="true"></div>
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="/" aria-label="ALUX Network home"><img class="brand-logo" src="assets/alux-logo.png" alt="ALUX logo"></a>
+      <a class="brand" href="/" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/alux-logo.png" alt="ALUX logo"></a>
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="/" data-nav="home">Home</a>
-        <a href="for-ai-agents.html" data-nav="vs">For AI Agents</a>
+        <a href="/for-ai-agents" data-nav="vs">For AI Agents</a>
         <div class="nav-dropdown">
           <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
             <span data-nav="learn">Learn</span><span class="nav-caret" aria-hidden="true"></span>
           </button>
           <div class="nav-dropdown-menu" id="learn-menu">
-            <a href="glvm.html" data-nav="learnGlvm">GLVM</a>
-            <a href="runtime-lab.html" data-nav="learnPcc">Runtime Lab</a>
-            <a href="alux-vs-others.html" data-nav="learnAlux">ALUX VS Others</a>
+            <a href="/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/runtime-lab" data-nav="learnPcc">Runtime Lab</a>
+            <a href="/alux-vs-others" data-nav="learnAlux">ALUX VS Others</a>
           </div>
         </div>
         <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">Blog</a>
-        <a href="team.html" data-nav="team">Team</a>
-        <a href="roadmap.html" data-nav="roadmap">Roadmap</a>
+        <a href="/team" data-nav="team">Team</a>
+        <a href="/roadmap" data-nav="roadmap">Roadmap</a>
       </nav>
       <div class="header-actions">
-        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Language</span><span class="lang-current" data-lang-current>English</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><button class="lang-button" type="button" data-lang="en">EN</button><button class="lang-button" type="button" data-lang="zh">ZH</button><button class="lang-button" type="button" data-lang="ko">KO</button><button class="lang-button" type="button" data-lang="ja">JA</button><button class="lang-button" type="button" data-lang="ar">AR</button></div></div>
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Language</span><span class="lang-current" data-lang-current>English</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/runtime-lab" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/runtime-lab" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/runtime-lab" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/runtime-lab" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/runtime-lab" hreflang="ar">AR</a></div></div>
         <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">Contact Us</a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
       </div>
     </header>
     <main id="page-content" data-prerendered="en">
@@ -89,7 +110,7 @@
         </div>
         <figure class="pcc-hero-visual">
           <div class="pcc-image-frame pcc-image-frame--hero">
-            <img src="assets/parallel-concurrent-composable/alux-runtime.webp?v=20260708-heroimg1" alt="A premium technical illustration of the ALUX runtime connecting nodes, cloud services, devices, agents, capability tokens, and commit rails." loading="eager" fetchpriority="high" data-pcc-image>
+            <img src="/assets/parallel-concurrent-composable/alux-runtime.webp?v=20260708-heroimg1" alt="A premium technical illustration of the ALUX runtime connecting nodes, cloud services, devices, agents, capability tokens, and commit rails." loading="eager" fetchpriority="high" data-pcc-image>
             <span class="pcc-image-fallback">A premium technical illustration of the ALUX runtime connecting nodes, cloud services, devices, agents, capability tokens, and commit rails.</span>
           </div>
         </figure>
@@ -110,7 +131,7 @@
           <div class="pcc-mode-visuals">
       <figure class="pcc-mode-visual is-active" data-pcc-visual="parallel" aria-hidden="false">
         <div class="pcc-image-frame">
-          <img src="assets/parallel-concurrent-composable/parallel.svg?v=20260812-motion-restore4" alt="Multiple isolated execution rails moving forward at the same time." loading="eager" data-pcc-image>
+          <img src="/assets/parallel-concurrent-composable/parallel.svg?v=20260812-motion-restore4" alt="Multiple isolated execution rails moving forward at the same time." loading="eager" data-pcc-image>
           <span class="pcc-image-fallback">Multiple isolated execution rails moving forward at the same time.</span>
         </div>
         <figcaption class="pcc-mode-cue"><span>Parallel</span><strong>Four travel searches finish independently</strong></figcaption>
@@ -119,7 +140,7 @@
 
       <figure class="pcc-mode-visual" data-pcc-visual="concurrent" aria-hidden="true">
         <div class="pcc-image-frame">
-          <img src="assets/parallel-concurrent-composable/concurrent.svg?v=20260812-motion-restore4" alt="Two transactions interact through a tuple-space channel: one waits for a matching message, the other sends it, and the waiting continuation resumes while unrelated work keeps moving." loading="lazy" data-pcc-image>
+          <img src="/assets/parallel-concurrent-composable/concurrent.svg?v=20260812-motion-restore4" alt="Two transactions interact through a tuple-space channel: one waits for a matching message, the other sends it, and the waiting continuation resumes while unrelated work keeps moving." loading="lazy" data-pcc-image>
           <span class="pcc-image-fallback">Two transactions interact through a tuple-space channel: one waits for a matching message, the other sends it, and the waiting continuation resumes while unrelated work keeps moving.</span>
         </div>
         <figcaption class="pcc-mode-cue"><span>Concurrent</span><strong>The booking waits; a hotel agent replies; the next step begins</strong></figcaption>
@@ -128,7 +149,7 @@
 
       <figure class="pcc-mode-visual" data-pcc-visual="composable" aria-hidden="true">
         <div class="pcc-image-frame">
-          <img src="assets/parallel-concurrent-composable/composable.svg?v=20260812-motion-restore4" alt="A room reservation and payment authorization arrive from different systems. Only after both are ready does one booking confirmation leave the atomic boundary." loading="lazy" data-pcc-image>
+          <img src="/assets/parallel-concurrent-composable/composable.svg?v=20260812-motion-restore4" alt="A room reservation and payment authorization arrive from different systems. Only after both are ready does one booking confirmation leave the atomic boundary." loading="lazy" data-pcc-image>
           <span class="pcc-image-fallback">A room reservation and payment authorization arrive from different systems. Only after both are ready does one booking confirmation leave the atomic boundary.</span>
         </div>
         <figcaption class="pcc-mode-cue"><span>Composable</span><strong>The booking confirms only when reservation and payment both succeed</strong></figcaption>
@@ -243,7 +264,7 @@
         <h2>One logical runtime across many environments</h2>
         <p>Runtime Lab shows current parallel and message-driven execution, then illustrates the target atomic composition model. GLVM describes the broader architecture for extending that logical model across blockchain nodes, cloud services, and personal devices.</p>
       </div>
-      <a class="button secondary pcc-glvm-bridge-link" href="glvm.html#architecture">Explore GLVM<span aria-hidden="true">→</span></a>
+      <a class="button secondary pcc-glvm-bridge-link" href="/glvm#architecture">Explore GLVM<span aria-hidden="true">→</span></a>
     </section>
 
 
@@ -254,15 +275,15 @@
           <p>Parallelism handles independent execution. Concurrency handles message-driven interaction and wait/resume. ALUX implements those runtime foundations today and is building toward atomic composition across system boundaries.</p>
         </div>
         <div class="pcc-close-points"><article class="pcc-close-point"><span>Only parallel</span><p>More throughput, but no transaction dependency or message matching.</p></article><article class="pcc-close-point"><span>Only concurrent</span><p>Transactions can interact and wait, but cross-system effects may still settle separately.</p></article><article class="pcc-close-point"><span>Only composable</span><p>An atomic boundary exists, but without interaction and waiting it cannot carry long-running dependencies.</p></article></div>
-        <div class="hero-actions pcc-close-actions"><a class="button primary" href="alux-vs-others.html">Back to ALUX&nbsp;VS Others</a><a class="button secondary" href="for-ai-agents.html">For AI Agents</a></div>
+        <div class="hero-actions pcc-close-actions"><a class="button primary" href="/alux-vs-others">Back to ALUX&nbsp;VS Others</a><a class="button secondary" href="/for-ai-agents">For AI Agents</a></div>
       </section>
     </article>
 </main>
     <footer class="site-footer">
-      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright"></p></div>
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Copyright © 2026 Foundation ALUX</p></div>
     </footer>
   </div>
-<script src="i18n/site.generated.js?v=20260813-mobile-type1"></script>
-<script src="script.js?v=20261010-localized-navigation"></script>
+<script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
+<script src="/script.js?v=20261012-language-routes"></script>
 </body>
 </html>

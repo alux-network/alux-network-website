@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const scriptPath = path.join(rootDir, "script.js");
-const roadmapPath = path.join(rootDir, "roadmap.html");
+const roadmapPath = path.join(rootDir, "scripts/templates/roadmap.html");
 const qualityPath = path.join(rootDir, "i18n", "QUALITY.md");
 const sourcePath = path.join(rootDir, "i18n", "source", "site.en.json");
 const generatedPath = path.join(rootDir, "i18n", "site.generated.js");
@@ -276,7 +276,7 @@ function buildCatalog(source) {
   const entries = sortObject(flattenStrings(source));
   return {
     generatedAt: now,
-    source: "script.js:all active English page and shared UI data; roadmap.html static roadmap text nodes",
+    source: "script.js:all active English page and shared UI data; scripts/templates/roadmap.html static roadmap text nodes",
     entries: Object.fromEntries(
       Object.entries(entries).map(([key, text]) => [
         key,

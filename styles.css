@@ -31,6 +31,39 @@ html {
   scroll-margin-top: 110px;
 }
 
+body[data-page="roadmap"] .roadmap-order {
+  display: flex;
+  justify-content: flex-end;
+  gap: 28px;
+  margin-block: 0 32px;
+}
+
+body[data-page="roadmap"] .roadmap-order button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 8px 4px;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  color: #817567;
+  background: transparent;
+  font: inherit;
+  font-family: "Fraunces", serif;
+  font-size: clamp(18px, 2vw, 24px);
+  cursor: pointer;
+}
+
+body[data-page="roadmap"] .roadmap-order button[aria-pressed="true"] {
+  color: #796444;
+  border-bottom-color: #a38a53;
+}
+
+body[data-page="roadmap"] .roadmap-order button:focus-visible {
+  outline: 2px solid #a38a53;
+  outline-offset: 4px;
+}
+
 body {
   margin: 0;
   color: var(--text-soft);

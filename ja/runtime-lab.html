@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = ["en", "zh", "ja", "ko", "ar"];
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(value => value.toLowerCase().split(/[-_]/)[0]).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALUX ランタイム・ラボ | ALUX Network</title>
+<link rel="canonical" href="https://www.alux.network/ja/runtime-lab">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/runtime-lab">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/runtime-lab">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/runtime-lab">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/runtime-lab">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/runtime-lab">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/runtime-lab">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="ALUX の現行の並列実行とメッセージ駆動実行、およびシステム境界をまたぐアトミック・コンポーザビリティの目標モデルを図解します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+</head>
+<body data-page="parallelConcurrentComposable">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/ja" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/alux-logo.png" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <a href="/ja" data-nav="home">ホーム</a>
+        <a href="/ja/for-ai-agents" data-nav="vs">AIエージェント向け</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">詳しく見る</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/ja/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/ja/runtime-lab" data-nav="learnPcc">ランタイム・ラボ</a>
+            <a href="/ja/alux-vs-others" data-nav="learnAlux">ALUX と他方式の比較</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">ブログ</a>
+        <a href="/ja/team" data-nav="team">チーム</a>
+        <a href="/ja/roadmap" data-nav="roadmap">ロードマップ</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>言語</span><span class="lang-current" data-lang-current>日本語</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/runtime-lab" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/runtime-lab" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/runtime-lab" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/runtime-lab" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/runtime-lab" hreflang="ar">AR</a></div></div>
+        <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">お問い合わせ</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="ナビゲーションメニューを切り替える"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="ja">
+    <article class="pcc-page" data-pcc-root data-pcc-active="parallel">
+      <header class="pcc-hero fade-in">
+        <div class="pcc-hero-copy">
+          <p class="eyebrow">詳しく見る / ランタイム・ラボ</p>
+          <h1>ランタイム・ラボ</h1>
+          <p class="pcc-hero-subtitle">並列 / 並行 / コンポーザブル</p>
+          <p class="pcc-hero-text">ALUX はリプレイ可能な長期トランザクションに対応します。独立したタスクは同時に進み、トランザクションはメッセージを通じて協調します。予約シナリオでは、関連するシステム横断の効果を1つのアトミックな結果として決済する目標モデルを示します。</p>
+          <div class="pcc-hero-signals" aria-label="Runtime signals"><div class="pcc-signal"><span>位置付け</span><strong>分散型並行ランタイム</strong></div><div class="pcc-signal"><span>実行</span><strong>実行、相互作用、待機、決済</strong></div><div class="pcc-signal"><span>境界</span><strong>ケイパビリティで範囲を限定したワークフロー</strong></div></div>
+        </div>
+        <figure class="pcc-hero-visual">
+          <div class="pcc-image-frame pcc-image-frame--hero">
+            <img src="/assets/parallel-concurrent-composable/alux-runtime.webp?v=20260708-heroimg1" alt="ALUX ランタイムがノード、クラウドサービス、デバイス、エージェント、ケイパビリティトークン、コミット経路を接続する高精細な技術イラスト。" loading="eager" fetchpriority="high" data-pcc-image>
+            <span class="pcc-image-fallback">ALUX ランタイムがノード、クラウドサービス、デバイス、エージェント、ケイパビリティトークン、コミット経路を接続する高精細な技術イラスト。</span>
+          </div>
+        </figure>
+      </header>
+
+      <section class="pcc-intro-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">3つの違い</p>
+          <h2>3つの言葉が担う、3つの異なるランタイム機能</h2>
+          <p>並列性は、独立したトランザクションを同時に実行します。並行性は、トランザクション同士をチャネルで相互作用させます。あるトランザクションは別のトランザクションから一致するメッセージを待ち、受信後に処理を続けられます。コンポーザビリティ（合成可能性）は、異なるシステムの状態遷移を監査可能な1つのアトミックな遷移として結び付けます。</p>
+          <p class="pcc-intro-claim">現行の ALUX ランタイムでは、独立した処理を並列に実行し、トランザクション同士をメッセージで協調させ、ブロックをまたいで実行を再開できます。独立したシステム間のアトミック・コンポーザビリティは、引き続きアーキテクチャ上の目標です。</p>
+        </div>
+      </section>
+
+      <section class="pcc-mode-section fade-in" aria-label="3つの言葉が担う、3つの異なるランタイム機能">
+        <div class="pcc-mode-toolbar" aria-label="Runtime mode selector"><button class="pcc-mode-button is-active" type="button" data-pcc-mode="parallel" aria-pressed="true"><span>01</span> 並列</button><button class="pcc-mode-button" type="button" data-pcc-mode="concurrent" aria-pressed="false"><span>02</span> 並行</button><button class="pcc-mode-button" type="button" data-pcc-mode="composable" aria-pressed="false"><span>03</span> コンポーザブル</button></div>
+        <div class="pcc-mode-stage">
+          <div class="pcc-mode-visuals">
+      <figure class="pcc-mode-visual is-active" data-pcc-visual="parallel" aria-hidden="false">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/parallel.svg?v=20260812-motion-restore4" alt="複数の分離された実行レーンが、同時に前進する様子。" loading="eager" data-pcc-image>
+          <span class="pcc-image-fallback">複数の分離された実行レーンが、同時に前進する様子。</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>並列</span><strong>4つの旅行検索がそれぞれのレーンで独立して完了します</strong></figcaption>
+        <div class="pcc-mode-impact"><span>可能になること</span><p>同じ時間で、より多くの独立作業を完了できます。ただし並列性だけでは、作業同士がメッセージを交換したり、長期トランザクションが待機後に処理を続けたりすることはできません。</p><strong>並列性は複数の答えを同時に探しますが、それらの作業を相互作用させるものではありません。</strong></div>
+      </figure>
+
+      <figure class="pcc-mode-visual" data-pcc-visual="concurrent" aria-hidden="true">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/concurrent.svg?v=20260812-motion-restore4" alt="2つのトランザクションがタプル空間チャネルで相互作用します。一方が一致するメッセージを待ち、もう一方がそれを送信します。照合後は待機中の継続処理が進み、無関係な作業も動き続けます。" loading="lazy" data-pcc-image>
+          <span class="pcc-image-fallback">2つのトランザクションがタプル空間チャネルで相互作用します。一方が一致するメッセージを待ち、もう一方がそれを送信します。照合後は待機中の継続処理が進み、無関係な作業も動き続けます。</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>並行</span><strong>予約が待機し、ホテルエージェントが応答すると、次の処理が始まります</strong></figcaption>
+        <div class="pcc-mode-impact"><span>可能になること</span><p>旅行エージェントは、1つの長期トランザクションをブロックをまたいで維持できます。空室情報、API 応答、ユーザーの判断を待ちながら、無関係な処理を止めずに実行を続けます。</p><strong>並行性は応答を次の処理へつなげます。メッセージ照合は、停止したレーンを再始動するだけでなく、新しい継続処理を生成します。</strong></div>
+      </figure>
+
+      <figure class="pcc-mode-visual" data-pcc-visual="composable" aria-hidden="true">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/composable.svg?v=20260812-motion-restore4" alt="客室予約と支払い承認が異なるシステムから到着します。両方が準備できた後にだけ、1つの予約確認結果がアトミックな境界から出ます。" loading="lazy" data-pcc-image>
+          <span class="pcc-image-fallback">客室予約と支払い承認が異なるシステムから到着します。両方が準備できた後にだけ、1つの予約確認結果がアトミックな境界から出ます。</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>コンポーザブル</span><strong>客室予約と支払いの両方が成功したときだけ予約が確定します</strong></figcaption>
+        <div class="pcc-mode-impact"><span>可能になること</span><p>目標は、客室が取れないのに料金だけ請求されたり、支払いがないまま客室だけ確保されたりする、未完了の予約を防ぐことです。</p><strong>目標とするコンポーザビリティ・モデルは、異なるシステムに全成功か全取消かの1つの結果を与えます。並行性は、その共同コミットに至るまでのメッセージ交換を担います。</strong></div>
+      </figure>
+    </div>
+          <div class="pcc-mode-copy" aria-live="polite">
+      <article class="pcc-mode-panel is-active" data-pcc-panel="parallel" aria-hidden="false">
+        <p class="pcc-mode-kicker">並列</p>
+        <h3>航空券、ホテル、送迎、保険を<br>同時に検索します</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>何を意味するか</dt><dd>並列実行とは、独立した作業を同時に進めることです。旅行エージェントは、1つの検索の完了を待たずに、航空券、客室、送迎、保険を並行して検索できます。</dd></div>
+          <div><dt>ALUX の方法</dt><dd>並列実行は ALUX のプロセス計算に組み込まれています。トランザクションはメモリを共有せず、相互作用はタプル空間チャネルに限定されます。そのため独立したトランザクションは別々の TVM レーンで進み、コミット時の状態競合は Block Merge が解決します。</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>可能になること</dt><dd>同じ時間で、より多くの独立作業を完了できます。ただし並列性だけでは、作業同士がメッセージを交換したり、長期トランザクションが待機後に処理を続けたりすることはできません。</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">並列性は複数の答えを同時に探しますが、それらの作業を相互作用させるものではありません。</p>
+      </article>
+
+      <article class="pcc-mode-panel" data-pcc-panel="concurrent" aria-hidden="true">
+        <p class="pcc-mode-kicker">並行</p>
+        <h3>予約は空室情報を待ち、<br>返答が届くと続行します</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>何を意味するか</dt><dd>並行性は、作業同士が相互作用するときに始まります。予約は待機条件をチャネルに残し、ホテルサービスは後から一致する空室メッセージを送って、その条件を満たせます。</dd></div>
+          <div><dt>ALUX の方法</dt><dd>待機中の consume は、タプル空間にリソースとして保存されます。別のトランザクションの produce が一致すると COMM イベントが発生し、継続処理が生成され、Execution Context は Inactive から Running へ戻ります。候補が複数ある場合は、ReplayTrie が選択された COMM を記録し、決定的なリプレイを可能にします。</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>可能になること</dt><dd>旅行エージェントは、1つの長期トランザクションをブロックをまたいで維持できます。空室情報、API 応答、ユーザーの判断を待ちながら、無関係な処理を止めずに実行を続けます。</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">並行性は応答を次の処理へつなげます。メッセージ照合は、停止したレーンを再始動するだけでなく、新しい継続処理を生成します。</p>
+      </article>
+
+      <article class="pcc-mode-panel" data-pcc-panel="composable" aria-hidden="true">
+        <p class="pcc-mode-kicker">コンポーザブル</p>
+        <h3>客室確保と支払いを<br>一緒に確定します</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>何を意味するか</dt><dd>コンポーザビリティは、単なる一括処理ではありません。この例の目標は、客室の確保と決済承認をまとめてコミットするか、どちらもコミットしないことです。</dd></div>
+          <div><dt>ALUX の方法</dt><dd>現行ランタイムは、タプル空間による協調、範囲を限定した OCAP 参照、クロスブロック継続、ReplayTrie、Block Merge を提供します。独立した外部システム間をエンドツーエンドでアトミックに構成する機能は、これらのプリミティブを基盤とする設計目標です。</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>可能になること</dt><dd>目標は、客室が取れないのに料金だけ請求されたり、支払いがないまま客室だけ確保されたりする、未完了の予約を防ぐことです。</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">目標とするコンポーザビリティ・モデルは、異なるシステムに全成功か全取消かの1つの結果を与えます。並行性は、その共同コミットに至るまでのメッセージ交換を担います。</p>
+      </article>
+    </div>
+        </div>
+      </section>
+
+      <section class="pcc-lab-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">ランタイム全体を体験</p>
+          <h2>アトミックな予約をモデル化</h2>
+          <p class="pcc-lab-intro">4つの操作で目標とするコンポーザビリティ・モデルを試せます。予約確認と決済確認を開始し、空室待ちの条件を残し、ホテルから一致するメッセージを届け、最後に両方をまとめて確定するモデルを確認します。</p>
+        </div>
+        <div class="pcc-lab-board" data-pcc-lab data-lab-state="idle" data-msg-idle="ステップ1から始めます。予約と決済は同じランタイムで管理されますが、状態は互いに独立しています。" data-msg-parallel="並列：予約確認と決済確認が、状態を共有せず同時に進みます。" data-msg-paused="並行待機：予約は空室条件をチャネルに残し、その間も決済処理は進み続けます。" data-msg-resumed="メッセージ一致：ホテルから空室情報が届くと、ALUX は予約の継続処理を起動します。候補が複数ある場合は、ReplayTrie が選択された候補を記録します。" data-msg-settled="コンポーザビリティの目標：客室の確保と決済承認をまとめて確定し、全成功か全取消かの1つの予約結果にします。">
+          <div class="pcc-lab-steps"><article class="pcc-lab-step" data-pcc-step="parallel"><span>01</span><strong>2つの確認を開始</strong><p>予約と決済の確認がそれぞれ進みます。</p></article><article class="pcc-lab-step" data-pcc-step="paused"><span>02</span><strong>空室を待つ</strong><p>予約がチャネルに空室条件を残します。</p></article><article class="pcc-lab-step" data-pcc-step="resumed"><span>03</span><strong>ホテルが応答</strong><p>一致するメッセージが予約の後続処理を起動します。</p></article><article class="pcc-lab-step" data-pcc-step="settled"><span>04</span><strong>一緒に確定</strong><p>客室確保と決済承認が1つの結果としてコミットされます。</p></article></div>
+          <div class="pcc-lab-runtime" aria-hidden="true">
+            <div class="pcc-lab-lanes">
+      <div class="pcc-lab-lane pcc-lab-lane--1">
+        <span class="pcc-lab-lane-label">予約状態</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--1" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--2">
+        <span class="pcc-lab-lane-label">ホテルメッセージ</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--2" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--3">
+        <span class="pcc-lab-lane-label">決済状態</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--3" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--4">
+        <span class="pcc-lab-lane-label">予約確認</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--4" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+    <div class="pcc-lab-event" aria-hidden="true"><span>メッセージ一致</span></div></div>
+            <div class="pcc-lab-checkpoint" data-pcc-lab-checkpoint data-checkpoint-idle="両方の準備待ち" data-checkpoint-settled="予約確定"><span>両方の準備待ち</span></div>
+          </div>
+          <div class="pcc-lab-side">
+            <div class="pcc-lab-status">
+              <span>状態</span>
+              <strong data-pcc-lab-score>0 / 4</strong>
+            </div>
+            <p class="pcc-lab-play-label">順番に操作</p>
+            <div class="pcc-lab-controls">
+              <button type="button" data-pcc-action="parallel">1. 2つの確認を開始</button>
+              <button type="button" data-pcc-action="pause" disabled>2. 空室を待つ</button>
+              <button type="button" data-pcc-action="resume" disabled>3. ホテルの応答を送る</button>
+              <button type="button" data-pcc-action="settle" disabled>4. 予約を確定</button>
+              <button type="button" data-pcc-action="reset">リセット</button>
+            </div>
+            <p class="pcc-lab-message" data-pcc-lab-message>ステップ1から始めます。予約と決済は同じランタイムで管理されますが、状態は互いに独立しています。</p>
+          </div>
+          <div class="pcc-lab-benefits"><article class="pcc-lab-benefit" data-pcc-benefit="parallel"><span>並列</span><strong>2つの確認を同時実行</strong><p>独立作業が1つのグローバルキューに並ぶ必要はありません。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="paused"><span>並行</span><strong>予約がホテルの返答を待つ</strong><p>依存関係はチャネルに残り、ランタイム全体を止めません。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="resumed"><span>メッセージ照合</span><strong>返答が次の処理を生成</strong><p>COMM が後続処理を生成し、照合が非決定的な場合にだけ ReplayTrie が選択を記録します。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="settled"><span>コンポーザブル</span><strong>客室と決済を一緒に確定</strong><p>目標は、決済を再現できる証拠を伴う、全成功か全取消かの1つの結果です。</p></article></div>
+        </div>
+      </section>
+
+      <section class="pcc-foundation-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">ランタイムの経路</p>
+          <h2>サービスを動かし続けるもの</h2>
+          <p>長期稼働するサービスの一貫性が保たれるのは、各ステップが実行、相互作用、明示的な権限の保持、決定論的リプレイを行い、ひとつの検証可能なアトミックな経路に沿って確定できるためです。</p>
+        </div>
+        <div class="pcc-foundation-grid"><article class="pcc-foundation-item"><span>実行</span><h3>TVM プロセスのライフサイクル</h3><p>プロセスは分岐し、あるブロックで待機し、ローカル実行コンテキストを再起動せずに後続ブロックで再開できます。</p></article><article class="pcc-foundation-item"><span>相互作用</span><h3>タプルスペース + COMM</h3><p>待機中の consume が別のトランザクションの produce と一致すると、継続処理が起動します。その間も、無関係な処理は進み続けます。</p></article><article class="pcc-foundation-item"><span>権限付与</span><h3>OCAP の権限境界</h3><p>偽造不能なケイパビリティ参照を明示的に渡すため、各ステップが受け取るのは必要な権限だけです。ID が無関係な権限を自動的にスコープへ持ち込むことはありません。</p></article><article class="pcc-foundation-item"><span>リプレイ</span><h3>ReplayTrie</h3><p>結果に影響する非決定的な COMM 選択だけを記録し、検証者が同じ実行を再現できるようにします。</p></article><article class="pcc-foundation-item"><span>決済</span><h3>BlockGit + Block Merge</h3><p>並行処理は検証済みのフリンジに入り、重複する効果はファイナリティの前に、受理・拒否・未決定へ分類されます。</p></article></div>
+      </section>
+
+
+    <section class="pcc-glvm-bridge fade-in">
+      <div class="pcc-glvm-bridge-copy">
+        <p class="eyebrow">次のレイヤー</p>
+        <h2>異なる実行環境をつなぐ、ひとつの論理ランタイム</h2>
+        <p>Runtime Lab は、現行の並列実行とメッセージ駆動実行を示し、その上で目標とする原子的合成モデルを図解します。GLVM は、この論理モデルをブロックチェーンノード、クラウドサービス、個人デバイスへ拡張する、より広いアーキテクチャを説明します。</p>
+      </div>
+      <a class="button secondary pcc-glvm-bridge-link" href="/ja/glvm#architecture">GLVM を詳しく見る<span aria-hidden="true">→</span></a>
+    </section>
+
+
+      <section class="pcc-close-section fade-in">
+        <div class="pcc-close-copy">
+          <p class="eyebrow">なぜ重要か</p>
+          <h2>より速いブロックではなく、長期稼働サービス</h2>
+          <p>並列性は独立した実行を、並行性はメッセージ駆動の相互作用と待機・再開を担います。ALUX は現在、これらのランタイム基盤を実装しており、システム境界をまたぐアトミック・コンポーザビリティの実現へ向けて開発を進めています。</p>
+        </div>
+        <div class="pcc-close-points"><article class="pcc-close-point"><span>並列性のみ</span><p>スループットは向上しますが、トランザクション間の依存関係やメッセージ照合は扱えません。</p></article><article class="pcc-close-point"><span>並行性のみ</span><p>トランザクション同士は相互作用して待機できますが、システムをまたぐ効果は別々に決済される可能性があります。</p></article><article class="pcc-close-point"><span>コンポーザビリティのみ</span><p>アトミックな境界はあっても、相互作用と待機がなければ長期的な依存関係を扱えません。</p></article></div>
+        <div class="hero-actions pcc-close-actions"><a class="button primary" href="/ja/alux-vs-others">「ALUX と他方式の比較」に戻る</a><a class="button secondary" href="/ja/for-ai-agents">AI エージェント向け</a></div>
+      </section>
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Copyright © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
+<script src="/script.js?v=20261012-language-routes"></script>
+</body>
+</html>

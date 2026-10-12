@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = ["en", "zh", "ja", "ko", "ar"];
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(value => value.toLowerCase().split(/[-_]/)[0]).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLVM | ALUX Network</title>
+  <meta name="description" content="TVM の並行実行、リプレイ、オブジェクト・ケイパビリティ、原子的確定、レプリケーション、コンセンサスを基盤とする、ALUX の開発者向け論理実行モデル GLVM を紹介します。">
+  <link rel="canonical" href="https://www.alux.network/ja/glvm">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/glvm">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/glvm">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/glvm">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/glvm">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/glvm">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/glvm">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ALUX Network">
+  <meta property="og:title" content="GLVM | ALUX Network">
+  <meta property="og:description" content="TVM の並行実行、リプレイ、オブジェクト・ケイパビリティ、原子的確定、レプリケーション、コンセンサスを基盤とする、ALUX の開発者向け論理実行モデル GLVM を紹介します。">
+  <meta property="og:url" content="https://www.alux.network/ja/glvm">
+  <meta property="og:image" content="https://www.alux.network/assets/social/share-cards/alux-website-share-card-1200x630-20260725-glvm.jpg">
+  <meta property="og:image:secure_url" content="https://www.alux.network/assets/social/share-cards/alux-website-share-card-1200x630-20260725-glvm.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ALUX Network share card with modular runtime blocks and the statement: Building GLVM.">
+  <meta property="og:locale" content="ja_JP">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@alux_network">
+  <meta name="twitter:title" content="GLVM | ALUX Network">
+  <meta name="twitter:description" content="TVM の並行実行、リプレイ、オブジェクト・ケイパビリティ、原子的確定、レプリケーション、コンセンサスを基盤とする、ALUX の開発者向け論理実行モデル GLVM を紹介します。">
+  <meta name="twitter:image" content="https://www.alux.network/assets/social/share-cards/alux-website-share-card-1200x630-20260725-glvm.jpg">
+  <meta name="twitter:image:alt" content="ALUX Network share card with modular runtime blocks and the statement: Building GLVM.">
+
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+<link rel="stylesheet" href="/glvm-story.css?v=20260814-customer-vm2">
+
+</head>
+<body data-page="glvm">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/ja" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/alux-logo.png" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <a href="/ja" data-nav="home">ホーム</a>
+        <a href="/ja/for-ai-agents" data-nav="vs">AIエージェント向け</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">詳しく見る</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/ja/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/ja/runtime-lab" data-nav="learnPcc">ランタイム・ラボ</a>
+            <a href="/ja/alux-vs-others" data-nav="learnAlux">ALUX と他方式の比較</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">ブログ</a>
+        <a href="/ja/team" data-nav="team">チーム</a>
+        <a href="/ja/roadmap" data-nav="roadmap">ロードマップ</a>
+        <a class="mobile-nav-cta" href="mailto:info@alux.network" data-nav="cta">お問い合わせ</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>言語</span><span class="lang-current" data-lang-current>日本語</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/glvm" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/glvm" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/glvm" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/glvm" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/glvm" hreflang="ar">AR</a></div></div>
+        <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">お問い合わせ</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="ナビゲーションメニューを切り替える"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="ja">
+    <article class="glvm-page" data-glvm-root data-glvm-step="0">
+      <header class="glvm-hero fade-in">
+        <div class="glvm-hero-copy">
+          <p class="eyebrow">学ぶ / GLVM</p>
+          <h1>GLVM</h1>
+          <p class="glvm-full-name">グローバル論理仮想マシン</p>
+          <p class="glvm-tagline glvm-semantic-heading">多数のマシンにまたがって協調する、ひとつの論理実行レイヤー</p>
+          <p class="glvm-hero-text glvm-semantic-copy">GLVM は、ALUX が並行ランタイムを基盤として構築を進める、開発者向けの実行抽象化です。このモデルに参加する各マシンでは TVM が具体的な実行エンジンを担い、GLVM モデルは実行状態、プロセス、リプレイ、レプリケーション、コンセンサスを一つの論理レイヤーにまとめます。</p>
+        </div>
+        <figure class="glvm-hero-visual">
+          <div class="glvm-hero-media">
+            <img src="/assets/glvm/20260712_GLVM_全局逻辑主视觉_4K.webp" alt="" aria-hidden="true" class="glvm-hero-poster">
+            <video muted loop autoplay playsinline preload="metadata" poster="/assets/glvm/20260712_GLVM_全局逻辑主视觉_4K.webp" aria-label="複数の物理マシンが一つの GLVM 実行レイヤーの下で接続される様子を、温かみのある技術的な断面図で示したイラスト。" data-glvm-video>
+              <source src="/assets/glvm/20260712_GLVM_全局逻辑动效_1080P.mp4" type="video/mp4">
+            </video>
+            <div class="glvm-hero-overlay" aria-hidden="true"><span></span><span></span><span></span></div>
+          </div>
+        </figure>
+        <div class="glvm-hero-signals"><div class="glvm-signal"><span>物理モデル</span><strong>マシンごとに一つの TVM</strong></div><div class="glvm-signal"><span>論理モデル</span><strong>その上に一つの GLVM</strong></div><div class="glvm-signal"><span>展開方向</span><strong>チェーンからクラウド、そしてデバイスへ</strong></div></div>
+      </header>
+
+      <section class="glvm-definition fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">中核となる定義</p>
+          <h2 class="glvm-semantic-heading">各マシンに一つの TVM、単一の論理実行モデルで協調</h2>
+          <p class="glvm-semantic-copy">TVM は、一台のマシン上で動作するバイトコード実行エンジンです。GLVM は、このモデルに参加する複数の TVM にまたがるシステムレベルの実行抽象化を定義します。GLVM は別のバイトコード VM ではありません。開発者は一つの論理モデルを対象とし、その抽象化の下で決定論的リプレイ、実行の継続、レプリケーション、確定処理、コンセンサスが協調されます。</p>
+        </div>
+        <div class="glvm-comparison">
+      <article class="glvm-comparison-card glvm-comparison-card--tvm">
+        <div class="glvm-comparison-heading"><span>TVM</span><h3>タプル空間仮想マシン（TVM）</h3></div>
+        <p>ALUX の具体的な実行エンジンです。Tolang バイトコードを実行し、独立したプロセスをチャネルと COMM イベントで協調させ、決定論的リプレイに必要な非決定的選択を記録します。</p>
+        <strong>一台のマシン内で動く具体的なエンジン</strong>
+      </article>
+
+      <article class="glvm-comparison-card glvm-comparison-card--glvm">
+        <div class="glvm-comparison-heading"><span>GLVM</span><h3>グローバル論理仮想マシン（GLVM）</h3></div>
+        <p>GLVM は、このモデルに参加する複数の TVM にまたがる開発者向けの論理モデルを定義します。実行状態とプロセスに対する単一の境界を提供し、リプレイ、レプリケーション、確定処理、コンセンサスはその抽象化の下で処理されます。</p>
+        <strong>多数のマシンの上にある一つの論理システム</strong>
+      </article>
+    </div>
+        <div class="glvm-axis"><div class="glvm-axis-row"><span>VM 抽象化</span><strong>拡張中</strong></div><div class="glvm-axis-row"><span>垂直方向の原子性</span><strong>コアランタイム</strong></div><div class="glvm-axis-row"><span>水平方向の原子性</span><strong>ロードマップ</strong></div><div class="glvm-axis-row"><span>合成可能なセキュリティ</span><strong>コアランタイム</strong></div></div>
+
+    <aside class="glvm-definition-payoff">
+      <div class="glvm-definition-payoff-heading">
+        <span>要点</span>
+        <h3>統一されるのは論理実行レイヤーであり、物理マシンではない</h3>
+      </div>
+      <p>開発者は一つの並行実行モデルを対象とし、ランタイムがスケジューリング、リプレイ、ケイパビリティ検査、レプリケーション、確定を担います。</p>
+    </aside>
+
+      </section>
+
+      <section class="glvm-architecture fade-in" id="architecture">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">3層アーキテクチャ</p>
+          <h2 class="glvm-semantic-heading">三つのレイヤー、一つの開発者向け実行モデル</h2>
+          <p class="glvm-semantic-copy">物理マシンでは TVM が動作します。GLVM アーキテクチャでは、それらのエンジンが一つの共有論理実行モデルに参加します。将来の World OS は、そのレイヤーを明示的なケイパビリティによって統制される、探索・オーケストレーション可能なサービスとして編成します。</p>
+        </div>
+        <p class="glvm-layer-instruction">いずれかのレイヤーを選ぶと、詳細パネルが切り替わります。</p>
+        <div class="glvm-architecture-stage">
+          <div class="glvm-layer-stack" role="group" aria-label="三つのレイヤー、一つの開発者向け実行モデル">
+      <button class="glvm-layer glvm-layer--world" type="button" data-glvm-layer="world" data-layer-title="ワールド OS" data-layer-text="エージェントとアプリケーションのための将来のサービスレイヤーです。登録と探索、オーケストレーション、プログラム可能なケイパビリティによって、サービスを見つけやすくし、協調ルールを明確にします。" data-layer-status="ロードマップ" aria-pressed="false">
+        <span class="glvm-layer-index">03</span>
+        <span class="glvm-layer-label">第3層</span>
+        <strong>ワールド OS</strong>
+        <span class="glvm-layer-status">ロードマップ</span>
+        <span class="glvm-layer-items"><i>サービス／エージェント探索</i><i>オーケストレーション</i><i>プログラム可能なケイパビリティ</i></span>
+      </button>
+
+      <button class="glvm-layer glvm-layer--runtime is-active" type="button" data-glvm-layer="runtime" data-layer-title="GLVM 並行ランタイム" data-layer-text="論理的な協調を担うレイヤーです。VM 抽象化、並行制御、オブジェクト・ケイパビリティ、決定論的リプレイ、確定セマンティクスが、参加する TVM の共有実行モデルを形づくります。" data-layer-status="コアランタイム · 拡張中" aria-pressed="true">
+        <span class="glvm-layer-index">02</span>
+        <span class="glvm-layer-label">第2層</span>
+        <strong>GLVM 並行ランタイム</strong>
+        <span class="glvm-layer-status">コアランタイム · 拡張中</span>
+        <span class="glvm-layer-items"><i>GLVM 抽象レイヤー</i><i>並行実行とリプレイ</i><i>ケイパビリティと確定</i></span>
+      </button>
+
+      <button class="glvm-layer glvm-layer--physical" type="button" data-glvm-layer="physical" data-layer-title="物理インフラストラクチャ" data-layer-text="実際に処理を担うマシン群です。パブリックチェーンのノードが現在の実行基盤を支えます。プライベート／クラウド TVM は次の統合対象であり、クライアントデバイス TVM によるローカル実行はロードマップ段階です。" data-layer-status="コア · 統合 · ロードマップ" aria-pressed="false">
+        <span class="glvm-layer-index">01</span>
+        <span class="glvm-layer-label">第1層</span>
+        <strong>物理インフラストラクチャ</strong>
+        <span class="glvm-layer-status">コア · 統合 · ロードマップ</span>
+        <span class="glvm-layer-items"><i>パブリックチェーン TVM</i><i>プライベート／クラウド TVM</i><i>クライアントデバイス TVM</i></span>
+      </button>
+    </div>
+          <aside class="glvm-layer-inspector" aria-live="polite">
+            <span data-glvm-layer-status>コアランタイム · 拡張中</span>
+            <h3 data-glvm-layer-title>GLVM 並行ランタイム</h3>
+            <p data-glvm-layer-text>論理的な協調を担うレイヤーです。VM 抽象化、並行制御、オブジェクト・ケイパビリティ、決定論的リプレイ、確定セマンティクスが、参加する TVM の共有実行モデルを形づくります。</p>
+            <ul data-glvm-layer-items><li>GLVM 抽象レイヤー</li><li>並行実行とリプレイ</li><li>ケイパビリティと確定</li></ul>
+          </aside>
+        </div>
+      </section>
+
+
+    <section class="glvm-extension glvm-continuity fade-in" id="execution-continuity">
+      <header class="glvm-extension-header">
+        <div><p class="eyebrow">実行と原子性</p><h2 class="glvm-semantic-heading">トランザクションはブロックをまたいで待機し、最後に一つの結果として確定できる</h2></div>
+        <p class="glvm-continuity-intro">実行は、逐次・並列の処理から、通信し、待機し、再開できる並行プロセスへと発展します。複合実行はこのモデルを拡張し、複数の並行トランザクションが上位の確定境界を共有できるようにします。ブロックをまたぐ連続性が、その方向を支える垂直方向の基盤です。</p>
+      </header>
+      <div class="glvm-continuity-frame">
+        <div class="glvm-continuity-tabs" role="tablist" aria-label="トランザクションはブロックをまたいで待機し、最後に一つの結果として確定できる">
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-sequential" aria-controls="glvm-continuity-panel-sequential" aria-selected="false" tabindex="-1" data-glvm-continuity="sequential">
+      <span>01</span>
+      <strong>逐次</strong>
+      <small>基本形</small>
+    </button>
+
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-parallel" aria-controls="glvm-continuity-panel-parallel" aria-selected="false" tabindex="-1" data-glvm-continuity="parallel">
+      <span>02</span>
+      <strong>並列</strong>
+      <small>コアランタイム</small>
+    </button>
+
+    <button class="glvm-continuity-tab is-active" type="button" role="tab" id="glvm-continuity-tab-concurrent" aria-controls="glvm-continuity-panel-concurrent" aria-selected="true" tabindex="0" data-glvm-continuity="concurrent">
+      <span>03</span>
+      <strong>並行</strong>
+      <small>コアランタイム</small>
+    </button>
+
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-composite" aria-controls="glvm-continuity-panel-composite" aria-selected="false" tabindex="-1" data-glvm-continuity="composite">
+      <span>04</span>
+      <strong>複合</strong>
+      <small>ロードマップ</small>
+    </button>
+  </div>
+        <div class="glvm-continuity-panels">
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-sequential" aria-labelledby="glvm-continuity-tab-sequential" data-glvm-continuity-panel="sequential" hidden>
+      <div class="glvm-continuity-visual">
+    <div class="glvm-continuity-scene glvm-continuity-scene--sequential" aria-hidden="true">
+      <span class="glvm-continuity-node glvm-continuity-node--brown"><bdi dir="auto">状態 01</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">状態 02</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">状態 03</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">コミット</bdi></span>
+    </div>
+  </div>
+      <div class="glvm-continuity-panel-copy"><span>基本形</span><h3>逐次</h3><p>ある状態遷移の後に、次の状態遷移が続きます。</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-parallel" aria-labelledby="glvm-continuity-tab-parallel" data-glvm-continuity-panel="parallel" hidden>
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--parallel" aria-hidden="true">
+        <div><small><bdi dir="auto">レーン A</bdi></small><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">TX A</bdi></span></div>
+        <div><small><bdi dir="auto">レーン B</bdi></small><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">TX B</bdi></span></div>
+        <div><small><bdi dir="auto">レーン C</bdi></small><span class="glvm-continuity-node glvm-continuity-node--purple"><bdi dir="auto">TX C</bdi></span></div>
+        <i></i>
+        <span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">統合</bdi></span>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>コアランタイム</span><h3>並列</h3><p>独立した状態遷移が同時に進みます。</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel is-active" role="tabpanel" id="glvm-continuity-panel-concurrent" aria-labelledby="glvm-continuity-tab-concurrent" data-glvm-continuity-panel="concurrent">
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--concurrent" aria-hidden="true">
+        <div class="glvm-continuity-process"><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">プロセス A</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--muted"><bdi dir="auto">待機</bdi></span></div>
+        <span class="glvm-continuity-message"><bdi dir="auto">COMM</bdi></span>
+        <div class="glvm-continuity-process"><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">プロセス B</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">送信</bdi></span></div>
+        <div class="glvm-continuity-resume"><span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">再開</bdi></span></div>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>コアランタイム</span><h3>並行</h3><p>プロセスはチャネルを介して通信し、待機し、再開します。</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-composite" aria-labelledby="glvm-continuity-tab-composite" data-glvm-continuity-panel="composite" hidden>
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--composite" aria-hidden="true">
+        <div class="glvm-composite-objective">
+          <small><bdi dir="auto">ひとつのアトミックな目標</bdi></small>
+          <div class="glvm-composite-transactions">
+            <span><bdi dir="auto">TX A</bdi><i></i><bdi dir="auto">準備完了</bdi></span>
+            <span><bdi dir="auto">TX B</bdi><i></i><bdi dir="auto">待機</bdi></span>
+            <span><bdi dir="auto">TX C</bdi><i></i><bdi dir="auto">準備完了</bdi></span>
+          </div>
+        </div>
+        <div class="glvm-composite-gate"><span></span><small><bdi dir="auto">すべて / なし</bdi></small></div>
+        <span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">ひとつのコミット</bdi></span>
+        <em><bdi dir="auto">ロードマップ</bdi></em>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>ロードマップ</span><h3>複合</h3><p>複数の並行トランザクションが、上位の原子性目標を共有します。</p></div>
+    </article>
+  </div>
+        <div class="glvm-atomicity">
+          <div class="glvm-atomicity-heading"><span>垂直方向の原子性 · コアランタイム</span><strong>ブロック横断実行でも、一つのトランザクション・コンテキストを保つ</strong></div>
+          <ol class="glvm-atomicity-rail">
+    <li>
+      <span>01 · 開始</span>
+      <strong>一度だけ開始</strong>
+      <p>一つのトランザクションを、範囲を限定した一組のケイパビリティとともに開始します。</p>
+    </li>
+
+    <li>
+      <span>02 · 中断</span>
+      <strong>部分確定せずに待機</strong>
+      <p>応答またはチャネルの一致が得られない場合、早期に確定せず、継続を保持します。</p>
+    </li>
+
+    <li>
+      <span>03 · 記録</span>
+      <strong>選択を記録</strong>
+      <p>ReplayTrie は、その経路を再現するために必要な非決定的選択または認証済み応答を記録します。</p>
+    </li>
+
+    <li>
+      <span>04 · 再開</span>
+      <strong>同じトランザクションを継続</strong>
+      <p>一致する COMM イベントまたは記録済み応答が、後続ブロックで保持された継続を起動します。</p>
+    </li>
+
+    <li>
+      <span>05 · 確定</span>
+      <strong>コミットまたは破棄</strong>
+      <p>確定境界では、条件を満たす状態がコミットされ、却下された暫定状態は破棄されます。</p>
+    </li>
+  </ol>
+        </div>
+      </div>
+      <div class="glvm-continuity-notes">
+    <article class="glvm-continuity-note glvm-continuity-note--current">
+      <span>コア実行パス</span>
+      <p>TVM の並行実行 · COMM による待機と再開 · ReplayTrie · ブロック横断の継続と確定</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--current">
+      <span>原子性モデル</span>
+      <p>暫定的な中間状態は、確定処理が完了するまで確定状態にはなりません。失敗した実行パスは、後から補償トランザクションで修復するのではなく破棄されます。</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--boundary">
+      <span>ネイティブなオフチェーン読み取り</span>
+      <p>認証済み HTTPS GET は実行を一時停止させ、応答を記録し、リプレイして再開できます。ただし、情報の真偽は引き続きデータソースが決め、不可逆なオフチェーン副作用はロールバックの対象外です。</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--roadmap">
+      <span>水平方向の原子性</span>
+      <p>シャード間の原子的実行と、独立した外部システムとの合成が、このモデルの次の拡張を形づくります。</p>
+    </article>
+  </div>
+    </section>
+
+
+    <section class="glvm-extension glvm-ocap-story fade-in" id="object-capability">
+      <header class="glvm-extension-header">
+        <div><p class="eyebrow">オブジェクト・ケイパビリティ・セキュリティ</p><h2 class="glvm-semantic-heading">タスクに渡すのは一本の鍵、ユーザーの ID バッジではない</h2></div>
+        <p class="glvm-semantic-copy">CEO と Bob の例では、アイデンティティベースのアクセスによって、CEO の ID バッジが表すアンビエント権限までタスクに持ち込まれることがあります。オブジェクト・ケイパビリティでは、タスクが受け取るのは Bob の記録を指す一本の鍵だけです。TVM は実行時に到達可能な境界を強制します。既存の別のオブジェクトへのケイパビリティ参照がなければ、タスクはそのオブジェクトを名指しすることも、そこへ到達することもできません。</p>
+      </header>
+      <div class="glvm-ocap-body">
+        <div class="glvm-ocap-copy">
+          <div class="glvm-ocap-compare">
+    <article class="glvm-ocap-card glvm-ocap-card--ambient">
+      <div class="glvm-ocap-card-visual" aria-hidden="true">
+        <img src="/assets/glvm/20260731_GLVM_OCAP_身份权限.svg?v=20260812-neck2" alt="" width="600" height="360" loading="eager" decoding="async">
+      </div>
+      <div class="glvm-ocap-card-copy">
+        <span>アイデンティティに基づく広範な権限</span>
+        <h3>ID バッジが無関係なアクセス権限までタスクに持ち込む</h3>
+        <p>タスクが Bob だけに関するものであっても、CEO の ID バッジが表すアイデンティティ権限は、財務情報に加え、Alice、Carol、Bob の記録すべてに及ぶ可能性があります。</p>
+      </div>
+    </article>
+
+    <article class="glvm-ocap-card glvm-ocap-card--explicit">
+      <div class="glvm-ocap-card-visual" aria-hidden="true">
+        <img src="/assets/glvm/20260731_GLVM_OCAP_对象能力.svg?v=20260812-neck2" alt="" width="600" height="360" loading="eager" decoding="async">
+      </div>
+      <div class="glvm-ocap-card-copy">
+        <span>明示的なオブジェクト・ケイパビリティ</span>
+        <h3>タスクが受け取るのは Bob の記録を指す一本の鍵</h3>
+        <p>この鍵は、Bob の記録を識別する偽造不能な名前を表します。既存の別のオブジェクトへのケイパビリティ参照がなければ、タスクはそのオブジェクトを名指しすることも、そこへ到達することもできません。TVM は実行時にその境界を検証します。</p>
+      </div>
+    </article>
+  </div>
+          <aside class="glvm-ocap-takeaway"><span>POLA · 最小権限の原則</span><p>モデル側の安全対策は危険な挙動を減らせますが、実行時に最小権限を強制するのはケイパビリティ境界です。エージェントが Bob の記録を指す鍵しか持たない場合、侵害の影響はそのオブジェクト内に留まり、CEO の ID バッジが表すアイデンティティ権限全体には広がりません。</p></aside>
+          <div class="glvm-ocap-boundary"><strong>用語</strong><p>ここでいう「鍵」は、OCAP における偽造不能な名前、すなわちケイパビリティ参照を視覚的に表したものです。暗号鍵ではありません。この保証が適用されるのは、TVM ネイティブでケイパビリティを介した相互作用です。ホスト型 EVM の権限や外部サービスには、それぞれ独自の制御が必要です。</p></div>
+        </div>
+      </div>
+    </section>
+
+
+      <section class="glvm-journey fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">ワークフロー探索</p>
+          <h2 class="glvm-semantic-heading">信頼性、応答時間、データの局所性に応じて実行環境を選ぶ</h2>
+          <p>複数企業にまたがるデバイス修理を考えてみましょう。エスクローには独立した検証、診断には需要に応じて拡張できる計算資源が必要で、ローカルアクセスはデバイス所有者が承認する必要があります。GLVM モデルでは、権限を明示したまま、各タスクを信頼要件、レイテンシー、データ境界に適した実行環境へ割り当てます。</p>
+        </div>
+        <div class="glvm-route-toolbar"><span>要件を選ぶ</span><div>
+      <button class="glvm-route-button is-active" type="button" data-glvm-route="trust" data-route-title="パブリックチェーン TVM + EVM ホスト" data-route-text="保証金をエスクローで保持し、独立したバリデータが状態遷移を検証できる場所に承認経路を記録します。" data-route-status="コアランタイム" aria-pressed="true">
+        <span>01</span>
+        <strong>検証可能性を優先</strong>
+      </button>
+
+      <button class="glvm-route-button" type="button" data-glvm-route="speed" data-route-title="プライベート／クラウド TVM" data-route-text="伸縮可能な計算資源の近くで高負荷な診断を実行しながら、付与する権限を狭く明示的に保ちます。" data-route-status="統合" aria-pressed="false">
+        <span>02</span>
+        <strong>速度を優先</strong>
+      </button>
+
+      <button class="glvm-route-button" type="button" data-glvm-route="locality" data-route-title="クライアントデバイス TVM" data-route-text="すべての機微な入力を外部へ送らず、ローカルセンサーを読み取り、所有者の確認を求めます。" data-route-status="ロードマップ" aria-pressed="false">
+        <span>03</span>
+        <strong>ローカル性を優先</strong>
+      </button>
+    </div></div>
+        <div class="glvm-journey-board" data-glvm-journey data-journey-messages="[&quot;準備完了。シミュレーションを開始すると、目標とする論理フローを確認できます。&quot;,&quot;作業を始める前に、ケイパビリティの範囲を限定します。&quot;,&quot;各実行環境に、範囲を限定したタスクが割り当てられます。&quot;,&quot;チェーンランタイムが、待機中の継続を保持します。&quot;,&quot;一致するメッセージが待機中の処理を再開させます。&quot;,&quot;リプレイ証拠により、実行経路を再現できます。&quot;,&quot;チェーン側の結果が収束し、次は実行環境をまたぐ原子的コミットへ進みます。&quot;]">
+          <div class="glvm-route-map" aria-hidden="true">
+            <div class="glvm-route-lines"><span></span><span></span><span></span></div>
+
+      <div class="glvm-substrate glvm-substrate--trust is-active" data-glvm-route-node="trust">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong>パブリックチェーン TVM + EVM ホスト</strong>
+        <small>コアランタイム</small>
+      </div>
+
+      <div class="glvm-substrate glvm-substrate--speed" data-glvm-route-node="speed">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong>プライベート／クラウド TVM</strong>
+        <small>統合</small>
+      </div>
+
+      <div class="glvm-substrate glvm-substrate--locality" data-glvm-route-node="locality">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong>クライアントデバイス TVM</strong>
+        <small>ロードマップ</small>
+      </div>
+
+            <div class="glvm-route-core"><span>GLVM</span><strong>TVM × N</strong><i aria-hidden="true"><b></b><b></b><b></b></i></div>
+            <div class="glvm-route-packet glvm-route-packet--one"></div>
+            <div class="glvm-route-packet glvm-route-packet--two"></div>
+            <div class="glvm-route-packet glvm-route-packet--three"></div>
+            <div class="glvm-commit-rail"><span>リプレイ</span><i></i><span>コミット</span></div>
+          </div>
+          <div class="glvm-route-detail" aria-live="polite">
+            <span data-glvm-route-status>コアランタイム</span>
+            <h3 data-glvm-route-title>パブリックチェーン TVM + EVM ホスト</h3>
+            <p data-glvm-route-text>保証金をエスクローで保持し、独立したバリデータが状態遷移を検証できる場所に承認経路を記録します。</p>
+          </div>
+          <div class="glvm-journey-control">
+            <div><span>目標フローを追う</span><strong data-glvm-progress>0 / 6</strong></div>
+            <div><button type="button" data-glvm-action="play">ワークフローをシミュレート</button><button type="button" data-glvm-action="reset">リセット</button></div>
+            <p data-glvm-message aria-live="polite">準備完了。シミュレーションを開始すると、目標とする論理フローを確認できます。</p>
+          </div>
+          <div class="glvm-journey-steps">
+      <article class="glvm-journey-step is-current" data-glvm-step-card="1">
+        <span>01</span><h3>範囲を限定したケイパビリティ</h3><p>修理エージェントは、この作業に必要なケイパビリティだけを受け取ります。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="2">
+        <span>02</span><h3>ディスパッチを計画</h3><p>ワークフローは、チェーン、プライベート／クラウド、クライアントデバイスの各 TVM に、範囲を限定したサブタスクを割り当てます。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="3">
+        <span>03</span><h3>待機 / 一時停止</h3><p>チェーンランタイムでは、応答がない場合もトランザクションを早期確定せず、継続を保持します。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="4">
+        <span>04</span><h3>COMM の一致</h3><p>生成された結果がチャネルで待つ処理の続きと一致すると、ワークフローが再開します。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="5">
+        <span>05</span><h3>リプレイ証拠</h3><p>ReplayTrie は、別の検証者が同じ実行を再現するために必要な選択を記録します。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="6">
+        <span>06</span><h3>確定境界</h3><p>BlockGit と Block Merge が、検証可能なチェーン側の結果を収束させます。すべての実行環境を一つの原子的コミットへ広げることが、GLVM の次の到達点です。</p>
+      </article>
+    </div>
+        </div>
+      </section>
+
+      <section class="glvm-stack fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">ランタイムの構造</p>
+          <h2>GLVM 抽象レイヤーを支える九つのケイパビリティ領域</h2>
+          <p>GLVM は、第二のバイトコード VM ではありません。TVM 実行、オブジェクト・ケイパビリティ、リプレイから BlockGit、ゲスト VM、開発者ツールまで、これら九つのアーキテクチャ上の観点が、GLVM の論理実行モデルを支えるケイパビリティ体系を示します。</p>
+        </div>
+        <div class="glvm-stack-flow" aria-label="GLVM 抽象レイヤーを支える九つのケイパビリティ領域">
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="0" data-flow-state="current" data-flow-status="コアランタイム" aria-pressed="true" aria-label="バイトコード VM: TVM · タプルスペース · COMM">
+        <span>01</span><strong>バイトコード VM</strong><small>コアランタイム</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="1" data-flow-state="current" data-flow-status="コアランタイム" aria-pressed="false" aria-label="セキュリティ: ネイティブなオブジェクト・ケイパビリティ">
+        <span>02</span><strong>セキュリティ</strong><small>コアランタイム</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="2" data-flow-state="current" data-flow-status="コアランタイム" aria-pressed="false" aria-label="原子性: ブロック横断のアトミック実行">
+        <span>03</span><strong>原子性</strong><small>コアランタイム</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="3" data-flow-state="current" data-flow-status="コアランタイム" aria-pressed="false" aria-label="ファイナリティ: BlockGit · fringe · merge">
+        <span>04</span><strong>ファイナリティ</strong><small>コアランタイム</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="4" data-flow-state="current" data-flow-status="コアランタイム" aria-pressed="false" aria-label="リプレイ: ReplayTrie · 実行トレース">
+        <span>05</span><strong>リプレイ</strong><small>コアランタイム</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="5" data-flow-state="current" data-flow-status="コアランタイム" aria-pressed="false" aria-label="ネットワーク: ピア／バリデータ・ネットワーク">
+        <span>06</span><strong>ネットワーク</strong><small>コアランタイム</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="6" data-flow-state="current" data-flow-status="コアランタイム" aria-pressed="false" aria-label="言語: Tolang → tolangc → .tox">
+        <span>07</span><strong>言語</strong><small>コアランタイム</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="7" data-flow-state="planned" data-flow-status="evm コア · wasm ロードマップ" aria-pressed="false" aria-label="ゲスト VM: EVM ホスト · WASM ロードマップ">
+        <span>08</span><strong>ゲスト VM</strong><small>EVM コア · WASM ロードマップ</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="8" data-flow-state="mixed" data-flow-status="開発者向けツール" aria-pressed="false" aria-label="ツール群: コンパイラ · LSP · プレイグラウンド">
+        <span>09</span><strong>ツール群</strong><small>開発者向けツール</small>
+      </button>
+    </div>
+        <ol class="glvm-stack-list">
+      <li class="glvm-stack-item" data-stack-index="0" data-stack-state="current" data-stack-status="コアランタイム">
+        <span class="glvm-stack-number">01</span>
+        <div class="glvm-stack-label"><span>バイトコード VM</span><strong>コアランタイム</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="21" width="25" height="30" rx="5"/><path d="M17 30h11M17 36h11M17 42h8"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="11"/><rect x="85" y="21" width="25" height="30" rx="5"/><path d="M92 30h11M92 36h11M92 42h8"/><path class="glvm-glyph-track" d="M35 36h14m22 0h14"/><path class="glvm-glyph-flow" d="M35 36h14m22 0h14"/></svg></div>
+        <div class="glvm-stack-copy"><h3>TVM · タプルスペース · COMM</h3><p>具体的な並行実行エンジンがバイトコードを実行し、独立したプロセス同士がチャネルを介してデータと継続を交換できるようにします。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="1" data-stack-state="current" data-stack-status="コアランタイム">
+        <span class="glvm-stack-number">02</span>
+        <div class="glvm-stack-label"><span>セキュリティ</span><strong>コアランタイム</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="17" cy="36" r="7"/><circle cx="17" cy="36" r="3"/><path d="M24 36h25m-8 0v7m-8-7v5"/><rect class="glvm-glyph-pulse" x="49" y="25" width="22" height="22" rx="6"/><circle cx="98" cy="36" r="8"/><circle cx="98" cy="36" r="3"/><path class="glvm-glyph-track" d="M24 36h25m22 0h19"/><path class="glvm-glyph-flow" d="M24 36h25m22 0h19"/></svg></div>
+        <div class="glvm-stack-copy"><h3>ネイティブなオブジェクト・ケイパビリティ</h3><p>偽造不可能な参照によって到達可能な権限を明示し、ランタイムが最小権限の境界を強制できるようにします。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="2" data-stack-state="current" data-stack-status="コアランタイム">
+        <span class="glvm-stack-number">03</span>
+        <div class="glvm-stack-label"><span>原子性</span><strong>コアランタイム</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="17" width="100" height="38" rx="12"/><path class="glvm-glyph-track" d="M20 36h25m30 0h25"/><path class="glvm-glyph-flow" d="M20 36h25m30 0h25"/><path class="glvm-glyph-pulse" d="M60 22l15 8v13l-15 8-15-8V30zM45 30l15 8 15-8M60 38v13"/></svg></div>
+        <div class="glvm-stack-copy"><h3>ブロック横断のアトミック実行</h3><p>実行コンテキストはブロックをまたいで一時停止し、保持された継続から再開して、延期された確定境界に到達できます。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="3" data-stack-state="current" data-stack-status="コアランタイム">
+        <span class="glvm-stack-number">04</span>
+        <div class="glvm-stack-label"><span>ファイナリティ</span><strong>コアランタイム</strong></div>
+        <div class="glvm-stack-glyph"><svg class="is-planned" viewBox="0 0 120 72" aria-hidden="true"><circle cx="18" cy="22" r="5"/><circle cx="18" cy="50" r="5"/><path d="M55 26l11 10-11 10-11-10z"/><circle class="glvm-glyph-pulse" cx="98" cy="36" r="8"/><path d="m94 36 3 3 6-7"/><path class="glvm-glyph-track" d="M23 22l21 11M23 50l21-11m22-3h24"/><path class="glvm-glyph-flow" d="M23 22l21 11M23 50l21-11m22-3h24"/></svg></div>
+        <div class="glvm-stack-copy"><h3>BlockGit · fringe · merge</h3><p>ブロック DAG、決定論的なリーダー交代、マージ規則により、恒久的なリーダーを置かずにチェーン側の並行処理を収束させます。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="4" data-stack-state="current" data-stack-status="コアランタイム">
+        <span class="glvm-stack-number">05</span>
+        <div class="glvm-stack-label"><span>リプレイ</span><strong>コアランタイム</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="22" cy="45" r="5"/><circle cx="60" cy="45" r="5"/><circle class="glvm-glyph-pulse" cx="98" cy="45" r="5"/><path class="glvm-glyph-track" d="M27 45h28m10 0h28M98 37C94 14 31 14 22 37"/><path class="glvm-glyph-flow" d="M27 45h28m10 0h28M98 37C94 14 31 14 22 37"/><path d="m21 29 1 8 8-2"/></svg></div>
+        <div class="glvm-stack-copy"><h3>ReplayTrie · 実行トレース</h3><p>記録された非決定的選択と実行トレースにより、バリデータは受理された経路を再現できます。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="5" data-stack-state="current" data-stack-status="コアランタイム">
+        <span class="glvm-stack-number">06</span>
+        <div class="glvm-stack-label"><span>ネットワーク</span><strong>コアランタイム</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle class="glvm-glyph-pulse" cx="60" cy="36" r="9"/><circle cx="22" cy="18" r="5"/><circle cx="98" cy="18" r="5"/><circle cx="22" cy="54" r="5"/><circle cx="98" cy="54" r="5"/><path class="glvm-glyph-track" d="M27 21l25 11M93 21 68 32M27 51l25-11m41 11L68 40"/><path class="glvm-glyph-flow" d="M27 21l25 11M93 21 68 32M27 51l25-11m41 11L68 40"/></svg></div>
+        <div class="glvm-stack-copy"><h3>ピア／バリデータ・ネットワーク</h3><p>ノードレイヤーは実行抽象化の下で、提案、ブロック、状態証拠、バリデータ間の協調を伝達します。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="6" data-stack-state="current" data-stack-status="コアランタイム">
+        <span class="glvm-stack-number">07</span>
+        <div class="glvm-stack-label"><span>言語</span><strong>コアランタイム</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="24" width="26" height="24" rx="5"/><path d="M20 31l-5 5 5 5M27 31l5 5-5 5"/><rect class="glvm-glyph-pulse" x="47" y="24" width="26" height="24" rx="5"/><path d="M53 32h12m0 0-3-3m3 3-3 3M67 40H55m0 0 3-3m-3 3 3 3"/><rect x="84" y="24" width="26" height="24" rx="5"/><path d="M91 31h12M91 36h8M91 41h12"/><path class="glvm-glyph-track" d="M38 36h7m30 0h7"/><path class="glvm-glyph-flow" d="M38 36h7m30 0h7"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Tolang → tolangc → .tox</h3><p>Tolang は並行プロセスを記述し、コンパイラがソースを TVM で実行可能なバイトコードへ変換します。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="7" data-stack-state="planned" data-stack-status="evm コア · wasm ロードマップ">
+        <span class="glvm-stack-number">08</span>
+        <div class="glvm-stack-label"><span>ゲスト VM</span><strong>EVM コア · WASM ロードマップ</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="9" y="12" width="102" height="48" rx="10"/><rect x="20" y="23" width="32" height="26" rx="6"/><rect x="68" y="23" width="32" height="26" rx="6"/><circle cx="36" cy="36" r="6"/><path d="M33 33l6 6M39 33l-6 6M78 31l5 10 5-10"/><path class="glvm-glyph-track" d="M52 36h16m32 0h7"/><path class="glvm-glyph-flow" d="M52 36h16m32 0h7"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="3"/></svg></div>
+        <div class="glvm-stack-copy"><h3>EVM ホスト · WASM ロードマップ</h3><p>EVM は、TSAC 方式の協調を通じてステートフルなゲストとして動作します。WASM は、異種 VM への展開をさらに広げます。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="8" data-stack-state="mixed" data-stack-status="開発者向けツール">
+        <span class="glvm-stack-number">09</span>
+        <div class="glvm-stack-label"><span>ツール群</span><strong>開発者向けツール</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="11" width="100" height="50" rx="8"/><path d="M10 25h100M20 18h3m7 0h3m7 0h3M24 35l7 6-7 6"/><path class="glvm-glyph-track" d="M40 47h50"/><path class="glvm-glyph-flow" d="M40 47h50"/><circle class="glvm-glyph-pulse" cx="97" cy="47" r="5"/></svg></div>
+        <div class="glvm-stack-copy"><h3>コンパイラ · LSP · プレイグラウンド</h3><p>コンパイラ、LSP、プレイグラウンド、テストスイート、診断機能が、実行モデルを開発者のワークフローへつなぎます。</p></div>
+      </li>
+    </ol>
+      </section>
+
+      <section class="glvm-status fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">開発の展望</p>
+          <h2 class="glvm-semantic-heading">コアランタイムが形になりつつあり、GLVM は多様な環境へ広がっている</h2>
+          <div class="glvm-status-intro">
+            <p class="glvm-semantic-copy">GLVM は、ALUX の並行チェーンランタイムを起点に広がっていきます。次の統合対象はプライベートクラウドで、クライアントデバイスでの実行とシャード間実行はロードマップ段階です。下のマップでは、コアランタイム、現在拡張中の実行環境、次のアーキテクチャ上の到達点を分けて示します。</p>
+            <div class="glvm-status-summary" aria-hidden="true">
+      <div class="glvm-status-summary-item glvm-status-summary-item--built" aria-label="コアランタイム: 6">
+        <span>06</span>
+        <small>コアランタイム</small>
+      </div>
+
+      <div class="glvm-status-summary-item glvm-status-summary-item--designed" aria-label="システムを拡張中: 5">
+        <span>05</span>
+        <small>システムを拡張中</small>
+      </div>
+
+      <div class="glvm-status-summary-item glvm-status-summary-item--planned" aria-label="ロードマップ: 6">
+        <span>06</span>
+        <small>ロードマップ</small>
+      </div>
+    </div>
+          </div>
+        </div>
+        <div class="glvm-status-grid">
+      <article class="glvm-status-group glvm-status-group--built">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">コアランタイム</span></h3>
+        <ul><li>TVM の並行実行と COMM</li><li>ReplayTrie と実行トレース</li><li>ブロック横断の一時停止／再開パス</li><li>ネイティブ OCAP の基盤</li><li>EVM ホスト経路</li><li>BlockGit DAG、fringe、merge</li></ul>
+      </article>
+
+      <article class="glvm-status-group glvm-status-group--designed">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">システムを拡張中</span></h3>
+        <ul><li>プライベート／クラウド向けエンジンのデプロイ</li><li>デプロイ先をまたぐ GLVM 抽象化</li><li>プロダクション規模の堅牢化</li><li>より高度なポリシーと保護チャネル制御</li><li>ランタイムの可観測性と運用ツール</li></ul>
+      </article>
+
+      <article class="glvm-status-group glvm-status-group--planned">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">ロードマップ</span></h3>
+        <ul><li>シャード間の水平方向原子性</li><li>WASM ゲスト VM</li><li>クライアントデバイスへの TVM デプロイ</li><li>アカウント抽象化とケイパビリティ・レジストリ</li><li>障害発生後のピア再同期と、バリデータセットの動的変更</li><li>プログラム可能な World OS レイヤー</li></ul>
+      </article>
+    </div>
+      </section>
+
+
+    <section class="glvm-next fade-in" aria-labelledby="glvm-next-title">
+      <div class="glvm-next-copy">
+        <p class="eyebrow">学習を続ける</p>
+        <h2 id="glvm-next-title">ランタイム、エージェントのワークロード、システム比較を見る</h2>
+        <p><span class="glvm-next-copy-line">Runtime Lab では実行モデルを、For AI Agents ではワークロードのパターンを解説します。</span><span class="glvm-next-copy-line">ALUX VS Others では、各システムのアーキテクチャとケイパビリティを比較します。</span></p>
+      </div>
+      <nav class="glvm-next-links" aria-labelledby="glvm-next-title">
+        <a class="glvm-next-link glvm-next-link--primary" href="/ja/runtime-lab">
+          <span class="glvm-next-index" aria-hidden="true">01</span>
+          <span class="glvm-next-label">Runtime Lab</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+
+        <a class="glvm-next-link glvm-next-link--secondary" href="/ja/for-ai-agents">
+          <span class="glvm-next-index" aria-hidden="true">02</span>
+          <span class="glvm-next-label">AIエージェント向け</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+
+        <a class="glvm-next-link glvm-next-link--tertiary" href="/ja/alux-vs-others">
+          <span class="glvm-next-index" aria-hidden="true">03</span>
+          <span class="glvm-next-label">ALUX VS Others</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+      </nav>
+    </section>
+
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Copyright © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
+<script src="/script.js?v=20261012-language-routes"></script>
+</body>
+</html>
