@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = ["en", "zh", "ja", "ko", "ar"];
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(value => value.toLowerCase().split(/[-_]/)[0]).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خارطة الطريق | شبكة ALUX</title>
+<link rel="canonical" href="https://www.alux.network/ar/roadmap">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/roadmap">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/roadmap">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/roadmap">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/roadmap">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/roadmap">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/roadmap">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="خارطة تطوير شبكة ALUX: محطات ربع سنوية لبيئة تشغيل TVM وإجماع BlockGit وسلسلة أدوات Tolang وتوافق EVM من 2023 إلى 2027.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+</head>
+<body data-page="roadmap">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/ar" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/alux-logo.png" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="التنقل الرئيسي">
+        <a href="/ar" data-nav="home">الرئيسية</a>
+        <a href="/ar/for-ai-agents" data-nav="vs">لوكلاء الذكاء الاصطناعي</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">استكشف</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/ar/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/ar/runtime-lab" data-nav="learnPcc">مختبر بيئة التشغيل</a>
+            <a href="/ar/alux-vs-others" data-nav="learnAlux">ALUX مقارنةً بالحلول الأخرى</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">المدونة</a>
+        <a href="/ar/team" data-nav="team">الفريق</a>
+        <a href="/ar/roadmap" data-nav="roadmap">خارطة الطريق</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>اللغة</span><span class="lang-current" data-lang-current>العربية</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/roadmap" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/roadmap" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/roadmap" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/roadmap" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/roadmap" hreflang="ar">AR</a></div></div>
+        <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">تواصل معنا</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="تبديل قائمة التنقل"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main id="page-content" class="roadmap-static" data-static="true" data-prerendered="ar">
+      <section class="hero hero-simple fade-in roadmap-hero">
+        <div class="hero-copy roadmap-hero-copy">
+          <span class="roadmap-kicker">ALUX</span>
+          <h1>خارطة الطريق</h1>
+          <p class="roadmap-updated">آخر تحديث: 5 أكتوبر 2026</p>
+        </div>
+      </section>
+
+    <div class="roadmap-order" role="group" aria-label="ترتيب خارطة الطريق"><button type="button" data-roadmap-order="newest" aria-pressed="true">الأحدث <span aria-hidden="true">↑</span></button><button type="button" data-roadmap-order="oldest" aria-pressed="false">الأقدم <span aria-hidden="true">↓</span></button></div>
+<section data-year="2027" class="section fade-in roadmap-year-section roadmap-year-section--2027">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2027</span>
+          <span class="roadmap-kicker">عام 2027</span>
+          <h2>2027</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--planned">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">الربع الأول 2027</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">مخطط له</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>براهين صورية في Lean لخصائص النظام الأساسية (مخطط)</li>
+              <li>إطلاق شبكة الاختبار (مخطط)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2026" class="section fade-in roadmap-year-section roadmap-year-section--2026">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2026</span>
+          <span class="roadmap-kicker">عام 2026</span>
+          <h2>2026</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--active">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">الربع الرابع من عام 2026</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">مخطط له</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>تنفيذ الساعة المنطقية وآليات فرض مستويات العزل (قيد العمل — WIP)</li>
+              <li>أداة لتصحيح TVM ورصدها على غرار GDB (قيد العمل — WIP)</li>
+              <li>إكمال نموذج محاسبة التكلفة (قيد العمل — WIP)</li>
+              <li>التكامل مع مجموعة أدوات Ethereum (قيد العمل — WIP)</li>
+              <li>تنفيذ واختبار عقد إثبات الحصة (PoS) (مخطط له)</li>
+              <li>تنفيذ آليات المزامنة والتعافي من الأعطال (مخطط)</li>
+              <li>تنفيذ جمع القمامة (مخطط)</li>
+              <li class="roadmap-break-bullet">تقديم أمثلة Solidity توضح تنسيق العقود الذكية/الوكلاء <span class="roadmap-break-tail">(async/await، join، select) (مخطط له)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">الربع الثالث من عام 2026</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>دعم الدوال المتزامنة إلى جانب الدوال غير المتزامنة الحالية، مع الإغلاقات والتطبيق الجزئي (مكتمل)</li>
+              <li>سجل النظام الأولي، وتجريد الحسابات، وعقود المطالبة بالقدرات وتفويضها (مكتمل)</li>
+              <li>تبسيط مجدول المهام في TVM وتسهيل اختبار التنفيذ المتزامن (مكتمل)</li>
+              <li>تتبّع سياق التنفيذ القائم على دفتر الأستاذ لضمان التراجع الموثوق عبر السياقات المتداخلة (مكتمل)</li>
+              <li>مفسّر مرجعي لـ Tolang للتحقق من مخرجات المترجم (مكتمل)</li>
+              <li>منسّق شيفرة Tolang، وماكرو Rust باسم tolang!، وميزات الانتقال إلى التعريف وإعادة التسمية في IDE (مكتمل)</li>
+              <li>عميل API لـ TypeScript مع روابط ذات أنواع مولّدة من واجهة RPC للعقدة (مكتمل)</li>
+              <li>مفسّر TVM جديد يدعم المجموعات المتداخلة والحلقات والإغلاقات والقياس الأولي للغاز (قيد المراجعة)</li>
+              <li>بيئة EVM معزولة جديدة قائمة على المصيدة (trap) (قيد التنفيذ)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">الربع الثاني من عام 2026</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>محلل Tolang أصلي (مكتمل)</li>
+              <li>دعم الثوابت وقت التصريف في Tolang (مكتمل)</li>
+              <li>خادم لغة Tolang وامتداد Tolang لـ VS Code (مكتمل)</li>
+              <li>إعادة هيكلة إطار الاختبار (مكتمل)</li>
+              <li>إجراء اختبار تكامل شامل من طرف إلى طرف للنظام، بما في ذلك طبقة الإجماع (مكتمل)</li>
+              <li>إكمال تنفيذ API (مكتمل)</li>
+              <li>تطوير CLI للعقدة (مكتمل)</li>
+              <li>مستكشف بلوكتشين مخصص لتصوّر التنفيذ عبر الكتل والإنهاء الذري (مكتمل)</li>
+              <li>بيئة EVM معزولة جديدة قائمة على المصيدة (trap) (قيد التنفيذ)</li>
+              <li>التكامل مع أدوات Ethereum (قيد التنفيذ)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">الربع الأول من عام 2026</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>تبسيط آلية إعادة التشغيل للتنفيذ عبر الكتل (مكتمل)</li>
+              <li>إدخال بيئة EVM معزولة جديدة لتحسين الكفاءة والبساطة (مكتمل)</li>
+              <li>إعادة هيكلة إجماع TVM وقاعدة البيانات وإطار العمل لتحسين المعيارية (مكتمل)</li>
+              <li>تنفيذ اختبارات للتنفيذ عبر الكتل وإعادة التشغيل لدى المدققين غير المتابعين لحظيًا (lazy validators) (مكتمل)</li>
+              <li>تطوير TupleSpace Explorer لتصوير الحالة وتقدم التنفيذ (مكتمل)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2025" class="section fade-in roadmap-year-section roadmap-year-section--2025">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2025</span>
+          <span class="roadmap-kicker">عام 2025</span>
+          <h2>2025</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--active">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">الربع الرابع من عام 2025</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>اختبار التنفيذ عبر الكتل من دون إجماع (مكتمل)</li>
+              <li>إعادة هيكلة إطار TVM لتحسين المعيارية (قيد التنفيذ)</li>
+              <li>تحديد وتنفيذ نقاط نهاية API (قيد التنفيذ)</li>
+              <li>تصميم الساعة المنطقية وآلية فرض مستويات العزل (مكتمل)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">الربع الثالث من عام 2025</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>تنفيذ آلية لتشغيل المعاملات طويلة الأمد (Long Transactions) الممتدة عبر عدة كتل ومجموعات Fringe نهائية، وإيقاظها وتجميعها في كتل وإعادة تشغيلها (مكتمل)</li>
+              <li>إعادة هيكلة وحدة قاعدة البيانات لتحسين الأداء والكفاءة (قيد التنفيذ)</li>
+              <li>إعادة هيكلة إطار TVM لتحسين المعيارية (قيد التنفيذ)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">الربع الثاني من عام 2025</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>تنفيذ الرابط الضعيف (Weaklink) واختباره في بروتوكول BlockGit (مكتمل)</li>
+              <li>إدخال أنواع سلوك قنوات بسيطة لتبسيط بنية TVM وتحسين الاعتمادية (مكتمل)</li>
+              <li>إدخال إطار اختبار لشفرة Tolang المولدة عشوائيًا ودمجه مع CI (مكتمل)</li>
+              <li>إعادة هيكلة منطق إعادة التشغيل (مكتمل)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">الربع الأول من عام 2025</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>إعادة هيكلة النظام بأكمله إلى إطار قائم على الأحداث لتمكين تنفيذ المعاملات المتزامنة وإعادة تشغيل الكتل واقتراح الكتل بأقصى قدر من التزامن (مكتمل)</li>
+              <li>تنفيذ نقاط نهاية RPC وتحديث BlockGit للتعامل مع الكتل المفقودة (مكتمل)</li>
+              <li>إصلاح تسريبات الذاكرة في BlockGit وتحسين أدائه (مكتمل)</li>
+              <li>إدخال الرابط الضعيف (Weaklink) إلى بروتوكول BlockGit وتنفيذه جزئيًا (مكتمل)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2024" class="section fade-in roadmap-year-section roadmap-year-section--2024">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2024</span>
+          <span class="roadmap-kicker">عام 2024</span>
+          <h2>2024</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">الربع الرابع من عام 2024</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>دمج BlockGit في منصة العقد (مكتمل)</li>
+              <li>اختبار بروتوكول الإجماع على شبكة Docker (مكتمل)</li>
+              <li>تنفيذ خوارزمية حل التعارضات في دمج الكتل (مكتمل)</li>
+              <li>إعادة هيكلة وحدة التخزين لدعم الاستعلام وتثبيت الحالة (مكتمل)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">الربع الثالث من عام 2024</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>سياق تنفيذ يدعم التراجع عن جزء من التنفيذ (مكتمل)</li>
+              <li>تصميم BlockGit وتنفيذه أوليًا بوصفه بروتوكول إجماع جديدًا (مكتمل)</li>
+              <li>محاكي أحداث متقطعة لاختبار تنفيذ بروتوكول الإجماع (مكتمل)</li>
+              <li>وحدة P2P مع تكامل أولي لـ BlockGit (مكتمل)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">الربع الثاني من عام 2024</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>إعادة هيكلة منطق التشغيل وإعادة التشغيل في فضاء الصفوف وتوحيده (مكتمل)</li>
+              <li>تنفيذ تشغيل وإعادة تشغيل استدعاء HTTPS خارجي لإظهار القدرة على التعاون النشط مع أنظمة Web 2.0 دون أوراكل أو مرحلات (مكتمل)</li>
+              <li>التنفيذ الأولي لبروتوكول إجماع Blocklace (مكتمل)</li>
+              <li>إعادة تصميم إدارة الحالة لتقليل استخدام الذاكرة (مكتمل)</li>
+              <li>تصميم بنية بيانات الساعة المنطقية والخوارزمية المستخدمة لفرض مستويات العزل (مكتمل)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">الربع الأول من عام 2024</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>تنفيذ السجل العام واختباره (مكتمل)</li>
+              <li>دعم البرمجة الوظيفية في Tolang وTVM (مكتمل)</li>
+              <li>دعم الحوسبة التسلسلية الآمنة للخيوط على TVM المتزامن (مكتمل)</li>
+              <li>إجراء اختبار أولي لتوافق EVM (مكتمل)</li>
+              <li>تنفيذ تخزين حالة EVM لدعم مستوى عزل القراءة المثبتة (Read-Committed) (مكتمل)</li>
+              <li>إعادة هيكلة الشفرة وإجراء اختبارات شاملة للصحة وقابلية إعادة التشغيل في TVM (مكتمل)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2023" class="section fade-in roadmap-year-section roadmap-year-section--2023">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2023</span>
+          <span class="roadmap-kicker">عام 2023</span>
+          <h2>2023</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">الربع الرابع من عام 2023</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>تنفيذ مدير مهام جديد لتحسين معالجة الأخطاء ودعم التموضع المحلي للخيوط (مكتمل)</li>
+              <li>تحسين الأداء عبر إدخال دعم الحوسبة التسلسلية (مكتمل)</li>
+              <li>اختبار أنواع القنوات الخاصة (مكتمل)</li>
+              <li>استخدام أنواع القنوات الخاصة لتبسيط سجل إعادة التشغيل (مكتمل)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">الربع الثالث من عام 2023</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>اختبار طبقة التخزين (مكتمل)</li>
+              <li>اختبار تنفيذ الآلة الافتراضية المتزامنة وإعادة التشغيل الحتمية (مكتمل)</li>
+              <li>تحديد مواصفات نوع خاص من القنوات وتنفيذه (مكتمل)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">الربع الثاني من عام 2023</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>تنفيذ التشغيل وإعادة التشغيل في الآلة الافتراضية المتزامنة (مكتمل)</li>
+              <li>تحديد مواصفات طبقة التخزين وتنفيذها (مكتمل)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">الربع الأول من عام 2023</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>تنفيذ تعليمات التشغيل (opcodes) في الآلة الافتراضية المتزامنة واختبارها (مكتمل)</li>
+              <li>بنية بيانات إعادة التشغيل الحتمية للمعاملات المتزامنة (مكتمل)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+</main>
+
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">حقوق النشر © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
+<script src="/script.js?v=20261012-language-routes"></script>
+</body>
+</html>

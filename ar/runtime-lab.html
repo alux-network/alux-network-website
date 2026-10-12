@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = ["en", "zh", "ja", "ko", "ar"];
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(value => value.toLowerCase().split(/[-_]/)[0]).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مختبر بيئة تشغيل ALUX | شبكة ALUX</title>
+<link rel="canonical" href="https://www.alux.network/ar/runtime-lab">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/runtime-lab">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/runtime-lab">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/runtime-lab">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/runtime-lab">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/runtime-lab">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/runtime-lab">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="دليل مرئي إلى التنفيذ المتوازي والمدفوع بالرسائل المتاح حاليًا في ALUX، وإلى نموذجها المستهدف للتركيب الذري عبر حدود الأنظمة.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+</head>
+<body data-page="parallelConcurrentComposable">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/ar" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/alux-logo.png" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="التنقل الرئيسي">
+        <a href="/ar" data-nav="home">الرئيسية</a>
+        <a href="/ar/for-ai-agents" data-nav="vs">لوكلاء الذكاء الاصطناعي</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">استكشف</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/ar/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/ar/runtime-lab" data-nav="learnPcc">مختبر بيئة التشغيل</a>
+            <a href="/ar/alux-vs-others" data-nav="learnAlux">ALUX مقارنةً بالحلول الأخرى</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">المدونة</a>
+        <a href="/ar/team" data-nav="team">الفريق</a>
+        <a href="/ar/roadmap" data-nav="roadmap">خارطة الطريق</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>اللغة</span><span class="lang-current" data-lang-current>العربية</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/runtime-lab" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/runtime-lab" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/runtime-lab" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/runtime-lab" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/runtime-lab" hreflang="ar">AR</a></div></div>
+        <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">تواصل معنا</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="تبديل قائمة التنقل"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="ar">
+    <article class="pcc-page" data-pcc-root data-pcc-active="parallel">
+      <header class="pcc-hero fade-in">
+        <div class="pcc-hero-copy">
+          <p class="eyebrow">تعرّف / مختبر بيئة التشغيل</p>
+          <h1>مختبر بيئة التشغيل</h1>
+          <p class="pcc-hero-subtitle">متوازٍ / متزامن / قابل للتركيب</p>
+          <p class="pcc-hero-text">تدعم ALUX المعاملات طويلة الأمد (Long Transactions) القابلة لإعادة التشغيل: تنفذ المهام المستقلة معًا، وتنسّق المعاملات عبر الرسائل. ويعرض سيناريو الحجز النموذج المستهدف لتسوية الآثار المترابطة بين الأنظمة كنتيجة ذرية واحدة.</p>
+          <div class="pcc-hero-signals" aria-label="Runtime signals"><div class="pcc-signal"><span>التموضع</span><strong>بيئة تشغيل متزامنة لامركزية</strong></div><div class="pcc-signal"><span>التنفيذ</span><strong>تشغيل، تفاعل، انتظار، تسوية</strong></div><div class="pcc-signal"><span>الحدود</span><strong>سير عمل محدود بالصلاحيات</strong></div></div>
+        </div>
+        <figure class="pcc-hero-visual">
+          <div class="pcc-image-frame pcc-image-frame--hero">
+            <img src="/assets/parallel-concurrent-composable/alux-runtime.webp?v=20260708-heroimg1" alt="رسم تقني عالي الجودة لبيئة تشغيل ALUX وهي تربط العقد والخدمات السحابية والأجهزة والوكلاء ورموز الصلاحية ومسارات التثبيت." loading="eager" fetchpriority="high" data-pcc-image>
+            <span class="pcc-image-fallback">رسم تقني عالي الجودة لبيئة تشغيل ALUX وهي تربط العقد والخدمات السحابية والأجهزة والوكلاء ورموز الصلاحية ومسارات التثبيت.</span>
+          </div>
+        </figure>
+      </header>
+
+      <section class="pcc-intro-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">الفرق البسيط</p>
+          <h2>ثلاث كلمات، وثلاث وظائف مختلفة تمامًا في بيئة التشغيل</h2>
+          <p>يشغّل التوازي المعاملات غير المعتمدة بعضها على بعض في الوقت نفسه. ويتيح التزامن للمعاملات أن تتفاعل عبر القنوات: يمكن لمعاملة أن تنتظر رسالة مطابقة من معاملة أخرى ثم تتابع التنفيذ. أما التركيب فيجمع انتقالات الحالة من أنظمة تنفيذ مختلفة في انتقال حالة ذري واحد قابل للتدقيق.</p>
+          <p class="pcc-intro-claim">في بيئة تشغيل ALUX الحالية، يمكن للأعمال المستقلة أن تتقدم بالتوازي، وأن تنسّق المعاملات عبر الرسائل، وأن يستأنف التنفيذ عبر الكتل. ويبقى التركيب الذري بين الأنظمة المستقلة هدفًا معماريًا.</p>
+        </div>
+      </section>
+
+      <section class="pcc-mode-section fade-in" aria-label="ثلاث كلمات، وثلاث وظائف مختلفة تمامًا في بيئة التشغيل">
+        <div class="pcc-mode-toolbar" aria-label="Runtime mode selector"><button class="pcc-mode-button is-active" type="button" data-pcc-mode="parallel" aria-pressed="true"><span>01</span> التوازي</button><button class="pcc-mode-button" type="button" data-pcc-mode="concurrent" aria-pressed="false"><span>02</span> التزامن</button><button class="pcc-mode-button" type="button" data-pcc-mode="composable" aria-pressed="false"><span>03</span> قابل للتركيب</button></div>
+        <div class="pcc-mode-stage">
+          <div class="pcc-mode-visuals">
+      <figure class="pcc-mode-visual is-active" data-pcc-visual="parallel" aria-hidden="false">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/parallel.svg?v=20260812-motion-restore4" alt="عدة مسارات تنفيذ معزولة تتحرك إلى الأمام في الوقت نفسه." loading="eager" data-pcc-image>
+          <span class="pcc-image-fallback">عدة مسارات تنفيذ معزولة تتحرك إلى الأمام في الوقت نفسه.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>التوازي</span><strong>تكتمل عمليات البحث الأربع بصورة مستقلة في مساراتها</strong></figcaption>
+        <div class="pcc-mode-impact"><span>ماذا يتيح</span><p>ينجز التوازي مزيدًا من العمل المستقل في الوقت نفسه. لكنه وحده لا يمكّن تلك الأعمال من تبادل الرسائل، ولا يتيح انتظار المعاملة طويلة الأمد ثم استئنافها.</p><strong>يجد التوازي عدة إجابات في وقت واحد، لكنه لا يجعل تلك الأعمال تتفاعل.</strong></div>
+      </figure>
+
+      <figure class="pcc-mode-visual" data-pcc-visual="concurrent" aria-hidden="true">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/concurrent.svg?v=20260812-motion-restore4" alt="تتفاعل معاملتان عبر قناة في فضاء الصفوف. تنتظر إحداهما رسالة مطابقة وترسلها الأخرى، وعند المطابقة يتابع التنفيذ المنتظر بينما يستمر العمل غير المرتبط." loading="lazy" data-pcc-image>
+          <span class="pcc-image-fallback">تتفاعل معاملتان عبر قناة في فضاء الصفوف. تنتظر إحداهما رسالة مطابقة وترسلها الأخرى، وعند المطابقة يتابع التنفيذ المنتظر بينما يستمر العمل غير المرتبط.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>التزامن</span><strong>ينتظر الحجز، ويرد وكيل الفندق، فتبدأ الخطوة التالية</strong></figcaption>
+        <div class="pcc-mode-impact"><span>ماذا يتيح</span><p>يمكن لوكيل السفر إبقاء المعاملة طويلة الأمد نشطة عبر عدة كتل: تنتظر توافر الغرفة أو استجابة API أو قرار المستخدم، ثم تتابع من دون تعطيل الأعمال غير المرتبطة.</p><strong>يحوّل التزامن الرد إلى خطوة تنفيذ تالية؛ فمطابقة الرسالة تنشئ استمرارية جديدة بدلًا من إعادة تشغيل مسار متوقف في مكانه.</strong></div>
+      </figure>
+
+      <figure class="pcc-mode-visual" data-pcc-visual="composable" aria-hidden="true">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/composable.svg?v=20260812-motion-restore4" alt="يصل حجز الغرفة وتفويض الدفع من نظامين مختلفين، ولا تخرج نتيجة تأكيد الحجز من الحد الذري إلا بعد أن يصبح الاثنان جاهزين." loading="lazy" data-pcc-image>
+          <span class="pcc-image-fallback">يصل حجز الغرفة وتفويض الدفع من نظامين مختلفين، ولا تخرج نتيجة تأكيد الحجز من الحد الذري إلا بعد أن يصبح الاثنان جاهزين.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>قابل للتركيب</span><strong>لا يتأكد الحجز إلا إذا نجح حجز الغرفة والدفع معًا</strong></figcaption>
+        <div class="pcc-mode-impact"><span>ماذا يتيح</span><p>النتيجة المقصودة هي تجنب حجز ناقص، كأن يُخصم المال من دون غرفة أو تُحجز الغرفة من دون دفع.</p><strong>يمنح نموذج التركيب المستهدف الأنظمة المختلفة نتيجة واحدة إما أن تكتمل كلها أو لا تكتمل؛ ويحمل التزامن الرسائل التي تسبق هذا التثبيت المشترك.</strong></div>
+      </figure>
+    </div>
+          <div class="pcc-mode-copy" aria-live="polite">
+      <article class="pcc-mode-panel is-active" data-pcc-panel="parallel" aria-hidden="false">
+        <p class="pcc-mode-kicker">التوازي</p>
+        <h3>البحث عن الرحلات والفنادق والنقل والتأمين<br>في الوقت نفسه</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>ماذا يعني</dt><dd>يعني التنفيذ المتوازي تشغيل أعمال مستقلة في الوقت نفسه. يستطيع وكيل السفر البحث عن الرحلات والغرف والنقل والتأمين من دون أن ينتظر بحث واحد اكتمال الآخر.</dd></div>
+          <div><dt>كيف يفعله ALUX</dt><dd>التنفيذ المتوازي أصيل في حساب العمليات (process calculus) لدى ALUX: لا تشترك المعاملات في الذاكرة، ويقتصر أي تفاعل على قنوات فضاء الصفوف. لذلك تتقدم المعاملات المستقلة في مسارات TVM منفصلة، ويحسم Block Merge أي تداخل في الحالة عند التثبيت.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>ماذا يتيح</dt><dd>ينجز التوازي مزيدًا من العمل المستقل في الوقت نفسه. لكنه وحده لا يمكّن تلك الأعمال من تبادل الرسائل، ولا يتيح انتظار المعاملة طويلة الأمد ثم استئنافها.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">يجد التوازي عدة إجابات في وقت واحد، لكنه لا يجعل تلك الأعمال تتفاعل.</p>
+      </article>
+
+      <article class="pcc-mode-panel" data-pcc-panel="concurrent" aria-hidden="true">
+        <p class="pcc-mode-kicker">التزامن</p>
+        <h3>ينتظر الحجز توفر الغرفة<br>ويتابع عند وصول الرد</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>ماذا يعني</dt><dd>يبدأ التزامن عندما تتفاعل الأعمال. يترك الحجز شرط انتظار في قناة، ثم ترسل خدمة الفندق لاحقًا رسالة مطابقة عن توفر الغرفة فتستوفي الشرط.</dd></div>
+          <div><dt>كيف يفعله ALUX</dt><dd>يُخزَّن طلب الاستهلاك المنتظر (consume) موردًا في فضاء الصفوف. وتطابقه عملية إنتاج (produce) من معاملة أخرى، فتطلق حدث COMM يولّد الاستمرارية وينقل سياق التنفيذ (Execution Context) من Inactive إلى Running. وإذا أمكن أكثر من تطابق، يسجل ReplayTrie حدث COMM المختار لإعادة تشغيل حتمية.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>ماذا يتيح</dt><dd>يمكن لوكيل السفر إبقاء المعاملة طويلة الأمد نشطة عبر عدة كتل: تنتظر توافر الغرفة أو استجابة API أو قرار المستخدم، ثم تتابع من دون تعطيل الأعمال غير المرتبطة.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">يحوّل التزامن الرد إلى خطوة تنفيذ تالية؛ فمطابقة الرسالة تنشئ استمرارية جديدة بدلًا من إعادة تشغيل مسار متوقف في مكانه.</p>
+      </article>
+
+      <article class="pcc-mode-panel" data-pcc-panel="composable" aria-hidden="true">
+        <p class="pcc-mode-kicker">قابل للتركيب</p>
+        <h3>تأكيد حجز الغرفة<br>والدفع معًا</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>ماذا يعني</dt><dd>التركيب ليس تجميعًا عاديًا. والهدف في هذا المثال أن يُثبت حجز الغرفة وتفويض الدفع معًا، أو ألا يُثبت أي منهما.</dd></div>
+          <div><dt>كيف يفعله ALUX</dt><dd>توفر بيئة التشغيل الحالية التنسيق عبر فضاء الصفوف، ومراجع OCAP محددة النطاق، والاستمرار عبر الكتل، وReplayTrie، وBlock Merge. أما التركيب الذري من طرف إلى طرف بين أنظمة خارجية مستقلة، فيظل هدفًا تصميميًا يُبنى على هذه البدائيات.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>ماذا يتيح</dt><dd>النتيجة المقصودة هي تجنب حجز ناقص، كأن يُخصم المال من دون غرفة أو تُحجز الغرفة من دون دفع.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">يمنح نموذج التركيب المستهدف الأنظمة المختلفة نتيجة واحدة إما أن تكتمل كلها أو لا تكتمل؛ ويحمل التزامن الرسائل التي تسبق هذا التثبيت المشترك.</p>
+      </article>
+    </div>
+        </div>
+      </section>
+
+      <section class="pcc-lab-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">جرّب بيئة التشغيل بكاملها</p>
+          <h2>نمذج حجزًا ذريًا واحدًا</h2>
+          <p class="pcc-lab-intro">استخدم الإجراءات الأربعة لاستكشاف نموذج التركيب المستهدف: ابدأ فحوص الحجز والدفع، واترك حالة انتظار لتوفر الغرفة، ثم أوصل رسالة الفندق المطابقة، وأخيرًا نمذج تأكيدًا مشتركًا.</p>
+        </div>
+        <div class="pcc-lab-board" data-pcc-lab data-lab-state="idle" data-msg-idle="ابدأ بالخطوة 1. تُدار حالتا الحجز والدفع كلٌّ على حدة داخل بيئة التشغيل نفسها." data-msg-parallel="التوازي: يتقدم فحص الحجز وفحص الدفع في الوقت نفسه بصورة مستقلة." data-msg-paused="الانتظار المتزامن: يترك الحجز شرط توفر الغرفة في القناة، ويستطيع عمل الدفع الاستمرار." data-msg-resumed="مطابقة الرسالة: يرد الفندق بتوفر الغرفة، فتفعّل ALUX استمرارية الحجز. ولا يسجل ReplayTrie الاختيار إلا عند وجود أكثر من مطابقة ممكنة." data-msg-settled="هدف التركيب: يُغلق حجز الغرفة وتفويض الدفع معًا كنتيجة حجز واحدة إما أن تكتمل كلها أو لا تكتمل.">
+          <div class="pcc-lab-steps"><article class="pcc-lab-step" data-pcc-step="parallel"><span>01</span><strong>ابدأ الفحصين</strong><p>يتقدم فحص الحجز وفحص الدفع كلٌّ على حدة.</p></article><article class="pcc-lab-step" data-pcc-step="paused"><span>02</span><strong>انتظر الغرفة</strong><p>يترك الحجز شرط توفر الغرفة في القناة.</p></article><article class="pcc-lab-step" data-pcc-step="resumed"><span>03</span><strong>يرد الفندق</strong><p>تفعّل الرسالة المطابقة استمرارية الحجز.</p></article><article class="pcc-lab-step" data-pcc-step="settled"><span>04</span><strong>أكّد كليهما معًا</strong><p>يثبت حجز الغرفة وتفويض الدفع كنتيجة واحدة.</p></article></div>
+          <div class="pcc-lab-runtime" aria-hidden="true">
+            <div class="pcc-lab-lanes">
+      <div class="pcc-lab-lane pcc-lab-lane--1">
+        <span class="pcc-lab-lane-label">حالة الحجز</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--1" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--2">
+        <span class="pcc-lab-lane-label">رسالة الفندق</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--2" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--3">
+        <span class="pcc-lab-lane-label">حالة الدفع</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--3" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--4">
+        <span class="pcc-lab-lane-label">تأكيد الحجز</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--4" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+    <div class="pcc-lab-event" aria-hidden="true"><span>تطابق الرسالة</span></div></div>
+            <div class="pcc-lab-checkpoint" data-pcc-lab-checkpoint data-checkpoint-idle="في انتظار كليهما" data-checkpoint-settled="تم تأكيد الحجز"><span>في انتظار كليهما</span></div>
+          </div>
+          <div class="pcc-lab-side">
+            <div class="pcc-lab-status">
+              <span>الحالة</span>
+              <strong data-pcc-lab-score>0 / 4</strong>
+            </div>
+            <p class="pcc-lab-play-label">نفّذها بالترتيب</p>
+            <div class="pcc-lab-controls">
+              <button type="button" data-pcc-action="parallel">1. ابدأ الفحصين</button>
+              <button type="button" data-pcc-action="pause" disabled>2. انتظر الغرفة</button>
+              <button type="button" data-pcc-action="resume" disabled>3. أرسل رد الفندق</button>
+              <button type="button" data-pcc-action="settle" disabled>4. أكّد الحجز</button>
+              <button type="button" data-pcc-action="reset">إعادة ضبط</button>
+            </div>
+            <p class="pcc-lab-message" data-pcc-lab-message>ابدأ بالخطوة 1. تُدار حالتا الحجز والدفع كلٌّ على حدة داخل بيئة التشغيل نفسها.</p>
+          </div>
+          <div class="pcc-lab-benefits"><article class="pcc-lab-benefit" data-pcc-benefit="parallel"><span>التوازي</span><strong>يعمل الفحصان معًا</strong><p>لا ينتظر العمل المستقل خلف طابور عالمي واحد.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="paused"><span>التزامن</span><strong>الحجز ينتظر رد الفندق</strong><p>يبقى الاعتماد في القناة ولا يوقف بيئة التشغيل كلها.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="resumed"><span>مطابقة رسالة</span><strong>الرد ينشئ الخطوة التالية</strong><p>ينشئ COMM الاستمرارية، ولا يسجل ReplayTrie الاختيار إلا عندما تكون المطابقة غير حتمية.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="settled"><span>قابلية التركيب</span><strong>يُؤكَّد حجز الغرفة والدفع معًا</strong><p>الهدف هو نتيجة واحدة إما أن تكتمل كلها أو لا تكتمل، مع أدلة تسوية قابلة للاستنساخ.</p></article></div>
+        </div>
+      </section>
+
+      <section class="pcc-foundation-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">مسار بيئة التشغيل</p>
+          <h2>ما الذي يبقي الخدمة حية</h2>
+          <p>تحافظ الخدمة طويلة الأمد على اتساقها لأن كل خطوة تستطيع أن تعمل وتتفاعل وتحمل صلاحية صريحة، وأن يُعاد تشغيلها بصورة حتمية وتُسوّى على مسار ذري واحد قابل للتحقق.</p>
+        </div>
+        <div class="pcc-foundation-grid"><article class="pcc-foundation-item"><span>التشغيل</span><h3>دورة حياة عمليات TVM</h3><p>يمكن للعملية أن تتفرع وتنتظر في كتلة ثم تستأنف في كتلة لاحقة من دون إعادة تشغيل سياقها المحلي.</p></article><article class="pcc-foundation-item"><span>التفاعل</span><h3>فضاء الصفوف + COMM</h3><p>يلتقي طلب استهلاك منتظر (consume) بعملية إنتاج (produce) من معاملة أخرى، فتُفعَّل الاستمرارية بينما يواصل العمل غير المرتبط تقدمه.</p></article><article class="pcc-foundation-item"><span>التفويض</span><h3>حدود OCAP</h3><p>تُمرَّر مراجع القدرات غير القابلة للتزوير صراحةً، فلا تتلقى كل خطوة إلا الصلاحية التي تحتاجها؛ ولا تُدخل الهوية تلقائيًا صلاحيات غير مرتبطة بالمهمة ضمن النطاق.</p></article><article class="pcc-foundation-item"><span>إعادة التشغيل</span><h3>ReplayTrie</h3><p>لا تسجل إلا اختيارات COMM غير الحتمية المؤثرة في النتيجة، حتى يعيد المدققون التنفيذ نفسه.</p></article><article class="pcc-foundation-item"><span>التسوية</span><h3>BlockGit + Block Merge</h3><p>يدخل العمل المتزامن في مجموعات Fringe متحقق منها، حيث تُصنّف التداخلات إلى مقبولة أو مرفوضة أو غير محسومة قبل النهائية.</p></article></div>
+      </section>
+
+
+    <section class="pcc-glvm-bridge fade-in">
+      <div class="pcc-glvm-bridge-copy">
+        <p class="eyebrow">الطبقة التالية</p>
+        <h2>بيئة تشغيل منطقية واحدة عبر بيئات تنفيذ متعددة</h2>
+        <p>يعرض Runtime Lab التنفيذ المتوازي الحالي والتنفيذ المدفوع بالرسائل، ثم يوضّح نموذج التركيب الذري المستهدف. وتصف GLVM المعمارية الأوسع التي تمد هذا النموذج المنطقي عبر عقد البلوكشين والخدمات السحابية والأجهزة الشخصية.</p>
+      </div>
+      <a class="button secondary pcc-glvm-bridge-link" href="/ar/glvm#architecture">استكشف GLVM<span aria-hidden="true">→</span></a>
+    </section>
+
+
+      <section class="pcc-close-section fade-in">
+        <div class="pcc-close-copy">
+          <p class="eyebrow">لماذا يهم</p>
+          <h2>ليست كتلًا أسرع، بل خدمات طويلة الأمد</h2>
+          <p>يعالج التوازي التنفيذ المستقل، ويعالج التزامن التفاعل المدفوع بالرسائل والانتظار والاستئناف. تنفذ ALUX اليوم هذه الأسس في بيئة التشغيل، وتتجه نحو تركيب ذري عبر حدود الأنظمة.</p>
+        </div>
+        <div class="pcc-close-points"><article class="pcc-close-point"><span>التوازي وحده</span><p>إنتاجية أعلى، لكن بلا اعتماد بين المعاملات أو مطابقة للرسائل.</p></article><article class="pcc-close-point"><span>التزامن وحده</span><p>يمكن للمعاملات أن تتفاعل وتنتظر، لكن آثار الأنظمة قد تظل تُسوّى كلٌّ على حدة.</p></article><article class="pcc-close-point"><span>التركيب وحده</span><p>يوجد حد ذري، لكن من دون التفاعل والانتظار لا يمكنه حمل اعتماد طويل الأمد.</p></article></div>
+        <div class="hero-actions pcc-close-actions"><a class="button primary" href="/ar/alux-vs-others">العودة إلى ALUX مقارنةً بالحلول الأخرى</a><a class="button secondary" href="/ar/for-ai-agents">لوكلاء الذكاء الاصطناعي</a></div>
+      </section>
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">حقوق النشر © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
+<script src="/script.js?v=20261012-language-routes"></script>
+</body>
+</html>

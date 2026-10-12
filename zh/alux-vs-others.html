@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = ["en", "zh", "ja", "ko", "ar"];
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(value => value.toLowerCase().split(/[-_]/)[0]).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALUX VS Others | ALUX Network</title>
+<link rel="canonical" href="https://www.alux.network/zh/alux-vs-others">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/alux-vs-others">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/alux-vs-others">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/alux-vs-others">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/alux-vs-others">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/alux-vs-others">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/alux-vs-others">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="了解 ALUX 如何把短时虚拟机调用扩展为可重放的长交易：当前提供 EVM 兼容路径，并在路线图中规划更广泛的跨运行时组合。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+</head>
+<body data-page="aluxVsOthers">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/zh" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/alux-logo.png" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/zh" data-nav="home">首页</a>
+        <a href="/zh/for-ai-agents" data-nav="vs">面向 AI 智能体</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">了解</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/zh/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/zh/runtime-lab" data-nav="learnPcc">Runtime Lab</a>
+            <a href="/zh/alux-vs-others" data-nav="learnAlux">ALUX VS 其它</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">博客</a>
+        <a href="/zh/team" data-nav="team">团队</a>
+        <a href="/zh/roadmap" data-nav="roadmap">路线图</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>语言</span><span class="lang-current" data-lang-current>中文</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/alux-vs-others" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/alux-vs-others" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/alux-vs-others" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/alux-vs-others" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/alux-vs-others" hreflang="ar">AR</a></div></div>
+        <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">联系我们</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="切换导航菜单"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="zh">
+    <article class="alux-vs-page alux-vs-article">
+      <header class="alux-vs-article-header fade-in">
+        <div class="alux-vs-article-lede">
+          <h1>统一 Web 2 与 Web 3 的<span class="alux-vs-title-unit">分布式运行时</span></h1>
+          <p>区块链本质上是状态转换机器。ALUX 将模型从短时、孤立的虚拟机调用扩展为可重放的长交易：当前已支持跨区块执行与可验证的 Web 2 I/O；跨运行时与跨分片组合则属于更广泛的架构方向。</p>
+        </div>
+        <aside class="alux-vs-article-summary" aria-label="文章摘要">
+          <span>核心差异</span>
+          <dl><div><dt>大多数链</dt><dd>短小、孤立的 VM 调用</dd></div><div><dt>ALUX</dt><dd>可重放的长交易</dd></div><div><dt>执行模型</dt><dd>当前支持并行与并发；复合状态转换是目标模型</dd></div><div><dt>交易语义</dt><dd>长交易的 ACID 式语义</dd></div></dl>
+        </aside>
+      </header>
+
+      <div class="alux-vs-article-layout">
+        <aside class="alux-vs-article-nav" aria-label="本文目录">
+          <span>本文目录</span>
+          <a href="#problem">问题</a><a href="#universal">长交易</a><a href="#execution">执行模型</a><a href="#compatibility">组合与兼容性</a>
+        </aside>
+
+        <div class="alux-vs-article-body">
+          <section class="alux-vs-article-section fade-in" id="problem">
+            <h2>我们要解决的问题</h2>
+            <p>许多区块链虚拟机主要处理短时、有序的状态更新。ALUX 将这一模型扩展到需要等待、恢复、协作或跨越区块边界的工作流。</p>
+            <ul><li>区块链本质上是状态转换机器。</li><li>许多现有区块链虚拟机主要处理范围较窄的短时、有序状态转换。</li></ul>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--state"><div class="alux-vs-native-surface" role="img" aria-label="状态转换模型图">
+    <div class="alux-vs-original-image alux-vs-original-image--state">
+      <img src="/assets/alux-vs-others/state-transitions-page-crop-transparent.png" alt="" width="2070" height="910" loading="lazy">
+    </div>
+  </div><figcaption>图 1：ALUX 将 Web3 执行模型从短时更新扩展到可重放的长交易。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong>许多公链以短时状态更新为中心；ALUX 在此基础上加入可重放的长交易。</p></figure>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="universal">
+            <h2>ALUX：面向长交易的分布式运行时</h2>
+            <p>ALUX 在一次性状态更新之外，进一步建模并行、并发与复合状态转换。</p>
+            <p>ALUX 不再把每笔交易视为一次短小、孤立的状态更新，而是把执行建模为一个可以协调并行、并发与复合转换的运行时。</p>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--types"><div class="alux-vs-native-surface" role="img" aria-label="并行、并发和复合转换图"><div class="alux-vs-original-image alux-vs-original-image--types"><img src="/assets/alux-vs-others/transition-types-transparent.png" alt="" width="3634" height="1353" loading="lazy"></div></div><figcaption>图 2：ALUX 当前支持并行与并发状态转换；复合状态转换属于目标架构。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong>并行让独立任务同时推进，并发支持等待与恢复，组合则定义相关状态变化应如何共同结算。</p></figure>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="execution">
+            <h2>执行模型</h2>
+            <div class="alux-vs-capability-grid"><article class="alux-vs-capability alux-vs-capability--1"><span>并行</span><div><h3>并行执行：</h3><p>当前可让隔离的 <span class="alux-vs-accent">EVM</span> 实例并行运行。WASM 属于规划中的异构虚拟机方向。</p></div></article><article class="alux-vs-capability alux-vs-capability--2"><span>并发</span><div><h3>并发执行：</h3><p>ALUX 让交易（TX）像 <span class="alux-vs-accent">协程</span> 一样执行：它们可以挂起、唤醒，并彼此交错推进。执行顺序可以是非确定的，但重放结果是确定的。</p></div></article><article class="alux-vs-capability alux-vs-capability--3"><span>复合</span><div><h3>复合转换：</h3><p>交易可跨越多个区块高度，在 ALUX 交易边界内保持隔离性与<span class="alux-vs-accent">原子结算</span>，同时协调链上工作和可重放的 HTTPS 外部效果。跨分片组合仍属于架构与路线图。</p></div></article></div>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="compatibility">
+            <h2>复合状态转换与兼容性</h2>
+            <p>交易可跨越多个区块高度，在 ALUX 交易边界内保持隔离性与<span class="alux-vs-accent">原子结算</span>，同时协调链上工作和可重放的 HTTPS 外部效果。跨分片组合仍属于架构与路线图。</p>
+            <p>ALUX 当前通过沙箱和 Ethereum JSON-RPC 提供 <span class="alux-vs-accent">EVM</span> 执行路径。WASM 与更广泛的异构虚拟机组合仍在规划中，当前基线尚未交付。</p>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--composite"><div class="alux-vs-native-surface" role="img" aria-label="复合交易运行时图">
+    <div class="alux-vs-original-image alux-vs-original-image--composite">
+      <img src="/assets/alux-vs-others/composite-transitions-transparent.png" alt="" width="1570" height="1762" loading="lazy">
+    </div>
+  </div><figcaption>图 3：复合状态转换架构连接链上工作与 Web 2 服务；跨分片组合仍在路线图中。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong>ALUX 当前支持跨区块执行与可重放的 Web 2 I/O；跨分片组合仍在规划中。</p></figure>
+            <p class="alux-vs-article-close">简而言之，ALUX 不会强迫每个工作流都压缩成一笔短交易。ALUX 当前可让跨区块、连接 Web 2 的长交易得到重放；跨分片及更广泛的跨运行时组合仍属于架构与路线图。</p>
+          </section>
+        </div>
+      </div>
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Copyright © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
+<script src="/script.js?v=20261012-language-routes"></script>
+</body>
+</html>

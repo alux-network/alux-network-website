@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = ["en", "zh", "ja", "ko", "ar"];
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(value => value.toLowerCase().split(/[-_]/)[0]).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALUX مقارنةً بالحلول الأخرى | شبكة ALUX</title>
+<link rel="canonical" href="https://www.alux.network/ar/alux-vs-others">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/alux-vs-others">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/alux-vs-others">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/alux-vs-others">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/alux-vs-others">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/alux-vs-others">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/alux-vs-others">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="كيف توسّع ALUX استدعاءات الآلة الافتراضية القصيرة إلى المعاملات طويلة الأمد القابلة لإعادة التشغيل، مع توافق EVM المتاح اليوم وتركيب أوسع بين بيئات التشغيل ضمن خارطة الطريق.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+</head>
+<body data-page="aluxVsOthers">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/ar" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/alux-logo.png" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="التنقل الرئيسي">
+        <a href="/ar" data-nav="home">الرئيسية</a>
+        <a href="/ar/for-ai-agents" data-nav="vs">لوكلاء الذكاء الاصطناعي</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">استكشف</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/ar/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/ar/runtime-lab" data-nav="learnPcc">مختبر بيئة التشغيل</a>
+            <a href="/ar/alux-vs-others" data-nav="learnAlux">ALUX مقارنةً بالحلول الأخرى</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">المدونة</a>
+        <a href="/ar/team" data-nav="team">الفريق</a>
+        <a href="/ar/roadmap" data-nav="roadmap">خارطة الطريق</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>اللغة</span><span class="lang-current" data-lang-current>العربية</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/alux-vs-others" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/alux-vs-others" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/alux-vs-others" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/alux-vs-others" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/alux-vs-others" hreflang="ar">AR</a></div></div>
+        <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">تواصل معنا</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="تبديل قائمة التنقل"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="ar">
+    <article class="alux-vs-page alux-vs-article">
+      <header class="alux-vs-article-header fade-in">
+        <div class="alux-vs-article-lede">
+          <h1>طبقة تشغيل موزعة لتوحيد Web 2 وWeb 3</h1>
+          <p>شبكات البلوكشين هي في جوهرها آلات لانتقال الحالة. توسّع ALUX النموذج من استدعاءات قصيرة ومعزولة للآلة الافتراضية إلى المعاملات طويلة الأمد القابلة لإعادة التشغيل: تنفيذ عبر الكتل وعمليات إدخال وإخراج قابلة للتحقق مع Web 2 اليوم، فيما يندرج التركيب بين بيئات التشغيل وعبر الشظايا ضمن المعمارية الأوسع.</p>
+        </div>
+        <aside class="alux-vs-article-summary" aria-label="ملخص المقال">
+          <span>الاختلاف الأساسي</span>
+          <dl><div><dt>معظم السلاسل</dt><dd>استدعاءات VM قصيرة ومعزولة</dd></div><div><dt>ALUX</dt><dd>المعاملات طويلة الأمد القابلة لإعادة التشغيل</dd></div><div><dt>التنفيذ</dt><dd>انتقالات متوازية ومتزامنة اليوم؛ والانتقالات المركّبة هي النموذج المستهدف</dd></div><div><dt>دلالات المعاملات</dt><dd>دلالات المعاملات طويلة الأمد على غرار ACID</dd></div></dl>
+        </aside>
+      </header>
+
+      <div class="alux-vs-article-layout">
+        <aside class="alux-vs-article-nav" aria-label="في هذا المقال">
+          <span>في هذا المقال</span>
+          <a href="#problem">المشكلة</a><a href="#universal">المعاملات طويلة الأمد</a><a href="#execution">نموذج التنفيذ</a><a href="#compatibility">التركيب والتوافق</a>
+        </aside>
+
+        <div class="alux-vs-article-body">
+          <section class="alux-vs-article-section fade-in" id="problem">
+            <h2>المشكلة التي نعالجها</h2>
+            <p>تركّز كثير من الآلات الافتراضية للبلوكشين على تحديثات حالة قصيرة ومرتبة. توسّع ALUX هذا النموذج ليلائم مسارات العمل التي تحتاج إلى الانتظار أو الاستئناف أو التنسيق أو عبور حدود الكتل.</p>
+            <ul><li>سلاسل الكتل هي في جوهرها آلات انتقال حالة.</li><li>تركّز كثير من آلات البلوكشين الافتراضية الحالية على فئة أضيق من الانتقالات القصيرة والمرتبة.</li></ul>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--state"><div class="alux-vs-native-surface" role="img" aria-label="رسم نموذج انتقال الحالة">
+    <div class="alux-vs-original-image alux-vs-original-image--state">
+      <img src="/assets/alux-vs-others/state-transitions-page-crop-transparent.png" alt="" width="2070" height="910" loading="lazy">
+    </div>
+  </div><figcaption>الشكل 1. توسّع ALUX نموذج تنفيذ Web3 من تحديثات قصيرة نحو المعاملات طويلة الأمد القابلة لإعادة التشغيل.</figcaption><p class="alux-vs-figure-note"><strong>الخلاصة:</strong> تتمحور سلاسل كثيرة حول تحديثات قصيرة للحالة؛ أما ALUX فتضيف المعاملات طويلة الأمد القابلة لإعادة التشغيل.</p></figure>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="universal">
+            <h2>ALUX بوصفها بيئة تشغيل موزعة تدعم المعاملات طويلة الأمد</h2>
+            <p>تنمذج ALUX أنماط الانتقال المتوازي والمتزامن والمركب بما يتجاوز تحديثات الحالة أحادية الخطوة.</p>
+            <p>بدلًا من التعامل مع كل معاملة كتحديث حالة قصير ومعزول، يصوغ ALUX التنفيذ كبيئة تشغيل قادرة على تنسيق الانتقالات المتوازية والمتزامنة والمركبة.</p>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--types"><div class="alux-vs-native-surface" role="img" aria-label="رسم الانتقالات المتوازية والمتزامنة والمركبة"><div class="alux-vs-original-image alux-vs-original-image--types"><img src="/assets/alux-vs-others/transition-types-transparent.png" alt="" width="3634" height="1353" loading="lazy"></div></div><figcaption>الشكل 2. تدعم ALUX اليوم انتقالات الحالة المتوازية والمتزامنة، وتتعامل مع الانتقالات المركّبة بوصفها جزءًا من المعمارية المستهدفة.</figcaption><p class="alux-vs-figure-note"><strong>الخلاصة:</strong> يدفع التوازي الأعمال المستقلة إلى الأمام، ويتيح التزامن الانتظار والاستئناف، ويحدد التركيب كيف ينبغي تسوية الآثار المترابطة معًا.</p></figure>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="execution">
+            <h2>نموذج التنفيذ</h2>
+            <div class="alux-vs-capability-grid"><article class="alux-vs-capability alux-vs-capability--1"><span>متواز</span><div><h3>التنفيذ المتوازي</h3><p>يمكن اليوم تشغيل مثيلات <span class="alux-vs-accent">EVM</span> المعزولة بالتوازي. أما WASM فيندرج ضمن التوجه المخطط له نحو آلات افتراضية متغايرة.</p></div></article><article class="alux-vs-capability alux-vs-capability--2"><span>متزامن</span><div><h3>التنفيذ المتزامن</h3><p>تسمح ALUX للمعاملات بأن تعمل ك<span class="alux-vs-accent">روتينات تعاونية (coroutines)</span> يمكن تعليقها وإيقاظها وتداخلها معًا. وقد يكون التنفيذ غير حتمي، لكن إعادة التشغيل تظل حتمية.</p></div></article><article class="alux-vs-capability alux-vs-capability--3"><span>مركب</span><div><h3>الانتقالات المركبة</h3><p>يمكن للمعاملات أن تمتد عبر ارتفاعات كتل متعددة وتنسّق العمل على السلسلة مع آثار HTTPS قابلة لإعادة التشغيل، مع الحفاظ على العزل و<span class="alux-vs-accent">التسوية الذرية</span> داخل نطاق المعاملة في ALUX. ويظل التركيب عبر الشظايا جزءًا من المعمارية وخارطة الطريق.</p></div></article></div>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="compatibility">
+            <h2>الانتقالات المركبة والتوافق</h2>
+            <p>يمكن للمعاملات أن تمتد عبر ارتفاعات كتل متعددة وتنسّق العمل على السلسلة مع آثار HTTPS قابلة لإعادة التشغيل، مع الحفاظ على العزل و<span class="alux-vs-accent">التسوية الذرية</span> داخل نطاق المعاملة في ALUX. ويظل التركيب عبر الشظايا جزءًا من المعمارية وخارطة الطريق.</p>
+            <p>تتيح ALUX اليوم مسارًا لتشغيل <span class="alux-vs-accent">EVM</span> عبر بيئتها المعزولة وواجهة Ethereum JSON-RPC. أما WASM والتركيب الأوسع بين آلات افتراضية متغايرة فهما ضمن الخطة؛ ولا تتضمنهما النسخة الحالية.</p>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--composite"><div class="alux-vs-native-surface" role="img" aria-label="رسم طبقة تشغيل المعاملات المركبة">
+    <div class="alux-vs-original-image alux-vs-original-image--composite">
+      <img src="/assets/alux-vs-others/composite-transitions-transparent.png" alt="" width="1570" height="1762" loading="lazy">
+    </div>
+  </div><figcaption>الشكل 3. تصل معمارية الانتقالات المركبة بين العمل على السلسلة وخدمات Web 2؛ أما التركيب عبر الشظايا فلا يزال ضمن خارطة الطريق.</figcaption><p class="alux-vs-figure-note"><strong>الخلاصة:</strong> تدعم ALUX اليوم التنفيذ عبر الكتل وعمليات الإدخال والإخراج القابلة لإعادة التشغيل مع Web 2؛ أما التركيب عبر الشظايا فلا يزال مخططًا له.</p></figure>
+            <p class="alux-vs-article-close">باختصار، لا تحصر ALUX كل سير عمل في معاملة قصيرة. فهي تتيح اليوم إعادة تشغيل المعاملات طويلة الأمد (Long Transactions) الممتدة عبر الكتل والمتصلة بخدمات Web 2، بينما يظل التركيب عبر الشظايا وبين بيئات تشغيل أوسع جزءًا من المعمارية وخارطة الطريق.</p>
+          </section>
+        </div>
+      </div>
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">حقوق النشر © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
+<script src="/script.js?v=20261012-language-routes"></script>
+</body>
+</html>

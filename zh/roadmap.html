@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = ["en", "zh", "ja", "ko", "ar"];
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(value => value.toLowerCase().split(/[-_]/)[0]).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>路线图 | ALUX Network</title>
+<link rel="canonical" href="https://www.alux.network/zh/roadmap">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/roadmap">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/roadmap">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/roadmap">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/roadmap">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/roadmap">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/roadmap">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="ALUX Network 开发路线图：涵盖 2023 至 2027 年 TVM 运行时、BlockGit 共识、Tolang 工具链与 EVM 兼容路径的季度里程碑。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+</head>
+<body data-page="roadmap">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/zh" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/alux-logo.png" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/zh" data-nav="home">首页</a>
+        <a href="/zh/for-ai-agents" data-nav="vs">面向 AI 智能体</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">了解</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/zh/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/zh/runtime-lab" data-nav="learnPcc">Runtime Lab</a>
+            <a href="/zh/alux-vs-others" data-nav="learnAlux">ALUX VS 其它</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">博客</a>
+        <a href="/zh/team" data-nav="team">团队</a>
+        <a href="/zh/roadmap" data-nav="roadmap">路线图</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>语言</span><span class="lang-current" data-lang-current>中文</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/roadmap" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/roadmap" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/roadmap" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/roadmap" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/roadmap" hreflang="ar">AR</a></div></div>
+        <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">联系我们</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="切换导航菜单"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main id="page-content" class="roadmap-static" data-static="true" data-prerendered="zh">
+      <section class="hero hero-simple fade-in roadmap-hero">
+        <div class="hero-copy roadmap-hero-copy">
+          <span class="roadmap-kicker">ALUX</span>
+          <h1>路线图</h1>
+          <p class="roadmap-updated">最后更新：2026年10月5日</p>
+        </div>
+      </section>
+
+    <div class="roadmap-order" role="group" aria-label="路线图排序"><button type="button" data-roadmap-order="newest" aria-pressed="true">最新 <span aria-hidden="true">↑</span></button><button type="button" data-roadmap-order="oldest" aria-pressed="false">最早 <span aria-hidden="true">↓</span></button></div>
+<section data-year="2027" class="section fade-in roadmap-year-section roadmap-year-section--2027">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2027</span>
+          <span class="roadmap-kicker">2027 年</span>
+          <h2>2027</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--planned">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2027 年第一季度</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">计划中</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>使用 Lean 对关键系统性质进行形式化证明（计划中）</li>
+              <li>测试网上线（计划中）</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2026" class="section fade-in roadmap-year-section roadmap-year-section--2026">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2026</span>
+          <span class="roadmap-kicker">2026 年</span>
+          <h2>2026</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--active">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">2026 Q4</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">计划中</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>实现逻辑时钟和隔离级别强制机制（WIP）</li>
+              <li>类 GDB 的 TVM 调试与可观测性工具（WIP）</li>
+              <li>完成成本核算模型（WIP）</li>
+              <li>集成以太坊工具链（WIP）</li>
+              <li>实现并测试权益证明（PoS）合约（计划中）</li>
+              <li>实现同步与故障恢复机制（计划中）</li>
+              <li>实现垃圾回收（计划中）</li>
+              <li class="roadmap-break-bullet">交付 Solidity 示例，展示智能合约/智能体编排 <span class="roadmap-break-tail">（Async/Await、Join、Select）（计划中）</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">2026 Q3</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>在现有异步函数之外支持同步函数，并支持闭包与部分应用（已完成）</li>
+              <li>初步实现系统注册表、账户抽象，以及能力申领与委托合约（已完成）</li>
+              <li>简化 TVM 任务调度器，使并发执行更易于测试（已完成）</li>
+              <li>基于账本跟踪执行上下文，确保嵌套上下文中的可靠回滚（已完成）</li>
+              <li>用于验证编译器输出的 Tolang 参考解释器（已完成）</li>
+              <li>Tolang 代码格式化工具、tolang! Rust 宏，以及 IDE 的跳转到定义和重命名功能（已完成）</li>
+              <li>TypeScript API 客户端，类型化绑定由节点的 RPC 接口生成（已完成）</li>
+              <li>新的 TVM 解释器，支持嵌套集合、循环、闭包及初步的 gas 计量（审核中）</li>
+              <li>新的基于 Trap 的 EVM 沙箱（进行中）</li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">2026 Q2</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>原生 Tolang 解析器（已完成）</li>
+              <li>Tolang 编译期常量支持（已完成）</li>
+              <li>Tolang 语言服务器与 Tolang VS Code 扩展（已完成）</li>
+              <li>重构了测试框架（已完成）</li>
+              <li>对包含共识层在内的整个系统进行完整端到端集成测试（已完成）</li>
+              <li>完成 API 实现（已完成）</li>
+              <li>开发节点 CLI（已完成）</li>
+              <li>用于跨区块执行与原子最终化可视化的定制区块链浏览器（已完成）</li>
+              <li>新的基于 Trap 的 EVM 沙箱（进行中）</li>
+              <li>集成 Ethereum 工具链（进行中）</li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2026 Q1</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>简化跨区块执行的重放机制（已完成）</li>
+              <li>引入新的 EVM 沙箱，以提升效率并简化实现（已完成）</li>
+              <li>重构 TVM 共识、数据库和框架，以提升模块化程度（已完成）</li>
+              <li>实现惰性验证节点的跨区块执行与重放测试（已完成）</li>
+              <li>开发 TupleSpace Explorer，用于可视化状态和执行进度（已完成）</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2025" class="section fade-in roadmap-year-section roadmap-year-section--2025">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2025</span>
+          <span class="roadmap-kicker">2025 年</span>
+          <h2>2025</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--active">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">2025 Q4</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>测试无共识条件下的跨区块执行（已完成）</li>
+              <li>重构 TVM 框架以提升模块化程度（进行中）</li>
+              <li>规范并实现 API 端点（进行中）</li>
+              <li>设计逻辑时钟和隔离级别强制机制（已完成）</li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">2025 Q3</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>实现跨多个区块与最终确认 Fringe 的长交易执行、唤醒、打包和重放机制（已完成）</li>
+              <li>重构数据库模块以提升性能和效率（进行中）</li>
+              <li>重构 TVM 框架以提升模块化程度（进行中）</li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">2025 Q2</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>在 BlockGit 协议中实现并测试 Weaklink（已完成）</li>
+              <li>引入简单通道行为类型，以简化 TVM 架构并提升可靠性（已完成）</li>
+              <li>引入随机生成 Tolang 代码的测试框架并集成 CI（已完成）</li>
+              <li>重构重放逻辑（已完成）</li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2025 Q1</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>将整个系统重构为事件驱动框架，以最大化并发地支持并发交易执行、区块重放和区块提议（已完成）</li>
+              <li>实现 RPC 端点，并更新 BlockGit 以处理缺失区块（已完成）</li>
+              <li>修复 BlockGit 内存泄漏并提升性能（已完成）</li>
+              <li>将 Weaklink 引入 BlockGit 协议并完成部分实现（已完成）</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2024" class="section fade-in roadmap-year-section roadmap-year-section--2024">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2024</span>
+          <span class="roadmap-kicker">2024 年</span>
+          <h2>2024</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">2024 Q4</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>将 BlockGit 集成到节点平台（已完成）</li>
+              <li>在 Docker 网络上测试共识协议（已完成）</li>
+              <li>在区块合并中实现冲突解决算法（已完成）</li>
+              <li>重构存储模块以支持查询和状态提交（已完成）</li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">2024 Q3</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>支持回滚部分执行的执行上下文（已完成）</li>
+              <li>设计并初步实现新的共识协议 BlockGit（已完成）</li>
+              <li>用于测试共识协议实现的离散事件模拟器（已完成）</li>
+              <li>P2P 模块，并完成 BlockGit 初步集成（已完成）</li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">2024 Q2</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>重构并统一 Tuple Space 的执行与重放逻辑（已完成）</li>
+              <li>实现外部 HTTPS 调用的执行与重放，展示无需预言机/中继器即可主动协作 Web 2.0 系统的能力（已完成）</li>
+              <li>Blocklace 共识协议初步实现（已完成）</li>
+              <li>重新设计状态管理以降低内存使用（已完成）</li>
+              <li>设计用于强制执行隔离级别的逻辑时钟数据结构与算法（已完成）</li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2024 Q1</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>全局注册表实现与测试（已完成）</li>
+              <li>Tolang 与 TVM 的函数式编程支持（已完成）</li>
+              <li>在并发 TVM 上支持线程安全的顺序计算（已完成）</li>
+              <li>初步 EVM 兼容性测试（已完成）</li>
+              <li>实现 EVM 状态存储，以支持读已提交隔离级别（已完成）</li>
+              <li>重构代码，并对 TVM 的正确性与可重放性进行全面测试（已完成）</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2023" class="section fade-in roadmap-year-section roadmap-year-section--2023">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2023</span>
+          <span class="roadmap-kicker">2023 年</span>
+          <h2>2023</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">2023 Q4</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>实现新的任务管理器，以改善错误处理并支持线程局部性（已完成）</li>
+              <li>通过引入顺序计算支持提升性能（已完成）</li>
+              <li>特殊通道类型测试（已完成）</li>
+              <li>使用特殊通道类型简化重放日志（已完成）</li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">2023 Q3</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>存储层测试（已完成）</li>
+              <li>并发虚拟机执行与确定性重放测试（已完成）</li>
+              <li>特殊通道类型规范与实现（已完成）</li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">2023 Q2</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>并发虚拟机执行与重放实现（已完成）</li>
+              <li>存储层规范与实现（已完成）</li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2023 Q1</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">已完成</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>并发虚拟机操作码实现与测试（已完成）</li>
+              <li>并发交易确定性重放数据结构（已完成）</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+</main>
+
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Copyright © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
+<script src="/script.js?v=20261012-language-routes"></script>
+</body>
+</html>

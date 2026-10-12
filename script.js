@@ -19,6 +19,7 @@ const mobileQuery = window.matchMedia("(max-width: 960px)");
 
 const ui = {
   en: {
+    roadmapSort: { label: "Roadmap order", newest: "Newest", oldest: "Oldest" },
     languageLabel: "Language",
     primaryNavigationLabel: "Primary navigation",
     menuToggleLabel: "Toggle navigation menu",
@@ -1894,31 +1895,9 @@ function setStoredValue(key, value) {
   } catch (error) {}
 }
 
-function getSessionLanguage() {
-  try {
-    const value = sessionStorage.getItem("alux-lang");
-    if (value !== null) return value;
-  } catch (error) {}
-
-  return memoryStore["alux-lang"] ?? null;
-}
-
-function setSessionLanguage(value) {
-  memoryStore["alux-lang"] = value;
-
-  try {
-    sessionStorage.setItem("alux-lang", value);
-  } catch (error) {}
-}
-
 function detectLanguage() {
-  try {
-    localStorage.removeItem("alux-lang");
-  } catch (error) {}
-
-  const saved = getSessionLanguage();
-  if (saved && supportedLanguages.has(saved)) return saved;
-  return "en";
+  const routed = window.ALUX_LANGUAGE?.language;
+  return supportedLanguages.has(routed) ? routed : "en";
 }
 
 const forAiAgentsPage = {
@@ -4687,7 +4666,9 @@ function updateActiveNavigation() {
   const learnPages = new Set(["glvm", "aluxVsOthers", "parallelConcurrentComposable"]);
 
   document.querySelectorAll(".site-nav a").forEach((anchor) => {
-    const isActive = anchor.getAttribute("href") === activeHref;
+    const pathname = new URL(anchor.href, window.location.href).pathname;
+    const normalized = pathname.replace(/^\/(zh|ja|ko|ar)(?=\/|$)/, "").replace(/\.html$/, "") || "/";
+    const isActive = normalized === activeHref.replace(/\.html$/, "").replace(/^(?!\/)/, "/");
     anchor.classList.toggle("active-link", isActive);
     if (isActive) {
       anchor.setAttribute("aria-current", "page");
@@ -4785,8 +4766,7 @@ function renderPage(lang, { restoreAnchor = true } = {}) {
     node.textContent = chrome.cookie.button;
   });
 
-  // Keep the initial English DOM in place; bind the existing controls below.
-  // A saved language or a later language change still uses the normal renderer.
+  // Every language route arrives with its own complete initial content.
   const reusePrerender = pageContent.dataset.prerendered === lang;
   delete pageContent.dataset.prerendered;
   if (!reusePrerender) {
@@ -4801,7 +4781,7 @@ function renderPage(lang, { restoreAnchor = true } = {}) {
     }
   }
 
-  if (isStaticRoadmap) {
+  if (isStaticRoadmap && !reusePrerender) {
     if (staticRoadmapHTML === null) staticRoadmapHTML = pageContent.innerHTML;
     pageContent.innerHTML = staticRoadmapHTML;
     applyStaticTextTranslations(pageContent, lang, "roadmapStatic.");
@@ -4816,6 +4796,12 @@ function renderPage(lang, { restoreAnchor = true } = {}) {
   sanitizeRenderedExternalProjectNames(pageContent, lang);
   protectLocalizedTechnicalTokens(pageContent, lang);
   isolateArabicTechnicalRuns(pageContent, lang);
+  document.querySelectorAll("a[href]").forEach((link) => {
+    const targetLanguage = link.dataset.lang || lang;
+    if (window.ALUX_LANGUAGE) link.href = window.ALUX_LANGUAGE.urlFor(link.href, targetLanguage);
+  });
+  updateActiveNavigation();
+  initRoadmapOrder();
   initCapabilityMindmaps();
   setupGlvmPage();
   setupParallelConcurrentComposablePage();
@@ -4936,14 +4922,37 @@ function initLanguage() {
   renderPage(initial, { restoreAnchor: false });
 
   langButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
       const lang = button.dataset.lang;
-      setSessionLanguage(lang);
-      renderPage(lang);
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      setStoredValue("alux-lang", lang);
+      window.location.assign(window.ALUX_LANGUAGE.urlFor(window.location.href, lang));
       if (langDropdown && langSwitch) {
         langDropdown.classList.remove("open");
         langSwitch.setAttribute("aria-expanded", "false");
       }
+    });
+  });
+}
+
+function initRoadmapOrder() {
+  if (currentPage !== "roadmap") return;
+  const controls = pageContent.querySelectorAll("[data-roadmap-order]");
+  controls.forEach((button) => {
+    button.addEventListener("click", () => {
+      const ascending = button.dataset.roadmapOrder === "oldest";
+      const direction = ascending ? 1 : -1;
+      const years = [...pageContent.querySelectorAll(".roadmap-year-section")];
+      years.sort((a, b) => direction * (Number(a.dataset.year) - Number(b.dataset.year)));
+      years.forEach((section) => {
+        const grid = section.querySelector(".roadmap-milestone-grid");
+        [...grid.querySelectorAll(".roadmap-milestone")]
+          .sort((a, b) => direction * (Number(a.dataset.quarter) - Number(b.dataset.quarter)))
+          .forEach((milestone) => grid.append(milestone));
+        pageContent.append(section);
+      });
+      controls.forEach((control) => control.setAttribute("aria-pressed", String(control === button)));
     });
   });
 }

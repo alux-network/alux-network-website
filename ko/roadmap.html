@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = ["en", "zh", "ja", "ko", "ar"];
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(value => value.toLowerCase().split(/[-_]/)[0]).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로드맵 | ALUX Network</title>
+<link rel="canonical" href="https://www.alux.network/ko/roadmap">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/roadmap">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/roadmap">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/roadmap">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/roadmap">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/roadmap">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/roadmap">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="2023년부터 2027년까지 TVM 런타임, BlockGit 합의, Tolang 도구 체계, EVM 호환성의 분기별 개발 이정표를 담은 ALUX Network 로드맵입니다.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+</head>
+<body data-page="roadmap">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/ko" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/alux-logo.png" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko" data-nav="home">홈</a>
+        <a href="/ko/for-ai-agents" data-nav="vs">AI 에이전트용</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">알아보기</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/ko/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/ko/runtime-lab" data-nav="learnPcc">런타임 랩</a>
+            <a href="/ko/alux-vs-others" data-nav="learnAlux">ALUX와 다른 시스템</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">블로그</a>
+        <a href="/ko/team" data-nav="team">팀</a>
+        <a href="/ko/roadmap" data-nav="roadmap">로드맵</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>언어</span><span class="lang-current" data-lang-current>한국어</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/roadmap" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/roadmap" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/roadmap" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/roadmap" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/roadmap" hreflang="ar">AR</a></div></div>
+        <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">문의하기</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="탐색 메뉴 전환"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main id="page-content" class="roadmap-static" data-static="true" data-prerendered="ko">
+      <section class="hero hero-simple fade-in roadmap-hero">
+        <div class="hero-copy roadmap-hero-copy">
+          <span class="roadmap-kicker">ALUX</span>
+          <h1>로드맵</h1>
+          <p class="roadmap-updated">최종 업데이트: 2026년 10월 5일</p>
+        </div>
+      </section>
+
+    <div class="roadmap-order" role="group" aria-label="로드맵 정렬"><button type="button" data-roadmap-order="newest" aria-pressed="true">최신순 <span aria-hidden="true">↑</span></button><button type="button" data-roadmap-order="oldest" aria-pressed="false">오래된순 <span aria-hidden="true">↓</span></button></div>
+<section data-year="2027" class="section fade-in roadmap-year-section roadmap-year-section--2027">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2027</span>
+          <span class="roadmap-kicker">2027년</span>
+          <h2>2027</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--planned">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2027년 1분기</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">계획됨</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>핵심 시스템 속성에 대한 Lean 형식 증명 (예정)</li>
+              <li>테스트넷 출시 (예정)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2026" class="section fade-in roadmap-year-section roadmap-year-section--2026">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2026</span>
+          <span class="roadmap-kicker">2026년</span>
+          <h2>2026</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--active">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">2026 Q4</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">계획됨</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>논리 시계와 격리 수준 강제 메커니즘 구현 (WIP)</li>
+              <li>&quot;GDB&quot; 스타일의 TVM 디버깅 및 관측성 도구 (WIP)</li>
+              <li>비용 회계 모델 완성 (WIP)</li>
+              <li>Ethereum 툴체인 통합 (WIP)</li>
+              <li>Proof-of-Stake(PoS) 컨트랙트 구현 및 테스트 (계획됨)</li>
+              <li>동기화 및 장애 복구 메커니즘 구현 (예정)</li>
+              <li>가비지 컬렉션 구현 (예정)</li>
+              <li class="roadmap-break-bullet">스마트 컨트랙트/에이전트 오케스트레이션을 보여 주는 Solidity 예제 제공 <span class="roadmap-break-tail">(async/await, join, select) (계획됨)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">2026 Q3</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>기존 비동기 함수에 클로저와 부분 적용을 지원하는 동기 함수 추가 (완료)</li>
+              <li>초기 시스템 레지스트리, 계정 추상화, 케이퍼빌리티 요청 및 위임 컨트랙트 (완료)</li>
+              <li>TVM 작업 스케줄러를 단순화하고 동시 실행 테스트를 더 쉽게 개선 (완료)</li>
+              <li>중첩 컨텍스트 전반에서 안정적인 롤백을 지원하는 원장 기반 실행 컨텍스트 추적 (완료)</li>
+              <li>컴파일러 출력을 검증하기 위한 Tolang 참조 인터프리터 (완료)</li>
+              <li>Tolang 코드 포매터, tolang! Rust 매크로, IDE 정의로 이동 및 이름 변경 (완료)</li>
+              <li>노드의 RPC 인터페이스에서 생성한 타입 바인딩을 제공하는 TypeScript API 클라이언트 (완료)</li>
+              <li>중첩 컬렉션, 루프, 클로저 및 초기 가스 계량 기능을 갖춘 새 TVM 인터프리터 (검토 중)</li>
+              <li>새로운 트랩 기반 EVM 샌드박스 (진행 중)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">2026 Q2</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>네이티브 Tolang 파서 (완료)</li>
+              <li>Tolang 컴파일 타임 상수 지원 (완료)</li>
+              <li>Tolang 언어 서버 및 Tolang VS Code 확장 (완료)</li>
+              <li>테스트 프레임워크 리팩터링 (완료)</li>
+              <li>합의 계층을 포함한 전체 시스템의 엔드투엔드 통합 테스트 수행 (완료)</li>
+              <li>API 구현 완료 (완료)</li>
+              <li>노드 CLI 개발 (완료)</li>
+              <li>블록 간 실행 및 원자적 최종화 시각화를 위한 맞춤형 블록체인 익스플로러 (완료)</li>
+              <li>새로운 트랩 기반 EVM 샌드박스 (진행 중)</li>
+              <li>Ethereum 툴체인과 통합 (진행 중)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2026 Q1</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>블록 간 실행을 위한 리플레이 메커니즘 단순화 (완료)</li>
+              <li>효율성과 단순성을 높이기 위한 새로운 EVM Sandbox 도입 (완료)</li>
+              <li>모듈성을 높이기 위해 TVM 합의, 데이터베이스, 프레임워크 리팩터링 (완료)</li>
+              <li>Lazy Validator를 통한 블록 간 실행 및 리플레이 테스트 구현 (완료)</li>
+              <li>상태와 실행 진행을 시각화하는 TupleSpace Explorer 개발 (완료)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2025" class="section fade-in roadmap-year-section roadmap-year-section--2025">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2025</span>
+          <span class="roadmap-kicker">2025년</span>
+          <h2>2025</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--active">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">2025 Q4</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>합의 없는 블록 간 실행 테스트 (완료)</li>
+              <li>모듈화를 개선하기 위한 TVM 프레임워크 리팩터링 (진행 중)</li>
+              <li>API 엔드포인트 명세 및 구현 (진행 중)</li>
+              <li>논리 시계와 격리 수준 강제 메커니즘 설계 (완료)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">2025 Q3</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>여러 블록과 최종화 경계를 가로지르는 장기 트랜잭션을 실행, 깨우기, 패킹, 리플레이하는 메커니즘 구현 (완료)</li>
+              <li>성능과 효율을 높이기 위한 데이터베이스 모듈 리팩터링 (진행 중)</li>
+              <li>모듈화를 개선하기 위한 TVM 프레임워크 리팩터링 (진행 중)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">2025 Q2</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>BlockGit 프로토콜에서 Weaklink 구현 및 테스트 (완료)</li>
+              <li>TVM 아키텍처를 단순화하고 안정성을 높이기 위해 단순 채널 행동 타입 도입 (완료)</li>
+              <li>무작위 생성 Tolang 코드 테스트 프레임워크 도입 및 CI 통합 (완료)</li>
+              <li>리플레이 로직 리팩터링 (완료)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2025 Q1</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>최대 동시성을 위해 동시 트랜잭션 실행, 블록 리플레이, 블록 제안을 지원하도록 전체 시스템을 이벤트 기반 프레임워크로 리팩터링 (완료)</li>
+              <li>RPC 엔드포인트 구현 및 누락 블록을 처리하도록 BlockGit 업데이트 (완료)</li>
+              <li>BlockGit의 메모리 누수 수정 및 성능 개선 (완료)</li>
+              <li>BlockGit 프로토콜에 Weaklink를 도입하고 부분 구현 (완료)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2024" class="section fade-in roadmap-year-section roadmap-year-section--2024">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2024</span>
+          <span class="roadmap-kicker">2024년</span>
+          <h2>2024</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">2024 Q4</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>BlockGit을 노드 플랫폼에 통합 (완료)</li>
+              <li>Docker 네트워크에서 합의 프로토콜 테스트 (완료)</li>
+              <li>블록 병합에서 충돌 해결 알고리즘 구현 (완료)</li>
+              <li>조회와 상태 커밋을 지원하도록 스토리지 모듈 리팩터링 (완료)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">2024 Q3</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>실행 일부를 되돌릴 수 있는 실행 컨텍스트 지원 (완료)</li>
+              <li>새로운 합의 프로토콜 BlockGit 설계 및 초기 구현 (완료)</li>
+              <li>합의 프로토콜 구현을 테스트하기 위한 이산 이벤트 시뮬레이터 (완료)</li>
+              <li>BlockGit 초기 통합을 포함한 P2P 모듈 (완료)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">2024 Q2</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Tuple Space 실행 및 리플레이 로직 리팩터링과 통합 (완료)</li>
+              <li>오라클/릴레이어 없이 Web 2.0 시스템과 능동적으로 협업할 수 있음을 보여 주기 위해 외부 HTTPS 호출 실행 및 리플레이 구현 (완료)</li>
+              <li>Blocklace 합의 프로토콜 초기 구현 (완료)</li>
+              <li>메모리 사용량을 줄이기 위한 상태 관리 재설계 (완료)</li>
+              <li>격리 수준을 강제하는 논리 시계 데이터 구조와 알고리즘 설계 (완료)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2024 Q1</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>글로벌 레지스트리 구현 및 테스트 (완료)</li>
+              <li>Tolang과 TVM의 함수형 프로그래밍 지원 (완료)</li>
+              <li>동시성 TVM에서 스레드 안전 순차 계산 지원 (완료)</li>
+              <li>예비 EVM 호환성 테스트 수행 (완료)</li>
+              <li>Read-Committed 격리 수준을 지원하기 위한 EVM 상태 저장소 구현 (완료)</li>
+              <li>TVM의 정확성과 리플레이 가능성에 대한 코드 리팩터링 및 종합 테스트 수행 (완료)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2023" class="section fade-in roadmap-year-section roadmap-year-section--2023">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2023</span>
+          <span class="roadmap-kicker">2023년</span>
+          <h2>2023</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">2023 Q4</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>오류 처리를 개선하고 스레드 지역성을 지원하기 위한 새 태스크 매니저 구현 (완료)</li>
+              <li>순차 계산 지원 도입을 통한 성능 개선 (완료)</li>
+              <li>특수 채널 타입 테스트 (완료)</li>
+              <li>특수 채널 타입을 활용해 리플레이 로그 단순화 (완료)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">2023 Q3</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>스토리지 계층 테스트 (완료)</li>
+              <li>동시성 가상 머신 실행 및 결정적 리플레이 테스트 (완료)</li>
+              <li>특수 채널 타입 명세 및 구현 (완료)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">2023 Q2</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>동시성 가상 머신 실행 및 리플레이 구현 (완료)</li>
+              <li>스토리지 계층 명세 및 구현 (완료)</li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2023 Q1</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">완료</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>동시성 가상 머신 옵코드 구현 및 테스트 (완료)</li>
+              <li>동시 트랜잭션 결정적 리플레이 데이터 구조 (완료)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+</main>
+
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Copyright © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
+<script src="/script.js?v=20261012-language-routes"></script>
+</body>
+</html>

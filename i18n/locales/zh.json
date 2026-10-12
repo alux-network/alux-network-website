@@ -9514,6 +9514,30 @@
       "status": "ai-reviewed",
       "reviewedAt": "2026-07-04T10:56:44.508Z",
       "reviewerNotes": "Codex native-language sync for production-agent RISC module."
+    },
+    "ui.roadmapSort.label": {
+      "source": "Roadmap order",
+      "sourceHash": "897c0cfaec30b85c0e5f0e0b582fcef5f316a8438376fd035ec03fbb401cc4c8",
+      "text": "路线图排序",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-10-12T00:00:00.000Z",
+      "reviewerNotes": "Reviewed sorting control labels for the roadmap."
+    },
+    "ui.roadmapSort.newest": {
+      "source": "Newest",
+      "sourceHash": "d15efa178cf65ae16596a270671aa320bc9d2a5f18d78ecc5d479f73b3ffd51e",
+      "text": "最新",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-10-12T00:00:00.000Z",
+      "reviewerNotes": "Reviewed sorting control labels for the roadmap."
+    },
+    "ui.roadmapSort.oldest": {
+      "source": "Oldest",
+      "sourceHash": "505dc450753e546ecbef6830acea257dc35d0d5303d8e76d0d605a7997a10a42",
+      "text": "最早",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-10-12T00:00:00.000Z",
+      "reviewerNotes": "Reviewed sorting control labels for the roadmap."
     }
   }
 }

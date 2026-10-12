@@ -13,7 +13,7 @@ const activePages = [
   "roadmap.html"
 ];
 const compatibilityPage = "parallel-concurrent-composable.html";
-const allPages = [...activePages, compatibilityPage];
+const allPages = [...activePages, ...["zh", "ja", "ko", "ar"].flatMap(lang => activePages.map(page => `${lang}/${page}`)), compatibilityPage];
 const errors = [];
 const checkedReferences = new Set();
 
@@ -39,7 +39,14 @@ async function ensureLocalReference(owner, value) {
   if (checkedReferences.has(referenceKey)) return;
   checkedReferences.add(referenceKey);
   try {
-    const stat = await fs.stat(resolved);
+    let stat;
+    try { stat = await fs.stat(resolved); } catch (error) {
+      if (path.extname(resolved)) throw error;
+      try { stat = await fs.stat(resolved + ".html"); } catch {
+        stat = await fs.stat(path.join(resolved, "index.html"));
+      }
+    }
+    if (stat.isDirectory()) stat = await fs.stat(path.join(resolved, "index.html"));
     if (!stat.isFile() || stat.size === 0) errors.push(`${owner}: empty or non-file reference: ${value}`);
   } catch {
     errors.push(`${owner}: missing local reference: ${value}`);
@@ -51,7 +58,7 @@ for (const page of allPages) {
   const attributes = html.matchAll(/(?:src|href|poster)\s*=\s*["']([^"']+)["']/gi);
   for (const match of attributes) await ensureLocalReference(page, match[1]);
 
-  if (!html.includes('rel="icon" href="assets/alux-favicon.png?v=20260714-logo4"')) {
+  if (!/rel="icon" href="\/?assets\/alux-favicon\.png\?v=20260714-logo4"/.test(html)) {
     errors.push(`${page}: missing explicit favicon`);
   }
 

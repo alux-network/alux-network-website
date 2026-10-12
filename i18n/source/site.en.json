@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T18:00:24.303Z",
-  "source": "script.js:all active English page and shared UI data; roadmap.html static roadmap text nodes",
+  "generatedAt": "2026-10-12T06:48:19.347Z",
+  "source": "script.js:all active English page and shared UI data; scripts/templates/roadmap.html static roadmap text nodes",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -4081,6 +4081,18 @@
     "ui.primaryNavigationLabel": {
       "source": "Primary navigation",
       "sourceHash": "e1bfe7eccc45465f536688db2ec9f2cc8a09819fe80bdd9f4dc098363eb9f0b4"
+    },
+    "ui.roadmapSort.label": {
+      "source": "Roadmap order",
+      "sourceHash": "897c0cfaec30b85c0e5f0e0b582fcef5f316a8438376fd035ec03fbb401cc4c8"
+    },
+    "ui.roadmapSort.newest": {
+      "source": "Newest",
+      "sourceHash": "d15efa178cf65ae16596a270671aa320bc9d2a5f18d78ecc5d479f73b3ffd51e"
+    },
+    "ui.roadmapSort.oldest": {
+      "source": "Oldest",
+      "sourceHash": "505dc450753e546ecbef6830acea257dc35d0d5303d8e76d0d605a7997a10a42"
     },
     "vs.metaDescription": {
       "source": "How ALUX gives production AI agents cross-block continuity, tuple-space coordination, native OCAP support, and an EVM path through TSAC.",

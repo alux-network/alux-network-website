@@ -1,6 +1,6 @@
 window.ALUX_SITE_I18N = {
-  "generatedAt": "2026-10-04T18:00:24.303Z",
-  "source": "script.js:all active English page and shared UI data; roadmap.html static roadmap text nodes",
+  "generatedAt": "2026-10-12T06:48:19.347Z",
+  "source": "script.js:all active English page and shared UI data; scripts/templates/roadmap.html static roadmap text nodes",
   "qualityGate": "Each page is published only when every current entry on that page is ai-reviewed or human-reviewed.",
   "entries": {
     "ar": {
@@ -1192,7 +1192,10 @@ window.ALUX_SITE_I18N = {
       "ui.nav.roadmap": "خارطة الطريق",
       "ui.nav.team": "الفريق",
       "ui.nav.vs": "لوكلاء الذكاء الاصطناعي",
-      "ui.primaryNavigationLabel": "التنقل الرئيسي"
+      "ui.primaryNavigationLabel": "التنقل الرئيسي",
+      "ui.roadmapSort.label": "ترتيب خارطة الطريق",
+      "ui.roadmapSort.newest": "الأحدث",
+      "ui.roadmapSort.oldest": "الأقدم"
     },
     "ja": {
       "home.hero.eyebrow": "ALUX Network",
@@ -2383,7 +2386,10 @@ window.ALUX_SITE_I18N = {
       "ui.nav.roadmap": "ロードマップ",
       "ui.nav.team": "チーム",
       "ui.nav.vs": "AIエージェント向け",
-      "ui.primaryNavigationLabel": "メインナビゲーション"
+      "ui.primaryNavigationLabel": "メインナビゲーション",
+      "ui.roadmapSort.label": "ロードマップの並び順",
+      "ui.roadmapSort.newest": "新しい順",
+      "ui.roadmapSort.oldest": "古い順"
     },
     "ko": {
       "home.hero.eyebrow": "ALUX Network",
@@ -3574,7 +3580,10 @@ window.ALUX_SITE_I18N = {
       "ui.nav.roadmap": "로드맵",
       "ui.nav.team": "팀",
       "ui.nav.vs": "AI 에이전트용",
-      "ui.primaryNavigationLabel": "주요 탐색"
+      "ui.primaryNavigationLabel": "주요 탐색",
+      "ui.roadmapSort.label": "로드맵 정렬",
+      "ui.roadmapSort.newest": "최신순",
+      "ui.roadmapSort.oldest": "오래된순"
     },
     "zh": {
       "home.hero.eyebrow": "ALUX Network",
@@ -4765,7 +4774,10 @@ window.ALUX_SITE_I18N = {
       "ui.nav.roadmap": "路线图",
       "ui.nav.team": "团队",
       "ui.nav.vs": "面向 AI 智能体",
-      "ui.primaryNavigationLabel": "主导航"
+      "ui.primaryNavigationLabel": "主导航",
+      "ui.roadmapSort.label": "路线图排序",
+      "ui.roadmapSort.newest": "最新",
+      "ui.roadmapSort.oldest": "最早"
     }
   }
 };

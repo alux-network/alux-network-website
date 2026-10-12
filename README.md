@@ -8,12 +8,13 @@ This repository contains the source code and production assets for the official 
 
 We maintain this repository as the source of truth for the ALUX Network website. The website presents our technology, roadmap, team, and ongoing development.
 
-It is built as a multilingual static website using HTML, CSS, and JavaScript. English is the default language for every new visit, with Simplified Chinese, Korean, Japanese, and Arabic available through the language selector.
+It is built as a multilingual static website using HTML, CSS, and JavaScript. English uses unprefixed URLs, with Simplified Chinese (`/zh`), Korean (`/ko`), Japanese (`/ja`), and Arabic (`/ar`) using language directories. The homepage entry matches browser language preferences unless the visitor has saved a manual choice. Direct language URLs retain their own language.
 
 ## Repository Structure
 
 - `index.html` — Official homepage
 - `*.html` — Website pages and compatibility routes
+- `zh/`, `ko/`, `ja/`, `ar/` — Generated localized pages
 - `assets/` — Images, videos, icons, and visual assets
 - `i18n/` — Localization sources and generated language bundles
 - `blender/` — 3D source scenes and production scripts
@@ -21,9 +22,11 @@ It is built as a multilingual static website using HTML, CSS, and JavaScript. En
 
 ## Development
 
-No build step is required for local preview. Open `index.html` directly in a browser.
+Preview through Vercel or an HTTP static server supporting directory index pages and clean URLs. `vercel.json` removes `.html` from public URLs and redirects existing `.html` links to their clean equivalents.
 
-Pages include their initial English content in HTML so navigation does not show an empty shell while JavaScript loads. The runtime then enables interactions and applies any language selected in the current session. After changing page content or renderers in `script.js`, refresh the initial HTML with `npm run pages:render`. The checks below reject stale generated content.
+All 35 language pages include their own navigation and initial content in HTML. The runtime enables interactions without replacing the page with another language. After changing content or renderers in `script.js`, refresh generated HTML with `npm run pages:render`. The checks below reject stale generated content and invalid language routes.
+
+Edit roadmap milestones in `scripts/templates/roadmap.html`, preserving the reviewed localization workflow. This source template keeps stable text-node translation keys; the generated roadmap HTML is not the editing source. The generator sorts years and quarters numerically, newest first (Q4 to Q1 within each year), including future additions. The Newest/Oldest controls reverse both years and quarters without changing milestone content. Run localization synchronization and review any changed entries before generating pages.
 
 Before publishing changes, run:
 
