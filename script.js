@@ -2121,7 +2121,7 @@ const forAiAgentsPage = {
       statement: "Production-grade agents must be RISC. ALUX builds the machine.",
       specLabel: "RISC specification",
       visual: {
-        src: "assets/for-ai-agent/agent-runtime-robot-ai.png",
+        src: "assets/optimized/agent-runtime-robot-ai.ed8bfc285235.webp",
         alt: "Line illustration of a production agent runtime machine",
         label: "ALUX runtime machine",
         tags: [
@@ -3105,7 +3105,7 @@ function renderStateTransitionDiagram(diagrams, caption, note) {
   const state = (diagrams && diagrams.state) || {};
   const body = `
     <div class="alux-vs-original-image alux-vs-original-image--state">
-      <img src="assets/alux-vs-others/state-transitions-page-crop-transparent.png" alt="" width="2070" height="910" loading="lazy">
+      <img src="assets/optimized/state-transitions-page-crop-transparent.0f12753d2c10.webp" alt="" width="2070" height="910" loading="lazy">
     </div>
   `;
   return renderAluxVsNativeFigure(caption, "alux-vs-native-figure--state", state.aria, body, note);
@@ -3113,14 +3113,14 @@ function renderStateTransitionDiagram(diagrams, caption, note) {
 
 function renderTransitionTypesDiagram(diagrams, caption, note) {
   const types = (diagrams && diagrams.types) || {};
-  return renderAluxVsNativeFigure(caption, "alux-vs-native-figure--types", types.aria, `<div class="alux-vs-original-image alux-vs-original-image--types"><img src="assets/alux-vs-others/transition-types-transparent.png" alt="" width="3634" height="1353" loading="lazy"></div>`, note);
+  return renderAluxVsNativeFigure(caption, "alux-vs-native-figure--types", types.aria, `<div class="alux-vs-original-image alux-vs-original-image--types"><img src="assets/optimized/transition-types-transparent.e5e4dd5437d5.webp" alt="" width="3634" height="1353" loading="lazy"></div>`, note);
 }
 
 function renderCompositeRuntimeDiagram(diagrams, caption, note) {
   const composite = (diagrams && diagrams.composite) || {};
   const body = `
     <div class="alux-vs-original-image alux-vs-original-image--composite">
-      <img src="assets/alux-vs-others/composite-transitions-transparent.png" alt="" width="1570" height="1762" loading="lazy">
+      <img src="assets/optimized/composite-transitions-transparent.e45337a28246.webp" alt="" width="1570" height="1762" loading="lazy">
     </div>
   `;
   return renderAluxVsNativeFigure(caption, "alux-vs-native-figure--composite", composite.aria, body, note);
@@ -3448,7 +3448,7 @@ function renderGlvmOcapStorySection(section = {}, lang = "en") {
   const cards = comparison.map((item, index) => `
     <article class="glvm-ocap-card glvm-ocap-card--${escapeAttribute(item.tone || "")}">
       <div class="glvm-ocap-card-visual" aria-hidden="true">
-        <img src="${visuals[index] || visuals[0]}" alt="" width="600" height="360" loading="eager" decoding="async">
+        <img src="${visuals[index] || visuals[0]}" alt="" width="600" height="360" loading="lazy" decoding="async">
       </div>
       <div class="glvm-ocap-card-copy">
         <span>${item.label}</span>
@@ -3670,8 +3670,8 @@ function renderGlvmPage(page, lang = "en") {
         </div>
         <figure class="glvm-hero-visual">
           <div class="glvm-hero-media">
-            <img src="${escapeAttribute(page.hero.visual.poster)}" alt="" aria-hidden="true" class="glvm-hero-poster">
-            <video muted loop autoplay playsinline preload="metadata" poster="${escapeAttribute(page.hero.visual.poster)}" aria-label="${escapeAttribute(page.hero.visual.alt)}" data-glvm-video>
+            <img src="${escapeAttribute(page.hero.visual.poster)}" alt="" aria-hidden="true" class="glvm-hero-poster" fetchpriority="high" decoding="async">
+            <video muted loop playsinline preload="none" poster="${escapeAttribute(page.hero.visual.poster)}" aria-label="${escapeAttribute(page.hero.visual.alt)}" data-glvm-video>
               <source src="${escapeAttribute(page.hero.visual.video)}" type="video/mp4">
             </video>
             <div class="glvm-hero-overlay" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -4488,8 +4488,24 @@ function setupGlvmPage() {
   if (video) {
     const media = video.closest(".glvm-hero-media");
     video.addEventListener("error", () => media?.classList.add("is-video-missing"), { once: true });
-    const attempt = video.play();
-    if (attempt && typeof attempt.catch === "function") attempt.catch(() => media?.classList.add("is-video-missing"));
+    let inView = false;
+    let pageLoaded = document.readyState === "complete";
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updatePlayback = () => {
+      if (!pageLoaded || !inView || document.hidden || motion.matches || navigator.connection?.saveData) {
+        video.pause();
+        return;
+      }
+      const attempt = video.play();
+      if (attempt && typeof attempt.catch === "function") attempt.catch(() => media?.classList.add("is-video-missing"));
+    };
+    new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      updatePlayback();
+    }).observe(video);
+    window.addEventListener("load", () => { pageLoaded = true; updatePlayback(); }, { once: true });
+    document.addEventListener("visibilitychange", updatePlayback);
+    motion.addEventListener("change", updatePlayback);
   }
 
   const initialLayer = layerButtons.find((button) => button.classList.contains("is-active")) || layerButtons[0];

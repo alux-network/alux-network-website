@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import vm from 'node:vm';
+import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const source=await fs.readFile(path.join(root,'script.js'),'utf8');
@@ -10,6 +11,11 @@ const roadmapTemplate=await fs.readFile(path.join(root,'scripts/templates/roadma
 const languages=['en','zh','ja','ko','ar'];
 const files=['index.html','for-ai-agents.html','glvm.html','alux-vs-others.html','runtime-lab.html','team.html','roadmap.html'];
 const checkOnly=process.argv.includes('--check');
+const media=JSON.parse(await fs.readFile(path.join(root,'scripts/optimized-media.json'),'utf8'));
+async function emit(target,content){
+ const existing=await fs.readFile(target,'utf8').catch(()=>null);
+ if(existing!==content){if(checkOnly)stale.push(path.relative(root,target));else{await fs.mkdir(path.dirname(target),{recursive:true});await fs.writeFile(target,content,'utf8');}}
+}
 const escape=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const pageUrl=(file,lang)=>'https://www.alux.network'+(lang==='en'?'':'/'+lang)+(file==='index.html'?(lang==='en'?'/':''):'/'+file.replace(/\.html$/,''));
 function render(page,language){
@@ -55,7 +61,7 @@ function roadmap(language,result){
  });
  html=html.replace(/(<p\b[^>]*data-quarter="(Q[1-4])"[^>]*>)([^<]*)(<\/p>)/g,(_,open,q,label,close)=>open+'<span class="sr-only">'+label+'</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">'+q+'</bdi>'+close);
  if(language==='en')html=html.replace(/\((Completed|Planned|In Progress|In Review|WIP)\)/g,'<strong>($1)</strong>');
- html=html.replace(/([（(][^<()（）]+[)）])(?=\s*(?:<\/strong>)?<\/li>)/g,'<span class="roadmap-item-status">$1</span>');
+ html=html.replace(/([（(][^<()（）]+[)）])(?=\s*(?:<\/strong>)?(?:<\/span>)?<\/li>)/g,'<span class="roadmap-item-status">$1</span>');
  const years=[...html.matchAll(/<section\b[^>]*roadmap-year-section--(\d{4})[^>]*>[\s\S]*?<\/section>/g)].map(match=>{
   let section=match[0].replace(/<section\b/,'<section data-year="'+match[1]+'"');
   const quarters=[...section.matchAll(/<article\b[\s\S]*?<\/article>/g)].map(m=>({quarter:Number(m[0].match(/data-quarter="Q([1-4])"/)[1]),html:m[0]})).sort((a,b)=>b.quarter-a.quarter);
@@ -75,6 +81,8 @@ for(const file of files){
   const result=render(page,language),chrome=result.chrome[language];
   let html=original.replace(/\n*<script data-initial-navigation>[\s\S]*?<\/script>\n*/,'\n').replace(/\n*<script data-language-routing>[\s\S]*?<\/script>\n*/,'\n').replace(/\s*<link rel="alternate" hreflang="[^"]+"[^>]*>/g,'');
   html=html.replace(/<html\b[^>]*>/,'<html lang="'+language+'" dir="'+(language==='ar'?'rtl':'ltr')+'">');
+  html=html.replace(/\s*<link\b[^>]*href="https:\/\/fonts\.(?:googleapis|gstatic)\.com[^"<>]*"[^>]*>/g,'');
+  if(!html.includes('href="/fonts.css?'))html=html.replace(/(<link rel="stylesheet" href="\/styles\.css)/,'<link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">\n$1');
   // Slow web fonts keep the stable fallback rather than swapping after paint.
   html=html.replace(/([&?])display=swap\b/g,'$1display=optional');
   html=html.replace(/(<meta charset="UTF-8">)/,'$1\n<script data-language-routing>\n'+routing.trim()+'\n</script>');
@@ -105,11 +113,26 @@ for(const file of files){
    if(attr==='href'&&files.includes(pageFile))return attr+'="'+pageUrl(pageFile,language).replace('https://www.alux.network','')+parts.join('')+'"';
    return attr+'="/'+raw.replace(/^\//,'')+parts.join('')+'"';
   });
-  html=html.replace(/(styles\.css|script\.js)\?v=[^"\s]+/g,'$1?v=20261013-stable-layout').replace(/site.generated.js\?v=[^"\s]+/g,'site.generated.js?v=20261012-roadmap-order');
+  for(const [before,after] of Object.entries(media))html=html.replaceAll(before,after);
+  html=html.replace(/(\/assets\/optimized\/[^"?]+\.webp)\?v=[^"]+/g,'$1');
+  html=html.replace(/\s*<script\b[^>]*src="\/i18n\/(?:site\.generated\.js|runtime\/[^"?]+)(?:\?[^"<>]*)?"[^>]*><\/script>/g,'');
+  if(language!=='en'){
+   const prefixes=[page+'.','ui.','inlineUiLabels.','capabilityFlowLabels.','homeHeroActions.',...(page==='roadmap'?['roadmapStatic.']:[])];
+   const entries=Object.fromEntries(Object.entries(result.entries).filter(([key])=>prefixes.some(prefix=>key.startsWith(prefix))));
+   const pack='window.ALUX_SITE_I18N='+JSON.stringify({entries:{[language]:entries}})+';\n';
+   const name='i18n/runtime/'+language+'/'+page+'.js',version=createHash('sha256').update(pack).digest('hex').slice(0,12);
+   await emit(path.join(root,name),pack);
+   html=html.replace(/(<script\b[^>]*src="\/script\.js)/,'<script defer src="/'+name+'?v='+version+'"></script>\n$1');
+  }
+  html=html.replace(/<script\b(?: defer)? src="\/script\.js/g,'<script defer src="/script.js');
+  html=html.replace(/(styles\.css|script\.js)\?v=[^"\s]+/g,'$1?v=20261014-loading-polish').replace(/home-hero-3d\.css\?v=[^"\s]+/g,'home-hero-3d.css?v=20261014-lossless-media').replace(/roadmap\.css\?v=[^"\s]+/g,'roadmap.css?v=20261014-details');
+  if(page==='home'){
+   html=html.replace(/\s*<link rel="preload"[^>]*data-home-media[^>]*>/g,'');
+   const preloads=['assets/home/hero/alux-hero-3d-upper-brick.png','assets/home/hero/alux-hero-3d-lower-assembly.png'].map(name=>'<link rel="preload" as="image" type="image/webp" href="/'+media[name]+'" fetchpriority="high"'+' data-home-media>').join('\n');
+   html=html.replace(/\s*<\/head>/,'\n'+preloads+'\n</head>');
+  }
   html=html.trimEnd()+'\n';
-  const target=path.join(root,language==='en'?'':language,file);
-  const existing=await fs.readFile(target,'utf8').catch(()=>null);
-  if(existing!==html){if(checkOnly)stale.push(path.relative(root,target));else{await fs.mkdir(path.dirname(target),{recursive:true});await fs.writeFile(target,html,'utf8');}}
+  await emit(path.join(root,language==='en'?'':language,file),html);
  }
 }
 if(stale.length)throw Error('Stale localized pages: '+stale.join(', ')+'. Run npm run pages:render.');

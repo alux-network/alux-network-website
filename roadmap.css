@@ -29,7 +29,11 @@ body[data-page="roadmap"]:not([data-page="home"]) .hero-simple.roadmap-hero {
 }
 
 body[data-page="roadmap"] .roadmap-hero-copy {
-  gap: 18px;
+  gap: 22px;
+}
+
+body[data-page="roadmap"] .roadmap-hero-copy > .roadmap-kicker {
+  display: none;
 }
 
 body[data-page="roadmap"] .hero-simple .roadmap-hero-copy h1 {
@@ -46,7 +50,7 @@ body[data-page="roadmap"] .roadmap-kicker {
 
 body[data-page="roadmap"] .roadmap-updated {
   font-family: "Inter", sans-serif;
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   line-height: 1.6;
   color: #746b5d;
   letter-spacing: 0.02em;
@@ -58,11 +62,11 @@ body[data-page="roadmap"] .roadmap-order {
   grid-row: 1;
   align-self: end;
   gap: 24px;
-  margin: 0 0 40px 32px;
+  margin: 0 0 30px 32px;
 }
 
 body[data-page="roadmap"] .roadmap-order button {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #776e60;
   gap: 10px;
   padding: 8px 2px;
@@ -184,6 +188,8 @@ body[data-page="roadmap"] .roadmap-bullet-list strong {
 
 body[data-page="roadmap"] .roadmap-item-status {
   white-space: nowrap;
+  font-weight: 600;
+  color: #47594b;
 }
 
 body[data-page="roadmap"] .roadmap-break-tail {

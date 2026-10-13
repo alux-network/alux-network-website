@@ -34,6 +34,8 @@ assert.equal(page.urlFor("https://example.com/article", "zh"), "https://example.
 assert.equal(page.urlFor("/assets/alux-logo.png", "zh"), "https://www.alux.network/assets/alux-logo.png");
 
 const languages = ["en", "zh", "ja", "ko", "ar"];
+const fullCatalog = { window: {} };
+vm.runInNewContext(await fs.readFile(new URL('i18n/site.generated.js', root), 'utf8'), fullCatalog);
 const files = ["index", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
 for (const lang of languages) {
   for (const file of files) {
@@ -46,8 +48,21 @@ for (const lang of languages) {
     assert.equal([...html.matchAll(/rel="alternate" hreflang=/g)].length, 6, local);
     assert.equal([...html.matchAll(/class="lang-button[^"]*"[^>]*href=/g)].length, 5, local);
     assert(!html.includes('display=swap'), `${local}: late font swapping can change line breaks`);
+    assert(!html.includes('https://fonts.googleapis.com') && !html.includes('https://fonts.gstatic.com'), `${local}: external font dependency`);
+    assert(!html.includes('src="/i18n/site.generated.js'), `${local}: unnecessary full-site catalog`);
+    assert(/<script defer src="\/script\.js\?/.test(html), `${local}: runtime must not block parsing`);
     if (lang !== "en") {
       assert(html.includes('class="technical-token"'), `${local}: word protection must exist before JavaScript loads`);
+      const shard = html.match(/<script defer src="\/(i18n\/runtime\/[^"?]+)\?v=([a-f0-9]{12})"><\/script>/);
+      assert(shard, `${local}: missing scoped catalog`);
+      const runtime = { window: {} };
+      vm.runInNewContext(await fs.readFile(new URL(shard[1], root), 'utf8'), runtime);
+      const catalog = runtime.window.ALUX_SITE_I18N.entries;
+      assert.deepEqual(Object.keys(catalog), [lang]);
+      const page = html.match(/<body data-page="([^"]+)"/)[1];
+      const allowed = [page+'.', 'ui.', 'inlineUiLabels.', 'capabilityFlowLabels.', 'homeHeroActions.', ...(page==='roadmap'?['roadmapStatic.']:[])];
+      const expected = Object.fromEntries(Object.entries(fullCatalog.window.ALUX_SITE_I18N.entries[lang]).filter(([key])=>allowed.some(prefix=>key.startsWith(prefix))));
+      assert.equal(JSON.stringify(catalog[lang]), JSON.stringify(expected), `${local}: runtime catalog differs from reviewed translations`);
     }
     if (lang === "zh" && file === "alux-vs-others") {
       const heading = html.match(/<h1>([\s\S]*?)<\/h1>/)[1];
@@ -56,6 +71,8 @@ for (const lang of languages) {
       }
     }
     if (file === "roadmap") {
+      const bullets = [...html.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/g)];
+      assert(bullets.every(m=>m[1].includes('class="roadmap-item-status"')), `${local}: missing localized status emphasis`);
       const dates = [...html.matchAll(/<section data-year="(\d+)"[\s\S]*?<\/section>/g)]
         .flatMap(section => [...section[0].matchAll(/<article data-quarter="([1-4])"/g)].map(q => Number(section[1]) * 10 + Number(q[1])));
       assert(dates.length > 0 && dates.every((date, i) => i === 0 || date < dates[i - 1]), local);
