@@ -60,10 +60,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=optional"
     rel="stylesheet"
   >
-<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/styles.css?v=20261013-stable-layout">
 <link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
@@ -105,13 +105,13 @@
           <p class="eyebrow">詳しく見る / ランタイム・ラボ</p>
           <h1>ランタイム・ラボ</h1>
           <p class="pcc-hero-subtitle">並列 / 並行 / コンポーザブル</p>
-          <p class="pcc-hero-text">ALUX はリプレイ可能な長期トランザクションに対応します。独立したタスクは同時に進み、トランザクションはメッセージを通じて協調します。予約シナリオでは、関連するシステム横断の効果を1つのアトミックな結果として決済する目標モデルを示します。</p>
+          <p class="pcc-hero-text"><span class="technical-token">ALUX</span> はリプレイ可能な長期トランザクションに対応します。独立したタスクは同時に進み、トランザクションはメッセージを通じて協調します。予約シナリオでは、関連するシステム横断の効果を1つのアトミックな結果として決済する目標モデルを示します。</p>
           <div class="pcc-hero-signals" aria-label="Runtime signals"><div class="pcc-signal"><span>位置付け</span><strong>分散型並行ランタイム</strong></div><div class="pcc-signal"><span>実行</span><strong>実行、相互作用、待機、決済</strong></div><div class="pcc-signal"><span>境界</span><strong>ケイパビリティで範囲を限定したワークフロー</strong></div></div>
         </div>
         <figure class="pcc-hero-visual">
           <div class="pcc-image-frame pcc-image-frame--hero">
             <img src="/assets/parallel-concurrent-composable/alux-runtime.webp?v=20260708-heroimg1" alt="ALUX ランタイムがノード、クラウドサービス、デバイス、エージェント、ケイパビリティトークン、コミット経路を接続する高精細な技術イラスト。" loading="eager" fetchpriority="high" data-pcc-image>
-            <span class="pcc-image-fallback">ALUX ランタイムがノード、クラウドサービス、デバイス、エージェント、ケイパビリティトークン、コミット経路を接続する高精細な技術イラスト。</span>
+            <span class="pcc-image-fallback"><span class="technical-token">ALUX</span> ランタイムがノード、クラウドサービス、デバイス、エージェント、ケイパビリティトークン、コミット経路を接続する高精細な技術イラスト。</span>
           </div>
         </figure>
       </header>
@@ -121,7 +121,7 @@
           <p class="eyebrow">3つの違い</p>
           <h2>3つの言葉が担う、3つの異なるランタイム機能</h2>
           <p>並列性は、独立したトランザクションを同時に実行します。並行性は、トランザクション同士をチャネルで相互作用させます。あるトランザクションは別のトランザクションから一致するメッセージを待ち、受信後に処理を続けられます。コンポーザビリティ（合成可能性）は、異なるシステムの状態遷移を監査可能な1つのアトミックな遷移として結び付けます。</p>
-          <p class="pcc-intro-claim">現行の ALUX ランタイムでは、独立した処理を並列に実行し、トランザクション同士をメッセージで協調させ、ブロックをまたいで実行を再開できます。独立したシステム間のアトミック・コンポーザビリティは、引き続きアーキテクチャ上の目標です。</p>
+          <p class="pcc-intro-claim">現行の <span class="technical-token">ALUX</span> ランタイムでは、独立した処理を並列に実行し、トランザクション同士をメッセージで協調させ、ブロックをまたいで実行を再開できます。独立したシステム間のアトミック・コンポーザビリティは、引き続きアーキテクチャ上の目標です。</p>
         </div>
       </section>
 
@@ -162,7 +162,7 @@
         <h3>航空券、ホテル、送迎、保険を<br>同時に検索します</h3>
         <dl class="pcc-mode-facts">
           <div><dt>何を意味するか</dt><dd>並列実行とは、独立した作業を同時に進めることです。旅行エージェントは、1つの検索の完了を待たずに、航空券、客室、送迎、保険を並行して検索できます。</dd></div>
-          <div><dt>ALUX の方法</dt><dd>並列実行は ALUX のプロセス計算に組み込まれています。トランザクションはメモリを共有せず、相互作用はタプル空間チャネルに限定されます。そのため独立したトランザクションは別々の TVM レーンで進み、コミット時の状態競合は Block Merge が解決します。</dd></div>
+          <div><dt><span class="technical-token">ALUX</span> の方法</dt><dd>並列実行は <span class="technical-token">ALUX</span> のプロセス計算に組み込まれています。トランザクションはメモリを共有せず、相互作用はタプル空間チャネルに限定されます。そのため独立したトランザクションは別々の <span class="technical-token">TVM</span> レーンで進み、コミット時の状態競合は <span class="technical-token">Block Merge</span> が解決します。</dd></div>
           <div class="pcc-mode-fact--transfer"><dt>可能になること</dt><dd>同じ時間で、より多くの独立作業を完了できます。ただし並列性だけでは、作業同士がメッセージを交換したり、長期トランザクションが待機後に処理を続けたりすることはできません。</dd></div>
         </dl>
         <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">並列性は複数の答えを同時に探しますが、それらの作業を相互作用させるものではありません。</p>
@@ -173,7 +173,7 @@
         <h3>予約は空室情報を待ち、<br>返答が届くと続行します</h3>
         <dl class="pcc-mode-facts">
           <div><dt>何を意味するか</dt><dd>並行性は、作業同士が相互作用するときに始まります。予約は待機条件をチャネルに残し、ホテルサービスは後から一致する空室メッセージを送って、その条件を満たせます。</dd></div>
-          <div><dt>ALUX の方法</dt><dd>待機中の consume は、タプル空間にリソースとして保存されます。別のトランザクションの produce が一致すると COMM イベントが発生し、継続処理が生成され、Execution Context は Inactive から Running へ戻ります。候補が複数ある場合は、ReplayTrie が選択された COMM を記録し、決定的なリプレイを可能にします。</dd></div>
+          <div><dt><span class="technical-token">ALUX</span> の方法</dt><dd>待機中の consume は、タプル空間にリソースとして保存されます。別のトランザクションの produce が一致すると <span class="technical-token">COMM</span> イベントが発生し、継続処理が生成され、Execution Context は Inactive から Running へ戻ります。候補が複数ある場合は、<span class="technical-token">ReplayTrie</span> が選択された <span class="technical-token">COMM</span> を記録し、決定的なリプレイを可能にします。</dd></div>
           <div class="pcc-mode-fact--transfer"><dt>可能になること</dt><dd>旅行エージェントは、1つの長期トランザクションをブロックをまたいで維持できます。空室情報、API 応答、ユーザーの判断を待ちながら、無関係な処理を止めずに実行を続けます。</dd></div>
         </dl>
         <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">並行性は応答を次の処理へつなげます。メッセージ照合は、停止したレーンを再始動するだけでなく、新しい継続処理を生成します。</p>
@@ -184,7 +184,7 @@
         <h3>客室確保と支払いを<br>一緒に確定します</h3>
         <dl class="pcc-mode-facts">
           <div><dt>何を意味するか</dt><dd>コンポーザビリティは、単なる一括処理ではありません。この例の目標は、客室の確保と決済承認をまとめてコミットするか、どちらもコミットしないことです。</dd></div>
-          <div><dt>ALUX の方法</dt><dd>現行ランタイムは、タプル空間による協調、範囲を限定した OCAP 参照、クロスブロック継続、ReplayTrie、Block Merge を提供します。独立した外部システム間をエンドツーエンドでアトミックに構成する機能は、これらのプリミティブを基盤とする設計目標です。</dd></div>
+          <div><dt><span class="technical-token">ALUX</span> の方法</dt><dd>現行ランタイムは、タプル空間による協調、範囲を限定した <span class="technical-token">OCAP</span> 参照、クロスブロック継続、<span class="technical-token">ReplayTrie</span>、<span class="technical-token">Block Merge</span> を提供します。独立した外部システム間をエンドツーエンドでアトミックに構成する機能は、これらのプリミティブを基盤とする設計目標です。</dd></div>
           <div class="pcc-mode-fact--transfer"><dt>可能になること</dt><dd>目標は、客室が取れないのに料金だけ請求されたり、支払いがないまま客室だけ確保されたりする、未完了の予約を防ぐことです。</dd></div>
         </dl>
         <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">目標とするコンポーザビリティ・モデルは、異なるシステムに全成功か全取消かの1つの結果を与えます。並行性は、その共同コミットに至るまでのメッセージ交換を担います。</p>
@@ -244,7 +244,7 @@
             </div>
             <p class="pcc-lab-message" data-pcc-lab-message>ステップ1から始めます。予約と決済は同じランタイムで管理されますが、状態は互いに独立しています。</p>
           </div>
-          <div class="pcc-lab-benefits"><article class="pcc-lab-benefit" data-pcc-benefit="parallel"><span>並列</span><strong>2つの確認を同時実行</strong><p>独立作業が1つのグローバルキューに並ぶ必要はありません。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="paused"><span>並行</span><strong>予約がホテルの返答を待つ</strong><p>依存関係はチャネルに残り、ランタイム全体を止めません。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="resumed"><span>メッセージ照合</span><strong>返答が次の処理を生成</strong><p>COMM が後続処理を生成し、照合が非決定的な場合にだけ ReplayTrie が選択を記録します。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="settled"><span>コンポーザブル</span><strong>客室と決済を一緒に確定</strong><p>目標は、決済を再現できる証拠を伴う、全成功か全取消かの1つの結果です。</p></article></div>
+          <div class="pcc-lab-benefits"><article class="pcc-lab-benefit" data-pcc-benefit="parallel"><span>並列</span><strong>2つの確認を同時実行</strong><p>独立作業が1つのグローバルキューに並ぶ必要はありません。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="paused"><span>並行</span><strong>予約がホテルの返答を待つ</strong><p>依存関係はチャネルに残り、ランタイム全体を止めません。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="resumed"><span>メッセージ照合</span><strong>返答が次の処理を生成</strong><p><span class="technical-token">COMM</span> が後続処理を生成し、照合が非決定的な場合にだけ <span class="technical-token">ReplayTrie</span> が選択を記録します。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="settled"><span>コンポーザブル</span><strong>客室と決済を一緒に確定</strong><p>目標は、決済を再現できる証拠を伴う、全成功か全取消かの1つの結果です。</p></article></div>
         </div>
       </section>
 
@@ -254,7 +254,7 @@
           <h2>サービスを動かし続けるもの</h2>
           <p>長期稼働するサービスの一貫性が保たれるのは、各ステップが実行、相互作用、明示的な権限の保持、決定論的リプレイを行い、ひとつの検証可能なアトミックな経路に沿って確定できるためです。</p>
         </div>
-        <div class="pcc-foundation-grid"><article class="pcc-foundation-item"><span>実行</span><h3>TVM プロセスのライフサイクル</h3><p>プロセスは分岐し、あるブロックで待機し、ローカル実行コンテキストを再起動せずに後続ブロックで再開できます。</p></article><article class="pcc-foundation-item"><span>相互作用</span><h3>タプルスペース + COMM</h3><p>待機中の consume が別のトランザクションの produce と一致すると、継続処理が起動します。その間も、無関係な処理は進み続けます。</p></article><article class="pcc-foundation-item"><span>権限付与</span><h3>OCAP の権限境界</h3><p>偽造不能なケイパビリティ参照を明示的に渡すため、各ステップが受け取るのは必要な権限だけです。ID が無関係な権限を自動的にスコープへ持ち込むことはありません。</p></article><article class="pcc-foundation-item"><span>リプレイ</span><h3>ReplayTrie</h3><p>結果に影響する非決定的な COMM 選択だけを記録し、検証者が同じ実行を再現できるようにします。</p></article><article class="pcc-foundation-item"><span>決済</span><h3>BlockGit + Block Merge</h3><p>並行処理は検証済みのフリンジに入り、重複する効果はファイナリティの前に、受理・拒否・未決定へ分類されます。</p></article></div>
+        <div class="pcc-foundation-grid"><article class="pcc-foundation-item"><span>実行</span><h3><span class="technical-token">TVM</span> プロセスのライフサイクル</h3><p>プロセスは分岐し、あるブロックで待機し、ローカル実行コンテキストを再起動せずに後続ブロックで再開できます。</p></article><article class="pcc-foundation-item"><span>相互作用</span><h3>タプルスペース + <span class="technical-token">COMM</span></h3><p>待機中の consume が別のトランザクションの produce と一致すると、継続処理が起動します。その間も、無関係な処理は進み続けます。</p></article><article class="pcc-foundation-item"><span>権限付与</span><h3><span class="technical-token">OCAP</span> の権限境界</h3><p>偽造不能なケイパビリティ参照を明示的に渡すため、各ステップが受け取るのは必要な権限だけです。ID が無関係な権限を自動的にスコープへ持ち込むことはありません。</p></article><article class="pcc-foundation-item"><span>リプレイ</span><h3><span class="technical-token">ReplayTrie</span></h3><p>結果に影響する非決定的な <span class="technical-token">COMM</span> 選択だけを記録し、検証者が同じ実行を再現できるようにします。</p></article><article class="pcc-foundation-item"><span>決済</span><h3><span class="technical-token">BlockGit</span> + <span class="technical-token">Block Merge</span></h3><p>並行処理は検証済みのフリンジに入り、重複する効果はファイナリティの前に、受理・拒否・未決定へ分類されます。</p></article></div>
       </section>
 
 
@@ -262,9 +262,9 @@
       <div class="pcc-glvm-bridge-copy">
         <p class="eyebrow">次のレイヤー</p>
         <h2>異なる実行環境をつなぐ、ひとつの論理ランタイム</h2>
-        <p>Runtime Lab は、現行の並列実行とメッセージ駆動実行を示し、その上で目標とする原子的合成モデルを図解します。GLVM は、この論理モデルをブロックチェーンノード、クラウドサービス、個人デバイスへ拡張する、より広いアーキテクチャを説明します。</p>
+        <p>Runtime Lab は、現行の並列実行とメッセージ駆動実行を示し、その上で目標とする原子的合成モデルを図解します。<span class="technical-token">GLVM</span> は、この論理モデルをブロックチェーンノード、クラウドサービス、個人デバイスへ拡張する、より広いアーキテクチャを説明します。</p>
       </div>
-      <a class="button secondary pcc-glvm-bridge-link" href="/ja/glvm#architecture">GLVM を詳しく見る<span aria-hidden="true">→</span></a>
+      <a class="button secondary pcc-glvm-bridge-link" href="/ja/glvm#architecture"><span class="technical-token">GLVM</span> を詳しく見る<span aria-hidden="true">→</span></a>
     </section>
 
 
@@ -272,10 +272,10 @@
         <div class="pcc-close-copy">
           <p class="eyebrow">なぜ重要か</p>
           <h2>より速いブロックではなく、長期稼働サービス</h2>
-          <p>並列性は独立した実行を、並行性はメッセージ駆動の相互作用と待機・再開を担います。ALUX は現在、これらのランタイム基盤を実装しており、システム境界をまたぐアトミック・コンポーザビリティの実現へ向けて開発を進めています。</p>
+          <p>並列性は独立した実行を、並行性はメッセージ駆動の相互作用と待機・再開を担います。<span class="technical-token">ALUX</span> は現在、これらのランタイム基盤を実装しており、システム境界をまたぐアトミック・コンポーザビリティの実現へ向けて開発を進めています。</p>
         </div>
         <div class="pcc-close-points"><article class="pcc-close-point"><span>並列性のみ</span><p>スループットは向上しますが、トランザクション間の依存関係やメッセージ照合は扱えません。</p></article><article class="pcc-close-point"><span>並行性のみ</span><p>トランザクション同士は相互作用して待機できますが、システムをまたぐ効果は別々に決済される可能性があります。</p></article><article class="pcc-close-point"><span>コンポーザビリティのみ</span><p>アトミックな境界はあっても、相互作用と待機がなければ長期的な依存関係を扱えません。</p></article></div>
-        <div class="hero-actions pcc-close-actions"><a class="button primary" href="/ja/alux-vs-others">「ALUX と他方式の比較」に戻る</a><a class="button secondary" href="/ja/for-ai-agents">AI エージェント向け</a></div>
+        <div class="hero-actions pcc-close-actions"><a class="button primary" href="/ja/alux-vs-others">「<span class="technical-token">ALUX</span> と他方式の比較」に戻る</a><a class="button secondary" href="/ja/for-ai-agents">AI エージェント向け</a></div>
       </section>
     </article>
 </main>
@@ -284,6 +284,6 @@
     </footer>
   </div>
 <script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
-<script src="/script.js?v=20261012-language-routes"></script>
+<script src="/script.js?v=20261013-stable-layout"></script>
 </body>
 </html>

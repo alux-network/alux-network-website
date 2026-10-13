@@ -60,10 +60,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=optional"
     rel="stylesheet"
   >
-<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/styles.css?v=20261013-stable-layout">
 <link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
@@ -102,12 +102,12 @@
     <article class="alux-vs-page alux-vs-article">
       <header class="alux-vs-article-header fade-in">
         <div class="alux-vs-article-lede">
-          <h1>Web 2와 Web 3를 통합하는 분산 런타임</h1>
-          <p>블록체인은 본질적으로 상태 전환 기계입니다. ALUX는 짧고 고립된 VM 호출을 재실행 가능한 장기 트랜잭션(Long Transaction)으로 확장합니다. 현재는 블록 간 실행과 검증 가능한 Web 2 I/O를 지원하며, 런타임 간·샤드 간 조합은 더 큰 아키텍처에 포함됩니다.</p>
+          <h1><span class="technical-token">Web 2</span>와 <span class="technical-token">Web 3</span>를 통합하는 분산 런타임</h1>
+          <p>블록체인은 본질적으로 상태 전환 기계입니다. <span class="technical-token">ALUX</span>는 짧고 고립된 VM 호출을 재실행 가능한 장기 트랜잭션(Long Transaction)으로 확장합니다. 현재는 블록 간 실행과 검증 가능한 <span class="technical-token">Web 2</span> I/O를 지원하며, 런타임 간·샤드 간 조합은 더 큰 아키텍처에 포함됩니다.</p>
         </div>
         <aside class="alux-vs-article-summary" aria-label="글 요약">
           <span>핵심 차이</span>
-          <dl><div><dt>대부분의 체인</dt><dd>짧고 고립된 VM 호출</dd></div><div><dt>ALUX</dt><dd>재실행 가능한 장기 트랜잭션</dd></div><div><dt>실행</dt><dd>병렬·동시는 현재 지원, 복합 상태 전환은 목표 모델</dd></div><div><dt>트랜잭션 의미론</dt><dd>장기 트랜잭션을 위한 ACID식 의미론</dd></div></dl>
+          <dl><div><dt>대부분의 체인</dt><dd>짧고 고립된 VM 호출</dd></div><div><dt><span class="technical-token">ALUX</span></dt><dd>재실행 가능한 장기 트랜잭션</dd></div><div><dt>실행</dt><dd>병렬·동시는 현재 지원, 복합 상태 전환은 목표 모델</dd></div><div><dt>트랜잭션 의미론</dt><dd>장기 트랜잭션을 위한 ACID식 의미론</dd></div></dl>
         </aside>
       </header>
 
@@ -120,37 +120,37 @@
         <div class="alux-vs-article-body">
           <section class="alux-vs-article-section fade-in" id="problem">
             <h2>우리가 해결하는 문제</h2>
-            <p>많은 블록체인 VM은 짧고 순서가 정해진 상태 업데이트에 초점을 맞춥니다. ALUX는 대기하고, 재개하고, 조율하거나 블록 경계를 넘어야 하는 워크플로까지 이 모델을 확장합니다.</p>
+            <p>많은 블록체인 VM은 짧고 순서가 정해진 상태 업데이트에 초점을 맞춥니다. <span class="technical-token">ALUX</span>는 대기하고, 재개하고, 조율하거나 블록 경계를 넘어야 하는 워크플로까지 이 모델을 확장합니다.</p>
             <ul><li>블록체인은 본질적으로 상태 전환 기계입니다.</li><li>현재 많은 블록체인 VM은 짧고 순서가 정해진 상태 전환이라는 더 좁은 범위에 초점을 맞춥니다.</li></ul>
             <figure class="alux-vs-native-figure alux-vs-native-figure--state"><div class="alux-vs-native-surface" role="img" aria-label="상태 전환 모델 다이어그램">
     <div class="alux-vs-original-image alux-vs-original-image--state">
       <img src="/assets/alux-vs-others/state-transitions-page-crop-transparent.png" alt="" width="2070" height="910" loading="lazy">
     </div>
-  </div><figcaption>그림 1. ALUX는 Web3 실행 모델을 짧은 업데이트에서 재실행 가능한 장기 트랜잭션으로 확장합니다.</figcaption><p class="alux-vs-figure-note"><strong>핵심:</strong> 많은 체인은 짧은 상태 업데이트에 초점을 맞추지만, ALUX는 재실행 가능한 장기 트랜잭션을 더합니다.</p></figure>
+  </div><figcaption>그림 1. <span class="technical-token">ALUX</span>는 Web3 실행 모델을 짧은 업데이트에서 재실행 가능한 장기 트랜잭션으로 확장합니다.</figcaption><p class="alux-vs-figure-note"><strong>핵심:</strong> 많은 체인은 짧은 상태 업데이트에 초점을 맞추지만, <span class="technical-token">ALUX</span>는 재실행 가능한 장기 트랜잭션을 더합니다.</p></figure>
           </section>
 
           <section class="alux-vs-article-section fade-in" id="universal">
-            <h2>장기 트랜잭션을 위한 분산 런타임, ALUX</h2>
-            <p>ALUX는 일회성 상태 업데이트를 넘어 병렬·동시·복합 상태 전환 패턴을 모델링합니다.</p>
-            <p>ALUX는 모든 트랜잭션을 짧고 고립된 상태 업데이트로 다루지 않습니다. 실행을 병렬·동시·복합 전환을 조율할 수 있는 런타임으로 모델링합니다.</p>
-            <figure class="alux-vs-native-figure alux-vs-native-figure--types"><div class="alux-vs-native-surface" role="img" aria-label="병렬·동시·복합 상태 전환 다이어그램"><div class="alux-vs-original-image alux-vs-original-image--types"><img src="/assets/alux-vs-others/transition-types-transparent.png" alt="" width="3634" height="1353" loading="lazy"></div></div><figcaption>그림 2. ALUX는 현재 병렬 및 동시 상태 전환을 지원하며, 복합 상태 전환은 목표 아키텍처에 포함됩니다.</figcaption><p class="alux-vs-figure-note"><strong>핵심:</strong> 병렬성은 독립 작업을 함께 진행하고, 동시성은 대기와 재개를 가능하게 하며, 조합은 서로 연관된 결과를 함께 정산하는 방식을 정의합니다.</p></figure>
+            <h2>장기 트랜잭션을 위한 분산 런타임, <span class="technical-token">ALUX</span></h2>
+            <p><span class="technical-token">ALUX</span>는 일회성 상태 업데이트를 넘어 병렬·동시·복합 상태 전환 패턴을 모델링합니다.</p>
+            <p><span class="technical-token">ALUX</span>는 모든 트랜잭션을 짧고 고립된 상태 업데이트로 다루지 않습니다. 실행을 병렬·동시·복합 전환을 조율할 수 있는 런타임으로 모델링합니다.</p>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--types"><div class="alux-vs-native-surface" role="img" aria-label="병렬·동시·복합 상태 전환 다이어그램"><div class="alux-vs-original-image alux-vs-original-image--types"><img src="/assets/alux-vs-others/transition-types-transparent.png" alt="" width="3634" height="1353" loading="lazy"></div></div><figcaption>그림 2. <span class="technical-token">ALUX</span>는 현재 병렬 및 동시 상태 전환을 지원하며, 복합 상태 전환은 목표 아키텍처에 포함됩니다.</figcaption><p class="alux-vs-figure-note"><strong>핵심:</strong> 병렬성은 독립 작업을 함께 진행하고, 동시성은 대기와 재개를 가능하게 하며, 조합은 서로 연관된 결과를 함께 정산하는 방식을 정의합니다.</p></figure>
           </section>
 
           <section class="alux-vs-article-section fade-in" id="execution">
             <h2>실행 모델</h2>
-            <div class="alux-vs-capability-grid"><article class="alux-vs-capability alux-vs-capability--1"><span>병렬</span><div><h3>병렬 실행</h3><p>현재는 격리된 <span class="alux-vs-accent">EVM</span> 인스턴스를 병렬로 실행할 수 있습니다. WASM은 향후 이기종 VM 지원 방향에 포함됩니다.</p></div></article><article class="alux-vs-capability alux-vs-capability--2"><span>동시성</span><div><h3>동시성 실행</h3><p>ALUX에서는 TX가 <span class="alux-vs-accent">코루틴</span>처럼 실행되어 일시 중단되고, 다시 깨어나며, 서로 교차 실행될 수 있습니다. 실행 순서는 비결정적일 수 있지만 리플레이는 결정적으로 이루어집니다.</p></div></article><article class="alux-vs-capability alux-vs-capability--3"><span>복합</span><div><h3>복합 상태 전환</h3><p>TX는 여러 블록 높이에 걸쳐 실행되며, ALUX 트랜잭션 경계 안에서 격리와 <span class="alux-vs-accent">원자적 정산</span>을 유지한 채 온체인 작업을 재실행 가능한 HTTPS 효과와 조율할 수 있습니다. 샤드 간 조합은 아키텍처와 로드맵에 포함되어 있습니다.</p></div></article></div>
+            <div class="alux-vs-capability-grid"><article class="alux-vs-capability alux-vs-capability--1"><span>병렬</span><div><h3>병렬 실행</h3><p>현재는 격리된 <span class="alux-vs-accent"><span class="technical-token">EVM</span></span> 인스턴스를 병렬로 실행할 수 있습니다. <span class="technical-token">WASM</span>은 향후 이기종 VM 지원 방향에 포함됩니다.</p></div></article><article class="alux-vs-capability alux-vs-capability--2"><span>동시성</span><div><h3>동시성 실행</h3><p><span class="technical-token">ALUX</span>에서는 TX가 <span class="alux-vs-accent">코루틴</span>처럼 실행되어 일시 중단되고, 다시 깨어나며, 서로 교차 실행될 수 있습니다. 실행 순서는 비결정적일 수 있지만 리플레이는 결정적으로 이루어집니다.</p></div></article><article class="alux-vs-capability alux-vs-capability--3"><span>복합</span><div><h3>복합 상태 전환</h3><p>TX는 여러 블록 높이에 걸쳐 실행되며, <span class="technical-token">ALUX</span> 트랜잭션 경계 안에서 격리와 <span class="alux-vs-accent">원자적 정산</span>을 유지한 채 온체인 작업을 재실행 가능한 HTTPS 효과와 조율할 수 있습니다. 샤드 간 조합은 아키텍처와 로드맵에 포함되어 있습니다.</p></div></article></div>
           </section>
 
           <section class="alux-vs-article-section fade-in" id="compatibility">
             <h2>복합 상태 전환과 호환성</h2>
-            <p>TX는 여러 블록 높이에 걸쳐 실행되며, ALUX 트랜잭션 경계 안에서 격리와 <span class="alux-vs-accent">원자적 정산</span>을 유지한 채 온체인 작업을 재실행 가능한 HTTPS 효과와 조율할 수 있습니다. 샤드 간 조합은 아키텍처와 로드맵에 포함되어 있습니다.</p>
-            <p>ALUX는 현재 샌드박스와 Ethereum JSON-RPC를 통해 <span class="alux-vs-accent">EVM</span> 실행 경로를 제공합니다. WASM과 더 폭넓은 이기종 VM 조합은 계획 단계이며, 현재 기준 버전에는 포함되지 않습니다.</p>
+            <p>TX는 여러 블록 높이에 걸쳐 실행되며, <span class="technical-token">ALUX</span> 트랜잭션 경계 안에서 격리와 <span class="alux-vs-accent">원자적 정산</span>을 유지한 채 온체인 작업을 재실행 가능한 HTTPS 효과와 조율할 수 있습니다. 샤드 간 조합은 아키텍처와 로드맵에 포함되어 있습니다.</p>
+            <p><span class="technical-token">ALUX</span>는 현재 샌드박스와 Ethereum <span class="technical-token">JSON-RPC</span>를 통해 <span class="alux-vs-accent"><span class="technical-token">EVM</span></span> 실행 경로를 제공합니다. <span class="technical-token">WASM</span>과 더 폭넓은 이기종 VM 조합은 계획 단계이며, 현재 기준 버전에는 포함되지 않습니다.</p>
             <figure class="alux-vs-native-figure alux-vs-native-figure--composite"><div class="alux-vs-native-surface" role="img" aria-label="복합 트랜잭션 런타임 다이어그램">
     <div class="alux-vs-original-image alux-vs-original-image--composite">
       <img src="/assets/alux-vs-others/composite-transitions-transparent.png" alt="" width="1570" height="1762" loading="lazy">
     </div>
-  </div><figcaption>그림 3. 복합 상태 전환 아키텍처는 온체인 작업과 Web 2 서비스를 연결하며, 샤드 간 조합은 로드맵에 남아 있습니다.</figcaption><p class="alux-vs-figure-note"><strong>핵심:</strong> ALUX는 현재 블록 간 실행과 재실행 가능한 Web 2 I/O를 지원하며, 샤드 간 조합은 아직 계획 단계입니다.</p></figure>
-            <p class="alux-vs-article-close">요약하면 ALUX는 모든 워크플로를 짧은 트랜잭션에 억지로 맞추지 않습니다. 현재는 블록 경계를 넘고 Web 2와 연결되는 장기 트랜잭션을 재실행할 수 있으며, 샤드 간 조합과 더 폭넓은 런타임 간 조합은 아키텍처와 로드맵에 포함되어 있습니다.</p>
+  </div><figcaption>그림 3. 복합 상태 전환 아키텍처는 온체인 작업과 <span class="technical-token">Web 2</span> 서비스를 연결하며, 샤드 간 조합은 로드맵에 남아 있습니다.</figcaption><p class="alux-vs-figure-note"><strong>핵심:</strong> <span class="technical-token">ALUX</span>는 현재 블록 간 실행과 재실행 가능한 <span class="technical-token">Web 2</span> I/O를 지원하며, 샤드 간 조합은 아직 계획 단계입니다.</p></figure>
+            <p class="alux-vs-article-close">요약하면 <span class="technical-token">ALUX</span>는 모든 워크플로를 짧은 트랜잭션에 억지로 맞추지 않습니다. 현재는 블록 경계를 넘고 <span class="technical-token">Web 2</span>와 연결되는 장기 트랜잭션을 재실행할 수 있으며, 샤드 간 조합과 더 폭넓은 런타임 간 조합은 아키텍처와 로드맵에 포함되어 있습니다.</p>
           </section>
         </div>
       </div>
@@ -161,6 +161,6 @@
     </footer>
   </div>
 <script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
-<script src="/script.js?v=20261012-language-routes"></script>
+<script src="/script.js?v=20261013-stable-layout"></script>
 </body>
 </html>

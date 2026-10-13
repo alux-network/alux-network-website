@@ -60,10 +60,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=optional"
     rel="stylesheet"
   >
-<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/styles.css?v=20261013-stable-layout">
+<link rel="stylesheet" href="/roadmap.css?v=20261013-editorial-timeline">
 <link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
@@ -102,7 +103,7 @@
     <main id="page-content" class="roadmap-static" data-static="true" data-prerendered="ar">
       <section class="hero hero-simple fade-in roadmap-hero">
         <div class="hero-copy roadmap-hero-copy">
-          <span class="roadmap-kicker">ALUX</span>
+          <span class="roadmap-kicker"><bdi class="technical-token" dir="ltr">ALUX</bdi></span>
           <h1>خارطة الطريق</h1>
           <p class="roadmap-updated">آخر تحديث: 5 أكتوبر 2026</p>
         </div>
@@ -122,8 +123,8 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">مخطط له</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>براهين صورية في Lean لخصائص النظام الأساسية (مخطط)</li>
-              <li>إطلاق شبكة الاختبار (مخطط)</li>
+              <li>براهين صورية في <bdi dir="ltr">Lean</bdi> لخصائص النظام الأساسية <span class="roadmap-item-status">(مخطط)</span></li>
+              <li>إطلاق شبكة الاختبار <span class="roadmap-item-status">(مخطط)</span></li>
             </ul>
           </article>
         </div>
@@ -141,14 +142,14 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">مخطط له</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>تنفيذ الساعة المنطقية وآليات فرض مستويات العزل (قيد العمل — WIP)</li>
-              <li>أداة لتصحيح TVM ورصدها على غرار GDB (قيد العمل — WIP)</li>
-              <li>إكمال نموذج محاسبة التكلفة (قيد العمل — WIP)</li>
-              <li>التكامل مع مجموعة أدوات Ethereum (قيد العمل — WIP)</li>
-              <li>تنفيذ واختبار عقد إثبات الحصة (PoS) (مخطط له)</li>
-              <li>تنفيذ آليات المزامنة والتعافي من الأعطال (مخطط)</li>
-              <li>تنفيذ جمع القمامة (مخطط)</li>
-              <li class="roadmap-break-bullet">تقديم أمثلة Solidity توضح تنسيق العقود الذكية/الوكلاء <span class="roadmap-break-tail">(async/await، join، select) (مخطط له)</span></li>
+              <li>تنفيذ الساعة المنطقية وآليات فرض مستويات العزل <span class="roadmap-item-status"><bdi dir="ltr">(قيد العمل — WIP)</bdi></span></li>
+              <li>أداة لتصحيح <bdi class="technical-token" dir="ltr">TVM</bdi> ورصدها على غرار <bdi dir="ltr">GDB</bdi> <span class="roadmap-item-status"><bdi dir="ltr">(قيد العمل — WIP)</bdi></span></li>
+              <li>إكمال نموذج محاسبة التكلفة <span class="roadmap-item-status"><bdi dir="ltr">(قيد العمل — WIP)</bdi></span></li>
+              <li>التكامل مع مجموعة أدوات <bdi dir="ltr">Ethereum</bdi> <span class="roadmap-item-status"><bdi dir="ltr">(قيد العمل — WIP)</bdi></span></li>
+              <li>تنفيذ واختبار عقد إثبات الحصة <bdi dir="ltr">(PoS)</bdi> <span class="roadmap-item-status">(مخطط له)</span></li>
+              <li>تنفيذ آليات المزامنة والتعافي من الأعطال <span class="roadmap-item-status">(مخطط)</span></li>
+              <li>تنفيذ جمع القمامة <span class="roadmap-item-status">(مخطط)</span></li>
+              <li class="roadmap-break-bullet">تقديم أمثلة <bdi dir="ltr">Solidity</bdi> توضح تنسيق العقود الذكية/الوكلاء <span class="roadmap-break-tail"><bdi dir="ltr">(async/await، join، select)</bdi> (مخطط له)</span></li>
             </ul>
           </article>
 
@@ -158,15 +159,15 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>دعم الدوال المتزامنة إلى جانب الدوال غير المتزامنة الحالية، مع الإغلاقات والتطبيق الجزئي (مكتمل)</li>
-              <li>سجل النظام الأولي، وتجريد الحسابات، وعقود المطالبة بالقدرات وتفويضها (مكتمل)</li>
-              <li>تبسيط مجدول المهام في TVM وتسهيل اختبار التنفيذ المتزامن (مكتمل)</li>
-              <li>تتبّع سياق التنفيذ القائم على دفتر الأستاذ لضمان التراجع الموثوق عبر السياقات المتداخلة (مكتمل)</li>
-              <li>مفسّر مرجعي لـ Tolang للتحقق من مخرجات المترجم (مكتمل)</li>
-              <li>منسّق شيفرة Tolang، وماكرو Rust باسم tolang!، وميزات الانتقال إلى التعريف وإعادة التسمية في IDE (مكتمل)</li>
-              <li>عميل API لـ TypeScript مع روابط ذات أنواع مولّدة من واجهة RPC للعقدة (مكتمل)</li>
-              <li>مفسّر TVM جديد يدعم المجموعات المتداخلة والحلقات والإغلاقات والقياس الأولي للغاز (قيد المراجعة)</li>
-              <li>بيئة EVM معزولة جديدة قائمة على المصيدة (trap) (قيد التنفيذ)</li>
+              <li>دعم الدوال المتزامنة إلى جانب الدوال غير المتزامنة الحالية، مع الإغلاقات والتطبيق الجزئي <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>سجل النظام الأولي، وتجريد الحسابات، وعقود المطالبة بالقدرات وتفويضها <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>تبسيط مجدول المهام في <bdi class="technical-token" dir="ltr">TVM</bdi> وتسهيل اختبار التنفيذ المتزامن <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>تتبّع سياق التنفيذ القائم على دفتر الأستاذ لضمان التراجع الموثوق عبر السياقات المتداخلة <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>مفسّر مرجعي لـ <bdi dir="ltr">Tolang</bdi> للتحقق من مخرجات المترجم <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>منسّق شيفرة <bdi dir="ltr">Tolang</bdi>، وماكرو <bdi dir="ltr">Rust</bdi> باسم <bdi dir="ltr">tolang</bdi>!، وميزات الانتقال إلى التعريف وإعادة التسمية في <bdi dir="ltr">IDE</bdi> <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>عميل <bdi dir="ltr">API</bdi> لـ <bdi dir="ltr">TypeScript</bdi> مع روابط ذات أنواع مولّدة من واجهة <bdi dir="ltr">RPC</bdi> للعقدة <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>مفسّر <bdi class="technical-token" dir="ltr">TVM</bdi> جديد يدعم المجموعات المتداخلة والحلقات والإغلاقات والقياس الأولي للغاز <span class="roadmap-item-status">(قيد المراجعة)</span></li>
+              <li>بيئة <bdi class="technical-token" dir="ltr">EVM</bdi> معزولة جديدة قائمة على المصيدة <bdi dir="ltr">(trap)</bdi> <span class="roadmap-item-status">(قيد التنفيذ)</span></li>
             </ul>
           </article>
 
@@ -176,16 +177,16 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>محلل Tolang أصلي (مكتمل)</li>
-              <li>دعم الثوابت وقت التصريف في Tolang (مكتمل)</li>
-              <li>خادم لغة Tolang وامتداد Tolang لـ VS Code (مكتمل)</li>
-              <li>إعادة هيكلة إطار الاختبار (مكتمل)</li>
-              <li>إجراء اختبار تكامل شامل من طرف إلى طرف للنظام، بما في ذلك طبقة الإجماع (مكتمل)</li>
-              <li>إكمال تنفيذ API (مكتمل)</li>
-              <li>تطوير CLI للعقدة (مكتمل)</li>
-              <li>مستكشف بلوكتشين مخصص لتصوّر التنفيذ عبر الكتل والإنهاء الذري (مكتمل)</li>
-              <li>بيئة EVM معزولة جديدة قائمة على المصيدة (trap) (قيد التنفيذ)</li>
-              <li>التكامل مع أدوات Ethereum (قيد التنفيذ)</li>
+              <li>محلل <bdi dir="ltr">Tolang</bdi> أصلي <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>دعم الثوابت وقت التصريف في <bdi dir="ltr">Tolang</bdi> <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>خادم لغة <bdi dir="ltr">Tolang</bdi> وامتداد <bdi dir="ltr">Tolang</bdi> لـ <bdi dir="ltr">VS Code</bdi> <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إعادة هيكلة إطار الاختبار <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إجراء اختبار تكامل شامل من طرف إلى طرف للنظام، بما في ذلك طبقة الإجماع <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إكمال تنفيذ <bdi dir="ltr">API</bdi> <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>تطوير <bdi dir="ltr">CLI</bdi> للعقدة <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>مستكشف بلوكتشين مخصص لتصوّر التنفيذ عبر الكتل والإنهاء الذري <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>بيئة <bdi class="technical-token" dir="ltr">EVM</bdi> معزولة جديدة قائمة على المصيدة <bdi dir="ltr">(trap)</bdi> <span class="roadmap-item-status">(قيد التنفيذ)</span></li>
+              <li>التكامل مع أدوات <bdi dir="ltr">Ethereum</bdi> <span class="roadmap-item-status">(قيد التنفيذ)</span></li>
             </ul>
           </article>
 
@@ -195,11 +196,11 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>تبسيط آلية إعادة التشغيل للتنفيذ عبر الكتل (مكتمل)</li>
-              <li>إدخال بيئة EVM معزولة جديدة لتحسين الكفاءة والبساطة (مكتمل)</li>
-              <li>إعادة هيكلة إجماع TVM وقاعدة البيانات وإطار العمل لتحسين المعيارية (مكتمل)</li>
-              <li>تنفيذ اختبارات للتنفيذ عبر الكتل وإعادة التشغيل لدى المدققين غير المتابعين لحظيًا (lazy validators) (مكتمل)</li>
-              <li>تطوير TupleSpace Explorer لتصوير الحالة وتقدم التنفيذ (مكتمل)</li>
+              <li>تبسيط آلية إعادة التشغيل للتنفيذ عبر الكتل <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إدخال بيئة <bdi class="technical-token" dir="ltr">EVM</bdi> معزولة جديدة لتحسين الكفاءة والبساطة <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إعادة هيكلة إجماع <bdi class="technical-token" dir="ltr">TVM</bdi> وقاعدة البيانات وإطار العمل لتحسين المعيارية <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>تنفيذ اختبارات للتنفيذ عبر الكتل وإعادة التشغيل لدى المدققين غير المتابعين لحظيًا <bdi dir="ltr">(lazy validators)</bdi> <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>تطوير <bdi dir="ltr">TupleSpace Explorer</bdi> لتصوير الحالة وتقدم التنفيذ <span class="roadmap-item-status">(مكتمل)</span></li>
             </ul>
           </article>
         </div>
@@ -217,10 +218,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>اختبار التنفيذ عبر الكتل من دون إجماع (مكتمل)</li>
-              <li>إعادة هيكلة إطار TVM لتحسين المعيارية (قيد التنفيذ)</li>
-              <li>تحديد وتنفيذ نقاط نهاية API (قيد التنفيذ)</li>
-              <li>تصميم الساعة المنطقية وآلية فرض مستويات العزل (مكتمل)</li>
+              <li>اختبار التنفيذ عبر الكتل من دون إجماع <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إعادة هيكلة إطار <bdi class="technical-token" dir="ltr">TVM</bdi> لتحسين المعيارية <span class="roadmap-item-status">(قيد التنفيذ)</span></li>
+              <li>تحديد وتنفيذ نقاط نهاية <bdi dir="ltr">API</bdi> <span class="roadmap-item-status">(قيد التنفيذ)</span></li>
+              <li>تصميم الساعة المنطقية وآلية فرض مستويات العزل <span class="roadmap-item-status">(مكتمل)</span></li>
             </ul>
           </article>
 
@@ -230,9 +231,9 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>تنفيذ آلية لتشغيل المعاملات طويلة الأمد (Long Transactions) الممتدة عبر عدة كتل ومجموعات Fringe نهائية، وإيقاظها وتجميعها في كتل وإعادة تشغيلها (مكتمل)</li>
-              <li>إعادة هيكلة وحدة قاعدة البيانات لتحسين الأداء والكفاءة (قيد التنفيذ)</li>
-              <li>إعادة هيكلة إطار TVM لتحسين المعيارية (قيد التنفيذ)</li>
+              <li>تنفيذ آلية لتشغيل المعاملات طويلة الأمد <bdi dir="ltr">(Long Transactions)</bdi> الممتدة عبر عدة كتل ومجموعات <bdi dir="ltr">Fringe</bdi> نهائية، وإيقاظها وتجميعها في كتل وإعادة تشغيلها <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إعادة هيكلة وحدة قاعدة البيانات لتحسين الأداء والكفاءة <span class="roadmap-item-status">(قيد التنفيذ)</span></li>
+              <li>إعادة هيكلة إطار <bdi class="technical-token" dir="ltr">TVM</bdi> لتحسين المعيارية <span class="roadmap-item-status">(قيد التنفيذ)</span></li>
             </ul>
           </article>
 
@@ -242,10 +243,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>تنفيذ الرابط الضعيف (Weaklink) واختباره في بروتوكول BlockGit (مكتمل)</li>
-              <li>إدخال أنواع سلوك قنوات بسيطة لتبسيط بنية TVM وتحسين الاعتمادية (مكتمل)</li>
-              <li>إدخال إطار اختبار لشفرة Tolang المولدة عشوائيًا ودمجه مع CI (مكتمل)</li>
-              <li>إعادة هيكلة منطق إعادة التشغيل (مكتمل)</li>
+              <li>تنفيذ الرابط الضعيف <bdi dir="ltr">(Weaklink)</bdi> واختباره في بروتوكول <bdi class="technical-token" dir="ltr">BlockGit</bdi> <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إدخال أنواع سلوك قنوات بسيطة لتبسيط بنية <bdi class="technical-token" dir="ltr">TVM</bdi> وتحسين الاعتمادية <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إدخال إطار اختبار لشفرة <bdi dir="ltr">Tolang</bdi> المولدة عشوائيًا ودمجه مع <bdi dir="ltr">CI</bdi> <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إعادة هيكلة منطق إعادة التشغيل <span class="roadmap-item-status">(مكتمل)</span></li>
             </ul>
           </article>
 
@@ -255,10 +256,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>إعادة هيكلة النظام بأكمله إلى إطار قائم على الأحداث لتمكين تنفيذ المعاملات المتزامنة وإعادة تشغيل الكتل واقتراح الكتل بأقصى قدر من التزامن (مكتمل)</li>
-              <li>تنفيذ نقاط نهاية RPC وتحديث BlockGit للتعامل مع الكتل المفقودة (مكتمل)</li>
-              <li>إصلاح تسريبات الذاكرة في BlockGit وتحسين أدائه (مكتمل)</li>
-              <li>إدخال الرابط الضعيف (Weaklink) إلى بروتوكول BlockGit وتنفيذه جزئيًا (مكتمل)</li>
+              <li>إعادة هيكلة النظام بأكمله إلى إطار قائم على الأحداث لتمكين تنفيذ المعاملات المتزامنة وإعادة تشغيل الكتل واقتراح الكتل بأقصى قدر من التزامن <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>تنفيذ نقاط نهاية <bdi dir="ltr">RPC</bdi> وتحديث <bdi class="technical-token" dir="ltr">BlockGit</bdi> للتعامل مع الكتل المفقودة <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إصلاح تسريبات الذاكرة في <bdi class="technical-token" dir="ltr">BlockGit</bdi> وتحسين أدائه <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إدخال الرابط الضعيف <bdi dir="ltr">(Weaklink)</bdi> إلى بروتوكول <bdi class="technical-token" dir="ltr">BlockGit</bdi> وتنفيذه جزئيًا <span class="roadmap-item-status">(مكتمل)</span></li>
             </ul>
           </article>
         </div>
@@ -276,10 +277,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>دمج BlockGit في منصة العقد (مكتمل)</li>
-              <li>اختبار بروتوكول الإجماع على شبكة Docker (مكتمل)</li>
-              <li>تنفيذ خوارزمية حل التعارضات في دمج الكتل (مكتمل)</li>
-              <li>إعادة هيكلة وحدة التخزين لدعم الاستعلام وتثبيت الحالة (مكتمل)</li>
+              <li>دمج <bdi class="technical-token" dir="ltr">BlockGit</bdi> في منصة العقد <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>اختبار بروتوكول الإجماع على شبكة <bdi dir="ltr">Docker</bdi> <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>تنفيذ خوارزمية حل التعارضات في دمج الكتل <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إعادة هيكلة وحدة التخزين لدعم الاستعلام وتثبيت الحالة <span class="roadmap-item-status">(مكتمل)</span></li>
             </ul>
           </article>
 
@@ -289,10 +290,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>سياق تنفيذ يدعم التراجع عن جزء من التنفيذ (مكتمل)</li>
-              <li>تصميم BlockGit وتنفيذه أوليًا بوصفه بروتوكول إجماع جديدًا (مكتمل)</li>
-              <li>محاكي أحداث متقطعة لاختبار تنفيذ بروتوكول الإجماع (مكتمل)</li>
-              <li>وحدة P2P مع تكامل أولي لـ BlockGit (مكتمل)</li>
+              <li>سياق تنفيذ يدعم التراجع عن جزء من التنفيذ <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>تصميم <bdi class="technical-token" dir="ltr">BlockGit</bdi> وتنفيذه أوليًا بوصفه بروتوكول إجماع جديدًا <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>محاكي أحداث متقطعة لاختبار تنفيذ بروتوكول الإجماع <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>وحدة <bdi dir="ltr">P2P</bdi> مع تكامل أولي لـ <bdi class="technical-token" dir="ltr">BlockGit</bdi> <span class="roadmap-item-status">(مكتمل)</span></li>
             </ul>
           </article>
 
@@ -302,11 +303,11 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>إعادة هيكلة منطق التشغيل وإعادة التشغيل في فضاء الصفوف وتوحيده (مكتمل)</li>
-              <li>تنفيذ تشغيل وإعادة تشغيل استدعاء HTTPS خارجي لإظهار القدرة على التعاون النشط مع أنظمة Web 2.0 دون أوراكل أو مرحلات (مكتمل)</li>
-              <li>التنفيذ الأولي لبروتوكول إجماع Blocklace (مكتمل)</li>
-              <li>إعادة تصميم إدارة الحالة لتقليل استخدام الذاكرة (مكتمل)</li>
-              <li>تصميم بنية بيانات الساعة المنطقية والخوارزمية المستخدمة لفرض مستويات العزل (مكتمل)</li>
+              <li>إعادة هيكلة منطق التشغيل وإعادة التشغيل في فضاء الصفوف وتوحيده <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>تنفيذ تشغيل وإعادة تشغيل استدعاء <bdi dir="ltr">HTTPS</bdi> خارجي لإظهار القدرة على التعاون النشط مع أنظمة <bdi class="technical-token" dir="ltr">Web 2.0</bdi> دون أوراكل أو مرحلات <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>التنفيذ الأولي لبروتوكول إجماع <bdi dir="ltr">Blocklace</bdi> <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إعادة تصميم إدارة الحالة لتقليل استخدام الذاكرة <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>تصميم بنية بيانات الساعة المنطقية والخوارزمية المستخدمة لفرض مستويات العزل <span class="roadmap-item-status">(مكتمل)</span></li>
             </ul>
           </article>
 
@@ -316,12 +317,12 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>تنفيذ السجل العام واختباره (مكتمل)</li>
-              <li>دعم البرمجة الوظيفية في Tolang وTVM (مكتمل)</li>
-              <li>دعم الحوسبة التسلسلية الآمنة للخيوط على TVM المتزامن (مكتمل)</li>
-              <li>إجراء اختبار أولي لتوافق EVM (مكتمل)</li>
-              <li>تنفيذ تخزين حالة EVM لدعم مستوى عزل القراءة المثبتة (Read-Committed) (مكتمل)</li>
-              <li>إعادة هيكلة الشفرة وإجراء اختبارات شاملة للصحة وقابلية إعادة التشغيل في TVM (مكتمل)</li>
+              <li>تنفيذ السجل العام واختباره <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>دعم البرمجة الوظيفية في <bdi dir="ltr">Tolang</bdi> و<bdi class="technical-token" dir="ltr">TVM</bdi> <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>دعم الحوسبة التسلسلية الآمنة للخيوط على <bdi class="technical-token" dir="ltr">TVM</bdi> المتزامن <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إجراء اختبار أولي لتوافق <bdi class="technical-token" dir="ltr">EVM</bdi> <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>تنفيذ تخزين حالة <bdi class="technical-token" dir="ltr">EVM</bdi> لدعم مستوى عزل القراءة المثبتة <bdi dir="ltr">(Read-Committed)</bdi> <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>إعادة هيكلة الشفرة وإجراء اختبارات شاملة للصحة وقابلية إعادة التشغيل في <bdi class="technical-token" dir="ltr">TVM</bdi> <span class="roadmap-item-status">(مكتمل)</span></li>
             </ul>
           </article>
         </div>
@@ -339,10 +340,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>تنفيذ مدير مهام جديد لتحسين معالجة الأخطاء ودعم التموضع المحلي للخيوط (مكتمل)</li>
-              <li>تحسين الأداء عبر إدخال دعم الحوسبة التسلسلية (مكتمل)</li>
-              <li>اختبار أنواع القنوات الخاصة (مكتمل)</li>
-              <li>استخدام أنواع القنوات الخاصة لتبسيط سجل إعادة التشغيل (مكتمل)</li>
+              <li>تنفيذ مدير مهام جديد لتحسين معالجة الأخطاء ودعم التموضع المحلي للخيوط <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>تحسين الأداء عبر إدخال دعم الحوسبة التسلسلية <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>اختبار أنواع القنوات الخاصة <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>استخدام أنواع القنوات الخاصة لتبسيط سجل إعادة التشغيل <span class="roadmap-item-status">(مكتمل)</span></li>
             </ul>
           </article>
 
@@ -352,9 +353,9 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>اختبار طبقة التخزين (مكتمل)</li>
-              <li>اختبار تنفيذ الآلة الافتراضية المتزامنة وإعادة التشغيل الحتمية (مكتمل)</li>
-              <li>تحديد مواصفات نوع خاص من القنوات وتنفيذه (مكتمل)</li>
+              <li>اختبار طبقة التخزين <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>اختبار تنفيذ الآلة الافتراضية المتزامنة وإعادة التشغيل الحتمية <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>تحديد مواصفات نوع خاص من القنوات وتنفيذه <span class="roadmap-item-status">(مكتمل)</span></li>
             </ul>
           </article>
 
@@ -364,8 +365,8 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>تنفيذ التشغيل وإعادة التشغيل في الآلة الافتراضية المتزامنة (مكتمل)</li>
-              <li>تحديد مواصفات طبقة التخزين وتنفيذها (مكتمل)</li>
+              <li>تنفيذ التشغيل وإعادة التشغيل في الآلة الافتراضية المتزامنة <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>تحديد مواصفات طبقة التخزين وتنفيذها <span class="roadmap-item-status">(مكتمل)</span></li>
             </ul>
           </article>
 
@@ -375,8 +376,8 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">مكتمل</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>تنفيذ تعليمات التشغيل (opcodes) في الآلة الافتراضية المتزامنة واختبارها (مكتمل)</li>
-              <li>بنية بيانات إعادة التشغيل الحتمية للمعاملات المتزامنة (مكتمل)</li>
+              <li>تنفيذ تعليمات التشغيل <bdi dir="ltr">(opcodes)</bdi> في الآلة الافتراضية المتزامنة واختبارها <span class="roadmap-item-status">(مكتمل)</span></li>
+              <li>بنية بيانات إعادة التشغيل الحتمية للمعاملات المتزامنة <span class="roadmap-item-status">(مكتمل)</span></li>
             </ul>
           </article>
         </div>
@@ -388,6 +389,6 @@
     </footer>
   </div>
 <script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
-<script src="/script.js?v=20261012-language-routes"></script>
+<script src="/script.js?v=20261013-stable-layout"></script>
 </body>
 </html>

@@ -29854,6 +29854,34 @@ body[data-page="home"] .hero-home h1 {
   margin-inline-start: -0.04em;
 }
 
+/* A single warm-white canvas, independent of page length or language. Content
+   surfaces retain their own semantic colors; fixed colored haze is removed. */
+html:root body[data-page] {
+  background: #fcf9f3 !important;
+}
+
+html:root body[data-page]::before,
+html:root body[data-page]::after,
+html:root body[data-page] .bg-grid,
+html:root body[data-page] .bg-glow {
+  display: none !important;
+}
+
+/* Semantic wrappers affect line breaking only, never the visual type style. */
+html:root body[data-page] .technical-token {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  font: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  white-space: nowrap !important;
+}
+
 body[data-page="home"] .home-hero-copy-line {
   display: block;
   width: fit-content;

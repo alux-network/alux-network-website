@@ -60,10 +60,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=optional"
     rel="stylesheet"
   >
-<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/styles.css?v=20261013-stable-layout">
 <link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
@@ -105,13 +105,13 @@
           <p class="eyebrow">تعرّف / مختبر بيئة التشغيل</p>
           <h1>مختبر بيئة التشغيل</h1>
           <p class="pcc-hero-subtitle">متوازٍ / متزامن / قابل للتركيب</p>
-          <p class="pcc-hero-text">تدعم ALUX المعاملات طويلة الأمد (Long Transactions) القابلة لإعادة التشغيل: تنفذ المهام المستقلة معًا، وتنسّق المعاملات عبر الرسائل. ويعرض سيناريو الحجز النموذج المستهدف لتسوية الآثار المترابطة بين الأنظمة كنتيجة ذرية واحدة.</p>
+          <p class="pcc-hero-text">تدعم <bdi class="technical-token" dir="ltr">ALUX</bdi> المعاملات طويلة الأمد (Long Transactions) القابلة لإعادة التشغيل: تنفذ المهام المستقلة معًا، وتنسّق المعاملات عبر الرسائل. ويعرض سيناريو الحجز النموذج المستهدف لتسوية الآثار المترابطة بين الأنظمة كنتيجة ذرية واحدة.</p>
           <div class="pcc-hero-signals" aria-label="Runtime signals"><div class="pcc-signal"><span>التموضع</span><strong>بيئة تشغيل متزامنة لامركزية</strong></div><div class="pcc-signal"><span>التنفيذ</span><strong>تشغيل، تفاعل، انتظار، تسوية</strong></div><div class="pcc-signal"><span>الحدود</span><strong>سير عمل محدود بالصلاحيات</strong></div></div>
         </div>
         <figure class="pcc-hero-visual">
           <div class="pcc-image-frame pcc-image-frame--hero">
             <img src="/assets/parallel-concurrent-composable/alux-runtime.webp?v=20260708-heroimg1" alt="رسم تقني عالي الجودة لبيئة تشغيل ALUX وهي تربط العقد والخدمات السحابية والأجهزة والوكلاء ورموز الصلاحية ومسارات التثبيت." loading="eager" fetchpriority="high" data-pcc-image>
-            <span class="pcc-image-fallback">رسم تقني عالي الجودة لبيئة تشغيل ALUX وهي تربط العقد والخدمات السحابية والأجهزة والوكلاء ورموز الصلاحية ومسارات التثبيت.</span>
+            <span class="pcc-image-fallback">رسم تقني عالي الجودة لبيئة تشغيل <bdi class="technical-token" dir="ltr">ALUX</bdi> وهي تربط العقد والخدمات السحابية والأجهزة والوكلاء ورموز الصلاحية ومسارات التثبيت.</span>
           </div>
         </figure>
       </header>
@@ -121,7 +121,7 @@
           <p class="eyebrow">الفرق البسيط</p>
           <h2>ثلاث كلمات، وثلاث وظائف مختلفة تمامًا في بيئة التشغيل</h2>
           <p>يشغّل التوازي المعاملات غير المعتمدة بعضها على بعض في الوقت نفسه. ويتيح التزامن للمعاملات أن تتفاعل عبر القنوات: يمكن لمعاملة أن تنتظر رسالة مطابقة من معاملة أخرى ثم تتابع التنفيذ. أما التركيب فيجمع انتقالات الحالة من أنظمة تنفيذ مختلفة في انتقال حالة ذري واحد قابل للتدقيق.</p>
-          <p class="pcc-intro-claim">في بيئة تشغيل ALUX الحالية، يمكن للأعمال المستقلة أن تتقدم بالتوازي، وأن تنسّق المعاملات عبر الرسائل، وأن يستأنف التنفيذ عبر الكتل. ويبقى التركيب الذري بين الأنظمة المستقلة هدفًا معماريًا.</p>
+          <p class="pcc-intro-claim">في بيئة تشغيل <bdi class="technical-token" dir="ltr">ALUX</bdi> الحالية، يمكن للأعمال المستقلة أن تتقدم بالتوازي، وأن تنسّق المعاملات عبر الرسائل، وأن يستأنف التنفيذ عبر الكتل. ويبقى التركيب الذري بين الأنظمة المستقلة هدفًا معماريًا.</p>
         </div>
       </section>
 
@@ -162,7 +162,7 @@
         <h3>البحث عن الرحلات والفنادق والنقل والتأمين<br>في الوقت نفسه</h3>
         <dl class="pcc-mode-facts">
           <div><dt>ماذا يعني</dt><dd>يعني التنفيذ المتوازي تشغيل أعمال مستقلة في الوقت نفسه. يستطيع وكيل السفر البحث عن الرحلات والغرف والنقل والتأمين من دون أن ينتظر بحث واحد اكتمال الآخر.</dd></div>
-          <div><dt>كيف يفعله ALUX</dt><dd>التنفيذ المتوازي أصيل في حساب العمليات (process calculus) لدى ALUX: لا تشترك المعاملات في الذاكرة، ويقتصر أي تفاعل على قنوات فضاء الصفوف. لذلك تتقدم المعاملات المستقلة في مسارات TVM منفصلة، ويحسم Block Merge أي تداخل في الحالة عند التثبيت.</dd></div>
+          <div><dt>كيف يفعله <bdi class="technical-token" dir="ltr">ALUX</bdi></dt><dd>التنفيذ المتوازي أصيل في حساب العمليات (process calculus) لدى <bdi class="technical-token" dir="ltr">ALUX</bdi>: لا تشترك المعاملات في الذاكرة، ويقتصر أي تفاعل على قنوات فضاء الصفوف. لذلك تتقدم المعاملات المستقلة في مسارات <bdi class="technical-token" dir="ltr">TVM</bdi> منفصلة، ويحسم <bdi class="technical-token" dir="ltr">Block Merge</bdi> أي تداخل في الحالة عند التثبيت.</dd></div>
           <div class="pcc-mode-fact--transfer"><dt>ماذا يتيح</dt><dd>ينجز التوازي مزيدًا من العمل المستقل في الوقت نفسه. لكنه وحده لا يمكّن تلك الأعمال من تبادل الرسائل، ولا يتيح انتظار المعاملة طويلة الأمد ثم استئنافها.</dd></div>
         </dl>
         <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">يجد التوازي عدة إجابات في وقت واحد، لكنه لا يجعل تلك الأعمال تتفاعل.</p>
@@ -173,7 +173,7 @@
         <h3>ينتظر الحجز توفر الغرفة<br>ويتابع عند وصول الرد</h3>
         <dl class="pcc-mode-facts">
           <div><dt>ماذا يعني</dt><dd>يبدأ التزامن عندما تتفاعل الأعمال. يترك الحجز شرط انتظار في قناة، ثم ترسل خدمة الفندق لاحقًا رسالة مطابقة عن توفر الغرفة فتستوفي الشرط.</dd></div>
-          <div><dt>كيف يفعله ALUX</dt><dd>يُخزَّن طلب الاستهلاك المنتظر (consume) موردًا في فضاء الصفوف. وتطابقه عملية إنتاج (produce) من معاملة أخرى، فتطلق حدث COMM يولّد الاستمرارية وينقل سياق التنفيذ (Execution Context) من Inactive إلى Running. وإذا أمكن أكثر من تطابق، يسجل ReplayTrie حدث COMM المختار لإعادة تشغيل حتمية.</dd></div>
+          <div><dt>كيف يفعله <bdi class="technical-token" dir="ltr">ALUX</bdi></dt><dd>يُخزَّن طلب الاستهلاك المنتظر (consume) موردًا في فضاء الصفوف. وتطابقه عملية إنتاج (produce) من معاملة أخرى، فتطلق حدث <bdi class="technical-token" dir="ltr">COMM</bdi> يولّد الاستمرارية وينقل سياق التنفيذ (Execution Context) من Inactive إلى Running. وإذا أمكن أكثر من تطابق، يسجل <bdi class="technical-token" dir="ltr">ReplayTrie</bdi> حدث <bdi class="technical-token" dir="ltr">COMM</bdi> المختار لإعادة تشغيل حتمية.</dd></div>
           <div class="pcc-mode-fact--transfer"><dt>ماذا يتيح</dt><dd>يمكن لوكيل السفر إبقاء المعاملة طويلة الأمد نشطة عبر عدة كتل: تنتظر توافر الغرفة أو استجابة API أو قرار المستخدم، ثم تتابع من دون تعطيل الأعمال غير المرتبطة.</dd></div>
         </dl>
         <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">يحوّل التزامن الرد إلى خطوة تنفيذ تالية؛ فمطابقة الرسالة تنشئ استمرارية جديدة بدلًا من إعادة تشغيل مسار متوقف في مكانه.</p>
@@ -184,7 +184,7 @@
         <h3>تأكيد حجز الغرفة<br>والدفع معًا</h3>
         <dl class="pcc-mode-facts">
           <div><dt>ماذا يعني</dt><dd>التركيب ليس تجميعًا عاديًا. والهدف في هذا المثال أن يُثبت حجز الغرفة وتفويض الدفع معًا، أو ألا يُثبت أي منهما.</dd></div>
-          <div><dt>كيف يفعله ALUX</dt><dd>توفر بيئة التشغيل الحالية التنسيق عبر فضاء الصفوف، ومراجع OCAP محددة النطاق، والاستمرار عبر الكتل، وReplayTrie، وBlock Merge. أما التركيب الذري من طرف إلى طرف بين أنظمة خارجية مستقلة، فيظل هدفًا تصميميًا يُبنى على هذه البدائيات.</dd></div>
+          <div><dt>كيف يفعله <bdi class="technical-token" dir="ltr">ALUX</bdi></dt><dd>توفر بيئة التشغيل الحالية التنسيق عبر فضاء الصفوف، ومراجع <bdi class="technical-token" dir="ltr">OCAP</bdi> محددة النطاق، والاستمرار عبر الكتل، و<bdi class="technical-token" dir="ltr">ReplayTrie</bdi>، و<bdi class="technical-token" dir="ltr">Block Merge</bdi>. أما التركيب الذري من طرف إلى طرف بين أنظمة خارجية مستقلة، فيظل هدفًا تصميميًا يُبنى على هذه البدائيات.</dd></div>
           <div class="pcc-mode-fact--transfer"><dt>ماذا يتيح</dt><dd>النتيجة المقصودة هي تجنب حجز ناقص، كأن يُخصم المال من دون غرفة أو تُحجز الغرفة من دون دفع.</dd></div>
         </dl>
         <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">يمنح نموذج التركيب المستهدف الأنظمة المختلفة نتيجة واحدة إما أن تكتمل كلها أو لا تكتمل؛ ويحمل التزامن الرسائل التي تسبق هذا التثبيت المشترك.</p>
@@ -244,7 +244,7 @@
             </div>
             <p class="pcc-lab-message" data-pcc-lab-message>ابدأ بالخطوة 1. تُدار حالتا الحجز والدفع كلٌّ على حدة داخل بيئة التشغيل نفسها.</p>
           </div>
-          <div class="pcc-lab-benefits"><article class="pcc-lab-benefit" data-pcc-benefit="parallel"><span>التوازي</span><strong>يعمل الفحصان معًا</strong><p>لا ينتظر العمل المستقل خلف طابور عالمي واحد.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="paused"><span>التزامن</span><strong>الحجز ينتظر رد الفندق</strong><p>يبقى الاعتماد في القناة ولا يوقف بيئة التشغيل كلها.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="resumed"><span>مطابقة رسالة</span><strong>الرد ينشئ الخطوة التالية</strong><p>ينشئ COMM الاستمرارية، ولا يسجل ReplayTrie الاختيار إلا عندما تكون المطابقة غير حتمية.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="settled"><span>قابلية التركيب</span><strong>يُؤكَّد حجز الغرفة والدفع معًا</strong><p>الهدف هو نتيجة واحدة إما أن تكتمل كلها أو لا تكتمل، مع أدلة تسوية قابلة للاستنساخ.</p></article></div>
+          <div class="pcc-lab-benefits"><article class="pcc-lab-benefit" data-pcc-benefit="parallel"><span>التوازي</span><strong>يعمل الفحصان معًا</strong><p>لا ينتظر العمل المستقل خلف طابور عالمي واحد.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="paused"><span>التزامن</span><strong>الحجز ينتظر رد الفندق</strong><p>يبقى الاعتماد في القناة ولا يوقف بيئة التشغيل كلها.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="resumed"><span>مطابقة رسالة</span><strong>الرد ينشئ الخطوة التالية</strong><p>ينشئ <bdi class="technical-token" dir="ltr">COMM</bdi> الاستمرارية، ولا يسجل <bdi class="technical-token" dir="ltr">ReplayTrie</bdi> الاختيار إلا عندما تكون المطابقة غير حتمية.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="settled"><span>قابلية التركيب</span><strong>يُؤكَّد حجز الغرفة والدفع معًا</strong><p>الهدف هو نتيجة واحدة إما أن تكتمل كلها أو لا تكتمل، مع أدلة تسوية قابلة للاستنساخ.</p></article></div>
         </div>
       </section>
 
@@ -254,7 +254,7 @@
           <h2>ما الذي يبقي الخدمة حية</h2>
           <p>تحافظ الخدمة طويلة الأمد على اتساقها لأن كل خطوة تستطيع أن تعمل وتتفاعل وتحمل صلاحية صريحة، وأن يُعاد تشغيلها بصورة حتمية وتُسوّى على مسار ذري واحد قابل للتحقق.</p>
         </div>
-        <div class="pcc-foundation-grid"><article class="pcc-foundation-item"><span>التشغيل</span><h3>دورة حياة عمليات TVM</h3><p>يمكن للعملية أن تتفرع وتنتظر في كتلة ثم تستأنف في كتلة لاحقة من دون إعادة تشغيل سياقها المحلي.</p></article><article class="pcc-foundation-item"><span>التفاعل</span><h3>فضاء الصفوف + COMM</h3><p>يلتقي طلب استهلاك منتظر (consume) بعملية إنتاج (produce) من معاملة أخرى، فتُفعَّل الاستمرارية بينما يواصل العمل غير المرتبط تقدمه.</p></article><article class="pcc-foundation-item"><span>التفويض</span><h3>حدود OCAP</h3><p>تُمرَّر مراجع القدرات غير القابلة للتزوير صراحةً، فلا تتلقى كل خطوة إلا الصلاحية التي تحتاجها؛ ولا تُدخل الهوية تلقائيًا صلاحيات غير مرتبطة بالمهمة ضمن النطاق.</p></article><article class="pcc-foundation-item"><span>إعادة التشغيل</span><h3>ReplayTrie</h3><p>لا تسجل إلا اختيارات COMM غير الحتمية المؤثرة في النتيجة، حتى يعيد المدققون التنفيذ نفسه.</p></article><article class="pcc-foundation-item"><span>التسوية</span><h3>BlockGit + Block Merge</h3><p>يدخل العمل المتزامن في مجموعات Fringe متحقق منها، حيث تُصنّف التداخلات إلى مقبولة أو مرفوضة أو غير محسومة قبل النهائية.</p></article></div>
+        <div class="pcc-foundation-grid"><article class="pcc-foundation-item"><span>التشغيل</span><h3>دورة حياة عمليات <bdi class="technical-token" dir="ltr">TVM</bdi></h3><p>يمكن للعملية أن تتفرع وتنتظر في كتلة ثم تستأنف في كتلة لاحقة من دون إعادة تشغيل سياقها المحلي.</p></article><article class="pcc-foundation-item"><span>التفاعل</span><h3>فضاء الصفوف + <bdi class="technical-token" dir="ltr">COMM</bdi></h3><p>يلتقي طلب استهلاك منتظر (consume) بعملية إنتاج (produce) من معاملة أخرى، فتُفعَّل الاستمرارية بينما يواصل العمل غير المرتبط تقدمه.</p></article><article class="pcc-foundation-item"><span>التفويض</span><h3>حدود <bdi class="technical-token" dir="ltr">OCAP</bdi></h3><p>تُمرَّر مراجع القدرات غير القابلة للتزوير صراحةً، فلا تتلقى كل خطوة إلا الصلاحية التي تحتاجها؛ ولا تُدخل الهوية تلقائيًا صلاحيات غير مرتبطة بالمهمة ضمن النطاق.</p></article><article class="pcc-foundation-item"><span>إعادة التشغيل</span><h3><bdi class="technical-token" dir="ltr">ReplayTrie</bdi></h3><p>لا تسجل إلا اختيارات <bdi class="technical-token" dir="ltr">COMM</bdi> غير الحتمية المؤثرة في النتيجة، حتى يعيد المدققون التنفيذ نفسه.</p></article><article class="pcc-foundation-item"><span>التسوية</span><h3><bdi class="technical-token" dir="ltr">BlockGit</bdi> + <bdi class="technical-token" dir="ltr">Block Merge</bdi></h3><p>يدخل العمل المتزامن في مجموعات Fringe متحقق منها، حيث تُصنّف التداخلات إلى مقبولة أو مرفوضة أو غير محسومة قبل النهائية.</p></article></div>
       </section>
 
 
@@ -262,9 +262,9 @@
       <div class="pcc-glvm-bridge-copy">
         <p class="eyebrow">الطبقة التالية</p>
         <h2>بيئة تشغيل منطقية واحدة عبر بيئات تنفيذ متعددة</h2>
-        <p>يعرض Runtime Lab التنفيذ المتوازي الحالي والتنفيذ المدفوع بالرسائل، ثم يوضّح نموذج التركيب الذري المستهدف. وتصف GLVM المعمارية الأوسع التي تمد هذا النموذج المنطقي عبر عقد البلوكشين والخدمات السحابية والأجهزة الشخصية.</p>
+        <p>يعرض Runtime Lab التنفيذ المتوازي الحالي والتنفيذ المدفوع بالرسائل، ثم يوضّح نموذج التركيب الذري المستهدف. وتصف <bdi class="technical-token" dir="ltr">GLVM</bdi> المعمارية الأوسع التي تمد هذا النموذج المنطقي عبر عقد البلوكشين والخدمات السحابية والأجهزة الشخصية.</p>
       </div>
-      <a class="button secondary pcc-glvm-bridge-link" href="/ar/glvm#architecture">استكشف GLVM<span aria-hidden="true">→</span></a>
+      <a class="button secondary pcc-glvm-bridge-link" href="/ar/glvm#architecture">استكشف <bdi class="technical-token" dir="ltr">GLVM</bdi><span aria-hidden="true">→</span></a>
     </section>
 
 
@@ -272,10 +272,10 @@
         <div class="pcc-close-copy">
           <p class="eyebrow">لماذا يهم</p>
           <h2>ليست كتلًا أسرع، بل خدمات طويلة الأمد</h2>
-          <p>يعالج التوازي التنفيذ المستقل، ويعالج التزامن التفاعل المدفوع بالرسائل والانتظار والاستئناف. تنفذ ALUX اليوم هذه الأسس في بيئة التشغيل، وتتجه نحو تركيب ذري عبر حدود الأنظمة.</p>
+          <p>يعالج التوازي التنفيذ المستقل، ويعالج التزامن التفاعل المدفوع بالرسائل والانتظار والاستئناف. تنفذ <bdi class="technical-token" dir="ltr">ALUX</bdi> اليوم هذه الأسس في بيئة التشغيل، وتتجه نحو تركيب ذري عبر حدود الأنظمة.</p>
         </div>
         <div class="pcc-close-points"><article class="pcc-close-point"><span>التوازي وحده</span><p>إنتاجية أعلى، لكن بلا اعتماد بين المعاملات أو مطابقة للرسائل.</p></article><article class="pcc-close-point"><span>التزامن وحده</span><p>يمكن للمعاملات أن تتفاعل وتنتظر، لكن آثار الأنظمة قد تظل تُسوّى كلٌّ على حدة.</p></article><article class="pcc-close-point"><span>التركيب وحده</span><p>يوجد حد ذري، لكن من دون التفاعل والانتظار لا يمكنه حمل اعتماد طويل الأمد.</p></article></div>
-        <div class="hero-actions pcc-close-actions"><a class="button primary" href="/ar/alux-vs-others">العودة إلى ALUX مقارنةً بالحلول الأخرى</a><a class="button secondary" href="/ar/for-ai-agents">لوكلاء الذكاء الاصطناعي</a></div>
+        <div class="hero-actions pcc-close-actions"><a class="button primary" href="/ar/alux-vs-others">العودة إلى <bdi class="technical-token" dir="ltr">ALUX</bdi> مقارنةً بالحلول الأخرى</a><a class="button secondary" href="/ar/for-ai-agents">لوكلاء الذكاء الاصطناعي</a></div>
       </section>
     </article>
 </main>
@@ -284,6 +284,6 @@
     </footer>
   </div>
 <script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
-<script src="/script.js?v=20261012-language-routes"></script>
+<script src="/script.js?v=20261013-stable-layout"></script>
 </body>
 </html>

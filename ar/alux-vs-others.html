@@ -60,10 +60,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=optional"
     rel="stylesheet"
   >
-<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/styles.css?v=20261013-stable-layout">
 <link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
@@ -102,12 +102,12 @@
     <article class="alux-vs-page alux-vs-article">
       <header class="alux-vs-article-header fade-in">
         <div class="alux-vs-article-lede">
-          <h1>طبقة تشغيل موزعة لتوحيد Web 2 وWeb 3</h1>
-          <p>شبكات البلوكشين هي في جوهرها آلات لانتقال الحالة. توسّع ALUX النموذج من استدعاءات قصيرة ومعزولة للآلة الافتراضية إلى المعاملات طويلة الأمد القابلة لإعادة التشغيل: تنفيذ عبر الكتل وعمليات إدخال وإخراج قابلة للتحقق مع Web 2 اليوم، فيما يندرج التركيب بين بيئات التشغيل وعبر الشظايا ضمن المعمارية الأوسع.</p>
+          <h1>طبقة تشغيل موزعة لتوحيد <bdi class="technical-token" dir="ltr">Web 2</bdi> و<bdi class="technical-token" dir="ltr">Web 3</bdi></h1>
+          <p>شبكات البلوكشين هي في جوهرها آلات لانتقال الحالة. توسّع <bdi class="technical-token" dir="ltr">ALUX</bdi> النموذج من استدعاءات قصيرة ومعزولة للآلة الافتراضية إلى المعاملات طويلة الأمد القابلة لإعادة التشغيل: تنفيذ عبر الكتل وعمليات إدخال وإخراج قابلة للتحقق مع <bdi class="technical-token" dir="ltr">Web 2</bdi> اليوم، فيما يندرج التركيب بين بيئات التشغيل وعبر الشظايا ضمن المعمارية الأوسع.</p>
         </div>
         <aside class="alux-vs-article-summary" aria-label="ملخص المقال">
           <span>الاختلاف الأساسي</span>
-          <dl><div><dt>معظم السلاسل</dt><dd>استدعاءات VM قصيرة ومعزولة</dd></div><div><dt>ALUX</dt><dd>المعاملات طويلة الأمد القابلة لإعادة التشغيل</dd></div><div><dt>التنفيذ</dt><dd>انتقالات متوازية ومتزامنة اليوم؛ والانتقالات المركّبة هي النموذج المستهدف</dd></div><div><dt>دلالات المعاملات</dt><dd>دلالات المعاملات طويلة الأمد على غرار ACID</dd></div></dl>
+          <dl><div><dt>معظم السلاسل</dt><dd>استدعاءات VM قصيرة ومعزولة</dd></div><div><dt><bdi class="technical-token" dir="ltr">ALUX</bdi></dt><dd>المعاملات طويلة الأمد القابلة لإعادة التشغيل</dd></div><div><dt>التنفيذ</dt><dd>انتقالات متوازية ومتزامنة اليوم؛ والانتقالات المركّبة هي النموذج المستهدف</dd></div><div><dt>دلالات المعاملات</dt><dd>دلالات المعاملات طويلة الأمد على غرار ACID</dd></div></dl>
         </aside>
       </header>
 
@@ -120,37 +120,37 @@
         <div class="alux-vs-article-body">
           <section class="alux-vs-article-section fade-in" id="problem">
             <h2>المشكلة التي نعالجها</h2>
-            <p>تركّز كثير من الآلات الافتراضية للبلوكشين على تحديثات حالة قصيرة ومرتبة. توسّع ALUX هذا النموذج ليلائم مسارات العمل التي تحتاج إلى الانتظار أو الاستئناف أو التنسيق أو عبور حدود الكتل.</p>
+            <p>تركّز كثير من الآلات الافتراضية للبلوكشين على تحديثات حالة قصيرة ومرتبة. توسّع <bdi class="technical-token" dir="ltr">ALUX</bdi> هذا النموذج ليلائم مسارات العمل التي تحتاج إلى الانتظار أو الاستئناف أو التنسيق أو عبور حدود الكتل.</p>
             <ul><li>سلاسل الكتل هي في جوهرها آلات انتقال حالة.</li><li>تركّز كثير من آلات البلوكشين الافتراضية الحالية على فئة أضيق من الانتقالات القصيرة والمرتبة.</li></ul>
             <figure class="alux-vs-native-figure alux-vs-native-figure--state"><div class="alux-vs-native-surface" role="img" aria-label="رسم نموذج انتقال الحالة">
     <div class="alux-vs-original-image alux-vs-original-image--state">
       <img src="/assets/alux-vs-others/state-transitions-page-crop-transparent.png" alt="" width="2070" height="910" loading="lazy">
     </div>
-  </div><figcaption>الشكل 1. توسّع ALUX نموذج تنفيذ Web3 من تحديثات قصيرة نحو المعاملات طويلة الأمد القابلة لإعادة التشغيل.</figcaption><p class="alux-vs-figure-note"><strong>الخلاصة:</strong> تتمحور سلاسل كثيرة حول تحديثات قصيرة للحالة؛ أما ALUX فتضيف المعاملات طويلة الأمد القابلة لإعادة التشغيل.</p></figure>
+  </div><figcaption>الشكل 1. توسّع <bdi class="technical-token" dir="ltr">ALUX</bdi> نموذج تنفيذ Web3 من تحديثات قصيرة نحو المعاملات طويلة الأمد القابلة لإعادة التشغيل.</figcaption><p class="alux-vs-figure-note"><strong>الخلاصة:</strong> تتمحور سلاسل كثيرة حول تحديثات قصيرة للحالة؛ أما <bdi class="technical-token" dir="ltr">ALUX</bdi> فتضيف المعاملات طويلة الأمد القابلة لإعادة التشغيل.</p></figure>
           </section>
 
           <section class="alux-vs-article-section fade-in" id="universal">
-            <h2>ALUX بوصفها بيئة تشغيل موزعة تدعم المعاملات طويلة الأمد</h2>
-            <p>تنمذج ALUX أنماط الانتقال المتوازي والمتزامن والمركب بما يتجاوز تحديثات الحالة أحادية الخطوة.</p>
-            <p>بدلًا من التعامل مع كل معاملة كتحديث حالة قصير ومعزول، يصوغ ALUX التنفيذ كبيئة تشغيل قادرة على تنسيق الانتقالات المتوازية والمتزامنة والمركبة.</p>
-            <figure class="alux-vs-native-figure alux-vs-native-figure--types"><div class="alux-vs-native-surface" role="img" aria-label="رسم الانتقالات المتوازية والمتزامنة والمركبة"><div class="alux-vs-original-image alux-vs-original-image--types"><img src="/assets/alux-vs-others/transition-types-transparent.png" alt="" width="3634" height="1353" loading="lazy"></div></div><figcaption>الشكل 2. تدعم ALUX اليوم انتقالات الحالة المتوازية والمتزامنة، وتتعامل مع الانتقالات المركّبة بوصفها جزءًا من المعمارية المستهدفة.</figcaption><p class="alux-vs-figure-note"><strong>الخلاصة:</strong> يدفع التوازي الأعمال المستقلة إلى الأمام، ويتيح التزامن الانتظار والاستئناف، ويحدد التركيب كيف ينبغي تسوية الآثار المترابطة معًا.</p></figure>
+            <h2><bdi class="technical-token" dir="ltr">ALUX</bdi> بوصفها بيئة تشغيل موزعة تدعم المعاملات طويلة الأمد</h2>
+            <p>تنمذج <bdi class="technical-token" dir="ltr">ALUX</bdi> أنماط الانتقال المتوازي والمتزامن والمركب بما يتجاوز تحديثات الحالة أحادية الخطوة.</p>
+            <p>بدلًا من التعامل مع كل معاملة كتحديث حالة قصير ومعزول، يصوغ <bdi class="technical-token" dir="ltr">ALUX</bdi> التنفيذ كبيئة تشغيل قادرة على تنسيق الانتقالات المتوازية والمتزامنة والمركبة.</p>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--types"><div class="alux-vs-native-surface" role="img" aria-label="رسم الانتقالات المتوازية والمتزامنة والمركبة"><div class="alux-vs-original-image alux-vs-original-image--types"><img src="/assets/alux-vs-others/transition-types-transparent.png" alt="" width="3634" height="1353" loading="lazy"></div></div><figcaption>الشكل 2. تدعم <bdi class="technical-token" dir="ltr">ALUX</bdi> اليوم انتقالات الحالة المتوازية والمتزامنة، وتتعامل مع الانتقالات المركّبة بوصفها جزءًا من المعمارية المستهدفة.</figcaption><p class="alux-vs-figure-note"><strong>الخلاصة:</strong> يدفع التوازي الأعمال المستقلة إلى الأمام، ويتيح التزامن الانتظار والاستئناف، ويحدد التركيب كيف ينبغي تسوية الآثار المترابطة معًا.</p></figure>
           </section>
 
           <section class="alux-vs-article-section fade-in" id="execution">
             <h2>نموذج التنفيذ</h2>
-            <div class="alux-vs-capability-grid"><article class="alux-vs-capability alux-vs-capability--1"><span>متواز</span><div><h3>التنفيذ المتوازي</h3><p>يمكن اليوم تشغيل مثيلات <span class="alux-vs-accent">EVM</span> المعزولة بالتوازي. أما WASM فيندرج ضمن التوجه المخطط له نحو آلات افتراضية متغايرة.</p></div></article><article class="alux-vs-capability alux-vs-capability--2"><span>متزامن</span><div><h3>التنفيذ المتزامن</h3><p>تسمح ALUX للمعاملات بأن تعمل ك<span class="alux-vs-accent">روتينات تعاونية (coroutines)</span> يمكن تعليقها وإيقاظها وتداخلها معًا. وقد يكون التنفيذ غير حتمي، لكن إعادة التشغيل تظل حتمية.</p></div></article><article class="alux-vs-capability alux-vs-capability--3"><span>مركب</span><div><h3>الانتقالات المركبة</h3><p>يمكن للمعاملات أن تمتد عبر ارتفاعات كتل متعددة وتنسّق العمل على السلسلة مع آثار HTTPS قابلة لإعادة التشغيل، مع الحفاظ على العزل و<span class="alux-vs-accent">التسوية الذرية</span> داخل نطاق المعاملة في ALUX. ويظل التركيب عبر الشظايا جزءًا من المعمارية وخارطة الطريق.</p></div></article></div>
+            <div class="alux-vs-capability-grid"><article class="alux-vs-capability alux-vs-capability--1"><span>متواز</span><div><h3>التنفيذ المتوازي</h3><p>يمكن اليوم تشغيل مثيلات <span class="alux-vs-accent"><bdi class="technical-token" dir="ltr">EVM</bdi></span> المعزولة بالتوازي. أما <bdi class="technical-token" dir="ltr">WASM</bdi> فيندرج ضمن التوجه المخطط له نحو آلات افتراضية متغايرة.</p></div></article><article class="alux-vs-capability alux-vs-capability--2"><span>متزامن</span><div><h3>التنفيذ المتزامن</h3><p>تسمح <bdi class="technical-token" dir="ltr">ALUX</bdi> للمعاملات بأن تعمل ك<span class="alux-vs-accent">روتينات تعاونية (coroutines)</span> يمكن تعليقها وإيقاظها وتداخلها معًا. وقد يكون التنفيذ غير حتمي، لكن إعادة التشغيل تظل حتمية.</p></div></article><article class="alux-vs-capability alux-vs-capability--3"><span>مركب</span><div><h3>الانتقالات المركبة</h3><p>يمكن للمعاملات أن تمتد عبر ارتفاعات كتل متعددة وتنسّق العمل على السلسلة مع آثار HTTPS قابلة لإعادة التشغيل، مع الحفاظ على العزل و<span class="alux-vs-accent">التسوية الذرية</span> داخل نطاق المعاملة في <bdi class="technical-token" dir="ltr">ALUX</bdi>. ويظل التركيب عبر الشظايا جزءًا من المعمارية وخارطة الطريق.</p></div></article></div>
           </section>
 
           <section class="alux-vs-article-section fade-in" id="compatibility">
             <h2>الانتقالات المركبة والتوافق</h2>
-            <p>يمكن للمعاملات أن تمتد عبر ارتفاعات كتل متعددة وتنسّق العمل على السلسلة مع آثار HTTPS قابلة لإعادة التشغيل، مع الحفاظ على العزل و<span class="alux-vs-accent">التسوية الذرية</span> داخل نطاق المعاملة في ALUX. ويظل التركيب عبر الشظايا جزءًا من المعمارية وخارطة الطريق.</p>
-            <p>تتيح ALUX اليوم مسارًا لتشغيل <span class="alux-vs-accent">EVM</span> عبر بيئتها المعزولة وواجهة Ethereum JSON-RPC. أما WASM والتركيب الأوسع بين آلات افتراضية متغايرة فهما ضمن الخطة؛ ولا تتضمنهما النسخة الحالية.</p>
+            <p>يمكن للمعاملات أن تمتد عبر ارتفاعات كتل متعددة وتنسّق العمل على السلسلة مع آثار HTTPS قابلة لإعادة التشغيل، مع الحفاظ على العزل و<span class="alux-vs-accent">التسوية الذرية</span> داخل نطاق المعاملة في <bdi class="technical-token" dir="ltr">ALUX</bdi>. ويظل التركيب عبر الشظايا جزءًا من المعمارية وخارطة الطريق.</p>
+            <p>تتيح <bdi class="technical-token" dir="ltr">ALUX</bdi> اليوم مسارًا لتشغيل <span class="alux-vs-accent"><bdi class="technical-token" dir="ltr">EVM</bdi></span> عبر بيئتها المعزولة وواجهة Ethereum <bdi class="technical-token" dir="ltr">JSON-RPC</bdi>. أما <bdi class="technical-token" dir="ltr">WASM</bdi> والتركيب الأوسع بين آلات افتراضية متغايرة فهما ضمن الخطة؛ ولا تتضمنهما النسخة الحالية.</p>
             <figure class="alux-vs-native-figure alux-vs-native-figure--composite"><div class="alux-vs-native-surface" role="img" aria-label="رسم طبقة تشغيل المعاملات المركبة">
     <div class="alux-vs-original-image alux-vs-original-image--composite">
       <img src="/assets/alux-vs-others/composite-transitions-transparent.png" alt="" width="1570" height="1762" loading="lazy">
     </div>
-  </div><figcaption>الشكل 3. تصل معمارية الانتقالات المركبة بين العمل على السلسلة وخدمات Web 2؛ أما التركيب عبر الشظايا فلا يزال ضمن خارطة الطريق.</figcaption><p class="alux-vs-figure-note"><strong>الخلاصة:</strong> تدعم ALUX اليوم التنفيذ عبر الكتل وعمليات الإدخال والإخراج القابلة لإعادة التشغيل مع Web 2؛ أما التركيب عبر الشظايا فلا يزال مخططًا له.</p></figure>
-            <p class="alux-vs-article-close">باختصار، لا تحصر ALUX كل سير عمل في معاملة قصيرة. فهي تتيح اليوم إعادة تشغيل المعاملات طويلة الأمد (Long Transactions) الممتدة عبر الكتل والمتصلة بخدمات Web 2، بينما يظل التركيب عبر الشظايا وبين بيئات تشغيل أوسع جزءًا من المعمارية وخارطة الطريق.</p>
+  </div><figcaption>الشكل 3. تصل معمارية الانتقالات المركبة بين العمل على السلسلة وخدمات <bdi class="technical-token" dir="ltr">Web 2</bdi>؛ أما التركيب عبر الشظايا فلا يزال ضمن خارطة الطريق.</figcaption><p class="alux-vs-figure-note"><strong>الخلاصة:</strong> تدعم <bdi class="technical-token" dir="ltr">ALUX</bdi> اليوم التنفيذ عبر الكتل وعمليات الإدخال والإخراج القابلة لإعادة التشغيل مع <bdi class="technical-token" dir="ltr">Web 2</bdi>؛ أما التركيب عبر الشظايا فلا يزال مخططًا له.</p></figure>
+            <p class="alux-vs-article-close">باختصار، لا تحصر <bdi class="technical-token" dir="ltr">ALUX</bdi> كل سير عمل في معاملة قصيرة. فهي تتيح اليوم إعادة تشغيل المعاملات طويلة الأمد (Long Transactions) الممتدة عبر الكتل والمتصلة بخدمات <bdi class="technical-token" dir="ltr">Web 2</bdi>، بينما يظل التركيب عبر الشظايا وبين بيئات تشغيل أوسع جزءًا من المعمارية وخارطة الطريق.</p>
           </section>
         </div>
       </div>
@@ -161,6 +161,6 @@
     </footer>
   </div>
 <script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
-<script src="/script.js?v=20261012-language-routes"></script>
+<script src="/script.js?v=20261013-stable-layout"></script>
 </body>
 </html>

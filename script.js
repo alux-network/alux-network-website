@@ -2385,6 +2385,17 @@ function protectChineseSemanticWords(root, lang) {
   });
 }
 
+function localizedTechnicalMatches(value) {
+  return [...value.matchAll(LOCALIZED_UNBREAKABLE_PHRASES)].filter((match) => {
+    const start = match.index ?? 0;
+    const end = start + match[0].length;
+    return !(
+      (/^[A-Za-z0-9]/.test(match[0]) && /[A-Za-z0-9]/.test(value[start - 1] || "")) ||
+      (/[A-Za-z0-9]$/.test(match[0]) && /[A-Za-z0-9]/.test(value[end] || ""))
+    );
+  });
+}
+
 function protectLocalizedTechnicalTokens(root, lang) {
   if (lang === "en") return;
 
@@ -2392,16 +2403,7 @@ function protectLocalizedTechnicalTokens(root, lang) {
     if (node.parentElement?.closest(".technical-token, .no-break-token")) return;
 
     const value = node.nodeValue;
-    const matches = [...value.matchAll(LOCALIZED_UNBREAKABLE_PHRASES)].filter((match) => {
-      const start = match.index ?? 0;
-      const end = start + match[0].length;
-      const startsWithLatin = /^[A-Za-z0-9]/.test(match[0]);
-      const endsWithLatin = /[A-Za-z0-9]$/.test(match[0]);
-      return !(
-        (startsWithLatin && /[A-Za-z0-9]/.test(value[start - 1] || "")) ||
-        (endsWithLatin && /[A-Za-z0-9]/.test(value[end] || ""))
-      );
-    });
+    const matches = localizedTechnicalMatches(value);
     if (!matches.length) return;
 
     const fragment = document.createDocumentFragment();
