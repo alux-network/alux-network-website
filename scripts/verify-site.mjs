@@ -63,7 +63,7 @@ for (const page of allPages) {
   }
 
   if (page !== compatibilityPage) {
-    for (const required of ["styles.css?v=", "site-frame.css?v=", "i18n/site.generated.js?v=", "script.js?v="]) {
+    for (const required of ["styles.css?v=", "site-frame.css?v=", "fonts.css?v=", "script.js?v="]) {
       if (!html.includes(required)) errors.push(`${page}: missing runtime asset ${required}`);
     }
   }

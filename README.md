@@ -44,6 +44,10 @@ Pull requests and development branches receive independent preview deployments f
 
 ## Maintenance
 
+`npm run pages:render` also generates a small runtime translation catalog for each non-English page. Keep the reviewed master catalog in `i18n/site.generated.js`; do not edit `i18n/runtime` output by hand. English pages use their built-in English data. Runtime scripts load with `defer` in dependency order.
+
+Fonts are self-hosted with their original Open Font Licenses under `assets/fonts`. Optimized images preserve the original dimensions and RGBA pixels; originals remain in place. `scripts/optimized-media.json` maps approved originals to content-fingerprinted WebP assets. Regenerate the fingerprint and references whenever an optimized asset changes, since these image/font URLs are cached as immutable.
+
 This website is maintained by the ALUX Network team.
 
 Website creator, lead developer, and primary maintainer: [@shixi-11](https://github.com/shixi-11).
