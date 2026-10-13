@@ -60,10 +60,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=optional"
     rel="stylesheet"
   >
-<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/styles.css?v=20261013-stable-layout">
+<link rel="stylesheet" href="/roadmap.css?v=20261013-editorial-timeline">
 <link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
@@ -102,7 +103,7 @@
     <main id="page-content" class="roadmap-static" data-static="true" data-prerendered="ja">
       <section class="hero hero-simple fade-in roadmap-hero">
         <div class="hero-copy roadmap-hero-copy">
-          <span class="roadmap-kicker">ALUX</span>
+          <span class="roadmap-kicker"><span class="technical-token">ALUX</span></span>
           <h1>ロードマップ</h1>
           <p class="roadmap-updated">最終更新：2026年10月5日</p>
         </div>
@@ -122,8 +123,8 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">計画中</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>システムの主要な性質をLeanで形式証明 (予定)</li>
-              <li>テストネットをローンチ (予定)</li>
+              <li>システムの主要な性質をLeanで形式証明 <span class="roadmap-item-status">(予定)</span></li>
+              <li>テストネットをローンチ <span class="roadmap-item-status">(予定)</span></li>
             </ul>
           </article>
         </div>
@@ -141,13 +142,13 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">計画中</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>論理クロックと分離レベル強制メカニズムを実装（WIP）</li>
-              <li>「GDB」ライクな TVM デバッグ・可観測性ツール（WIP）</li>
-              <li>コスト会計モデルを完成 （WIP）</li>
-              <li>Ethereumツールチェーンと統合 （WIP）</li>
-              <li>Proof-of-Stake（PoS）コントラクトを実装・テスト（計画中）</li>
-              <li>同期および障害復旧メカニズムを実装 (予定)</li>
-              <li>ガベージコレクションを実装 (予定)</li>
+              <li>論理クロックと分離レベル強制メカニズムを実装<span class="roadmap-item-status">（WIP）</span></li>
+              <li>「GDB」ライクな <span class="technical-token">TVM</span> デバッグ・可観測性ツール<span class="roadmap-item-status">（WIP）</span></li>
+              <li>コスト会計モデルを完成 <span class="roadmap-item-status">（WIP）</span></li>
+              <li>Ethereumツールチェーンと統合 <span class="roadmap-item-status">（WIP）</span></li>
+              <li>Proof-of-Stake（PoS）コントラクトを実装・テスト<span class="roadmap-item-status">（計画中）</span></li>
+              <li>同期および障害復旧メカニズムを実装 <span class="roadmap-item-status">(予定)</span></li>
+              <li>ガベージコレクションを実装 <span class="roadmap-item-status">(予定)</span></li>
               <li class="roadmap-break-bullet">スマートコントラクトとエージェントのオーケストレーションを示す Solidity サンプルを提供 <span class="roadmap-break-tail">（async/await、join、select）（計画中）</span></li>
             </ul>
           </article>
@@ -158,15 +159,15 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>既存の非同期関数に加え、クロージャと部分適用に対応する同期関数をサポート (完了)</li>
-              <li>初期システムレジストリ、アカウント抽象化、ケイパビリティの請求・委譲コントラクト (完了)</li>
-              <li>TVMタスクスケジューラを簡素化し、並行実行をテストしやすく改善 (完了)</li>
-              <li>ネストしたコンテキスト間で確実にロールバックできる、台帳ベースの実行コンテキスト追跡 (完了)</li>
-              <li>コンパイラ出力を検証するためのTolang参照インタプリタ (完了)</li>
-              <li>Tolangコードフォーマッタ、tolang! Rustマクロ、IDEの定義へ移動と名前変更 (完了)</li>
-              <li>ノードのRPCインターフェースから生成した型付きバインディングを備えるTypeScript APIクライアント (完了)</li>
-              <li>ネストしたコレクション、ループ、クロージャ、初期段階のガスメータリングを備えた新しいTVMインタプリタ (レビュー中)</li>
-              <li>新しいトラップベースの EVM サンドボックス（進行中）</li>
+              <li>既存の非同期関数に加え、クロージャと部分適用に対応する同期関数をサポート <span class="roadmap-item-status">(完了)</span></li>
+              <li>初期システムレジストリ、アカウント抽象化、ケイパビリティの請求・委譲コントラクト <span class="roadmap-item-status">(完了)</span></li>
+              <li><span class="technical-token">TVM</span>タスクスケジューラを簡素化し、並行実行をテストしやすく改善 <span class="roadmap-item-status">(完了)</span></li>
+              <li>ネストしたコンテキスト間で確実にロールバックできる、台帳ベースの実行コンテキスト追跡 <span class="roadmap-item-status">(完了)</span></li>
+              <li>コンパイラ出力を検証するためのTolang参照インタプリタ <span class="roadmap-item-status">(完了)</span></li>
+              <li>Tolangコードフォーマッタ、tolang! Rustマクロ、IDEの定義へ移動と名前変更 <span class="roadmap-item-status">(完了)</span></li>
+              <li>ノードのRPCインターフェースから生成した型付きバインディングを備えるTypeScript APIクライアント <span class="roadmap-item-status">(完了)</span></li>
+              <li>ネストしたコレクション、ループ、クロージャ、初期段階のガスメータリングを備えた新しい<span class="technical-token">TVM</span>インタプリタ <span class="roadmap-item-status">(レビュー中)</span></li>
+              <li>新しいトラップベースの <span class="technical-token">EVM</span> サンドボックス<span class="roadmap-item-status">（進行中）</span></li>
             </ul>
           </article>
 
@@ -176,16 +177,16 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>ネイティブ Tolang パーサー（完了）</li>
-              <li>Tolang コンパイル時定数サポート（完了）</li>
-              <li>Tolang 言語サーバーと Tolang VS Code 拡張機能（完了）</li>
-              <li>テストフレームワークをリファクタリング（完了）</li>
-              <li>合意層を含むシステム全体のエンドツーエンド統合テストを実施（完了）</li>
-              <li>API 実装を完了（完了）</li>
-              <li>ノード CLI を開発（完了）</li>
-              <li>クロスブロック実行とアトミックなファイナライズ可視化のためのカスタムブロックチェーンエクスプローラー（完了）</li>
-              <li>新しいトラップベースの EVM サンドボックス（進行中）</li>
-              <li>Ethereum ツールチェーンと統合（進行中）</li>
+              <li>ネイティブ Tolang パーサー<span class="roadmap-item-status">（完了）</span></li>
+              <li>Tolang コンパイル時定数サポート<span class="roadmap-item-status">（完了）</span></li>
+              <li>Tolang 言語サーバーと Tolang VS Code 拡張機能<span class="roadmap-item-status">（完了）</span></li>
+              <li>テストフレームワークをリファクタリング<span class="roadmap-item-status">（完了）</span></li>
+              <li>合意層を含むシステム全体のエンドツーエンド統合テストを実施<span class="roadmap-item-status">（完了）</span></li>
+              <li>API 実装を完了<span class="roadmap-item-status">（完了）</span></li>
+              <li>ノード CLI を開発<span class="roadmap-item-status">（完了）</span></li>
+              <li>クロスブロック実行とアトミックなファイナライズ可視化のためのカスタムブロックチェーンエクスプローラー<span class="roadmap-item-status">（完了）</span></li>
+              <li>新しいトラップベースの <span class="technical-token">EVM</span> サンドボックス<span class="roadmap-item-status">（進行中）</span></li>
+              <li>Ethereum ツールチェーンと統合<span class="roadmap-item-status">（進行中）</span></li>
             </ul>
           </article>
 
@@ -195,11 +196,11 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>クロスブロック実行のリプレイメカニズムを簡素化（完了）</li>
-              <li>効率と単純性を高める新しい EVM サンドボックスを導入（完了）</li>
-              <li>TVM の合意、データベース、フレームワークをリファクタリングしてモジュール性を向上（完了）</li>
-              <li>Lazy Validator によるクロスブロック実行とリプレイのテストを実装（完了）</li>
-              <li>状態と実行進捗を可視化する TupleSpace Explorer を開発（完了）</li>
+              <li>クロスブロック実行のリプレイメカニズムを簡素化<span class="roadmap-item-status">（完了）</span></li>
+              <li>効率と単純性を高める新しい <span class="technical-token">EVM</span> サンドボックスを導入<span class="roadmap-item-status">（完了）</span></li>
+              <li><span class="technical-token">TVM</span> の合意、データベース、フレームワークをリファクタリングしてモジュール性を向上<span class="roadmap-item-status">（完了）</span></li>
+              <li>Lazy Validator によるクロスブロック実行とリプレイのテストを実装<span class="roadmap-item-status">（完了）</span></li>
+              <li>状態と実行進捗を可視化する TupleSpace Explorer を開発<span class="roadmap-item-status">（完了）</span></li>
             </ul>
           </article>
         </div>
@@ -217,10 +218,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>合意なしのクロスブロック実行をテスト（完了）</li>
-              <li>モジュール化を改善するため TVM フレームワークをリファクタリング（進行中）</li>
-              <li>API エンドポイントを仕様化し実装（進行中）</li>
-              <li>論理クロックと分離レベル強制メカニズムを設計（完了）</li>
+              <li>合意なしのクロスブロック実行をテスト<span class="roadmap-item-status">（完了）</span></li>
+              <li>モジュール化を改善するため <span class="technical-token">TVM</span> フレームワークをリファクタリング<span class="roadmap-item-status">（進行中）</span></li>
+              <li>API エンドポイントを仕様化し実装<span class="roadmap-item-status">（進行中）</span></li>
+              <li>論理クロックと分離レベル強制メカニズムを設計<span class="roadmap-item-status">（完了）</span></li>
             </ul>
           </article>
 
@@ -230,9 +231,9 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>複数のブロックとファイナライゼーション・フリンジにまたがる長期トランザクションを、実行、再開、パック、リプレイする仕組みを実装（完了）</li>
-              <li>性能と効率を高めるためデータベースモジュールをリファクタリング（進行中）</li>
-              <li>モジュール化を改善するため TVM フレームワークをリファクタリング（進行中）</li>
+              <li>複数のブロックとファイナライゼーション・フリンジにまたがる長期トランザクションを、実行、再開、パック、リプレイする仕組みを実装<span class="roadmap-item-status">（完了）</span></li>
+              <li>性能と効率を高めるためデータベースモジュールをリファクタリング<span class="roadmap-item-status">（進行中）</span></li>
+              <li>モジュール化を改善するため <span class="technical-token">TVM</span> フレームワークをリファクタリング<span class="roadmap-item-status">（進行中）</span></li>
             </ul>
           </article>
 
@@ -242,10 +243,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>BlockGit プロトコルで Weaklink を実装・テスト（完了）</li>
-              <li>TVM アーキテクチャを簡素化し信頼性を高めるため、単純なチャネル振る舞い型を導入（完了）</li>
-              <li>ランダム生成 Tolang コード向けテストフレームワークを導入し、CI と統合（完了）</li>
-              <li>リプレイロジックをリファクタリング（完了）</li>
+              <li><span class="technical-token">BlockGit</span> プロトコルで Weaklink を実装・テスト<span class="roadmap-item-status">（完了）</span></li>
+              <li><span class="technical-token">TVM</span> アーキテクチャを簡素化し信頼性を高めるため、単純なチャネル振る舞い型を導入<span class="roadmap-item-status">（完了）</span></li>
+              <li>ランダム生成 Tolang コード向けテストフレームワークを導入し、CI と統合<span class="roadmap-item-status">（完了）</span></li>
+              <li>リプレイロジックをリファクタリング<span class="roadmap-item-status">（完了）</span></li>
             </ul>
           </article>
 
@@ -255,10 +256,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>最大限の並行性に向けて、並行トランザクション実行、ブロックリプレイ、ブロック提案を支えるイベント駆動フレームワークへ全体をリファクタリング（完了）</li>
-              <li>RPC エンドポイントを実装し、欠落ブロックを扱えるよう BlockGit を更新（完了）</li>
-              <li>BlockGit のメモリリークを修正し性能を改善（完了）</li>
-              <li>BlockGit プロトコルに Weaklink を導入し、部分的に実装（完了）</li>
+              <li>最大限の並行性に向けて、並行トランザクション実行、ブロックリプレイ、ブロック提案を支えるイベント駆動フレームワークへ全体をリファクタリング<span class="roadmap-item-status">（完了）</span></li>
+              <li>RPC エンドポイントを実装し、欠落ブロックを扱えるよう <span class="technical-token">BlockGit</span> を更新<span class="roadmap-item-status">（完了）</span></li>
+              <li><span class="technical-token">BlockGit</span> のメモリリークを修正し性能を改善<span class="roadmap-item-status">（完了）</span></li>
+              <li><span class="technical-token">BlockGit</span> プロトコルに Weaklink を導入し、部分的に実装<span class="roadmap-item-status">（完了）</span></li>
             </ul>
           </article>
         </div>
@@ -276,10 +277,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>BlockGit をノードプラットフォームに統合（完了）</li>
-              <li>Docker ネットワーク上で合意プロトコルをテスト（完了）</li>
-              <li>ブロックマージにおける競合解決アルゴリズムを実装（完了）</li>
-              <li>クエリと状態コミットをサポートするようストレージモジュールをリファクタリング（完了）</li>
+              <li><span class="technical-token">BlockGit</span> をノードプラットフォームに統合<span class="roadmap-item-status">（完了）</span></li>
+              <li>Docker ネットワーク上で合意プロトコルをテスト<span class="roadmap-item-status">（完了）</span></li>
+              <li>ブロックマージにおける競合解決アルゴリズムを実装<span class="roadmap-item-status">（完了）</span></li>
+              <li>クエリと状態コミットをサポートするようストレージモジュールをリファクタリング<span class="roadmap-item-status">（完了）</span></li>
             </ul>
           </article>
 
@@ -289,10 +290,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>実行の一部を巻き戻すための実行コンテキストサポート（完了）</li>
-              <li>新しい合意プロトコル BlockGit の設計と初期実装（完了）</li>
-              <li>合意プロトコル実装をテストするための離散イベントシミュレータ（完了）</li>
-              <li>BlockGit の初期統合を含む P2P モジュール（完了）</li>
+              <li>実行の一部を巻き戻すための実行コンテキストサポート<span class="roadmap-item-status">（完了）</span></li>
+              <li>新しい合意プロトコル <span class="technical-token">BlockGit</span> の設計と初期実装<span class="roadmap-item-status">（完了）</span></li>
+              <li>合意プロトコル実装をテストするための離散イベントシミュレータ<span class="roadmap-item-status">（完了）</span></li>
+              <li><span class="technical-token">BlockGit</span> の初期統合を含む P2P モジュール<span class="roadmap-item-status">（完了）</span></li>
             </ul>
           </article>
 
@@ -302,11 +303,11 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>タプル空間の実行ロジックとリプレイロジックをリファクタリングし、統合（完了）</li>
-              <li>オラクル/リレイヤーなしで Web 2.0 システムと能動的に連携できることを示すため、外部 HTTPS 呼び出しの実行とリプレイを実装（完了）</li>
-              <li>Blocklace 合意プロトコルの初期実装（完了）</li>
-              <li>メモリ使用量を削減するために状態管理を再設計（完了）</li>
-              <li>分離レベルを強制するための論理クロックデータ構造とアルゴリズムを設計（完了）</li>
+              <li>タプル空間の実行ロジックとリプレイロジックをリファクタリングし、統合<span class="roadmap-item-status">（完了）</span></li>
+              <li>オラクル/リレイヤーなしで <span class="technical-token">Web 2.0</span> システムと能動的に連携できることを示すため、外部 HTTPS 呼び出しの実行とリプレイを実装<span class="roadmap-item-status">（完了）</span></li>
+              <li>Blocklace 合意プロトコルの初期実装<span class="roadmap-item-status">（完了）</span></li>
+              <li>メモリ使用量を削減するために状態管理を再設計<span class="roadmap-item-status">（完了）</span></li>
+              <li>分離レベルを強制するための論理クロックデータ構造とアルゴリズムを設計<span class="roadmap-item-status">（完了）</span></li>
             </ul>
           </article>
 
@@ -316,12 +317,12 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>グローバルレジストリの実装とテスト（完了）</li>
-              <li>Tolang と TVM による関数型プログラミングサポート（完了）</li>
-              <li>並行 TVM 上でスレッドセーフな順次計算をサポート（完了）</li>
-              <li>予備的な EVM 互換性テストを実施（完了）</li>
-              <li>Read-Committed 分離レベルをサポートする EVM 状態ストレージを実装（完了）</li>
-              <li>TVM の正確性とリプレイ可能性を包括的にテストし、コードをリファクタリング（完了）</li>
+              <li>グローバルレジストリの実装とテスト<span class="roadmap-item-status">（完了）</span></li>
+              <li>Tolang と <span class="technical-token">TVM</span> による関数型プログラミングサポート<span class="roadmap-item-status">（完了）</span></li>
+              <li>並行 <span class="technical-token">TVM</span> 上でスレッドセーフな順次計算をサポート<span class="roadmap-item-status">（完了）</span></li>
+              <li>予備的な <span class="technical-token">EVM</span> 互換性テストを実施<span class="roadmap-item-status">（完了）</span></li>
+              <li>Read-Committed 分離レベルをサポートする <span class="technical-token">EVM</span> 状態ストレージを実装<span class="roadmap-item-status">（完了）</span></li>
+              <li><span class="technical-token">TVM</span> の正確性とリプレイ可能性を包括的にテストし、コードをリファクタリング<span class="roadmap-item-status">（完了）</span></li>
             </ul>
           </article>
         </div>
@@ -339,10 +340,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>エラー処理とスレッド局所性への対応を改善する、新しいタスクマネージャを実装（完了）</li>
-              <li>順次計算サポートの導入による性能改善（完了）</li>
-              <li>特殊チャネルタイプのテスト（完了）</li>
-              <li>特殊チャネルタイプを利用してリプレイログを簡素化（完了）</li>
+              <li>エラー処理とスレッド局所性への対応を改善する、新しいタスクマネージャを実装<span class="roadmap-item-status">（完了）</span></li>
+              <li>順次計算サポートの導入による性能改善<span class="roadmap-item-status">（完了）</span></li>
+              <li>特殊チャネルタイプのテスト<span class="roadmap-item-status">（完了）</span></li>
+              <li>特殊チャネルタイプを利用してリプレイログを簡素化<span class="roadmap-item-status">（完了）</span></li>
             </ul>
           </article>
 
@@ -352,9 +353,9 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>ストレージ層テスト（完了）</li>
-              <li>並行仮想マシンの実行および決定的リプレイテスト（完了）</li>
-              <li>特殊チャネルタイプの仕様策定と実装（完了）</li>
+              <li>ストレージ層テスト<span class="roadmap-item-status">（完了）</span></li>
+              <li>並行仮想マシンの実行および決定的リプレイテスト<span class="roadmap-item-status">（完了）</span></li>
+              <li>特殊チャネルタイプの仕様策定と実装<span class="roadmap-item-status">（完了）</span></li>
             </ul>
           </article>
 
@@ -364,8 +365,8 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>並行仮想マシンの実行およびリプレイ実装（完了）</li>
-              <li>ストレージ層の仕様策定と実装（完了）</li>
+              <li>並行仮想マシンの実行およびリプレイ実装<span class="roadmap-item-status">（完了）</span></li>
+              <li>ストレージ層の仕様策定と実装<span class="roadmap-item-status">（完了）</span></li>
             </ul>
           </article>
 
@@ -375,8 +376,8 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">完了</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>並行仮想マシンのオペコードを実装・テスト（完了）</li>
-              <li>並行トランザクションの決定的リプレイ用データ構造（完了）</li>
+              <li>並行仮想マシンのオペコードを実装・テスト<span class="roadmap-item-status">（完了）</span></li>
+              <li>並行トランザクションの決定的リプレイ用データ構造<span class="roadmap-item-status">（完了）</span></li>
             </ul>
           </article>
         </div>
@@ -388,6 +389,6 @@
     </footer>
   </div>
 <script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
-<script src="/script.js?v=20261012-language-routes"></script>
+<script src="/script.js?v=20261013-stable-layout"></script>
 </body>
 </html>

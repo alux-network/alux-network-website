@@ -18,8 +18,33 @@ function render(page,language){
  const storage={getItem(){return null;},setItem(){},removeItem(){}};
  const context=vm.createContext({console,document:{body,documentElement:element(),querySelector(s){return s==='#page-content'?main:null;},querySelectorAll(){return [];},createElement:element,addEventListener(){}},window:{ALUX_LANGUAGE:{language},location:{protocol:'https:',href:'https://www.alux.network/',hash:''},matchMedia(){return {matches:false,addEventListener(){}};},addEventListener(){}},navigator:{language:'en-US'},localStorage:storage,sessionStorage:storage,setTimeout(){},clearTimeout(){},IntersectionObserver:class {observe(){}}});
  vm.runInContext(translations,context,{timeout:5000});
- vm.runInContext(source+'\n;globalThis.output={chrome:ui,languageNames:visibleLanguageNames,page:pages[currentPage]["'+language+'"]||pages[currentPage].en};globalThis.sanitizeText=sanitizeExternalProjectNames;',context,{timeout:5000});
- return {...context.output,entries:context.window.ALUX_SITE_I18N.entries[language]||{},markup:main.innerHTML.replace(/(^|>)([^<]+)(?=<|$)/g,(_,b,t)=>b+context.sanitizeText(t,language)).replace(/[\t ]+$/gm,'')};
+ vm.runInContext(source+'\n;globalThis.output={chrome:ui,languageNames:visibleLanguageNames,page:pages[currentPage]["'+language+'"]||pages[currentPage].en};globalThis.sanitizeText=sanitizeExternalProjectNames;globalThis.technicalMatches=localizedTechnicalMatches;globalThis.arabicRuns=ARABIC_TECHNICAL_RUN;',context,{timeout:5000});
+ return {...context.output,technicalMatches:context.technicalMatches,arabicRuns:context.arabicRuns,entries:context.window.ALUX_SITE_I18N.entries[language]||{},markup:main.innerHTML.replace(/(^|>)([^<]+)(?=<|$)/g,(_,b,t)=>b+context.sanitizeText(t,language)).replace(/[\t ]+$/gm,'')};
+}
+
+// Match the runtime's semantic word protection before the first paint. The
+// runtime is idempotent over these wrappers, so loading JS cannot rewrap text.
+function protectInitialText(markup, language, result) {
+ if(language==='en')return markup;
+ const stack=[],voidTags=new Set(['area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr']);
+ const decode=text=>text.replace(/&(#x[\da-f]+|#\d+|amp|lt|gt|quot|apos|nbsp);/gi,(entity,key)=>key[0]==='#'?String.fromCodePoint(parseInt(key.slice(key[1]?.toLowerCase()==='x'?2:1),key[1]?.toLowerCase()==='x'?16:10)):({amp:'&',lt:'<',gt:'>',quot:'"',apos:"'",nbsp:'\u00a0'}[key.toLowerCase()]||entity));
+ const wrap=(text,matches,tag,attributes,rest=escape)=>{let cursor=0,html='';for(const match of matches){html+=rest(text.slice(cursor,match.index))+'<'+tag+attributes+'>'+escape(match[0])+'</'+tag+'>';cursor=match.index+match[0].length;}return html+rest(text.slice(cursor));};
+ return markup.replace(/<!--[\s\S]*?-->|<[^>]+>|[^<]+/g,part=>{
+  if(part.startsWith('<!--'))return part;
+  if(part[0]==='<'){
+   const closing=part.match(/^<\/([\w-]+)/),opening=part.match(/^<([\w-]+)/);
+   if(closing){const i=stack.map(e=>e.tag).lastIndexOf(closing[1].toLowerCase());if(i>=0)stack.length=i;}
+   else if(opening&&!voidTags.has(opening[1].toLowerCase())&&!part.endsWith('/>'))stack.push({tag:opening[1].toLowerCase(),classes:(part.match(/\bclass="([^"]*)"/)?.[1]||'').split(/\s+/),ltr:/\bdir=['"]ltr['"]/.test(part)});
+   return part;
+  }
+  if(!part.trim()||stack.some(e=>['script','style','svg','bdi'].includes(e.tag)||e.ltr||e.classes.some(c=>['technical-token','no-break-token'].includes(c))))return part;
+  const arabicScope=stack.some(e=>e.classes.includes('agent-difference-node'))||stack.some(e=>e.classes.includes('roadmap-bullet-list'))&&stack.some(e=>e.tag==='li')||stack.some(e=>e.classes.includes('glvm-page'))&&stack.some(e=>['p','h1','h2','h3','span','strong','small','li','code','a','button'].includes(e.tag));
+  const text=decode(part),matches=result.technicalMatches(text);
+  const rest=language==='ar'&&arabicScope?value=>wrap(value,[...value.matchAll(result.arabicRuns)],'bdi',' dir="ltr"'):escape;
+  if(matches.length)return wrap(text,matches,language==='ar'?'bdi':'span',' class="technical-token"'+(language==='ar'?' dir="ltr"':''),rest);
+  if(language==='ar'&&arabicScope)return rest(text);
+  return part;
+ });
 }
 function roadmap(language,result){
  let index=0;
@@ -30,6 +55,7 @@ function roadmap(language,result){
  });
  html=html.replace(/(<p\b[^>]*data-quarter="(Q[1-4])"[^>]*>)([^<]*)(<\/p>)/g,(_,open,q,label,close)=>open+'<span class="sr-only">'+label+'</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">'+q+'</bdi>'+close);
  if(language==='en')html=html.replace(/\((Completed|Planned|In Progress|In Review|WIP)\)/g,'<strong>($1)</strong>');
+ html=html.replace(/([（(][^<()（）]+[)）])(?=\s*(?:<\/strong>)?<\/li>)/g,'<span class="roadmap-item-status">$1</span>');
  const years=[...html.matchAll(/<section\b[^>]*roadmap-year-section--(\d{4})[^>]*>[\s\S]*?<\/section>/g)].map(match=>{
   let section=match[0].replace(/<section\b/,'<section data-year="'+match[1]+'"');
   const quarters=[...section.matchAll(/<article\b[\s\S]*?<\/article>/g)].map(m=>({quarter:Number(m[0].match(/data-quarter="Q([1-4])"/)[1]),html:m[0]})).sort((a,b)=>b.quarter-a.quarter);
@@ -49,8 +75,10 @@ for(const file of files){
   const result=render(page,language),chrome=result.chrome[language];
   let html=original.replace(/\n*<script data-initial-navigation>[\s\S]*?<\/script>\n*/,'\n').replace(/\n*<script data-language-routing>[\s\S]*?<\/script>\n*/,'\n').replace(/\s*<link rel="alternate" hreflang="[^"]+"[^>]*>/g,'');
   html=html.replace(/<html\b[^>]*>/,'<html lang="'+language+'" dir="'+(language==='ar'?'rtl':'ltr')+'">');
+  // Slow web fonts keep the stable fallback rather than swapping after paint.
+  html=html.replace(/([&?])display=swap\b/g,'$1display=optional');
   html=html.replace(/(<meta charset="UTF-8">)/,'$1\n<script data-language-routing>\n'+routing.trim()+'\n</script>');
-  const main=file==='roadmap.html'?roadmap(language,result):'<main id="page-content" data-prerendered="'+language+'">'+result.markup+'</main>';
+  const main=protectInitialText(file==='roadmap.html'?roadmap(language,result):'<main id="page-content" data-prerendered="'+language+'">'+result.markup+'</main>',language,result);
   if(!/<h[1-6]\b/.test(main))throw Error(file+': empty content');
   html=html.replace(/<main\b[^>]*id="page-content"[^>]*>[\s\S]*?<\/main>/,()=>main);
   html=html.replace(/(<[^>]+data-nav="([^"]+)"[^>]*>)[^<]*/g,(_,open,key)=>open+escape(chrome.nav[key]));
@@ -77,7 +105,7 @@ for(const file of files){
    if(attr==='href'&&files.includes(pageFile))return attr+'="'+pageUrl(pageFile,language).replace('https://www.alux.network','')+parts.join('')+'"';
    return attr+'="/'+raw.replace(/^\//,'')+parts.join('')+'"';
   });
-  html=html.replace(/(styles\.css|script\.js)\?v=[^"\s]+/g,'$1?v=20261012-language-routes').replace(/site.generated.js\?v=[^"\s]+/g,'site.generated.js?v=20261012-roadmap-order');
+  html=html.replace(/(styles\.css|script\.js)\?v=[^"\s]+/g,'$1?v=20261013-stable-layout').replace(/site.generated.js\?v=[^"\s]+/g,'site.generated.js?v=20261012-roadmap-order');
   html=html.trimEnd()+'\n';
   const target=path.join(root,language==='en'?'':language,file);
   const existing=await fs.readFile(target,'utf8').catch(()=>null);

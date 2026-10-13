@@ -60,10 +60,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=optional"
     rel="stylesheet"
   >
-<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/styles.css?v=20261013-stable-layout">
 <link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
@@ -102,12 +102,12 @@
     <article class="alux-vs-page alux-vs-article">
       <header class="alux-vs-article-header fade-in">
         <div class="alux-vs-article-lede">
-          <h1>Web 2 と Web 3 を統合する分散ランタイム</h1>
-          <p>ブロックチェーンは本質的に状態遷移マシンです。ALUX は、短く独立した VM 呼び出しを、リプレイ可能な長期トランザクションへ拡張します。現在はクロスブロック実行と検証可能な Web 2 I/O に対応し、より広いアーキテクチャではランタイム間・シャード間のコンポーザビリティを目指しています。</p>
+          <h1><span class="technical-token">Web 2</span> と <span class="technical-token">Web 3</span> を統合する分散ランタイム</h1>
+          <p>ブロックチェーンは本質的に状態遷移マシンです。<span class="technical-token">ALUX</span> は、短く独立した VM 呼び出しを、リプレイ可能な長期トランザクションへ拡張します。現在はクロスブロック実行と検証可能な <span class="technical-token">Web 2</span> I/O に対応し、より広いアーキテクチャではランタイム間・シャード間のコンポーザビリティを目指しています。</p>
         </div>
         <aside class="alux-vs-article-summary" aria-label="記事の要約">
           <span>核心的な違い</span>
-          <dl><div><dt>多くのチェーン</dt><dd>短く孤立した VM 呼び出し</dd></div><div><dt>ALUX</dt><dd>リプレイ可能な長期トランザクション</dd></div><div><dt>実行</dt><dd>現在は並列・並行に対応、複合は目標モデル</dd></div><div><dt>トランザクション・セマンティクス</dt><dd>長期トランザクション向けの ACID 型セマンティクス</dd></div></dl>
+          <dl><div><dt>多くのチェーン</dt><dd>短く孤立した VM 呼び出し</dd></div><div><dt><span class="technical-token">ALUX</span></dt><dd>リプレイ可能な長期トランザクション</dd></div><div><dt>実行</dt><dd>現在は並列・並行に対応、複合は目標モデル</dd></div><div><dt>トランザクション・セマンティクス</dt><dd>長期トランザクション向けの ACID 型セマンティクス</dd></div></dl>
         </aside>
       </header>
 
@@ -120,37 +120,37 @@
         <div class="alux-vs-article-body">
           <section class="alux-vs-article-section fade-in" id="problem">
             <h2>私たちが解く課題</h2>
-            <p>多くのブロックチェーン VM は、短く順序付けられた状態更新を中心に設計されています。ALUX はそのモデルを、待機、再開、協調、ブロック境界の横断が必要なワークフローへ拡張します。</p>
+            <p>多くのブロックチェーン VM は、短く順序付けられた状態更新を中心に設計されています。<span class="technical-token">ALUX</span> はそのモデルを、待機、再開、協調、ブロック境界の横断が必要なワークフローへ拡張します。</p>
             <ul><li>ブロックチェーンは本質的に状態遷移マシンです。</li><li>現在の多くのブロックチェーン VM は、短く順序付けられた、より限定的な遷移を中心に扱います。</li></ul>
             <figure class="alux-vs-native-figure alux-vs-native-figure--state"><div class="alux-vs-native-surface" role="img" aria-label="状態遷移モデル図">
     <div class="alux-vs-original-image alux-vs-original-image--state">
       <img src="/assets/alux-vs-others/state-transitions-page-crop-transparent.png" alt="" width="2070" height="910" loading="lazy">
     </div>
-  </div><figcaption>図1　ALUX は Web3 の実行モデルを、短い状態更新からリプレイ可能な長期トランザクションへ拡張します。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong>多くのチェーンは短い状態更新を中心に据えますが、ALUX はリプレイ可能な長期トランザクションを加えます。</p></figure>
+  </div><figcaption>図1　<span class="technical-token">ALUX</span> は Web3 の実行モデルを、短い状態更新からリプレイ可能な長期トランザクションへ拡張します。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong>多くのチェーンは短い状態更新を中心に据えますが、<span class="technical-token">ALUX</span> はリプレイ可能な長期トランザクションを加えます。</p></figure>
           </section>
 
           <section class="alux-vs-article-section fade-in" id="universal">
-            <h2>長期トランザクション向け分散ランタイムとしての ALUX</h2>
-            <p>ALUX は、一度きりの状態更新を超えて、並列・並行・複合の遷移パターンをモデル化します。</p>
-            <p>ALUX は各トランザクションを短く孤立した状態更新として扱うのではなく、並列、並行、複合の遷移を調整できるランタイムとして実行をモデル化します。</p>
-            <figure class="alux-vs-native-figure alux-vs-native-figure--types"><div class="alux-vs-native-surface" role="img" aria-label="並列、並行、複合遷移の図"><div class="alux-vs-original-image alux-vs-original-image--types"><img src="/assets/alux-vs-others/transition-types-transparent.png" alt="" width="3634" height="1353" loading="lazy"></div></div><figcaption>図2　ALUX は現在、並列・並行の状態遷移に対応しており、複合状態遷移は目標アーキテクチャとして位置づけています。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong>並列性は独立した処理を進め、並行性は待機と再開を可能にし、コンポーザビリティは関連する効果をどのように一体で確定するかを定めます。</p></figure>
+            <h2>長期トランザクション向け分散ランタイムとしての <span class="technical-token">ALUX</span></h2>
+            <p><span class="technical-token">ALUX</span> は、一度きりの状態更新を超えて、並列・並行・複合の遷移パターンをモデル化します。</p>
+            <p><span class="technical-token">ALUX</span> は各トランザクションを短く孤立した状態更新として扱うのではなく、並列、並行、複合の遷移を調整できるランタイムとして実行をモデル化します。</p>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--types"><div class="alux-vs-native-surface" role="img" aria-label="並列、並行、複合遷移の図"><div class="alux-vs-original-image alux-vs-original-image--types"><img src="/assets/alux-vs-others/transition-types-transparent.png" alt="" width="3634" height="1353" loading="lazy"></div></div><figcaption>図2　<span class="technical-token">ALUX</span> は現在、並列・並行の状態遷移に対応しており、複合状態遷移は目標アーキテクチャとして位置づけています。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong>並列性は独立した処理を進め、並行性は待機と再開を可能にし、コンポーザビリティは関連する効果をどのように一体で確定するかを定めます。</p></figure>
           </section>
 
           <section class="alux-vs-article-section fade-in" id="execution">
             <h2>実行モデル</h2>
-            <div class="alux-vs-capability-grid"><article class="alux-vs-capability alux-vs-capability--1"><span>並列</span><div><h3>並列実行：</h3><p>分離された <span class="alux-vs-accent">EVM</span> インスタンスは、現在すでに並列実行できます。WASM は、計画中の異種 VM 対応に含まれます。</p></div></article><article class="alux-vs-capability alux-vs-capability--2"><span>並行</span><div><h3>並行実行：</h3><p>ALUX では TX を <span class="alux-vs-accent">コルーチン</span>として実行でき、一時停止、再開、相互のインターリーブが可能です。実行順は非決定的でも、リプレイは決定的に行われます。</p></div></article><article class="alux-vs-capability alux-vs-capability--3"><span>複合</span><div><h3>複合遷移：</h3><p>TX はブロック高をまたぎ、ALUX のトランザクション境界内で分離性と <span class="alux-vs-accent">アトミックな決済</span>を保ちながら、オンチェーン処理とリプレイ可能な HTTPS 効果を協調させられます。シャード間コンポーザビリティは、引き続きアーキテクチャとロードマップの一部です。</p></div></article></div>
+            <div class="alux-vs-capability-grid"><article class="alux-vs-capability alux-vs-capability--1"><span>並列</span><div><h3>並列実行：</h3><p>分離された <span class="alux-vs-accent"><span class="technical-token">EVM</span></span> インスタンスは、現在すでに並列実行できます。<span class="technical-token">WASM</span> は、計画中の異種 VM 対応に含まれます。</p></div></article><article class="alux-vs-capability alux-vs-capability--2"><span>並行</span><div><h3>並行実行：</h3><p><span class="technical-token">ALUX</span> では TX を <span class="alux-vs-accent">コルーチン</span>として実行でき、一時停止、再開、相互のインターリーブが可能です。実行順は非決定的でも、リプレイは決定的に行われます。</p></div></article><article class="alux-vs-capability alux-vs-capability--3"><span>複合</span><div><h3>複合遷移：</h3><p>TX はブロック高をまたぎ、<span class="technical-token">ALUX</span> のトランザクション境界内で分離性と <span class="alux-vs-accent">アトミックな決済</span>を保ちながら、オンチェーン処理とリプレイ可能な HTTPS 効果を協調させられます。シャード間コンポーザビリティは、引き続きアーキテクチャとロードマップの一部です。</p></div></article></div>
           </section>
 
           <section class="alux-vs-article-section fade-in" id="compatibility">
             <h2>複合状態遷移と互換性</h2>
-            <p>TX はブロック高をまたぎ、ALUX のトランザクション境界内で分離性と <span class="alux-vs-accent">アトミックな決済</span>を保ちながら、オンチェーン処理とリプレイ可能な HTTPS 効果を協調させられます。シャード間コンポーザビリティは、引き続きアーキテクチャとロードマップの一部です。</p>
-            <p>ALUX は現在、サンドボックスと Ethereum JSON-RPC を通じて <span class="alux-vs-accent">EVM</span> 実行経路を提供しています。WASM と、より広範な異種 VM 間コンポーザビリティは計画段階であり、現行の基準版には実装されていません。</p>
+            <p>TX はブロック高をまたぎ、<span class="technical-token">ALUX</span> のトランザクション境界内で分離性と <span class="alux-vs-accent">アトミックな決済</span>を保ちながら、オンチェーン処理とリプレイ可能な HTTPS 効果を協調させられます。シャード間コンポーザビリティは、引き続きアーキテクチャとロードマップの一部です。</p>
+            <p><span class="technical-token">ALUX</span> は現在、サンドボックスと Ethereum <span class="technical-token">JSON-RPC</span> を通じて <span class="alux-vs-accent"><span class="technical-token">EVM</span></span> 実行経路を提供しています。<span class="technical-token">WASM</span> と、より広範な異種 VM 間コンポーザビリティは計画段階であり、現行の基準版には実装されていません。</p>
             <figure class="alux-vs-native-figure alux-vs-native-figure--composite"><div class="alux-vs-native-surface" role="img" aria-label="複合トランザクションのランタイム図">
     <div class="alux-vs-original-image alux-vs-original-image--composite">
       <img src="/assets/alux-vs-others/composite-transitions-transparent.png" alt="" width="1570" height="1762" loading="lazy">
     </div>
-  </div><figcaption>図3　複合遷移アーキテクチャはオンチェーン処理と Web 2 サービスを接続します。シャード間コンポーザビリティは引き続きロードマップ上の計画です。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong>ALUX は現在、クロスブロック実行とリプレイ可能な Web 2 I/O に対応しています。シャード間コンポーザビリティは計画段階です。</p></figure>
-            <p class="alux-vs-article-close">要するに、ALUX はあらゆるワークフローを短いトランザクションに押し込めません。現在すでに、ブロックをまたぎ Web 2 と連携する長期トランザクションをリプレイ可能にしています。一方、シャード間およびより広範なランタイム間のコンポーザビリティは、引き続きアーキテクチャとロードマップに含まれます。</p>
+  </div><figcaption>図3　複合遷移アーキテクチャはオンチェーン処理と <span class="technical-token">Web 2</span> サービスを接続します。シャード間コンポーザビリティは引き続きロードマップ上の計画です。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong><span class="technical-token">ALUX</span> は現在、クロスブロック実行とリプレイ可能な <span class="technical-token">Web 2</span> I/O に対応しています。シャード間コンポーザビリティは計画段階です。</p></figure>
+            <p class="alux-vs-article-close">要するに、<span class="technical-token">ALUX</span> はあらゆるワークフローを短いトランザクションに押し込めません。現在すでに、ブロックをまたぎ <span class="technical-token">Web 2</span> と連携する長期トランザクションをリプレイ可能にしています。一方、シャード間およびより広範なランタイム間のコンポーザビリティは、引き続きアーキテクチャとロードマップに含まれます。</p>
           </section>
         </div>
       </div>
@@ -161,6 +161,6 @@
     </footer>
   </div>
 <script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
-<script src="/script.js?v=20261012-language-routes"></script>
+<script src="/script.js?v=20261013-stable-layout"></script>
 </body>
 </html>

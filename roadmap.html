@@ -60,10 +60,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=optional"
     rel="stylesheet"
   >
-<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/styles.css?v=20261013-stable-layout">
+<link rel="stylesheet" href="/roadmap.css?v=20261013-editorial-timeline">
 <link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
@@ -122,8 +123,8 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">Planned</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Formal proofs in Lean of key system properties <strong>(Planned)</strong></li>
-              <li>Testnet launch <strong>(Planned)</strong></li>
+              <li>Formal proofs in Lean of key system properties <strong><span class="roadmap-item-status">(Planned)</span></strong></li>
+              <li>Testnet launch <strong><span class="roadmap-item-status">(Planned)</span></strong></li>
             </ul>
           </article>
         </div>
@@ -141,13 +142,13 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">Planned</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Implement logical clock and isolation-level enforcement mechanisms <strong>(WIP)</strong></li>
-              <li>A "GDB" like TVM debug and observability tool <strong>(WIP)</strong></li>
-              <li>Complete the cost accounting model <strong>(WIP)</strong></li>
-              <li>Integrate with Ethereum toolchain <strong>(WIP)</strong></li>
-              <li>Implement and test proof-of-stake (PoS) contract <strong>(Planned)</strong></li>
-              <li>Implement synchronization and fault recovery mechanisms <strong>(Planned)</strong></li>
-              <li>Implement garbage collection <strong>(Planned)</strong></li>
+              <li>Implement logical clock and isolation-level enforcement mechanisms <strong><span class="roadmap-item-status">(WIP)</span></strong></li>
+              <li>A "GDB" like TVM debug and observability tool <strong><span class="roadmap-item-status">(WIP)</span></strong></li>
+              <li>Complete the cost accounting model <strong><span class="roadmap-item-status">(WIP)</span></strong></li>
+              <li>Integrate with Ethereum toolchain <strong><span class="roadmap-item-status">(WIP)</span></strong></li>
+              <li>Implement and test proof-of-stake (PoS) contract <strong><span class="roadmap-item-status">(Planned)</span></strong></li>
+              <li>Implement synchronization and fault recovery mechanisms <strong><span class="roadmap-item-status">(Planned)</span></strong></li>
+              <li>Implement garbage collection <strong><span class="roadmap-item-status">(Planned)</span></strong></li>
               <li class="roadmap-break-bullet">Deliver Solidity examples demonstrating smart contract / agent orchestration <span class="roadmap-break-tail">(async/await, join, select) <strong>(Planned)</strong></span></li>
             </ul>
           </article>
@@ -158,15 +159,15 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Support for synchronous functions alongside the existing asynchronous functions, with closures and partial application <strong>(Completed)</strong></li>
-              <li>Initial system registry, account abstraction, and capability claim and delegation contracts <strong>(Completed)</strong></li>
-              <li>Simplified the TVM task scheduler and made concurrent execution easier to test <strong>(Completed)</strong></li>
-              <li>Ledger-based execution context tracking for reliable revert across nested contexts <strong>(Completed)</strong></li>
-              <li>Tolang reference interpreter for verifying compiler output <strong>(Completed)</strong></li>
-              <li>Tolang code formatter, tolang! Rust macro, and IDE go-to-definition and rename <strong>(Completed)</strong></li>
-              <li>TypeScript API client with typed bindings generated from the node's RPC interface <strong>(Completed)</strong></li>
-              <li>New TVM interpreter with nested collections, loops, closures and initial gas metering <strong>(In Review)</strong></li>
-              <li>New trap based EVM sandbox <strong>(In Progress)</strong></li>
+              <li>Support for synchronous functions alongside the existing asynchronous functions, with closures and partial application <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Initial system registry, account abstraction, and capability claim and delegation contracts <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Simplified the TVM task scheduler and made concurrent execution easier to test <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Ledger-based execution context tracking for reliable revert across nested contexts <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Tolang reference interpreter for verifying compiler output <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Tolang code formatter, tolang! Rust macro, and IDE go-to-definition and rename <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>TypeScript API client with typed bindings generated from the node's RPC interface <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>New TVM interpreter with nested collections, loops, closures and initial gas metering <strong><span class="roadmap-item-status">(In Review)</span></strong></li>
+              <li>New trap based EVM sandbox <strong><span class="roadmap-item-status">(In Progress)</span></strong></li>
             </ul>
           </article>
 
@@ -176,16 +177,16 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Native Tolang parser <strong>(Completed)</strong></li>
-              <li>Tolang compilation time const support <strong>(Completed)</strong></li>
-              <li>Tolang language server and Tolang VS Code extension <strong>(Completed)</strong></li>
-              <li>Refactored test framework <strong>(Completed)</strong></li>
-              <li>Conduct full end-to-end integration testing of the system including the consensus layer <strong>(Completed)</strong></li>
-              <li>Complete API implementation <strong>(Completed)</strong></li>
-              <li>Develop node CLI <strong>(Completed)</strong></li>
-              <li>Customized blockchain explorer for cross-block execution and atomic finalization visualization <strong>(Completed)</strong></li>
-              <li>New trap based EVM sandbox <strong>(In Progress)</strong></li>
-              <li>Integrate with Ethereum toolchain <strong>(In Progress)</strong></li>
+              <li>Native Tolang parser <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Tolang compilation time const support <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Tolang language server and Tolang VS Code extension <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Refactored test framework <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Conduct full end-to-end integration testing of the system including the consensus layer <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Complete API implementation <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Develop node CLI <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Customized blockchain explorer for cross-block execution and atomic finalization visualization <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>New trap based EVM sandbox <strong><span class="roadmap-item-status">(In Progress)</span></strong></li>
+              <li>Integrate with Ethereum toolchain <strong><span class="roadmap-item-status">(In Progress)</span></strong></li>
             </ul>
           </article>
 
@@ -195,11 +196,11 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Simplified replay mechanism for cross-block execution <strong>(Completed)</strong></li>
-              <li>Introduced a new EVM sandbox for improved efficiency and simplicity <strong>(Completed)</strong></li>
-              <li>Refactored TVM consensus, database, and framework for better modularity <strong>(Completed)</strong></li>
-              <li>Implemented tests for cross-block execution and replay by lazy validators <strong>(Completed)</strong></li>
-              <li>Developed TupleSpace Explorer to visualize state and execution progress <strong>(Completed)</strong></li>
+              <li>Simplified replay mechanism for cross-block execution <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Introduced a new EVM sandbox for improved efficiency and simplicity <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Refactored TVM consensus, database, and framework for better modularity <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Implemented tests for cross-block execution and replay by lazy validators <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Developed TupleSpace Explorer to visualize state and execution progress <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
             </ul>
           </article>
         </div>
@@ -217,10 +218,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Test cross-block execution without consensus <strong>(Completed)</strong></li>
-              <li>Refactor the TVM framework for improved modularization <strong>(In Progress)</strong></li>
-              <li>Specify and implement API endpoints <strong>(In Progress)</strong></li>
-              <li>Design the logical clock and isolation level enforcement mechanism <strong>(Completed)</strong></li>
+              <li>Test cross-block execution without consensus <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Refactor the TVM framework for improved modularization <strong><span class="roadmap-item-status">(In Progress)</span></strong></li>
+              <li>Specify and implement API endpoints <strong><span class="roadmap-item-status">(In Progress)</span></strong></li>
+              <li>Design the logical clock and isolation level enforcement mechanism <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
             </ul>
           </article>
 
@@ -230,9 +231,9 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Implemented a mechanism to execute, wake up, pack, and replay long transactions spanning multiple blocks and finalization fringes <strong>(Completed)</strong></li>
-              <li>Refactored the database module to improve performance and efficiency <strong>(In Progress)</strong></li>
-              <li>Refactored the TVM framework for improved modularization <strong>(In Progress)</strong></li>
+              <li>Implemented a mechanism to execute, wake up, pack, and replay long transactions spanning multiple blocks and finalization fringes <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Refactored the database module to improve performance and efficiency <strong><span class="roadmap-item-status">(In Progress)</span></strong></li>
+              <li>Refactored the TVM framework for improved modularization <strong><span class="roadmap-item-status">(In Progress)</span></strong></li>
             </ul>
           </article>
 
@@ -242,10 +243,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Implement and test Weaklink in the BlockGit protocol <strong>(Completed)</strong></li>
-              <li>Introduce simple channel behavioral types to simplify TVM architecture and improve reliability <strong>(Completed)</strong></li>
-              <li>Introduce test framework for randomly generated Tolang codes and CI integration <strong>(Completed)</strong></li>
-              <li>Refactor replay logic <strong>(Completed)</strong></li>
+              <li>Implement and test Weaklink in the BlockGit protocol <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Introduce simple channel behavioral types to simplify TVM architecture and improve reliability <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Introduce test framework for randomly generated Tolang codes and CI integration <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Refactor replay logic <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
             </ul>
           </article>
 
@@ -255,10 +256,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Refactored the whole system to an event-driven framework to enable concurrent transaction execution, block replay, and block proposing for maximum concurrency <strong>(Completed)</strong></li>
-              <li>Implemented RPC endpoints and updated BlockGit to handle missing blocks <strong>(Completed)</strong></li>
-              <li>Fixed memory leaks in BlockGit and improved its performance <strong>(Completed)</strong></li>
-              <li>Introduced Weaklink to the BlockGit protocol and partially implemented it <strong>(Completed)</strong></li>
+              <li>Refactored the whole system to an event-driven framework to enable concurrent transaction execution, block replay, and block proposing for maximum concurrency <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Implemented RPC endpoints and updated BlockGit to handle missing blocks <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Fixed memory leaks in BlockGit and improved its performance <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Introduced Weaklink to the BlockGit protocol and partially implemented it <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
             </ul>
           </article>
         </div>
@@ -276,10 +277,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Integrated BlockGit into the node platform <strong>(Completed)</strong></li>
-              <li>Tested consensus protocol on Docker network <strong>(Completed)</strong></li>
-              <li>Implemented conflict resolution algorithm in block merge <strong>(Completed)</strong></li>
-              <li>Refactored storage module to support query and state commitment <strong>(Completed)</strong></li>
+              <li>Integrated BlockGit into the node platform <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Tested consensus protocol on Docker network <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Implemented conflict resolution algorithm in block merge <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Refactored storage module to support query and state commitment <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
             </ul>
           </article>
 
@@ -289,10 +290,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Execution context to support reverting a part of execution <strong>(Completed)</strong></li>
-              <li>Designed and initial implementation of BlockGit, a new consensus protocol <strong>(Completed)</strong></li>
-              <li>A discrete event simulator to test consensus protocol implementation <strong>(Completed)</strong></li>
-              <li>P2P module with initial integration for BlockGit <strong>(Completed)</strong></li>
+              <li>Execution context to support reverting a part of execution <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Designed and initial implementation of BlockGit, a new consensus protocol <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>A discrete event simulator to test consensus protocol implementation <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>P2P module with initial integration for BlockGit <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
             </ul>
           </article>
 
@@ -302,11 +303,11 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Refactored and unified the tuple space play and replay logic <strong>(Completed)</strong></li>
-              <li>Implemented an external HTTPS call play and replay to demonstrate the capability to actively collaborate with Web 2.0 systems without oracles / relayers <strong>(Completed)</strong></li>
-              <li>Initial implementation of the Blocklace consensus protocol <strong>(Completed)</strong></li>
-              <li>Redesigned state management to reduce memory usage <strong>(Completed)</strong></li>
-              <li>Designed logical clock data structure and algorithm used to enforce isolation levels <strong>(Completed)</strong></li>
+              <li>Refactored and unified the tuple space play and replay logic <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Implemented an external HTTPS call play and replay to demonstrate the capability to actively collaborate with Web 2.0 systems without oracles / relayers <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Initial implementation of the Blocklace consensus protocol <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Redesigned state management to reduce memory usage <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Designed logical clock data structure and algorithm used to enforce isolation levels <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
             </ul>
           </article>
 
@@ -316,12 +317,12 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Global registry implementation &amp; testing <strong>(Completed)</strong></li>
-              <li>Functional programming support from Tolang and TVM <strong>(Completed)</strong></li>
-              <li>Supported thread-safe sequential computing on concurrent TVM <strong>(Completed)</strong></li>
-              <li>Conducted preliminary EVM compatibility test <strong>(Completed)</strong></li>
-              <li>Implemented EVM state storage to support read-committed isolation level <strong>(Completed)</strong></li>
-              <li>Refactored code &amp; performed comprehensive testing of correctness and replayability in TVM <strong>(Completed)</strong></li>
+              <li>Global registry implementation &amp; testing <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Functional programming support from Tolang and TVM <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Supported thread-safe sequential computing on concurrent TVM <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Conducted preliminary EVM compatibility test <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Implemented EVM state storage to support read-committed isolation level <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Refactored code &amp; performed comprehensive testing of correctness and replayability in TVM <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
             </ul>
           </article>
         </div>
@@ -339,10 +340,10 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Implemented new task manager for better error treatment and thread locality support <strong>(Completed)</strong></li>
-              <li>Performance improved by introducing sequential computing support <strong>(Completed)</strong></li>
-              <li>Special channel type test <strong>(Completed)</strong></li>
-              <li>Utilized special channel types to simplify replay log <strong>(Completed)</strong></li>
+              <li>Implemented new task manager for better error treatment and thread locality support <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Performance improved by introducing sequential computing support <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Special channel type test <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Utilized special channel types to simplify replay log <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
             </ul>
           </article>
 
@@ -352,9 +353,9 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Storage layer test <strong>(Completed)</strong></li>
-              <li>Concurrent virtual machine execution &amp; deterministic replay test <strong>(Completed)</strong></li>
-              <li>Special channel type specification and implementation <strong>(Completed)</strong></li>
+              <li>Storage layer test <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Concurrent virtual machine execution &amp; deterministic replay test <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Special channel type specification and implementation <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
             </ul>
           </article>
 
@@ -364,8 +365,8 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Concurrent virtual machine execution &amp; replay implementation <strong>(Completed)</strong></li>
-              <li>Storage layer specification and implementation <strong>(Completed)</strong></li>
+              <li>Concurrent virtual machine execution &amp; replay implementation <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Storage layer specification and implementation <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
             </ul>
           </article>
 
@@ -375,8 +376,8 @@
               <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Done</span></div>
             </div>
             <ul class="roadmap-bullet-list">
-              <li>Concurrent virtual machine opcodes implementation &amp; test <strong>(Completed)</strong></li>
-              <li>Concurrent transaction deterministic replay data structure <strong>(Completed)</strong></li>
+              <li>Concurrent virtual machine opcodes implementation &amp; test <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
+              <li>Concurrent transaction deterministic replay data structure <strong><span class="roadmap-item-status">(Completed)</span></strong></li>
             </ul>
           </article>
         </div>
@@ -388,6 +389,6 @@
     </footer>
   </div>
 <script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
-<script src="/script.js?v=20261012-language-routes"></script>
+<script src="/script.js?v=20261013-stable-layout"></script>
 </body>
 </html>

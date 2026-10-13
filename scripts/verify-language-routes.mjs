@@ -45,6 +45,16 @@ for (const lang of languages) {
     assert(html.includes(`<link rel="canonical" href="${canonical}">`), local);
     assert.equal([...html.matchAll(/rel="alternate" hreflang=/g)].length, 6, local);
     assert.equal([...html.matchAll(/class="lang-button[^"]*"[^>]*href=/g)].length, 5, local);
+    assert(!html.includes('display=swap'), `${local}: late font swapping can change line breaks`);
+    if (lang !== "en") {
+      assert(html.includes('class="technical-token"'), `${local}: word protection must exist before JavaScript loads`);
+    }
+    if (lang === "zh" && file === "alux-vs-others") {
+      const heading = html.match(/<h1>([\s\S]*?)<\/h1>/)[1];
+      for (const version of ["Web 2", "Web 3"]) {
+        assert(heading.includes(`<span class="technical-token">${version}</span>`), `Initial heading splits ${version}`);
+      }
+    }
     if (file === "roadmap") {
       const dates = [...html.matchAll(/<section data-year="(\d+)"[\s\S]*?<\/section>/g)]
         .flatMap(section => [...section[0].matchAll(/<article data-quarter="([1-4])"/g)].map(q => Number(section[1]) * 10 + Number(q[1])));

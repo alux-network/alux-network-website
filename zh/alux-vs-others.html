@@ -60,10 +60,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=optional"
     rel="stylesheet"
   >
-<link rel="stylesheet" href="/styles.css?v=20261012-language-routes">
+<link rel="stylesheet" href="/styles.css?v=20261013-stable-layout">
 <link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
@@ -102,12 +102,12 @@
     <article class="alux-vs-page alux-vs-article">
       <header class="alux-vs-article-header fade-in">
         <div class="alux-vs-article-lede">
-          <h1>统一 Web 2 与 Web 3 的<span class="alux-vs-title-unit">分布式运行时</span></h1>
-          <p>区块链本质上是状态转换机器。ALUX 将模型从短时、孤立的虚拟机调用扩展为可重放的长交易：当前已支持跨区块执行与可验证的 Web 2 I/O；跨运行时与跨分片组合则属于更广泛的架构方向。</p>
+          <h1>统一 <span class="technical-token">Web 2</span> 与 <span class="technical-token">Web 3</span> 的<span class="alux-vs-title-unit">分布式运行时</span></h1>
+          <p><span class="technical-token">区块链</span>本质上是状态转换机器。<span class="technical-token">ALUX</span> 将模型从短时、孤立的<span class="technical-token">虚拟机</span>调用扩展为可重放的长交易：当前已支持跨区块执行与可验证的 <span class="technical-token">Web 2</span> I/O；跨运行时与跨分片组合则属于更广泛的架构方向。</p>
         </div>
         <aside class="alux-vs-article-summary" aria-label="文章摘要">
           <span>核心差异</span>
-          <dl><div><dt>大多数链</dt><dd>短小、孤立的 VM 调用</dd></div><div><dt>ALUX</dt><dd>可重放的长交易</dd></div><div><dt>执行模型</dt><dd>当前支持并行与并发；复合状态转换是目标模型</dd></div><div><dt>交易语义</dt><dd>长交易的 ACID 式语义</dd></div></dl>
+          <dl><div><dt>大多数链</dt><dd>短小、孤立的 VM 调用</dd></div><div><dt><span class="technical-token">ALUX</span></dt><dd>可重放的长交易</dd></div><div><dt>执行模型</dt><dd>当前支持并行与并发；复合状态转换是目标模型</dd></div><div><dt>交易语义</dt><dd>长交易的 ACID 式语义</dd></div></dl>
         </aside>
       </header>
 
@@ -120,37 +120,37 @@
         <div class="alux-vs-article-body">
           <section class="alux-vs-article-section fade-in" id="problem">
             <h2>我们要解决的问题</h2>
-            <p>许多区块链虚拟机主要处理短时、有序的状态更新。ALUX 将这一模型扩展到需要等待、恢复、协作或跨越区块边界的工作流。</p>
-            <ul><li>区块链本质上是状态转换机器。</li><li>许多现有区块链虚拟机主要处理范围较窄的短时、有序状态转换。</li></ul>
+            <p>许多<span class="technical-token">区块链</span><span class="technical-token">虚拟机</span>主要处理短时、有序的状态更新。<span class="technical-token">ALUX</span> 将这一模型扩展到需要等待、恢复、协作或跨越区块边界的工作流。</p>
+            <ul><li><span class="technical-token">区块链</span>本质上是状态转换机器。</li><li>许多现有<span class="technical-token">区块链</span><span class="technical-token">虚拟机</span>主要处理范围较窄的短时、有序状态转换。</li></ul>
             <figure class="alux-vs-native-figure alux-vs-native-figure--state"><div class="alux-vs-native-surface" role="img" aria-label="状态转换模型图">
     <div class="alux-vs-original-image alux-vs-original-image--state">
       <img src="/assets/alux-vs-others/state-transitions-page-crop-transparent.png" alt="" width="2070" height="910" loading="lazy">
     </div>
-  </div><figcaption>图 1：ALUX 将 Web3 执行模型从短时更新扩展到可重放的长交易。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong>许多公链以短时状态更新为中心；ALUX 在此基础上加入可重放的长交易。</p></figure>
+  </div><figcaption>图 1：<span class="technical-token">ALUX</span> 将 Web3 执行模型从短时更新扩展到可重放的长交易。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong>许多公链以短时状态更新为中心；<span class="technical-token">ALUX</span> 在此基础上加入可重放的长交易。</p></figure>
           </section>
 
           <section class="alux-vs-article-section fade-in" id="universal">
-            <h2>ALUX：面向长交易的分布式运行时</h2>
-            <p>ALUX 在一次性状态更新之外，进一步建模并行、并发与复合状态转换。</p>
-            <p>ALUX 不再把每笔交易视为一次短小、孤立的状态更新，而是把执行建模为一个可以协调并行、并发与复合转换的运行时。</p>
-            <figure class="alux-vs-native-figure alux-vs-native-figure--types"><div class="alux-vs-native-surface" role="img" aria-label="并行、并发和复合转换图"><div class="alux-vs-original-image alux-vs-original-image--types"><img src="/assets/alux-vs-others/transition-types-transparent.png" alt="" width="3634" height="1353" loading="lazy"></div></div><figcaption>图 2：ALUX 当前支持并行与并发状态转换；复合状态转换属于目标架构。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong>并行让独立任务同时推进，并发支持等待与恢复，组合则定义相关状态变化应如何共同结算。</p></figure>
+            <h2><span class="technical-token">ALUX</span>：面向长交易的分布式运行时</h2>
+            <p><span class="technical-token">ALUX</span> 在一次性状态更新之外，进一步建模并行、并发与复合状态转换。</p>
+            <p><span class="technical-token">ALUX</span> 不再把每笔交易视为一次短小、孤立的状态更新，而是把执行建模为一个可以协调并行、并发与复合转换的运行时。</p>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--types"><div class="alux-vs-native-surface" role="img" aria-label="并行、并发和复合转换图"><div class="alux-vs-original-image alux-vs-original-image--types"><img src="/assets/alux-vs-others/transition-types-transparent.png" alt="" width="3634" height="1353" loading="lazy"></div></div><figcaption>图 2：<span class="technical-token">ALUX</span> 当前支持并行与并发状态转换；复合状态转换属于目标架构。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong>并行让独立任务同时推进，并发支持等待与恢复，组合则定义相关<span class="technical-token">状态变化</span>应如何<span class="technical-token">共同结算</span>。</p></figure>
           </section>
 
           <section class="alux-vs-article-section fade-in" id="execution">
             <h2>执行模型</h2>
-            <div class="alux-vs-capability-grid"><article class="alux-vs-capability alux-vs-capability--1"><span>并行</span><div><h3>并行执行：</h3><p>当前可让隔离的 <span class="alux-vs-accent">EVM</span> 实例并行运行。WASM 属于规划中的异构虚拟机方向。</p></div></article><article class="alux-vs-capability alux-vs-capability--2"><span>并发</span><div><h3>并发执行：</h3><p>ALUX 让交易（TX）像 <span class="alux-vs-accent">协程</span> 一样执行：它们可以挂起、唤醒，并彼此交错推进。执行顺序可以是非确定的，但重放结果是确定的。</p></div></article><article class="alux-vs-capability alux-vs-capability--3"><span>复合</span><div><h3>复合转换：</h3><p>交易可跨越多个区块高度，在 ALUX 交易边界内保持隔离性与<span class="alux-vs-accent">原子结算</span>，同时协调链上工作和可重放的 HTTPS 外部效果。跨分片组合仍属于架构与路线图。</p></div></article></div>
+            <div class="alux-vs-capability-grid"><article class="alux-vs-capability alux-vs-capability--1"><span>并行</span><div><h3>并行执行：</h3><p>当前可让隔离的 <span class="alux-vs-accent"><span class="technical-token">EVM</span></span> 实例并行运行。<span class="technical-token">WASM</span> 属于规划中的异构<span class="technical-token">虚拟机</span>方向。</p></div></article><article class="alux-vs-capability alux-vs-capability--2"><span>并发</span><div><h3>并发执行：</h3><p><span class="technical-token">ALUX</span> 让交易（TX）像 <span class="alux-vs-accent">协程</span> 一样执行：它们可以挂起、唤醒，并彼此交错推进。执行顺序可以是非确定的，但重放结果是确定的。</p></div></article><article class="alux-vs-capability alux-vs-capability--3"><span>复合</span><div><h3>复合转换：</h3><p>交易可跨越多个区块高度，在 <span class="technical-token">ALUX</span> 交易边界内保持隔离性与<span class="alux-vs-accent">原子结算</span>，同时协调链上工作和可重放的 HTTPS 外部效果。跨分片组合仍属于架构与路线图。</p></div></article></div>
           </section>
 
           <section class="alux-vs-article-section fade-in" id="compatibility">
             <h2>复合状态转换与兼容性</h2>
-            <p>交易可跨越多个区块高度，在 ALUX 交易边界内保持隔离性与<span class="alux-vs-accent">原子结算</span>，同时协调链上工作和可重放的 HTTPS 外部效果。跨分片组合仍属于架构与路线图。</p>
-            <p>ALUX 当前通过沙箱和 Ethereum JSON-RPC 提供 <span class="alux-vs-accent">EVM</span> 执行路径。WASM 与更广泛的异构虚拟机组合仍在规划中，当前基线尚未交付。</p>
+            <p>交易可跨越多个区块高度，在 <span class="technical-token">ALUX</span> 交易边界内保持隔离性与<span class="alux-vs-accent">原子结算</span>，同时协调链上工作和可重放的 HTTPS 外部效果。跨分片组合仍属于架构与路线图。</p>
+            <p><span class="technical-token">ALUX</span> 当前通过沙箱和 Ethereum <span class="technical-token">JSON-RPC</span> 提供 <span class="alux-vs-accent"><span class="technical-token">EVM</span></span> 执行路径。<span class="technical-token">WASM</span> 与更广泛的异构<span class="technical-token">虚拟机</span>组合仍在规划中，当前基线尚未交付。</p>
             <figure class="alux-vs-native-figure alux-vs-native-figure--composite"><div class="alux-vs-native-surface" role="img" aria-label="复合交易运行时图">
     <div class="alux-vs-original-image alux-vs-original-image--composite">
       <img src="/assets/alux-vs-others/composite-transitions-transparent.png" alt="" width="1570" height="1762" loading="lazy">
     </div>
-  </div><figcaption>图 3：复合状态转换架构连接链上工作与 Web 2 服务；跨分片组合仍在路线图中。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong>ALUX 当前支持跨区块执行与可重放的 Web 2 I/O；跨分片组合仍在规划中。</p></figure>
-            <p class="alux-vs-article-close">简而言之，ALUX 不会强迫每个工作流都压缩成一笔短交易。ALUX 当前可让跨区块、连接 Web 2 的长交易得到重放；跨分片及更广泛的跨运行时组合仍属于架构与路线图。</p>
+  </div><figcaption>图 3：复合状态转换架构连接链上工作与 <span class="technical-token">Web 2</span> 服务；跨分片组合仍在路线图中。</figcaption><p class="alux-vs-figure-note"><strong>要点：</strong><span class="technical-token">ALUX</span> 当前支持跨区块执行与可重放的 <span class="technical-token">Web 2</span> I/O；跨分片组合仍在规划中。</p></figure>
+            <p class="alux-vs-article-close">简而言之，<span class="technical-token">ALUX</span> 不会强迫每个工作流都压缩成一笔短交易。<span class="technical-token">ALUX</span> 当前可让跨区块、连接 <span class="technical-token">Web 2</span> 的长交易得到重放；跨分片及更广泛的跨运行时组合仍属于架构与路线图。</p>
           </section>
         </div>
       </div>
@@ -161,6 +161,6 @@
     </footer>
   </div>
 <script src="/i18n/site.generated.js?v=20261012-roadmap-order"></script>
-<script src="/script.js?v=20261012-language-routes"></script>
+<script src="/script.js?v=20261013-stable-layout"></script>
 </body>
 </html>
