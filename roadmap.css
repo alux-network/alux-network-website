@@ -104,8 +104,8 @@ body[data-page="roadmap"] .roadmap-milestone-grid {
 }
 
 body[data-page="roadmap"] .roadmap-milestone,
-body[data-page="roadmap"] .roadmap-milestone--done,
-body[data-page="roadmap"] .roadmap-milestone--planned,
+body[data-page="roadmap"] .roadmap-year-section .roadmap-milestone--done,
+body[data-page="roadmap"] .roadmap-year-section .roadmap-milestone--planned,
 body[data-page="roadmap"] .roadmap-year-section .roadmap-milestone--active {
   grid-template-columns: 112px minmax(0, 1fr);
   min-height: 0;
@@ -151,7 +151,7 @@ body[data-page="roadmap"] .roadmap-status-chip {
   border-color: #d8cebe;
 }
 
-body[data-page="roadmap"] .roadmap-status-chip--done {
+body[data-page="roadmap"] .roadmap-year-section .roadmap-status-chip--done {
   background: #eaf0e8;
   border-color: #d4dfcf;
   color: #486045;
