@@ -58,8 +58,8 @@
   <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
   <meta name="description" content="كيف توسّع ALUX استدعاءات الآلة الافتراضية القصيرة إلى المعاملات طويلة الأمد القابلة لإعادة التشغيل، مع توافق EVM المتاح اليوم وتركيب أوسع بين بيئات التشغيل ضمن خارطة الطريق.">
 <link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
-<link rel="stylesheet" href="/styles.css?v=20261015-nav-hero">
-<link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
+<link rel="stylesheet" href="/styles.css?v=20261015-summary-navigation">
+<link rel="stylesheet" href="/site-frame.css?v=20261015-current-navigation">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
 <meta property="og:type" content="website">
@@ -97,7 +97,7 @@
           <div class="nav-dropdown-menu" id="learn-menu">
             <a href="/ar/glvm" data-nav="learnGlvm">GLVM</a>
             <a href="/ar/runtime-lab" data-nav="learnPcc">مختبر بيئة التشغيل</a>
-            <a href="/ar/alux-vs-others" data-nav="learnAlux">ALUX مقارنةً بالحلول الأخرى</a>
+            <a href="/ar/alux-vs-others" data-nav="learnAlux" class="active-link" aria-current="page">ALUX مقارنةً بالحلول الأخرى</a>
           </div>
         </div>
         <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">المدونة</a>
@@ -106,7 +106,7 @@
       </nav>
       <div class="header-actions">
         <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>اللغة</span><span class="lang-current" data-lang-current>العربية</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/alux-vs-others" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/alux-vs-others" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/alux-vs-others" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/alux-vs-others" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/alux-vs-others" hreflang="ar">AR</a></div></div>
-        <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">تواصل معنا</a>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">تواصل معنا</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-label="تبديل قائمة التنقل"><span></span><span></span><span></span></button>
       </div>
     </header>
@@ -119,7 +119,18 @@
         </div>
         <aside class="alux-vs-article-summary" aria-label="ملخص المقال">
           <span>الاختلاف الأساسي</span>
-          <dl><div><dt>معظم السلاسل</dt><dd>استدعاءات VM قصيرة ومعزولة</dd></div><div><dt><bdi class="technical-token" dir="ltr">ALUX</bdi></dt><dd>المعاملات طويلة الأمد القابلة لإعادة التشغيل</dd></div><div><dt>التنفيذ</dt><dd>انتقالات متوازية ومتزامنة اليوم؛ والانتقالات المركّبة هي النموذج المستهدف</dd></div><div><dt>دلالات المعاملات</dt><dd>دلالات المعاملات طويلة الأمد على غرار ACID</dd></div></dl>
+
+    <section class="alux-summary-group alux-summary-group--other" aria-labelledby="summary-other-title">
+      <h2 id="summary-other-title">معظم السلاسل</h2>
+      <p>استدعاءات VM قصيرة ومعزولة</p>
+    </section>
+    <section class="alux-summary-group alux-summary-group--alux" aria-labelledby="summary-alux-title">
+      <h2 id="summary-alux-title"><bdi class="technical-token" dir="ltr">ALUX</bdi></h2>
+      <ul class="alux-summary-features">
+        <li><p>المعاملات طويلة الأمد القابلة لإعادة التشغيل</p></li>
+        <li><dl><dt>التنفيذ</dt><dd>انتقالات متوازية ومتزامنة اليوم؛ والانتقالات المركّبة هي النموذج المستهدف</dd></dl></li><li><dl><dt>دلالات المعاملات</dt><dd>دلالات المعاملات طويلة الأمد على غرار ACID</dd></dl></li>
+      </ul>
+    </section>
         </aside>
       </header>
 
@@ -173,6 +184,6 @@
     </footer>
   </div>
 <script defer src="/i18n/runtime/ar/aluxVsOthers.js?v=1c61cc8aaa27"></script>
-<script defer src="/script.js?v=20261015-nav-hero"></script>
+<script defer src="/script.js?v=20261015-summary-navigation"></script>
 </body>
 </html>

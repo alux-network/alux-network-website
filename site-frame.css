@@ -228,13 +228,23 @@ body[data-page] .header-actions .button.ghost {
 }
 
 .nav-dropdown-menu a::after {
+  left: 12px;
+  right: 12px;
+  bottom: 5px;
+  width: auto;
+  background: #a38351 !important;
   opacity: 0 !important;
   transform: scaleX(0) !important;
 }
 
 .nav-dropdown-menu a:hover::after,
 .nav-dropdown-menu a:focus-visible::after,
-.nav-dropdown-menu a.active-link::after {
+.nav-dropdown-menu a.active-link::after,
+.nav-dropdown-menu a[aria-current="page"]::after {
   opacity: 1 !important;
   transform: scaleX(1) !important;
+}
+
+.nav-dropdown-menu a[aria-current="page"] {
+  font-weight: 700;
 }

@@ -58,8 +58,8 @@
   <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
   <meta name="description" content="ALUX의 현재 병렬 실행과 메시지 기반 동시성, 그리고 시스템 경계를 넘는 원자적 조합의 목표 모델을 시각적으로 살펴보세요.">
 <link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
-<link rel="stylesheet" href="/styles.css?v=20261015-nav-hero">
-<link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
+<link rel="stylesheet" href="/styles.css?v=20261015-summary-navigation">
+<link rel="stylesheet" href="/site-frame.css?v=20261015-current-navigation">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
 <meta property="og:type" content="website">
@@ -96,7 +96,7 @@
           </button>
           <div class="nav-dropdown-menu" id="learn-menu">
             <a href="/ko/glvm" data-nav="learnGlvm">GLVM</a>
-            <a href="/ko/runtime-lab" data-nav="learnPcc">런타임 랩</a>
+            <a href="/ko/runtime-lab" data-nav="learnPcc" class="active-link" aria-current="page">런타임 랩</a>
             <a href="/ko/alux-vs-others" data-nav="learnAlux">ALUX와 다른 시스템</a>
           </div>
         </div>
@@ -106,7 +106,7 @@
       </nav>
       <div class="header-actions">
         <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>언어</span><span class="lang-current" data-lang-current>한국어</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/runtime-lab" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/runtime-lab" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/runtime-lab" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/runtime-lab" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/runtime-lab" hreflang="ar">AR</a></div></div>
-        <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">문의하기</a>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">문의하기</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-label="탐색 메뉴 전환"><span></span><span></span><span></span></button>
       </div>
     </header>
@@ -296,6 +296,6 @@
     </footer>
   </div>
 <script defer src="/i18n/runtime/ko/parallelConcurrentComposable.js?v=8798b7e67740"></script>
-<script defer src="/script.js?v=20261015-nav-hero"></script>
+<script defer src="/script.js?v=20261015-summary-navigation"></script>
 </body>
 </html>

@@ -58,8 +58,8 @@
   <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
   <meta name="description" content="ALUX가 짧은 VM 호출을 재실행 가능한 장기 트랜잭션으로 확장하는 방식과, 현재 지원하는 EVM 호환 경로 및 로드맵에 포함된 더 폭넓은 런타임 간 조합을 살펴보세요.">
 <link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
-<link rel="stylesheet" href="/styles.css?v=20261015-nav-hero">
-<link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
+<link rel="stylesheet" href="/styles.css?v=20261015-summary-navigation">
+<link rel="stylesheet" href="/site-frame.css?v=20261015-current-navigation">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
 <meta property="og:type" content="website">
@@ -97,7 +97,7 @@
           <div class="nav-dropdown-menu" id="learn-menu">
             <a href="/ko/glvm" data-nav="learnGlvm">GLVM</a>
             <a href="/ko/runtime-lab" data-nav="learnPcc">런타임 랩</a>
-            <a href="/ko/alux-vs-others" data-nav="learnAlux">ALUX와 다른 시스템</a>
+            <a href="/ko/alux-vs-others" data-nav="learnAlux" class="active-link" aria-current="page">ALUX와 다른 시스템</a>
           </div>
         </div>
         <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">블로그</a>
@@ -106,7 +106,7 @@
       </nav>
       <div class="header-actions">
         <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>언어</span><span class="lang-current" data-lang-current>한국어</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/alux-vs-others" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/alux-vs-others" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/alux-vs-others" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/alux-vs-others" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/alux-vs-others" hreflang="ar">AR</a></div></div>
-        <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">문의하기</a>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">문의하기</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-label="탐색 메뉴 전환"><span></span><span></span><span></span></button>
       </div>
     </header>
@@ -119,7 +119,18 @@
         </div>
         <aside class="alux-vs-article-summary" aria-label="글 요약">
           <span>핵심 차이</span>
-          <dl><div><dt>대부분의 체인</dt><dd>짧고 고립된 VM 호출</dd></div><div><dt><span class="technical-token">ALUX</span></dt><dd>재실행 가능한 장기 트랜잭션</dd></div><div><dt>실행</dt><dd>병렬·동시는 현재 지원, 복합 상태 전환은 목표 모델</dd></div><div><dt>트랜잭션 의미론</dt><dd>장기 트랜잭션을 위한 ACID식 의미론</dd></div></dl>
+
+    <section class="alux-summary-group alux-summary-group--other" aria-labelledby="summary-other-title">
+      <h2 id="summary-other-title">대부분의 체인</h2>
+      <p>짧고 고립된 VM 호출</p>
+    </section>
+    <section class="alux-summary-group alux-summary-group--alux" aria-labelledby="summary-alux-title">
+      <h2 id="summary-alux-title"><span class="technical-token">ALUX</span></h2>
+      <ul class="alux-summary-features">
+        <li><p>재실행 가능한 장기 트랜잭션</p></li>
+        <li><dl><dt>실행</dt><dd>병렬·동시는 현재 지원, 복합 상태 전환은 목표 모델</dd></dl></li><li><dl><dt>트랜잭션 의미론</dt><dd>장기 트랜잭션을 위한 ACID식 의미론</dd></dl></li>
+      </ul>
+    </section>
         </aside>
       </header>
 
@@ -173,6 +184,6 @@
     </footer>
   </div>
 <script defer src="/i18n/runtime/ko/aluxVsOthers.js?v=8bd299654279"></script>
-<script defer src="/script.js?v=20261015-nav-hero"></script>
+<script defer src="/script.js?v=20261015-summary-navigation"></script>
 </body>
 </html>

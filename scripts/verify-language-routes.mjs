@@ -43,6 +43,11 @@ for (const lang of languages) {
     const html = await fs.readFile(new URL(local, root), "utf8");
     assert(html.includes(`<html lang="${lang}" dir="${lang === "ar" ? "rtl" : "ltr"}">`), local);
     assert(html.includes(`data-prerendered="${lang}"`), local);
+    const expectedNav={index:'home','for-ai-agents':'vs',glvm:'learnGlvm','alux-vs-others':'learnAlux','runtime-lab':'learnPcc',team:'team',roadmap:'roadmap'}[file];
+    const currentLinks=[...html.matchAll(/<a\b[^>]*aria-current="page"[^>]*>/g)];
+    assert.equal(currentLinks.length,1,`${local}: current page must be marked before JavaScript`);
+    assert(currentLinks[0][0].includes(`data-nav="${expectedNav}"`),`${local}: incorrect current navigation item`);
+    assert(/class="[^"]*\bactive-link\b/.test(currentLinks[0][0]),`${local}: missing initial selected style`);
     const canonical = "https://www.alux.network" + (lang === "en" ? "" : "/" + lang) + (file === "index" ? lang === "en" ? "/" : "" : "/" + file);
     assert(html.includes(`<link rel="canonical" href="${canonical}">`), local);
     assert.equal([...html.matchAll(/rel="alternate" hreflang=/g)].length, 6, local);
@@ -69,6 +74,12 @@ for (const lang of languages) {
       for (const version of ["Web 2", "Web 3"]) {
         assert(heading.includes(`<span class="technical-token">${version}</span>`), `Initial heading splits ${version}`);
       }
+    }
+    if(file==='alux-vs-others'){
+      assert.equal([...html.matchAll(/class="alux-summary-group /g)].length,2,`${local}: comparison subjects must form two groups`);
+      const features=html.match(/<ul class="alux-summary-features">([\s\S]*?)<\/ul>/)?.[1];
+      assert(features,`${local}: missing ALUX feature group`);
+      assert.equal([...features.matchAll(/<li>/g)].length,3,`${local}: all three characteristics must belong to ALUX`);
     }
     if (file === "roadmap") {
       const bullets = [...html.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/g)];
