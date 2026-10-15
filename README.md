@@ -48,6 +48,8 @@ Pull requests and development branches receive independent preview deployments f
 
 Fonts are self-hosted with their original Open Font Licenses under `assets/fonts`. Optimized images preserve the original dimensions and RGBA pixels; originals remain in place. `scripts/optimized-media.json` maps approved originals to content-fingerprinted WebP assets. Regenerate the fingerprint and references whenever an optimized asset changes, since these image/font URLs are cached as immutable.
 
+Each of the seven pages has a separate share image in each of the five languages under `assets/social/pages`. The static Open Graph and Twitter Card tags are generated from the page's reviewed title and description; unprefixed URLs use English images. After a copy or artwork update, render pages, run `node scripts/render-share-cards.mjs`, then render pages again and run the checks. The optional artwork renderer requires Playwright and an installed browser; `PLAYWRIGHT_MODULE` and `BROWSER_EXECUTABLE` can select existing local installations. `--masters <directory>` selects the output folder for 3840×2016 JPG masters; only the lightweight 1200×630 images are deployed. Bump the share-image version in the generator and validator whenever replacing deployed cards. Platform preview caches may need a refresh after deployment.
+
 This website is maintained by the ALUX Network team.
 
 Website creator, lead developer, and primary maintainer: [@shixi-11](https://github.com/shixi-11).

@@ -16,6 +16,18 @@ const compatibilityPage = "parallel-concurrent-composable.html";
 const allPages = [...activePages, ...["zh", "ja", "ko", "ar"].flatMap(lang => activePages.map(page => `${lang}/${page}`)), compatibilityPage];
 const errors = [];
 const checkedReferences = new Set();
+const shareImages = new Set();
+
+function jpegDimensions(buffer) {
+  if (buffer.readUInt16BE(0) !== 0xffd8) throw Error('not a JPEG');
+  for (let offset=2; offset+9<buffer.length;) {
+    if (buffer[offset] !== 0xff) throw Error('invalid JPEG marker');
+    const marker=buffer[offset+1],length=buffer.readUInt16BE(offset+2);
+    if ([0xc0,0xc1,0xc2].includes(marker)) return [buffer.readUInt16BE(offset+7),buffer.readUInt16BE(offset+5)];
+    offset+=length+2;
+  }
+  throw Error('missing JPEG dimensions');
+}
 
 function cleanLocalUrl(value) {
   const decoded = value.trim().replaceAll("&amp;", "&");
@@ -66,6 +78,32 @@ for (const page of allPages) {
     for (const required of ["styles.css?v=", "site-frame.css?v=", "fonts.css?v=", "script.js?v="]) {
       if (!html.includes(required)) errors.push(`${page}: missing runtime asset ${required}`);
     }
+    const metas = [...html.matchAll(/<meta (?:property|name)="([^"]+)" content="([^"]*)"/g)];
+    const meta = key => {
+      const values = metas.filter(match => match[1] === key);
+      if(values.length!==1) errors.push(`${page}: expected one ${key}`);
+      return values[0]?.[2];
+    };
+    const lang = page.includes('/') ? page.split('/')[0] : 'en';
+    const slug = path.basename(page,'.html').replace(/^index$/,'home');
+    const relative = `assets/social/pages/${lang}/${slug}.jpg`;
+    const image = `https://www.alux.network/${relative}?v=20261015`;
+    for(const key of ['og:image','og:image:secure_url','twitter:image']) {
+      if(meta(key)!==image) errors.push(`${page}: incorrect ${key} language/page mapping`);
+    }
+    for(const key of ['og:image:alt','twitter:image:alt']) if(!meta(key)) errors.push(`${page}: missing image alternative text`);
+    if(meta('twitter:card')!=='summary_large_image'||meta('og:image:type')!=='image/jpeg'||meta('og:image:width')!=='1200'||meta('og:image:height')!=='630') errors.push(`${page}: invalid share card format`);
+    const title=html.match(/<title>([\s\S]*?)<\/title>/)?.[1];
+    const description=meta('description');
+    for(const key of ['og:title','twitter:title']) if(meta(key)!==title) errors.push(`${page}: inconsistent ${key}`);
+    for(const key of ['og:description','twitter:description']) if(meta(key)!==description) errors.push(`${page}: inconsistent ${key}`);
+    if(shareImages.has(image)) errors.push(`${page}: duplicated language/page share image`);
+    shareImages.add(image);
+    await ensureLocalReference(page,'/'+relative);
+    try {
+      const buffer=await fs.readFile(path.join(rootDir,relative));
+      if(jpegDimensions(buffer).join('x')!=='1200x630'||buffer.length>5*1024*1024) errors.push(`${page}: invalid share image size`);
+    } catch(error) { errors.push(`${page}: ${error.message}`); }
   }
 }
 

@@ -2244,16 +2244,16 @@ function renderHomeHeroTitle(value = "", lang = "en") {
   const localizedLines = {
     en: value === "Building the global VM" ? ["Building the", "global VM"] : null,
     zh: value === "构建全局虚拟机" ? ["构建全局虚拟机"] : null,
-    ko: value === "전역 VM 구축" ? ["전역 VM", "구축"] : null,
+    ko: value === "전역 VM 구축" ? ["전역 VM 구축"] : null,
     ja: value === "グローバル VM を構築する" ? ["グローバル VM を", "構築する"] : null,
-    ar: value === "نبني الآلة الافتراضية العالمية" ? ["نبني", "الآلة الافتراضية العالمية"] : null
+    ar: value === "نبني الآلة الافتراضية العالمية" ? ["نبني الآلة", "الافتراضية العالمية"] : null
   };
   const lines = localizedLines[lang];
 
   if (lines) {
     return lines
       .map((line) => `<span class="hero-home-title-line">${escapeAttribute(line)}</span>`)
-      .join("");
+      .join(lang === "ar" ? " " : "");
   }
 
   return value.replace(/^ALUX\b/, '<span class="hero-home-brand">ALUX</span>');
