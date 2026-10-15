@@ -79,8 +79,8 @@
 
   <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
 <link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
-<link rel="stylesheet" href="/styles.css?v=20261015-nav-hero">
-<link rel="stylesheet" href="/site-frame.css?v=20260927-logo-shadow">
+<link rel="stylesheet" href="/styles.css?v=20261015-summary-navigation">
+<link rel="stylesheet" href="/site-frame.css?v=20261015-current-navigation">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 <link rel="stylesheet" href="/glvm-story.css?v=20260814-customer-vm2">
 
@@ -100,7 +100,7 @@
             <span data-nav="learn">了解</span><span class="nav-caret" aria-hidden="true"></span>
           </button>
           <div class="nav-dropdown-menu" id="learn-menu">
-            <a href="/zh/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/zh/glvm" data-nav="learnGlvm" class="active-link" aria-current="page">GLVM</a>
             <a href="/zh/runtime-lab" data-nav="learnPcc">Runtime Lab</a>
             <a href="/zh/alux-vs-others" data-nav="learnAlux">ALUX VS 其它</a>
           </div>
@@ -108,11 +108,11 @@
         <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">博客</a>
         <a href="/zh/team" data-nav="team">团队</a>
         <a href="/zh/roadmap" data-nav="roadmap">路线图</a>
-        <a class="mobile-nav-cta" href="mailto:info@alux.network" data-nav="cta">联系我们</a>
+        <a href="mailto:info@alux.network" data-nav="cta" class="mobile-nav-cta">联系我们</a>
       </nav>
       <div class="header-actions">
         <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>语言</span><span class="lang-current" data-lang-current>中文</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/glvm" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/glvm" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/glvm" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/glvm" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/glvm" hreflang="ar">AR</a></div></div>
-        <a class="button ghost desktop-only" href="mailto:info@alux.network" data-nav="cta">联系我们</a>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">联系我们</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-label="切换导航菜单"><span></span><span></span><span></span></button>
       </div>
     </header>
@@ -667,6 +667,6 @@
     </footer>
   </div>
 <script defer src="/i18n/runtime/zh/glvm.js?v=80b3e6c76390"></script>
-<script defer src="/script.js?v=20261015-nav-hero"></script>
+<script defer src="/script.js?v=20261015-summary-navigation"></script>
 </body>
 </html>

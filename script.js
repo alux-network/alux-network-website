@@ -4031,9 +4031,19 @@ function renderAluxVsOthersPage(page) {
   const capabilityCards = [...page.execution, page.composite]
     .map((block, index) => renderAluxVsOthersCapability(block, index))
     .join("");
-  const articleSummary = article.summary
-    .map(([term, description]) => `<div><dt>${term}</dt><dd>${description}</dd></div>`)
-    .join("");
+  const [otherSummary, aluxSummary, ...aluxDetails] = article.summary;
+  const articleSummary = `
+    <section class="alux-summary-group alux-summary-group--other" aria-labelledby="summary-other-title">
+      <h2 id="summary-other-title">${otherSummary[0]}</h2>
+      <p>${otherSummary[1]}</p>
+    </section>
+    <section class="alux-summary-group alux-summary-group--alux" aria-labelledby="summary-alux-title">
+      <h2 id="summary-alux-title">${aluxSummary[0]}</h2>
+      <ul class="alux-summary-features">
+        <li><p>${aluxSummary[1]}</p></li>
+        ${aluxDetails.map(([term, description]) => `<li><dl><dt>${term}</dt><dd>${description}</dd></dl></li>`).join("")}
+      </ul>
+    </section>`;
   const articleNav = article.nav
     .map((item) => normalizeNavItem(item))
     .filter(([label, id]) => label && id && id !== "roadmap")
@@ -4052,7 +4062,7 @@ function renderAluxVsOthersPage(page) {
         </div>
         <aside class="alux-vs-article-summary" aria-label="${article.summaryAria}">
           <span>${article.summaryLabel}</span>
-          <dl>${articleSummary}</dl>
+          ${articleSummary}
         </aside>
       </header>
 

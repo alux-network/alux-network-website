@@ -90,6 +90,14 @@ for(const file of files){
   if(!/<h[1-6]\b/.test(main))throw Error(file+': empty content');
   html=html.replace(/<main\b[^>]*id="page-content"[^>]*>[\s\S]*?<\/main>/,()=>main);
   html=html.replace(/(<[^>]+data-nav="([^"]+)"[^>]*>)[^<]*/g,(_,open,key)=>open+escape(chrome.nav[key]));
+  const navPages={home:'home',vs:'vs',learnGlvm:'glvm',learnPcc:'parallelConcurrentComposable',learnAlux:'aluxVsOthers',team:'team',roadmap:'roadmap'};
+  html=html.replace(/<a\b[^>]*data-nav="([^"]+)"[^>]*>/g,(tag,key)=>{
+   const active=navPages[key]===page;
+   let classes=(tag.match(/\bclass="([^"]*)"/)?.[1]||'').split(/\s+/).filter(c=>c&&c!=='active-link');
+   if(active)classes.push('active-link');
+   tag=tag.replace(/\s+(?:class|aria-current)="[^"]*"/g,'');
+   return tag.replace(/>$/, (classes.length?' class="'+classes.join(' ')+'"':'')+(active?' aria-current="page"':'')+'>');
+  });
   html=html.replace(/(data-lang-label>)[^<]*/g,'$1'+escape(chrome.languageLabel)).replace(/(data-lang-current>)[^<]*/g,'$1'+escape(result.languageNames[language]));
   html=html.replace(/(class="site-nav"[^>]*aria-label=")[^"]*/,'$1'+escape(chrome.primaryNavigationLabel)).replace(/(class="menu-toggle"[^>]*aria-label=")[^"]*/,'$1'+escape(chrome.menuToggleLabel));
   html=html.replace(/(<[^>]+data-footer="copyright"[^>]*>)[^<]*/g,'$1'+escape(chrome.footer.copyright));
@@ -142,7 +150,7 @@ for(const file of files){
    html=html.replace(/(<script\b[^>]*src="\/script\.js)/,'<script defer src="/'+name+'?v='+version+'"></script>\n$1');
   }
   html=html.replace(/<script\b(?: defer)? src="\/script\.js/g,'<script defer src="/script.js');
-  html=html.replace(/(styles\.css|script\.js)\?v=[^"\s]+/g,'$1?v=20261015-nav-hero').replace(/home-hero-3d\.css\?v=[^"\s]+/g,'home-hero-3d.css?v=20261015-hero-spacing').replace(/roadmap\.css\?v=[^"\s]+/g,'roadmap.css?v=20261014-details');
+  html=html.replace(/(styles\.css|script\.js)\?v=[^"\s]+/g,'$1?v=20261015-summary-navigation').replace(/site-frame\.css\?v=[^"\s]+/g,'site-frame.css?v=20261015-current-navigation').replace(/home-hero-3d\.css\?v=[^"\s]+/g,'home-hero-3d.css?v=20261015-hero-spacing').replace(/roadmap\.css\?v=[^"\s]+/g,'roadmap.css?v=20261014-details');
   if(page==='home'){
    html=html.replace(/\s*<link rel="preload"[^>]*data-home-media[^>]*>/g,'');
    const preloads=['assets/home/hero/alux-hero-3d-upper-brick.png','assets/home/hero/alux-hero-3d-lower-assembly.png'].map(name=>'<link rel="preload" as="image" type="image/webp" href="/'+media[name]+'" fetchpriority="high"'+' data-home-media>').join('\n');

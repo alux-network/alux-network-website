@@ -24736,6 +24736,13 @@ body[data-page="aluxVsOthers"] .alux-vs-native-figure {
   overflow: visible !important;
 }
 
+@media (min-width: 721px) and (max-width: 1200px) {
+  body[data-page="aluxVsOthers"] .alux-vs-native-figure {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 body[data-page="aluxVsOthers"] .alux-vs-native-figure::before {
   content: none !important;
 }
@@ -29971,5 +29978,94 @@ body[data-page="home"] .showcase-panel--use-cases {
 
   html[lang="zh"] body[data-page="home"] .hero-home .hero-text {
     max-width: 100%;
+  }
+}
+
+/* Compare subjects first, then keep ALUX's three characteristics in one group. */
+body[data-page="aluxVsOthers"] .alux-vs-article-summary {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  gap: 18px 0;
+  align-items: stretch;
+}
+body[data-page="aluxVsOthers"] .alux-vs-article-summary > span {
+  grid-column: 1 / -1;
+}
+body[data-page="aluxVsOthers"] .alux-summary-group {
+  min-width: 0;
+}
+body[data-page="aluxVsOthers"] .alux-summary-group > h2 {
+  margin: 0 0 14px;
+  color: var(--alux-article-ink);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+body[data-page="aluxVsOthers"] .alux-summary-group--other {
+  padding-inline-end: 24px;
+  border-inline-end: 1px solid var(--alux-article-line);
+}
+body[data-page="aluxVsOthers"] .alux-summary-group--alux {
+  padding-inline-start: 24px;
+}
+body[data-page="aluxVsOthers"] .alux-summary-features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body[data-page="aluxVsOthers"] .alux-summary-features > li {
+  min-width: 0;
+  padding-inline: 18px;
+  border-inline-start: 1px solid var(--alux-article-line);
+}
+body[data-page="aluxVsOthers"] .alux-summary-features > li:first-child {
+  padding-inline-start: 0;
+  border: 0;
+}
+body[data-page="aluxVsOthers"] .alux-summary-features > li:last-child {
+  padding-inline-end: 0;
+}
+body[data-page="aluxVsOthers"] .alux-summary-features > li > dl {
+  display: block;
+  margin: 0;
+}
+body[data-page="aluxVsOthers"] .alux-summary-group p,
+body[data-page="aluxVsOthers"] .alux-summary-features dd {
+  margin: 0;
+  color: var(--alux-article-copy);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+body[data-page="aluxVsOthers"] .alux-summary-features dt {
+  margin-bottom: 5px;
+}
+@media (max-width: 960px) {
+  body[data-page="aluxVsOthers"] .alux-vs-article-summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  body[data-page="aluxVsOthers"] .alux-summary-group--other {
+    padding: 0 0 18px;
+    border: 0;
+    border-bottom: 1px solid var(--alux-article-line);
+  }
+  body[data-page="aluxVsOthers"] .alux-summary-group--alux {
+    padding: 0;
+  }
+}
+@media (max-width: 720px) {
+  body[data-page="aluxVsOthers"] .alux-summary-features {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  body[data-page="aluxVsOthers"] .alux-summary-features > li {
+    padding: 14px 0 0;
+    border: 0;
+    border-top: 1px solid var(--alux-article-line);
+  }
+  body[data-page="aluxVsOthers"] .alux-summary-features > li:first-child {
+    padding-top: 0;
   }
 }
