@@ -101,6 +101,23 @@ for(const file of files){
   if(language!=='en')html=html.replace(/(<meta (?:property|name)="(?:og|twitter):(title|description)" content=")[^"]*/g,(_,open,key)=>open+escape(key==='title'?result.page.metaTitle:result.page.metaDescription));
   const locales={en:'en_US',zh:'zh_CN',ja:'ja_JP',ko:'ko_KR',ar:'ar_AR'};
   html=html.replace(/(<meta property="og:locale" content=")[^"]*/,'$1'+locales[language]);
+  // Share crawlers read the static head without running the language/runtime JS.
+  const shareSlug=file==='index.html'?'home':file.replace(/\.html$/,'');
+  const shareImage='https://www.alux.network/assets/social/pages/'+language+'/'+shareSlug+'.jpg?v=20261015';
+  const shareMeta={
+   'og:type':'website','og:site_name':'ALUX Network','og:locale':locales[language],
+   'og:url':canonical,'og:title':result.page.metaTitle,'og:description':result.page.metaDescription,
+   'og:image':shareImage,'og:image:secure_url':shareImage,'og:image:type':'image/jpeg',
+   'og:image:width':'1200','og:image:height':'630','og:image:alt':result.page.metaTitle,
+   'twitter:card':'summary_large_image','twitter:title':result.page.metaTitle,
+   'twitter:description':result.page.metaDescription,'twitter:image':shareImage,
+   'twitter:image:alt':result.page.metaTitle
+  };
+  for(const [key,value] of Object.entries(shareMeta)){
+   const tag='<meta '+(key.startsWith('og:')?'property':'name')+'="'+key+'" content="'+escape(value)+'">';
+   const matcher=new RegExp('<meta (?:property|name)="'+key+'"[^>]*>','g');
+   html=matcher.test(html)?html.replace(matcher,()=>tag):html.replace('</head>',tag+'\n</head>');
+  }
   const alternates=languages.map(lang=>'<link rel="alternate" hreflang="'+(lang==='zh'?'zh-Hans':lang)+'" href="'+pageUrl(file,lang)+'">').concat('<link rel="alternate" hreflang="x-default" href="'+pageUrl(file,'en')+'">').join('\n');
   html=html.replace(canonicalTag,canonicalTag+'\n'+alternates);
   // Explicit language hyperlinks work even when the runtime is unavailable.
@@ -125,7 +142,7 @@ for(const file of files){
    html=html.replace(/(<script\b[^>]*src="\/script\.js)/,'<script defer src="/'+name+'?v='+version+'"></script>\n$1');
   }
   html=html.replace(/<script\b(?: defer)? src="\/script\.js/g,'<script defer src="/script.js');
-  html=html.replace(/(styles\.css|script\.js)\?v=[^"\s]+/g,'$1?v=20261014-loading-polish').replace(/home-hero-3d\.css\?v=[^"\s]+/g,'home-hero-3d.css?v=20261014-lossless-media').replace(/roadmap\.css\?v=[^"\s]+/g,'roadmap.css?v=20261014-details');
+  html=html.replace(/(styles\.css|script\.js)\?v=[^"\s]+/g,'$1?v=20261015-nav-hero').replace(/home-hero-3d\.css\?v=[^"\s]+/g,'home-hero-3d.css?v=20261015-hero-spacing').replace(/roadmap\.css\?v=[^"\s]+/g,'roadmap.css?v=20261014-details');
   if(page==='home'){
    html=html.replace(/\s*<link rel="preload"[^>]*data-home-media[^>]*>/g,'');
    const preloads=['assets/home/hero/alux-hero-3d-upper-brick.png','assets/home/hero/alux-hero-3d-lower-assembly.png'].map(name=>'<link rel="preload" as="image" type="image/webp" href="/'+media[name]+'" fetchpriority="high"'+' data-home-media>').join('\n');

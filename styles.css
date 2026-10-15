@@ -12559,7 +12559,7 @@ body[data-page="aluxVsOthers"]:not([data-page="home"]) .site-header {
   padding: 16px 22px;
   border: 1px solid rgba(98, 76, 55, 0.08);
   border-radius: 24px;
-  background: rgba(255, 252, 247, 0.82);
+  background: #fffdf8;
   box-shadow: 0 12px 26px rgba(120, 92, 58, 0.07);
   backdrop-filter: blur(14px);
 }
@@ -29905,8 +29905,23 @@ html[lang="ja"] body[data-page="home"] .hero-home h1.hero-home-title--statement 
   letter-spacing: -0.045em;
 }
 
+html[lang="ko"] body[data-page="home"] .hero-home h1.hero-home-title--statement {
+  max-width: 100%;
+  font-size: clamp(3.25rem, 5.6vw, 4.5rem);
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+@media (min-width: 961px) {
+  html[lang="ko"] body[data-page="home"] .hero-home-title-line {
+    white-space: nowrap;
+  }
+}
+
 html[lang="ar"] body[data-page="home"] .hero-home h1.hero-home-title--statement {
-  font-size: clamp(3.25rem, 5.6vw, 4.6rem);
+  max-width: 100%;
+  font-size: clamp(3rem, 5.2vw, 4.125rem);
+  line-height: 1.16;
   letter-spacing: -0.025em;
 }
 
@@ -29935,6 +29950,10 @@ body[data-page="home"] .showcase-panel--use-cases {
 
   html[lang="ar"] body[data-page="home"] .hero-home h1.hero-home-title--statement {
     font-size: clamp(2.45rem, 11.5vw, 3.05rem);
+  }
+
+  html[lang="ko"] body[data-page="home"] .hero-home h1.hero-home-title--statement {
+    font-size: clamp(2.35rem, 10vw, 2.9rem);
   }
 
   html[lang="zh"] body[data-page="home"] .hero-home-title-line + .hero-home-title-line {
