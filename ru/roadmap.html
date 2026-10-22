@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(browserLanguage).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>План развития | ALUX Network</title>
+<link rel="canonical" href="https://www.alux.network/ru/roadmap">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/roadmap">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/roadmap">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/roadmap">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/roadmap">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/roadmap">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/roadmap">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/roadmap">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/roadmap">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/roadmap">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/roadmap">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/roadmap">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/roadmap">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="План развития ALUX Network: квартальные этапы разработки среды TVM, консенсуса BlockGit, инструментов Tolang и совместимости с EVM с 2023 по 2027 год.">
+<link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
+<link rel="stylesheet" href="/styles.css?v=20261023-locales">
+<link rel="stylesheet" href="/roadmap.css?v=20261014-details">
+<link rel="stylesheet" href="/site-frame.css?v=20261023-locales">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ALUX Network">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://www.alux.network/ru/roadmap">
+<meta property="og:title" content="План развития | ALUX Network">
+<meta property="og:description" content="План развития ALUX Network: квартальные этапы разработки среды TVM, консенсуса BlockGit, инструментов Tolang и совместимости с EVM с 2023 по 2027 год.">
+<meta property="og:image" content="https://www.alux.network/assets/social/pages/ru/roadmap.jpg?v=20261015">
+<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/ru/roadmap.jpg?v=20261015">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="План развития | ALUX Network">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="План развития | ALUX Network">
+<meta name="twitter:description" content="План развития ALUX Network: квартальные этапы разработки среды TVM, консенсуса BlockGit, инструментов Tolang и совместимости с EVM с 2023 по 2027 год.">
+<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/ru/roadmap.jpg?v=20261015">
+<meta name="twitter:image:alt" content="План развития | ALUX Network">
+</head>
+<body data-page="roadmap">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/ru" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/optimized/alux-logo.0ddab7cca545.webp" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="/ru" data-nav="home">Главная</a>
+        <a href="/ru/for-ai-agents" data-nav="vs">Для ИИ-агентов</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">Изучение</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/ru/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/ru/runtime-lab" data-nav="learnPcc">Лаборатория выполнения</a>
+            <a href="/ru/alux-vs-others" data-nav="learnAlux">ALUX и другие системы</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">Блог</a>
+        <a href="/ru/team" data-nav="team">Команда</a>
+        <a href="/ru/roadmap" data-nav="roadmap" class="active-link" aria-current="page">План развития</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Язык</span><span class="lang-current" data-lang-current>Русский</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/roadmap" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/roadmap" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/roadmap" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/roadmap" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/roadmap" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/roadmap" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/roadmap" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/roadmap" hreflang="es">Español</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/roadmap" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/roadmap" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/roadmap" hreflang="ar">العربية</a></div></div>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">Связаться с нами</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Открыть или закрыть меню навигации"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main id="page-content" class="roadmap-static" data-static="true" data-prerendered="ru">
+      <section class="hero hero-simple fade-in roadmap-hero">
+        <div class="hero-copy roadmap-hero-copy">
+          <span class="roadmap-kicker"><span class="technical-token">ALUX</span></span>
+          <h1>План развития</h1>
+          <p class="roadmap-updated">Последнее обновление: 5 октября 2026 года</p>
+        </div>
+      </section>
+
+    <div class="roadmap-order" role="group" aria-label="Порядок плана развития"><button type="button" data-roadmap-order="newest" aria-pressed="true">Сначала новые <span aria-hidden="true">↑</span></button><button type="button" data-roadmap-order="oldest" aria-pressed="false">Сначала старые <span aria-hidden="true">↓</span></button></div>
+<section data-year="2027" class="section fade-in roadmap-year-section roadmap-year-section--2027">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2027</span>
+          <span class="roadmap-kicker">2027 год</span>
+          <h2>2027</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--planned">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2027 Q1</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">Запланировано</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Формальные доказательства ключевых свойств системы в Lean <span class="roadmap-item-status">(запланировано)</span></li>
+              <li>Запуск тестовой сети <span class="roadmap-item-status">(запланировано)</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2026" class="section fade-in roadmap-year-section roadmap-year-section--2026">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2026</span>
+          <span class="roadmap-kicker">2026 год</span>
+          <h2>2026</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--active">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">2026 Q4</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">Запланировано</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Реализация логических часов и механизмов обеспечения уровня изоляции <span class="roadmap-item-status">(в работе)</span></li>
+              <li>Инструмент отладки и наблюдаемости <span class="technical-token">TVM</span> в стиле «GDB» <span class="roadmap-item-status">(в работе)</span></li>
+              <li>Завершение модели учёта затрат <span class="roadmap-item-status">(в работе)</span></li>
+              <li>Интеграция с инструментами Ethereum <span class="roadmap-item-status">(в работе)</span></li>
+              <li>Реализация и тестирование контракта proof-of-stake (PoS) <span class="roadmap-item-status">(запланировано)</span></li>
+              <li>Реализация механизмов синхронизации и восстановления после сбоев <span class="roadmap-item-status">(запланировано)</span></li>
+              <li>Реализация сборки мусора <span class="roadmap-item-status">(запланировано)</span></li>
+              <li class="roadmap-break-bullet">Примеры Solidity, демонстрирующие оркестрацию смарт-контрактов / агентов <span class="roadmap-break-tail">(async/await, join, select) <span class="roadmap-item-status">(запланировано)</span></span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">2026 Q3</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Поддержка синхронных функций наряду с существующими асинхронными, с замыканиями и частичным применением <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Начальный системный реестр, абстракция аккаунтов и контракты получения и делегирования полномочий <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Упрощение планировщика задач <span class="technical-token">TVM</span> и тестирования конкурентного выполнения <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Отслеживание контекстов выполнения на основе журнала для надёжного отката вложенных контекстов <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Эталонный интерпретатор Tolang для проверки вывода компилятора <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Форматировщик Tolang, макрос Rust tolang!, переход к определению и переименование в IDE <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Клиент API на TypeScript с типизированными привязками, сгенерированными из RPC-интерфейса узла <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Новый интерпретатор <span class="technical-token">TVM</span> с вложенными коллекциями, циклами, замыканиями и начальным учётом газа <span class="roadmap-item-status">(на проверке)</span></li>
+              <li>Новая песочница <span class="technical-token">EVM</span> на основе перехватов <span class="roadmap-item-status">(в работе)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">2026 Q2</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Собственный парсер Tolang <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Поддержка констант времени компиляции в Tolang <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Языковой сервер Tolang и расширение Tolang для VS Code <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Рефакторинг тестового фреймворка <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Полное сквозное интеграционное тестирование системы, включая слой консенсуса <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Завершение реализации API <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Разработка CLI узла <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Специализированный обозреватель блокчейна для визуализации межблочного выполнения и атомарной финализации <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Новая песочница <span class="technical-token">EVM</span> на основе перехватов <span class="roadmap-item-status">(в работе)</span></li>
+              <li>Интеграция с инструментами Ethereum <span class="roadmap-item-status">(в работе)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2026 Q1</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Упрощение механизма воспроизведения для межблочного выполнения <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Новая песочница <span class="technical-token">EVM</span> для повышения эффективности и упрощения <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Рефакторинг консенсуса, базы данных и инфраструктуры <span class="technical-token">TVM</span> для улучшения модульности <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Реализация тестов межблочного выполнения и воспроизведения ленивыми валидаторами <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Разработка TupleSpace Explorer для визуализации состояния и прогресса выполнения <span class="roadmap-item-status">(завершено)</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2025" class="section fade-in roadmap-year-section roadmap-year-section--2025">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2025</span>
+          <span class="roadmap-kicker">2025 год</span>
+          <h2>2025</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--active">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">2025 Q4</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Тестирование межблочного выполнения без консенсуса <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Рефакторинг инфраструктуры <span class="technical-token">TVM</span> для улучшения модульности <span class="roadmap-item-status">(в работе)</span></li>
+              <li>Спецификация и реализация конечных точек API <span class="roadmap-item-status">(в работе)</span></li>
+              <li>Проектирование логических часов и механизма обеспечения уровня изоляции <span class="roadmap-item-status">(завершено)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">2025 Q3</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Механизм выполнения, пробуждения, упаковки и воспроизведения длинных транзакций через несколько блоков и фронтиров финализации <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Рефакторинг модуля базы данных для повышения производительности и эффективности <span class="roadmap-item-status">(в работе)</span></li>
+              <li>Рефакторинг инфраструктуры <span class="technical-token">TVM</span> для улучшения модульности <span class="roadmap-item-status">(в работе)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">2025 Q2</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Реализация и тестирование Weaklink в протоколе <span class="technical-token">BlockGit</span> <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Простые поведенческие типы каналов для упрощения архитектуры <span class="technical-token">TVM</span> и повышения надёжности <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Тестовый фреймворк для случайно генерируемого кода Tolang и интеграция с CI <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Рефакторинг логики воспроизведения <span class="roadmap-item-status">(завершено)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2025 Q1</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Рефакторинг всей системы в событийную архитектуру для максимальной конкурентности выполнения транзакций, воспроизведения блоков и предложения блоков <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Реализация конечных точек RPC и обновление <span class="technical-token">BlockGit</span> для обработки отсутствующих блоков <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Устранение утечек памяти в <span class="technical-token">BlockGit</span> и повышение производительности <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Введение Weaklink в протокол <span class="technical-token">BlockGit</span> и частичная реализация <span class="roadmap-item-status">(завершено)</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2024" class="section fade-in roadmap-year-section roadmap-year-section--2024">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2024</span>
+          <span class="roadmap-kicker">2024 год</span>
+          <h2>2024</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">2024 Q4</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Интеграция <span class="technical-token">BlockGit</span> в узловую платформу <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Тестирование протокола консенсуса в сети Docker <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Реализация алгоритма разрешения конфликтов при слиянии блоков <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Рефакторинг модуля хранения для поддержки запросов и фиксации состояния <span class="roadmap-item-status">(завершено)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">2024 Q3</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Контекст выполнения с поддержкой отката части выполнения <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Проектирование и первоначальная реализация нового протокола консенсуса <span class="technical-token">BlockGit</span> <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Симулятор дискретных событий для проверки реализации протокола консенсуса <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Модуль P2P с начальной интеграцией <span class="technical-token">BlockGit</span> <span class="roadmap-item-status">(завершено)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">2024 Q2</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Рефакторинг и унификация логики выполнения и воспроизведения пространства кортежей <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Реализация выполнения и воспроизведения внешнего вызова HTTPS, демонстрирующая активное взаимодействие с системами <span class="technical-token">Web 2.0</span> без оракулов / ретрансляторов <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Первоначальная реализация протокола консенсуса Blocklace <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Переработка управления состоянием для снижения использования памяти <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Проектирование структуры данных и алгоритма логических часов для обеспечения уровней изоляции <span class="roadmap-item-status">(завершено)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2024 Q1</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Реализация и тестирование глобального реестра <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Поддержка функционального программирования в Tolang и <span class="technical-token">TVM</span> <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Поддержка потокобезопасных последовательных вычислений в конкурентной <span class="technical-token">TVM</span> <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Предварительное тестирование совместимости с <span class="technical-token">EVM</span> <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Реализация хранения состояния <span class="technical-token">EVM</span> для уровня изоляции read-committed <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Рефакторинг кода и комплексная проверка корректности и воспроизводимости <span class="technical-token">TVM</span> <span class="roadmap-item-status">(завершено)</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2023" class="section fade-in roadmap-year-section roadmap-year-section--2023">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2023</span>
+          <span class="roadmap-kicker">2023 год</span>
+          <h2>2023</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">2023 Q4</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Реализация нового диспетчера задач для улучшенной обработки ошибок и поддержки локальности потоков <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Повышение производительности за счёт поддержки последовательных вычислений <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Тестирование специальных типов каналов <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Упрощение журнала воспроизведения с помощью специальных типов каналов <span class="roadmap-item-status">(завершено)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">2023 Q3</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Тестирование слоя хранения <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Тестирование выполнения и детерминированного воспроизведения конкурентной виртуальной машины <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Спецификация и реализация специальных типов каналов <span class="roadmap-item-status">(завершено)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">2023 Q2</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Реализация выполнения и воспроизведения конкурентной виртуальной машины <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Спецификация и реализация слоя хранения <span class="roadmap-item-status">(завершено)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">2023 Q1</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Готово</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Реализация и тестирование опкодов конкурентной виртуальной машины <span class="roadmap-item-status">(завершено)</span></li>
+              <li>Структура данных для детерминированного воспроизведения конкурентных транзакций <span class="roadmap-item-status">(завершено)</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+</main>
+
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Авторские права © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script defer src="/i18n/runtime/ru/roadmap.js?v=99ad9c582361"></script>
+<script defer src="/script.js?v=20261023-locales"></script>
+</body>
+</html>

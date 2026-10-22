@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { translatedLocales } from './locales.mjs';
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const activePages = [
@@ -13,7 +14,7 @@ const activePages = [
   "roadmap.html"
 ];
 const compatibilityPage = "parallel-concurrent-composable.html";
-const allPages = [...activePages, ...["zh", "ja", "ko", "ar"].flatMap(lang => activePages.map(page => `${lang}/${page}`)), compatibilityPage];
+const allPages = [...activePages, ...translatedLocales.flatMap(locale => activePages.map(page => `${locale.code}/${page}`)), compatibilityPage];
 const errors = [];
 const checkedReferences = new Set();
 const shareImages = new Set();

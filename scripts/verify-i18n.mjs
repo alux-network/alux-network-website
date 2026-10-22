@@ -3,12 +3,13 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import vm from "node:vm";
 import { fileURLToPath } from "node:url";
+import { translatedLocales } from './locales.mjs';
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourcePath = path.join(rootDir, "i18n", "source", "site.en.json");
 const localeDir = path.join(rootDir, "i18n", "locales");
 const generatedPath = path.join(rootDir, "i18n", "site.generated.js");
-const languages = ["zh", "ko", "ja", "ar"];
+const languages = translatedLocales.map(locale => locale.code);
 const publishableStatuses = new Set(["ai-reviewed", "human-reviewed"]);
 const preservedTokens = [
   "ALUX", "TVM", "TSAC", "BlockGit", "Tolang", "OpenClaw", "OCAP",
@@ -34,6 +35,36 @@ const officialTermPatterns = {
     longTransaction: /長期トランザクション/,
     glvm: /グローバル論理仮想マシン/,
     bitExact: /ビット単位/
+  },
+  'zh-hant': {
+    longTransaction: /長交易/,
+    glvm: /全域邏輯虛擬機/,
+    bitExact: /逐位元精確/
+  },
+  vi: {
+    longTransaction: /giao dịch dài/i,
+    glvm: /máy ảo logic toàn cục/i,
+    bitExact: /(?:chính xác từng bit|chính xác đến từng bit)/i
+  },
+  de: {
+    longTransaction: /Langtransaktion/i,
+    glvm: /globale logische virtuelle Maschine/i,
+    bitExact: /bitgenau/i
+  },
+  es: {
+    longTransaction: /transacci[oó]n(?:es)? de larga duraci[oó]n/i,
+    glvm: /m[aá]quina virtual l[oó]gica global/i,
+    bitExact: /bit a bit/i
+  },
+  ru: {
+    longTransaction: /длинн[^\n]*транзакц|транзакц[^\n]*длинн/i,
+    glvm: /глобальная логическая виртуальная машина/i,
+    bitExact: /побит|бит.*бит/i
+  },
+  uk: {
+    longTransaction: /довг[^\n]*транзакц|транзакц[^\n]*довг/i,
+    glvm: /глобальна логічна віртуальна машина/i,
+    bitExact: /побіт|біт.*біт/i
   },
   ar: {
     longTransaction: /(?:ال)?معامل(?:ة|ات)[^\n]*طويلة الأمد/,

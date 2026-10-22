@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import vm from "node:vm";
 import { fileURLToPath } from "node:url";
+import { locales, translatedLocales } from './locales.mjs';
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const scriptPath = path.join(rootDir, "script.js");
@@ -13,12 +14,7 @@ const generatedPath = path.join(rootDir, "i18n", "site.generated.js");
 const localeDir = path.join(rootDir, "i18n", "locales");
 const pendingDir = path.join(rootDir, "i18n", "pending");
 
-const targetLanguages = {
-  zh: "Chinese, polished Simplified Chinese product/protocol copy",
-  ko: "Korean, polished native Korean product/protocol copy",
-  ja: "Japanese, polished native Japanese product/protocol copy",
-  ar: "Arabic, polished native Arabic product/protocol copy"
-};
+const targetLanguages = Object.fromEntries(translatedLocales.map(locale => [locale.code, locale.target]));
 
 const args = new Set(process.argv.slice(2));
 const shouldAi = args.has("--ai");
@@ -157,6 +153,7 @@ function createBrowserContext() {
   };
 
   const window = {
+    ALUX_LOCALES: locales,
     ALUX_HOME_I18N: undefined,
     matchMedia() {
       return {

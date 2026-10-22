@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-hant" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(browserLanguage).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>團隊 | ALUX Network</title>
+<link rel="canonical" href="https://www.alux.network/zh-hant/team">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/team">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/team">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/team">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/team">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/team">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/team">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/team">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/team">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/team">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/team">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/team">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/team">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="認識正在構建 ALUX 併發執行階段、語言、共識與區塊鏈系統棧的核心開發者。">
+<link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
+<link rel="stylesheet" href="/styles.css?v=20261023-locales">
+<link rel="stylesheet" href="/site-frame.css?v=20261023-locales">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ALUX Network">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:url" content="https://www.alux.network/zh-hant/team">
+<meta property="og:title" content="團隊 | ALUX Network">
+<meta property="og:description" content="認識正在構建 ALUX 併發執行階段、語言、共識與區塊鏈系統棧的核心開發者。">
+<meta property="og:image" content="https://www.alux.network/assets/social/pages/zh-hant/team.jpg?v=20261015">
+<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/zh-hant/team.jpg?v=20261015">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="團隊 | ALUX Network">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="團隊 | ALUX Network">
+<meta name="twitter:description" content="認識正在構建 ALUX 併發執行階段、語言、共識與區塊鏈系統棧的核心開發者。">
+<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/zh-hant/team.jpg?v=20261015">
+<meta name="twitter:image:alt" content="團隊 | ALUX Network">
+</head>
+<body data-page="team">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/zh-hant" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/optimized/alux-logo.0ddab7cca545.webp" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="主導航">
+        <a href="/zh-hant" data-nav="home">首頁</a>
+        <a href="/zh-hant/for-ai-agents" data-nav="vs">面向 AI Agent</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">了解</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/zh-hant/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/zh-hant/runtime-lab" data-nav="learnPcc">Runtime Lab</a>
+            <a href="/zh-hant/alux-vs-others" data-nav="learnAlux">ALUX 與其他方案比較</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">博客</a>
+        <a href="/zh-hant/team" data-nav="team" class="active-link" aria-current="page">團隊</a>
+        <a href="/zh-hant/roadmap" data-nav="roadmap">路線圖</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>語言</span><span class="lang-current" data-lang-current>繁體中文</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/team" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/team" hreflang="zh-Hans">简体中文</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/team" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/team" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/team" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/team" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/team" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/team" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/team" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/team" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/team" hreflang="ar">العربية</a></div></div>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">聯絡我們</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="切換導航選單"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="zh-hant"><section class="section fade-in team-grid-section"><div class="team-stack-rail" aria-label="團隊技術棧"><span class="team-stack-label">團隊技術棧</span><div class="team-stack-tags"><span><span class="technical-token">TVM</span></span><span>Tolang</span><span>Rust</span><span><span class="technical-token">OCAP</span></span><span><span class="technical-token">BlockGit</span></span><span>ACID</span></div></div><div class="team-grid"><article class="team-member-card team-member-card--featured"><div class="team-member-visual"><div class="team-portrait-wrap team-portrait-wrap--frank"><svg class="team-portrait team-portrait--frank" viewBox="0 0 220 220" role="img" aria-label="LEGO-style minifigure portrait for Frank He"><rect class="portrait-bg" x="10" y="10" width="200" height="200" rx="42" /><circle class="portrait-halo portrait-halo--one" cx="68" cy="62" r="50" /><circle class="portrait-halo portrait-halo--two" cx="154" cy="154" r="48" />
+    <rect x="30" y="70" width="28" height="13" rx="2.5" fill="var(--portrait-a)" opacity="0.45" /><rect x="34" y="66" width="8" height="4.5" rx="1.4" fill="var(--portrait-a)" opacity="0.45" /><rect x="46" y="66" width="8" height="4.5" rx="1.4" fill="var(--portrait-a)" opacity="0.45" />
+    <rect x="164" y="116" width="26" height="12" rx="2.5" fill="var(--portrait-b)" opacity="0.5" /><rect x="173" y="112" width="8" height="4.5" rx="1.4" fill="var(--portrait-b)" opacity="0.5" />
+    <rect x="34" y="190" width="152" height="14" rx="2.5" fill="#a67951" opacity="0.9" /><rect x="40" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="52" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="64" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="76" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="88" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="100" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="112" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="124" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="136" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="148" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="160" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="172" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" />
+    <rect x="85" y="142" width="50" height="11" rx="2" fill="var(--lego-hip)" />
+    <rect x="87" y="153" width="22" height="37" rx="2" fill="var(--lego-legs)" />
+    <rect x="111" y="153" width="22" height="37" rx="2" fill="var(--lego-legs)" />
+    <path d="M83 96 L137 96 L143 142 L77 142 Z" fill="var(--lego-torso)" />
+    <rect x="101" y="88" width="18" height="8" fill="var(--lego-skin)" />
+
+    <rect x="85" y="128" width="50" height="6" rx="2.5" fill="var(--lego-laptop-dark)" />
+    <path d="M93 102 L127 102 C129.5 102 131 103.5 131 106 L132.5 128 L87.5 128 L89 106 C89 103.5 90.5 102 93 102 Z" fill="var(--lego-laptop)" />
+    <rect x="88" y="126.5" width="44" height="3" rx="1.5" fill="var(--lego-laptop-dark)" />
+    <g fill="var(--lego-print)" opacity="0.95"><rect x="98" y="108" width="11" height="6.5" rx="1.5" /><rect x="111" y="108" width="11" height="6.5" rx="1.5" /><rect x="104.5" y="116.5" width="11" height="6.5" rx="1.5" /></g>
+    <path d="M84 98 C75 103 73 113 75 124 L87 128 C85 118 86 107 91 102 Z" fill="var(--lego-torso)" />
+    <path d="M136 98 C145 103 147 113 145 124 L133 128 C135 118 134 107 129 102 Z" fill="var(--lego-torso)" />
+    <circle cx="87" cy="130" r="7.5" fill="var(--lego-skin)" />
+    <circle cx="133" cy="130" r="7.5" fill="var(--lego-skin)" />
+    <rect x="87" y="48" width="46" height="40" rx="10" fill="var(--lego-skin)" />
+    <circle cx="101" cy="65" r="2.7" fill="#26364a" /><circle cx="119" cy="65" r="2.7" fill="#26364a" />
+    <path d="M98 73.5 C102 80.5 118 80.5 122 73.5" fill="none" stroke="#26364a" stroke-width="2.6" stroke-linecap="round" />
+
+      <path d="M87 55 C88 42 98 37 110 37 C122 37 132 42 133 55 L133 57 C127 50.5 93 50.5 87 57 Z" fill="#1f1a15" />
+      <g fill="none" stroke="#26364a" stroke-width="1.9"><rect x="92.5" y="60" width="16" height="9.5" rx="2" /><rect x="111.5" y="60" width="16" height="9.5" rx="2" /><path d="M108.5 64 L111.5 64 M92.5 63 L87 61.5 M127.5 63 L133 61.5" /></g></svg><span class="team-portrait-initials">FH</span></div><div class="team-signal-list"><span>元組空間</span><span>能力安全</span><span>風險系統</span></div></div><div class="team-member-copy"><div class="team-member-head"><div><h3>Frank He</h3><span class="team-handle">@Atticbee</span></div><p>創始人 / 併發系統架構師</p></div><div class="team-bio"><p>Frank 是一位併發系統架構師。投入 <span class="technical-token">ALUX</span> 之前，他曾在雷曼兄弟、巴克萊資本和彭博擔任高級量化分析師與衍生品工程師近 20 年，構建必須在跨時區、跨組織、毫秒級併發下保持正確的華爾街級風險系統。</p><p>這段經歷讓他確信一件事：同步執行模型已經走到盡頭。<span class="technical-token">ALUX</span> 是他的回答。他主導設計了核心技術棧：</p></div><div class="team-highlight-list"><div class="team-highlight-row"><h4><span class="technical-token">TVM</span> 元組空間虛擬機</h4><p>處理程序透過通道併發互動，模式匹配即排程，能力憑證即授權。</p></div><div class="team-highlight-row"><h4>Tolang 併發編程語言</h4><p>Tolang 把通道描述符與行為類型編碼進語言，讓部分誤用能更早暴露；生命週期約束仍由執行階段執行。</p></div><div class="team-highlight-row"><h4><span class="technical-token">OCAP</span> 物件能力安全模型</h4><p>通道引用不可偽造且可以傳遞；權限範圍與生命週期規則負責限制能力，而不只依賴基於地址的存取控制。</p></div><div class="team-highlight-row"><h4><span class="technical-token">BlockGit</span> DAG 共識協議</h4><p>驗證者可以併發產生 DAG 區塊。<span class="technical-token">BlockGit</span> 透過輪換式領導者選擇完成最終確認，<span class="technical-token">Block Merge</span> 則處理相互重疊的工作。</p></div><div class="team-highlight-row"><h4><span class="technical-token">去中心化</span> ACID 事務層</h4><p>執行片段、回滾、隔離規則與提交點，共同為長交易和跨區塊工作保留 ACID 語義。</p></div></div><div class="team-bio team-bio--closing"><p>虛擬機、語言與共識互相銜接，形成一個終於讓併發執行與可組合性協同運作的系統——一個為開放、可組合的 AI Agent 經濟而建構的協議層。</p></div><div class="team-links"><a href="https://github.com/atticbee" target="_blank" rel="noreferrer">GitHub</a><a href="https://twitter.com/atticbeeus" target="_blank" rel="noreferrer">X</a></div></div></article><article class="team-member-card team-member-card--2"><div class="team-member-visual"><div class="team-portrait-wrap team-portrait-wrap--tomislav"><svg class="team-portrait team-portrait--tomislav" viewBox="0 0 220 220" role="img" aria-label="LEGO-style minifigure portrait for Tomislav Grospić"><rect class="portrait-bg" x="10" y="10" width="200" height="200" rx="42" /><circle class="portrait-halo portrait-halo--one" cx="68" cy="62" r="50" /><circle class="portrait-halo portrait-halo--two" cx="154" cy="154" r="48" />
+    <rect x="30" y="70" width="28" height="13" rx="2.5" fill="var(--portrait-a)" opacity="0.45" /><rect x="34" y="66" width="8" height="4.5" rx="1.4" fill="var(--portrait-a)" opacity="0.45" /><rect x="46" y="66" width="8" height="4.5" rx="1.4" fill="var(--portrait-a)" opacity="0.45" />
+    <rect x="164" y="116" width="26" height="12" rx="2.5" fill="var(--portrait-b)" opacity="0.5" /><rect x="173" y="112" width="8" height="4.5" rx="1.4" fill="var(--portrait-b)" opacity="0.5" />
+    <rect x="34" y="190" width="152" height="14" rx="2.5" fill="#a67951" opacity="0.9" /><rect x="40" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="52" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="64" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="76" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="88" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="100" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="112" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="124" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="136" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="148" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="160" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="172" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" />
+    <rect x="85" y="142" width="50" height="11" rx="2" fill="var(--lego-hip)" />
+    <rect x="87" y="153" width="22" height="37" rx="2" fill="var(--lego-legs)" />
+    <rect x="111" y="153" width="22" height="37" rx="2" fill="var(--lego-legs)" />
+    <path d="M83 96 L137 96 L143 142 L77 142 Z" fill="var(--lego-torso)" />
+    <rect x="101" y="88" width="18" height="8" fill="var(--lego-skin)" />
+
+    <rect x="85" y="128" width="50" height="6" rx="2.5" fill="var(--lego-laptop-dark)" />
+    <path d="M93 102 L127 102 C129.5 102 131 103.5 131 106 L132.5 128 L87.5 128 L89 106 C89 103.5 90.5 102 93 102 Z" fill="var(--lego-laptop)" />
+    <rect x="88" y="126.5" width="44" height="3" rx="1.5" fill="var(--lego-laptop-dark)" />
+    <text x="110" y="117" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10.5" font-weight="700" fill="var(--lego-print)">C64</text>
+    <path d="M84 98 C75 103 73 113 75 124 L87 128 C85 118 86 107 91 102 Z" fill="var(--lego-torso)" />
+    <path d="M136 98 C145 103 147 113 145 124 L133 128 C135 118 134 107 129 102 Z" fill="var(--lego-torso)" />
+    <circle cx="87" cy="130" r="7.5" fill="var(--lego-skin)" />
+    <circle cx="133" cy="130" r="7.5" fill="var(--lego-skin)" />
+    <rect x="87" y="48" width="46" height="40" rx="10" fill="var(--lego-skin)" />
+    <circle cx="101" cy="65" r="2.7" fill="#26364a" /><circle cx="119" cy="65" r="2.7" fill="#26364a" />
+
+
+      <path d="M92 67 C92 87 128 87 128 67 L128 71 C128 84 120 88.5 110 88.5 C100 88.5 92 84 92 71 Z" fill="#8e9299" />
+      <path d="M100 71.5 C104 68.5 116 68.5 120 71.5 C116 74.5 104 74.5 100 71.5 Z" fill="#8e9299" />
+      <path d="M106 77.5 C108 79 112 79 114 77.5" stroke="#4a4640" stroke-width="2" stroke-linecap="round" fill="none" />
+      <path d="M96 58 L106 58 M114 58 L124 58" stroke="#3a352e" stroke-width="2.8" stroke-linecap="round" />
+      <circle cx="110" cy="29.5" r="6.2" fill="#3b342b" />
+      <g stroke="#57503f" stroke-width="1.2" stroke-linecap="round" opacity="0.9"><path d="M106.5 27 L108 29.5 M111 25.5 L111.5 28.5 M114 28.5 L112.5 30.5 M107 32 L109 31.5" /></g>
+      <path d="M84 57 C81.5 26.5 138.5 26.5 136 57 L136 59 L84 59 Z" fill="#23201c" />
+      <rect x="84" y="55" width="52" height="7" rx="3.5" fill="#332e27" />
+      <g stroke="#fffaf3" stroke-width="1.4" stroke-linecap="round" opacity="0.75"><path d="M93 41.5 L96.6 45.1 M96.6 41.5 L93 45.1" /><path d="M108.2 36.5 L111.8 40.1 M111.8 36.5 L108.2 40.1" /><path d="M123.4 41.5 L127 45.1 M127 41.5 L123.4 45.1" /></g>
+      <rect x="84.5" y="61" width="7" height="15" rx="3.5" fill="#23201c" />
+      <rect x="128.5" y="61" width="7" height="15" rx="3.5" fill="#23201c" /></svg><span class="team-portrait-initials">TG</span></div><div class="team-signal-list"><span>程序演算</span><span>Haskell</span><span>電子技術</span></div></div><div class="team-member-copy"><div class="team-member-head"><div><h3>Tomislav Grospić</h3></div><p>併發工程師</p></div><div class="team-bio"><p>Tomislav 很早便接觸計算：5 歲時做紙板計算器，10 歲時已在 C64c 上寫組合語言。他在電子技術領域工作十年，又做了二十年的多語言程式設計師，從 JavaScript 到 Haskell 都有涉獵；這些經歷讓他學會從硬體底層向上思考。</p><p>在 <span class="technical-token">ALUX</span>，他工作在理論與執行階段的交界處：用程序演算讓併發成為一等公民，而不是事後補丁。</p></div><div class="team-links"><a href="https://github.com/tgrospic" target="_blank" rel="noreferrer">GitHub</a><a href="https://twitter.com/grospic" target="_blank" rel="noreferrer">X</a><a href="https://linkedin.com/in/tgrospic" target="_blank" rel="noreferrer">LinkedIn</a></div></div></article><article class="team-member-card team-member-card--3"><div class="team-member-visual"><div class="team-portrait-wrap team-portrait-wrap--tom"><svg class="team-portrait team-portrait--tom" viewBox="0 0 220 220" role="img" aria-label="LEGO-style minifigure portrait for Tom Yi"><rect class="portrait-bg" x="10" y="10" width="200" height="200" rx="42" /><circle class="portrait-halo portrait-halo--one" cx="68" cy="62" r="50" /><circle class="portrait-halo portrait-halo--two" cx="154" cy="154" r="48" />
+    <rect x="30" y="70" width="28" height="13" rx="2.5" fill="var(--portrait-a)" opacity="0.45" /><rect x="34" y="66" width="8" height="4.5" rx="1.4" fill="var(--portrait-a)" opacity="0.45" /><rect x="46" y="66" width="8" height="4.5" rx="1.4" fill="var(--portrait-a)" opacity="0.45" />
+    <rect x="164" y="116" width="26" height="12" rx="2.5" fill="var(--portrait-b)" opacity="0.5" /><rect x="173" y="112" width="8" height="4.5" rx="1.4" fill="var(--portrait-b)" opacity="0.5" />
+    <rect x="34" y="190" width="152" height="14" rx="2.5" fill="#a67951" opacity="0.9" /><rect x="40" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="52" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="64" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="76" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="88" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="100" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="112" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="124" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="136" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="148" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="160" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" /><rect x="172" y="186" width="8" height="4.5" rx="1.4" fill="#a67951" opacity="0.9" />
+    <rect x="85" y="142" width="50" height="11" rx="2" fill="var(--lego-hip)" />
+    <rect x="87" y="153" width="22" height="37" rx="2" fill="var(--lego-legs)" />
+    <rect x="111" y="153" width="22" height="37" rx="2" fill="var(--lego-legs)" />
+    <path d="M83 96 L137 96 L143 142 L77 142 Z" fill="var(--lego-torso)" />
+    <rect x="101" y="88" width="18" height="8" fill="var(--lego-skin)" />
+
+    <rect x="85" y="128" width="50" height="6" rx="2.5" fill="var(--lego-laptop-dark)" />
+    <path d="M93 102 L127 102 C129.5 102 131 103.5 131 106 L132.5 128 L87.5 128 L89 106 C89 103.5 90.5 102 93 102 Z" fill="var(--lego-laptop)" />
+    <rect x="88" y="126.5" width="44" height="3" rx="1.5" fill="var(--lego-laptop-dark)" />
+    <g stroke="var(--lego-print)" stroke-width="1.6" fill="none" opacity="0.95"><path d="M105 113.5 L115 108.5 M105 113.5 L115 118.5" /></g><g fill="var(--lego-print)" opacity="0.95"><circle cx="105" cy="113.5" r="2.6" /><circle cx="115" cy="108.5" r="2.6" /><circle cx="115" cy="118.5" r="2.6" /></g>
+    <path d="M84 98 C75 103 73 113 75 124 L87 128 C85 118 86 107 91 102 Z" fill="var(--lego-torso)" />
+    <path d="M136 98 C145 103 147 113 145 124 L133 128 C135 118 134 107 129 102 Z" fill="var(--lego-torso)" />
+    <circle cx="87" cy="130" r="7.5" fill="var(--lego-skin)" />
+    <circle cx="133" cy="130" r="7.5" fill="var(--lego-skin)" />
+    <rect x="87" y="48" width="46" height="40" rx="10" fill="var(--lego-skin)" />
+    <circle cx="101" cy="65" r="2.7" fill="#26364a" /><circle cx="119" cy="65" r="2.7" fill="#26364a" />
+    <path d="M103 77 C106 79.5 114 79.5 117 77" fill="none" stroke="#26364a" stroke-width="2.4" stroke-linecap="round" />
+
+      <path d="M87.5 73.5 C85.5 70 85 66 85.8 59 C85.5 35 134.5 35 134.2 59 C135 66 134.5 70 132.5 73.5 L130 63 C127.5 56 122.5 57.5 117 54.5 C110.5 51.5 102.5 53 97 55 C94 56 91.5 57.5 90 63 Z" fill="#3d4348" />
+      <path d="M97 52 L99.5 47 M107 51 L109.5 46 M117 52 L119.5 47 M92 54 L94 49.5 M126 54 L128 49.5" stroke="#666e76" stroke-width="1.4" fill="none" stroke-linecap="round" /></svg><span class="team-portrait-initials">TY</span></div><div class="team-signal-list"><span>共識</span><span>系統架構</span><span>DApps</span></div></div><div class="team-member-copy"><div class="team-member-head"><div><h3>Tom Yi</h3></div><p>共識協議研究者</p></div><div class="team-bio"><p>Tom 是一名專注共識協議研究的區塊鏈開發者。在 <span class="technical-token">ALUX</span>，他主要研究 <span class="technical-token">BlockGit</span>：一種讓驗證者併發產生區塊、但不依賴固定領導者的 DAG 共識設計。</p><p>加入 <span class="technical-token">ALUX</span> 之前，他在 IPC 行業工作約十年，主導系統架構，交付過 DApp、行動端、雲端、網站與桌面產品——如今涵蓋從 C、C++ 到 Solidity、Rust 的十二種語言。</p></div><div class="team-links"><a href="https://github.com/tom-yi-alux" target="_blank" rel="noreferrer">GitHub</a></div></div></article></div></section></main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">版權所有 © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script defer src="/i18n/runtime/zh-hant/team.js?v=904e1788204b"></script>
+<script defer src="/script.js?v=20261023-locales"></script>
+</body>
+</html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(browserLanguage).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLVM | ALUX Network</title>
+  <meta name="description" content="Дослідіть GLVM — логічну модель виконання ALUX для розробників, засновану на конкурентності TVM, відтворенні, об’єктних повноваженнях, атомарній фіналізації, реплікації та консенсусі.">
+  <link rel="canonical" href="https://www.alux.network/uk/glvm">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/glvm">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/glvm">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/glvm">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/glvm">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/glvm">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/glvm">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/glvm">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/glvm">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/glvm">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/glvm">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/glvm">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/glvm">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ALUX Network">
+  <meta property="og:title" content="GLVM | ALUX Network">
+  <meta property="og:description" content="Дослідіть GLVM — логічну модель виконання ALUX для розробників, засновану на конкурентності TVM, відтворенні, об’єктних повноваженнях, атомарній фіналізації, реплікації та консенсусі.">
+  <meta property="og:url" content="https://www.alux.network/uk/glvm">
+  <meta property="og:image" content="https://www.alux.network/assets/social/pages/uk/glvm.jpg?v=20261015">
+  <meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/uk/glvm.jpg?v=20261015">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="GLVM | ALUX Network">
+  <meta property="og:locale" content="uk_UA">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@alux_network">
+  <meta name="twitter:title" content="GLVM | ALUX Network">
+  <meta name="twitter:description" content="Дослідіть GLVM — логічну модель виконання ALUX для розробників, засновану на конкурентності TVM, відтворенні, об’єктних повноваженнях, атомарній фіналізації, реплікації та консенсусі.">
+  <meta name="twitter:image" content="https://www.alux.network/assets/social/pages/uk/glvm.jpg?v=20261015">
+  <meta name="twitter:image:alt" content="GLVM | ALUX Network">
+
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+<link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
+<link rel="stylesheet" href="/styles.css?v=20261023-locales">
+<link rel="stylesheet" href="/site-frame.css?v=20261023-locales">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+<link rel="stylesheet" href="/glvm-story.css?v=20260814-customer-vm2">
+
+</head>
+<body data-page="glvm">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/uk" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/optimized/alux-logo.0ddab7cca545.webp" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="Основна навігація">
+        <a href="/uk" data-nav="home">Головна</a>
+        <a href="/uk/for-ai-agents" data-nav="vs">Для ШІ-агентів</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">Вивчення</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/uk/glvm" data-nav="learnGlvm" class="active-link" aria-current="page">GLVM</a>
+            <a href="/uk/runtime-lab" data-nav="learnPcc">Лабораторія виконання</a>
+            <a href="/uk/alux-vs-others" data-nav="learnAlux">ALUX та інші системи</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">Блог</a>
+        <a href="/uk/team" data-nav="team">Команда</a>
+        <a href="/uk/roadmap" data-nav="roadmap">План розвитку</a>
+        <a href="mailto:info@alux.network" data-nav="cta" class="mobile-nav-cta">Зв’язатися з нами</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Мова</span><span class="lang-current" data-lang-current>Українська</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/glvm" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/glvm" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/glvm" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/glvm" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/glvm" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/glvm" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/glvm" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/glvm" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/glvm" hreflang="ru">Русский</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/glvm" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/glvm" hreflang="ar">العربية</a></div></div>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">Зв’язатися з нами</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Відкрити або закрити меню навігації"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="uk">
+    <article class="glvm-page" data-glvm-root data-glvm-step="0">
+      <header class="glvm-hero fade-in">
+        <div class="glvm-hero-copy">
+          <p class="eyebrow">Вивчення / <span class="technical-token">GLVM</span></p>
+          <h1><span class="technical-token">GLVM</span></h1>
+          <p class="glvm-full-name">Глобальна логічна віртуальна машина</p>
+          <p class="glvm-tagline glvm-semantic-heading">Єдиний логічний шар виконання, координований на багатьох машинах.</p>
+          <p class="glvm-hero-text glvm-semantic-copy"><span class="technical-token">GLVM</span> — орієнтована на розробника абстракція виконання, яку <span class="technical-token">ALUX</span> будує на основі свого конкурентного середовища. <span class="technical-token">TVM</span> слугує конкретним рушієм на кожній залученій машині; модель <span class="technical-token">GLVM</span> об’єднує стан виконання, процеси, відтворення, реплікацію та консенсус в одному логічному шарі.</p>
+        </div>
+        <figure class="glvm-hero-visual">
+          <div class="glvm-hero-media">
+            <img src="/assets/glvm/20260712_GLVM_全局逻辑主视觉_4K.webp" alt="" aria-hidden="true" class="glvm-hero-poster" fetchpriority="high" decoding="async">
+            <video muted loop playsinline preload="none" poster="/assets/glvm/20260712_GLVM_全局逻辑主视觉_4K.webp" aria-label="Технічна ілюстрація в теплих тонах: кілька фізичних машин з’єднані під єдиним шаром виконання GLVM." data-glvm-video>
+              <source src="/assets/glvm/20260712_GLVM_全局逻辑动效_1080P.mp4" type="video/mp4">
+            </video>
+            <div class="glvm-hero-overlay" aria-hidden="true"><span></span><span></span><span></span></div>
+          </div>
+        </figure>
+        <div class="glvm-hero-signals"><div class="glvm-signal"><span>Фізична модель</span><strong>Одна <span class="technical-token">TVM</span> на машину</strong></div><div class="glvm-signal"><span>Логічна модель</span><strong>Одна <span class="technical-token">GLVM</span> над ними</strong></div><div class="glvm-signal"><span>Напрям</span><strong>Від блокчейну до хмари й пристрою</strong></div></div>
+      </header>
+
+      <section class="glvm-definition fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">Основне визначення</p>
+          <h2 class="glvm-semantic-heading">Одна <span class="technical-token">TVM</span> на машину, координація через єдину логічну модель виконання</h2>
+          <p class="glvm-semantic-copy"><span class="technical-token">TVM</span> — рушій виконання байт-коду на одній машині. <span class="technical-token">GLVM</span> визначає системну абстракцію виконання для залучених <span class="technical-token">TVM</span>. Це не ще одна VM байт-коду: розробники працюють з єдиною логічною моделлю, а детерміноване відтворення, неперервність виконання, реплікація, фіналізація та консенсус координуються під рівнем абстракції.</p>
+        </div>
+        <div class="glvm-comparison">
+      <article class="glvm-comparison-card glvm-comparison-card--tvm">
+        <div class="glvm-comparison-heading"><span><span class="technical-token">TVM</span></span><h3>Віртуальна машина простору кортежів</h3></div>
+        <p>Конкретний рушій виконання <span class="technical-token">ALUX</span>. Він виконує байт-код Tolang, координує незалежні процеси через канали й події <span class="technical-token">COMM</span> та записує недетерміновані рішення, потрібні для детермінованого відтворення.</p>
+        <strong>Конкретний рушій усередині однієї машини</strong>
+      </article>
+
+      <article class="glvm-comparison-card glvm-comparison-card--glvm">
+        <div class="glvm-comparison-heading"><span><span class="technical-token">GLVM</span></span><h3>Глобальна логічна віртуальна машина</h3></div>
+        <p><span class="technical-token">GLVM</span> визначає логічну модель для розробників, що об’єднує залучені <span class="technical-token">TVM</span>. Вона задає єдину межу стану виконання й процесів, залишаючи відтворення, реплікацію, фіналізацію та консенсус під рівнем абстракції.</p>
+        <strong>Одна логічна система над багатьма машинами</strong>
+      </article>
+    </div>
+        <div class="glvm-axis"><div class="glvm-axis-row"><span>Абстракція VM</span><strong>Розширюється</strong></div><div class="glvm-axis-row"><span>Вертикальна атомарність</span><strong>Ядро середовища виконання</strong></div><div class="glvm-axis-row"><span>Горизонтальна атомарність</span><strong>Плани розвитку</strong></div><div class="glvm-axis-row"><span>Компонована безпека</span><strong>Ядро середовища виконання</strong></div></div>
+
+    <aside class="glvm-definition-payoff">
+      <div class="glvm-definition-payoff-heading">
+        <span>Ключова ідея</span>
+        <h3>Один логічний шар виконання, а не одна фізична машина</h3>
+      </div>
+      <p>Розробники працюють з однією конкурентною моделлю виконання, а середовище виконання відповідає за планування, відтворення, перевірку повноважень, реплікацію та фіналізацію.</p>
+    </aside>
+
+      </section>
+
+      <section class="glvm-architecture fade-in" id="architecture">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">Трирівнева архітектура</p>
+          <h2 class="glvm-semantic-heading">Три рівні, одна модель виконання для розробника</h2>
+          <p class="glvm-semantic-copy">Фізичні машини запускають <span class="technical-token">TVM</span>; в архітектурі <span class="technical-token">GLVM</span> ці рушії беруть участь у єдиній логічній моделі виконання. Майбутня World OS організує цей шар у сервіси, придатні до виявлення й оркестрації, з явно заданими повноваженнями.</p>
+        </div>
+        <p class="glvm-layer-instruction">Виберіть рівень, щоб побачити подробиці.</p>
+        <div class="glvm-architecture-stage">
+          <div class="glvm-layer-stack" role="group" aria-label="Три рівні, одна модель виконання для розробника">
+      <button class="glvm-layer glvm-layer--world" type="button" data-glvm-layer="world" data-layer-title="Всесвітня операційна система" data-layer-text="Майбутній сервісний шар для агентів і застосунків: реєстрація та виявлення, оркестрація й програмовані повноваження. Він забезпечить виявлення сервісів і явні правила співпраці." data-layer-status="Плани розвитку" aria-pressed="false">
+        <span class="glvm-layer-index">03</span>
+        <span class="glvm-layer-label">Рівень 3</span>
+        <strong>Всесвітня операційна система</strong>
+        <span class="glvm-layer-status">Плани розвитку</span>
+        <span class="glvm-layer-items"><i>Виявлення сервісів і агентів</i><i>Оркестрація</i><i>Програмовані повноваження</i></span>
+      </button>
+
+      <button class="glvm-layer glvm-layer--runtime is-active" type="button" data-glvm-layer="runtime" data-layer-title="Конкурентне середовище виконання GLVM" data-layer-text="Рівень логічної координації. Абстракція VM, керування конкурентністю, об’єктні повноваження, детерміноване відтворення й семантика фіналізації формують спільну модель виконання для залучених TVM." data-layer-status="Ядро середовища виконання · розширюється" aria-pressed="true">
+        <span class="glvm-layer-index">02</span>
+        <span class="glvm-layer-label">Рівень 2</span>
+        <strong>Конкурентне середовище виконання <span class="technical-token">GLVM</span></strong>
+        <span class="glvm-layer-status">Ядро середовища виконання · розширюється</span>
+        <span class="glvm-layer-items"><i>Абстракція <span class="technical-token">GLVM</span></i><i>Конкурентність і відтворення</i><i>Повноваження та фіналізація</i></span>
+      </button>
+
+      <button class="glvm-layer glvm-layer--physical" type="button" data-glvm-layer="physical" data-layer-title="Фізична інфраструктура" data-layer-text="Машини, що виконують роботу. Вузли публічного блокчейну є поточною основою виконання. Наступний напрям інтеграції — приватні або хмарні TVM; TVM клієнтських пристроїв залишаються запланованим шляхом до локального виконання." data-layer-status="Ядро · інтеграція · плани розвитку" aria-pressed="false">
+        <span class="glvm-layer-index">01</span>
+        <span class="glvm-layer-label">Рівень 1</span>
+        <strong>Фізична інфраструктура</strong>
+        <span class="glvm-layer-status">Ядро · інтеграція · плани розвитку</span>
+        <span class="glvm-layer-items"><i><span class="technical-token">TVM</span> публічного блокчейну</i><i>Приватна або хмарна <span class="technical-token">TVM</span></i><i><span class="technical-token">TVM</span> клієнтського пристрою</i></span>
+      </button>
+    </div>
+          <aside class="glvm-layer-inspector" aria-live="polite">
+            <span data-glvm-layer-status>Ядро середовища виконання · розширюється</span>
+            <h3 data-glvm-layer-title>Конкурентне середовище виконання <span class="technical-token">GLVM</span></h3>
+            <p data-glvm-layer-text>Рівень логічної координації. Абстракція VM, керування конкурентністю, об’єктні повноваження, детерміноване відтворення й семантика фіналізації формують спільну модель виконання для залучених <span class="technical-token">TVM</span>.</p>
+            <ul data-glvm-layer-items><li>Абстракція <span class="technical-token">GLVM</span></li><li>Конкурентність і відтворення</li><li>Повноваження та фіналізація</li></ul>
+          </aside>
+        </div>
+      </section>
+
+
+    <section class="glvm-extension glvm-continuity fade-in" id="execution-continuity">
+      <header class="glvm-extension-header">
+        <div><p class="eyebrow">Виконання та атомарність</p><h2 class="glvm-semantic-heading">Транзакція може чекати кілька блоків, а потім завершитися як єдине ціле</h2></div>
+        <p class="glvm-continuity-intro">Модель виконання розвивається від послідовної й паралельної роботи до конкурентних процесів, здатних спілкуватися, чекати й поновлюватися. Складене виконання розширює модель, дозволяючи кільком конкурентним транзакціям мати спільну межу фіксації вищого рівня; неперервність між блоками слугує вертикальною основою цього напряму.</p>
+      </header>
+      <div class="glvm-continuity-frame">
+        <div class="glvm-continuity-tabs" role="tablist" aria-label="Транзакція може чекати кілька блоків, а потім завершитися як єдине ціле">
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-sequential" aria-controls="glvm-continuity-panel-sequential" aria-selected="false" tabindex="-1" data-glvm-continuity="sequential">
+      <span>01</span>
+      <strong>Послідовне</strong>
+      <small>Базова модель</small>
+    </button>
+
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-parallel" aria-controls="glvm-continuity-panel-parallel" aria-selected="false" tabindex="-1" data-glvm-continuity="parallel">
+      <span>02</span>
+      <strong>Паралельне</strong>
+      <small>Ядро середовища виконання</small>
+    </button>
+
+    <button class="glvm-continuity-tab is-active" type="button" role="tab" id="glvm-continuity-tab-concurrent" aria-controls="glvm-continuity-panel-concurrent" aria-selected="true" tabindex="0" data-glvm-continuity="concurrent">
+      <span>03</span>
+      <strong>Конкурентне</strong>
+      <small>Ядро середовища виконання</small>
+    </button>
+
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-composite" aria-controls="glvm-continuity-panel-composite" aria-selected="false" tabindex="-1" data-glvm-continuity="composite">
+      <span>04</span>
+      <strong>Складене</strong>
+      <small>Плани розвитку</small>
+    </button>
+  </div>
+        <div class="glvm-continuity-panels">
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-sequential" aria-labelledby="glvm-continuity-tab-sequential" data-glvm-continuity-panel="sequential" hidden>
+      <div class="glvm-continuity-visual">
+    <div class="glvm-continuity-scene glvm-continuity-scene--sequential" aria-hidden="true">
+      <span class="glvm-continuity-node glvm-continuity-node--brown"><bdi dir="auto">СТАН 01</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">СТАН 02</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">СТАН 03</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">ФІКСАЦІЯ</bdi></span>
+    </div>
+  </div>
+      <div class="glvm-continuity-panel-copy"><span>Базова модель</span><h3>Послідовне</h3><p>Один перехід іде за іншим.</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-parallel" aria-labelledby="glvm-continuity-tab-parallel" data-glvm-continuity-panel="parallel" hidden>
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--parallel" aria-hidden="true">
+        <div><small><bdi dir="auto">ЛІНІЯ A</bdi></small><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">TX A</bdi></span></div>
+        <div><small><bdi dir="auto">ЛІНІЯ B</bdi></small><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">TX B</bdi></span></div>
+        <div><small><bdi dir="auto">ЛІНІЯ C</bdi></small><span class="glvm-continuity-node glvm-continuity-node--purple"><bdi dir="auto">TX C</bdi></span></div>
+        <i></i>
+        <span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">ЗЛИТТЯ</bdi></span>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>Ядро середовища виконання</span><h3>Паралельне</h3><p>Незалежні переходи просуваються одночасно.</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel is-active" role="tabpanel" id="glvm-continuity-panel-concurrent" aria-labelledby="glvm-continuity-tab-concurrent" data-glvm-continuity-panel="concurrent">
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--concurrent" aria-hidden="true">
+        <div class="glvm-continuity-process"><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">ПРОЦЕС A</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--muted"><bdi dir="auto">ОЧІКУВАННЯ</bdi></span></div>
+        <span class="glvm-continuity-message"><bdi dir="auto">COMM</bdi></span>
+        <div class="glvm-continuity-process"><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">ПРОЦЕС B</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">НАДСИЛАННЯ</bdi></span></div>
+        <div class="glvm-continuity-resume"><span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">ПОНОВЛЕННЯ</bdi></span></div>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>Ядро середовища виконання</span><h3>Конкурентне</h3><p>Процеси обмінюються даними, чекають і поновлюються через канали.</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-composite" aria-labelledby="glvm-continuity-tab-composite" data-glvm-continuity-panel="composite" hidden>
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--composite" aria-hidden="true">
+        <div class="glvm-composite-objective">
+          <small><bdi dir="auto">ОДНА АТОМАРНА МЕТА</bdi></small>
+          <div class="glvm-composite-transactions">
+            <span><bdi dir="auto">TX A</bdi><i></i><bdi dir="auto">ГОТОВО</bdi></span>
+            <span><bdi dir="auto">TX B</bdi><i></i><bdi dir="auto">ОЧІКУВАННЯ</bdi></span>
+            <span><bdi dir="auto">TX C</bdi><i></i><bdi dir="auto">ГОТОВО</bdi></span>
+          </div>
+        </div>
+        <div class="glvm-composite-gate"><span></span><small><bdi dir="auto">УСЕ / НІЧОГО</bdi></small></div>
+        <span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">ОДНА ФІКСАЦІЯ</bdi></span>
+        <em><bdi dir="auto">ПЛАНИ РОЗВИТКУ</bdi></em>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>Плани розвитку</span><h3>Складене</h3><p>Кілька конкурентних транзакцій мають спільну атомарну мету вищого рівня.</p></div>
+    </article>
+  </div>
+        <div class="glvm-atomicity">
+          <div class="glvm-atomicity-heading"><span>Вертикальна атомарність · ядро середовища виконання</span><strong>Виконання між блоками зберігає єдиний контекст транзакції.</strong></div>
+          <ol class="glvm-atomicity-rail">
+    <li>
+      <span>01 · Почати</span>
+      <strong>Один запуск</strong>
+      <p>Запустіть одну транзакцію з одним набором обмежених повноважень.</p>
+    </li>
+
+    <li>
+      <span>02 · Призупинити</span>
+      <strong>Очікування без часткової фіксації</strong>
+      <p>Якщо немає відповіді або збігу в каналі, збережіть продовження замість передчасної фіналізації.</p>
+    </li>
+
+    <li>
+      <span>03 · Записати</span>
+      <strong>Зафіксувати вибір</strong>
+      <p><span class="technical-token">ReplayTrie</span> записує недетермінований вибір або автентифіковану відповідь, потрібну для відтворення шляху.</p>
+    </li>
+
+    <li>
+      <span>04 · Поновити</span>
+      <strong>Продовжити ту саму транзакцію</strong>
+      <p>Відповідна подія <span class="technical-token">COMM</span> або записана відповідь пробуджує збережене продовження в одному з наступних блоків.</p>
+    </li>
+
+    <li>
+      <span>05 · Фіналізувати</span>
+      <strong>Зафіксувати або відкинути</strong>
+      <p>На межі фіналізації допустимий стан фіксується, а відхилений попередній стан відкидається.</p>
+    </li>
+  </ol>
+        </div>
+      </div>
+      <div class="glvm-continuity-notes">
+    <article class="glvm-continuity-note glvm-continuity-note--current">
+      <span>Основний шлях виконання</span>
+      <p>Конкурентне виконання <span class="technical-token">TVM</span> · очікування й поновлення <span class="technical-token">COMM</span> · <span class="technical-token">ReplayTrie</span> · продовження між блоками та фіналізація</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--current">
+      <span>Модель атомарності</span>
+      <p>Попередній проміжний стан стає підтвердженим лише під час фіналізації; невдалий шлях відкидається, а не виправляється згодом компенсаційними транзакціями.</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--boundary">
+      <span>Вбудоване читання поза блокчейном</span>
+      <p>Автентифікований <span class="technical-token">HTTPS GET</span> може призупинити виконання, записати відповідь, відтворити її та поновити роботу. Істинність даних і надалі залежить від джерела, а незворотні зовнішні побічні ефекти не охоплюються відкотом.</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--roadmap">
+      <span>Горизонтальна атомарність</span>
+      <p>Атомарне міжшардове виконання та композиція з незалежними зовнішніми системами визначають наступний етап розширення моделі.</p>
+    </article>
+  </div>
+    </section>
+
+
+    <section class="glvm-extension glvm-ocap-story fade-in" id="object-capability">
+      <header class="glvm-extension-header">
+        <div><p class="eyebrow">Безпека на основі об’єктних повноважень</p><h2 class="glvm-semantic-heading">Дайте завданню один ключ, а не посвідчення користувача</h2></div>
+        <p class="glvm-semantic-copy">У прикладі з генеральним директором і Бобом доступ на основі ідентичності може привнести в завдання неявні повноваження посвідчення директора. За об’єктних повноважень завдання отримує лише один ключ до запису Боба. <span class="technical-token">TVM</span> контролює межі досяжності під час виконання. Без посилання-повноваження на інший раніше створений об’єкт завдання не може назвати його або звернутися до нього.</p>
+      </header>
+      <div class="glvm-ocap-body">
+        <div class="glvm-ocap-copy">
+          <div class="glvm-ocap-compare">
+    <article class="glvm-ocap-card glvm-ocap-card--ambient">
+      <div class="glvm-ocap-card-visual" aria-hidden="true">
+        <img src="/assets/glvm/20260731_GLVM_OCAP_身份权限.svg?v=20260812-neck2" alt="" width="600" height="360" loading="lazy" decoding="async">
+      </div>
+      <div class="glvm-ocap-card-copy">
+        <span>Широкі повноваження на основі ідентичності</span>
+        <h3>Посвідчення привносить у завдання сторонні права доступу</h3>
+        <p>Навіть якщо завдання стосується лише Боба, повноваження, представлені посвідченням генерального директора, можуть і далі охоплювати фінанси та записи Аліси, Керол і Боба.</p>
+      </div>
+    </article>
+
+    <article class="glvm-ocap-card glvm-ocap-card--explicit">
+      <div class="glvm-ocap-card-visual" aria-hidden="true">
+        <img src="/assets/glvm/20260731_GLVM_OCAP_对象能力.svg?v=20260812-neck2" alt="" width="600" height="360" loading="lazy" decoding="async">
+      </div>
+      <div class="glvm-ocap-card-copy">
+        <span>Явне об’єктне повноваження</span>
+        <h3>Завдання отримує один ключ, що позначає запис Боба</h3>
+        <p>Цей ключ представляє непідроблюване ім’я, що позначає запис Боба. Без посилання-повноваження на інший раніше створений об’єкт завдання не може назвати його або звернутися до нього. <span class="technical-token">TVM</span> перевіряє цю межу під час виконання.</p>
+      </div>
+    </article>
+  </div>
+          <aside class="glvm-ocap-takeaway"><span><span class="technical-token">POLA</span> · принцип мінімальних повноважень</span><p>Захисні механізми моделі можуть знизити ймовірність небезпечної поведінки, але саме межі повноважень забезпечують мінімальні права під час виконання. Якщо агент має лише ключ до запису Боба, компрометація залишається в межах цього об’єкта, не поширюючись на всі повноваження, представлені посвідченням генерального директора.</p></aside>
+          <div class="glvm-ocap-boundary"><strong>Термінологія</strong><p>Тут «ключ» візуально позначає непідроблюване ім’я <span class="technical-token">OCAP</span> — посилання-повноваження. Це не криптографічний ключ. Гарантія поширюється на власні взаємодії <span class="technical-token">TVM</span>, опосередковані повноваженнями; дозволи розміщеної <span class="technical-token">EVM</span> та зовнішніх сервісів потребують окремих засобів контролю.</p></div>
+        </div>
+      </div>
+    </section>
+
+
+      <section class="glvm-journey fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">Дослідження робочого процесу</p>
+          <h2 class="glvm-semantic-heading">Вибирайте середовище виконання за довірою, часом відгуку й локальністю даних</h2>
+          <p>Розгляньмо ремонт пристрою за участі кількох компаній: ескроу потребує незалежної перевірки, діагностиці потрібні еластичні обчислювальні ресурси, а локальний доступ має схвалити власник пристрою. У моделі <span class="technical-token">GLVM</span> кожне завдання спрямовується до середовища виконання, що відповідає його вимогам до довіри, затримки й меж даних, зі збереженням явних повноважень.</p>
+        </div>
+        <div class="glvm-route-toolbar"><span>Виберіть вимогу</span><div>
+      <button class="glvm-route-button is-active" type="button" data-glvm-route="trust" data-route-title="TVM публічного блокчейну + хост EVM" data-route-text="Утримуйте гарантійні кошти в ескроу й записуйте шлях погодження там, де незалежні валідатори можуть перевірити перехід." data-route-status="Ядро середовища виконання" aria-pressed="true">
+        <span>01</span>
+        <strong>Потрібна довіра</strong>
+      </button>
+
+      <button class="glvm-route-button" type="button" data-glvm-route="speed" data-route-title="Приватна або хмарна TVM" data-route-text="Виконуйте ресурсомістку діагностику поруч з еластичними обчислювальними ресурсами, зберігаючи повноваження вузькими та явними." data-route-status="Інтеграція" aria-pressed="false">
+        <span>02</span>
+        <strong>Потрібна швидкість</strong>
+      </button>
+
+      <button class="glvm-route-button" type="button" data-glvm-route="locality" data-route-title="TVM клієнтського пристрою" data-route-text="Зчитуйте локальні дані датчиків і запитуйте підтвердження власника, не експортуючи всі конфіденційні вхідні дані." data-route-status="Плани розвитку" aria-pressed="false">
+        <span>03</span>
+        <strong>Потрібна локальність</strong>
+      </button>
+    </div></div>
+        <div class="glvm-journey-board" data-glvm-journey data-journey-messages="[&quot;Готово. Запустіть симуляцію, щоб побачити цільовий логічний потік.&quot;,&quot;Повноваження обмежуються до початку роботи.&quot;,&quot;Кожне середовище виконання отримує обмежене завдання.&quot;,&quot;Середовище виконання блокчейну зберігає продовження, що очікує.&quot;,&quot;Відповідне повідомлення пробуджує продовження.&quot;,&quot;Дані для відтворення роблять шлях повторюваним.&quot;,&quot;Результати на боці блокчейну узгоджуються; атомарна фіксація в усіх середовищах — наступна мета.&quot;]">
+          <div class="glvm-route-map" aria-hidden="true">
+            <div class="glvm-route-lines"><span></span><span></span><span></span></div>
+
+      <div class="glvm-substrate glvm-substrate--trust is-active" data-glvm-route-node="trust">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong><span class="technical-token">TVM</span> публічного блокчейну + хост <span class="technical-token">EVM</span></strong>
+        <small>Ядро середовища виконання</small>
+      </div>
+
+      <div class="glvm-substrate glvm-substrate--speed" data-glvm-route-node="speed">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong>Приватна або хмарна <span class="technical-token">TVM</span></strong>
+        <small>Інтеграція</small>
+      </div>
+
+      <div class="glvm-substrate glvm-substrate--locality" data-glvm-route-node="locality">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong><span class="technical-token">TVM</span> клієнтського пристрою</strong>
+        <small>Плани розвитку</small>
+      </div>
+
+            <div class="glvm-route-core"><span><span class="technical-token">GLVM</span></span><strong><span class="technical-token">TVM</span> × N</strong><i aria-hidden="true"><b></b><b></b><b></b></i></div>
+            <div class="glvm-route-packet glvm-route-packet--one"></div>
+            <div class="glvm-route-packet glvm-route-packet--two"></div>
+            <div class="glvm-route-packet glvm-route-packet--three"></div>
+            <div class="glvm-commit-rail"><span>Відтворення</span><i></i><span>Фіксація</span></div>
+          </div>
+          <div class="glvm-route-detail" aria-live="polite">
+            <span data-glvm-route-status>Ядро середовища виконання</span>
+            <h3 data-glvm-route-title><span class="technical-token">TVM</span> публічного блокчейну + хост <span class="technical-token">EVM</span></h3>
+            <p data-glvm-route-text>Утримуйте гарантійні кошти в ескроу й записуйте шлях погодження там, де незалежні валідатори можуть перевірити перехід.</p>
+          </div>
+          <div class="glvm-journey-control">
+            <div><span>Простежити цільовий потік</span><strong data-glvm-progress>0 / 6</strong></div>
+            <div><button type="button" data-glvm-action="play">Змоделювати процес</button><button type="button" data-glvm-action="reset">Скинути</button></div>
+            <p data-glvm-message aria-live="polite">Готово. Запустіть симуляцію, щоб побачити цільовий логічний потік.</p>
+          </div>
+          <div class="glvm-journey-steps">
+      <article class="glvm-journey-step is-current" data-glvm-step-card="1">
+        <span>01</span><h3>Обмежені повноваження</h3><p>Агент із ремонту отримує лише права, потрібні для цього завдання.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="2">
+        <span>02</span><h3>Спланувати розподіл</h3><p>Робочий процес розподіляє обмежені підзавдання між <span class="technical-token">TVM</span> блокчейну, приватного або хмарного середовища та клієнтських пристроїв.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="3">
+        <span>03</span><h3>Очікування / призупинення</h3><p>У середовищі виконання блокчейну відсутність відповіді зберігає продовження, а не призводить до передчасної фіналізації транзакції.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="4">
+        <span>04</span><h3>Збіг <span class="technical-token">COMM</span></h3><p>Отриманий результат зустрічає продовження, що очікує, у каналі; робочий процес поновлюється.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="5">
+        <span>05</span><h3>Доказ відтворення</h3><p><span class="technical-token">ReplayTrie</span> записує рішення, що дозволяють іншому валідатору відтворити виконання.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="6">
+        <span>06</span><h3>Межа фіналізації</h3><p><span class="technical-token">BlockGit</span> і <span class="technical-token">Block Merge</span> узгоджують перевірювані результати на боці блокчейну. Поширення єдиної атомарної фіксації на всі середовища виконання — перспектива <span class="technical-token">GLVM</span>.</p>
+      </article>
+    </div>
+        </div>
+      </section>
+
+      <section class="glvm-stack fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">Будова середовища виконання</p>
+          <h2>Дев’ять областей можливостей за абстракцією <span class="technical-token">GLVM</span></h2>
+          <p><span class="technical-token">GLVM</span> — не друга VM байт-коду. Ці дев’ять архітектурних подань — від виконання <span class="technical-token">TVM</span>, об’єктних повноважень і відтворення до <span class="technical-token">BlockGit</span>, гостьових VM та інструментів розробника — розкривають систему можливостей, що стоїть за її логічною моделлю виконання.</p>
+        </div>
+        <div class="glvm-stack-flow" aria-label="Дев’ять областей можливостей за абстракцією GLVM">
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="0" data-flow-state="current" data-flow-status="ядро середовища виконання" aria-pressed="true" aria-label="VM байт-коду: TVM · простір кортежів · COMM">
+        <span>01</span><strong>VM байт-коду</strong><small>Ядро середовища виконання</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="1" data-flow-state="current" data-flow-status="ядро середовища виконання" aria-pressed="false" aria-label="Безпека: Вбудовані об’єктні повноваження">
+        <span>02</span><strong>Безпека</strong><small>Ядро середовища виконання</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="2" data-flow-state="current" data-flow-status="ядро середовища виконання" aria-pressed="false" aria-label="Атомарність: Атомарне виконання між блоками">
+        <span>03</span><strong>Атомарність</strong><small>Ядро середовища виконання</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="3" data-flow-state="current" data-flow-status="ядро середовища виконання" aria-pressed="false" aria-label="Остаточність: BlockGit · фронтир · злиття">
+        <span>04</span><strong>Остаточність</strong><small>Ядро середовища виконання</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="4" data-flow-state="current" data-flow-status="ядро середовища виконання" aria-pressed="false" aria-label="Відтворення: ReplayTrie · траса">
+        <span>05</span><strong>Відтворення</strong><small>Ядро середовища виконання</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="5" data-flow-state="current" data-flow-status="ядро середовища виконання" aria-pressed="false" aria-label="Мережа: Мережа вузлів і валідаторів">
+        <span>06</span><strong>Мережа</strong><small>Ядро середовища виконання</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="6" data-flow-state="current" data-flow-status="ядро середовища виконання" aria-pressed="false" aria-label="Мова: Tolang → tolangc → .tox">
+        <span>07</span><strong>Мова</strong><small>Ядро середовища виконання</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="7" data-flow-state="mixed" data-flow-status="evm у ядрі · wasm у планах" aria-pressed="false" aria-label="Гостьові VM: Хост EVM · WASM у планах">
+        <span>08</span><strong>Гостьові VM</strong><small><span class="technical-token">EVM</span> у ядрі · <span class="technical-token">WASM</span> у планах</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="8" data-flow-state="mixed" data-flow-status="засоби розробника" aria-pressed="false" aria-label="Інструменти: Компілятор · LSP · інтерактивний майданчик">
+        <span>09</span><strong>Інструменти</strong><small>Засоби розробника</small>
+      </button>
+    </div>
+        <ol class="glvm-stack-list">
+      <li class="glvm-stack-item" data-stack-index="0" data-stack-state="current" data-stack-status="ядро середовища виконання">
+        <span class="glvm-stack-number">01</span>
+        <div class="glvm-stack-label"><span>VM байт-коду</span><strong>Ядро середовища виконання</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="21" width="25" height="30" rx="5"/><path d="M17 30h11M17 36h11M17 42h8"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="11"/><rect x="85" y="21" width="25" height="30" rx="5"/><path d="M92 30h11M92 36h11M92 42h8"/><path class="glvm-glyph-track" d="M35 36h14m22 0h14"/><path class="glvm-glyph-flow" d="M35 36h14m22 0h14"/></svg></div>
+        <div class="glvm-stack-copy"><h3><span class="technical-token">TVM</span> · простір кортежів · <span class="technical-token">COMM</span></h3><p>Конкретний конкурентний рушій виконує байт-код і дозволяє незалежним процесам обмінюватися даними та продовженнями через канали.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="1" data-stack-state="current" data-stack-status="ядро середовища виконання">
+        <span class="glvm-stack-number">02</span>
+        <div class="glvm-stack-label"><span>Безпека</span><strong>Ядро середовища виконання</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="17" cy="36" r="7"/><circle cx="17" cy="36" r="3"/><path d="M24 36h25m-8 0v7m-8-7v5"/><rect class="glvm-glyph-pulse" x="49" y="25" width="22" height="22" rx="6"/><circle cx="98" cy="36" r="8"/><circle cx="98" cy="36" r="3"/><path class="glvm-glyph-track" d="M24 36h25m22 0h19"/><path class="glvm-glyph-flow" d="M24 36h25m22 0h19"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Вбудовані об’єктні повноваження</h3><p>Непідроблювані посилання роблять досяжні повноваження явними й дозволяють середовищу виконання забезпечувати межі мінімальних прав.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="2" data-stack-state="current" data-stack-status="ядро середовища виконання">
+        <span class="glvm-stack-number">03</span>
+        <div class="glvm-stack-label"><span>Атомарність</span><strong>Ядро середовища виконання</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="17" width="100" height="38" rx="12"/><path class="glvm-glyph-track" d="M20 36h25m30 0h25"/><path class="glvm-glyph-flow" d="M20 36h25m30 0h25"/><path class="glvm-glyph-pulse" d="M60 22l15 8v13l-15 8-15-8V30zM45 30l15 8 15-8M60 38v13"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Атомарне виконання між блоками</h3><p>Контексти виконання можуть залишатися призупиненими між блоками, поновлюватися зі збережених продовжень і досягати відкладеної межі фіналізації.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="3" data-stack-state="current" data-stack-status="ядро середовища виконання">
+        <span class="glvm-stack-number">04</span>
+        <div class="glvm-stack-label"><span>Остаточність</span><strong>Ядро середовища виконання</strong></div>
+        <div class="glvm-stack-glyph"><svg class="is-planned" viewBox="0 0 120 72" aria-hidden="true"><circle cx="18" cy="22" r="5"/><circle cx="18" cy="50" r="5"/><path d="M55 26l11 10-11 10-11-10z"/><circle class="glvm-glyph-pulse" cx="98" cy="36" r="8"/><path d="m94 36 3 3 6-7"/><path class="glvm-glyph-track" d="M23 22l21 11M23 50l21-11m22-3h24"/><path class="glvm-glyph-flow" d="M23 22l21 11M23 50l21-11m22-3h24"/></svg></div>
+        <div class="glvm-stack-copy"><h3><span class="technical-token">BlockGit</span> · фронтир · злиття</h3><p>DAG блоків, детермінована ротація лідера й правила злиття узгоджують конкурентну роботу в блокчейні без постійного лідера.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="4" data-stack-state="current" data-stack-status="ядро середовища виконання">
+        <span class="glvm-stack-number">05</span>
+        <div class="glvm-stack-label"><span>Відтворення</span><strong>Ядро середовища виконання</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="22" cy="45" r="5"/><circle cx="60" cy="45" r="5"/><circle class="glvm-glyph-pulse" cx="98" cy="45" r="5"/><path class="glvm-glyph-track" d="M27 45h28m10 0h28M98 37C94 14 31 14 22 37"/><path class="glvm-glyph-flow" d="M27 45h28m10 0h28M98 37C94 14 31 14 22 37"/><path d="m21 29 1 8 8-2"/></svg></div>
+        <div class="glvm-stack-copy"><h3><span class="technical-token">ReplayTrie</span> · траса</h3><p>Записані недетерміновані рішення й траси виконання дозволяють валідаторам відтворити прийнятий шлях.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="5" data-stack-state="current" data-stack-status="ядро середовища виконання">
+        <span class="glvm-stack-number">06</span>
+        <div class="glvm-stack-label"><span>Мережа</span><strong>Ядро середовища виконання</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle class="glvm-glyph-pulse" cx="60" cy="36" r="9"/><circle cx="22" cy="18" r="5"/><circle cx="98" cy="18" r="5"/><circle cx="22" cy="54" r="5"/><circle cx="98" cy="54" r="5"/><path class="glvm-glyph-track" d="M27 21l25 11M93 21 68 32M27 51l25-11m41 11L68 40"/><path class="glvm-glyph-flow" d="M27 21l25 11M93 21 68 32M27 51l25-11m41 11L68 40"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Мережа вузлів і валідаторів</h3><p>Вузловий шар передає пропозиції, блоки, докази стану й координує валідаторів під рівнем абстракції виконання.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="6" data-stack-state="current" data-stack-status="ядро середовища виконання">
+        <span class="glvm-stack-number">07</span>
+        <div class="glvm-stack-label"><span>Мова</span><strong>Ядро середовища виконання</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="24" width="26" height="24" rx="5"/><path d="M20 31l-5 5 5 5M27 31l5 5-5 5"/><rect class="glvm-glyph-pulse" x="47" y="24" width="26" height="24" rx="5"/><path d="M53 32h12m0 0-3-3m3 3-3 3M67 40H55m0 0 3-3m-3 3 3 3"/><rect x="84" y="24" width="26" height="24" rx="5"/><path d="M91 31h12M91 36h8M91 41h12"/><path class="glvm-glyph-track" d="M38 36h7m30 0h7"/><path class="glvm-glyph-flow" d="M38 36h7m30 0h7"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Tolang → tolangc → .tox</h3><p>Tolang описує конкурентні процеси; компілятор перетворює вихідний код на байт-код для виконання <span class="technical-token">TVM</span>.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="7" data-stack-state="mixed" data-stack-status="evm у ядрі · wasm у планах">
+        <span class="glvm-stack-number">08</span>
+        <div class="glvm-stack-label"><span>Гостьові VM</span><strong><span class="technical-token">EVM</span> у ядрі · <span class="technical-token">WASM</span> у планах</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="9" y="12" width="102" height="48" rx="10"/><rect x="20" y="23" width="32" height="26" rx="6"/><rect x="68" y="23" width="32" height="26" rx="6"/><circle cx="36" cy="36" r="6"/><path d="M33 33l6 6M39 33l-6 6M78 31l5 10 5-10"/><path class="glvm-glyph-track" d="M52 36h16m32 0h7"/><path class="glvm-glyph-flow" d="M52 36h16m32 0h7"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="3"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Хост <span class="technical-token">EVM</span> · <span class="technical-token">WASM</span> у планах</h3><p><span class="technical-token">EVM</span> працює як гостьова VM зі станом через координацію в стилі <span class="technical-token">TSAC</span>. <span class="technical-token">WASM</span> розширює напрям різнорідних VM.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="8" data-stack-state="mixed" data-stack-status="засоби розробника">
+        <span class="glvm-stack-number">09</span>
+        <div class="glvm-stack-label"><span>Інструменти</span><strong>Засоби розробника</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="11" width="100" height="50" rx="8"/><path d="M10 25h100M20 18h3m7 0h3m7 0h3M24 35l7 6-7 6"/><path class="glvm-glyph-track" d="M40 47h50"/><path class="glvm-glyph-flow" d="M40 47h50"/><circle class="glvm-glyph-pulse" cx="97" cy="47" r="5"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Компілятор · LSP · інтерактивний майданчик</h3><p>Компілятор, LSP, інтерактивний майданчик, набір тестів і діагностика включають модель виконання в робочі процеси розробників.</p></div>
+      </li>
+    </ol>
+      </section>
+
+      <section class="glvm-status fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">Горизонт розробки</p>
+          <h2 class="glvm-semantic-heading">Ядро середовища виконання формується в міру розширення <span class="technical-token">GLVM</span> на нові середовища</h2>
+          <div class="glvm-status-intro">
+            <p class="glvm-semantic-copy"><span class="technical-token">GLVM</span> розвивається на основі конкурентного середовища виконання блокчейну <span class="technical-token">ALUX</span>. Приватна хмара — наступний напрям інтеграції; виконання на клієнтських пристроях і між шардами залишається в планах. Карта нижче розділяє ядро середовища виконання, середовища, що зараз розширюються, і наступну архітектурну мету.</p>
+            <div class="glvm-status-summary" aria-hidden="true">
+      <div class="glvm-status-summary-item glvm-status-summary-item--built" aria-label="Ядро середовища виконання: 6">
+        <span>06</span>
+        <small>Ядро середовища виконання</small>
+      </div>
+
+      <div class="glvm-status-summary-item glvm-status-summary-item--designed" aria-label="Розширення системи: 5">
+        <span>05</span>
+        <small>Розширення системи</small>
+      </div>
+
+      <div class="glvm-status-summary-item glvm-status-summary-item--planned" aria-label="Плани розвитку: 6">
+        <span>06</span>
+        <small>Плани розвитку</small>
+      </div>
+    </div>
+          </div>
+        </div>
+        <div class="glvm-status-grid">
+      <article class="glvm-status-group glvm-status-group--built">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">Ядро середовища виконання</span></h3>
+        <ul><li>Конкурентна <span class="technical-token">TVM</span> і <span class="technical-token">COMM</span></li><li><span class="technical-token">ReplayTrie</span> та траси виконання</li><li>Шляхи призупинення / поновлення між блоками</li><li>Вбудовані основи <span class="technical-token">OCAP</span></li><li>Шлях хоста <span class="technical-token">EVM</span></li><li>DAG, фронтир і злиття <span class="technical-token">BlockGit</span></li></ul>
+      </article>
+
+      <article class="glvm-status-group glvm-status-group--designed">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">Розширення системи</span></h3>
+        <ul><li>Розгортання рушія в приватному або хмарному середовищі</li><li>Абстракція <span class="technical-token">GLVM</span> для різних середовищ розгортання</li><li>Підвищення надійності для промислового масштабу</li><li>Розширені політики й контроль захищених каналів</li><li>Спостережуваність середовища виконання та інструменти операторів</li></ul>
+      </article>
+
+      <article class="glvm-status-group glvm-status-group--planned">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">Плани розвитку</span></h3>
+        <ul><li>Міжшардова горизонтальна атомарність</li><li>Гостьова VM <span class="technical-token">WASM</span></li><li>Розгортання <span class="technical-token">TVM</span> на клієнтських пристроях</li><li>Абстракція облікових записів і реєстр повноважень</li><li>Повторна синхронізація вузлів після збою та динамічна зміна набору валідаторів</li><li>Програмований шар World OS</li></ul>
+      </article>
+    </div>
+      </section>
+
+
+    <section class="glvm-next fade-in" aria-labelledby="glvm-next-title">
+      <div class="glvm-next-copy">
+        <p class="eyebrow">Продовжити вивчення</p>
+        <h2 id="glvm-next-title">Дослідіть середовище виконання, навантаження агентів і порівняння систем</h2>
+        <p>Лабораторія виконання пояснює модель виконання. Розділ «Для ШІ-агентів» показує характер навантажень. «<span class="technical-token">ALUX</span> та інші системи» порівнює архітектуру й можливості систем.</p>
+      </div>
+      <nav class="glvm-next-links" aria-labelledby="glvm-next-title">
+        <a class="glvm-next-link glvm-next-link--primary" href="/uk/runtime-lab">
+          <span class="glvm-next-index" aria-hidden="true">01</span>
+          <span class="glvm-next-label">Лабораторія виконання</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+
+        <a class="glvm-next-link glvm-next-link--secondary" href="/uk/for-ai-agents">
+          <span class="glvm-next-index" aria-hidden="true">02</span>
+          <span class="glvm-next-label">Для ШІ-агентів</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+
+        <a class="glvm-next-link glvm-next-link--tertiary" href="/uk/alux-vs-others">
+          <span class="glvm-next-index" aria-hidden="true">03</span>
+          <span class="glvm-next-label"><span class="technical-token">ALUX</span> та інші системи</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+      </nav>
+    </section>
+
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Авторські права © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script defer src="/i18n/runtime/uk/glvm.js?v=4c2c848cb1fa"></script>
+<script defer src="/script.js?v=20261023-locales"></script>
+</body>
+</html>

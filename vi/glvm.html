@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(browserLanguage).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLVM | ALUX Network</title>
+  <meta name="description" content="Tìm hiểu GLVM, mô hình thực thi logic hướng tới nhà phát triển của ALUX, được xây dựng trên tính đồng thời của TVM, phát lại, object capability, hoàn tất nguyên tử, sao chép và đồng thuận.">
+  <link rel="canonical" href="https://www.alux.network/vi/glvm">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/glvm">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/glvm">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/glvm">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/glvm">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/glvm">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/glvm">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/glvm">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/glvm">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/glvm">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/glvm">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/glvm">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/glvm">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ALUX Network">
+  <meta property="og:title" content="GLVM | ALUX Network">
+  <meta property="og:description" content="Tìm hiểu GLVM, mô hình thực thi logic hướng tới nhà phát triển của ALUX, được xây dựng trên tính đồng thời của TVM, phát lại, object capability, hoàn tất nguyên tử, sao chép và đồng thuận.">
+  <meta property="og:url" content="https://www.alux.network/vi/glvm">
+  <meta property="og:image" content="https://www.alux.network/assets/social/pages/vi/glvm.jpg?v=20261015">
+  <meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/vi/glvm.jpg?v=20261015">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="GLVM | ALUX Network">
+  <meta property="og:locale" content="vi_VN">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@alux_network">
+  <meta name="twitter:title" content="GLVM | ALUX Network">
+  <meta name="twitter:description" content="Tìm hiểu GLVM, mô hình thực thi logic hướng tới nhà phát triển của ALUX, được xây dựng trên tính đồng thời của TVM, phát lại, object capability, hoàn tất nguyên tử, sao chép và đồng thuận.">
+  <meta name="twitter:image" content="https://www.alux.network/assets/social/pages/vi/glvm.jpg?v=20261015">
+  <meta name="twitter:image:alt" content="GLVM | ALUX Network">
+
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+<link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
+<link rel="stylesheet" href="/styles.css?v=20261023-locales">
+<link rel="stylesheet" href="/site-frame.css?v=20261023-locales">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+<link rel="stylesheet" href="/glvm-story.css?v=20260814-customer-vm2">
+
+</head>
+<body data-page="glvm">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/vi" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/optimized/alux-logo.0ddab7cca545.webp" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="Điều hướng chính">
+        <a href="/vi" data-nav="home">Trang chủ</a>
+        <a href="/vi/for-ai-agents" data-nav="vs">Dành cho AI Agent</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">Tìm hiểu</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/vi/glvm" data-nav="learnGlvm" class="active-link" aria-current="page">GLVM</a>
+            <a href="/vi/runtime-lab" data-nav="learnPcc">Runtime Lab</a>
+            <a href="/vi/alux-vs-others" data-nav="learnAlux">ALUX và các nền tảng khác</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">Blog</a>
+        <a href="/vi/team" data-nav="team">Đội ngũ</a>
+        <a href="/vi/roadmap" data-nav="roadmap">Lộ trình</a>
+        <a href="mailto:info@alux.network" data-nav="cta" class="mobile-nav-cta">Liên hệ</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Ngôn ngữ</span><span class="lang-current" data-lang-current>Tiếng Việt</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/glvm" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/glvm" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/glvm" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/glvm" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/glvm" hreflang="ko">한국어</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/glvm" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/glvm" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/glvm" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/glvm" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/glvm" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/glvm" hreflang="ar">العربية</a></div></div>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">Liên hệ</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Bật/tắt menu điều hướng"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="vi">
+    <article class="glvm-page" data-glvm-root data-glvm-step="0">
+      <header class="glvm-hero fade-in">
+        <div class="glvm-hero-copy">
+          <p class="eyebrow">Tìm hiểu / <span class="technical-token">GLVM</span></p>
+          <h1><span class="technical-token">GLVM</span></h1>
+          <p class="glvm-full-name">Máy ảo logic toàn cục</p>
+          <p class="glvm-tagline glvm-semantic-heading">Một lớp thực thi logic được phối hợp trên nhiều máy.</p>
+          <p class="glvm-hero-text glvm-semantic-copy"><span class="technical-token">GLVM</span> là lớp trừu tượng thực thi hướng tới nhà phát triển mà <span class="technical-token">ALUX</span> đang xây dựng dựa trên runtime đồng thời. Mỗi <span class="technical-token">TVM</span> cung cấp engine cụ thể trên một máy tham gia; mô hình <span class="technical-token">GLVM</span> đưa trạng thái thực thi, tiến trình, phát lại, sao chép và đồng thuận vào cùng một lớp logic.</p>
+        </div>
+        <figure class="glvm-hero-visual">
+          <div class="glvm-hero-media">
+            <img src="/assets/glvm/20260712_GLVM_全局逻辑主视觉_4K.webp" alt="" aria-hidden="true" class="glvm-hero-poster" fetchpriority="high" decoding="async">
+            <video muted loop playsinline preload="none" poster="/assets/glvm/20260712_GLVM_全局逻辑主视觉_4K.webp" aria-label="Minh họa kỹ thuật tông ấm: nhiều máy vật lý được kết nối bên dưới một lớp thực thi GLVM." data-glvm-video>
+              <source src="/assets/glvm/20260712_GLVM_全局逻辑动效_1080P.mp4" type="video/mp4">
+            </video>
+            <div class="glvm-hero-overlay" aria-hidden="true"><span></span><span></span><span></span></div>
+          </div>
+        </figure>
+        <div class="glvm-hero-signals"><div class="glvm-signal"><span>Mô hình vật lý</span><strong>Mỗi máy có một <span class="technical-token">TVM</span></strong></div><div class="glvm-signal"><span>Mô hình logic</span><strong>Một <span class="technical-token">GLVM</span> bao trùm các <span class="technical-token">TVM</span></strong></div><div class="glvm-signal"><span>Định hướng</span><strong>Từ blockchain đến cloud rồi đến thiết bị</strong></div></div>
+      </header>
+
+      <section class="glvm-definition fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">Định nghĩa cốt lõi</p>
+          <h2 class="glvm-semantic-heading">Mỗi máy chạy một <span class="technical-token">TVM</span>, được phối hợp qua một mô hình thực thi logic</h2>
+          <p class="glvm-semantic-copy"><span class="technical-token">TVM</span> là engine thực thi bytecode trên một máy. <span class="technical-token">GLVM</span> xác định lớp trừu tượng thực thi cấp hệ thống trên các <span class="technical-token">TVM</span> tham gia. Đây không phải một VM bytecode khác; nhà phát triển nhắm đến một mô hình logic duy nhất, còn phát lại có tính xác định, tính liên tục thực thi, sao chép, hoàn tất và đồng thuận được phối hợp bên dưới lớp trừu tượng.</p>
+        </div>
+        <div class="glvm-comparison">
+      <article class="glvm-comparison-card glvm-comparison-card--tvm">
+        <div class="glvm-comparison-heading"><span><span class="technical-token">TVM</span></span><h3>Máy ảo không gian bộ (<span class="technical-token">Tuple-space</span> Virtual Machine)</h3></div>
+        <p>Engine thực thi <span class="technical-token">ALUX</span> cụ thể. Engine chạy bytecode Tolang, phối hợp các tiến trình độc lập qua channel và sự kiện <span class="technical-token">COMM</span>, đồng thời ghi lại những lựa chọn không xác định cần thiết cho việc phát lại có tính xác định.</p>
+        <strong>Một engine cụ thể bên trong một máy</strong>
+      </article>
+
+      <article class="glvm-comparison-card glvm-comparison-card--glvm">
+        <div class="glvm-comparison-heading"><span><span class="technical-token">GLVM</span></span><h3>Máy ảo logic toàn cục</h3></div>
+        <p><span class="technical-token">GLVM</span> xác định mô hình logic hướng tới nhà phát triển trên các <span class="technical-token">TVM</span> tham gia. Mô hình này cung cấp một ranh giới chung cho trạng thái thực thi và tiến trình, trong khi việc phát lại, sao chép, hoàn tất và đồng thuận vẫn được xử lý bên dưới lớp trừu tượng.</p>
+        <strong>Một hệ thống logic bao trùm nhiều máy</strong>
+      </article>
+    </div>
+        <div class="glvm-axis"><div class="glvm-axis-row"><span>Lớp trừu tượng VM</span><strong>Đang mở rộng</strong></div><div class="glvm-axis-row"><span>Tính nguyên tử theo chiều dọc</span><strong>Runtime cốt lõi</strong></div><div class="glvm-axis-row"><span>Tính nguyên tử theo chiều ngang</span><strong>Lộ trình</strong></div><div class="glvm-axis-row"><span>Bảo mật có thể kết hợp</span><strong>Runtime cốt lõi</strong></div></div>
+
+    <aside class="glvm-definition-payoff">
+      <div class="glvm-definition-payoff-heading">
+        <span>Ý tưởng cốt lõi</span>
+        <h3>Một lớp thực thi logic, không phải một máy vật lý</h3>
+      </div>
+      <p>Nhà phát triển nhắm đến một mô hình thực thi đồng thời; runtime xử lý việc lập lịch, phát lại, kiểm tra capability, sao chép và hoàn tất.</p>
+    </aside>
+
+      </section>
+
+      <section class="glvm-architecture fade-in" id="architecture">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">Kiến trúc ba lớp</p>
+          <h2 class="glvm-semantic-heading">Ba lớp, một mô hình thực thi hướng tới nhà phát triển</h2>
+          <p class="glvm-semantic-copy">Các máy vật lý chạy <span class="technical-token">TVM</span>; trong kiến trúc <span class="technical-token">GLVM</span>, những engine này cùng tham gia một mô hình thực thi logic dùng chung. World OS trong tương lai sẽ tổ chức lớp đó thành các dịch vụ có thể khám phá và điều phối, được quản lý bằng capability tường minh.</p>
+        </div>
+        <p class="glvm-layer-instruction">Chọn một lớp bất kỳ để cập nhật bảng chi tiết.</p>
+        <div class="glvm-architecture-stage">
+          <div class="glvm-layer-stack" role="group" aria-label="Ba lớp, một mô hình thực thi hướng tới nhà phát triển">
+      <button class="glvm-layer glvm-layer--world" type="button" data-glvm-layer="world" data-layer-title="Hệ điều hành thế giới" data-layer-text="Lớp dịch vụ tương lai dành cho agent và ứng dụng: đăng ký và khám phá, điều phối, cùng capability có thể lập trình. Lớp này giúp tìm thấy dịch vụ và làm rõ các quy tắc cộng tác." data-layer-status="Lộ trình" aria-pressed="false">
+        <span class="glvm-layer-index">03</span>
+        <span class="glvm-layer-label">Lớp 3</span>
+        <strong>Hệ điều hành thế giới</strong>
+        <span class="glvm-layer-status">Lộ trình</span>
+        <span class="glvm-layer-items"><i>Khám phá dịch vụ và agent</i><i>Điều phối</i><i>Capability có thể lập trình</i></span>
+      </button>
+
+      <button class="glvm-layer glvm-layer--runtime is-active" type="button" data-glvm-layer="runtime" data-layer-title="Runtime đồng thời GLVM" data-layer-text="Lớp điều phối logic. Lớp trừu tượng VM, kiểm soát đồng thời, object capability, phát lại có tính xác định và ngữ nghĩa hoàn tất tạo thành mô hình thực thi dùng chung cho các TVM tham gia." data-layer-status="Runtime cốt lõi · đang mở rộng" aria-pressed="true">
+        <span class="glvm-layer-index">02</span>
+        <span class="glvm-layer-label">Lớp 2</span>
+        <strong>Runtime đồng thời <span class="technical-token">GLVM</span></strong>
+        <span class="glvm-layer-status">Runtime cốt lõi · đang mở rộng</span>
+        <span class="glvm-layer-items"><i>Lớp trừu tượng <span class="technical-token">GLVM</span></i><i>Đồng thời và phát lại</i><i>Capability và hoàn tất</i></span>
+      </button>
+
+      <button class="glvm-layer glvm-layer--physical" type="button" data-glvm-layer="physical" data-layer-title="Hạ tầng vật lý" data-layer-text="Các máy thực hiện công việc. Node trên chuỗi công khai cung cấp nền tảng thực thi hiện tại. TVM riêng tư hoặc trên cloud là bề mặt tích hợp tiếp theo; TVM trên thiết bị người dùng vẫn là hướng thực thi cục bộ trong lộ trình." data-layer-status="Cốt lõi · tích hợp · lộ trình" aria-pressed="false">
+        <span class="glvm-layer-index">01</span>
+        <span class="glvm-layer-label">Lớp 1</span>
+        <strong>Hạ tầng vật lý</strong>
+        <span class="glvm-layer-status">Cốt lõi · tích hợp · lộ trình</span>
+        <span class="glvm-layer-items"><i><span class="technical-token">TVM</span> trên chuỗi công khai</i><i><span class="technical-token">TVM</span> riêng tư hoặc trên cloud</i><i><span class="technical-token">TVM</span> trên thiết bị người dùng</i></span>
+      </button>
+    </div>
+          <aside class="glvm-layer-inspector" aria-live="polite">
+            <span data-glvm-layer-status>Runtime cốt lõi · đang mở rộng</span>
+            <h3 data-glvm-layer-title>Runtime đồng thời <span class="technical-token">GLVM</span></h3>
+            <p data-glvm-layer-text>Lớp điều phối logic. Lớp trừu tượng VM, kiểm soát đồng thời, object capability, phát lại có tính xác định và ngữ nghĩa hoàn tất tạo thành mô hình thực thi dùng chung cho các <span class="technical-token">TVM</span> tham gia.</p>
+            <ul data-glvm-layer-items><li>Lớp trừu tượng <span class="technical-token">GLVM</span></li><li>Đồng thời và phát lại</li><li>Capability và hoàn tất</li></ul>
+          </aside>
+        </div>
+      </section>
+
+
+    <section class="glvm-extension glvm-continuity fade-in" id="execution-continuity">
+      <header class="glvm-extension-header">
+        <div><p class="eyebrow">Thực thi và tính nguyên tử</p><h2 class="glvm-semantic-heading">Giao dịch có thể chờ qua nhiều block rồi được quyết toán như một thể thống nhất</h2></div>
+        <p class="glvm-continuity-intro">Việc thực thi phát triển từ xử lý tuần tự và song song sang các tiến trình đồng thời có thể giao tiếp, chờ và tiếp tục. Thực thi tổng hợp mở rộng mô hình để nhiều giao dịch đồng thời cùng chia sẻ một ranh giới quyết toán cấp cao hơn; tính liên tục xuyên block là nền tảng theo chiều dọc cho hướng phát triển đó.</p>
+      </header>
+      <div class="glvm-continuity-frame">
+        <div class="glvm-continuity-tabs" role="tablist" aria-label="Giao dịch có thể chờ qua nhiều block rồi được quyết toán như một thể thống nhất">
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-sequential" aria-controls="glvm-continuity-panel-sequential" aria-selected="false" tabindex="-1" data-glvm-continuity="sequential">
+      <span>01</span>
+      <strong>Tuần tự</strong>
+      <small>Nền tảng</small>
+    </button>
+
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-parallel" aria-controls="glvm-continuity-panel-parallel" aria-selected="false" tabindex="-1" data-glvm-continuity="parallel">
+      <span>02</span>
+      <strong>Song song</strong>
+      <small>Runtime cốt lõi</small>
+    </button>
+
+    <button class="glvm-continuity-tab is-active" type="button" role="tab" id="glvm-continuity-tab-concurrent" aria-controls="glvm-continuity-panel-concurrent" aria-selected="true" tabindex="0" data-glvm-continuity="concurrent">
+      <span>03</span>
+      <strong>Đồng thời</strong>
+      <small>Runtime cốt lõi</small>
+    </button>
+
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-composite" aria-controls="glvm-continuity-panel-composite" aria-selected="false" tabindex="-1" data-glvm-continuity="composite">
+      <span>04</span>
+      <strong>Tổng hợp</strong>
+      <small>Lộ trình</small>
+    </button>
+  </div>
+        <div class="glvm-continuity-panels">
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-sequential" aria-labelledby="glvm-continuity-tab-sequential" data-glvm-continuity-panel="sequential" hidden>
+      <div class="glvm-continuity-visual">
+    <div class="glvm-continuity-scene glvm-continuity-scene--sequential" aria-hidden="true">
+      <span class="glvm-continuity-node glvm-continuity-node--brown"><bdi dir="auto">TRẠNG THÁI 01</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">TRẠNG THÁI 02</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">TRẠNG THÁI 03</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">GHI COMMIT</bdi></span>
+    </div>
+  </div>
+      <div class="glvm-continuity-panel-copy"><span>Nền tảng</span><h3>Tuần tự</h3><p>Chuyển trạng thái này diễn ra sau chuyển trạng thái kia.</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-parallel" aria-labelledby="glvm-continuity-tab-parallel" data-glvm-continuity-panel="parallel" hidden>
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--parallel" aria-hidden="true">
+        <div><small><bdi dir="auto">LÀN A</bdi></small><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">TX A</bdi></span></div>
+        <div><small><bdi dir="auto">LÀN B</bdi></small><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">TX B</bdi></span></div>
+        <div><small><bdi dir="auto">LÀN C</bdi></small><span class="glvm-continuity-node glvm-continuity-node--purple"><bdi dir="auto">TX C</bdi></span></div>
+        <i></i>
+        <span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">HỢP NHẤT</bdi></span>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>Runtime cốt lõi</span><h3>Song song</h3><p>Các chuyển trạng thái độc lập tiến triển cùng lúc.</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel is-active" role="tabpanel" id="glvm-continuity-panel-concurrent" aria-labelledby="glvm-continuity-tab-concurrent" data-glvm-continuity-panel="concurrent">
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--concurrent" aria-hidden="true">
+        <div class="glvm-continuity-process"><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">TIẾN TRÌNH A</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--muted"><bdi dir="auto">CHỜ</bdi></span></div>
+        <span class="glvm-continuity-message"><bdi dir="auto">COMM</bdi></span>
+        <div class="glvm-continuity-process"><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">TIẾN TRÌNH B</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">GỬI</bdi></span></div>
+        <div class="glvm-continuity-resume"><span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">TIẾP TỤC</bdi></span></div>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>Runtime cốt lõi</span><h3>Đồng thời</h3><p>Các tiến trình giao tiếp, chờ và tiếp tục thông qua các channel.</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-composite" aria-labelledby="glvm-continuity-tab-composite" data-glvm-continuity-panel="composite" hidden>
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--composite" aria-hidden="true">
+        <div class="glvm-composite-objective">
+          <small><bdi dir="auto">MỘT MỤC TIÊU NGUYÊN TỬ</bdi></small>
+          <div class="glvm-composite-transactions">
+            <span><bdi dir="auto">TX A</bdi><i></i><bdi dir="auto">SẴN SÀNG</bdi></span>
+            <span><bdi dir="auto">TX B</bdi><i></i><bdi dir="auto">CHỜ</bdi></span>
+            <span><bdi dir="auto">TX C</bdi><i></i><bdi dir="auto">SẴN SÀNG</bdi></span>
+          </div>
+        </div>
+        <div class="glvm-composite-gate"><span></span><small><bdi dir="auto">TẤT CẢ / KHÔNG GÌ CẢ</bdi></small></div>
+        <span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">MỘT LẦN COMMIT</bdi></span>
+        <em><bdi dir="auto">LỘ TRÌNH</bdi></em>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>Lộ trình</span><h3>Tổng hợp</h3><p>Nhiều giao dịch đồng thời cùng hướng tới một mục tiêu nguyên tử ở cấp cao hơn.</p></div>
+    </article>
+  </div>
+        <div class="glvm-atomicity">
+          <div class="glvm-atomicity-heading"><span>Tính nguyên tử theo chiều dọc · runtime cốt lõi</span><strong>Thực thi xuyên block giữ nguyên một ngữ cảnh giao dịch.</strong></div>
+          <ol class="glvm-atomicity-rail">
+    <li>
+      <span>01 · Bắt đầu</span>
+      <strong>Chỉ bắt đầu một lần</strong>
+      <p>Khởi chạy một giao dịch với một tập capability có phạm vi xác định.</p>
+    </li>
+
+    <li>
+      <span>02 · Tạm dừng</span>
+      <strong>Chờ mà không quyết toán từng phần</strong>
+      <p>Nếu chưa có câu trả lời hoặc chưa khớp channel, hãy giữ lại phần tiếp diễn thay vì hoàn tất quá sớm.</p>
+    </li>
+
+    <li>
+      <span>03 · Ghi lại</span>
+      <strong>Ghi nhận lựa chọn</strong>
+      <p><span class="technical-token">ReplayTrie</span> ghi lại lựa chọn không xác định hoặc phản hồi đã xác thực cần thiết để tái tạo luồng thực thi.</p>
+    </li>
+
+    <li>
+      <span>04 · Tiếp tục</span>
+      <strong>Tiếp tục cùng một giao dịch</strong>
+      <p>Sự kiện <span class="technical-token">COMM</span> khớp hoặc phản hồi đã ghi sẽ đánh thức phần tiếp diễn được giữ lại trong một block sau.</p>
+    </li>
+
+    <li>
+      <span>05 · Hoàn tất</span>
+      <strong>Commit hoặc loại bỏ</strong>
+      <p>Tại ranh giới hoàn tất, trạng thái đủ điều kiện được commit; trạng thái tạm thời bị từ chối sẽ bị loại bỏ.</p>
+    </li>
+  </ol>
+        </div>
+      </div>
+      <div class="glvm-continuity-notes">
+    <article class="glvm-continuity-note glvm-continuity-note--current">
+      <span>Luồng thực thi cốt lõi</span>
+      <p>Thực thi <span class="technical-token">TVM</span> đồng thời · chờ và tiếp tục qua <span class="technical-token">COMM</span> · <span class="technical-token">ReplayTrie</span> · tiếp nối và hoàn tất xuyên block</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--current">
+      <span>Mô hình tính nguyên tử</span>
+      <p>Trạng thái trung gian tạm thời chưa trở thành trạng thái đã xác nhận cho đến khi hoàn tất; nếu một luồng thất bại, luồng đó bị loại bỏ thay vì được sửa sau bằng các giao dịch bù trừ.</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--boundary">
+      <span>Đọc dữ liệu ngoài chuỗi được hỗ trợ sẵn</span>
+      <p>Một yêu cầu <span class="technical-token">HTTPS GET</span> đã xác thực có thể tạm dừng, ghi lại phản hồi, phát lại rồi tiếp tục. Nguồn dữ liệu vẫn quyết định sự thật; các tác động ngoài chuỗi không thể đảo ngược vẫn nằm ngoài phạm vi rollback.</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--roadmap">
+      <span>Tính nguyên tử theo chiều ngang</span>
+      <p>Thực thi nguyên tử xuyên shard và kết hợp với các hệ thống bên ngoài độc lập là hướng mở rộng tiếp theo của mô hình.</p>
+    </article>
+  </div>
+    </section>
+
+
+    <section class="glvm-extension glvm-ocap-story fade-in" id="object-capability">
+      <header class="glvm-extension-header">
+        <div><p class="eyebrow">Bảo mật bằng object capability</p><h2 class="glvm-semantic-heading">Cấp cho tác vụ một khóa, không phải thẻ danh tính của người dùng</h2></div>
+        <p class="glvm-semantic-copy">Trong ví dụ <span class="technical-token">CEO</span> và <span class="technical-token">Bob</span>, quyền truy cập dựa trên danh tính có thể đưa quyền hạn mặc định mà thẻ <span class="technical-token">CEO</span> biểu thị vào tác vụ. Với object capability, tác vụ chỉ nhận một khóa xác định hồ sơ của <span class="technical-token">Bob</span>. <span class="technical-token">TVM</span> thực thi ranh giới có thể truy cập trong runtime. Nếu không có tham chiếu capability tới một đối tượng đã tồn tại khác, tác vụ không thể gọi tên hoặc truy cập đối tượng đó.</p>
+      </header>
+      <div class="glvm-ocap-body">
+        <div class="glvm-ocap-copy">
+          <div class="glvm-ocap-compare">
+    <article class="glvm-ocap-card glvm-ocap-card--ambient">
+      <div class="glvm-ocap-card-visual" aria-hidden="true">
+        <img src="/assets/glvm/20260731_GLVM_OCAP_身份权限.svg?v=20260812-neck2" alt="" width="600" height="360" loading="lazy" decoding="async">
+      </div>
+      <div class="glvm-ocap-card-copy">
+        <span>Quyền hạn gắn với danh tính rộng</span>
+        <h3>Thẻ mang quyền truy cập không liên quan vào tác vụ</h3>
+        <p>Ngay cả khi tác vụ chỉ liên quan đến <span class="technical-token">Bob</span>, quyền hạn danh tính được biểu thị bằng thẻ của <span class="technical-token">CEO</span> vẫn có thể bao gồm hồ sơ tài chính cùng hồ sơ của <span class="technical-token">Alice</span>, <span class="technical-token">Carol</span> và <span class="technical-token">Bob</span>.</p>
+      </div>
+    </article>
+
+    <article class="glvm-ocap-card glvm-ocap-card--explicit">
+      <div class="glvm-ocap-card-visual" aria-hidden="true">
+        <img src="/assets/glvm/20260731_GLVM_OCAP_对象能力.svg?v=20260812-neck2" alt="" width="600" height="360" loading="lazy" decoding="async">
+      </div>
+      <div class="glvm-ocap-card-copy">
+        <span>Object capability tường minh</span>
+        <h3>Tác vụ chỉ nhận một khóa xác định hồ sơ của <span class="technical-token">Bob</span></h3>
+        <p>Khóa này biểu thị một tên không thể giả mạo để xác định hồ sơ của <span class="technical-token">Bob</span>. Nếu không có tham chiếu capability tới một đối tượng đã tồn tại khác, tác vụ không thể gọi tên hoặc truy cập đối tượng đó. <span class="technical-token">TVM</span> kiểm tra ranh giới này trong runtime.</p>
+      </div>
+    </article>
+  </div>
+          <aside class="glvm-ocap-takeaway"><span><span class="technical-token">POLA</span> · Nguyên tắc quyền hạn tối thiểu</span><p>Các biện pháp bảo vệ trong mô hình có thể giảm hành vi không an toàn, nhưng ranh giới capability mới là thứ thực thi nguyên tắc quyền hạn tối thiểu trong runtime. Nếu agent chỉ có khóa xác định hồ sơ của <span class="technical-token">Bob</span>, sự cố xâm phạm chỉ nằm trong phạm vi đối tượng đó, thay vì mở rộng ra toàn bộ quyền danh tính mà thẻ <span class="technical-token">CEO</span> biểu thị.</p></aside>
+          <div class="glvm-ocap-boundary"><strong>Thuật ngữ</strong><p>Ở đây, “khóa” trong hình biểu thị một tên <span class="technical-token">OCAP</span> không thể giả mạo — tức tham chiếu capability. Đây không phải khóa mật mã. Bảo đảm này áp dụng cho tương tác gốc <span class="technical-token">TVM</span> được trung gian qua capability; quyền của <span class="technical-token">EVM</span> chạy trên host và dịch vụ bên ngoài cần có biện pháp kiểm soát riêng.</p></div>
+        </div>
+      </div>
+    </section>
+
+
+      <section class="glvm-journey fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">Khám phá quy trình</p>
+          <h2 class="glvm-semantic-heading">Chọn bề mặt thực thi theo độ tin cậy, thời gian phản hồi và vị trí dữ liệu</h2>
+          <p>Hãy hình dung một ca sửa chữa thiết bị giữa nhiều công ty: khoản ký quỹ cần được xác minh độc lập, việc chẩn đoán cần tài nguyên tính toán co giãn, còn chủ sở hữu thiết bị cần phê duyệt truy cập cục bộ. Trong mô hình <span class="technical-token">GLVM</span>, mỗi tác vụ được đưa tới bề mặt thực thi phù hợp với yêu cầu về độ tin cậy, độ trễ và ranh giới dữ liệu, trong khi quyền hạn luôn được nêu rõ.</p>
+        </div>
+        <div class="glvm-route-toolbar"><span>Chọn yêu cầu</span><div>
+      <button class="glvm-route-button is-active" type="button" data-glvm-route="trust" data-route-title="TVM trên blockchain công khai + máy chủ EVM" data-route-text="Giữ khoản ký quỹ bảo hành trong escrow và ghi lại luồng phê duyệt để các validator độc lập có thể xác minh chuyển trạng thái." data-route-status="Runtime cốt lõi" aria-pressed="true">
+        <span>01</span>
+        <strong>Cần độ tin cậy</strong>
+      </button>
+
+      <button class="glvm-route-button" type="button" data-glvm-route="speed" data-route-title="TVM riêng tư hoặc trên cloud" data-route-text="Chạy chẩn đoán nặng gần tài nguyên tính toán co giãn, đồng thời giữ quyền hạn ở phạm vi hẹp và tường minh." data-route-status="Tích hợp" aria-pressed="false">
+        <span>02</span>
+        <strong>Cần tốc độ</strong>
+      </button>
+
+      <button class="glvm-route-button" type="button" data-glvm-route="locality" data-route-title="TVM trên thiết bị người dùng" data-route-text="Đọc dữ liệu cảm biến cục bộ và xin chủ sở hữu xác nhận mà không phải xuất mọi dữ liệu đầu vào riêng tư." data-route-status="Lộ trình" aria-pressed="false">
+        <span>03</span>
+        <strong>Cần xử lý tại chỗ</strong>
+      </button>
+    </div></div>
+        <div class="glvm-journey-board" data-glvm-journey data-journey-messages="[&quot;Sẵn sàng. Bắt đầu mô phỏng để xem luồng logic mục tiêu.&quot;,&quot;Quyền hạn được giới hạn phạm vi trước khi bắt đầu công việc.&quot;,&quot;Mỗi bề mặt thực thi nhận một tác vụ có giới hạn.&quot;,&quot;Runtime trên blockchain giữ lại phần tiếp diễn đang chờ.&quot;,&quot;Thông điệp khớp sẽ đánh thức phần tiếp diễn.&quot;,&quot;Bằng chứng phát lại giúp tái tạo luồng thực thi.&quot;,&quot;Kết quả phía blockchain hội tụ; commit nguyên tử xuyên các bề mặt thực thi là mục tiêu tiếp theo.&quot;]">
+          <div class="glvm-route-map" aria-hidden="true">
+            <div class="glvm-route-lines"><span></span><span></span><span></span></div>
+
+      <div class="glvm-substrate glvm-substrate--trust is-active" data-glvm-route-node="trust">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong><span class="technical-token">TVM</span> trên blockchain công khai + máy chủ <span class="technical-token">EVM</span></strong>
+        <small>Runtime cốt lõi</small>
+      </div>
+
+      <div class="glvm-substrate glvm-substrate--speed" data-glvm-route-node="speed">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong><span class="technical-token">TVM</span> riêng tư hoặc trên cloud</strong>
+        <small>Tích hợp</small>
+      </div>
+
+      <div class="glvm-substrate glvm-substrate--locality" data-glvm-route-node="locality">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong><span class="technical-token">TVM</span> trên thiết bị người dùng</strong>
+        <small>Lộ trình</small>
+      </div>
+
+            <div class="glvm-route-core"><span><span class="technical-token">GLVM</span></span><strong><span class="technical-token">TVM</span> × N</strong><i aria-hidden="true"><b></b><b></b><b></b></i></div>
+            <div class="glvm-route-packet glvm-route-packet--one"></div>
+            <div class="glvm-route-packet glvm-route-packet--two"></div>
+            <div class="glvm-route-packet glvm-route-packet--three"></div>
+            <div class="glvm-commit-rail"><span>Phát lại</span><i></i><span>Commit</span></div>
+          </div>
+          <div class="glvm-route-detail" aria-live="polite">
+            <span data-glvm-route-status>Runtime cốt lõi</span>
+            <h3 data-glvm-route-title><span class="technical-token">TVM</span> trên blockchain công khai + máy chủ <span class="technical-token">EVM</span></h3>
+            <p data-glvm-route-text>Giữ khoản ký quỹ bảo hành trong escrow và ghi lại luồng phê duyệt để các validator độc lập có thể xác minh chuyển trạng thái.</p>
+          </div>
+          <div class="glvm-journey-control">
+            <div><span>Theo dõi luồng mục tiêu</span><strong data-glvm-progress>0 / 6</strong></div>
+            <div><button type="button" data-glvm-action="play">Mô phỏng quy trình</button><button type="button" data-glvm-action="reset">Đặt lại</button></div>
+            <p data-glvm-message aria-live="polite">Sẵn sàng. Bắt đầu mô phỏng để xem luồng logic mục tiêu.</p>
+          </div>
+          <div class="glvm-journey-steps">
+      <article class="glvm-journey-step is-current" data-glvm-step-card="1">
+        <span>01</span><h3>Capability có phạm vi</h3><p>Agent sửa chữa chỉ nhận các quyền cần thiết cho công việc này.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="2">
+        <span>02</span><h3>Lập kế hoạch điều phối</h3><p>Quy trình ánh xạ các tác vụ phụ có giới hạn tới <span class="technical-token">TVM</span> trên blockchain, <span class="technical-token">TVM</span> riêng tư hoặc cloud, và <span class="technical-token">TVM</span> trên thiết bị người dùng.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="3">
+        <span>03</span><h3>Chờ / tạm dừng</h3><p>Trong runtime blockchain, nếu chưa có phản hồi, phần tiếp diễn được giữ lại thay vì hoàn tất giao dịch quá sớm.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="4">
+        <span>04</span><h3>Khớp <span class="technical-token">COMM</span></h3><p>Kết quả được tạo sẽ gặp phần tiếp diễn đang chờ trên một channel; quy trình tiếp tục.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="5">
+        <span>05</span><h3>Bằng chứng phát lại</h3><p><span class="technical-token">ReplayTrie</span> ghi lại các lựa chọn cần thiết để validator khác tái tạo lần chạy.</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="6">
+        <span>06</span><h3>Ranh giới hoàn tất</h3><p><span class="technical-token">BlockGit</span> và <span class="technical-token">Block Merge</span> giúp các kết quả có thể xác minh phía blockchain hội tụ. Mở rộng một lần commit nguyên tử trên mọi bề mặt thực thi là mục tiêu dài hạn của <span class="technical-token">GLVM</span>.</p>
+      </article>
+    </div>
+        </div>
+      </section>
+
+      <section class="glvm-stack fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">Cấu trúc runtime</p>
+          <h2>Chín lĩnh vực capability phía sau lớp trừu tượng <span class="technical-token">GLVM</span></h2>
+          <p><span class="technical-token">GLVM</span> không phải VM bytecode thứ hai. Chín góc nhìn kiến trúc này — từ thực thi <span class="technical-token">TVM</span>, object capability và phát lại đến <span class="technical-token">BlockGit</span>, VM khách và công cụ phát triển — cho thấy hệ thống capability đứng sau mô hình thực thi logic.</p>
+        </div>
+        <div class="glvm-stack-flow" aria-label="Chín lĩnh vực capability phía sau lớp trừu tượng GLVM">
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="0" data-flow-state="current" data-flow-status="runtime cốt lõi" aria-pressed="true" aria-label="VM bytecode: TVM · tuple space · COMM">
+        <span>01</span><strong>VM bytecode</strong><small>Runtime cốt lõi</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="1" data-flow-state="current" data-flow-status="runtime cốt lõi" aria-pressed="false" aria-label="Bảo mật: Object capability gốc">
+        <span>02</span><strong>Bảo mật</strong><small>Runtime cốt lõi</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="2" data-flow-state="current" data-flow-status="runtime cốt lõi" aria-pressed="false" aria-label="Tính nguyên tử: Thực thi nguyên tử xuyên block">
+        <span>03</span><strong>Tính nguyên tử</strong><small>Runtime cốt lõi</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="3" data-flow-state="current" data-flow-status="runtime cốt lõi" aria-pressed="false" aria-label="Tính chung cuộc: BlockGit · fringe · hợp nhất">
+        <span>04</span><strong>Tính chung cuộc</strong><small>Runtime cốt lõi</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="4" data-flow-state="current" data-flow-status="runtime cốt lõi" aria-pressed="false" aria-label="Phát lại: ReplayTrie · dấu vết">
+        <span>05</span><strong>Phát lại</strong><small>Runtime cốt lõi</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="5" data-flow-state="current" data-flow-status="runtime cốt lõi" aria-pressed="false" aria-label="Mạng: Mạng ngang hàng và validator">
+        <span>06</span><strong>Mạng</strong><small>Runtime cốt lõi</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="6" data-flow-state="current" data-flow-status="runtime cốt lõi" aria-pressed="false" aria-label="Ngôn ngữ: Tolang → tolangc → .tox">
+        <span>07</span><strong>Ngôn ngữ</strong><small>Runtime cốt lõi</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="7" data-flow-state="mixed" data-flow-status="evm cốt lõi · wasm trong lộ trình" aria-pressed="false" aria-label="VM khách: EVM host · WASM trong lộ trình">
+        <span>08</span><strong>VM khách</strong><small><span class="technical-token">EVM</span> cốt lõi · <span class="technical-token">WASM</span> trong lộ trình</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="8" data-flow-state="mixed" data-flow-status="bề mặt dành cho nhà phát triển" aria-pressed="false" aria-label="Công cụ: Trình biên dịch · LSP · Môi trường thử nghiệm">
+        <span>09</span><strong>Công cụ</strong><small>Bề mặt dành cho nhà phát triển</small>
+      </button>
+    </div>
+        <ol class="glvm-stack-list">
+      <li class="glvm-stack-item" data-stack-index="0" data-stack-state="current" data-stack-status="runtime cốt lõi">
+        <span class="glvm-stack-number">01</span>
+        <div class="glvm-stack-label"><span>VM bytecode</span><strong>Runtime cốt lõi</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="21" width="25" height="30" rx="5"/><path d="M17 30h11M17 36h11M17 42h8"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="11"/><rect x="85" y="21" width="25" height="30" rx="5"/><path d="M92 30h11M92 36h11M92 42h8"/><path class="glvm-glyph-track" d="M35 36h14m22 0h14"/><path class="glvm-glyph-flow" d="M35 36h14m22 0h14"/></svg></div>
+        <div class="glvm-stack-copy"><h3><span class="technical-token">TVM</span> · tuple space · <span class="technical-token">COMM</span></h3><p>Engine đồng thời cụ thể chạy bytecode và cho phép các tiến trình độc lập trao đổi dữ liệu cũng như phần tiếp diễn qua channel.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="1" data-stack-state="current" data-stack-status="runtime cốt lõi">
+        <span class="glvm-stack-number">02</span>
+        <div class="glvm-stack-label"><span>Bảo mật</span><strong>Runtime cốt lõi</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="17" cy="36" r="7"/><circle cx="17" cy="36" r="3"/><path d="M24 36h25m-8 0v7m-8-7v5"/><rect class="glvm-glyph-pulse" x="49" y="25" width="22" height="22" rx="6"/><circle cx="98" cy="36" r="8"/><circle cx="98" cy="36" r="3"/><path class="glvm-glyph-track" d="M24 36h25m22 0h19"/><path class="glvm-glyph-flow" d="M24 36h25m22 0h19"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Object capability gốc</h3><p>Tham chiếu không thể giả mạo làm rõ quyền hạn nào có thể tiếp cận và cho phép runtime thực thi ranh giới quyền tối thiểu.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="2" data-stack-state="current" data-stack-status="runtime cốt lõi">
+        <span class="glvm-stack-number">03</span>
+        <div class="glvm-stack-label"><span>Tính nguyên tử</span><strong>Runtime cốt lõi</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="17" width="100" height="38" rx="12"/><path class="glvm-glyph-track" d="M20 36h25m30 0h25"/><path class="glvm-glyph-flow" d="M20 36h25m30 0h25"/><path class="glvm-glyph-pulse" d="M60 22l15 8v13l-15 8-15-8V30zM45 30l15 8 15-8M60 38v13"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Thực thi nguyên tử xuyên block</h3><p>Ngữ cảnh thực thi có thể tạm dừng qua nhiều block, tiếp tục từ phần tiếp diễn được giữ lại và đi tới ranh giới hoàn tất trì hoãn.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="3" data-stack-state="current" data-stack-status="runtime cốt lõi">
+        <span class="glvm-stack-number">04</span>
+        <div class="glvm-stack-label"><span>Tính chung cuộc</span><strong>Runtime cốt lõi</strong></div>
+        <div class="glvm-stack-glyph"><svg class="is-planned" viewBox="0 0 120 72" aria-hidden="true"><circle cx="18" cy="22" r="5"/><circle cx="18" cy="50" r="5"/><path d="M55 26l11 10-11 10-11-10z"/><circle class="glvm-glyph-pulse" cx="98" cy="36" r="8"/><path d="m94 36 3 3 6-7"/><path class="glvm-glyph-track" d="M23 22l21 11M23 50l21-11m22-3h24"/><path class="glvm-glyph-flow" d="M23 22l21 11M23 50l21-11m22-3h24"/></svg></div>
+        <div class="glvm-stack-copy"><h3><span class="technical-token">BlockGit</span> · fringe · hợp nhất</h3><p>DAG block, luân phiên leader xác định và quy tắc hợp nhất giúp công việc đồng thời phía blockchain hội tụ mà không cần leader cố định.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="4" data-stack-state="current" data-stack-status="runtime cốt lõi">
+        <span class="glvm-stack-number">05</span>
+        <div class="glvm-stack-label"><span>Phát lại</span><strong>Runtime cốt lõi</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="22" cy="45" r="5"/><circle cx="60" cy="45" r="5"/><circle class="glvm-glyph-pulse" cx="98" cy="45" r="5"/><path class="glvm-glyph-track" d="M27 45h28m10 0h28M98 37C94 14 31 14 22 37"/><path class="glvm-glyph-flow" d="M27 45h28m10 0h28M98 37C94 14 31 14 22 37"/><path d="m21 29 1 8 8-2"/></svg></div>
+        <div class="glvm-stack-copy"><h3><span class="technical-token">ReplayTrie</span> · dấu vết</h3><p>Các lựa chọn không xác định và dấu vết thực thi đã ghi cho phép validator tái tạo luồng được chấp nhận.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="5" data-stack-state="current" data-stack-status="runtime cốt lõi">
+        <span class="glvm-stack-number">06</span>
+        <div class="glvm-stack-label"><span>Mạng</span><strong>Runtime cốt lõi</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle class="glvm-glyph-pulse" cx="60" cy="36" r="9"/><circle cx="22" cy="18" r="5"/><circle cx="98" cy="18" r="5"/><circle cx="22" cy="54" r="5"/><circle cx="98" cy="54" r="5"/><path class="glvm-glyph-track" d="M27 21l25 11M93 21 68 32M27 51l25-11m41 11L68 40"/><path class="glvm-glyph-flow" d="M27 21l25 11M93 21 68 32M27 51l25-11m41 11L68 40"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Mạng ngang hàng và validator</h3><p>Lớp node truyền tải đề xuất, block, bằng chứng trạng thái và việc phối hợp validator bên dưới lớp trừu tượng thực thi.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="6" data-stack-state="current" data-stack-status="runtime cốt lõi">
+        <span class="glvm-stack-number">07</span>
+        <div class="glvm-stack-label"><span>Ngôn ngữ</span><strong>Runtime cốt lõi</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="24" width="26" height="24" rx="5"/><path d="M20 31l-5 5 5 5M27 31l5 5-5 5"/><rect class="glvm-glyph-pulse" x="47" y="24" width="26" height="24" rx="5"/><path d="M53 32h12m0 0-3-3m3 3-3 3M67 40H55m0 0 3-3m-3 3 3 3"/><rect x="84" y="24" width="26" height="24" rx="5"/><path d="M91 31h12M91 36h8M91 41h12"/><path class="glvm-glyph-track" d="M38 36h7m30 0h7"/><path class="glvm-glyph-flow" d="M38 36h7m30 0h7"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Tolang → tolangc → .tox</h3><p>Tolang mô tả các tiến trình đồng thời; trình biên dịch chuyển mã nguồn thành bytecode có thể chạy trên <span class="technical-token">TVM</span>.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="7" data-stack-state="mixed" data-stack-status="evm cốt lõi · wasm trong lộ trình">
+        <span class="glvm-stack-number">08</span>
+        <div class="glvm-stack-label"><span>VM khách</span><strong><span class="technical-token">EVM</span> cốt lõi · <span class="technical-token">WASM</span> trong lộ trình</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="9" y="12" width="102" height="48" rx="10"/><rect x="20" y="23" width="32" height="26" rx="6"/><rect x="68" y="23" width="32" height="26" rx="6"/><circle cx="36" cy="36" r="6"/><path d="M33 33l6 6M39 33l-6 6M78 31l5 10 5-10"/><path class="glvm-glyph-track" d="M52 36h16m32 0h7"/><path class="glvm-glyph-flow" d="M52 36h16m32 0h7"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="3"/></svg></div>
+        <div class="glvm-stack-copy"><h3><span class="technical-token">EVM</span> host · <span class="technical-token">WASM</span> trong lộ trình</h3><p><span class="technical-token">EVM</span> chạy như một guest có trạng thái thông qua cơ chế phối hợp kiểu <span class="technical-token">TSAC</span>. <span class="technical-token">WASM</span> mở rộng định hướng VM không đồng nhất.</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="8" data-stack-state="mixed" data-stack-status="bề mặt dành cho nhà phát triển">
+        <span class="glvm-stack-number">09</span>
+        <div class="glvm-stack-label"><span>Công cụ</span><strong>Bề mặt dành cho nhà phát triển</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="11" width="100" height="50" rx="8"/><path d="M10 25h100M20 18h3m7 0h3m7 0h3M24 35l7 6-7 6"/><path class="glvm-glyph-track" d="M40 47h50"/><path class="glvm-glyph-flow" d="M40 47h50"/><circle class="glvm-glyph-pulse" cx="97" cy="47" r="5"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Trình biên dịch · LSP · Môi trường thử nghiệm</h3><p>Trình biên dịch, LSP, môi trường thử nghiệm, bộ kiểm thử và công cụ chẩn đoán đưa mô hình thực thi vào quy trình làm việc của nhà phát triển.</p></div>
+      </li>
+    </ol>
+      </section>
+
+      <section class="glvm-status fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">Lộ trình phát triển</p>
+          <h2 class="glvm-semantic-heading">Runtime cốt lõi đang dần hoàn thiện khi <span class="technical-token">GLVM</span> mở rộng sang nhiều môi trường</h2>
+          <div class="glvm-status-intro">
+            <p class="glvm-semantic-copy"><span class="technical-token">GLVM</span> mở rộng từ runtime blockchain đồng thời của <span class="technical-token">ALUX</span> ra các môi trường khác. Cloud riêng tư là bề mặt tích hợp tiếp theo; thực thi trên thiết bị người dùng và xuyên shard vẫn nằm trong lộ trình. Sơ đồ dưới đây tách riêng runtime cốt lõi, các bề mặt đang được mở rộng và hướng kiến trúc tiếp theo.</p>
+            <div class="glvm-status-summary" aria-hidden="true">
+      <div class="glvm-status-summary-item glvm-status-summary-item--built" aria-label="Runtime cốt lõi: 6">
+        <span>06</span>
+        <small>Runtime cốt lõi</small>
+      </div>
+
+      <div class="glvm-status-summary-item glvm-status-summary-item--designed" aria-label="Mở rộng hệ thống: 5">
+        <span>05</span>
+        <small>Mở rộng hệ thống</small>
+      </div>
+
+      <div class="glvm-status-summary-item glvm-status-summary-item--planned" aria-label="Lộ trình: 6">
+        <span>06</span>
+        <small>Lộ trình</small>
+      </div>
+    </div>
+          </div>
+        </div>
+        <div class="glvm-status-grid">
+      <article class="glvm-status-group glvm-status-group--built">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">Runtime cốt lõi</span></h3>
+        <ul><li><span class="technical-token">TVM</span> đồng thời và <span class="technical-token">COMM</span></li><li><span class="technical-token">ReplayTrie</span> và dấu vết thực thi</li><li>Luồng tạm dừng / tiếp tục xuyên block</li><li>Nền tảng <span class="technical-token">OCAP</span> gốc</li><li>Khả năng tương thích <span class="technical-token">EVM</span> host</li><li>DAG <span class="technical-token">BlockGit</span>, fringe và hợp nhất</li></ul>
+      </article>
+
+      <article class="glvm-status-group glvm-status-group--designed">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">Mở rộng hệ thống</span></h3>
+        <ul><li>Triển khai engine riêng tư hoặc trên cloud</li><li>Lớp trừu tượng <span class="technical-token">GLVM</span> trên nhiều bề mặt triển khai</li><li>Gia cố để vận hành ở quy mô sản xuất</li><li>Kiểm soát chính sách và channel có bảo vệ phong phú hơn</li><li>Khả năng quan sát runtime và công cụ vận hành</li></ul>
+      </article>
+
+      <article class="glvm-status-group glvm-status-group--planned">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">Lộ trình</span></h3>
+        <ul><li>Tính nguyên tử theo chiều ngang xuyên shard</li><li>VM khách <span class="technical-token">WASM</span></li><li>Triển khai <span class="technical-token">TVM</span> trên thiết bị người dùng</li><li>Trừu tượng hóa tài khoản và registry capability</li><li>Đồng bộ lại peer sau sự cố và thay đổi động tập validator</li><li>Lớp World OS có thể lập trình</li></ul>
+      </article>
+    </div>
+      </section>
+
+
+    <section class="glvm-next fade-in" aria-labelledby="glvm-next-title">
+      <div class="glvm-next-copy">
+        <p class="eyebrow">Tìm hiểu tiếp</p>
+        <h2 id="glvm-next-title">Khám phá runtime, khối lượng công việc của agent và các hệ thống</h2>
+        <p>Runtime Lab giải thích mô hình thực thi. Mục Dành cho AI Agent trình bày kiểu khối lượng công việc. Mục <span class="technical-token">ALUX</span> và các nền tảng khác so sánh kiến trúc và khả năng giữa các hệ thống.</p>
+      </div>
+      <nav class="glvm-next-links" aria-labelledby="glvm-next-title">
+        <a class="glvm-next-link glvm-next-link--primary" href="/vi/runtime-lab">
+          <span class="glvm-next-index" aria-hidden="true">01</span>
+          <span class="glvm-next-label">Runtime Lab</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+
+        <a class="glvm-next-link glvm-next-link--secondary" href="/vi/for-ai-agents">
+          <span class="glvm-next-index" aria-hidden="true">02</span>
+          <span class="glvm-next-label">Dành cho AI Agent</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+
+        <a class="glvm-next-link glvm-next-link--tertiary" href="/vi/alux-vs-others">
+          <span class="glvm-next-index" aria-hidden="true">03</span>
+          <span class="glvm-next-label"><span class="technical-token">ALUX</span> và các nền tảng khác</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+      </nav>
+    </section>
+
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Bản quyền © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script defer src="/i18n/runtime/vi/glvm.js?v=be7e6a1c8106"></script>
+<script defer src="/script.js?v=20261023-locales"></script>
+</body>
+</html>

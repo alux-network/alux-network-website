@@ -3,14 +3,17 @@ import path from 'node:path';
 import vm from 'node:vm';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {locales, languages, localeBootstrap} from './locales.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const source=await fs.readFile(path.join(root,'script.js'),'utf8');
 const translations=await fs.readFile(path.join(root,'i18n/site.generated.js'),'utf8');
-const routing=await fs.readFile(path.join(root,'scripts/language-routing.js'),'utf8');
+const routing=localeBootstrap+await fs.readFile(path.join(root,'scripts/language-routing.js'),'utf8');
 const roadmapTemplate=await fs.readFile(path.join(root,'scripts/templates/roadmap.html'),'utf8');
-const languages=['en','zh','ja','ko','ar'];
 const files=['index.html','for-ai-agents.html','glvm.html','alux-vs-others.html','runtime-lab.html','team.html','roadmap.html'];
 const checkOnly=process.argv.includes('--check');
+const selectedArg=process.argv.find(arg=>arg.startsWith('--lang='));
+const renderLanguages=selectedArg?selectedArg.slice(7).split(','):languages;
+if(renderLanguages.some(language=>!languages.includes(language)))throw Error('Unknown language filter');
 const media=JSON.parse(await fs.readFile(path.join(root,'scripts/optimized-media.json'),'utf8'));
 async function emit(target,content){
  const existing=await fs.readFile(target,'utf8').catch(()=>null);
@@ -18,11 +21,13 @@ async function emit(target,content){
 }
 const escape=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const pageUrl=(file,lang)=>'https://www.alux.network'+(lang==='en'?'':'/'+lang)+(file==='index.html'?(lang==='en'?'/':''):'/'+file.replace(/\.html$/,''));
+const hreflang=language=>locales.find(locale=>locale.code===language).hreflang;
+const languagePrefix=new RegExp('^/(?:'+languages.filter(lang=>lang!=='en').join('|')+')(?=/|$)');
 function render(page,language){
  const element=()=>({dataset:{},style:{},innerHTML:'',textContent:'',classList:{add(){},remove(){},toggle(){},contains(){return false;}},setAttribute(){},getAttribute(){return null;},addEventListener(){},querySelector(){return null;},querySelectorAll(){return [];}});
  const main=element(),body=element();body.dataset.page=page;
  const storage={getItem(){return null;},setItem(){},removeItem(){}};
- const context=vm.createContext({console,document:{body,documentElement:element(),querySelector(s){return s==='#page-content'?main:null;},querySelectorAll(){return [];},createElement:element,addEventListener(){}},window:{ALUX_LANGUAGE:{language},location:{protocol:'https:',href:'https://www.alux.network/',hash:''},matchMedia(){return {matches:false,addEventListener(){}};},addEventListener(){}},navigator:{language:'en-US'},localStorage:storage,sessionStorage:storage,setTimeout(){},clearTimeout(){},IntersectionObserver:class {observe(){}}});
+ const context=vm.createContext({console,document:{body,documentElement:element(),querySelector(s){return s==='#page-content'?main:null;},querySelectorAll(){return [];},createElement:element,addEventListener(){}},window:{ALUX_LOCALES:locales,ALUX_LANGUAGE:{language},location:{protocol:'https:',href:'https://www.alux.network/',hash:''},matchMedia(){return {matches:false,addEventListener(){}};},addEventListener(){}},navigator:{language:'en-US'},localStorage:storage,sessionStorage:storage,setTimeout(){},clearTimeout(){},IntersectionObserver:class {observe(){}}});
  vm.runInContext(translations,context,{timeout:5000});
  vm.runInContext(source+'\n;globalThis.output={chrome:ui,languageNames:visibleLanguageNames,page:pages[currentPage]["'+language+'"]||pages[currentPage].en};globalThis.sanitizeText=sanitizeExternalProjectNames;globalThis.technicalMatches=localizedTechnicalMatches;globalThis.arabicRuns=ARABIC_TECHNICAL_RUN;',context,{timeout:5000});
  return {...context.output,technicalMatches:context.technicalMatches,arabicRuns:context.arabicRuns,entries:context.window.ALUX_SITE_I18N.entries[language]||{},markup:main.innerHTML.replace(/(^|>)([^<]+)(?=<|$)/g,(_,b,t)=>b+context.sanitizeText(t,language)).replace(/[\t ]+$/gm,'')};
@@ -77,8 +82,9 @@ const stale=[];
 for(const file of files){
  const original=(await fs.readFile(path.join(root,file),'utf8')).replace(/\r\n/g,'\n');
  const page=original.match(/<body\b[^>]*data-page="([^"]+)"/)[1];
- for(const language of languages){
+ for(const language of renderLanguages){
   const result=render(page,language),chrome=result.chrome[language];
+  if(!chrome || (language!=='en' && !Object.keys(result.entries).some(key=>key.startsWith(page+'.'))))throw Error(language+'/'+page+': missing reviewed translations');
   let html=original.replace(/\n*<script data-initial-navigation>[\s\S]*?<\/script>\n*/,'\n').replace(/\n*<script data-language-routing>[\s\S]*?<\/script>\n*/,'\n').replace(/\s*<link rel="alternate" hreflang="[^"]+"[^>]*>/g,'');
   html=html.replace(/<html\b[^>]*>/,'<html lang="'+language+'" dir="'+(language==='ar'?'rtl':'ltr')+'">');
   html=html.replace(/\s*<link\b[^>]*href="https:\/\/fonts\.(?:googleapis|gstatic)\.com[^"<>]*"[^>]*>/g,'');
@@ -107,13 +113,13 @@ for(const file of files){
   html=/<link rel="canonical"/.test(html)?html.replace(/<link rel="canonical"[^>]*>/,canonicalTag):html.replace('</title>','</title>\n'+canonicalTag);
   html=html.replace(/(<meta property="og:url" content=")[^"]*/,'$1'+canonical);
   if(language!=='en')html=html.replace(/(<meta (?:property|name)="(?:og|twitter):(title|description)" content=")[^"]*/g,(_,open,key)=>open+escape(key==='title'?result.page.metaTitle:result.page.metaDescription));
-  const locales={en:'en_US',zh:'zh_CN',ja:'ja_JP',ko:'ko_KR',ar:'ar_AR'};
-  html=html.replace(/(<meta property="og:locale" content=")[^"]*/,'$1'+locales[language]);
+  const ogLocale=locales.find(locale=>locale.code===language).ogLocale;
+  html=html.replace(/(<meta property="og:locale" content=")[^"]*/,'$1'+ogLocale);
   // Share crawlers read the static head without running the language/runtime JS.
   const shareSlug=file==='index.html'?'home':file.replace(/\.html$/,'');
   const shareImage='https://www.alux.network/assets/social/pages/'+language+'/'+shareSlug+'.jpg?v=20261015';
   const shareMeta={
-   'og:type':'website','og:site_name':'ALUX Network','og:locale':locales[language],
+   'og:type':'website','og:site_name':'ALUX Network','og:locale':ogLocale,
    'og:url':canonical,'og:title':result.page.metaTitle,'og:description':result.page.metaDescription,
    'og:image':shareImage,'og:image:secure_url':shareImage,'og:image:type':'image/jpeg',
    'og:image:width':'1200','og:image:height':'630','og:image:alt':result.page.metaTitle,
@@ -126,14 +132,14 @@ for(const file of files){
    const matcher=new RegExp('<meta (?:property|name)="'+key+'"[^>]*>','g');
    html=matcher.test(html)?html.replace(matcher,()=>tag):html.replace('</head>',tag+'\n</head>');
   }
-  const alternates=languages.map(lang=>'<link rel="alternate" hreflang="'+(lang==='zh'?'zh-Hans':lang)+'" href="'+pageUrl(file,lang)+'">').concat('<link rel="alternate" hreflang="x-default" href="'+pageUrl(file,'en')+'">').join('\n');
+  const alternates=languages.map(lang=>'<link rel="alternate" hreflang="'+hreflang(lang)+'" href="'+pageUrl(file,lang)+'">').concat('<link rel="alternate" hreflang="x-default" href="'+pageUrl(file,'en')+'">').join('\n');
   html=html.replace(canonicalTag,canonicalTag+'\n'+alternates);
   // Explicit language hyperlinks work even when the runtime is unavailable.
-  html=html.replace(/<(?:button|a)([^>]*class="lang-button[^"]*"[^>]*data-lang="([^"]+)"[^>]*)>([^<]*)<\/(?:button|a)>/g,(_,attrs,lang,text)=>'<a'+attrs.replace(/ type="button"| href="[^"]*"| hreflang="[^"]*"/g,'')+' href="'+pageUrl(file,lang)+'" hreflang="'+(lang==='zh'?'zh-Hans':lang)+'">'+text+'</a>');
+  html=html.replace(/(<div class="lang-menu"[^>]*>)[\s\S]*?<\/div>/,(_,open)=>open+locales.map(locale=>'<a class="lang-button'+(locale.code===language?' active':'')+'" role="menuitemradio" aria-checked="'+(locale.code===language)+'" data-lang="'+locale.code+'" lang="'+locale.hreflang+'" dir="'+(locale.code==='ar'?'rtl':'ltr')+'" href="'+pageUrl(file,locale.code)+'" hreflang="'+locale.hreflang+'">'+escape(locale.name)+'</a>').join('')+'</div>');
   html=html.replace(/(href|src|poster)="([^"]+)"/g,(all,attr,value)=>{
    if(/^(?:#|mailto:|tel:|data:|https?:\/\/)/.test(value))return all;
    const parts=value.split(/(?=[?#])/),raw=parts.shift();
-   const target=raw.replace(/^\/(?:zh|ja|ko|ar)\//,'/').replace(/^\//,'').replace(/\.html$/,'');
+   const target=raw.replace(languagePrefix,'').replace(/^\//,'').replace(/\.html$/,'');
    const pageFile=target===''||target==='index'?'index.html':target+'.html';
    if(attr==='href'&&files.includes(pageFile))return attr+'="'+pageUrl(pageFile,language).replace('https://www.alux.network','')+parts.join('')+'"';
    return attr+'="/'+raw.replace(/^\//,'')+parts.join('')+'"';
@@ -150,7 +156,7 @@ for(const file of files){
    html=html.replace(/(<script\b[^>]*src="\/script\.js)/,'<script defer src="/'+name+'?v='+version+'"></script>\n$1');
   }
   html=html.replace(/<script\b(?: defer)? src="\/script\.js/g,'<script defer src="/script.js');
-  html=html.replace(/styles\.css\?v=[^"\s]+/g,'styles.css?v=20261015-comparison-typography').replace(/script\.js\?v=[^"\s]+/g,'script.js?v=20261015-summary-navigation').replace(/site-frame\.css\?v=[^"\s]+/g,'site-frame.css?v=20261015-current-navigation').replace(/home-hero-3d\.css\?v=[^"\s]+/g,'home-hero-3d.css?v=20261015-hero-spacing').replace(/roadmap\.css\?v=[^"\s]+/g,'roadmap.css?v=20261014-details');
+  html=html.replace(/styles\.css\?v=[^"\s]+/g,'styles.css?v=20261023-locales').replace(/script\.js\?v=[^"\s]+/g,'script.js?v=20261023-locales').replace(/site-frame\.css\?v=[^"\s]+/g,'site-frame.css?v=20261023-locales').replace(/home-hero-3d\.css\?v=[^"\s]+/g,'home-hero-3d.css?v=20261015-hero-spacing').replace(/roadmap\.css\?v=[^"\s]+/g,'roadmap.css?v=20261014-details');
   if(page==='home'){
    html=html.replace(/\s*<link rel="preload"[^>]*data-home-media[^>]*>/g,'');
    const preloads=['assets/home/hero/alux-hero-3d-upper-brick.png','assets/home/hero/alux-hero-3d-lower-assembly.png'].map(name=>'<link rel="preload" as="image" type="image/webp" href="/'+media[name]+'" fetchpriority="high"'+' data-home-media>').join('\n');
@@ -161,4 +167,4 @@ for(const file of files){
  }
 }
 if(stale.length)throw Error('Stale localized pages: '+stale.join(', ')+'. Run npm run pages:render.');
-console.log((checkOnly?'Verified':'Rendered')+' all 35 language pages, initial content, links and metadata.');
+console.log((checkOnly?'Verified':'Rendered')+' '+renderLanguages.length*files.length+' language pages, initial content, links and metadata.');

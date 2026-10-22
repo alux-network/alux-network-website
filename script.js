@@ -47,15 +47,8 @@ const ui = {
 };
 
 // Language names are autonyms, not translated product copy.
-const visibleLanguageNames = {
-  en: "English",
-  zh: "中文",
-  ko: "한국어",
-  ja: "日本語",
-  ar: "العربية"
-};
-
-const supportedLanguages = new Set(["en", "zh", "ko", "ja", "ar"]);
+const visibleLanguageNames = Object.fromEntries(window.ALUX_LOCALES.map(locale => [locale.code, locale.name]));
+const supportedLanguages = new Set(window.ALUX_LOCALES.map(locale => locale.code));
 
 const homeHeroActions = {
   en: [
@@ -1008,13 +1001,7 @@ const pages = {
 };
 
 // Language selector badges remain fixed autonyms; all product UI copy comes from the generated catalog.
-const visibleLanguageButtonLabels = {
-  en: "EN",
-  zh: "中",
-  ko: "한",
-  ja: "日",
-  ar: "AR"
-};
+const visibleLanguageButtonLabels = visibleLanguageNames;
 
 function clonePlainValue(value) {
   if (value === undefined) return undefined;
@@ -4695,7 +4682,9 @@ function updateActiveNavigation() {
 
   document.querySelectorAll(".site-nav a").forEach((anchor) => {
     const pathname = new URL(anchor.href, window.location.href).pathname;
-    const normalized = pathname.replace(/^\/(zh|ja|ko|ar)(?=\/|$)/, "").replace(/\.html$/, "") || "/";
+    const parts = pathname.split('/').filter(Boolean);
+    if (supportedLanguages.has(parts[0]) && parts[0] !== 'en') parts.shift();
+    const normalized = ('/'+parts.join('/')).replace(/\.html$/, "") || "/";
     const isActive = normalized === activeHref.replace(/\.html$/, "").replace(/^(?!\/)/, "/");
     anchor.classList.toggle("active-link", isActive);
     if (isActive) {
@@ -4837,6 +4826,7 @@ function renderPage(lang, { restoreAnchor = true } = {}) {
   langButtons.forEach((button) => {
     button.textContent = visibleLanguageButtonLabels[button.dataset.lang] || (button.dataset.lang || "").toUpperCase();
     button.classList.toggle("active", button.dataset.lang === lang);
+    button.setAttribute("aria-checked", String(button.dataset.lang === lang));
   });
 
   if (restoreAnchor) restoreHashScroll();
@@ -4987,6 +4977,28 @@ function initRoadmapOrder() {
 
 function initLanguageDropdown() {
   if (!langDropdown || !langSwitch) return;
+
+  langDropdown.addEventListener('keydown', event => {
+    const buttons = [...langButtons];
+    const index = buttons.indexOf(document.activeElement);
+    let target;
+    if (event.key === 'ArrowDown') target = buttons[(index + 1) % buttons.length];
+    if (event.key === 'ArrowUp') target = buttons[index < 0 ? buttons.length - 1 : (index + buttons.length - 1) % buttons.length];
+    if (event.key === 'Home') target = buttons[0];
+    if (event.key === 'End') target = buttons[buttons.length - 1];
+    if (target) {
+      event.preventDefault();
+      langDropdown.classList.add('open');
+      langSwitch.setAttribute('aria-expanded', 'true');
+      target.focus();
+      target.scrollIntoView({block:'nearest'});
+    }
+    if (event.key === 'Escape') {
+      langDropdown.classList.remove('open');
+      langSwitch.setAttribute('aria-expanded', 'false');
+      langSwitch.focus();
+    }
+  });
 
   langSwitch.addEventListener("click", () => {
     const isOpen = langDropdown.classList.toggle("open");
