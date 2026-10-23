@@ -3,9 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
 // Inlined at the start of each generated head; no runtime download is needed.
 (function () {
-  const languages = ["en", "zh", "ja", "ko", "ar"];
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
   const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
   const current = new URL(window.location.href);
   function languageUrl(value, language) {
@@ -34,7 +44,7 @@
       }
     }
     const preferred = (navigator.languages || [navigator.language || "en"])
-      .map(value => value.toLowerCase().split(/[-_]/)[0]).find(value => languages.includes(value));
+      .map(browserLanguage).find(value => languages.includes(value));
     language = languages.includes(saved) ? saved : preferred || "en";
   }
   window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
@@ -51,15 +61,21 @@
 <link rel="canonical" href="https://www.alux.network/zh/for-ai-agents">
 <link rel="alternate" hreflang="en" href="https://www.alux.network/for-ai-agents">
 <link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/for-ai-agents">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/for-ai-agents">
 <link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/for-ai-agents">
 <link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/for-ai-agents">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/for-ai-agents">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/for-ai-agents">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/for-ai-agents">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/for-ai-agents">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/for-ai-agents">
 <link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/for-ai-agents">
 <link rel="alternate" hreflang="x-default" href="https://www.alux.network/for-ai-agents">
   <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
   <meta name="description" content="了解 ALUX 如何为生产级 AI 智能体提供跨区块连续性、元组空间协调、原生 OCAP 支持，以及经由 TSAC 的 EVM 路径。">
 <link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
-<link rel="stylesheet" href="/styles.css?v=20261015-comparison-typography">
-<link rel="stylesheet" href="/site-frame.css?v=20261015-current-navigation">
+<link rel="stylesheet" href="/styles.css?v=20261023-locales">
+<link rel="stylesheet" href="/site-frame.css?v=20261023-locales">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
 <meta property="og:type" content="website">
@@ -105,7 +121,7 @@
         <a href="/zh/roadmap" data-nav="roadmap">路线图</a>
       </nav>
       <div class="header-actions">
-        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>语言</span><span class="lang-current" data-lang-current>中文</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/for-ai-agents" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/for-ai-agents" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/for-ai-agents" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/for-ai-agents" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/for-ai-agents" hreflang="ar">AR</a></div></div>
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>语言</span><span class="lang-current" data-lang-current>简体中文</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/for-ai-agents" hreflang="en">English</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/for-ai-agents" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/for-ai-agents" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/for-ai-agents" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/for-ai-agents" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/for-ai-agents" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/for-ai-agents" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/for-ai-agents" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/for-ai-agents" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/for-ai-agents" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/for-ai-agents" hreflang="ar">العربية</a></div></div>
         <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">联系我们</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-label="切换导航菜单"><span></span><span></span><span></span></button>
       </div>
@@ -117,6 +133,6 @@
     </footer>
   </div>
 <script defer src="/i18n/runtime/zh/vs.js?v=c25a0cad82d6"></script>
-<script defer src="/script.js?v=20261015-summary-navigation"></script>
+<script defer src="/script.js?v=20261023-locales"></script>
 </body>
 </html>

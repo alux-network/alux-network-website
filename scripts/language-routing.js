@@ -1,6 +1,15 @@
 // Inlined at the start of each generated head; no runtime download is needed.
 (function () {
-  const languages = ["en", "zh", "ja", "ko", "ar"];
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
   const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
   const current = new URL(window.location.href);
   function languageUrl(value, language) {
@@ -29,7 +38,7 @@
       }
     }
     const preferred = (navigator.languages || [navigator.language || "en"])
-      .map(value => value.toLowerCase().split(/[-_]/)[0]).find(value => languages.includes(value));
+      .map(browserLanguage).find(value => languages.includes(value));
     language = languages.includes(saved) ? saved : preferred || "en";
   }
   window.ALUX_LANGUAGE = { language, urlFor: languageUrl };

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-hant" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(browserLanguage).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLVM | ALUX Network</title>
+  <meta name="description" content="探索 GLVM：ALUX 以 TVM 的併發、重播、物件能力、原子最終確認、複製與共識為基礎，構建面向開發者的邏輯執行模型。">
+  <link rel="canonical" href="https://www.alux.network/zh-hant/glvm">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/glvm">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/glvm">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/glvm">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/glvm">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/glvm">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/glvm">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/glvm">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/glvm">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/glvm">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/glvm">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/glvm">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/glvm">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ALUX Network">
+  <meta property="og:title" content="GLVM | ALUX Network">
+  <meta property="og:description" content="探索 GLVM：ALUX 以 TVM 的併發、重播、物件能力、原子最終確認、複製與共識為基礎，構建面向開發者的邏輯執行模型。">
+  <meta property="og:url" content="https://www.alux.network/zh-hant/glvm">
+  <meta property="og:image" content="https://www.alux.network/assets/social/pages/zh-hant/glvm.jpg?v=20261015">
+  <meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/zh-hant/glvm.jpg?v=20261015">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="GLVM | ALUX Network">
+  <meta property="og:locale" content="zh_TW">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@alux_network">
+  <meta name="twitter:title" content="GLVM | ALUX Network">
+  <meta name="twitter:description" content="探索 GLVM：ALUX 以 TVM 的併發、重播、物件能力、原子最終確認、複製與共識為基礎，構建面向開發者的邏輯執行模型。">
+  <meta name="twitter:image" content="https://www.alux.network/assets/social/pages/zh-hant/glvm.jpg?v=20261015">
+  <meta name="twitter:image:alt" content="GLVM | ALUX Network">
+
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+<link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
+<link rel="stylesheet" href="/styles.css?v=20261023-locales">
+<link rel="stylesheet" href="/site-frame.css?v=20261023-locales">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+<link rel="stylesheet" href="/glvm-story.css?v=20260814-customer-vm2">
+
+</head>
+<body data-page="glvm">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/zh-hant" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/optimized/alux-logo.0ddab7cca545.webp" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="主導航">
+        <a href="/zh-hant" data-nav="home">首頁</a>
+        <a href="/zh-hant/for-ai-agents" data-nav="vs">面向 AI Agent</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">了解</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/zh-hant/glvm" data-nav="learnGlvm" class="active-link" aria-current="page">GLVM</a>
+            <a href="/zh-hant/runtime-lab" data-nav="learnPcc">Runtime Lab</a>
+            <a href="/zh-hant/alux-vs-others" data-nav="learnAlux">ALUX 與其他方案比較</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">博客</a>
+        <a href="/zh-hant/team" data-nav="team">團隊</a>
+        <a href="/zh-hant/roadmap" data-nav="roadmap">路線圖</a>
+        <a href="mailto:info@alux.network" data-nav="cta" class="mobile-nav-cta">聯絡我們</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>語言</span><span class="lang-current" data-lang-current>繁體中文</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/glvm" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/glvm" hreflang="zh-Hans">简体中文</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/glvm" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/glvm" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/glvm" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/glvm" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/glvm" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/glvm" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/glvm" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/glvm" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/glvm" hreflang="ar">العربية</a></div></div>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">聯絡我們</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="切換導航選單"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="zh-hant">
+    <article class="glvm-page" data-glvm-root data-glvm-step="0">
+      <header class="glvm-hero fade-in">
+        <div class="glvm-hero-copy">
+          <p class="eyebrow">了解 / <span class="technical-token">GLVM</span></p>
+          <h1><span class="technical-token">GLVM</span></h1>
+          <p class="glvm-full-name">全域邏輯虛擬機</p>
+          <p class="glvm-tagline glvm-semantic-heading">一個邏輯執行層，跨多台機器協調執行</p>
+          <p class="glvm-hero-text glvm-semantic-copy"><span class="technical-token">GLVM</span> 是 <span class="technical-token">ALUX</span> 正在基於併發執行階段建構、面向開發者的執行抽象。每台參與機器上的 <span class="technical-token">TVM</span> 提供具體執行<span class="technical-token">引擎</span>；<span class="technical-token">GLVM</span> 模型則將執行狀態、處理程序、重播、複製與共識納入同一邏輯層。</p>
+        </div>
+        <figure class="glvm-hero-visual">
+          <div class="glvm-hero-media">
+            <img src="/assets/glvm/20260712_GLVM_全局逻辑主视觉_4K.webp" alt="" aria-hidden="true" class="glvm-hero-poster" fetchpriority="high" decoding="async">
+            <video muted loop playsinline preload="none" poster="/assets/glvm/20260712_GLVM_全局逻辑主视觉_4K.webp" aria-label="一幅暖色技術剖面圖：多台物理機器連接在同一個 GLVM 執行層之下。" data-glvm-video>
+              <source src="/assets/glvm/20260712_GLVM_全局逻辑动效_1080P.mp4" type="video/mp4">
+            </video>
+            <div class="glvm-hero-overlay" aria-hidden="true"><span></span><span></span><span></span></div>
+          </div>
+        </figure>
+        <div class="glvm-hero-signals"><div class="glvm-signal"><span>物理模型</span><strong>每台機器一台 <span class="technical-token">TVM</span></strong></div><div class="glvm-signal"><span>邏輯模型</span><strong>位於其上的一個 <span class="technical-token">GLVM</span></strong></div><div class="glvm-signal"><span>擴充方向</span><strong>從鏈到雲端，再到設備</strong></div></div>
+      </header>
+
+      <section class="glvm-definition fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">核心定義</p>
+          <h2 class="glvm-semantic-heading">每台機器執行一台 <span class="technical-token">TVM</span>，多台 <span class="technical-token">TVM</span> 協同組成一個邏輯執行層</h2>
+          <p class="glvm-semantic-copy"><span class="technical-token">TVM</span> 是執行在單台機器上的位元碼執行<span class="technical-token">引擎</span>；<span class="technical-token">GLVM</span> 定義跨多台 <span class="technical-token">TVM</span> 的系統級執行抽象。它不是另一種位元碼虛擬機。開發者面向統一的邏輯執行模型，確定性重播、執行連續性、複製、最終確認與共識則在這一抽象<span class="technical-token">之下</span>協調。</p>
+        </div>
+        <div class="glvm-comparison">
+      <article class="glvm-comparison-card glvm-comparison-card--tvm">
+        <div class="glvm-comparison-heading"><span><span class="technical-token">TVM</span></span><h3>元組空間虛擬機（<span class="technical-token">Tuple-space</span> Virtual Machine）</h3></div>
+        <p><span class="technical-token">ALUX</span> 的具體執行<span class="technical-token">引擎</span>。它執行 Tolang 位元碼，讓獨立處理程序透過通道與 <span class="technical-token">COMM</span> 事件協作，並記錄確定性重播所需的非確定性選擇。</p>
+        <strong>單台機器內的一套具體<span class="technical-token">引擎</span></strong>
+      </article>
+
+      <article class="glvm-comparison-card glvm-comparison-card--glvm">
+        <div class="glvm-comparison-heading"><span><span class="technical-token">GLVM</span></span><h3>全域邏輯虛擬機</h3></div>
+        <p><span class="technical-token">GLVM</span> 為參與執行的多台 <span class="technical-token">TVM</span> 定義一套面向開發者的邏輯執行模型。它以統一邊界承載執行狀態與處理程序，重播、複製、最終確認與共識則由下層執行階段協調。</p>
+        <strong>位於多台機器之上的一個邏輯系統</strong>
+      </article>
+    </div>
+        <div class="glvm-axis"><div class="glvm-axis-row"><span>虛擬機抽象</span><strong>持續擴充</strong></div><div class="glvm-axis-row"><span>縱向原子性</span><strong>核心執行階段</strong></div><div class="glvm-axis-row"><span>橫向原子性</span><strong>路線圖</strong></div><div class="glvm-axis-row"><span>可組合安全</span><strong>核心執行階段</strong></div></div>
+
+    <aside class="glvm-definition-payoff">
+      <div class="glvm-definition-payoff-heading">
+        <span>核心結論</span>
+        <h3>統一的是邏輯執行層，不是物理機器</h3>
+      </div>
+      <p>開發者只需面向一套併發執行模型；排程、重播、能力檢查、複製與最終確認，則由執行階段在這一邏輯抽象<span class="technical-token">之下</span>協調。</p>
+    </aside>
+
+      </section>
+
+      <section class="glvm-architecture fade-in" id="architecture">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">三層架構</p>
+          <h2 class="glvm-semantic-heading">三層架構，面向開發者呈現為一套執行模型</h2>
+          <p class="glvm-semantic-copy">物理機器執行 <span class="technical-token">TVM</span>；這些 <span class="technical-token">TVM</span> 共同參與一套邏輯執行模型。未來，World OS 將進一步把這一層組織為可發現、可編排且受顯式能力約束的服務。</p>
+        </div>
+        <p class="glvm-layer-instruction">選擇任一層級，詳細資訊面板將同步更新。</p>
+        <div class="glvm-architecture-stage">
+          <div class="glvm-layer-stack" role="group" aria-label="三層架構，面向開發者呈現為一套執行模型">
+      <button class="glvm-layer glvm-layer--world" type="button" data-glvm-layer="world" data-layer-title="世界操作系統" data-layer-text="面向AI Agent與應用的未來服務層：負責註冊與發現、編排和可編程能力，讓服務可被發現，也讓協作規則清晰可見。" data-layer-status="路線圖" aria-pressed="false">
+        <span class="glvm-layer-index">03</span>
+        <span class="glvm-layer-label">第 3 層</span>
+        <strong>世界操作系統</strong>
+        <span class="glvm-layer-status">路線圖</span>
+        <span class="glvm-layer-items"><i>服務與AI Agent發現</i><i>服務編排</i><i>可編程能力</i></span>
+      </button>
+
+      <button class="glvm-layer glvm-layer--runtime is-active" type="button" data-glvm-layer="runtime" data-layer-title="GLVM 併發執行階段" data-layer-text="面向多台 TVM 的邏輯協調層。虛擬機抽象、併發控制、物件能力、確定性重播與最終確認語義，共同定義開發者看到的統一執行模型。" data-layer-status="核心執行階段 · 持續擴充" aria-pressed="true">
+        <span class="glvm-layer-index">02</span>
+        <span class="glvm-layer-label">第 2 層</span>
+        <strong><span class="technical-token">GLVM</span> 併發執行階段</strong>
+        <span class="glvm-layer-status">核心執行階段 · 持續擴充</span>
+        <span class="glvm-layer-items"><i><span class="technical-token">GLVM</span> 抽象</i><i>併發與重播</i><i>能力與最終確認</i></span>
+      </button>
+
+      <button class="glvm-layer glvm-layer--physical" type="button" data-glvm-layer="physical" data-layer-title="物理基礎設施" data-layer-text="真正執行工作的機器。公鏈節點構成目前執行基礎；私有或雲端 TVM 是下一步整合方向，客戶端設備 TVM 則屬於路線圖，未來可把這套模型延伸到本地執行。" data-layer-status="核心 · 整合 · 路線圖" aria-pressed="false">
+        <span class="glvm-layer-index">01</span>
+        <span class="glvm-layer-label">第 1 層</span>
+        <strong>物理基礎設施</strong>
+        <span class="glvm-layer-status">核心 · 整合 · 路線圖</span>
+        <span class="glvm-layer-items"><i>公鏈 <span class="technical-token">TVM</span></i><i>私有或雲端 <span class="technical-token">TVM</span></i><i>客戶端設備 <span class="technical-token">TVM</span></i></span>
+      </button>
+    </div>
+          <aside class="glvm-layer-inspector" aria-live="polite">
+            <span data-glvm-layer-status>核心執行階段 · 持續擴充</span>
+            <h3 data-glvm-layer-title><span class="technical-token">GLVM</span> 併發執行階段</h3>
+            <p data-glvm-layer-text>面向多台 <span class="technical-token">TVM</span> 的邏輯協調層。虛擬機抽象、併發控制、物件能力、確定性重播與最終確認語義，共同定義開發者看到的統一執行模型。</p>
+            <ul data-glvm-layer-items><li><span class="technical-token">GLVM</span> 抽象</li><li>併發與重播</li><li>能力與最終確認</li></ul>
+          </aside>
+        </div>
+      </section>
+
+
+    <section class="glvm-extension glvm-continuity fade-in" id="execution-continuity">
+      <header class="glvm-extension-header">
+        <div><p class="eyebrow">執行與原子性</p><h2 class="glvm-semantic-heading">一筆交易可以跨區塊等待，隨後作為一個整體結算</h2></div>
+        <p class="glvm-continuity-intro">執行模型從順序、平行工作，演進為能夠通訊、等待與恢復的併發處理程序。組合式執行進一步擴充此模型，讓多筆併發交易共享更高層的結算邊界；跨區塊連續性則為這個方向提供縱向基礎。</p>
+      </header>
+      <div class="glvm-continuity-frame">
+        <div class="glvm-continuity-tabs" role="tablist" aria-label="一筆交易可以跨區塊等待，隨後作為一個整體結算">
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-sequential" aria-controls="glvm-continuity-panel-sequential" aria-selected="false" tabindex="-1" data-glvm-continuity="sequential">
+      <span>01</span>
+      <strong>順序</strong>
+      <small>基礎模式</small>
+    </button>
+
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-parallel" aria-controls="glvm-continuity-panel-parallel" aria-selected="false" tabindex="-1" data-glvm-continuity="parallel">
+      <span>02</span>
+      <strong>平行</strong>
+      <small>核心執行階段</small>
+    </button>
+
+    <button class="glvm-continuity-tab is-active" type="button" role="tab" id="glvm-continuity-tab-concurrent" aria-controls="glvm-continuity-panel-concurrent" aria-selected="true" tabindex="0" data-glvm-continuity="concurrent">
+      <span>03</span>
+      <strong>併發</strong>
+      <small>核心執行階段</small>
+    </button>
+
+    <button class="glvm-continuity-tab" type="button" role="tab" id="glvm-continuity-tab-composite" aria-controls="glvm-continuity-panel-composite" aria-selected="false" tabindex="-1" data-glvm-continuity="composite">
+      <span>04</span>
+      <strong>組合式</strong>
+      <small>路線圖</small>
+    </button>
+  </div>
+        <div class="glvm-continuity-panels">
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-sequential" aria-labelledby="glvm-continuity-tab-sequential" data-glvm-continuity-panel="sequential" hidden>
+      <div class="glvm-continuity-visual">
+    <div class="glvm-continuity-scene glvm-continuity-scene--sequential" aria-hidden="true">
+      <span class="glvm-continuity-node glvm-continuity-node--brown"><bdi dir="auto">狀態 01</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">狀態 02</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">狀態 03</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">提交</bdi></span>
+    </div>
+  </div>
+      <div class="glvm-continuity-panel-copy"><span>基礎模式</span><h3>順序</h3><p>一次狀態轉換完成後，再進行下一次。</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-parallel" aria-labelledby="glvm-continuity-tab-parallel" data-glvm-continuity-panel="parallel" hidden>
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--parallel" aria-hidden="true">
+        <div><small><bdi dir="auto">路徑 A</bdi></small><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">TX A</bdi></span></div>
+        <div><small><bdi dir="auto">路徑 B</bdi></small><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">TX B</bdi></span></div>
+        <div><small><bdi dir="auto">路徑 C</bdi></small><span class="glvm-continuity-node glvm-continuity-node--purple"><bdi dir="auto">TX C</bdi></span></div>
+        <i></i>
+        <span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">匯合</bdi></span>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>核心執行階段</span><h3>平行</h3><p>相互獨立的狀態轉換同時推進。</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel is-active" role="tabpanel" id="glvm-continuity-panel-concurrent" aria-labelledby="glvm-continuity-tab-concurrent" data-glvm-continuity-panel="concurrent">
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--concurrent" aria-hidden="true">
+        <div class="glvm-continuity-process"><span class="glvm-continuity-node glvm-continuity-node--blue"><bdi dir="auto">處理程序 A</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--muted"><bdi dir="auto">等待</bdi></span></div>
+        <span class="glvm-continuity-message"><bdi dir="auto">COMM</bdi></span>
+        <div class="glvm-continuity-process"><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">處理程序 B</bdi></span><i></i><span class="glvm-continuity-node glvm-continuity-node--green"><bdi dir="auto">發送</bdi></span></div>
+        <div class="glvm-continuity-resume"><span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">恢復</bdi></span></div>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>核心執行階段</span><h3>併發</h3><p>處理程序透過通道通訊、等待並恢復。</p></div>
+    </article>
+
+    <article class="glvm-continuity-panel" role="tabpanel" id="glvm-continuity-panel-composite" aria-labelledby="glvm-continuity-tab-composite" data-glvm-continuity-panel="composite" hidden>
+      <div class="glvm-continuity-visual">
+      <div class="glvm-continuity-scene glvm-continuity-scene--composite" aria-hidden="true">
+        <div class="glvm-composite-objective">
+          <small><bdi dir="auto">同一個原子目標</bdi></small>
+          <div class="glvm-composite-transactions">
+            <span><bdi dir="auto">TX A</bdi><i></i><bdi dir="auto">就緒</bdi></span>
+            <span><bdi dir="auto">TX B</bdi><i></i><bdi dir="auto">等待</bdi></span>
+            <span><bdi dir="auto">TX C</bdi><i></i><bdi dir="auto">就緒</bdi></span>
+          </div>
+        </div>
+        <div class="glvm-composite-gate"><span></span><small><bdi dir="auto">全部生效 / 全部不生效</bdi></small></div>
+        <span class="glvm-continuity-node glvm-continuity-node--commit"><bdi dir="auto">統一提交</bdi></span>
+        <em><bdi dir="auto">路線圖</bdi></em>
+      </div>
+    </div>
+      <div class="glvm-continuity-panel-copy"><span>路線圖</span><h3>組合式</h3><p>多筆併發交易共享一個更高層的原子目標。</p></div>
+    </article>
+  </div>
+        <div class="glvm-atomicity">
+          <div class="glvm-atomicity-heading"><span>縱向原子性 · 核心執行階段</span><strong>跨區塊執行保留同一個交易上下文</strong></div>
+          <ol class="glvm-atomicity-rail">
+    <li>
+      <span>01 · 開始</span>
+      <strong>只開始一次</strong>
+      <p>以一筆交易和一組範圍明確的能力開始。</p>
+    </li>
+
+    <li>
+      <span>02 · 掛起</span>
+      <strong>等待，但不局部結算</strong>
+      <p>如果尚無答案或通道匹配，便保留延續，而不是提前完成最終確認。</p>
+    </li>
+
+    <li>
+      <span>03 · 記錄</span>
+      <strong>記錄選擇</strong>
+      <p><span class="technical-token">ReplayTrie</span> 會記錄非確定性選擇或經過認證的回應，以便重播該執行路徑。</p>
+    </li>
+
+    <li>
+      <span>04 · 恢復</span>
+      <strong>繼續同一筆交易</strong>
+      <p>匹配的 <span class="technical-token">COMM</span> 事件或已記錄的回應，會在後續區塊中喚醒此前保留的延續。</p>
+    </li>
+
+    <li>
+      <span>05 · 最終確認</span>
+      <strong>提交或丟棄</strong>
+      <p>在最終確認邊界，符合條件的狀態會被提交；被拒絕的暫定狀態會被丟棄。</p>
+    </li>
+  </ol>
+        </div>
+      </div>
+      <div class="glvm-continuity-notes">
+    <article class="glvm-continuity-note glvm-continuity-note--current">
+      <span>核心執行路徑</span>
+      <p><span class="technical-token">TVM</span> 併發執行 · <span class="technical-token">COMM</span> 等待與恢復 · <span class="technical-token">ReplayTrie</span> · 跨區塊延續與最終確認</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--current">
+      <span>原子性模型</span>
+      <p>暫定狀態在最終確認前不會成為已確認狀態；失敗路徑會被直接丟棄，而不是事後透過補償交易修復。</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--boundary">
+      <span>原生鏈下讀取</span>
+      <p>經過認證的 <span class="technical-token">HTTPS GET</span> 可以掛起執行、記錄回應、重播並恢復。資料的真實性仍由資料源決定；不可逆的鏈下副作用仍不在回滾範圍內。</p>
+    </article>
+
+    <article class="glvm-continuity-note glvm-continuity-note--roadmap">
+      <span>橫向原子性</span>
+      <p>跨分片原子執行與獨立外部系統的組合，定義了這套模型下一步的擴充方向。</p>
+    </article>
+  </div>
+    </section>
+
+
+    <section class="glvm-extension glvm-ocap-story fade-in" id="object-capability">
+      <header class="glvm-extension-header">
+        <div><p class="eyebrow">物件能力安全</p><h2 class="glvm-semantic-heading">只把一把鑰匙交給任務，而不是使用者的工牌</h2></div>
+        <p class="glvm-semantic-copy">基於身份的存取會把 <span class="technical-token">CEO</span> 工牌所代表的環境權限一並帶入任務。物件能力則只交給任務一把指向 <span class="technical-token">Bob</span> 記錄的鑰匙，邊界由 <span class="technical-token">TVM</span> 在執行階段檢查。沒有相應<span class="technical-token">能力引用</span>，任務便無法命名或存取其他既有物件。</p>
+      </header>
+      <div class="glvm-ocap-body">
+        <div class="glvm-ocap-copy">
+          <div class="glvm-ocap-compare">
+    <article class="glvm-ocap-card glvm-ocap-card--ambient">
+      <div class="glvm-ocap-card-visual" aria-hidden="true">
+        <img src="/assets/glvm/20260731_GLVM_OCAP_身份权限.svg?v=20260812-neck2" alt="" width="600" height="360" loading="lazy" decoding="async">
+      </div>
+      <div class="glvm-ocap-card-copy">
+        <span>寬泛的身份權限</span>
+        <h3>工牌會帶入無關權限</h3>
+        <p>即使任務只涉及 <span class="technical-token">Bob</span>，<span class="technical-token">CEO</span> 工牌所代表的環境權限<span class="technical-token">仍可能</span>覆蓋財務檔案，以及 <span class="technical-token">Alice</span>、<span class="technical-token">Carol</span> 和 <span class="technical-token">Bob</span> 的人員記錄。</p>
+      </div>
+    </article>
+
+    <article class="glvm-ocap-card glvm-ocap-card--explicit">
+      <div class="glvm-ocap-card-visual" aria-hidden="true">
+        <img src="/assets/glvm/20260731_GLVM_OCAP_对象能力.svg?v=20260812-neck2" alt="" width="600" height="360" loading="lazy" decoding="async">
+      </div>
+      <div class="glvm-ocap-card-copy">
+        <span>顯式傳入的物件能力</span>
+        <h3>只把指向 <span class="technical-token">Bob</span> 記錄的鑰匙交給任務</h3>
+        <p>這把鑰匙代表一個不可偽造的名字：它只指向 <span class="technical-token">Bob</span> 的記錄。沒有指向其他既有物件的鑰匙，任務便無法命名或存取那些未被顯式授予的物件。<span class="technical-token">TVM</span> 會在執行階段檢查這一邊界。</p>
+      </div>
+    </article>
+  </div>
+          <aside class="glvm-ocap-takeaway"><span><span class="technical-token">POLA</span> · 最小權限原則</span><p>模型層防護可以降低不安全行為的發生概率；物件能力邊界則在執行階段落實最小權限。任務若只有指向 <span class="technical-token">Bob</span> 記錄的鑰匙，即使遭到劫持，影響也會被限制在這一物件範圍內，不會擴充到 <span class="technical-token">CEO</span> 工牌所代表的其他環境權限。</p></aside>
+          <div class="glvm-ocap-boundary"><strong>術語說明</strong><p>這裡用“鑰匙”呈現 <span class="technical-token">OCAP</span> 中不可偽造的名字，也就是物件<span class="technical-token">能力引用</span>；它不是密碼學金鑰。該保證適用於 <span class="technical-token">TVM</span> 原生、以能力為中介的互動；託管型 <span class="technical-token">EVM</span> 權限和外部服務仍需各自的控制機制。</p></div>
+        </div>
+      </div>
+    </section>
+
+
+      <section class="glvm-journey fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">工作流程探索器</p>
+          <h2 class="glvm-semantic-heading">執行載體取決於信任要求、回應速度與資料本地性</h2>
+          <p>以跨公司設備維修為例：託管資金需要獨立驗證，診斷需要彈性算力，設備擁有者需要批准本地存取。<span class="technical-token">GLVM</span> 會為每項任務選擇符合其信任要求、時延與資料邊界的執行載體，同時保持權限明確。</p>
+        </div>
+        <div class="glvm-route-toolbar"><span>選擇一項需求</span><div>
+      <button class="glvm-route-button is-active" type="button" data-glvm-route="trust" data-route-title="公鏈 TVM + EVM 宿主" data-route-text="託管質保金並記錄批准路徑，讓獨立驗證者能夠驗證這次狀態轉換。" data-route-status="核心執行階段" aria-pressed="true">
+        <span>01</span>
+        <strong>需要獨立驗證</strong>
+      </button>
+
+      <button class="glvm-route-button" type="button" data-glvm-route="speed" data-route-title="私有或雲端 TVM" data-route-text="在彈性算力附近執行高負載診斷，同時讓權限範圍保持有限且明確。" data-route-status="整合中" aria-pressed="false">
+        <span>02</span>
+        <strong>需要低延遲</strong>
+      </button>
+
+      <button class="glvm-route-button" type="button" data-glvm-route="locality" data-route-title="客戶端設備 TVM" data-route-text="讀取本地傳感器資料並要求擁有者確認，無需上傳全部私密輸入。" data-route-status="路線圖" aria-pressed="false">
+        <span>03</span>
+        <strong>需要本地性</strong>
+      </button>
+    </div></div>
+        <div class="glvm-journey-board" data-glvm-journey data-journey-messages="[&quot;已就緒。啟動模擬，查看目標邏輯流程。&quot;,&quot;工作開始前，權限先被限定。&quot;,&quot;每個執行載體都會收到邊界明確的任務。&quot;,&quot;鏈上執行階段會保留處於等待狀態的延續。&quot;,&quot;匹配訊息喚醒了等待中的後續執行。&quot;,&quot;重播證據讓整條路徑可以復現。&quot;,&quot;鏈上結果逐步收斂；跨執行載體的原子提交是下一階段。&quot;]">
+          <div class="glvm-route-map" aria-hidden="true">
+            <div class="glvm-route-lines"><span></span><span></span><span></span></div>
+
+      <div class="glvm-substrate glvm-substrate--trust is-active" data-glvm-route-node="trust">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong>公鏈 <span class="technical-token">TVM</span> + <span class="technical-token">EVM</span> 宿主</strong>
+        <small>核心執行階段</small>
+      </div>
+
+      <div class="glvm-substrate glvm-substrate--speed" data-glvm-route-node="speed">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong>私有或雲端 <span class="technical-token">TVM</span></strong>
+        <small>整合中</small>
+      </div>
+
+      <div class="glvm-substrate glvm-substrate--locality" data-glvm-route-node="locality">
+        <span class="glvm-substrate-icon" aria-hidden="true"></span>
+        <strong>客戶端設備 <span class="technical-token">TVM</span></strong>
+        <small>路線圖</small>
+      </div>
+
+            <div class="glvm-route-core"><span><span class="technical-token">GLVM</span></span><strong><span class="technical-token">TVM</span> × N</strong><i aria-hidden="true"><b></b><b></b><b></b></i></div>
+            <div class="glvm-route-packet glvm-route-packet--one"></div>
+            <div class="glvm-route-packet glvm-route-packet--two"></div>
+            <div class="glvm-route-packet glvm-route-packet--three"></div>
+            <div class="glvm-commit-rail"><span>重播</span><i></i><span>提交</span></div>
+          </div>
+          <div class="glvm-route-detail" aria-live="polite">
+            <span data-glvm-route-status>核心執行階段</span>
+            <h3 data-glvm-route-title>公鏈 <span class="technical-token">TVM</span> + <span class="technical-token">EVM</span> 宿主</h3>
+            <p data-glvm-route-text>託管質保金並記錄批准路徑，讓獨立驗證者能夠驗證這次狀態轉換。</p>
+          </div>
+          <div class="glvm-journey-control">
+            <div><span>跟隨目標流程</span><strong data-glvm-progress>0 / 6</strong></div>
+            <div><button type="button" data-glvm-action="play">模擬工作流程</button><button type="button" data-glvm-action="reset">重置</button></div>
+            <p data-glvm-message aria-live="polite">已就緒。啟動模擬，查看目標邏輯流程。</p>
+          </div>
+          <div class="glvm-journey-steps">
+      <article class="glvm-journey-step is-current" data-glvm-step-card="1">
+        <span>01</span><h3>限定能力</h3><p>維修AI Agent只獲得完成這項任務所需的權限。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="2">
+        <span>02</span><h3>規劃分派</h3><p>工作流程將邊界明確的子任務分別映射到鏈上、私有或雲端，以及客戶端設備 <span class="technical-token">TVM</span>。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="3">
+        <span>03</span><h3>等待 / 掛起</h3><p>在鏈上執行階段中，若回覆尚未到達，系統會保留延續，而不是提前完成交易的最終確認。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="4">
+        <span>04</span><h3><span class="technical-token">COMM</span> 匹配</h3><p>結果與通道中等待的延續完成匹配，工作流程隨即從原處恢復。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="5">
+        <span>05</span><h3>重播證據</h3><p><span class="technical-token">ReplayTrie</span> 記錄必要的選擇，使其他驗證者能夠重播這次執行。</p>
+      </article>
+
+      <article class="glvm-journey-step" data-glvm-step-card="6">
+        <span>06</span><h3>最終確認邊界</h3><p><span class="technical-token">BlockGit</span> 與 <span class="technical-token">Block Merge</span> 讓可驗證的鏈上結果收斂。將同一次原子提交擴展至每個執行載體，是 <span class="technical-token">GLVM</span> 的未來目標。</p>
+      </article>
+    </div>
+        </div>
+      </section>
+
+      <section class="glvm-stack fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">執行階段剖面</p>
+          <h2>九個關鍵能力，支撐同一邏輯執行模型</h2>
+          <p><span class="technical-token">GLVM</span> 不是另一種位元碼虛擬機。以下九個架構切面從 <span class="technical-token">TVM</span> 執行、物件能力與重播，一路延伸到 <span class="technical-token">BlockGit</span>、客戶虛擬機（Guest VM）和開發者工具，共同呈現這一邏輯執行模型的能力體系。</p>
+        </div>
+        <div class="glvm-stack-flow" aria-label="九個關鍵能力，支撐同一邏輯執行模型">
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="0" data-flow-state="current" data-flow-status="核心執行階段" aria-pressed="true" aria-label="位元碼虛擬機: TVM · 元組空間 · COMM">
+        <span>01</span><strong>位元碼虛擬機</strong><small>核心執行階段</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="1" data-flow-state="current" data-flow-status="核心執行階段" aria-pressed="false" aria-label="安全: 原生物件能力">
+        <span>02</span><strong>安全</strong><small>核心執行階段</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="2" data-flow-state="current" data-flow-status="核心執行階段" aria-pressed="false" aria-label="原子性: 跨區塊原子執行">
+        <span>03</span><strong>原子性</strong><small>核心執行階段</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="3" data-flow-state="current" data-flow-status="核心執行階段" aria-pressed="false" aria-label="最終性: BlockGit · Fringe · 合併">
+        <span>04</span><strong>最終性</strong><small>核心執行階段</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="4" data-flow-state="current" data-flow-status="核心執行階段" aria-pressed="false" aria-label="重播: ReplayTrie · 執行軌跡">
+        <span>05</span><strong>重播</strong><small>核心執行階段</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="5" data-flow-state="current" data-flow-status="核心執行階段" aria-pressed="false" aria-label="網路: 對等節點與驗證者網路">
+        <span>06</span><strong>網路</strong><small>核心執行階段</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="6" data-flow-state="current" data-flow-status="核心執行階段" aria-pressed="false" aria-label="語言: Tolang → tolangc → .tox">
+        <span>07</span><strong>語言</strong><small>核心執行階段</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="7" data-flow-state="mixed" data-flow-status="evm 核心 · wasm 路線圖" aria-pressed="false" aria-label="客戶虛擬機: EVM 宿主 · WASM 路線圖">
+        <span>08</span><strong>客戶虛擬機</strong><small><span class="technical-token">EVM</span> 核心 · <span class="technical-token">WASM</span> 路線圖</small>
+      </button>
+
+      <button type="button" class="glvm-stack-flow-node" data-stack-index="8" data-flow-state="mixed" data-flow-status="開發者工具" aria-pressed="false" aria-label="工具鏈: 編譯器 · LSP · 試驗環境">
+        <span>09</span><strong>工具鏈</strong><small>開發者工具</small>
+      </button>
+    </div>
+        <ol class="glvm-stack-list">
+      <li class="glvm-stack-item" data-stack-index="0" data-stack-state="current" data-stack-status="核心執行階段">
+        <span class="glvm-stack-number">01</span>
+        <div class="glvm-stack-label"><span>位元碼虛擬機</span><strong>核心執行階段</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="21" width="25" height="30" rx="5"/><path d="M17 30h11M17 36h11M17 42h8"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="11"/><rect x="85" y="21" width="25" height="30" rx="5"/><path d="M92 30h11M92 36h11M92 42h8"/><path class="glvm-glyph-track" d="M35 36h14m22 0h14"/><path class="glvm-glyph-flow" d="M35 36h14m22 0h14"/></svg></div>
+        <div class="glvm-stack-copy"><h3><span class="technical-token">TVM</span> · 元組空間 · <span class="technical-token">COMM</span></h3><p>具體的併發<span class="technical-token">引擎</span>負責執行位元碼，並讓獨立處理程序透過通道交換資料與延續。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="1" data-stack-state="current" data-stack-status="核心執行階段">
+        <span class="glvm-stack-number">02</span>
+        <div class="glvm-stack-label"><span>安全</span><strong>核心執行階段</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="17" cy="36" r="7"/><circle cx="17" cy="36" r="3"/><path d="M24 36h25m-8 0v7m-8-7v5"/><rect class="glvm-glyph-pulse" x="49" y="25" width="22" height="22" rx="6"/><circle cx="98" cy="36" r="8"/><circle cx="98" cy="36" r="3"/><path class="glvm-glyph-track" d="M24 36h25m22 0h19"/><path class="glvm-glyph-flow" d="M24 36h25m22 0h19"/></svg></div>
+        <div class="glvm-stack-copy"><h3>原生物件能力</h3><p>不可偽造的引用讓可達權限顯式化，並使執行階段能夠執行最小權限邊界。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="2" data-stack-state="current" data-stack-status="核心執行階段">
+        <span class="glvm-stack-number">03</span>
+        <div class="glvm-stack-label"><span>原子性</span><strong>核心執行階段</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="17" width="100" height="38" rx="12"/><path class="glvm-glyph-track" d="M20 36h25m30 0h25"/><path class="glvm-glyph-flow" d="M20 36h25m30 0h25"/><path class="glvm-glyph-pulse" d="M60 22l15 8v13l-15 8-15-8V30zM45 30l15 8 15-8M60 38v13"/></svg></div>
+        <div class="glvm-stack-copy"><h3>跨區塊原子執行</h3><p>執行上下文可以跨區塊掛起，從保留的延續中恢復，並抵達延後的最終確認邊界。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="3" data-stack-state="current" data-stack-status="核心執行階段">
+        <span class="glvm-stack-number">04</span>
+        <div class="glvm-stack-label"><span>最終性</span><strong>核心執行階段</strong></div>
+        <div class="glvm-stack-glyph"><svg class="is-planned" viewBox="0 0 120 72" aria-hidden="true"><circle cx="18" cy="22" r="5"/><circle cx="18" cy="50" r="5"/><path d="M55 26l11 10-11 10-11-10z"/><circle class="glvm-glyph-pulse" cx="98" cy="36" r="8"/><path d="m94 36 3 3 6-7"/><path class="glvm-glyph-track" d="M23 22l21 11M23 50l21-11m22-3h24"/><path class="glvm-glyph-flow" d="M23 22l21 11M23 50l21-11m22-3h24"/></svg></div>
+        <div class="glvm-stack-copy"><h3><span class="technical-token">BlockGit</span> · Fringe · 合併</h3><p>區塊 DAG、確定性領導者輪換與合併規則，使鏈側併發工作得以收斂，而不依賴永久領導者。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="4" data-stack-state="current" data-stack-status="核心執行階段">
+        <span class="glvm-stack-number">05</span>
+        <div class="glvm-stack-label"><span>重播</span><strong>核心執行階段</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="22" cy="45" r="5"/><circle cx="60" cy="45" r="5"/><circle class="glvm-glyph-pulse" cx="98" cy="45" r="5"/><path class="glvm-glyph-track" d="M27 45h28m10 0h28M98 37C94 14 31 14 22 37"/><path class="glvm-glyph-flow" d="M27 45h28m10 0h28M98 37C94 14 31 14 22 37"/><path d="m21 29 1 8 8-2"/></svg></div>
+        <div class="glvm-stack-copy"><h3><span class="technical-token">ReplayTrie</span> · 執行軌跡</h3><p>已記錄的非確定性選擇與執行軌跡，使驗證者能夠重播被接受的路徑。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="5" data-stack-state="current" data-stack-status="核心執行階段">
+        <span class="glvm-stack-number">06</span>
+        <div class="glvm-stack-label"><span>網路</span><strong>核心執行階段</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><circle class="glvm-glyph-pulse" cx="60" cy="36" r="9"/><circle cx="22" cy="18" r="5"/><circle cx="98" cy="18" r="5"/><circle cx="22" cy="54" r="5"/><circle cx="98" cy="54" r="5"/><path class="glvm-glyph-track" d="M27 21l25 11M93 21 68 32M27 51l25-11m41 11L68 40"/><path class="glvm-glyph-flow" d="M27 21l25 11M93 21 68 32M27 51l25-11m41 11L68 40"/></svg></div>
+        <div class="glvm-stack-copy"><h3>對等節點與驗證者網路</h3><p>節點層在執行抽象<span class="technical-token">之下</span>傳遞提案、區塊、狀態證據，並協調驗證者。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="6" data-stack-state="current" data-stack-status="核心執行階段">
+        <span class="glvm-stack-number">07</span>
+        <div class="glvm-stack-label"><span>語言</span><strong>核心執行階段</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="24" width="26" height="24" rx="5"/><path d="M20 31l-5 5 5 5M27 31l5 5-5 5"/><rect class="glvm-glyph-pulse" x="47" y="24" width="26" height="24" rx="5"/><path d="M53 32h12m0 0-3-3m3 3-3 3M67 40H55m0 0 3-3m-3 3 3 3"/><rect x="84" y="24" width="26" height="24" rx="5"/><path d="M91 31h12M91 36h8M91 41h12"/><path class="glvm-glyph-track" d="M38 36h7m30 0h7"/><path class="glvm-glyph-flow" d="M38 36h7m30 0h7"/></svg></div>
+        <div class="glvm-stack-copy"><h3>Tolang → tolangc → .tox</h3><p>Tolang 描述併發處理程序；編譯器將源碼轉換為 <span class="technical-token">TVM</span> 可執行位元碼。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="7" data-stack-state="mixed" data-stack-status="evm 核心 · wasm 路線圖">
+        <span class="glvm-stack-number">08</span>
+        <div class="glvm-stack-label"><span>客戶虛擬機</span><strong><span class="technical-token">EVM</span> 核心 · <span class="technical-token">WASM</span> 路線圖</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="9" y="12" width="102" height="48" rx="10"/><rect x="20" y="23" width="32" height="26" rx="6"/><rect x="68" y="23" width="32" height="26" rx="6"/><circle cx="36" cy="36" r="6"/><path d="M33 33l6 6M39 33l-6 6M78 31l5 10 5-10"/><path class="glvm-glyph-track" d="M52 36h16m32 0h7"/><path class="glvm-glyph-flow" d="M52 36h16m32 0h7"/><circle class="glvm-glyph-pulse" cx="60" cy="36" r="3"/></svg></div>
+        <div class="glvm-stack-copy"><h3><span class="technical-token">EVM</span> 宿主 · <span class="technical-token">WASM</span> 路線圖</h3><p><span class="technical-token">EVM</span> 透過 <span class="technical-token">TSAC</span> 式協調，作為有狀態客戶虛擬機執行；<span class="technical-token">WASM</span> 則把這套架構延伸到異構虛擬機。</p></div>
+      </li>
+
+      <li class="glvm-stack-item" data-stack-index="8" data-stack-state="mixed" data-stack-status="開發者工具">
+        <span class="glvm-stack-number">09</span>
+        <div class="glvm-stack-label"><span>工具鏈</span><strong>開發者工具</strong></div>
+        <div class="glvm-stack-glyph"><svg viewBox="0 0 120 72" aria-hidden="true"><rect x="10" y="11" width="100" height="50" rx="8"/><path d="M10 25h100M20 18h3m7 0h3m7 0h3M24 35l7 6-7 6"/><path class="glvm-glyph-track" d="M40 47h50"/><path class="glvm-glyph-flow" d="M40 47h50"/><circle class="glvm-glyph-pulse" cx="97" cy="47" r="5"/></svg></div>
+        <div class="glvm-stack-copy"><h3>編譯器 · LSP · 試驗環境</h3><p>編譯器、LSP、試驗環境、測試套件與診斷工具，讓這套執行模型進入開發者的工作流程。</p></div>
+      </li>
+    </ol>
+      </section>
+
+      <section class="glvm-status fade-in">
+        <div class="section-heading glvm-section-heading">
+          <p class="eyebrow">擴充藍圖</p>
+          <h2 class="glvm-semantic-heading"><span class="technical-token">GLVM</span> 跨環境擴展，核心執行階段逐漸成形</h2>
+          <div class="glvm-status-intro">
+            <p class="glvm-semantic-copy"><span class="technical-token">GLVM</span> 正從 <span class="technical-token">ALUX</span> 的鏈上併發執行階段向外擴展。私有雲是下一步整合方向；客戶端設備與跨分片執行仍在路線圖中。下圖區分核心執行階段、目前正在擴展的執行載體，以及下一步架構目標。</p>
+            <div class="glvm-status-summary" aria-hidden="true">
+      <div class="glvm-status-summary-item glvm-status-summary-item--built" aria-label="核心執行階段: 6">
+        <span>06</span>
+        <small>核心執行階段</small>
+      </div>
+
+      <div class="glvm-status-summary-item glvm-status-summary-item--designed" aria-label="系統擴充: 5">
+        <span>05</span>
+        <small>系統擴充</small>
+      </div>
+
+      <div class="glvm-status-summary-item glvm-status-summary-item--planned" aria-label="路線圖: 6">
+        <span>06</span>
+        <small>路線圖</small>
+      </div>
+    </div>
+          </div>
+        </div>
+        <div class="glvm-status-grid">
+      <article class="glvm-status-group glvm-status-group--built">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">核心執行階段</span></h3>
+        <ul><li><span class="technical-token">TVM</span> 併發執行與 <span class="technical-token">COMM</span></li><li><span class="technical-token">ReplayTrie</span> 與執行軌跡</li><li>跨區塊掛起 / 恢復路徑</li><li>原生 <span class="technical-token">OCAP</span> 基礎</li><li><span class="technical-token">EVM</span> 宿主路徑</li><li><span class="technical-token">BlockGit</span> DAG、Fringe 與合併</li></ul>
+      </article>
+
+      <article class="glvm-status-group glvm-status-group--designed">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">系統擴充</span></h3>
+        <ul><li>私有或雲端<span class="technical-token">引擎</span>部署</li><li>跨部署載體的 <span class="technical-token">GLVM</span> 抽象</li><li>生產規模加固</li><li>更豐富的策略與受控通道機制</li><li>執行階段可觀測性與運維工具</li></ul>
+      </article>
+
+      <article class="glvm-status-group glvm-status-group--planned">
+        <h3><span class="glvm-status-dot" aria-hidden="true"></span><span class="glvm-status-title">路線圖</span></h3>
+        <ul><li>跨分片橫向原子性</li><li><span class="technical-token">WASM</span> 客戶虛擬機</li><li>客戶端設備 <span class="technical-token">TVM</span> 部署</li><li>帳戶抽象與能力註冊表</li><li>節點故障重同步與驗證者集合動態變更</li><li>可編程 World OS 層</li></ul>
+      </article>
+    </div>
+      </section>
+
+
+    <section class="glvm-next fade-in" aria-labelledby="glvm-next-title">
+      <div class="glvm-next-copy">
+        <p class="eyebrow">繼續學習</p>
+        <h2 id="glvm-next-title">繼續探索執行階段、AI Agent工作負載與系統對比</h2>
+        <p>Runtime Lab 詳解執行模型；“面向 AI Agent”展示工作負載模式；“<span class="technical-token">ALUX</span> 與其他系統”對比不同系統的架構與能力。</p>
+      </div>
+      <nav class="glvm-next-links" aria-labelledby="glvm-next-title">
+        <a class="glvm-next-link glvm-next-link--primary" href="/zh-hant/runtime-lab">
+          <span class="glvm-next-index" aria-hidden="true">01</span>
+          <span class="glvm-next-label">Runtime Lab</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+
+        <a class="glvm-next-link glvm-next-link--secondary" href="/zh-hant/for-ai-agents">
+          <span class="glvm-next-index" aria-hidden="true">02</span>
+          <span class="glvm-next-label">面向 AI Agent</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+
+        <a class="glvm-next-link glvm-next-link--tertiary" href="/zh-hant/alux-vs-others">
+          <span class="glvm-next-index" aria-hidden="true">03</span>
+          <span class="glvm-next-label"><span class="technical-token">ALUX</span> 與其他方案比較</span>
+          <span class="glvm-next-arrow" aria-hidden="true"></span>
+        </a>
+      </nav>
+    </section>
+
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">版權所有 © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script defer src="/i18n/runtime/zh-hant/glvm.js?v=47aff690e9d2"></script>
+<script defer src="/script.js?v=20261023-locales"></script>
+</body>
+</html>

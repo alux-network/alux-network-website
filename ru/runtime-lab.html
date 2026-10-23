@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(browserLanguage).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатория выполнения ALUX | ALUX Network</title>
+<link rel="canonical" href="https://www.alux.network/ru/runtime-lab">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/runtime-lab">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/runtime-lab">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/runtime-lab">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/runtime-lab">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/runtime-lab">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/runtime-lab">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/runtime-lab">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/runtime-lab">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/runtime-lab">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/runtime-lab">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/runtime-lab">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/runtime-lab">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="Наглядное руководство по текущему параллельному выполнению и взаимодействию через сообщения в ALUX, а также целевой модели атомарной композиции через границы систем.">
+<link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
+<link rel="stylesheet" href="/styles.css?v=20261023-locales">
+<link rel="stylesheet" href="/site-frame.css?v=20261023-locales">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ALUX Network">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://www.alux.network/ru/runtime-lab">
+<meta property="og:title" content="Лаборатория выполнения ALUX | ALUX Network">
+<meta property="og:description" content="Наглядное руководство по текущему параллельному выполнению и взаимодействию через сообщения в ALUX, а также целевой модели атомарной композиции через границы систем.">
+<meta property="og:image" content="https://www.alux.network/assets/social/pages/ru/runtime-lab.jpg?v=20261015">
+<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/ru/runtime-lab.jpg?v=20261015">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Лаборатория выполнения ALUX | ALUX Network">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Лаборатория выполнения ALUX | ALUX Network">
+<meta name="twitter:description" content="Наглядное руководство по текущему параллельному выполнению и взаимодействию через сообщения в ALUX, а также целевой модели атомарной композиции через границы систем.">
+<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/ru/runtime-lab.jpg?v=20261015">
+<meta name="twitter:image:alt" content="Лаборатория выполнения ALUX | ALUX Network">
+</head>
+<body data-page="parallelConcurrentComposable">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/ru" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/optimized/alux-logo.0ddab7cca545.webp" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="/ru" data-nav="home">Главная</a>
+        <a href="/ru/for-ai-agents" data-nav="vs">Для ИИ-агентов</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">Изучение</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/ru/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/ru/runtime-lab" data-nav="learnPcc" class="active-link" aria-current="page">Лаборатория выполнения</a>
+            <a href="/ru/alux-vs-others" data-nav="learnAlux">ALUX и другие системы</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">Блог</a>
+        <a href="/ru/team" data-nav="team">Команда</a>
+        <a href="/ru/roadmap" data-nav="roadmap">План развития</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Язык</span><span class="lang-current" data-lang-current>Русский</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/runtime-lab" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/runtime-lab" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/runtime-lab" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/runtime-lab" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/runtime-lab" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/runtime-lab" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/runtime-lab" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/runtime-lab" hreflang="es">Español</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/runtime-lab" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/runtime-lab" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/runtime-lab" hreflang="ar">العربية</a></div></div>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">Связаться с нами</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Открыть или закрыть меню навигации"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="ru">
+    <article class="pcc-page" data-pcc-root data-pcc-active="parallel">
+      <header class="pcc-hero fade-in">
+        <div class="pcc-hero-copy">
+          <p class="eyebrow">Изучение / Лаборатория выполнения</p>
+          <h1>Лаборатория выполнения</h1>
+          <p class="pcc-hero-subtitle">Параллельность / конкурентность / компонуемость</p>
+          <p class="pcc-hero-text"><span class="technical-token">ALUX</span> поддерживает воспроизводимые длинные транзакции: независимые задачи выполняются вместе, а транзакции координируются сообщениями. Сценарий бронирования иллюстрирует целевую модель совместной фиксации связанных межсистемных эффектов как единого атомарного результата.</p>
+          <div class="pcc-hero-signals" aria-label="Runtime signals"><div class="pcc-signal"><span>Позиционирование</span><strong>Децентрализованная конкурентная среда выполнения</strong></div><div class="pcc-signal"><span>Выполнение</span><strong>Выполнять, взаимодействовать, ждать, завершать</strong></div><div class="pcc-signal"><span>Граница</span><strong>Процессы с ограниченными полномочиями</strong></div></div>
+        </div>
+        <figure class="pcc-hero-visual">
+          <div class="pcc-image-frame pcc-image-frame--hero">
+            <img src="/assets/parallel-concurrent-composable/alux-runtime.webp?v=20260708-heroimg1" alt="Детальная техническая иллюстрация среды выполнения ALUX, соединяющей узлы, облачные сервисы, устройства, агентов, токены полномочий и линии фиксации." loading="eager" fetchpriority="high" data-pcc-image>
+            <span class="pcc-image-fallback">Детальная техническая иллюстрация среды выполнения <span class="technical-token">ALUX</span>, соединяющей узлы, облачные сервисы, устройства, агентов, токены полномочий и линии фиксации.</span>
+          </div>
+        </figure>
+      </header>
+
+      <section class="pcc-intro-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">Простое различие</p>
+          <h2>Три слова — три совершенно разные задачи среды выполнения</h2>
+          <p>Параллелизм выполняет независимые транзакции одновременно. Конкурентность позволяет транзакциям взаимодействовать через каналы: одна может ждать подходящего сообщения от другой, а затем продолжиться. Компонуемость связывает переходы состояния разных систем в единый проверяемый атомарный переход.</p>
+          <p class="pcc-intro-claim">В текущей среде выполнения <span class="technical-token">ALUX</span> независимая работа может идти параллельно, транзакции координируются сообщениями, а выполнение возобновляется между блоками. Атомарная композиция независимых систем остаётся архитектурной целью.</p>
+        </div>
+      </section>
+
+      <section class="pcc-mode-section fade-in" aria-label="Три слова — три совершенно разные задачи среды выполнения">
+        <div class="pcc-mode-toolbar" aria-label="Runtime mode selector"><button class="pcc-mode-button is-active" type="button" data-pcc-mode="parallel" aria-pressed="true"><span>01</span> Параллельность</button><button class="pcc-mode-button" type="button" data-pcc-mode="concurrent" aria-pressed="false"><span>02</span> Конкурентность</button><button class="pcc-mode-button" type="button" data-pcc-mode="composable" aria-pressed="false"><span>03</span> Компонуемость</button></div>
+        <div class="pcc-mode-stage">
+          <div class="pcc-mode-visuals">
+      <figure class="pcc-mode-visual is-active" data-pcc-visual="parallel" aria-hidden="false">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/parallel.svg?v=20260812-motion-restore4" alt="Несколько изолированных линий выполнения продвигаются одновременно." loading="eager" data-pcc-image>
+          <span class="pcc-image-fallback">Несколько изолированных линий выполнения продвигаются одновременно.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>Параллельность</span><strong>Четыре туристических поиска завершаются независимо</strong></figcaption>
+        <div class="pcc-mode-impact"><span>Что это позволяет</span><p>За то же время завершается больше независимой работы. Но один лишь параллелизм не позволяет задачам обмениваться сообщениями или длинной транзакции ожидать и продолжаться.</p><strong>Параллелизм находит несколько ответов сразу. Он не заставляет эти задачи взаимодействовать.</strong></div>
+      </figure>
+
+      <figure class="pcc-mode-visual" data-pcc-visual="concurrent" aria-hidden="true">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/concurrent.svg?v=20260812-motion-restore4" alt="Две транзакции взаимодействуют через канал пространства кортежей: одна ждёт подходящее сообщение, другая его отправляет, и ожидающее продолжение возобновляется, пока несвязанная работа продвигается дальше." loading="lazy" data-pcc-image>
+          <span class="pcc-image-fallback">Две транзакции взаимодействуют через канал пространства кортежей: одна ждёт подходящее сообщение, другая его отправляет, и ожидающее продолжение возобновляется, пока несвязанная работа продвигается дальше.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>Конкурентность</span><strong>Бронирование ждёт; агент отеля отвечает; начинается следующий шаг</strong></figcaption>
+        <div class="pcc-mode-impact"><span>Что это позволяет</span><p>Туристический агент может поддерживать одну длинную транзакцию между блоками: ждать наличия номера, ответа API или решения пользователя, а затем продолжить, не блокируя несвязанную работу.</p><strong>Конкурентность превращает ответ в следующий шаг: совпадение создаёт новое продолжение, а не просто перезапускает остановленную линию.</strong></div>
+      </figure>
+
+      <figure class="pcc-mode-visual" data-pcc-visual="composable" aria-hidden="true">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/composable.svg?v=20260812-motion-restore4" alt="Резерв номера и авторизация платежа поступают из разных систем. Только когда готовы оба, за атомарную границу выходит единое подтверждение бронирования." loading="lazy" data-pcc-image>
+          <span class="pcc-image-fallback">Резерв номера и авторизация платежа поступают из разных систем. Только когда готовы оба, за атомарную границу выходит единое подтверждение бронирования.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>Компонуемость</span><strong>Бронирование подтверждается, только если резервирование и оплата успешны</strong></figcaption>
+        <div class="pcc-mode-impact"><span>Что это позволяет</span><p>Ожидаемый результат — избежать незавершённого бронирования: списания денег без номера или удержания номера без оплаты.</p><strong>Целевая модель композиции даёт разным системам единый результат «всё или ничего»; конкурентность передаёт сообщения, ведущие к общей фиксации.</strong></div>
+      </figure>
+    </div>
+          <div class="pcc-mode-copy" aria-live="polite">
+      <article class="pcc-mode-panel is-active" data-pcc-panel="parallel" aria-hidden="false">
+        <p class="pcc-mode-kicker">Параллельность</p>
+        <h3>Рейсы, отели, трансферы и страховки<br>ищутся одновременно</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>Что это означает</dt><dd>Параллельное выполнение означает одновременную работу независимых задач. Туристический агент может искать рейсы, номера, трансферы и страховки, не заставляя один поиск ждать другого.</dd></div>
+          <div><dt>Как это делает <span class="technical-token">ALUX</span></dt><dd>Параллельное выполнение встроено в исчисление процессов <span class="technical-token">ALUX</span>: транзакции не используют общую память, а любое взаимодействие ограничено каналами пространства кортежей. Поэтому независимые транзакции продвигаются по отдельным линиям <span class="technical-token">TVM</span>, а <span class="technical-token">Block Merge</span> разрешает пересечения состояния при фиксации.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>Что это позволяет</dt><dd>За то же время завершается больше независимой работы. Но один лишь параллелизм не позволяет задачам обмениваться сообщениями или длинной транзакции ожидать и продолжаться.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">Параллелизм находит несколько ответов сразу. Он не заставляет эти задачи взаимодействовать.</p>
+      </article>
+
+      <article class="pcc-mode-panel" data-pcc-panel="concurrent" aria-hidden="true">
+        <p class="pcc-mode-kicker">Конкурентность</p>
+        <h3>Бронирование ждёт наличия номера<br>и продолжается после ответа</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>Что это означает</dt><dd>Конкурентность начинается, когда задачи взаимодействуют. Бронирование может оставить условие ожидания в канале, а гостиничный сервис позже удовлетворит его, отправив подходящее сообщение о наличии номера.</dd></div>
+          <div><dt>Как это делает <span class="technical-token">ALUX</span></dt><dd>Ожидающая операция consume хранится как ресурс в пространстве кортежей. Операция produce другой транзакции совпадает с ней, вызывая событие <span class="technical-token">COMM</span>, которое порождает продолжение и переводит контекст выполнения из Inactive обратно в Running. Если возможно несколько совпадений, <span class="technical-token">ReplayTrie</span> записывает выбранный <span class="technical-token">COMM</span> для детерминированного воспроизведения.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>Что это позволяет</dt><dd>Туристический агент может поддерживать одну длинную транзакцию между блоками: ждать наличия номера, ответа API или решения пользователя, а затем продолжить, не блокируя несвязанную работу.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">Конкурентность превращает ответ в следующий шаг: совпадение создаёт новое продолжение, а не просто перезапускает остановленную линию.</p>
+      </article>
+
+      <article class="pcc-mode-panel" data-pcc-panel="composable" aria-hidden="true">
+        <p class="pcc-mode-kicker">Компонуемость</p>
+        <h3>Номер и платёж<br>подтверждаются вместе</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>Что это означает</dt><dd>Композиция — не обычная группировка. Цель в этом примере — зафиксировать резерв номера и авторизацию платежа вместе либо не фиксировать ни то ни другое.</dd></div>
+          <div><dt>Как это делает <span class="technical-token">ALUX</span></dt><dd>Текущая среда выполнения предоставляет координацию через пространство кортежей, ограниченные ссылки <span class="technical-token">OCAP</span>, продолжение между блоками, <span class="technical-token">ReplayTrie</span> и <span class="technical-token">Block Merge</span>. Сквозная атомарная композиция независимых внешних систем остаётся проектной целью, строящейся на этих примитивах.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>Что это позволяет</dt><dd>Ожидаемый результат — избежать незавершённого бронирования: списания денег без номера или удержания номера без оплаты.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">Целевая модель композиции даёт разным системам единый результат «всё или ничего»; конкурентность передаёт сообщения, ведущие к общей фиксации.</p>
+      </article>
+    </div>
+        </div>
+      </section>
+
+      <section class="pcc-lab-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">Попробуйте всю среду выполнения</p>
+          <h2>Смоделируйте атомарное бронирование</h2>
+          <p class="pcc-lab-intro">Исследуйте целевую модель композиции четырьмя действиями: запустите проверки резервирования и оплаты, задайте ожидание наличия номера, передайте подходящее сообщение отеля и смоделируйте совместное подтверждение.</p>
+        </div>
+        <div class="pcc-lab-board" data-pcc-lab data-lab-state="idle" data-msg-idle="Начните с шага 1. Резервирование и платёж управляются отдельно в одной среде выполнения." data-msg-parallel="Параллельность: проверки резервирования и оплаты продвигаются одновременно, без общего состояния." data-msg-paused="Конкурентное ожидание: резервирование оставляет в канале условие наличия номера; работа с платежом может продолжаться." data-msg-resumed="Сообщение сопоставлено: отель отвечает о наличии номера. ALUX активирует продолжение бронирования; если совпадений могло быть несколько, ReplayTrie фиксирует выбранное." data-msg-settled="Цель композиции: резерв номера и авторизация платежа завершаются вместе как единый результат бронирования «всё или ничего».">
+          <div class="pcc-lab-steps"><article class="pcc-lab-step" data-pcc-step="parallel"><span>01</span><strong>Запустить обе проверки</strong><p>Проверки резервирования и оплаты продвигаются независимо.</p></article><article class="pcc-lab-step" data-pcc-step="paused"><span>02</span><strong>Ждать номер</strong><p>Резервирование оставляет условие наличия номера в канале.</p></article><article class="pcc-lab-step" data-pcc-step="resumed"><span>03</span><strong>Отель отвечает</strong><p>Подходящее сообщение активирует продолжение бронирования.</p></article><article class="pcc-lab-step" data-pcc-step="settled"><span>04</span><strong>Подтвердить вместе</strong><p>Резерв номера и авторизация платежа фиксируются как единый результат.</p></article></div>
+          <div class="pcc-lab-runtime" aria-hidden="true">
+            <div class="pcc-lab-lanes">
+      <div class="pcc-lab-lane pcc-lab-lane--1">
+        <span class="pcc-lab-lane-label">Состояние резервирования</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--1" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--2">
+        <span class="pcc-lab-lane-label">Сообщение отеля</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--2" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--3">
+        <span class="pcc-lab-lane-label">Состояние платежа</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--3" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--4">
+        <span class="pcc-lab-lane-label">Подтверждение бронирования</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--4" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+    <div class="pcc-lab-event" aria-hidden="true"><span>Сообщение сопоставлено</span></div></div>
+            <div class="pcc-lab-checkpoint" data-pcc-lab-checkpoint data-checkpoint-idle="Ожидаются оба результата" data-checkpoint-settled="Бронирование подтверждено"><span>Ожидаются оба результата</span></div>
+          </div>
+          <div class="pcc-lab-side">
+            <div class="pcc-lab-status">
+              <span>Состояние</span>
+              <strong data-pcc-lab-score>0 / 4</strong>
+            </div>
+            <p class="pcc-lab-play-label">Пройдите шаги по порядку</p>
+            <div class="pcc-lab-controls">
+              <button type="button" data-pcc-action="parallel">1. Запустить обе проверки</button>
+              <button type="button" data-pcc-action="pause" disabled>2. Ждать номер</button>
+              <button type="button" data-pcc-action="resume" disabled>3. Отправить ответ отеля</button>
+              <button type="button" data-pcc-action="settle" disabled>4. Подтвердить бронирование</button>
+              <button type="button" data-pcc-action="reset">Сбросить</button>
+            </div>
+            <p class="pcc-lab-message" data-pcc-lab-message>Начните с шага 1. Резервирование и платёж управляются отдельно в одной среде выполнения.</p>
+          </div>
+          <div class="pcc-lab-benefits"><article class="pcc-lab-benefit" data-pcc-benefit="parallel"><span>Параллельность</span><strong>Две проверки выполняются вместе</strong><p>Независимая работа не ждёт в единой глобальной очереди.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="paused"><span>Конкурентность</span><strong>Бронирование ждёт ответа отеля</strong><p>Зависимость хранится в канале, не блокируя среду выполнения.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="resumed"><span>Совпадение сообщения</span><strong>Ответ создаёт следующий шаг</strong><p><span class="technical-token">COMM</span> создаёт продолжение; <span class="technical-token">ReplayTrie</span> записывает выбор, только если совпадение недетерминированно.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="settled"><span>Компонуемость</span><strong>Номер и платёж подтверждаются вместе</strong><p>Цель — единый результат «всё или ничего» с воспроизводимыми данными о фиксации.</p></article></div>
+        </div>
+      </section>
+
+      <section class="pcc-foundation-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">Путь выполнения</p>
+          <h2>Что поддерживает жизнь сервиса</h2>
+          <p>Долгоживущий сервис сохраняет согласованность, потому что каждый шаг может выполняться, взаимодействовать, нести явные полномочия, детерминированно воспроизводиться и завершаться по единому проверяемому атомарному пути.</p>
+        </div>
+        <div class="pcc-foundation-grid"><article class="pcc-foundation-item"><span>Выполнить</span><h3>Жизненный цикл процесса <span class="technical-token">TVM</span></h3><p>Процесс может разветвиться, ожидать в одном блоке и возобновиться в последующем, не перезапуская локальный контекст выполнения.</p></article><article class="pcc-foundation-item"><span>Взаимодействовать</span><h3>Пространство кортежей + <span class="technical-token">COMM</span></h3><p>Ожидающая операция consume встречает produce другой транзакции. Совпадение активирует продолжение, пока несвязанная работа продвигается дальше.</p></article><article class="pcc-foundation-item"><span>Авторизовать</span><h3>Границы <span class="technical-token">OCAP</span></h3><p>Неподделываемые ссылки на полномочия передаются явно, поэтому каждый шаг получает только необходимые права; идентичность не вносит автоматически посторонние полномочия в область доступа.</p></article><article class="pcc-foundation-item"><span>Воспроизвести</span><h3><span class="technical-token">ReplayTrie</span></h3><p>Записываются только значимые недетерминированные решения <span class="technical-token">COMM</span>, чтобы валидаторы могли воспроизвести то же выполнение.</p></article><article class="pcc-foundation-item"><span>Завершить</span><h3><span class="technical-token">BlockGit</span> + <span class="technical-token">Block Merge</span></h3><p>Конкурентная работа попадает в проверенные фронтиры, где пересечения до достижения окончательности классифицируются как принятые, отклонённые или неопределённые.</p></article></div>
+      </section>
+
+
+    <section class="pcc-glvm-bridge fade-in">
+      <div class="pcc-glvm-bridge-copy">
+        <p class="eyebrow">Следующий слой</p>
+        <h2>Единая логическая среда выполнения для множества окружений</h2>
+        <p>Лаборатория выполнения показывает текущее параллельное выполнение и взаимодействие через сообщения, а затем иллюстрирует целевую модель атомарной композиции. <span class="technical-token">GLVM</span> описывает более широкую архитектуру расширения этой логической модели на узлы блокчейна, облачные сервисы и личные устройства.</p>
+      </div>
+      <a class="button secondary pcc-glvm-bridge-link" href="/ru/glvm#architecture">Изучить <span class="technical-token">GLVM</span><span aria-hidden="true">→</span></a>
+    </section>
+
+
+      <section class="pcc-close-section fade-in">
+        <div class="pcc-close-copy">
+          <p class="eyebrow">Почему это важно</p>
+          <h2>Не более быстрые блоки, а долгоживущие сервисы.</h2>
+          <p>Параллелизм обеспечивает независимое выполнение. Конкурентность — взаимодействие через сообщения, ожидание и возобновление. <span class="technical-token">ALUX</span> уже реализует эти основы среды выполнения и движется к атомарной композиции через границы систем.</p>
+        </div>
+        <div class="pcc-close-points"><article class="pcc-close-point"><span>Только параллелизм</span><p>Выше пропускная способность, но нет зависимостей между транзакциями или сопоставления сообщений.</p></article><article class="pcc-close-point"><span>Только конкурентность</span><p>Транзакции могут взаимодействовать и ожидать, но межсистемные эффекты всё ещё могут фиксироваться отдельно.</p></article><article class="pcc-close-point"><span>Только компонуемость</span><p>Атомарная граница есть, но без взаимодействия и ожидания она не может поддерживать длительные зависимости.</p></article></div>
+        <div class="hero-actions pcc-close-actions"><a class="button primary" href="/ru/alux-vs-others">Назад к сравнению <span class="technical-token">ALUX</span> с другими системами</a><a class="button secondary" href="/ru/for-ai-agents">Для ИИ-агентов</a></div>
+      </section>
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Авторские права © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script defer src="/i18n/runtime/ru/parallelConcurrentComposable.js?v=e268fc220010"></script>
+<script defer src="/script.js?v=20261023-locales"></script>
+</body>
+</html>

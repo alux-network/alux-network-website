@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(browserLanguage).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lộ trình | ALUX Network</title>
+<link rel="canonical" href="https://www.alux.network/vi/roadmap">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/roadmap">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/roadmap">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/roadmap">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/roadmap">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/roadmap">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/roadmap">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/roadmap">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/roadmap">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/roadmap">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/roadmap">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/roadmap">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/roadmap">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="Lộ trình phát triển ALUX Network: các cột mốc theo quý cho runtime TVM, đồng thuận BlockGit, bộ công cụ Tolang và khả năng tương thích EVM từ năm 2023 đến 2027.">
+<link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
+<link rel="stylesheet" href="/styles.css?v=20261023-locales">
+<link rel="stylesheet" href="/roadmap.css?v=20261014-details">
+<link rel="stylesheet" href="/site-frame.css?v=20261023-locales">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ALUX Network">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:url" content="https://www.alux.network/vi/roadmap">
+<meta property="og:title" content="Lộ trình | ALUX Network">
+<meta property="og:description" content="Lộ trình phát triển ALUX Network: các cột mốc theo quý cho runtime TVM, đồng thuận BlockGit, bộ công cụ Tolang và khả năng tương thích EVM từ năm 2023 đến 2027.">
+<meta property="og:image" content="https://www.alux.network/assets/social/pages/vi/roadmap.jpg?v=20261015">
+<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/vi/roadmap.jpg?v=20261015">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lộ trình | ALUX Network">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lộ trình | ALUX Network">
+<meta name="twitter:description" content="Lộ trình phát triển ALUX Network: các cột mốc theo quý cho runtime TVM, đồng thuận BlockGit, bộ công cụ Tolang và khả năng tương thích EVM từ năm 2023 đến 2027.">
+<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/vi/roadmap.jpg?v=20261015">
+<meta name="twitter:image:alt" content="Lộ trình | ALUX Network">
+</head>
+<body data-page="roadmap">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/vi" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/optimized/alux-logo.0ddab7cca545.webp" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="Điều hướng chính">
+        <a href="/vi" data-nav="home">Trang chủ</a>
+        <a href="/vi/for-ai-agents" data-nav="vs">Dành cho AI Agent</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">Tìm hiểu</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/vi/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/vi/runtime-lab" data-nav="learnPcc">Runtime Lab</a>
+            <a href="/vi/alux-vs-others" data-nav="learnAlux">ALUX và các nền tảng khác</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">Blog</a>
+        <a href="/vi/team" data-nav="team">Đội ngũ</a>
+        <a href="/vi/roadmap" data-nav="roadmap" class="active-link" aria-current="page">Lộ trình</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Ngôn ngữ</span><span class="lang-current" data-lang-current>Tiếng Việt</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/roadmap" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/roadmap" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/roadmap" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/roadmap" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/roadmap" hreflang="ko">한국어</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/roadmap" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/roadmap" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/roadmap" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/roadmap" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/roadmap" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/roadmap" hreflang="ar">العربية</a></div></div>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">Liên hệ</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Bật/tắt menu điều hướng"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main id="page-content" class="roadmap-static" data-static="true" data-prerendered="vi">
+      <section class="hero hero-simple fade-in roadmap-hero">
+        <div class="hero-copy roadmap-hero-copy">
+          <span class="roadmap-kicker"><span class="technical-token">ALUX</span></span>
+          <h1>Lộ trình</h1>
+          <p class="roadmap-updated">Cập nhật lần cuối: ngày 5 tháng 10 năm 2026</p>
+        </div>
+      </section>
+
+    <div class="roadmap-order" role="group" aria-label="Thứ tự lộ trình"><button type="button" data-roadmap-order="newest" aria-pressed="true">Mới nhất <span aria-hidden="true">↑</span></button><button type="button" data-roadmap-order="oldest" aria-pressed="false">Cũ nhất <span aria-hidden="true">↓</span></button></div>
+<section data-year="2027" class="section fade-in roadmap-year-section roadmap-year-section--2027">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2027</span>
+          <span class="roadmap-kicker">Năm 2027</span>
+          <h2>2027</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--planned">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">Quý 1 năm 2027</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">Đã lên kế hoạch</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Chứng minh hình thức trong Lean cho các thuộc tính hệ thống trọng yếu <span class="roadmap-item-status">(Đã lên kế hoạch)</span></li>
+              <li>Ra mắt testnet <span class="roadmap-item-status">(Đã lên kế hoạch)</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2026" class="section fade-in roadmap-year-section roadmap-year-section--2026">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2026</span>
+          <span class="roadmap-kicker">Năm 2026</span>
+          <h2>2026</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--active">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">Quý 4 năm 2026</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--planned">Đã lên kế hoạch</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Triển khai đồng hồ logic và cơ chế thực thi mức cô lập <span class="roadmap-item-status">(Đang thực hiện)</span></li>
+              <li>Công cụ gỡ lỗi và quan sát <span class="technical-token">TVM</span> kiểu GDB <span class="roadmap-item-status">(Đang thực hiện)</span></li>
+              <li>Hoàn thiện mô hình hạch toán chi phí <span class="roadmap-item-status">(Đang thực hiện)</span></li>
+              <li>Tích hợp bộ công cụ Ethereum <span class="roadmap-item-status">(Đang thực hiện)</span></li>
+              <li>Triển khai và kiểm thử hợp đồng proof-of-stake (PoS) <span class="roadmap-item-status">(Đã lên kế hoạch)</span></li>
+              <li>Triển khai cơ chế đồng bộ hóa và khôi phục sau lỗi <span class="roadmap-item-status">(Đã lên kế hoạch)</span></li>
+              <li>Triển khai thu gom rác <span class="roadmap-item-status">(Đã lên kế hoạch)</span></li>
+              <li class="roadmap-break-bullet">Cung cấp ví dụ Solidity minh họa việc điều phối smart contract / agent <span class="roadmap-break-tail">(async/await, join, select) <span class="roadmap-item-status">(Đã lên kế hoạch)</span></span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">Quý 3 năm 2026</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Hỗ trợ hàm đồng bộ bên cạnh hàm bất đồng bộ hiện có, cùng closure và áp dụng hàm từng phần <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Registry hệ thống ban đầu, trừu tượng hóa tài khoản, hợp đồng xác nhận quyền và ủy quyền capability <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Đơn giản hóa bộ lập lịch tác vụ <span class="technical-token">TVM</span> và giúp kiểm thử thực thi đồng thời dễ dàng hơn <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Theo dõi ngữ cảnh thực thi dựa trên ledger để hoàn tác đáng tin cậy qua các ngữ cảnh lồng nhau <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Trình thông dịch tham chiếu Tolang dùng để xác minh đầu ra của trình biên dịch <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Bộ định dạng mã Tolang, macro Rust tolang! và chức năng đi tới định nghĩa/đổi tên trong IDE <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Client API TypeScript với các binding có kiểu được tạo từ giao diện RPC của node <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Trình thông dịch <span class="technical-token">TVM</span> mới hỗ trợ collection lồng nhau, vòng lặp, closure và tính gas bước đầu <span class="roadmap-item-status">(Đang xem xét)</span></li>
+              <li>Sandbox <span class="technical-token">EVM</span> mới dựa trên trap <span class="roadmap-item-status">(Đang thực hiện)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">Quý 2 năm 2026</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Parser Tolang gốc <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Hỗ trợ hằng số thời gian biên dịch trong Tolang <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Language server Tolang và extension Tolang cho VS Code <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Tái cấu trúc framework kiểm thử <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Thực hiện kiểm thử tích hợp đầu-cuối toàn hệ thống, bao gồm cả lớp đồng thuận <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Hoàn thiện triển khai API <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Phát triển CLI cho node <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Tùy chỉnh blockchain explorer để trực quan hóa thực thi xuyên block và hoàn tất nguyên tử <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Sandbox <span class="technical-token">EVM</span> mới dựa trên trap <span class="roadmap-item-status">(Đang thực hiện)</span></li>
+              <li>Tích hợp bộ công cụ Ethereum <span class="roadmap-item-status">(Đang thực hiện)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">Quý 1 năm 2026</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Đơn giản hóa cơ chế phát lại cho thực thi xuyên block <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Giới thiệu sandbox <span class="technical-token">EVM</span> mới để tăng hiệu quả và đơn giản hóa <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Tái cấu trúc đồng thuận, cơ sở dữ liệu và framework <span class="technical-token">TVM</span> để tăng tính mô-đun <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Triển khai kiểm thử thực thi xuyên block và phát lại bởi validator chạy lười <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Phát triển TupleSpace Explorer để trực quan hóa tiến độ thực thi và trạng thái <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2025" class="section fade-in roadmap-year-section roadmap-year-section--2025">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2025</span>
+          <span class="roadmap-kicker">Năm 2025</span>
+          <h2>2025</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--active">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">Quý 4 năm 2025</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Kiểm thử thực thi xuyên block khi chưa có đồng thuận <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Tái cấu trúc framework <span class="technical-token">TVM</span> để tăng tính mô-đun <span class="roadmap-item-status">(Đang thực hiện)</span></li>
+              <li>Đặc tả và triển khai endpoint API <span class="roadmap-item-status">(Đang thực hiện)</span></li>
+              <li>Thiết kế đồng hồ logic và cơ chế thực thi mức cô lập <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">Quý 3 năm 2025</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Triển khai cơ chế thực thi, đánh thức, đóng gói và phát lại giao dịch dài xuyên nhiều block cùng fringe hoàn tất <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Tái cấu trúc module cơ sở dữ liệu để cải thiện hiệu năng và hiệu quả <span class="roadmap-item-status">(Đang thực hiện)</span></li>
+              <li>Tái cấu trúc framework <span class="technical-token">TVM</span> để tăng tính mô-đun <span class="roadmap-item-status">(Đang thực hiện)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">Quý 2 năm 2025</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Triển khai và kiểm thử Weaklink trong giao thức <span class="technical-token">BlockGit</span> <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Đưa vào các kiểu hành vi channel đơn giản để đơn giản hóa kiến trúc <span class="technical-token">TVM</span> và tăng độ tin cậy <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Đưa vào framework kiểm thử mã Tolang được tạo ngẫu nhiên và tích hợp CI <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Tái cấu trúc logic phát lại <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">Quý 1 năm 2025</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Tái cấu trúc toàn hệ thống thành framework hướng sự kiện để hỗ trợ thực thi giao dịch đồng thời, phát lại block và đề xuất block nhằm đạt mức đồng thời tối đa <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Triển khai endpoint RPC và cập nhật <span class="technical-token">BlockGit</span> để xử lý block bị thiếu <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Khắc phục rò rỉ bộ nhớ trong <span class="technical-token">BlockGit</span> và cải thiện hiệu năng <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Đưa Weaklink vào giao thức <span class="technical-token">BlockGit</span> và triển khai một phần <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2024" class="section fade-in roadmap-year-section roadmap-year-section--2024">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2024</span>
+          <span class="roadmap-kicker">Năm 2024</span>
+          <h2>2024</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">Quý 4 năm 2024</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Tích hợp <span class="technical-token">BlockGit</span> vào nền tảng node <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Kiểm thử giao thức đồng thuận trên mạng Docker <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Triển khai thuật toán giải quyết xung đột khi hợp nhất block <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Tái cấu trúc module lưu trữ để hỗ trợ truy vấn và cam kết trạng thái <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">Quý 3 năm 2024</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Ngữ cảnh thực thi hỗ trợ hoàn tác một phần quá trình thực thi <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Thiết kế và triển khai ban đầu <span class="technical-token">BlockGit</span>, một giao thức đồng thuận mới <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Trình mô phỏng sự kiện rời rạc để kiểm thử việc triển khai giao thức đồng thuận <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Module P2P tích hợp <span class="technical-token">BlockGit</span> bước đầu <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">Quý 2 năm 2024</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Tái cấu trúc và hợp nhất logic thực thi và phát lại trong không gian bộ <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Triển khai việc thực thi và phát lại lệnh gọi HTTPS bên ngoài để chứng minh khả năng cộng tác chủ động với các hệ thống <span class="technical-token">Web 2.0</span> mà không cần oracle / relayer <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Triển khai ban đầu giao thức đồng thuận Blocklace <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Thiết kế lại việc quản lý trạng thái để giảm mức sử dụng bộ nhớ <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Thiết kế cấu trúc dữ liệu đồng hồ logic và thuật toán dùng để thực thi các mức cô lập <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">Quý 1 năm 2024</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Triển khai và kiểm thử registry toàn cục <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Hỗ trợ lập trình hàm trong Tolang và <span class="technical-token">TVM</span> <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Hỗ trợ tính toán tuần tự an toàn với luồng trên <span class="technical-token">TVM</span> đồng thời <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Thực hiện kiểm thử sơ bộ về khả năng tương thích <span class="technical-token">EVM</span> <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Triển khai lưu trữ trạng thái <span class="technical-token">EVM</span> để hỗ trợ mức cô lập read-committed <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Tái cấu trúc mã và kiểm thử toàn diện tính đúng đắn cũng như khả năng phát lại của <span class="technical-token">TVM</span> <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+<section data-year="2023" class="section fade-in roadmap-year-section roadmap-year-section--2023">
+        <div class="section-heading roadmap-section-heading roadmap-section-heading--year">
+          <span class="roadmap-year-ghost" aria-hidden="true">2023</span>
+          <span class="roadmap-kicker">Năm 2023</span>
+          <h2>2023</h2>
+        </div>
+        <div class="roadmap-milestone-grid">
+          <article data-quarter="4" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q4"><span class="sr-only">Quý 4 năm 2023</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q4</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Triển khai trình quản lý tác vụ mới để xử lý lỗi tốt hơn và hỗ trợ tính cục bộ của luồng <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Cải thiện hiệu năng bằng cách bổ sung hỗ trợ tính toán tuần tự <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Kiểm thử kiểu channel đặc biệt <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Sử dụng kiểu channel đặc biệt để đơn giản hóa nhật ký phát lại <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="3" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q3"><span class="sr-only">Quý 3 năm 2023</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q3</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Kiểm thử lớp lưu trữ <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Kiểm thử thực thi máy ảo đồng thời và phát lại có tính xác định <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Đặc tả và triển khai kiểu channel đặc biệt <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="2" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q2"><span class="sr-only">Quý 2 năm 2023</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q2</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Triển khai thực thi và phát lại cho máy ảo đồng thời <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Đặc tả và triển khai lớp lưu trữ <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+            </ul>
+          </article>
+
+          <article data-quarter="1" class="roadmap-milestone roadmap-milestone--done">
+            <div class="roadmap-milestone-head">
+              <p class="roadmap-milestone-time" data-quarter="Q1"><span class="sr-only">Quý 1 năm 2023</span><bdi class="roadmap-quarter-visible" dir="ltr" aria-hidden="true">Q1</bdi></p>
+              <div class="roadmap-status-row"><span class="roadmap-status-chip roadmap-status-chip--done">Hoàn tất</span></div>
+            </div>
+            <ul class="roadmap-bullet-list">
+              <li>Triển khai và kiểm thử opcode cho máy ảo đồng thời <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+              <li>Cấu trúc dữ liệu phát lại có tính xác định cho giao dịch đồng thời <span class="roadmap-item-status">(Đã hoàn thành)</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+</main>
+
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Bản quyền © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script defer src="/i18n/runtime/vi/roadmap.js?v=a52206a836de"></script>
+<script defer src="/script.js?v=20261023-locales"></script>
+</body>
+</html>

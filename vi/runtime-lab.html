@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(browserLanguage).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALUX Runtime Lab | ALUX Network</title>
+<link rel="canonical" href="https://www.alux.network/vi/runtime-lab">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/runtime-lab">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/runtime-lab">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/runtime-lab">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/runtime-lab">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/runtime-lab">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/runtime-lab">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/runtime-lab">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/runtime-lab">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/runtime-lab">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/runtime-lab">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/runtime-lab">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/runtime-lab">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="Hướng dẫn trực quan về thực thi song song và dựa trên thông điệp hiện có của ALUX, cùng mô hình mục tiêu cho việc kết hợp nguyên tử xuyên ranh giới hệ thống.">
+<link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
+<link rel="stylesheet" href="/styles.css?v=20261023-locales">
+<link rel="stylesheet" href="/site-frame.css?v=20261023-locales">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ALUX Network">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:url" content="https://www.alux.network/vi/runtime-lab">
+<meta property="og:title" content="ALUX Runtime Lab | ALUX Network">
+<meta property="og:description" content="Hướng dẫn trực quan về thực thi song song và dựa trên thông điệp hiện có của ALUX, cùng mô hình mục tiêu cho việc kết hợp nguyên tử xuyên ranh giới hệ thống.">
+<meta property="og:image" content="https://www.alux.network/assets/social/pages/vi/runtime-lab.jpg?v=20261015">
+<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/vi/runtime-lab.jpg?v=20261015">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ALUX Runtime Lab | ALUX Network">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ALUX Runtime Lab | ALUX Network">
+<meta name="twitter:description" content="Hướng dẫn trực quan về thực thi song song và dựa trên thông điệp hiện có của ALUX, cùng mô hình mục tiêu cho việc kết hợp nguyên tử xuyên ranh giới hệ thống.">
+<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/vi/runtime-lab.jpg?v=20261015">
+<meta name="twitter:image:alt" content="ALUX Runtime Lab | ALUX Network">
+</head>
+<body data-page="parallelConcurrentComposable">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/vi" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/optimized/alux-logo.0ddab7cca545.webp" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="Điều hướng chính">
+        <a href="/vi" data-nav="home">Trang chủ</a>
+        <a href="/vi/for-ai-agents" data-nav="vs">Dành cho AI Agent</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">Tìm hiểu</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/vi/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/vi/runtime-lab" data-nav="learnPcc" class="active-link" aria-current="page">Runtime Lab</a>
+            <a href="/vi/alux-vs-others" data-nav="learnAlux">ALUX và các nền tảng khác</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">Blog</a>
+        <a href="/vi/team" data-nav="team">Đội ngũ</a>
+        <a href="/vi/roadmap" data-nav="roadmap">Lộ trình</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Ngôn ngữ</span><span class="lang-current" data-lang-current>Tiếng Việt</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/runtime-lab" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/runtime-lab" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/runtime-lab" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/runtime-lab" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/runtime-lab" hreflang="ko">한국어</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/runtime-lab" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/runtime-lab" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/runtime-lab" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/runtime-lab" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/runtime-lab" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/runtime-lab" hreflang="ar">العربية</a></div></div>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">Liên hệ</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Bật/tắt menu điều hướng"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="vi">
+    <article class="pcc-page" data-pcc-root data-pcc-active="parallel">
+      <header class="pcc-hero fade-in">
+        <div class="pcc-hero-copy">
+          <p class="eyebrow">Tìm hiểu / Runtime Lab</p>
+          <h1>Runtime Lab</h1>
+          <p class="pcc-hero-subtitle">Song song / Đồng thời / Có thể kết hợp</p>
+          <p class="pcc-hero-text"><span class="technical-token">ALUX</span> hỗ trợ giao dịch dài có thể phát lại: các tác vụ độc lập chạy cùng nhau và các giao dịch phối hợp qua thông điệp. Tình huống đặt phòng minh họa mô hình mục tiêu để quyết toán các hiệu ứng liên quan giữa nhiều hệ thống thành một kết quả nguyên tử.</p>
+          <div class="pcc-hero-signals" aria-label="Runtime signals"><div class="pcc-signal"><span>Định vị</span><strong>Runtime đồng thời phi tập trung</strong></div><div class="pcc-signal"><span>Thực thi</span><strong>Chạy, tương tác, chờ, quyết toán</strong></div><div class="pcc-signal"><span>Ranh giới</span><strong>Quy trình có phạm vi capability</strong></div></div>
+        </div>
+        <figure class="pcc-hero-visual">
+          <div class="pcc-image-frame pcc-image-frame--hero">
+            <img src="/assets/parallel-concurrent-composable/alux-runtime.webp?v=20260708-heroimg1" alt="Minh họa kỹ thuật cao cấp về runtime ALUX kết nối node, dịch vụ cloud, thiết bị, agent, token capability và các luồng commit." loading="eager" fetchpriority="high" data-pcc-image>
+            <span class="pcc-image-fallback">Minh họa kỹ thuật cao cấp về runtime <span class="technical-token">ALUX</span> kết nối node, dịch vụ cloud, thiết bị, agent, token capability và các luồng commit.</span>
+          </div>
+        </figure>
+      </header>
+
+      <section class="pcc-intro-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">Khác biệt đơn giản</p>
+          <h2>Ba từ, ba nhiệm vụ runtime rất khác nhau</h2>
+          <p>Xử lý song song cho phép các giao dịch độc lập chạy cùng lúc. Tính đồng thời cho phép giao dịch tương tác qua channel: một giao dịch có thể chờ thông điệp khớp từ giao dịch khác rồi tiếp tục. Khả năng kết hợp gắn các chuyển trạng thái từ nhiều hệ thống vào một chuyển trạng thái nguyên tử có thể kiểm toán.</p>
+          <p class="pcc-intro-claim">Trong runtime <span class="technical-token">ALUX</span> hiện tại, công việc độc lập có thể chạy song song, giao dịch phối hợp qua thông điệp và việc thực thi có thể tiếp tục qua nhiều block. Kết hợp nguyên tử giữa các hệ thống độc lập vẫn là mục tiêu kiến trúc.</p>
+        </div>
+      </section>
+
+      <section class="pcc-mode-section fade-in" aria-label="Ba từ, ba nhiệm vụ runtime rất khác nhau">
+        <div class="pcc-mode-toolbar" aria-label="Runtime mode selector"><button class="pcc-mode-button is-active" type="button" data-pcc-mode="parallel" aria-pressed="true"><span>01</span> Song song</button><button class="pcc-mode-button" type="button" data-pcc-mode="concurrent" aria-pressed="false"><span>02</span> Đồng thời</button><button class="pcc-mode-button" type="button" data-pcc-mode="composable" aria-pressed="false"><span>03</span> Có thể kết hợp</button></div>
+        <div class="pcc-mode-stage">
+          <div class="pcc-mode-visuals">
+      <figure class="pcc-mode-visual is-active" data-pcc-visual="parallel" aria-hidden="false">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/parallel.svg?v=20260812-motion-restore4" alt="Nhiều luồng thực thi cô lập cùng tiến về phía trước." loading="eager" data-pcc-image>
+          <span class="pcc-image-fallback">Nhiều luồng thực thi cô lập cùng tiến về phía trước.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>Song song</span><strong>Bốn lượt tìm kiếm du lịch hoàn tất độc lập</strong></figcaption>
+        <div class="pcc-mode-impact"><span>Khả năng được mở ra</span><p>Hoàn tất được nhiều công việc độc lập hơn trong cùng khoảng thời gian. Tuy nhiên, chỉ xử lý song song thì không thể giúp các công việc trao đổi thông điệp hoặc để giao dịch dài chờ rồi tiếp tục.</p><strong>Xử lý song song tìm được nhiều kết quả cùng lúc. Nhưng nó không khiến các công việc đó tương tác với nhau.</strong></div>
+      </figure>
+
+      <figure class="pcc-mode-visual" data-pcc-visual="concurrent" aria-hidden="true">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/concurrent.svg?v=20260812-motion-restore4" alt="Hai giao dịch tương tác qua channel tuple-space: một giao dịch chờ thông điệp khớp, giao dịch kia gửi thông điệp đó; phần tiếp diễn đang chờ được khôi phục trong khi công việc không liên quan vẫn tiếp tục." loading="lazy" data-pcc-image>
+          <span class="pcc-image-fallback">Hai giao dịch tương tác qua channel tuple-space: một giao dịch chờ thông điệp khớp, giao dịch kia gửi thông điệp đó; phần tiếp diễn đang chờ được khôi phục trong khi công việc không liên quan vẫn tiếp tục.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>Đồng thời</span><strong>Đặt phòng đang chờ; agent khách sạn phản hồi; bước tiếp theo bắt đầu</strong></figcaption>
+        <div class="pcc-mode-impact"><span>Khả năng được mở ra</span><p>Agent du lịch có thể duy trì một giao dịch dài xuyên nhiều block: chờ phòng trống, phản hồi API hoặc quyết định của người dùng, rồi tiếp tục mà không chặn công việc không liên quan.</p><strong>Tính đồng thời biến phản hồi thành bước kế tiếp: khi khớp, nó tạo phần tiếp diễn mới thay vì chỉ khởi động lại luồng đã dừng.</strong></div>
+      </figure>
+
+      <figure class="pcc-mode-visual" data-pcc-visual="composable" aria-hidden="true">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/composable.svg?v=20260812-motion-restore4" alt="Yêu cầu giữ phòng và ủy quyền thanh toán đến từ các hệ thống khác nhau. Chỉ sau khi cả hai sẵn sàng, xác nhận đặt phòng mới đi qua ranh giới nguyên tử." loading="lazy" data-pcc-image>
+          <span class="pcc-image-fallback">Yêu cầu giữ phòng và ủy quyền thanh toán đến từ các hệ thống khác nhau. Chỉ sau khi cả hai sẵn sàng, xác nhận đặt phòng mới đi qua ranh giới nguyên tử.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>Có thể kết hợp</span><strong>Chỉ xác nhận đặt phòng khi cả giữ phòng và thanh toán đều thành công</strong></figcaption>
+        <div class="pcc-mode-impact"><span>Khả năng được mở ra</span><p>Mục tiêu là tránh tình trạng đặt phòng dở dang, chẳng hạn đã trừ tiền nhưng không có phòng hoặc đã giữ phòng nhưng chưa thanh toán.</p><strong>Mô hình kết hợp mục tiêu cho các hệ thống khác nhau một kết quả tất cả-hoặc-không-gì-cả; tính đồng thời vận chuyển các thông điệp dẫn tới lần commit chung đó.</strong></div>
+      </figure>
+    </div>
+          <div class="pcc-mode-copy" aria-live="polite">
+      <article class="pcc-mode-panel is-active" data-pcc-panel="parallel" aria-hidden="false">
+        <p class="pcc-mode-kicker">Song song</p>
+        <h3>Tìm chuyến bay, khách sạn, xe đưa đón và bảo hiểm<br>cùng lúc</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>Ý nghĩa</dt><dd>Thực thi song song nghĩa là các công việc độc lập chạy cùng lúc. Agent du lịch có thể tìm chuyến bay, phòng, xe đưa đón và bảo hiểm mà không cần đợi một lượt tìm kiếm hoàn tất rồi mới bắt đầu lượt khác.</dd></div>
+          <div><dt><span class="technical-token">ALUX</span> thực hiện ra sao</dt><dd>Thực thi song song vốn có trong phép tính tiến trình của <span class="technical-token">ALUX</span>: các giao dịch không dùng chung bộ nhớ, mọi tương tác chỉ diễn ra qua channel tuple-space. Vì vậy, các giao dịch độc lập tiến triển trên những luồng <span class="technical-token">TVM</span> riêng, còn <span class="technical-token">Block Merge</span> xử lý phần trạng thái giao nhau tại thời điểm commit.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>Khả năng được mở ra</dt><dd>Hoàn tất được nhiều công việc độc lập hơn trong cùng khoảng thời gian. Tuy nhiên, chỉ xử lý song song thì không thể giúp các công việc trao đổi thông điệp hoặc để giao dịch dài chờ rồi tiếp tục.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">Xử lý song song tìm được nhiều kết quả cùng lúc. Nhưng nó không khiến các công việc đó tương tác với nhau.</p>
+      </article>
+
+      <article class="pcc-mode-panel" data-pcc-panel="concurrent" aria-hidden="true">
+        <p class="pcc-mode-kicker">Đồng thời</p>
+        <h3>Lượt đặt phòng chờ phòng trống<br>rồi tiếp tục khi nhận phản hồi</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>Ý nghĩa</dt><dd>Tính đồng thời bắt đầu khi các công việc tương tác. Lượt đặt phòng có thể để lại một điều kiện đang chờ trong channel; dịch vụ khách sạn có thể đáp ứng điều kiện đó sau bằng cách gửi thông điệp phù hợp về tình trạng phòng.</dd></div>
+          <div><dt><span class="technical-token">ALUX</span> thực hiện ra sao</dt><dd>Lệnh consume đang chờ được lưu thành tài nguyên trong tuple space. Lệnh produce từ giao dịch khác khớp với nó, kích hoạt sự kiện <span class="technical-token">COMM</span> để tạo phần tiếp diễn và chuyển Execution Context từ Inactive sang Running. Nếu có thể khớp nhiều thông điệp, <span class="technical-token">ReplayTrie</span> ghi lại <span class="technical-token">COMM</span> được chọn để phát lại có tính xác định.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>Khả năng được mở ra</dt><dd>Agent du lịch có thể duy trì một giao dịch dài xuyên nhiều block: chờ phòng trống, phản hồi API hoặc quyết định của người dùng, rồi tiếp tục mà không chặn công việc không liên quan.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">Tính đồng thời biến phản hồi thành bước kế tiếp: khi khớp, nó tạo phần tiếp diễn mới thay vì chỉ khởi động lại luồng đã dừng.</p>
+      </article>
+
+      <article class="pcc-mode-panel" data-pcc-panel="composable" aria-hidden="true">
+        <p class="pcc-mode-kicker">Có thể kết hợp</p>
+        <h3>Phòng và khoản thanh toán<br>được xác nhận cùng nhau</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>Ý nghĩa</dt><dd>Khả năng kết hợp không chỉ là gom các thao tác lại. Trong ví dụ này, mục tiêu là commit cả việc giữ phòng lẫn ủy quyền thanh toán, hoặc không commit thao tác nào.</dd></div>
+          <div><dt><span class="technical-token">ALUX</span> thực hiện ra sao</dt><dd>Runtime hiện tại cung cấp khả năng phối hợp tuple-space, tham chiếu <span class="technical-token">OCAP</span> có phạm vi, phần tiếp diễn xuyên block, <span class="technical-token">ReplayTrie</span> và <span class="technical-token">Block Merge</span>. Kết hợp nguyên tử đầu-cuối giữa các hệ thống bên ngoài độc lập vẫn là mục tiêu thiết kế được xây dựng từ những thành phần này.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>Khả năng được mở ra</dt><dd>Mục tiêu là tránh tình trạng đặt phòng dở dang, chẳng hạn đã trừ tiền nhưng không có phòng hoặc đã giữ phòng nhưng chưa thanh toán.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">Mô hình kết hợp mục tiêu cho các hệ thống khác nhau một kết quả tất cả-hoặc-không-gì-cả; tính đồng thời vận chuyển các thông điệp dẫn tới lần commit chung đó.</p>
+      </article>
+    </div>
+        </div>
+      </section>
+
+      <section class="pcc-lab-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">Thử toàn bộ runtime</p>
+          <h2>Mô phỏng một lượt đặt phòng nguyên tử</h2>
+          <p class="pcc-lab-intro">Dùng bốn thao tác để khám phá mô hình kết hợp mục tiêu: bắt đầu kiểm tra đặt chỗ và thanh toán, chờ phòng trống, gửi thông điệp khớp từ khách sạn rồi mô phỏng xác nhận chung.</p>
+        </div>
+        <div class="pcc-lab-board" data-pcc-lab data-lab-state="idle" data-msg-idle="Bắt đầu từ bước 1. Việc đặt chỗ và thanh toán được quản lý riêng trong cùng runtime." data-msg-parallel="Song song: các bước kiểm tra đặt chỗ và thanh toán tiến triển cùng lúc mà không dùng chung trạng thái." data-msg-paused="Chờ đồng thời: đặt chỗ để lại điều kiện phòng còn trống trong channel; công việc thanh toán vẫn có thể tiếp tục." data-msg-resumed="Thông điệp đã khớp: khách sạn phản hồi phòng còn trống. ALUX kích hoạt phần tiếp diễn đặt phòng; nếu có nhiều thông điệp khớp, ReplayTrie cố định lựa chọn được dùng." data-msg-settled="Mục tiêu kết hợp: giữ phòng và ủy quyền thanh toán được hoàn tất cùng nhau thành kết quả đặt phòng tất cả-hoặc-không-gì-cả.">
+          <div class="pcc-lab-steps"><article class="pcc-lab-step" data-pcc-step="parallel"><span>01</span><strong>Bắt đầu cả hai bước kiểm tra</strong><p>Các bước kiểm tra đặt chỗ và thanh toán tiến triển độc lập.</p></article><article class="pcc-lab-step" data-pcc-step="paused"><span>02</span><strong>Chờ phòng</strong><p>Việc đặt chỗ để lại điều kiện phòng còn trống trong channel.</p></article><article class="pcc-lab-step" data-pcc-step="resumed"><span>03</span><strong>Khách sạn phản hồi</strong><p>Thông điệp khớp kích hoạt phần tiếp diễn đặt phòng.</p></article><article class="pcc-lab-step" data-pcc-step="settled"><span>04</span><strong>Xác nhận cùng nhau</strong><p>Việc giữ phòng và ủy quyền thanh toán được commit thành một kết quả.</p></article></div>
+          <div class="pcc-lab-runtime" aria-hidden="true">
+            <div class="pcc-lab-lanes">
+      <div class="pcc-lab-lane pcc-lab-lane--1">
+        <span class="pcc-lab-lane-label">Trạng thái đặt chỗ</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--1" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--2">
+        <span class="pcc-lab-lane-label">Thông điệp khách sạn</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--2" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--3">
+        <span class="pcc-lab-lane-label">Trạng thái thanh toán</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--3" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--4">
+        <span class="pcc-lab-lane-label">Xác nhận đặt phòng</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--4" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+    <div class="pcc-lab-event" aria-hidden="true"><span>Thông điệp đã khớp</span></div></div>
+            <div class="pcc-lab-checkpoint" data-pcc-lab-checkpoint data-checkpoint-idle="Đang chờ cả hai" data-checkpoint-settled="Đã xác nhận đặt phòng"><span>Đang chờ cả hai</span></div>
+          </div>
+          <div class="pcc-lab-side">
+            <div class="pcc-lab-status">
+              <span>Trạng thái</span>
+              <strong data-pcc-lab-score>0 / 4</strong>
+            </div>
+            <p class="pcc-lab-play-label">Phát theo thứ tự</p>
+            <div class="pcc-lab-controls">
+              <button type="button" data-pcc-action="parallel">1. Bắt đầu cả hai bước kiểm tra</button>
+              <button type="button" data-pcc-action="pause" disabled>2. Chờ phòng</button>
+              <button type="button" data-pcc-action="resume" disabled>3. Gửi phản hồi từ khách sạn</button>
+              <button type="button" data-pcc-action="settle" disabled>4. Xác nhận đặt phòng</button>
+              <button type="button" data-pcc-action="reset">Đặt lại</button>
+            </div>
+            <p class="pcc-lab-message" data-pcc-lab-message>Bắt đầu từ bước 1. Việc đặt chỗ và thanh toán được quản lý riêng trong cùng runtime.</p>
+          </div>
+          <div class="pcc-lab-benefits"><article class="pcc-lab-benefit" data-pcc-benefit="parallel"><span>Song song</span><strong>Hai bước kiểm tra chạy cùng lúc</strong><p>Công việc độc lập không phải chờ phía sau một hàng đợi toàn cục.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="paused"><span>Đồng thời</span><strong>Đặt phòng chờ khách sạn</strong><p>Phụ thuộc được lưu trong channel thay vì chặn runtime.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="resumed"><span>Khớp thông điệp</span><strong>Phản hồi tạo bước tiếp theo</strong><p><span class="technical-token">COMM</span> tạo phần tiếp diễn; <span class="technical-token">ReplayTrie</span> chỉ ghi lại lựa chọn khi việc khớp không xác định.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="settled"><span>Có thể kết hợp</span><strong>Phòng và khoản thanh toán được xác nhận cùng nhau</strong><p>Mục tiêu là một kết quả tất cả-hoặc-không-gì-cả cùng bằng chứng quyết toán có thể tái tạo.</p></article></div>
+        </div>
+      </section>
+
+      <section class="pcc-foundation-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">Luồng runtime</p>
+          <h2>Điều gì giúp dịch vụ duy trì hoạt động</h2>
+          <p>Dịch vụ chạy dài duy trì tính nhất quán vì mọi bước đều có thể chạy, tương tác, mang quyền hạn tường minh, được phát lại một cách xác định và quyết toán theo cùng một luồng nguyên tử có thể xác minh.</p>
+        </div>
+        <div class="pcc-foundation-grid"><article class="pcc-foundation-item"><span>Chạy</span><h3>Vòng đời tiến trình <span class="technical-token">TVM</span></h3><p>Một tiến trình có thể tạo nhánh, chờ trong một block rồi tiếp tục ở block sau mà không khởi động lại ngữ cảnh thực thi cục bộ.</p></article><article class="pcc-foundation-item"><span>Tương tác</span><h3>Tuple space + <span class="technical-token">COMM</span></h3><p>Một lệnh consume đang chờ khớp với lệnh produce của giao dịch khác. Sự khớp này kích hoạt phần tiếp diễn trong khi công việc không liên quan vẫn tiếp tục.</p></article><article class="pcc-foundation-item"><span>Cấp quyền</span><h3>Ranh giới <span class="technical-token">OCAP</span></h3><p>Tham chiếu capability không thể giả mạo được truyền tường minh, vì vậy mỗi bước chỉ nhận quyền hạn cần thiết; danh tính không tự động đưa quyền hạn không liên quan vào phạm vi.</p></article><article class="pcc-foundation-item"><span>Phát lại</span><h3><span class="technical-token">ReplayTrie</span></h3><p>Chỉ những lựa chọn <span class="technical-token">COMM</span> không xác định có ảnh hưởng mới được ghi lại, nhờ vậy validator có thể tái tạo cùng một quá trình thực thi.</p></article><article class="pcc-foundation-item"><span>Quyết toán</span><h3><span class="technical-token">BlockGit</span> + <span class="technical-token">Block Merge</span></h3><p>Công việc đồng thời đi vào các fringe đã xác minh; trước khi xác lập tính chung cuộc, phần giao nhau được phân loại là được chấp nhận, bị từ chối hoặc chưa phân định.</p></article></div>
+      </section>
+
+
+    <section class="pcc-glvm-bridge fade-in">
+      <div class="pcc-glvm-bridge-copy">
+        <p class="eyebrow">Lớp tiếp theo</p>
+        <h2>Một runtime logic trên nhiều môi trường</h2>
+        <p>Runtime Lab trình bày việc thực thi song song và dựa trên thông điệp hiện có, sau đó minh họa mô hình mục tiêu cho kết hợp nguyên tử. <span class="technical-token">GLVM</span> mô tả kiến trúc rộng hơn để mở rộng mô hình logic đó qua node blockchain, dịch vụ cloud và thiết bị cá nhân.</p>
+      </div>
+      <a class="button secondary pcc-glvm-bridge-link" href="/vi/glvm#architecture">Khám phá <span class="technical-token">GLVM</span><span aria-hidden="true">→</span></a>
+    </section>
+
+
+      <section class="pcc-close-section fade-in">
+        <div class="pcc-close-copy">
+          <p class="eyebrow">Vì sao điều đó quan trọng</p>
+          <h2>Không phải block nhanh hơn. Mà là dịch vụ chạy dài.</h2>
+          <p>Xử lý song song đảm nhiệm việc thực thi độc lập. Tính đồng thời xử lý tương tác dựa trên thông điệp và cơ chế chờ/tiếp tục. Hiện nay, <span class="technical-token">ALUX</span> triển khai các nền tảng runtime đó và đang hướng tới kết hợp nguyên tử xuyên ranh giới hệ thống.</p>
+        </div>
+        <div class="pcc-close-points"><article class="pcc-close-point"><span>Chỉ song song</span><p>Tăng thông lượng nhưng không có phụ thuộc giao dịch hay khớp thông điệp.</p></article><article class="pcc-close-point"><span>Chỉ đồng thời</span><p>Các giao dịch có thể tương tác và chờ nhau, nhưng hiệu ứng xuyên hệ thống vẫn có thể được quyết toán riêng rẽ.</p></article><article class="pcc-close-point"><span>Chỉ có khả năng kết hợp</span><p>Có ranh giới nguyên tử, nhưng nếu không thể tương tác và chờ thì không thể duy trì các phụ thuộc chạy dài.</p></article></div>
+        <div class="hero-actions pcc-close-actions"><a class="button primary" href="/vi/alux-vs-others">Trở lại <span class="technical-token">ALUX</span> và các nền tảng khác</a><a class="button secondary" href="/vi/for-ai-agents">Dành cho AI Agent</a></div>
+      </section>
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Bản quyền © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script defer src="/i18n/runtime/vi/parallelConcurrentComposable.js?v=450327434c49"></script>
+<script defer src="/script.js?v=20261023-locales"></script>
+</body>
+</html>

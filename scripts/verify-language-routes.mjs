@@ -1,9 +1,10 @@
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import vm from "node:vm";
+import { locales, languages, localeBootstrap } from './locales.mjs';
 
 const root = new URL("../", import.meta.url);
-const routing = await fs.readFile(new URL("scripts/language-routing.js", root), "utf8");
+const routing = localeBootstrap + await fs.readFile(new URL("scripts/language-routing.js", root), "utf8");
 function enter(pathname, { preferred = ["en-US"], saved = null, session = null, blocked = false } = {}) {
   let redirect = null;
   const storage = (value) => ({ getItem() { if (blocked) throw Error("Storage unavailable"); return value; }, setItem() {} });
@@ -32,8 +33,28 @@ assert.equal(page.urlFor("/roadmap.html?ref=nav#history", "zh"), "https://www.al
 assert.equal(page.urlFor("/ar/glvm#architecture", "en"), "https://www.alux.network/glvm#architecture");
 assert.equal(page.urlFor("https://example.com/article", "zh"), "https://example.com/article");
 assert.equal(page.urlFor("/assets/alux-logo.png", "zh"), "https://www.alux.network/assets/alux-logo.png");
+for(const preferred of ['zh-TW','zh-HK','zh-MO','zh-Hant','zh-Hant-TW','zh-Hant-CN']) {
+  assert.equal(enter('/',{preferred:[preferred]}).language,'zh-hant',preferred);
+}
+for(const preferred of ['zh','zh-CN','zh-SG','zh-Hans','zh-Hans-CN','zh-Hans-HK']) {
+  assert.equal(enter('/',{preferred:[preferred]}).language,'zh',preferred);
+}
+for(const locale of locales) {
+  const language=locale.code;
+  assert.equal(enter('/',{saved:language,preferred:['ja-JP']}).language,language,`Saved ${language}`);
+  assert.equal(enter('/',{preferred:[locale.hreflang]}).language,language,`Browser ${language}`);
+  const pathname=language==='en'?'/glvm':'/'+language+'/glvm';
+  assert.equal(enter(pathname,{saved:'ja'}).language,language,`Explicit ${language}`);
+  for(const target of languages) {
+    const expected='https://www.alux.network'+(target==='en'?'':'/'+target)+'/roadmap?ref=nav#history';
+    assert.equal(enter(pathname).urlFor(pathname.replace('/glvm','/roadmap.html')+'?ref=nav#history',target),expected);
+  }
+}
 
-const languages = ["en", "zh", "ja", "ko", "ar"];
+if(process.argv.includes('--routing-only')) {
+  console.log('Eleven-language routing verified, including Chinese scripts, saved preferences and all language pairs.');
+  process.exit(0);
+}
 const fullCatalog = { window: {} };
 vm.runInNewContext(await fs.readFile(new URL('i18n/site.generated.js', root), 'utf8'), fullCatalog);
 const files = ["index", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
@@ -50,8 +71,9 @@ for (const lang of languages) {
     assert(/class="[^"]*\bactive-link\b/.test(currentLinks[0][0]),`${local}: missing initial selected style`);
     const canonical = "https://www.alux.network" + (lang === "en" ? "" : "/" + lang) + (file === "index" ? lang === "en" ? "/" : "" : "/" + file);
     assert(html.includes(`<link rel="canonical" href="${canonical}">`), local);
-    assert.equal([...html.matchAll(/rel="alternate" hreflang=/g)].length, 6, local);
-    assert.equal([...html.matchAll(/class="lang-button[^"]*"[^>]*href=/g)].length, 5, local);
+    assert.equal([...html.matchAll(/rel="alternate" hreflang=/g)].length, languages.length+1, local);
+    assert.equal([...html.matchAll(/class="lang-button[^"]*"[^>]*href=/g)].length, languages.length, local);
+    for(const locale of locales)assert(html.includes('lang="'+locale.hreflang+'" dir="'+(locale.code==='ar'?'rtl':'ltr')+'"'),`${local}: missing accessible language option ${locale.code}`);
     assert(!html.includes('display=swap'), `${local}: late font swapping can change line breaks`);
     assert(!html.includes('https://fonts.googleapis.com') && !html.includes('https://fonts.gstatic.com'), `${local}: external font dependency`);
     assert(!html.includes('src="/i18n/site.generated.js'), `${local}: unnecessary full-site catalog`);
@@ -93,4 +115,4 @@ for (const lang of languages) {
 }
 const config = JSON.parse(await fs.readFile(new URL("vercel.json", root), "utf8"));
 assert.equal(config.cleanUrls, true);
-console.log("Language routes verified: preference priority, blocked storage, deep links, 35 static pages, metadata and quarter order.");
+console.log(`Language routes verified: preference priority, blocked storage, deep links, ${languages.length*files.length} static pages, metadata and quarter order.`);

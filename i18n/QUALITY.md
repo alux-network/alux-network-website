@@ -38,6 +38,12 @@ Approved locale forms:
 - Simplified Chinese: `长交易`; `全局逻辑虚拟机（GLVM）`; use `重放`, never `回放`, for runtime replay.
 - Korean: `장기 트랜잭션`; `전역 논리 가상 머신(GLVM)`.
 - Japanese: `長期トランザクション`; `グローバル論理仮想マシン（GLVM）`.
+- Traditional Chinese: `長交易`; `全域邏輯虛擬機（GLVM）`; `逐位元精確`; `確定性重播`.
+- Vietnamese: `giao dịch dài`; `máy ảo logic toàn cục (GLVM)`; `chính xác từng bit`.
+- German: `Langtransaktion`; `globale logische virtuelle Maschine (GLVM)`; `bitgenau`.
+- Spanish: `transacción de larga duración`; `máquina virtual lógica global (GLVM)`; `bit a bit`.
+- Russian: `длинная транзакция`; `глобальная логическая виртуальная машина (GLVM)`; `побитово точный`.
+- Ukrainian: `довга транзакція`; `глобальна логічна віртуальна машина (GLVM)`; `побітово точний`.
 - Arabic: `المعاملات طويلة الأمد`; `الآلة الافتراضية المنطقية العالمية (GLVM)`.
 
 ## Forbidden Terms

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-hant" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(browserLanguage).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALUX Runtime Lab | ALUX Network</title>
+<link rel="canonical" href="https://www.alux.network/zh-hant/runtime-lab">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/runtime-lab">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/runtime-lab">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/runtime-lab">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/runtime-lab">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/runtime-lab">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/runtime-lab">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/runtime-lab">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/runtime-lab">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/runtime-lab">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/runtime-lab">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/runtime-lab">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/runtime-lab">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="以可視化方式介紹 ALUX 目前的平行執行與訊息驅動協作，以及跨系統原子組合的目標模型。">
+<link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
+<link rel="stylesheet" href="/styles.css?v=20261023-locales">
+<link rel="stylesheet" href="/site-frame.css?v=20261023-locales">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ALUX Network">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:url" content="https://www.alux.network/zh-hant/runtime-lab">
+<meta property="og:title" content="ALUX Runtime Lab | ALUX Network">
+<meta property="og:description" content="以可視化方式介紹 ALUX 目前的平行執行與訊息驅動協作，以及跨系統原子組合的目標模型。">
+<meta property="og:image" content="https://www.alux.network/assets/social/pages/zh-hant/runtime-lab.jpg?v=20261015">
+<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/zh-hant/runtime-lab.jpg?v=20261015">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ALUX Runtime Lab | ALUX Network">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ALUX Runtime Lab | ALUX Network">
+<meta name="twitter:description" content="以可視化方式介紹 ALUX 目前的平行執行與訊息驅動協作，以及跨系統原子組合的目標模型。">
+<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/zh-hant/runtime-lab.jpg?v=20261015">
+<meta name="twitter:image:alt" content="ALUX Runtime Lab | ALUX Network">
+</head>
+<body data-page="parallelConcurrentComposable">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/zh-hant" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/optimized/alux-logo.0ddab7cca545.webp" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="主導航">
+        <a href="/zh-hant" data-nav="home">首頁</a>
+        <a href="/zh-hant/for-ai-agents" data-nav="vs">面向 AI Agent</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">了解</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/zh-hant/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/zh-hant/runtime-lab" data-nav="learnPcc" class="active-link" aria-current="page">Runtime Lab</a>
+            <a href="/zh-hant/alux-vs-others" data-nav="learnAlux">ALUX 與其他方案比較</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">博客</a>
+        <a href="/zh-hant/team" data-nav="team">團隊</a>
+        <a href="/zh-hant/roadmap" data-nav="roadmap">路線圖</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>語言</span><span class="lang-current" data-lang-current>繁體中文</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/runtime-lab" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/runtime-lab" hreflang="zh-Hans">简体中文</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/runtime-lab" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/runtime-lab" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/runtime-lab" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/runtime-lab" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/runtime-lab" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/runtime-lab" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/runtime-lab" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/runtime-lab" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/runtime-lab" hreflang="ar">العربية</a></div></div>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">聯絡我們</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="切換導航選單"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="zh-hant">
+    <article class="pcc-page" data-pcc-root data-pcc-active="parallel">
+      <header class="pcc-hero fade-in">
+        <div class="pcc-hero-copy">
+          <p class="eyebrow">了解 / Runtime Lab</p>
+          <h1>Runtime Lab</h1>
+          <p class="pcc-hero-subtitle">平行、併發、組合</p>
+          <p class="pcc-hero-text"><span class="technical-token">ALUX</span> 支援可重播的長交易：獨立任務可以同時推進，交易則透過訊息協作。預訂場景示範的是目標模型——讓相關的跨系統狀態變化作為一個原子結果結算。</p>
+          <div class="pcc-hero-signals" aria-label="Runtime signals"><div class="pcc-signal"><span>定位</span><strong><span class="technical-token">去中心化</span>併發執行階段</strong></div><div class="pcc-signal"><span>執行</span><strong>執行、互動、等待、結算</strong></div><div class="pcc-signal"><span>邊界</span><strong>能力約束下的工作流程</strong></div></div>
+        </div>
+        <figure class="pcc-hero-visual">
+          <div class="pcc-image-frame pcc-image-frame--hero">
+            <img src="/assets/parallel-concurrent-composable/alux-runtime.webp?v=20260708-heroimg1" alt="ALUX 執行階段連接節點、雲端服務、個人設備、AI Agent、能力令牌和提交軌道的高級技術插畫。" loading="eager" fetchpriority="high" data-pcc-image>
+            <span class="pcc-image-fallback"><span class="technical-token">ALUX</span> 執行階段連接節點、雲端服務、個人設備、AI Agent、能力令牌和提交軌道的高級技術插畫。</span>
+          </div>
+        </figure>
+      </header>
+
+      <section class="pcc-intro-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">先分清三件事</p>
+          <h2>三個詞看似相近，卻代表三種截然不同的執行階段工作</h2>
+          <p>平行讓互不依賴的交易同時執行。併發讓交易透過通道互動：一筆交易可以等待另一筆交易發來匹配訊息，再繼續執行。組合把不同執行系統中的狀態轉移放進同一個結算邊界，使它們作為一次可審計的原子狀態轉移完成結算。</p>
+          <p class="pcc-intro-claim">在目前 <span class="technical-token">ALUX</span> 執行階段中，獨立任務可以平行推進，交易透過訊息協作，執行也能跨區塊恢復。獨立系統之間的原子組合仍屬於架構目標。</p>
+        </div>
+      </section>
+
+      <section class="pcc-mode-section fade-in" aria-label="三個詞看似相近，卻代表三種截然不同的執行階段工作">
+        <div class="pcc-mode-toolbar" aria-label="Runtime mode selector"><button class="pcc-mode-button is-active" type="button" data-pcc-mode="parallel" aria-pressed="true"><span>01</span> 平行</button><button class="pcc-mode-button" type="button" data-pcc-mode="concurrent" aria-pressed="false"><span>02</span> 併發</button><button class="pcc-mode-button" type="button" data-pcc-mode="composable" aria-pressed="false"><span>03</span> 組合</button></div>
+        <div class="pcc-mode-stage">
+          <div class="pcc-mode-visuals">
+      <figure class="pcc-mode-visual is-active" data-pcc-visual="parallel" aria-hidden="false">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/parallel.svg?v=20260812-motion-restore4" alt="多條相互隔離的執行軌道同時向前推進。" loading="eager" data-pcc-image>
+          <span class="pcc-image-fallback">多條相互隔離的執行軌道同時向前推進。</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>平行</span><strong>4 項搜尋各自獨立完成</strong></figcaption>
+        <div class="pcc-mode-impact"><span>它能做什麼</span><p>同樣時間裡能完成更多獨立工作，但單靠平行，既不能讓這些工作交換訊息，也不能讓一筆長交易等待後繼續。</p><strong>平行可以同時得到多項結果，但不會讓這些任務彼此互動。</strong></div>
+      </figure>
+
+      <figure class="pcc-mode-visual" data-pcc-visual="concurrent" aria-hidden="true">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/concurrent.svg?v=20260812-motion-restore4" alt="兩筆交易透過元組空間通道互動：一筆等待匹配訊息，另一筆發送訊息；訊息匹配後，等待中的後續執行被喚醒，其他工作仍繼續執行。" loading="lazy" data-pcc-image>
+          <span class="pcc-image-fallback">兩筆交易透過元組空間通道互動：一筆等待匹配訊息，另一筆發送訊息；訊息匹配後，等待中的後續執行被喚醒，其他工作仍繼續執行。</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>併發</span><strong>預訂先等待；酒店AI Agent回覆；下一步被喚醒</strong></figcaption>
+        <div class="pcc-mode-impact"><span>它能做什麼</span><p>旅行AI Agent可以讓一筆長交易跨區塊等待房態、API 回覆或使用者決定，並在條件滿足後繼續執行，同時不阻塞無關工作。</p><strong>併發把一次回覆變成下一步執行：訊息匹配會產生新的後續執行，而不是讓停住的軌道原地重啟。</strong></div>
+      </figure>
+
+      <figure class="pcc-mode-visual" data-pcc-visual="composable" aria-hidden="true">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/composable.svg?v=20260812-motion-restore4" alt="房間預訂和支付授權分別來自兩個系統；只有兩邊都準備好後，原子邊界才輸出一份預訂確認結果。" loading="lazy" data-pcc-image>
+          <span class="pcc-image-fallback">房間預訂和支付授權分別來自兩個系統；只有兩邊都準備好後，原子邊界才輸出一份預訂確認結果。</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>組合</span><strong>只有預訂和付款都成功，訂單才確認</strong></figcaption>
+        <div class="pcc-mode-impact"><span>它能做什麼</span><p>預期結果是避免出現只扣款卻沒有房間，或只鎖房卻沒有完成付款的半成品預訂。</p><strong>目標組合模型讓不同系統得到一個全有或全無的結果；併發負責傳遞共同提交前的訊息。</strong></div>
+      </figure>
+    </div>
+          <div class="pcc-mode-copy" aria-live="polite">
+      <article class="pcc-mode-panel is-active" data-pcc-panel="parallel" aria-hidden="false">
+        <p class="pcc-mode-kicker">平行</p>
+        <h3>航班、酒店、接送和保險<br>同時查詢</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>它是什麼意思</dt><dd>平行指多項互不依賴的工作同時執行。旅行AI Agent可以同時查詢航班、房間、接送和保險，不必讓一項查詢排在另一項後面。</dd></div>
+          <div><dt><span class="technical-token">ALUX</span> 如何做到</dt><dd>平行執行是 <span class="technical-token">ALUX</span> 程序演算的原生能力：交易不共享記憶體，任何互動都只能透過元組空間通道發生。互不依賴的交易因此可以在不同 <span class="technical-token">TVM</span> 執行軌道上推進，提交時若出現狀態重疊，再由 <span class="technical-token">Block Merge</span> 裁決。</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>它能做什麼</dt><dd>同樣時間裡能完成更多獨立工作，但單靠平行，既不能讓這些工作交換訊息，也不能讓一筆長交易等待後繼續。</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">平行可以同時得到多項結果，但不會讓這些任務彼此互動。</p>
+      </article>
+
+      <article class="pcc-mode-panel" data-pcc-panel="concurrent" aria-hidden="true">
+        <p class="pcc-mode-kicker">併發</p>
+        <h3>預訂等待房態，<br>收到回覆後繼續</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>它是什麼意思</dt><dd>併發從工作之間發生互動開始。預訂可以在通道中留下等待條件，酒店服務稍後發回匹配的房態訊息，預訂再繼續。</dd></div>
+          <div><dt><span class="technical-token">ALUX</span> 如何做到</dt><dd>等待方的接收要求（consume）會作為等待資源保存在元組空間中；另一筆交易發出（produce）匹配資料後觸發 <span class="technical-token">COMM</span> 事件，產生等待方的後續執行（continuation），並讓執行上下文從非活動狀態恢復為執行狀態。當存在多個候選匹配時，<span class="technical-token">ReplayTrie</span> 記錄實際選中的 <span class="technical-token">COMM</span>，供驗證者確定性重播。</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>它能做什麼</dt><dd>旅行AI Agent可以讓一筆長交易跨區塊等待房態、API 回覆或使用者決定，並在條件滿足後繼續執行，同時不阻塞無關工作。</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">併發把一次回覆變成下一步執行：訊息匹配會產生新的後續執行，而不是讓停住的軌道原地重啟。</p>
+      </article>
+
+      <article class="pcc-mode-panel" data-pcc-panel="composable" aria-hidden="true">
+        <p class="pcc-mode-kicker">組合</p>
+        <h3>房間鎖定與付款<br>共同確認</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>它是什麼意思</dt><dd>組合不是把多項工作簡單打包。這個示例的目標，是讓房間鎖定與付款授權要麼共同提交，要麼都不提交。</dd></div>
+          <div><dt><span class="technical-token">ALUX</span> 如何做到</dt><dd>目前執行階段已經提供元組空間協作、限定範圍的 <span class="technical-token">OCAP</span> 引用、跨區塊後續執行、<span class="technical-token">ReplayTrie</span> 與 <span class="technical-token">Block Merge</span>。基於這些原語，在彼此獨立的外部系統之間實作端到端原子組合，仍屬於設計目標。</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>它能做什麼</dt><dd>預期結果是避免出現只扣款卻沒有房間，或只鎖房卻沒有完成付款的半成品預訂。</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">目標組合模型讓不同系統得到一個全有或全無的結果；併發負責傳遞共同提交前的訊息。</p>
+      </article>
+    </div>
+        </div>
+      </section>
+
+      <section class="pcc-lab-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">體驗完整執行階段</p>
+          <h2>模擬一次原子預訂</h2>
+          <p class="pcc-lab-intro">按四個步驟探索目標組合模型：啟動預訂與付款檢查，留下房態等待條件，傳入酒店的匹配訊息，最後模擬兩邊共同確認。</p>
+        </div>
+        <div class="pcc-lab-board" data-pcc-lab data-lab-state="idle" data-msg-idle="從第 1 步開始：預訂和支付由同一個執行階段管理，但狀態彼此獨立。" data-msg-parallel="平行：預訂檢查與付款檢查同時推進，彼此不共享狀態。" data-msg-paused="併發等待：預訂在通道中留下房態條件，支付工作仍可繼續。" data-msg-resumed="訊息匹配：酒店發回可用房態，ALUX 喚醒預訂的後續執行；只有存在多個候選匹配時，ReplayTrie 才記錄實際選中的結果。" data-msg-settled="組合目標：房間鎖定與付款授權共同完成，形成一個全有或全無的預訂結果。">
+          <div class="pcc-lab-steps"><article class="pcc-lab-step" data-pcc-step="parallel"><span>01</span><strong>啟動兩項檢查</strong><p>預訂和支付檢查各自推進。</p></article><article class="pcc-lab-step" data-pcc-step="paused"><span>02</span><strong>等待房態</strong><p>預訂在通道中留下房態條件。</p></article><article class="pcc-lab-step" data-pcc-step="resumed"><span>03</span><strong>酒店回覆</strong><p>匹配訊息喚醒預訂的後續執行。</p></article><article class="pcc-lab-step" data-pcc-step="settled"><span>04</span><strong>共同確認</strong><p>房間鎖定與付款授權作為一個結果提交。</p></article></div>
+          <div class="pcc-lab-runtime" aria-hidden="true">
+            <div class="pcc-lab-lanes">
+      <div class="pcc-lab-lane pcc-lab-lane--1">
+        <span class="pcc-lab-lane-label">預訂狀態</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--1" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--2">
+        <span class="pcc-lab-lane-label">酒店訊息</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--2" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--3">
+        <span class="pcc-lab-lane-label">支付狀態</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--3" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--4">
+        <span class="pcc-lab-lane-label">預訂確認</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--4" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+    <div class="pcc-lab-event" aria-hidden="true"><span>訊息匹配</span></div></div>
+            <div class="pcc-lab-checkpoint" data-pcc-lab-checkpoint data-checkpoint-idle="等待兩邊就緒" data-checkpoint-settled="預訂已確認"><span>等待兩邊就緒</span></div>
+          </div>
+          <div class="pcc-lab-side">
+            <div class="pcc-lab-status">
+              <span>狀態</span>
+              <strong data-pcc-lab-score>0 / 4</strong>
+            </div>
+            <p class="pcc-lab-play-label">按順序操作</p>
+            <div class="pcc-lab-controls">
+              <button type="button" data-pcc-action="parallel">1. 啟動兩項檢查</button>
+              <button type="button" data-pcc-action="pause" disabled>2. 等待房態</button>
+              <button type="button" data-pcc-action="resume" disabled>3. 發送酒店回覆</button>
+              <button type="button" data-pcc-action="settle" disabled>4. 確認預訂</button>
+              <button type="button" data-pcc-action="reset">重置</button>
+            </div>
+            <p class="pcc-lab-message" data-pcc-lab-message>從第 1 步開始：預訂和支付由同一個執行階段管理，但狀態彼此獨立。</p>
+          </div>
+          <div class="pcc-lab-benefits"><article class="pcc-lab-benefit" data-pcc-benefit="parallel"><span>平行</span><strong>兩項檢查同時進行</strong><p>獨立工作不必排在同一條全域佇列裡。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="paused"><span>併發</span><strong>預訂等待酒店回覆</strong><p>依賴關係留在通道中，不會阻塞整個執行階段。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="resumed"><span>訊息匹配</span><strong>回覆產生下一步</strong><p><span class="technical-token">COMM</span> 產生後續執行；只有匹配存在非確定性時，<span class="technical-token">ReplayTrie</span> 才記錄這次選擇。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="settled"><span>組合</span><strong>房間與付款共同確認</strong><p>目標是得到全有或全無的結果，並保留可復現的結算證據。</p></article></div>
+        </div>
+      </section>
+
+      <section class="pcc-foundation-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">執行路徑</p>
+          <h2>是什麼讓服務持續執行</h2>
+          <p>長時間執行的服務之所以保持一致，是因為每一步都能執行、互動、攜帶顯式權限、進行確定性重播，並沿一條可驗證的原子路徑完成結算。</p>
+        </div>
+        <div class="pcc-foundation-grid"><article class="pcc-foundation-item"><span>執行</span><h3><span class="technical-token">TVM</span> 處理程序生命週期</h3><p>處理程序可以分叉，在一個區塊中等待，並在後續區塊恢復，而不必重新啟動本地執行上下文。</p></article><article class="pcc-foundation-item"><span>互動</span><h3>元組空間 + <span class="technical-token">COMM</span></h3><p>等待中的取用（Consume）與另一筆交易的寫入（Produce）相匹配；匹配會喚醒後續執行，而無關工作繼續推進。</p></article><article class="pcc-foundation-item"><span>授權</span><h3><span class="technical-token">OCAP</span> 權限邊界</h3><p>不可偽造的<span class="technical-token">能力引用</span>被顯式傳遞，讓每一步只獲得所需權限；身份不會自動把無關權限帶入目前環境。</p></article><article class="pcc-foundation-item"><span>重播</span><h3><span class="technical-token">ReplayTrie</span></h3><p>只記錄真正影響結果的非確定性 <span class="technical-token">COMM</span> 選擇，使驗證者能夠復現同一段執行。</p></article><article class="pcc-foundation-item"><span>結算</span><h3><span class="technical-token">BlockGit</span> + <span class="technical-token">Block Merge</span></h3><p>併發工作進入經過驗證的 Fringe；相互重疊的結果會在最終確認前被判定為接受、拒絕或待定。</p></article></div>
+      </section>
+
+
+    <section class="pcc-glvm-bridge fade-in">
+      <div class="pcc-glvm-bridge-copy">
+        <p class="eyebrow">下一層</p>
+        <h2>同一個邏輯執行階段，連接不同執行環境</h2>
+        <p>Runtime Lab 展示目前的平行執行與訊息驅動併發，並說明目標中的原子組合模型。<span class="technical-token">GLVM</span> 則描述更廣泛的架構：如何將這套邏輯模型擴充到區塊鏈節點、雲端服務和個人設備。</p>
+      </div>
+      <a class="button secondary pcc-glvm-bridge-link" href="/zh-hant/glvm#architecture">探索 <span class="technical-token">GLVM</span><span aria-hidden="true">→</span></a>
+    </section>
+
+
+      <section class="pcc-close-section fade-in">
+        <div class="pcc-close-copy">
+          <p class="eyebrow">為什麼重要</p>
+          <h2>不是更快的區塊，而是持續執行的服務</h2>
+          <p>平行負責推進彼此獨立的任務，併發負責訊息驅動的互動以及等待與恢復。<span class="technical-token">ALUX</span> 目前已實作這些執行階段基礎，並正在面向跨系統原子組合繼續建設。</p>
+        </div>
+        <div class="pcc-close-points"><article class="pcc-close-point"><span>只有平行</span><p>吞吐更高，但沒有交易依賴與訊息匹配。</p></article><article class="pcc-close-point"><span>只有併發</span><p>交易可以互動和等待，但跨系統結果<span class="technical-token">仍可能</span>分別結算。</p></article><article class="pcc-close-point"><span>只有組合</span><p>存在原子邊界，但沒有互動與等待，就承載不了持續執行的依賴關係。</p></article></div>
+        <div class="hero-actions pcc-close-actions"><a class="button primary" href="/zh-hant/alux-vs-others">返回 <span class="technical-token">ALUX</span> 與其他方案比較</a><a class="button secondary" href="/zh-hant/for-ai-agents">面向 AI Agent</a></div>
+      </section>
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">版權所有 © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script defer src="/i18n/runtime/zh-hant/parallelConcurrentComposable.js?v=cca913fa71b1"></script>
+<script defer src="/script.js?v=20261023-locales"></script>
+</body>
+</html>

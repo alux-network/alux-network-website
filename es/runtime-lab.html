@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(browserLanguage).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALUX Runtime Lab | ALUX Network</title>
+<link rel="canonical" href="https://www.alux.network/es/runtime-lab">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/runtime-lab">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/runtime-lab">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/runtime-lab">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/runtime-lab">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/runtime-lab">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/runtime-lab">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/runtime-lab">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/runtime-lab">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/runtime-lab">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/runtime-lab">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/runtime-lab">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/runtime-lab">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="Guía visual de la ejecución paralela y basada en mensajes actual de ALUX, junto con su modelo objetivo de composición atómica entre límites de sistemas.">
+<link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
+<link rel="stylesheet" href="/styles.css?v=20261023-locales">
+<link rel="stylesheet" href="/site-frame.css?v=20261023-locales">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ALUX Network">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://www.alux.network/es/runtime-lab">
+<meta property="og:title" content="ALUX Runtime Lab | ALUX Network">
+<meta property="og:description" content="Guía visual de la ejecución paralela y basada en mensajes actual de ALUX, junto con su modelo objetivo de composición atómica entre límites de sistemas.">
+<meta property="og:image" content="https://www.alux.network/assets/social/pages/es/runtime-lab.jpg?v=20261015">
+<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/es/runtime-lab.jpg?v=20261015">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ALUX Runtime Lab | ALUX Network">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ALUX Runtime Lab | ALUX Network">
+<meta name="twitter:description" content="Guía visual de la ejecución paralela y basada en mensajes actual de ALUX, junto con su modelo objetivo de composición atómica entre límites de sistemas.">
+<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/es/runtime-lab.jpg?v=20261015">
+<meta name="twitter:image:alt" content="ALUX Runtime Lab | ALUX Network">
+</head>
+<body data-page="parallelConcurrentComposable">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/es" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/optimized/alux-logo.0ddab7cca545.webp" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="/es" data-nav="home">Inicio</a>
+        <a href="/es/for-ai-agents" data-nav="vs">Para agentes de IA</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">Aprender</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/es/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/es/runtime-lab" data-nav="learnPcc" class="active-link" aria-current="page">Runtime Lab</a>
+            <a href="/es/alux-vs-others" data-nav="learnAlux">ALUX frente a otros</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">Blog</a>
+        <a href="/es/team" data-nav="team">Equipo</a>
+        <a href="/es/roadmap" data-nav="roadmap">Hoja de ruta</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Idioma</span><span class="lang-current" data-lang-current>Español</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/runtime-lab" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/runtime-lab" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/runtime-lab" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/runtime-lab" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/runtime-lab" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/runtime-lab" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/runtime-lab" hreflang="de">Deutsch</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/runtime-lab" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/runtime-lab" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/runtime-lab" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/runtime-lab" hreflang="ar">العربية</a></div></div>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">Contáctanos</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Alternar menú de navegación"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="es">
+    <article class="pcc-page" data-pcc-root data-pcc-active="parallel">
+      <header class="pcc-hero fade-in">
+        <div class="pcc-hero-copy">
+          <p class="eyebrow">Aprender / Runtime Lab</p>
+          <h1>Runtime Lab</h1>
+          <p class="pcc-hero-subtitle">Paralelo / Concurrente / Componible</p>
+          <p class="pcc-hero-text"><span class="technical-token">ALUX</span> admite transacciones de larga duración reproducibles: las tareas independientes se ejecutan a la vez y las transacciones se coordinan mediante mensajes. El escenario de reserva ilustra el modelo objetivo para liquidar efectos relacionados entre sistemas en un único resultado atómico.</p>
+          <div class="pcc-hero-signals" aria-label="Runtime signals"><div class="pcc-signal"><span>Posicionamiento</span><strong>Runtime concurrente descentralizado</strong></div><div class="pcc-signal"><span>Ejecución</span><strong>Ejecutar, interactuar, esperar, liquidar</strong></div><div class="pcc-signal"><span>Límite</span><strong>Flujos delimitados por capacidades</strong></div></div>
+        </div>
+        <figure class="pcc-hero-visual">
+          <div class="pcc-image-frame pcc-image-frame--hero">
+            <img src="/assets/parallel-concurrent-composable/alux-runtime.webp?v=20260708-heroimg1" alt="Ilustración técnica de alta calidad del runtime de ALUX conectando nodos, servicios en la nube, dispositivos, agentes, tokens de capacidad y carriles de confirmación." loading="eager" fetchpriority="high" data-pcc-image>
+            <span class="pcc-image-fallback">Ilustración técnica de alta calidad del runtime de <span class="technical-token">ALUX</span> conectando nodos, servicios en la nube, dispositivos, agentes, tokens de capacidad y carriles de confirmación.</span>
+          </div>
+        </figure>
+      </header>
+
+      <section class="pcc-intro-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">La diferencia sencilla</p>
+          <h2>Tres palabras, tres trabajos de runtime muy distintos</h2>
+          <p>El paralelismo ejecuta transacciones independientes al mismo tiempo. La concurrencia permite que las transacciones interactúen mediante canales: una puede esperar un mensaje coincidente de otra y después continuar. La componibilidad reúne transiciones de estado de distintos sistemas en una única transición atómica auditable.</p>
+          <p class="pcc-intro-claim">En el runtime actual de <span class="technical-token">ALUX</span>, el trabajo independiente puede ejecutarse en paralelo, las transacciones se coordinan mediante mensajes y la ejecución puede reanudarse entre bloques. La composición atómica entre sistemas independientes sigue siendo un objetivo arquitectónico.</p>
+        </div>
+      </section>
+
+      <section class="pcc-mode-section fade-in" aria-label="Tres palabras, tres trabajos de runtime muy distintos">
+        <div class="pcc-mode-toolbar" aria-label="Runtime mode selector"><button class="pcc-mode-button is-active" type="button" data-pcc-mode="parallel" aria-pressed="true"><span>01</span> Paralelo</button><button class="pcc-mode-button" type="button" data-pcc-mode="concurrent" aria-pressed="false"><span>02</span> Concurrente</button><button class="pcc-mode-button" type="button" data-pcc-mode="composable" aria-pressed="false"><span>03</span> Componible</button></div>
+        <div class="pcc-mode-stage">
+          <div class="pcc-mode-visuals">
+      <figure class="pcc-mode-visual is-active" data-pcc-visual="parallel" aria-hidden="false">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/parallel.svg?v=20260812-motion-restore4" alt="Varios carriles de ejecución aislados avanzan al mismo tiempo." loading="eager" data-pcc-image>
+          <span class="pcc-image-fallback">Varios carriles de ejecución aislados avanzan al mismo tiempo.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>Paralelo</span><strong>Cuatro búsquedas de viajes terminan de forma independiente</strong></figcaption>
+        <div class="pcc-mode-impact"><span>Qué permite</span><p>Se completa más trabajo independiente en el mismo tiempo. Pero el paralelismo por sí solo no permite que esos trabajos intercambien mensajes ni que una transacción de larga duración espere y continúe.</p><strong>El paralelismo encuentra varias respuestas a la vez. No hace que esos trabajos interactúen.</strong></div>
+      </figure>
+
+      <figure class="pcc-mode-visual" data-pcc-visual="concurrent" aria-hidden="true">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/concurrent.svg?v=20260812-motion-restore4" alt="Dos transacciones interactúan mediante un canal de tuple space: una espera un mensaje coincidente, la otra lo envía y la continuación en espera se reanuda mientras el trabajo no relacionado sigue avanzando." loading="lazy" data-pcc-image>
+          <span class="pcc-image-fallback">Dos transacciones interactúan mediante un canal de tuple space: una espera un mensaje coincidente, la otra lo envía y la continuación en espera se reanuda mientras el trabajo no relacionado sigue avanzando.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>Concurrente</span><strong>La reserva espera; responde un agente del hotel; comienza el siguiente paso</strong></figcaption>
+        <div class="pcc-mode-impact"><span>Qué permite</span><p>Un agente de viajes puede mantener viva una transacción de larga duración entre bloques: espera la disponibilidad de una habitación, una respuesta de API o una decisión del usuario y después continúa sin bloquear el trabajo no relacionado.</p><strong>La concurrencia convierte una respuesta en el siguiente paso: la coincidencia crea una continuación nueva en vez de limitarse a reiniciar un carril detenido.</strong></div>
+      </figure>
+
+      <figure class="pcc-mode-visual" data-pcc-visual="composable" aria-hidden="true">
+        <div class="pcc-image-frame">
+          <img src="/assets/parallel-concurrent-composable/composable.svg?v=20260812-motion-restore4" alt="Una reserva de habitación y una autorización de pago llegan de sistemas distintos. Solo cuando ambas están listas sale una confirmación de reserva del límite atómico." loading="lazy" data-pcc-image>
+          <span class="pcc-image-fallback">Una reserva de habitación y una autorización de pago llegan de sistemas distintos. Solo cuando ambas están listas sale una confirmación de reserva del límite atómico.</span>
+        </div>
+        <figcaption class="pcc-mode-cue"><span>Componible</span><strong>La reserva solo se confirma cuando tanto la reserva de habitación como el pago tienen éxito</strong></figcaption>
+        <div class="pcc-mode-impact"><span>Qué permite</span><p>El resultado previsto evita reservas a medio completar, como cobrar sin asignar una habitación o retener una habitación sin recibir el pago.</p><strong>El modelo objetivo de composición ofrece a distintos sistemas un único resultado de todo o nada; la concurrencia transporta los mensajes que conducen a esa confirmación conjunta.</strong></div>
+      </figure>
+    </div>
+          <div class="pcc-mode-copy" aria-live="polite">
+      <article class="pcc-mode-panel is-active" data-pcc-panel="parallel" aria-hidden="false">
+        <p class="pcc-mode-kicker">Paralelo</p>
+        <h3>Buscar vuelos, hotel, traslado y seguro<br>al mismo tiempo</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>Qué significa</dt><dd>La ejecución paralela significa que los trabajos independientes se ejecutan a la vez. Un agente de viajes puede buscar vuelos, habitaciones, traslados y seguros sin que una búsqueda tenga que esperar a otra.</dd></div>
+          <div><dt>Cómo lo hace <span class="technical-token">ALUX</span></dt><dd>La ejecución paralela es nativa del cálculo de procesos de <span class="technical-token">ALUX</span>: las transacciones no comparten memoria y toda interacción se limita a los canales de tuple space. Por ello, las transacciones independientes avanzan por carriles <span class="technical-token">TVM</span> separados, mientras <span class="technical-token">Block Merge</span> resuelve las solapamientos de estado al confirmar.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>Qué permite</dt><dd>Se completa más trabajo independiente en el mismo tiempo. Pero el paralelismo por sí solo no permite que esos trabajos intercambien mensajes ni que una transacción de larga duración espere y continúe.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">El paralelismo encuentra varias respuestas a la vez. No hace que esos trabajos interactúen.</p>
+      </article>
+
+      <article class="pcc-mode-panel" data-pcc-panel="concurrent" aria-hidden="true">
+        <p class="pcc-mode-kicker">Concurrente</p>
+        <h3>Una reserva espera disponibilidad<br>y continúa cuando llega la respuesta</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>Qué significa</dt><dd>La concurrencia comienza cuando los trabajos interactúan. Una reserva puede dejar una condición de espera en un canal y un servicio hotelero puede satisfacerla más tarde al enviar el mensaje coincidente de disponibilidad.</dd></div>
+          <div><dt>Cómo lo hace <span class="technical-token">ALUX</span></dt><dd>El consumo en espera se almacena como recurso en tuple space. Una producción de otra transacción coincide con él y activa un evento <span class="technical-token">COMM</span> que genera la continuación y cambia el Execution Context de Inactive a Running. Si hay varias coincidencias posibles, <span class="technical-token">ReplayTrie</span> registra la <span class="technical-token">COMM</span> elegida para permitir una reproducción determinista.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>Qué permite</dt><dd>Un agente de viajes puede mantener viva una transacción de larga duración entre bloques: espera la disponibilidad de una habitación, una respuesta de API o una decisión del usuario y después continúa sin bloquear el trabajo no relacionado.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">La concurrencia convierte una respuesta en el siguiente paso: la coincidencia crea una continuación nueva en vez de limitarse a reiniciar un carril detenido.</p>
+      </article>
+
+      <article class="pcc-mode-panel" data-pcc-panel="composable" aria-hidden="true">
+        <p class="pcc-mode-kicker">Componible</p>
+        <h3>La habitación y el pago<br>se confirman juntos</h3>
+        <dl class="pcc-mode-facts">
+          <div><dt>Qué significa</dt><dd>La composición no es una agrupación corriente. El objetivo de este ejemplo es confirmar juntas la retención de la habitación y la autorización del pago, o no confirmar ninguna.</dd></div>
+          <div><dt>Cómo lo hace <span class="technical-token">ALUX</span></dt><dd>El runtime actual proporciona coordinación mediante tuple space, referencias <span class="technical-token">OCAP</span> con ámbito limitado, continuación entre bloques, <span class="technical-token">ReplayTrie</span> y <span class="technical-token">Block Merge</span>. La composición atómica integral entre sistemas externos independientes sigue siendo un objetivo de diseño basado en esas primitivas.</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>Qué permite</dt><dd>El resultado previsto evita reservas a medio completar, como cobrar sin asignar una habitación o retener una habitación sin recibir el pago.</dd></div>
+        </dl>
+        <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">El modelo objetivo de composición ofrece a distintos sistemas un único resultado de todo o nada; la concurrencia transporta los mensajes que conducen a esa confirmación conjunta.</p>
+      </article>
+    </div>
+        </div>
+      </section>
+
+      <section class="pcc-lab-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">Prueba el runtime completo</p>
+          <h2>Modelar una reserva atómica</h2>
+          <p class="pcc-lab-intro">Usa cuatro acciones para explorar el modelo objetivo de composición: inicia las comprobaciones de reserva y pago, deja una espera por disponibilidad de habitación, envía el mensaje coincidente del hotel y, por último, modela una confirmación conjunta.</p>
+        </div>
+        <div class="pcc-lab-board" data-pcc-lab data-lab-state="idle" data-msg-idle="Empieza por el paso 1. La reserva y el pago se gestionan por separado dentro del mismo runtime." data-msg-parallel="Paralelo: las comprobaciones de reserva y pago avanzan al mismo tiempo sin compartir estado." data-msg-paused="Espera concurrente: la reserva deja en el canal una condición de disponibilidad de habitación; el pago puede seguir avanzando." data-msg-resumed="Mensaje coincidente: el hotel responde que hay disponibilidad. ALUX activa la continuación de la reserva; si había varias coincidencias posibles, ReplayTrie fija la elegida." data-msg-settled="Objetivo de composición: la retención de la habitación y la autorización del pago se cierran juntas como un único resultado de reserva de todo o nada.">
+          <div class="pcc-lab-steps"><article class="pcc-lab-step" data-pcc-step="parallel"><span>01</span><strong>Iniciar ambas comprobaciones</strong><p>Las comprobaciones de reserva y pago avanzan de forma independiente.</p></article><article class="pcc-lab-step" data-pcc-step="paused"><span>02</span><strong>Esperar una habitación</strong><p>La reserva deja una condición de disponibilidad en el canal.</p></article><article class="pcc-lab-step" data-pcc-step="resumed"><span>03</span><strong>Responde el hotel</strong><p>El mensaje coincidente activa la continuación de la reserva.</p></article><article class="pcc-lab-step" data-pcc-step="settled"><span>04</span><strong>Confirmar juntos</strong><p>La retención de la habitación y la autorización del pago se confirman como un solo resultado.</p></article></div>
+          <div class="pcc-lab-runtime" aria-hidden="true">
+            <div class="pcc-lab-lanes">
+      <div class="pcc-lab-lane pcc-lab-lane--1">
+        <span class="pcc-lab-lane-label">Estado de la reserva</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--1" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--2">
+        <span class="pcc-lab-lane-label">Mensaje del hotel</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--2" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--3">
+        <span class="pcc-lab-lane-label">Estado del pago</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--3" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+
+      <div class="pcc-lab-lane pcc-lab-lane--4">
+        <span class="pcc-lab-lane-label">Confirmación de la reserva</span>
+        <span class="pcc-lab-rail" aria-hidden="true"></span>
+        <span class="pcc-lab-pod pcc-lab-pod--4" aria-hidden="true"><span class="pcc-lab-pod-icon"></span></span>
+      </div>
+    <div class="pcc-lab-event" aria-hidden="true"><span>Mensaje coincidente</span></div></div>
+            <div class="pcc-lab-checkpoint" data-pcc-lab-checkpoint data-checkpoint-idle="Esperando a ambos" data-checkpoint-settled="Reserva confirmada"><span>Esperando a ambos</span></div>
+          </div>
+          <div class="pcc-lab-side">
+            <div class="pcc-lab-status">
+              <span>Estado</span>
+              <strong data-pcc-lab-score>0 / 4</strong>
+            </div>
+            <p class="pcc-lab-play-label">Reproducir en orden</p>
+            <div class="pcc-lab-controls">
+              <button type="button" data-pcc-action="parallel">1. Iniciar ambas comprobaciones</button>
+              <button type="button" data-pcc-action="pause" disabled>2. Esperar una habitación</button>
+              <button type="button" data-pcc-action="resume" disabled>3. Enviar respuesta del hotel</button>
+              <button type="button" data-pcc-action="settle" disabled>4. Confirmar reserva</button>
+              <button type="button" data-pcc-action="reset">Restablecer</button>
+            </div>
+            <p class="pcc-lab-message" data-pcc-lab-message>Empieza por el paso 1. La reserva y el pago se gestionan por separado dentro del mismo runtime.</p>
+          </div>
+          <div class="pcc-lab-benefits"><article class="pcc-lab-benefit" data-pcc-benefit="parallel"><span>Paralelo</span><strong>Dos comprobaciones se ejecutan a la vez</strong><p>El trabajo independiente no espera detrás de una única cola global.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="paused"><span>Concurrente</span><strong>La reserva espera al hotel</strong><p>La dependencia vive en un canal, en vez de bloquear el runtime.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="resumed"><span>Coincidencia de mensajes</span><strong>La respuesta crea el siguiente paso</strong><p><span class="technical-token">COMM</span> crea la continuación; <span class="technical-token">ReplayTrie</span> registra la elección solo cuando la coincidencia es no determinista.</p></article><article class="pcc-lab-benefit" data-pcc-benefit="settled"><span>Componible</span><strong>La habitación y el pago se confirman juntos</strong><p>El objetivo es un único resultado de todo o nada con pruebas de liquidación reproducibles.</p></article></div>
+        </div>
+      </section>
+
+      <section class="pcc-foundation-section fade-in">
+        <div class="section-heading pcc-section-heading">
+          <p class="eyebrow">Ruta del runtime</p>
+          <h2>Qué mantiene vivo un servicio</h2>
+          <p>Un servicio de larga duración mantiene la coherencia porque cada paso puede ejecutarse, interactuar, llevar autoridad explícita, reproducirse de forma determinista y liquidarse por una única ruta atómica verificable.</p>
+        </div>
+        <div class="pcc-foundation-grid"><article class="pcc-foundation-item"><span>Ejecutar</span><h3>Ciclo de vida del proceso <span class="technical-token">TVM</span></h3><p>Un proceso puede crear una rama, esperar durante un bloque y reanudarse en un bloque posterior sin reiniciar su contexto de ejecución local.</p></article><article class="pcc-foundation-item"><span>Interactuar</span><h3>Tuple space + <span class="technical-token">COMM</span></h3><p>Un consumo en espera coincide con la producción de otra transacción. La coincidencia activa la continuación mientras el trabajo no relacionado sigue avanzando.</p></article><article class="pcc-foundation-item"><span>Autorizar</span><h3>Límites <span class="technical-token">OCAP</span></h3><p>Las referencias a capacidades imposibles de falsificar se transfieren explícitamente, de modo que cada paso recibe solo la autoridad que necesita; la identidad no incorpora automáticamente otras autoridades al ámbito.</p></article><article class="pcc-foundation-item"><span>Reproducir</span><h3><span class="technical-token">ReplayTrie</span></h3><p>Solo se registran las decisiones <span class="technical-token">COMM</span> no deterministas relevantes, para que los validadores puedan reproducir la misma ejecución.</p></article><article class="pcc-foundation-item"><span>Liquidar</span><h3><span class="technical-token">BlockGit</span> + <span class="technical-token">Block Merge</span></h3><p>El trabajo concurrente entra en fringes verificados, donde los solapamientos se clasifican como aceptados, rechazados o pendientes de decisión antes de alcanzar la finalidad.</p></article></div>
+      </section>
+
+
+    <section class="pcc-glvm-bridge fade-in">
+      <div class="pcc-glvm-bridge-copy">
+        <p class="eyebrow">Siguiente capa</p>
+        <h2>Un runtime lógico en muchos entornos</h2>
+        <p>Runtime Lab muestra la ejecución paralela y basada en mensajes actual y, después, ilustra el modelo objetivo de composición atómica. <span class="technical-token">GLVM</span> describe la arquitectura más amplia para extender ese modelo lógico entre nodos blockchain, servicios en la nube y dispositivos personales.</p>
+      </div>
+      <a class="button secondary pcc-glvm-bridge-link" href="/es/glvm#architecture">Explorar <span class="technical-token">GLVM</span><span aria-hidden="true">→</span></a>
+    </section>
+
+
+      <section class="pcc-close-section fade-in">
+        <div class="pcc-close-copy">
+          <p class="eyebrow">Por qué importa</p>
+          <h2>No son bloques más rápidos. Son servicios de larga duración.</h2>
+          <p>El paralelismo gestiona la ejecución independiente. La concurrencia gestiona la interacción basada en mensajes y la espera/reanudación. <span class="technical-token">ALUX</span> implementa hoy esos fundamentos del runtime y avanza hacia la composición atómica entre límites de sistemas.</p>
+        </div>
+        <div class="pcc-close-points"><article class="pcc-close-point"><span>Solo en paralelo</span><p>Mayor rendimiento, pero sin dependencias transaccionales ni correspondencia de mensajes.</p></article><article class="pcc-close-point"><span>Solo concurrente</span><p>Las transacciones pueden interactuar y esperar, pero los efectos entre sistemas aún pueden liquidarse por separado.</p></article><article class="pcc-close-point"><span>Solo componible</span><p>Existe un límite atómico, pero sin interacción ni espera no puede abarcar dependencias de larga duración.</p></article></div>
+        <div class="hero-actions pcc-close-actions"><a class="button primary" href="/es/alux-vs-others">Volver a <span class="technical-token">ALUX</span> frente a otros</a><a class="button secondary" href="/es/for-ai-agents">Para agentes de IA</a></div>
+      </section>
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Copyright © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script defer src="/i18n/runtime/es/parallelConcurrentComposable.js?v=6c0ba7526418"></script>
+<script defer src="/script.js?v=20261023-locales"></script>
+</body>
+</html>

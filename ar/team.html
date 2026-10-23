@@ -3,9 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
 // Inlined at the start of each generated head; no runtime download is needed.
 (function () {
-  const languages = ["en", "zh", "ja", "ko", "ar"];
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
   const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
   const current = new URL(window.location.href);
   function languageUrl(value, language) {
@@ -34,7 +44,7 @@
       }
     }
     const preferred = (navigator.languages || [navigator.language || "en"])
-      .map(value => value.toLowerCase().split(/[-_]/)[0]).find(value => languages.includes(value));
+      .map(browserLanguage).find(value => languages.includes(value));
     language = languages.includes(saved) ? saved : preferred || "en";
   }
   window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
@@ -51,15 +61,21 @@
 <link rel="canonical" href="https://www.alux.network/ar/team">
 <link rel="alternate" hreflang="en" href="https://www.alux.network/team">
 <link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/team">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/team">
 <link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/team">
 <link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/team">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/team">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/team">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/team">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/team">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/team">
 <link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/team">
 <link rel="alternate" hreflang="x-default" href="https://www.alux.network/team">
   <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
   <meta name="description" content="تعرّف إلى المطورين الرئيسيين الذين يبنون بيئة تشغيل ALUX المتزامنة، ولغتها، ونظام إجماعها، ومكدس أنظمة البلوكشين لديها.">
 <link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
-<link rel="stylesheet" href="/styles.css?v=20261015-comparison-typography">
-<link rel="stylesheet" href="/site-frame.css?v=20261015-current-navigation">
+<link rel="stylesheet" href="/styles.css?v=20261023-locales">
+<link rel="stylesheet" href="/site-frame.css?v=20261023-locales">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
 <meta property="og:type" content="website">
@@ -105,7 +121,7 @@
         <a href="/ar/roadmap" data-nav="roadmap">خارطة الطريق</a>
       </nav>
       <div class="header-actions">
-        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>اللغة</span><span class="lang-current" data-lang-current>العربية</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" data-lang="en" href="https://www.alux.network/team" hreflang="en">EN</a><a class="lang-button" data-lang="zh" href="https://www.alux.network/zh/team" hreflang="zh-Hans">ZH</a><a class="lang-button" data-lang="ko" href="https://www.alux.network/ko/team" hreflang="ko">KO</a><a class="lang-button" data-lang="ja" href="https://www.alux.network/ja/team" hreflang="ja">JA</a><a class="lang-button" data-lang="ar" href="https://www.alux.network/ar/team" hreflang="ar">AR</a></div></div>
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>اللغة</span><span class="lang-current" data-lang-current>العربية</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/team" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/team" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/team" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/team" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/team" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/team" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/team" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/team" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/team" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/team" hreflang="uk">Українська</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/team" hreflang="ar">العربية</a></div></div>
         <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">تواصل معنا</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-label="تبديل قائمة التنقل"><span></span><span></span><span></span></button>
       </div>
@@ -194,6 +210,6 @@
     </footer>
   </div>
 <script defer src="/i18n/runtime/ar/team.js?v=d4c222e4abc3"></script>
-<script defer src="/script.js?v=20261015-summary-navigation"></script>
+<script defer src="/script.js?v=20261023-locales"></script>
 </body>
 </html>

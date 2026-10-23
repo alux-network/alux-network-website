@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-hant" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(browserLanguage).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>面向 AI Agent | ALUX Network</title>
+<link rel="canonical" href="https://www.alux.network/zh-hant/for-ai-agents">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/for-ai-agents">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/for-ai-agents">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/for-ai-agents">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/for-ai-agents">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/for-ai-agents">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/for-ai-agents">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/for-ai-agents">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/for-ai-agents">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/for-ai-agents">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/for-ai-agents">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/for-ai-agents">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/for-ai-agents">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="了解 ALUX 如何為生產級 AI Agent提供跨區塊連續性、元組空間協調、原生 OCAP 支援，以及經由 TSAC 的 EVM 路徑。">
+<link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
+<link rel="stylesheet" href="/styles.css?v=20261023-locales">
+<link rel="stylesheet" href="/site-frame.css?v=20261023-locales">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ALUX Network">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:url" content="https://www.alux.network/zh-hant/for-ai-agents">
+<meta property="og:title" content="面向 AI Agent | ALUX Network">
+<meta property="og:description" content="了解 ALUX 如何為生產級 AI Agent提供跨區塊連續性、元組空間協調、原生 OCAP 支援，以及經由 TSAC 的 EVM 路徑。">
+<meta property="og:image" content="https://www.alux.network/assets/social/pages/zh-hant/for-ai-agents.jpg?v=20261015">
+<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/zh-hant/for-ai-agents.jpg?v=20261015">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="面向 AI Agent | ALUX Network">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="面向 AI Agent | ALUX Network">
+<meta name="twitter:description" content="了解 ALUX 如何為生產級 AI Agent提供跨區塊連續性、元組空間協調、原生 OCAP 支援，以及經由 TSAC 的 EVM 路徑。">
+<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/zh-hant/for-ai-agents.jpg?v=20261015">
+<meta name="twitter:image:alt" content="面向 AI Agent | ALUX Network">
+</head>
+<body data-page="vs">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/zh-hant" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/optimized/alux-logo.0ddab7cca545.webp" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="主導航">
+        <a href="/zh-hant" data-nav="home">首頁</a>
+        <a href="/zh-hant/for-ai-agents" data-nav="vs" class="active-link" aria-current="page">面向 AI Agent</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">了解</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/zh-hant/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/zh-hant/runtime-lab" data-nav="learnPcc">Runtime Lab</a>
+            <a href="/zh-hant/alux-vs-others" data-nav="learnAlux">ALUX 與其他方案比較</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">博客</a>
+        <a href="/zh-hant/team" data-nav="team">團隊</a>
+        <a href="/zh-hant/roadmap" data-nav="roadmap">路線圖</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>語言</span><span class="lang-current" data-lang-current>繁體中文</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/for-ai-agents" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/for-ai-agents" hreflang="zh-Hans">简体中文</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/for-ai-agents" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/for-ai-agents" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/for-ai-agents" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/for-ai-agents" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/for-ai-agents" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/for-ai-agents" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/for-ai-agents" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/for-ai-agents" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/for-ai-agents" hreflang="ar">العربية</a></div></div>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">聯絡我們</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="切換導航選單"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="zh-hant"><section class="section fade-in agent-principle-section" id="agent-overview"><div class="agent-principle-hero"><div class="section-heading agent-principle-heading"><p class="eyebrow">面向 AI Agent</p><h1 class="agent-principle-title"><span class="title-line">持久型 AI Agent</span><span class="title-line">執行階段平台</span></h1><p class="agent-principle-intro">AI Agent進入生產環境後，就不再只是一次呼叫。它們要等待 API 和人的回應，與其他AI Agent協作，攜帶有邊界的權限，並留下完整記錄。<span class="technical-token">ALUX</span> 提供這類工作所需的<span class="technical-token">去中心化</span>服務執行階段。</p><p class="agent-principle-claim">生產級 AI Agent需要的能力執行階段。</p></div><aside class="agent-principle-visual" aria-label="AI Agent + ALUX"><div class="agent-principle-visual-head"><span>AI Agent + <span class="technical-token">ALUX</span></span><h3>一個完整生命週期，而不是一串脆弱呼叫</h3></div><div class="agent-lifecycle-mini"><article class="agent-lifecycle-mini-step agent-lifecycle-mini-step--1"><span>01</span><div><h4>意圖</h4><p>使用者、應用或AI Agent從有邊界的目的開始。</p></div></article><article class="agent-lifecycle-mini-step agent-lifecycle-mini-step--2"><span>02</span><div><h4>能力</h4><p>執行階段傳遞明確權限，而不是裸憑證。</p></div></article><article class="agent-lifecycle-mini-step agent-lifecycle-mini-step--3"><span>03</span><div><h4>併發工作</h4><p>子任務在AI Agent、服務和系統之間分支展開。</p></div></article><article class="agent-lifecycle-mini-step agent-lifecycle-mini-step--4"><span>04</span><div><h4>等待 / 恢復</h4><p>執行可以等待 API、人、計時器或支付，然後繼續。</p></div></article><article class="agent-lifecycle-mini-step agent-lifecycle-mini-step--5"><span>05</span><div><h4>重播</h4><p>非確定性匹配會留下可供驗證者復現的重播記錄。</p></div></article></div></aside></div><div class="agent-principle-signal-grid"><article class="agent-principle-signal agent-principle-signal--1"><span>執行模型</span><strong>跨區塊連續執行</strong><p>工作可在銜接點暫停，並在後續區塊繼續。</p></article><article class="agent-principle-signal agent-principle-signal--2"><span>權限模型</span><strong>不可偽造的 <span class="technical-token">OCAP</span></strong><p>處理程序只能使用自己建立或被明確傳入的引用。</p></article><article class="agent-principle-signal agent-principle-signal--3"><span>協作模型</span><strong>元組空間通道</strong><p>寫入（Produce）與取用（Consume）操作讓併發處理程序能夠等待並完成匹配。</p></article><article class="agent-principle-signal agent-principle-signal--4"><span><span class="technical-token">EVM</span> 路徑</span><strong>透過 <span class="technical-token">TSAC</span> 接入 <span class="technical-token">TVM</span></strong><p><span class="technical-token">EVM</span> 沙盒透過適配合約存取共享資源。</p></article></div></section><section class="section fade-in agent-machine-section" id="agent-machine"><div class="agent-machine-panel"><div class="agent-machine-copy"><div class="section-heading agent-machine-heading"><p class="eyebrow">RISC AI Agent機器</p><h2><span class="title-line">AI Agent需要的</span><span class="title-line">不只是大腦</span></h2><div class="agent-machine-summary"><p class="agent-machine-intro">生產級AI Agent需要機體、大腦、免疫系統和社會層。智慧只是機器的一部分；執行階段必須讓工作持續存活、控制風險，並把跨組織工作連接起來。</p><p class="agent-machine-statement"><span class="agent-machine-statement-line">生產級AI Agent必須具備 RISC。</span>
+<span class="agent-machine-statement-line"><span class="technical-token">ALUX</span> 構建的就是這台機器。</span></p></div></div></div><div class="agent-machine-spec-row"><p class="agent-machine-spec-label">RISC 規格</p></div><div class="agent-machine-map"><article class="agent-machine-system agent-machine-system--r"><span class="agent-machine-letter">R</span><div><h3>強韌 <em>/ 機體</em></h3><p class="agent-machine-keywords">跨區塊 · 持久性 · 重播 · 可復現性</p><p>跨區塊上下文保留與確定性重播，讓長時工作在恢復執行時仍可復現。</p></div></article><article class="agent-machine-system agent-machine-system--i"><span class="agent-machine-letter">I</span><div><h3>智慧 <em>/ 大腦</em></h3><p class="agent-machine-keywords">LLM 循環 · 記憶 · 工具 · 編排</p><p>推理循環、記憶、工具使用和任務編排，是今天多數AI Agent架構競爭最集中的地方。</p></div></article><article class="agent-machine-system agent-machine-system--s"><span class="agent-machine-letter">S</span><div><h3>安全 <em>/ 免疫</em></h3><p class="agent-machine-keywords">物件能力 · 策略 · 回滾 · 審計</p><p>物件能力、生命週期約束、回滾路徑與重播證據會限制處理程序可以嘗試的操作，並讓已提交的結果更易核查。</p></div></article><article class="agent-machine-system agent-machine-system--c"><span class="agent-machine-letter">C</span><div><h3>連接 <em>/ 社會</em></h3><p class="agent-machine-keywords">跨公司委託 · 中立基底 · 會話類型</p><p>已設計的會話類型協議為不同組織的AI Agent提供協作路徑，避免AI Agent工作一直困在各自的私有孤島中。</p></div></article><div class="agent-machine-visual"><figure class="agent-machine-figure"><div class="agent-machine-core"><div class="agent-machine-orbit" aria-hidden="true"></div><img src="/assets/optimized/agent-runtime-robot-ai.ed8bfc285235.webp" alt="生產級AI Agent執行階段機器的線稿圖" loading="lazy"><span class="agent-machine-node agent-machine-node--r" aria-hidden="true">R</span><span class="agent-machine-node agent-machine-node--i" aria-hidden="true">I</span><span class="agent-machine-node agent-machine-node--s" aria-hidden="true">S</span><span class="agent-machine-node agent-machine-node--c" aria-hidden="true">C</span></div><figcaption><span class="technical-token">ALUX</span> 執行階段機器</figcaption></figure></div></div></div></section><section class="section fade-in agent-workflow-section" id="agent-workflow"><div class="section-heading agent-workflow-heading"><h2><span class="title-line">AI Agent工作</span><span class="title-line">如何在 <span class="technical-token">ALUX</span> 上延續</span></h2><p class="agent-workflow-intro">AI Agent工作流程不必壓縮成一次有邊界的呼叫。它可以帶著能力範圍進入，分叉成併發任務，在外部等待點暫停，在之後的區塊中恢復，並留下可追責記錄。</p></div><div class="agent-workflow-map" aria-label="Agent workflow lifecycle"><div class="agent-workflow-track" aria-hidden="true"></div><article class="agent-workflow-stage agent-workflow-stage--1"><span class="agent-workflow-dot"><span>01</span></span><div class="agent-workflow-stage-copy"><h3>限定意圖</h3><p>限定要求進入執行階段</p></div></article><article class="agent-workflow-stage agent-workflow-stage--2"><span class="agent-workflow-dot"><span>02</span></span><div class="agent-workflow-stage-copy"><h3>併發工作</h3><p>任務分支展開並協調</p></div></article><article class="agent-workflow-stage agent-workflow-stage--3"><span class="agent-workflow-dot"><span>03</span></span><div class="agent-workflow-stage-copy"><h3>等待真實世界</h3><p>執行為真實世界暫停</p></div></article><article class="agent-workflow-stage agent-workflow-stage--4"><span class="agent-workflow-dot"><span>04</span></span><div class="agent-workflow-stage-copy"><h3>跨區塊恢復</h3><p>後續區塊繼續這項工作</p></div></article><article class="agent-workflow-stage agent-workflow-stage--5"><span class="agent-workflow-dot"><span>05</span></span><div class="agent-workflow-stage-copy"><h3>可核驗記錄</h3><p>軌跡保持公開</p></div></article></div><div class="agent-workflow-detail-grid"><article class="agent-workflow-detail agent-workflow-detail--1"><div class="agent-workflow-detail-head"><span class="agent-workflow-step">01</span><h3>限定意圖進入</h3></div><p>工作從要求、委託能力或使用者意圖開始。執行階段以明確的範圍和上下文啟動。</p><ul class="agent-workflow-points"><li>能力被傳遞，而不是被偽造</li><li>範圍定義目的和邊界</li></ul></article><article class="agent-workflow-detail agent-workflow-detail--2"><div class="agent-workflow-detail-head"><span class="agent-workflow-step">02</span><h3>併發分支</h3></div><p>子任務在AI Agent和服務之間展開，而不是擠進一條線性路徑。</p><ul class="agent-workflow-points"><li>元組空間支援非同步協調</li><li>併發適合多步驟AI Agent工作</li></ul></article><article class="agent-workflow-detail agent-workflow-detail--3"><div class="agent-workflow-detail-head"><span class="agent-workflow-step">03</span><h3>外部等待</h3></div><p>執行可以為 API、人、計時器、支付或其他真實世界事件暫停。</p><ul class="agent-workflow-points"><li>等待時可完整掛起</li><li>等待狀態保留在執行階段中</li></ul></article><article class="agent-workflow-detail agent-workflow-detail--4"><div class="agent-workflow-detail-head"><span class="agent-workflow-step">04</span><h3>跨區塊恢復</h3></div><p>當外部世界回應時，工作流程會在後續區塊繼續，完整保留狀態、記憶體與權限。</p><ul class="agent-workflow-points"><li>長時間任務仍能保持連續性</li><li>執行歷史保持完整</li></ul></article><article class="agent-workflow-detail agent-workflow-detail--5"><div class="agent-workflow-detail-head"><span class="agent-workflow-step">05</span><h3>持久記錄</h3></div><p>已記錄的 <span class="technical-token">COMM</span> 選擇與已提交的狀態轉換，既可由驗證者復現，也可供更高層審計系統使用。</p><ul class="agent-workflow-points"><li>驗證者復現相同的已記錄執行結果</li><li>治理與信任層的基礎</li></ul></article></div><div class="agent-workflow-close"><p><span class="technical-token">ALUX</span> 為AI Agent工作提供完整生命週期：限定範圍進入、併發執行、外部等待、跨區塊延續和持久記錄。</p></div></section><section class="section fade-in agent-infra-section" id="agent-infrastructure"><div class="section-heading agent-infra-heading"><h2><span class="title-line">AI Agent基礎設施</span><span class="title-line">三層結構</span></h2><p class="agent-infra-intro">當 AI Agent 的工作能夠持續運作，<span class="technical-token">ALUX</span> 便為其提供三層平台能力：權限、協調與可追責性。</p></div><div class="agent-infra-figure"><div class="agent-infra-diagram"><span class="agent-infra-orbit agent-infra-orbit--1">權限</span><span class="agent-infra-orbit agent-infra-orbit--2">協作</span><span class="agent-infra-orbit agent-infra-orbit--3">可追溯、可核驗</span><div class="agent-infra-core"><div class="agent-infra-core-copy"><span class="agent-infra-core-label"><span class="technical-token">ALUX</span></span><h3>AI Agent服務執行階段</h3><p>一個讓AI Agent可以等待、協作、攜帶權限，並留下可追溯、可核驗記錄的執行階段。</p></div></div></div></div><div class="agent-infra-grid"><article class="agent-infra-card agent-infra-card--1"><div class="agent-infra-head"><span class="agent-infra-chip">權限</span><h3>能力授權基礎設施</h3></div><p>權限透過不可偽造的通道引用攜帶，明確規定處理程序可以存取、呼叫、繼續傳遞或進一步收窄哪些能力。</p><ul class="agent-infra-points"><li><span class="technical-token">OCAP</span> 原生能力控制</li><li>委託與權限收窄</li><li>限定工具存取範圍的基礎</li></ul></article><article class="agent-infra-card agent-infra-card--2"><div class="agent-infra-head"><span class="agent-infra-chip">協作</span><h3>AI Agent協同基礎設施</h3></div><p>AI Agent工作天然是協作式的。<span class="technical-token">ALUX</span> 支援多AI Agent併發、非同步協調，以及跨時間延續的工作流程。</p><ul class="agent-infra-points"><li>用於非同步協調的元組空間訊息傳遞</li><li>跨區塊等待與恢復</li><li>可組合服務與共享任務</li></ul></article><article class="agent-infra-card agent-infra-card--3"><div class="agent-infra-head"><span class="agent-infra-chip">可追溯、可核驗</span><h3>可復現的執行證據</h3></div><p><span class="technical-token">ReplayTrie</span> 記錄非確定性的 <span class="technical-token">COMM</span> 選擇，以便在 <span class="technical-token">ALUX</span> 執行階段邊界內進行逐位元精確的確定性重播；已提交的狀態轉換則為更高層的審計與治理提供基礎。</p><ul class="agent-infra-points"><li>驗證者可復現的執行結果</li><li>已提交的能力與狀態轉換</li><li>治理與安全層的基礎</li></ul></article></div><div class="agent-infra-outro"><span class="technical-token">ALUX</span> 不只是把 AI 放到鏈上。它是AI Agent權限、協調和可追蹤問責的基礎設施。</div></section><section class="section fade-in agent-contrast-section agent-difference-section" id="agent-contrast"><div class="section-heading agent-contrast-heading"><h2><span class="title-line"><span class="technical-token">ALUX</span> 執行階段</span></h2><p class="agent-contrast-intro"><span class="technical-token">ALUX</span> 將持久執行、併發協作、明確權限與 <span class="technical-token">EVM</span> 兼容整合在同一個執行階段層中。</p><p class="agent-difference-statement">四項核心機制，讓長時間執行的AI Agent工作成為平台原生能力。</p></div><div class="agent-difference-grid"><article class="agent-difference-card agent-difference-card--continuity"><div class="agent-difference-card-head"><span class="agent-difference-index">01</span><h3>跨區塊連續執行</h3></div><div class="agent-difference-flow" aria-hidden="true"><span class="agent-difference-node agent-difference-node--1">區塊 N</span><span class="agent-difference-link" aria-hidden="true"></span><span class="agent-difference-node agent-difference-node--2">暫停</span><span class="agent-difference-link" aria-hidden="true"></span><span class="agent-difference-node agent-difference-node--3">區塊 N+1</span></div><p>交易可在銜接點（seam）暫停，待依賴滿足後在後續區塊繼續執行。</p></article><article class="agent-difference-card agent-difference-card--authority"><div class="agent-difference-card-head"><span class="agent-difference-index">02</span><h3><span class="technical-token">OCAP</span> 原生權限</h3></div><div class="agent-difference-flow" aria-hidden="true"><span class="agent-difference-node agent-difference-node--1">建立者</span><span class="agent-difference-link" aria-hidden="true"></span><span class="agent-difference-node agent-difference-node--2"><span class="technical-token">能力引用</span></span><span class="agent-difference-link" aria-hidden="true"></span><span class="agent-difference-node agent-difference-node--3">處理程序</span></div><p>處理程序只能使用自己建立或被明確傳入的引用；操作碼無法偽造任意權限。</p></article><article class="agent-difference-card agent-difference-card--coordination"><div class="agent-difference-card-head"><span class="agent-difference-index">03</span><h3>元組空間協作</h3></div><div class="agent-difference-flow" aria-hidden="true"><span class="agent-difference-node agent-difference-node--1">寫入</span><span class="agent-difference-link" aria-hidden="true"></span><span class="agent-difference-node agent-difference-node--2">元組空間</span><span class="agent-difference-link" aria-hidden="true"></span><span class="agent-difference-node agent-difference-node--3">取用</span></div><p>處理程序透過寫入（Produce）與取用（Consume）通道協作：未匹配的工作會等待，非確定性匹配則寫入重播記錄。</p></article><article class="agent-difference-card agent-difference-card--adapter"><div class="agent-difference-card-head"><span class="agent-difference-index">04</span><h3><span class="technical-token">EVM</span> 經 <span class="technical-token">TSAC</span> 接入</h3></div><div class="agent-difference-flow" aria-hidden="true"><span class="agent-difference-node agent-difference-node--1"><span class="technical-token">EVM</span></span><span class="agent-difference-link" aria-hidden="true"></span><span class="agent-difference-node agent-difference-node--2"><span class="technical-token">TSAC</span></span><span class="agent-difference-link" aria-hidden="true"></span><span class="agent-difference-node agent-difference-node--3"><span class="technical-token">TVM</span></span></div><p><span class="technical-token">EVM</span> 保留順序執行與隔離沙盒；SLOAD、SSTORE 和 CALL 透過元組空間適配合約存取共享資源。</p></article></div><p class="agent-difference-closing">它們把連續執行、協作與權限留在執行階段內部，而不是交給應用層逐項補齊。</p></section></main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">版權所有 © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script defer src="/i18n/runtime/zh-hant/vs.js?v=083713d47a23"></script>
+<script defer src="/script.js?v=20261023-locales"></script>
+</body>
+</html>

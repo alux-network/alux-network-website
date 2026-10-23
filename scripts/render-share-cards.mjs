@@ -3,13 +3,15 @@ import path from 'node:path';
 import http from 'node:http';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 import {shareCardTemplate} from './share-card-template.mjs';
+import {languages} from './locales.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const languages=['en','zh','ja','ko','ar'];
 const slugs=['home','for-ai-agents','glvm','alux-vs-others','runtime-lab','team','roadmap'];
 const args=process.argv.slice(2),arg=name=>args[args.indexOf(name)+1];
 const masters=path.resolve(root,args.includes('--masters')?arg('--masters'):'../output/share-cards');
 const only=args.includes('--only')?arg('--only'):null;
+const selectedLanguages=args.includes('--langs')?arg('--langs').split(','):languages;
+if(selectedLanguages.some(lang=>!languages.includes(lang)))throw Error('Unknown language in --langs');
 const modulePath=process.env.PLAYWRIGHT_MODULE;
 const {chromium}=await import(modulePath?pathToFileURL(modulePath).href:'playwright');
 const browser=await chromium.launch({headless:true,...(process.env.BROWSER_EXECUTABLE?{executablePath:process.env.BROWSER_EXECUTABLE}:{})});
@@ -19,14 +21,17 @@ await new Promise(r=>server.listen(0,'127.0.0.1',r));
 const origin='http://127.0.0.1:'+server.address().port;
 const reports=[];
 try{
- for(const lang of languages)for(const slug of slugs){
+ for(const lang of selectedLanguages)for(const slug of slugs){
   const key=lang+'/'+slug;if(only&&key!==only)continue;
   const file=(lang==='en'?'':lang+'/')+(slug==='home'?'index':slug)+'.html';
   const html=await fs.readFile(path.join(root,file),'utf8');
   const parse=await browser.newPage();await parse.setContent(html.replace(/<script\b[\s\S]*?<\/script>/g,''));
   const meta=await parse.evaluate(()=>({title:document.title,description:document.querySelector('meta[name=description]').content,quarters:[...document.querySelectorAll('.roadmap-year-section article')].slice(0,3).map(e=>({year:e.closest('[data-year]').dataset.year,quarter:'Q'+e.dataset.quarter}))}));await parse.close();
   let title=meta.title.split(/[|｜]/)[0].trim();
-  if(slug==='home'&&title.includes('—'))title=title.split('—').slice(1).join('—').trim();
+  if(slug==='home'){
+   title=title.replace(/^ALUX(?: Network)?\s*[—–-]+\s*/u,'');
+   title=title.charAt(0).toLocaleUpperCase(lang)+title.slice(1);
+  }
   cards.set(key,{lang,slug,title,description:meta.description,quarters:meta.quarters,displayUrl:'alux.network'+(lang==='en'?'':'/'+lang)+(slug==='home'?'':'/'+slug)});
   const webPath=path.join(root,'assets/social/pages',lang,slug+'.jpg');await fs.mkdir(path.dirname(webPath),{recursive:true});
   const masterPath=path.join(masters,lang,slug+'.jpg');await fs.mkdir(path.dirname(masterPath),{recursive:true});

@@ -30136,3 +30136,85 @@ body[data-page="aluxVsOthers"] .alux-summary-features > li:first-child > p {
     padding-top: 0;
   }
 }
+
+/* Locale-specific reading rules; paragraphs continue to wrap naturally. */
+html[lang="zh-hant"] body {
+  font-family: "Inter", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  line-break: strict;
+  word-break: normal;
+}
+html:is([lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body {
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+html:is([lang="zh-hant"], [lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body[data-page="home"] h1.hero-home-title--statement {
+  font-size: 4rem;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+html:is([lang="zh-hant"], [lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body[data-page] main :is(h1,h2,h3) {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+@media (max-width: 960px) {
+  html:is([lang="zh-hant"], [lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body[data-page="home"] h1.hero-home-title--statement {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 600px) {
+  html:is([lang="zh-hant"], [lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body[data-page="home"] h1.hero-home-title--statement {
+    font-size: 2.375rem;
+    line-height: 1.2;
+  }
+}
+
+/* Long localized labels may shrink within grid tracks without widening a phone. */
+html:is([lang="zh-hant"], [lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body[data-page] :is(.section-heading > *, .glvm-comparison-card, .glvm-comparison-heading > *) {
+  min-width: 0;
+}
+html:is([lang="zh-hant"], [lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body[data-page="home"] .faq-hint {
+  white-space: normal;
+}
+html[lang="de"] body[data-page] main :is(h1,h2,h3) {
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  html:is([lang="zh-hant"], [lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body[data-page="home"] .showcase-demo-capability-rows code {
+    white-space: normal;
+    overflow-wrap: break-word;
+    min-width: 0;
+  }
+}
+
+html:is([lang="zh-hant"], [lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body[data-page="home"] .capability-map-heading h2 {
+  display: block !important;
+  max-width: none !important;
+}
+html:is([lang="zh-hant"], [lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body[data-page="aluxVsOthers"] .alux-vs-article-header > * {
+  min-width: 0;
+}
+
+html:is([lang="zh-hant"], [lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body[data-page="aluxVsOthers"] .alux-vs-article-lede {
+  grid-template-columns: minmax(0, 1fr);
+}
+html:is([lang="zh-hant"], [lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body[data-page="aluxVsOthers"] .alux-vs-article-lede > * {
+  min-width: 0;
+}
+@media (max-width: 600px) {
+  html:is([lang="zh-hant"], [lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body[data-page="home"] .showcase-use-cases-cta > * {
+    min-width: 0;
+  }
+  html:is([lang="zh-hant"], [lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body[data-page="home"] .showcase-use-cases-cta > a {
+    max-width: 100%;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 960px) {
+  html:is([lang="zh-hant"], [lang="vi"], [lang="de"], [lang="es"], [lang="ru"], [lang="uk"]) body[data-page="home"] .home-architecture-intro h2 > .home-architecture-title-line {
+    white-space: normal;
+    text-wrap: balance;
+  }
+}

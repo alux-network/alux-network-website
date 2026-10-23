@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(browserLanguage).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALUX VÀ CÁC NỀN TẢNG KHÁC | ALUX Network</title>
+<link rel="canonical" href="https://www.alux.network/vi/alux-vs-others">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/alux-vs-others">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/alux-vs-others">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/alux-vs-others">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/alux-vs-others">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/alux-vs-others">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/alux-vs-others">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/alux-vs-others">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/alux-vs-others">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/alux-vs-others">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/alux-vs-others">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/alux-vs-others">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/alux-vs-others">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="Cách ALUX mở rộng các lệnh gọi VM ngắn thành giao dịch dài có thể phát lại, với khả năng tương thích EVM hiện nay và khả năng kết hợp xuyên runtime rộng hơn trong lộ trình.">
+<link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
+<link rel="stylesheet" href="/styles.css?v=20261023-locales">
+<link rel="stylesheet" href="/site-frame.css?v=20261023-locales">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ALUX Network">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:url" content="https://www.alux.network/vi/alux-vs-others">
+<meta property="og:title" content="ALUX VÀ CÁC NỀN TẢNG KHÁC | ALUX Network">
+<meta property="og:description" content="Cách ALUX mở rộng các lệnh gọi VM ngắn thành giao dịch dài có thể phát lại, với khả năng tương thích EVM hiện nay và khả năng kết hợp xuyên runtime rộng hơn trong lộ trình.">
+<meta property="og:image" content="https://www.alux.network/assets/social/pages/vi/alux-vs-others.jpg?v=20261015">
+<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/vi/alux-vs-others.jpg?v=20261015">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ALUX VÀ CÁC NỀN TẢNG KHÁC | ALUX Network">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ALUX VÀ CÁC NỀN TẢNG KHÁC | ALUX Network">
+<meta name="twitter:description" content="Cách ALUX mở rộng các lệnh gọi VM ngắn thành giao dịch dài có thể phát lại, với khả năng tương thích EVM hiện nay và khả năng kết hợp xuyên runtime rộng hơn trong lộ trình.">
+<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/vi/alux-vs-others.jpg?v=20261015">
+<meta name="twitter:image:alt" content="ALUX VÀ CÁC NỀN TẢNG KHÁC | ALUX Network">
+</head>
+<body data-page="aluxVsOthers">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/vi" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/optimized/alux-logo.0ddab7cca545.webp" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="Điều hướng chính">
+        <a href="/vi" data-nav="home">Trang chủ</a>
+        <a href="/vi/for-ai-agents" data-nav="vs">Dành cho AI Agent</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">Tìm hiểu</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/vi/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/vi/runtime-lab" data-nav="learnPcc">Runtime Lab</a>
+            <a href="/vi/alux-vs-others" data-nav="learnAlux" class="active-link" aria-current="page">ALUX và các nền tảng khác</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">Blog</a>
+        <a href="/vi/team" data-nav="team">Đội ngũ</a>
+        <a href="/vi/roadmap" data-nav="roadmap">Lộ trình</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Ngôn ngữ</span><span class="lang-current" data-lang-current>Tiếng Việt</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/alux-vs-others" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/alux-vs-others" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/alux-vs-others" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/alux-vs-others" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/alux-vs-others" hreflang="ko">한국어</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/alux-vs-others" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/alux-vs-others" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/alux-vs-others" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/alux-vs-others" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/alux-vs-others" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/alux-vs-others" hreflang="ar">العربية</a></div></div>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">Liên hệ</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Bật/tắt menu điều hướng"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="vi">
+    <article class="alux-vs-page alux-vs-article">
+      <header class="alux-vs-article-header fade-in">
+        <div class="alux-vs-article-lede">
+          <h1>Một runtime phân tán thống nhất <span class="technical-token">Web 2</span> và <span class="technical-token">Web 3</span></h1>
+          <p>Về bản chất, blockchain là các máy chuyển trạng thái. <span class="technical-token">ALUX</span> mở rộng mô hình từ các lệnh gọi VM ngắn, tách biệt thành giao dịch dài có thể phát lại: hiện hỗ trợ thực thi xuyên block và I/O <span class="technical-token">Web 2</span> có thể xác minh, trong khi khả năng kết hợp xuyên runtime và xuyên shard thuộc kiến trúc rộng hơn.</p>
+        </div>
+        <aside class="alux-vs-article-summary" aria-label="Tóm tắt bài viết">
+          <span>Khác biệt cốt lõi</span>
+
+    <section class="alux-summary-group alux-summary-group--other" aria-labelledby="summary-other-title">
+      <h2 id="summary-other-title">Phần lớn blockchain</h2>
+      <p>Các lệnh gọi VM ngắn, tách biệt</p>
+    </section>
+    <section class="alux-summary-group alux-summary-group--alux" aria-labelledby="summary-alux-title">
+      <h2 id="summary-alux-title"><span class="technical-token">ALUX</span></h2>
+      <ul class="alux-summary-features">
+        <li><p>Giao dịch dài có thể phát lại</p></li>
+        <li><dl><dt>Thực thi</dt><dd>Song song và đồng thời hiện đã hỗ trợ; tổng hợp là mô hình mục tiêu</dd></dl></li><li><dl><dt>Ngữ nghĩa giao dịch</dt><dd>Ngữ nghĩa kiểu ACID cho giao dịch dài</dd></dl></li>
+      </ul>
+    </section>
+        </aside>
+      </header>
+
+      <div class="alux-vs-article-layout">
+        <aside class="alux-vs-article-nav" aria-label="Trong bài viết này">
+          <span>Trong bài viết này</span>
+          <a href="#problem">Vấn đề</a><a href="#universal">Giao dịch dài</a><a href="#execution">Mô hình thực thi</a><a href="#compatibility">Tổng hợp và tương thích</a>
+        </aside>
+
+        <div class="alux-vs-article-body">
+          <section class="alux-vs-article-section fade-in" id="problem">
+            <h2>Vấn đề chúng tôi đang giải quyết</h2>
+            <p>Nhiều VM blockchain tập trung vào các lần cập nhật trạng thái ngắn theo thứ tự. <span class="technical-token">ALUX</span> mở rộng mô hình đó cho những quy trình cần chờ, tiếp tục, phối hợp hoặc vượt qua ranh giới block.</p>
+            <ul><li>Về bản chất, blockchain là các máy chuyển trạng thái.</li><li>Nhiều VM blockchain hiện nay tập trung vào một nhóm hẹp hơn gồm các chuyển trạng thái ngắn theo thứ tự.</li></ul>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--state"><div class="alux-vs-native-surface" role="img" aria-label="Sơ đồ mô hình chuyển trạng thái">
+    <div class="alux-vs-original-image alux-vs-original-image--state">
+      <img src="/assets/optimized/state-transitions-page-crop-transparent.0f12753d2c10.webp" alt="" width="2070" height="910" loading="lazy">
+    </div>
+  </div><figcaption>Hình 1. <span class="technical-token">ALUX</span> mở rộng mô hình thực thi Web3 từ các lần cập nhật ngắn sang các giao dịch dài có thể phát lại.</figcaption><p class="alux-vs-figure-note"><strong>Điểm chính:</strong> nhiều blockchain tập trung vào các lần cập nhật trạng thái ngắn; <span class="technical-token">ALUX</span> bổ sung các giao dịch dài có thể phát lại.</p></figure>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="universal">
+            <h2><span class="technical-token">ALUX</span>: runtime phân tán cho giao dịch dài</h2>
+            <p><span class="technical-token">ALUX</span> mô hình hóa các kiểu chuyển trạng thái song song, đồng thời và tổng hợp, vượt ra ngoài những lần cập nhật trạng thái chỉ diễn ra một lần.</p>
+            <p>Thay vì xem mọi giao dịch là một lần cập nhật trạng thái ngắn và tách biệt, <span class="technical-token">ALUX</span> mô hình hóa việc thực thi như một runtime có thể phối hợp các chuyển trạng thái song song, đồng thời và tổng hợp.</p>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--types"><div class="alux-vs-native-surface" role="img" aria-label="Sơ đồ chuyển trạng thái song song, đồng thời và tổng hợp"><div class="alux-vs-original-image alux-vs-original-image--types"><img src="/assets/optimized/transition-types-transparent.e5e4dd5437d5.webp" alt="" width="3634" height="1353" loading="lazy"></div></div><figcaption>Hình 2. Hiện nay, <span class="technical-token">ALUX</span> hỗ trợ chuyển trạng thái song song và đồng thời, đồng thời xây dựng mô hình chuyển trạng thái tổng hợp làm kiến trúc mục tiêu.</figcaption><p class="alux-vs-figure-note"><strong>Điểm chính:</strong> xử lý song song thúc đẩy các công việc độc lập; thực thi đồng thời cho phép chờ rồi tiếp tục; còn khả năng kết hợp xác định cách các hiệu ứng liên quan được hoàn tất cùng nhau.</p></figure>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="execution">
+            <h2>Mô hình thực thi</h2>
+            <div class="alux-vs-capability-grid"><article class="alux-vs-capability alux-vs-capability--1"><span>Song song</span><div><h3>Thực thi song song</h3><p>Hiện nay, các instance <span class="alux-vs-accent"><span class="technical-token">EVM</span></span> được cô lập có thể chạy song song. <span class="technical-token">WASM</span> thuộc định hướng VM không đồng nhất đang được lên kế hoạch.</p></div></article><article class="alux-vs-capability alux-vs-capability--2"><span>Đồng thời</span><div><h3>Thực thi đồng thời</h3><p><span class="technical-token">ALUX</span> cho phép TX chạy dưới dạng <span class="alux-vs-accent">coroutine</span>, có thể tạm dừng, được đánh thức và xen kẽ với nhau. Việc thực thi không xác định, nhưng quá trình phát lại có tính xác định.</p></div></article><article class="alux-vs-capability alux-vs-capability--3"><span>Tổng hợp</span><div><h3>Chuyển trạng thái tổng hợp</h3><p>Các TX có thể kéo dài qua nhiều độ cao block và phối hợp công việc on-chain với các hiệu ứng HTTPS có thể phát lại, đồng thời giữ nguyên tính cô lập và <span class="alux-vs-accent">quyết toán nguyên tử</span> bên trong ranh giới giao dịch <span class="technical-token">ALUX</span>. Khả năng kết hợp xuyên shard vẫn thuộc kiến trúc và lộ trình.</p></div></article></div>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="compatibility">
+            <h2>Chuyển trạng thái tổng hợp và khả năng tương thích</h2>
+            <p>Các TX có thể kéo dài qua nhiều độ cao block và phối hợp công việc on-chain với các hiệu ứng HTTPS có thể phát lại, đồng thời giữ nguyên tính cô lập và <span class="alux-vs-accent">quyết toán nguyên tử</span> bên trong ranh giới giao dịch <span class="technical-token">ALUX</span>. Khả năng kết hợp xuyên shard vẫn thuộc kiến trúc và lộ trình.</p>
+            <p>Hiện nay, <span class="technical-token">ALUX</span> cung cấp khả năng tương thích <span class="alux-vs-accent"><span class="technical-token">EVM</span></span> thông qua sandbox và Ethereum <span class="technical-token">JSON-RPC</span>. <span class="technical-token">WASM</span> và khả năng kết hợp rộng hơn giữa các VM không đồng nhất nằm trong kế hoạch; phiên bản nền tảng hiện tại chưa bao gồm chúng.</p>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--composite"><div class="alux-vs-native-surface" role="img" aria-label="Sơ đồ runtime giao dịch tổng hợp">
+    <div class="alux-vs-original-image alux-vs-original-image--composite">
+      <img src="/assets/optimized/composite-transitions-transparent.e45337a28246.webp" alt="" width="1570" height="1762" loading="lazy">
+    </div>
+  </div><figcaption>Hình 3. Kiến trúc chuyển trạng thái tổng hợp kết nối công việc on-chain với dịch vụ <span class="technical-token">Web 2</span>; khả năng kết hợp xuyên shard vẫn nằm trong lộ trình.</figcaption><p class="alux-vs-figure-note"><strong>Điểm chính:</strong> hiện nay <span class="technical-token">ALUX</span> hỗ trợ thực thi xuyên block và I/O <span class="technical-token">Web 2</span> có thể phát lại; khả năng kết hợp xuyên shard vẫn đang được lên kế hoạch.</p></figure>
+            <p class="alux-vs-article-close">Tóm lại, <span class="technical-token">ALUX</span> không buộc mọi quy trình phải gói trong một giao dịch ngắn. Hiện nay, <span class="technical-token">ALUX</span> cho phép phát lại các giao dịch dài đi qua nhiều block và kết nối với <span class="technical-token">Web 2</span>; khả năng kết hợp xuyên shard và rộng hơn giữa các runtime vẫn thuộc kiến trúc và lộ trình phát triển.</p>
+          </section>
+        </div>
+      </div>
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Bản quyền © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script defer src="/i18n/runtime/vi/aluxVsOthers.js?v=aa3fce250de5"></script>
+<script defer src="/script.js?v=20261023-locales"></script>
+</body>
+</html>

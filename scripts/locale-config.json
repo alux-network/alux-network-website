@@ -1,0 +1,13 @@
+[
+  {"code":"en","name":"English","badge":"EN","hreflang":"en","ogLocale":"en_US","target":"English"},
+  {"code":"zh","name":"简体中文","badge":"简","hreflang":"zh-Hans","ogLocale":"zh_CN","target":"Chinese, polished Simplified Chinese product/protocol copy"},
+  {"code":"zh-hant","name":"繁體中文","badge":"繁","hreflang":"zh-Hant","ogLocale":"zh_TW","target":"Chinese, polished Traditional Chinese product/protocol copy"},
+  {"code":"ja","name":"日本語","badge":"日","hreflang":"ja","ogLocale":"ja_JP","target":"Japanese, polished native Japanese product/protocol copy"},
+  {"code":"ko","name":"한국어","badge":"한","hreflang":"ko","ogLocale":"ko_KR","target":"Korean, polished native Korean product/protocol copy"},
+  {"code":"vi","name":"Tiếng Việt","badge":"VI","hreflang":"vi","ogLocale":"vi_VN","target":"Vietnamese, polished native Vietnamese product/protocol copy"},
+  {"code":"de","name":"Deutsch","badge":"DE","hreflang":"de","ogLocale":"de_DE","target":"German, polished native German product/protocol copy"},
+  {"code":"es","name":"Español","badge":"ES","hreflang":"es","ogLocale":"es_ES","target":"Spanish, polished native Spanish product/protocol copy"},
+  {"code":"ru","name":"Русский","badge":"RU","hreflang":"ru","ogLocale":"ru_RU","target":"Russian, polished native Russian product/protocol copy"},
+  {"code":"uk","name":"Українська","badge":"UK","hreflang":"uk","ogLocale":"uk_UA","target":"Ukrainian, polished native Ukrainian product/protocol copy"},
+  {"code":"ar","name":"العربية","badge":"AR","hreflang":"ar","ogLocale":"ar_AR","target":"Arabic, polished native Arabic product/protocol copy"}
+]
