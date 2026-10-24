@@ -401,7 +401,7 @@ const pageData = {
           ["GitHub", "https://github.com/alux-network"],
           ["Medium", "https://medium.com/@alux_network"],
           ["X", "https://x.com/alux_network"],
-          ["Discord", "https://discord.gg/ZJfd9zmnTzdd"],
+          ["Discord", "https://discord.gg/HTBcp4ehDy"],
           ["Instagram", "https://www.instagram.com/alux_network/"],
           ["YouTube", "https://www.youtube.com/channel/UCWkSM8Qi2oMzTzIJTK1VOvA"],
           ["LinkedIn", "https://www.linkedin.com/company/foundation-alux/"]
