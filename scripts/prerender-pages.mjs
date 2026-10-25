@@ -156,7 +156,7 @@ for(const file of files){
    html=html.replace(/(<script\b[^>]*src="\/script\.js)/,'<script defer src="/'+name+'?v='+version+'"></script>\n$1');
   }
   html=html.replace(/<script\b(?: defer)? src="\/script\.js/g,'<script defer src="/script.js');
-  html=html.replace(/styles\.css\?v=[^"\s]+/g,'styles.css?v=20261023-locales').replace(/script\.js\?v=[^"\s]+/g,'script.js?v=20261023-locales').replace(/site-frame\.css\?v=[^"\s]+/g,'site-frame.css?v=20261023-locales').replace(/home-hero-3d\.css\?v=[^"\s]+/g,'home-hero-3d.css?v=20261015-hero-spacing').replace(/roadmap\.css\?v=[^"\s]+/g,'roadmap.css?v=20261014-details');
+  html=html.replace(/styles\.css\?v=[^"\s]+/g,'styles.css?v=20261023-locales').replace(/script\.js\?v=[^"\s]+/g,'script.js?v=20261024-discord').replace(/site-frame\.css\?v=[^"\s]+/g,'site-frame.css?v=20261023-locales').replace(/home-hero-3d\.css\?v=[^"\s]+/g,'home-hero-3d.css?v=20261015-hero-spacing').replace(/roadmap\.css\?v=[^"\s]+/g,'roadmap.css?v=20261014-details');
   if(page==='home'){
    html=html.replace(/\s*<link rel="preload"[^>]*data-home-media[^>]*>/g,'');
    const preloads=['assets/home/hero/alux-hero-3d-upper-brick.png','assets/home/hero/alux-hero-3d-lower-assembly.png'].map(name=>'<link rel="preload" as="image" type="image/webp" href="/'+media[name]+'" fetchpriority="high"'+' data-home-media>').join('\n');
