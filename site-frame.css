@@ -260,6 +260,7 @@ body[data-page] .lang-menu {
 }
 body[data-page] .lang-button {
   display: flex;
+  justify-content: left;
   align-items: center;
   width: 100%;
   min-height: 42px;
@@ -267,6 +268,11 @@ body[data-page] .lang-button {
   line-height: 1.5;
   text-decoration: none;
   white-space: nowrap;
+}
+/* Align the list by interface direction, independently of each label's script. */
+html[dir="rtl"] body[data-page] .lang-button {
+  justify-content: right;
+  text-align: right;
 }
 @media (max-width: 600px) {
   body[data-page] .lang-label { display: none; }
