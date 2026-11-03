@@ -1,7 +1,7 @@
 {
   "language": "es",
   "target": "Spanish, polished native Spanish product/protocol copy",
-  "updatedAt": "2026-10-22T17:06:47.123Z",
+  "updatedAt": "2026-11-03T08:28:03.607Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -110,10 +110,10 @@
     "aluxVsOthers.article.nav.3.label": {
       "source": "Composite & Compatibility",
       "sourceHash": "2a3ece1717b9e904c7c4876fdb93c6b3810a90af5510bb78d291bc00afe69ebb",
-      "text": "Composición y compatibilidad",
+      "text": "Transiciones compuestas y compatibilidad",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.123Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "aluxVsOthers.article.navLabel": {
       "source": "In this article",
@@ -214,10 +214,10 @@
     "aluxVsOthers.article.summary.2.1": {
       "source": "Parallel and concurrent today; composite is the target model",
       "sourceHash": "cd6253661ccb2e5f86d76241c225a0489489c291ed7aee7b013752bd99ecbec0",
-      "text": "Paralela y concurrente hoy; la composición es el modelo objetivo",
+      "text": "Paralela y concurrente hoy; la ejecución compuesta es el modelo objetivo",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.123Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "aluxVsOthers.article.summary.3.0": {
       "source": "Transaction semantics",
@@ -758,10 +758,10 @@
     "aluxVsOthers.what.text": {
       "source": "ALUX is the layer between execution, permissions, commit logic, and consensus. It lets smart contracts and agents pause, wait, resume, coordinate, and carry scoped authority across trust boundaries.",
       "sourceHash": "80e2306074dc4b149aab84e89cb36f9dbe66530f220eed4e9a509bc7a4cea389",
-      "text": "ALUX es la capa entre la ejecución, los permisos, la lógica de commit y el consenso. Permite que los contratos inteligentes y los agentes pausen, esperen, reanuden, se coordinen y mantengan autoridad acotada al cruzar límites de confianza.",
+      "text": "ALUX es la capa entre la ejecución, los permisos, la lógica de commit y el consenso. Permite que los contratos inteligentes y los agentes se pausen, esperen, se reanuden, se coordinen y mantengan autoridad acotada al cruzar límites de confianza.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.123Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "aluxVsOthers.what.title": {
       "source": "ALUX is composability middleware for decentralized services.",
@@ -1446,10 +1446,10 @@
     "glvm.continuity.modes.2.text": {
       "source": "Processes communicate, wait, and resume through channels.",
       "sourceHash": "94012441aef7ca5a1fdb7c4334a752eaa03ae8aaf401d3a45fda0d9c70128717",
-      "text": "Los procesos se comunican, esperan y reanudan a través de canales.",
+      "text": "Los procesos se comunican, esperan y se reanudan a través de canales.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.123Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "glvm.continuity.modes.3.label": {
       "source": "Composite",
@@ -1518,10 +1518,10 @@
     "glvm.continuity.notes.2.text": {
       "source": "An authenticated HTTPS GET can suspend, record the response, replay, and resume. The data source still determines truth, and irreversible off-chain side effects remain outside rollback.",
       "sourceHash": "92dca6762287ba3e76e4e57166deb8bc94a1277ddc2520c174f7584524781a7f",
-      "text": "Una solicitud HTTPS GET autenticada puede suspender la ejecución, registrar la respuesta, reproducirla y reanudarla. La fuente de datos sigue determinando la verdad, y los efectos secundarios irreversibles off-chain quedan fuera del rollback.",
+      "text": "Una solicitud HTTPS GET autenticada puede suspender la ejecución, registrar la respuesta, reproducir la ejecución y reanudarla. La fuente de datos sigue determinando la verdad, y los efectos secundarios irreversibles off-chain quedan fuera del rollback.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.123Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "glvm.continuity.notes.3.label": {
       "source": "Horizontal atomicity",
@@ -1662,10 +1662,10 @@
     "glvm.continuity.text": {
       "source": "Execution evolves from sequential and parallel work to concurrent processes that communicate, wait, and resume. Composite execution extends the model so multiple concurrent transactions can share a higher-level settlement boundary; cross-block continuity provides the vertical foundation for that direction.",
       "sourceHash": "31a40cb294ea110af5db98fa4ac991ecb8df1421211bc57d1ddb1cca4bb7ba37",
-      "text": "La ejecución evoluciona desde el trabajo secuencial y paralelo hacia procesos concurrentes que se comunican, esperan y reanudan. La ejecución compuesta amplía el modelo para que varias transacciones concurrentes compartan un límite de liquidación de nivel superior; la continuidad entre bloques proporciona la base vertical para esa dirección.",
+      "text": "La ejecución evoluciona desde el trabajo secuencial y paralelo hacia procesos concurrentes que se comunican, esperan y se reanudan. La ejecución compuesta amplía el modelo para que varias transacciones concurrentes compartan un límite de liquidación de nivel superior; la continuidad entre bloques proporciona la base vertical para esa dirección.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.123Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "glvm.continuity.title": {
       "source": "A transaction can wait across blocks, then settle as one",
@@ -5190,10 +5190,10 @@
     "home.sections.9.items.5.0": {
       "source": "Can existing smart contract developers use it?",
       "sourceHash": "da8408b77ac5b93976121f0ecfda0c6445cfed6181e41692ad56ba56c7a80e06",
-      "text": "¿Pueden usarlo los desarrolladores de contratos inteligentes existentes?",
+      "text": "¿Pueden usarlo quienes ya desarrollan contratos inteligentes?",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.123Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.9.items.5.1": {
       "source": "TVM runs EVM bytecode inside isolated sandboxes, so most EVM contracts can be migrated to ALUX with minimal changes. ALUX also presents an Ethereum-compatible view through a set of commonly used eth_* JSON-RPC methods.",
@@ -6398,10 +6398,10 @@
     "parallelConcurrentComposable.modes.0.how": {
       "source": "Parallel execution is native to ALUX's process calculus: transactions share no memory, and any interaction is confined to tuple-space channels. Independent transactions therefore advance in separate TVM lanes, while Block Merge resolves state overlap at commit time.",
       "sourceHash": "a3d263ec5452cc7e5a834d824297883da8faa0d80368c20dd2210941bad4abaa",
-      "text": "La ejecución paralela es nativa del cálculo de procesos de ALUX: las transacciones no comparten memoria y toda interacción se limita a los canales de tuple space. Por ello, las transacciones independientes avanzan por carriles TVM separados, mientras Block Merge resuelve las solapamientos de estado al confirmar.",
+      "text": "La ejecución paralela es nativa del cálculo de procesos de ALUX: las transacciones no comparten memoria y toda interacción se limita a los canales de tuple space. Por ello, las transacciones independientes avanzan por carriles TVM separados, mientras Block Merge resuelve los solapamientos de estado al confirmar.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.123Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "parallelConcurrentComposable.modes.0.label": {
       "source": "Parallel",
@@ -6604,12 +6604,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.101": {
-      "source": "Designed and initial implementation of BlockGit, a new consensus protocol (Completed)",
-      "sourceHash": "7dc579992148339d2cad37089690f9e08c481286cd86a1967d75b800216aaf98",
+      "source": "Design and initial implementation of BlockGit, a new consensus protocol (Completed)",
+      "sourceHash": "6757793b87f6dce99752722445b8de101c1f549668439e983774316dbf36deab",
       "text": "Diseño e implementación inicial de BlockGit, un nuevo protocolo de consenso (Completado)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.123Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.102": {
       "source": "A discrete event simulator to test consensus protocol implementation (Completed)",
@@ -7020,12 +7020,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.30": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "Nuevo sandbox EVM basado en trampas (En curso)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.123Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.31": {
       "source": "Integrate with Ethereum toolchain (In Progress)",
@@ -7124,12 +7124,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.42": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "Nuevo sandbox EVM basado en trampas (En curso)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.123Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.43": {
       "source": "2026 Q4",
@@ -7156,12 +7156,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.46": {
-      "source": "A \"GDB\" like TVM debug and observability tool (WIP)",
-      "sourceHash": "cf2ee5400cdb37f36aaae3a9f7758bf6ef71aeb19a65baa66d22d270b012100b",
+      "source": "A \"GDB\"-like TVM debug and observability tool (WIP)",
+      "sourceHash": "fd176f7b07e685ea8d388255d336e71dd6fd281bb7021d8ec9a0971f8ed26d06",
       "text": "Herramienta de depuración y observabilidad TVM similar a «GDB» (En curso)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.123Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.47": {
       "source": "Complete the cost accounting model (WIP)",
@@ -7340,12 +7340,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.67": {
-      "source": "Introduce test framework for randomly generated Tolang codes and CI integration (Completed)",
-      "sourceHash": "d58a58e55f92cb5f33ac6a0b808e79d9518b316e8a0fb8ccf05d7b1ab6580ab9",
+      "source": "Introduce test framework for randomly generated Tolang code and CI integration (Completed)",
+      "sourceHash": "521c2a4d025036fcc7ae3169d5cff4d7d2fbef3c7c8e2038c143a93ac6ed6699",
       "text": "Incorporación de un framework de pruebas para código Tolang generado aleatoriamente e integración con CI (Completado)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.123Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.68": {
       "source": "Refactor replay logic (Completed)",

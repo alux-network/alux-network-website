@@ -1,7 +1,7 @@
 {
   "language": "ar",
   "target": "Arabic, polished native Arabic product/protocol copy",
-  "updatedAt": "2026-10-04T17:17:33.177599Z",
+  "updatedAt": "2026-11-03T08:28:03.607Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -3006,10 +3006,10 @@
     "home.sections.0.architecture.infrastructure.groups.1.0": {
       "source": "Private Cluster",
       "sourceHash": "a532bf45218091588db1c0c84228ab0b0a1173eb1a71ecd0785505efff49c70b",
-      "text": "مجموعة خاصة",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-16T02:53:05.677Z",
-      "reviewerNotes": "Reviewed against the current English homepage source."
+      "text": "عنقود حوسبة خاص",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.0.architecture.infrastructure.groups.1.1": {
       "source": "Cloud / Enterprise Nodes",
@@ -3870,10 +3870,10 @@
     "home.sections.2.clusters.6.items.1": {
       "source": "P2P Gossip",
       "sourceHash": "ab13fc32c79cbf6f7e68ecc33a554863c1cb2727a3fcd4d86cc62d3f9fb95558",
-      "text": "بث P2P",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-08-11T08:47:31.738Z",
-      "reviewerNotes": "Human-reviewed Arabic copy aligned with the current English homepage source and ALUX maturity boundaries."
+      "text": "Gossip عبر P2P",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.2.clusters.6.items.2": {
       "source": "Storage Context",
@@ -4590,10 +4590,10 @@
     "home.sections.2.eyebrow": {
       "source": "Capability Map",
       "sourceHash": "4e2031461e913daab2347b674f3f0d3ba0fb42635b643858e7bfe8164babdb09",
-      "text": "خريطة الصلاحيات",
+      "text": "خريطة القدرات",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.2.guideSteps.0": {
       "source": "Drag into ALUX Runtime",
@@ -4646,10 +4646,10 @@
     "home.sections.2.mapTitle": {
       "source": "ALUX Capability Map",
       "sourceHash": "23dc47022bc3df09f10bcf6c70428ded6908e83356ffeb5774d6a76f7f6efc8c",
-      "text": "خريطة صلاحيات ALUX",
+      "text": "خريطة قدرات ALUX",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.2.outcome.items.0": {
       "source": "Discover",
@@ -4750,10 +4750,10 @@
     "home.sections.2.title": {
       "source": "ALUX Runtime Capability Map",
       "sourceHash": "1f414518fae580736feb91a97ebfd409d3de3b919bce701b0e97bcf47aed0429",
-      "text": "خريطة صلاحيات بيئة تشغيل ALUX",
+      "text": "خريطة قدرات بيئة تشغيل ALUX",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.6.cta.eyebrow": {
       "source": "Build beyond the one-shot transaction",
@@ -4998,10 +4998,10 @@
     "home.sections.6.demos.3.status": {
       "source": "APPLICATION POLICY",
       "sourceHash": "c15de6fa8b1c753e536725256579f81a9d14a41c87a35acb4307f4c0c8c7a205",
-      "text": "منطق التطبيق",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-08-11T14:49:11.059Z",
-      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
+      "text": "سياسة التطبيق",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.6.eyebrow": {
       "source": "Use Cases",
@@ -6190,10 +6190,10 @@
     "parallelConcurrentComposable.lab.messages.parallel": {
       "source": "Parallel: reservation and payment checks advance at the same time without sharing state.",
       "sourceHash": "f0526d6925852a54e6bae8dddd396b602445dde5acc9ffb346fc4082284d20e9",
-      "text": "التوازي: يتقدم فحص الحجز وفحص الدفع في الوقت نفسه بصورة مستقلة.",
+      "text": "التوازي: يتقدم فحص الحجز وفحص الدفع في الوقت نفسه من دون مشاركة الحالة.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "parallelConcurrentComposable.lab.messages.paused": {
       "source": "Concurrent wait: the reservation leaves a room-availability condition in the channel; payment work can keep moving.",
@@ -6604,12 +6604,12 @@
       "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "roadmapStatic.101": {
-      "source": "Designed and initial implementation of BlockGit, a new consensus protocol (Completed)",
-      "sourceHash": "7dc579992148339d2cad37089690f9e08c481286cd86a1967d75b800216aaf98",
+      "source": "Design and initial implementation of BlockGit, a new consensus protocol (Completed)",
+      "sourceHash": "6757793b87f6dce99752722445b8de101c1f549668439e983774316dbf36deab",
       "text": "تصميم BlockGit وتنفيذه أوليًا بوصفه بروتوكول إجماع جديدًا (مكتمل)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "roadmapStatic.102": {
       "source": "A discrete event simulator to test consensus protocol implementation (Completed)",
@@ -7020,12 +7020,12 @@
       "reviewerNotes": "Reviewed against the supplied October 2026 roadmap update; technical terms and per-item status preserved."
     },
     "roadmapStatic.30": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "بيئة EVM معزولة جديدة قائمة على المصيدة (trap) (قيد التنفيذ)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "roadmapStatic.31": {
       "source": "Integrate with Ethereum toolchain (In Progress)",
@@ -7124,12 +7124,12 @@
       "reviewerNotes": "Reviewed against the supplied October 2026 roadmap update; technical terms and per-item status preserved."
     },
     "roadmapStatic.42": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "بيئة EVM معزولة جديدة قائمة على المصيدة (trap) (قيد التنفيذ)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "roadmapStatic.43": {
       "source": "2026 Q4",
@@ -7156,12 +7156,12 @@
       "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "roadmapStatic.46": {
-      "source": "A \"GDB\" like TVM debug and observability tool (WIP)",
-      "sourceHash": "cf2ee5400cdb37f36aaae3a9f7758bf6ef71aeb19a65baa66d22d270b012100b",
+      "source": "A \"GDB\"-like TVM debug and observability tool (WIP)",
+      "sourceHash": "fd176f7b07e685ea8d388255d336e71dd6fd281bb7021d8ec9a0971f8ed26d06",
       "text": "أداة لتصحيح TVM ورصدها على غرار GDB (قيد العمل — WIP)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "roadmapStatic.47": {
       "source": "Complete the cost accounting model (WIP)",
@@ -7340,12 +7340,12 @@
       "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "roadmapStatic.67": {
-      "source": "Introduce test framework for randomly generated Tolang codes and CI integration (Completed)",
-      "sourceHash": "d58a58e55f92cb5f33ac6a0b808e79d9518b316e8a0fb8ccf05d7b1ab6580ab9",
+      "source": "Introduce test framework for randomly generated Tolang code and CI integration (Completed)",
+      "sourceHash": "521c2a4d025036fcc7ae3169d5cff4d7d2fbef3c7c8e2038c143a93ac6ed6699",
       "text": "إدخال إطار اختبار لشفرة Tolang المولدة عشوائيًا ودمجه مع CI (مكتمل)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
     },
     "roadmapStatic.68": {
       "source": "Refactor replay logic (Completed)",
@@ -7662,10 +7662,10 @@
     "team.sections.0.items.0.bio.1": {
       "source": "That career left him with one conviction: the synchronous execution model has reached its end. ALUX is his answer. He led the design of its core stack:",
       "sourceHash": "c95d232c645012573d536bc512a71ff8a901894ce4ef7da84a3a7ec50e5023c1",
-      "text": "تركت له تلك المسيرة قناعة واحدة: بلغ نموذج التنفيذ المتسلسل المتزامن نهايته. وكانت ALUX إجابته؛ وقد قاد تصميم مكدسها الأساسي:",
+      "text": "تركت له تلك المسيرة قناعة واحدة: بلغ نموذج التنفيذ المتزامن (synchronous) نهايته. وكانت ALUX إجابته؛ وقد قاد تصميم مكدسها الأساسي:",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "team.sections.0.items.0.closing.0": {
       "source": "Virtual machine, language, and consensus interlock into one system where concurrent execution and composability finally hold together — a protocol layer built for an open, composable economy of AI agents.",
@@ -7742,10 +7742,10 @@
     "team.sections.0.items.0.highlights.3.1": {
       "source": "Validators produce DAG blocks concurrently. BlockGit uses rotating leader selection for finality, while Block Merge resolves overlapping work.",
       "sourceHash": "c0b98ec3af75bfbbfe9b893d52b71187a93b4f3466ceeebeec2557cacc36ef1f",
-      "text": "ينتج المدققون كتل DAG بالتوازي. ويستخدم BlockGit اختيارًا دوّارًا للقادة للوصول إلى النهائية، بينما يحل Block Merge تداخل العمل.",
+      "text": "ينتج المدققون كتل DAG بصورة متزامنة. ويستخدم BlockGit اختيارًا دوّارًا للقادة للوصول إلى النهائية، بينما يحل Block Merge تداخل العمل.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "team.sections.0.items.0.highlights.4.0": {
       "source": "Decentralized ACID transaction layer",
@@ -7902,10 +7902,10 @@
     "team.sections.0.items.2.bio.0": {
       "source": "Tom is a blockchain developer focused on consensus protocol research — at ALUX, that means BlockGit, the DAG consensus design that lets validators produce blocks concurrently without a permanent leader.",
       "sourceHash": "26f8f219bdbb91910fc0c2b0b2a6047548a728482cc8c8b48bf9571d188126ca",
-      "text": "Tom مطور بلوكشين يركز على أبحاث بروتوكولات الإجماع؛ وفي ALUX يعني ذلك BlockGit، وهو تصميم إجماع قائم على DAG يتيح للمدققين إنتاج الكتل بالتوازي من دون قائد دائم.",
+      "text": "Tom مطور بلوكشين يركز على أبحاث بروتوكولات الإجماع؛ وفي ALUX يعني ذلك BlockGit، وهو تصميم إجماع قائم على DAG يتيح للمدققين إنتاج الكتل بصورة متزامنة من دون قائد دائم.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T16:18:23.2662592Z",
-      "reviewerNotes": "Full native Arabic review against current English source; terminology, implementation-status, HTML-tag, and RTL checks completed."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "team.sections.0.items.2.bio.1": {
       "source": "Before ALUX he spent about ten years in the IPC industry, owning system architecture and shipping across DApps, mobile, cloud, web, and desktop — a range that now spans a dozen languages, from C and C++ to Solidity and Rust.",

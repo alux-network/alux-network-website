@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <script data-language-routing>
-window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ko","name":"한국어"},{"code":"ja","name":"日本語"},{"code":"es","name":"Español"},{"code":"ar","name":"العربية"},{"code":"de","name":"Deutsch"},{"code":"fr","name":"Français"},{"code":"uk","name":"Українська"},{"code":"ru","name":"Русский"},{"code":"vi","name":"Tiếng Việt"}];
 // Inlined at the start of each generated head; no runtime download is needed.
 (function () {
   const languages = window.ALUX_LOCALES.map(locale => locale.code);
@@ -62,20 +62,21 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
 <link rel="alternate" hreflang="en" href="https://www.alux.network/runtime-lab">
 <link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/runtime-lab">
 <link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/runtime-lab">
-<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/runtime-lab">
 <link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/runtime-lab">
-<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/runtime-lab">
-<link rel="alternate" hreflang="de" href="https://www.alux.network/de/runtime-lab">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/runtime-lab">
 <link rel="alternate" hreflang="es" href="https://www.alux.network/es/runtime-lab">
-<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/runtime-lab">
-<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/runtime-lab">
 <link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/runtime-lab">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/runtime-lab">
+<link rel="alternate" hreflang="fr" href="https://www.alux.network/fr/runtime-lab">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/runtime-lab">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/runtime-lab">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/runtime-lab">
 <link rel="alternate" hreflang="x-default" href="https://www.alux.network/runtime-lab">
   <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
   <meta name="description" content="Hướng dẫn trực quan về thực thi song song và dựa trên thông điệp hiện có của ALUX, cùng mô hình mục tiêu cho việc kết hợp nguyên tử xuyên ranh giới hệ thống.">
 <link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
-<link rel="stylesheet" href="/styles.css?v=20261023-locales">
-<link rel="stylesheet" href="/site-frame.css?v=20261031-language-menu">
+<link rel="stylesheet" href="/styles.css?v=20261103-french">
+<link rel="stylesheet" href="/site-frame.css?v=20261103-language-grid">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
 <meta property="og:type" content="website">
@@ -84,8 +85,8 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
 <meta property="og:url" content="https://www.alux.network/vi/runtime-lab">
 <meta property="og:title" content="ALUX Runtime Lab | ALUX Network">
 <meta property="og:description" content="Hướng dẫn trực quan về thực thi song song và dựa trên thông điệp hiện có của ALUX, cùng mô hình mục tiêu cho việc kết hợp nguyên tử xuyên ranh giới hệ thống.">
-<meta property="og:image" content="https://www.alux.network/assets/social/pages/vi/runtime-lab.jpg?v=20261015">
-<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/vi/runtime-lab.jpg?v=20261015">
+<meta property="og:image" content="https://www.alux.network/assets/social/pages/vi/runtime-lab.jpg?v=20261103">
+<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/vi/runtime-lab.jpg?v=20261103">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -93,7 +94,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ALUX Runtime Lab | ALUX Network">
 <meta name="twitter:description" content="Hướng dẫn trực quan về thực thi song song và dựa trên thông điệp hiện có của ALUX, cùng mô hình mục tiêu cho việc kết hợp nguyên tử xuyên ranh giới hệ thống.">
-<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/vi/runtime-lab.jpg?v=20261015">
+<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/vi/runtime-lab.jpg?v=20261103">
 <meta name="twitter:image:alt" content="ALUX Runtime Lab | ALUX Network">
 </head>
 <body data-page="parallelConcurrentComposable">
@@ -113,7 +114,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
           <div class="nav-dropdown-menu" id="learn-menu">
             <a href="/vi/glvm" data-nav="learnGlvm">GLVM</a>
             <a href="/vi/runtime-lab" data-nav="learnPcc" class="active-link" aria-current="page">Runtime Lab</a>
-            <a href="/vi/alux-vs-others" data-nav="learnAlux">ALUX và các nền tảng khác</a>
+            <a href="/vi/alux-vs-others" data-nav="learnAlux">ALUX so với các nền tảng khác</a>
           </div>
         </div>
         <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">Blog</a>
@@ -121,7 +122,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
         <a href="/vi/roadmap" data-nav="roadmap">Lộ trình</a>
       </nav>
       <div class="header-actions">
-        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Ngôn ngữ</span><span class="lang-current" data-lang-current>Tiếng Việt</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/runtime-lab" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/runtime-lab" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/runtime-lab" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/runtime-lab" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/runtime-lab" hreflang="ko">한국어</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/runtime-lab" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/runtime-lab" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/runtime-lab" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/runtime-lab" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/runtime-lab" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/runtime-lab" hreflang="ar">العربية</a></div></div>
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Ngôn ngữ</span><span class="lang-current" data-lang-current>Tiếng Việt</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/runtime-lab" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/runtime-lab" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/runtime-lab" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/runtime-lab" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/runtime-lab" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/runtime-lab" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/runtime-lab" hreflang="ar">العربية</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/runtime-lab" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="fr" lang="fr" dir="ltr" href="https://www.alux.network/fr/runtime-lab" hreflang="fr">Français</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/runtime-lab" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/runtime-lab" hreflang="ru">Русский</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/runtime-lab" hreflang="vi">Tiếng Việt</a></div></div>
         <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">Liên hệ</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Bật/tắt menu điều hướng"><span></span><span></span><span></span></button>
       </div>
@@ -303,7 +304,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
           <p>Xử lý song song đảm nhiệm việc thực thi độc lập. Tính đồng thời xử lý tương tác dựa trên thông điệp và cơ chế chờ/tiếp tục. Hiện nay, <span class="technical-token">ALUX</span> triển khai các nền tảng runtime đó và đang hướng tới kết hợp nguyên tử xuyên ranh giới hệ thống.</p>
         </div>
         <div class="pcc-close-points"><article class="pcc-close-point"><span>Chỉ song song</span><p>Tăng thông lượng nhưng không có phụ thuộc giao dịch hay khớp thông điệp.</p></article><article class="pcc-close-point"><span>Chỉ đồng thời</span><p>Các giao dịch có thể tương tác và chờ nhau, nhưng hiệu ứng xuyên hệ thống vẫn có thể được quyết toán riêng rẽ.</p></article><article class="pcc-close-point"><span>Chỉ có khả năng kết hợp</span><p>Có ranh giới nguyên tử, nhưng nếu không thể tương tác và chờ thì không thể duy trì các phụ thuộc chạy dài.</p></article></div>
-        <div class="hero-actions pcc-close-actions"><a class="button primary" href="/vi/alux-vs-others">Trở lại <span class="technical-token">ALUX</span> và các nền tảng khác</a><a class="button secondary" href="/vi/for-ai-agents">Dành cho AI Agent</a></div>
+        <div class="hero-actions pcc-close-actions"><a class="button primary" href="/vi/alux-vs-others">Trở lại <span class="technical-token">ALUX</span> so với các nền tảng khác</a><a class="button secondary" href="/vi/for-ai-agents">Dành cho AI Agent</a></div>
       </section>
     </article>
 </main>
@@ -311,7 +312,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
       <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Bản quyền © 2026 Foundation ALUX</p></div>
     </footer>
   </div>
-<script defer src="/i18n/runtime/vi/parallelConcurrentComposable.js?v=450327434c49"></script>
-<script defer src="/script.js?v=20261024-discord"></script>
+<script defer src="/i18n/runtime/vi/parallelConcurrentComposable.js?v=4d7f57da2333"></script>
+<script defer src="/script.js?v=20261103-language-grid"></script>
 </body>
 </html>

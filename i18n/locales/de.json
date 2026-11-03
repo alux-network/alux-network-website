@@ -1,7 +1,7 @@
 {
   "language": "de",
   "target": "German, polished native German product/protocol copy",
-  "updatedAt": "2026-10-22T17:06:47.049Z",
+  "updatedAt": "2026-11-03T08:28:03.607Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -110,10 +110,10 @@
     "aluxVsOthers.article.nav.3.label": {
       "source": "Composite & Compatibility",
       "sourceHash": "2a3ece1717b9e904c7c4876fdb93c6b3810a90af5510bb78d291bc00afe69ebb",
-      "text": "Komposition und Kompatibilität",
+      "text": "Zusammengesetzte Übergänge und Kompatibilität",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.049Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "aluxVsOthers.article.navLabel": {
       "source": "In this article",
@@ -214,10 +214,10 @@
     "aluxVsOthers.article.summary.2.1": {
       "source": "Parallel and concurrent today; composite is the target model",
       "sourceHash": "cd6253661ccb2e5f86d76241c225a0489489c291ed7aee7b013752bd99ecbec0",
-      "text": "Heute parallel und nebenläufig; Komposition ist das Zielmodell",
+      "text": "Heute parallel und nebenläufig; zusammengesetzte Ausführung ist das Zielmodell",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.049Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "aluxVsOthers.article.summary.3.0": {
       "source": "Transaction semantics",
@@ -5022,10 +5022,10 @@
     "home.sections.6.items.0.1": {
       "source": "A workflow starts several agents in parallel. Some call the Claude API, while other steps wait for user input. The main agent continues only after every branch finishes, even when the workflow runs for about 30 minutes. Claude and user input connect at the application layer; ALUX provides durable fork, wait, join, capability passing, and replayable execution.",
       "sourceHash": "755f159b851633ea58ab36b0e302056d3fda460086aa70c69341ce85ba15a2b0",
-      "text": "Ein Ablauf startet mehrere Agenten parallel. Einige rufen die Claude-API auf, während andere Schritte auf Eingaben des Nutzers warten. Der Haupt-Agent setzt erst fort, wenn jeder Zweig abgeschlossen ist – auch wenn der Ablauf etwa 30 Minuten dauert. Claude und Nutzereingaben werden auf Anwendungsebene eingebunden; ALUX stellt dauerhafte Fork-, Wait-, Join-, Capability-Weitergabe- und wiederholbare Ausführungsfunktionen bereit.",
+      "text": "Ein Ablauf startet mehrere Agenten parallel. Einige rufen die Claude-API auf, während andere Schritte auf Eingaben des Nutzers warten. Der Haupt-Agent fährt erst fort, wenn jeder Zweig abgeschlossen ist – auch wenn der Ablauf etwa 30 Minuten dauert. Claude und Nutzereingaben werden auf Anwendungsebene eingebunden; ALUX stellt dauerhafte Fork-, Wait-, Join-, Capability-Weitergabe- und wiederholbare Ausführungsfunktionen bereit.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.049Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.6.items.1.0": {
       "source": "BTC Price Aggregation from Three Exchanges",
@@ -5190,10 +5190,10 @@
     "home.sections.9.items.5.0": {
       "source": "Can existing smart contract developers use it?",
       "sourceHash": "da8408b77ac5b93976121f0ecfda0c6445cfed6181e41692ad56ba56c7a80e06",
-      "text": "Können Entwickler bestehender Smart Contracts ALUX nutzen?",
+      "text": "Können Entwickler, die bereits mit Smart Contracts arbeiten, ALUX nutzen?",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.049Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.9.items.5.1": {
       "source": "TVM runs EVM bytecode inside isolated sandboxes, so most EVM contracts can be migrated to ALUX with minimal changes. ALUX also presents an Ethereum-compatible view through a set of commonly used eth_* JSON-RPC methods.",
@@ -5846,10 +5846,10 @@
     "parallelConcurrentComposable.hero.hotspots.composable": {
       "source": "Open composable workflow",
       "sourceHash": "5f32e1422fd424027f2150febc5212d49d3d9c2c0a816cf7f4ee1b9f7d700794",
-      "text": "Zusammengesetzten Ablauf öffnen",
+      "text": "Kombinierbaren Ablauf öffnen",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.049Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "parallelConcurrentComposable.hero.hotspots.concurrent": {
       "source": "Open message-driven concurrency",
@@ -6604,12 +6604,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.101": {
-      "source": "Designed and initial implementation of BlockGit, a new consensus protocol (Completed)",
-      "sourceHash": "7dc579992148339d2cad37089690f9e08c481286cd86a1967d75b800216aaf98",
+      "source": "Design and initial implementation of BlockGit, a new consensus protocol (Completed)",
+      "sourceHash": "6757793b87f6dce99752722445b8de101c1f549668439e983774316dbf36deab",
       "text": "BlockGit, ein neues Konsensprotokoll, entworfen und erstmals implementiert (abgeschlossen)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.049Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.102": {
       "source": "A discrete event simulator to test consensus protocol implementation (Completed)",
@@ -7020,12 +7020,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.30": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "Neue trap-basierte EVM-Sandbox (in Arbeit)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.049Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.31": {
       "source": "Integrate with Ethereum toolchain (In Progress)",
@@ -7124,12 +7124,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.42": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "Neue trap-basierte EVM-Sandbox (in Arbeit)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.049Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.43": {
       "source": "2026 Q4",
@@ -7156,12 +7156,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.46": {
-      "source": "A \"GDB\" like TVM debug and observability tool (WIP)",
-      "sourceHash": "cf2ee5400cdb37f36aaae3a9f7758bf6ef71aeb19a65baa66d22d270b012100b",
+      "source": "A \"GDB\"-like TVM debug and observability tool (WIP)",
+      "sourceHash": "fd176f7b07e685ea8d388255d336e71dd6fd281bb7021d8ec9a0971f8ed26d06",
       "text": "TVM-Debugging- und Observability-Tool ähnlich „GDB“ (in Arbeit)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.049Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.47": {
       "source": "Complete the cost accounting model (WIP)",
@@ -7334,18 +7334,18 @@
     "roadmapStatic.66": {
       "source": "Introduce simple channel behavioral types to simplify TVM architecture and improve reliability (Completed)",
       "sourceHash": "c323d55459986d630d168e13023a51a5a91659084da47b6c640c9e60b86132c0",
-      "text": "Einfache Verhaltensarten für Kanäle zur Vereinfachung der TVM-Architektur und Verbesserung der Zuverlässigkeit eingeführt (abgeschlossen)",
+      "text": "Einfache Verhaltenstypen für Kanäle zur Vereinfachung der TVM-Architektur und Verbesserung der Zuverlässigkeit eingeführt (abgeschlossen)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.049Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "roadmapStatic.67": {
-      "source": "Introduce test framework for randomly generated Tolang codes and CI integration (Completed)",
-      "sourceHash": "d58a58e55f92cb5f33ac6a0b808e79d9518b316e8a0fb8ccf05d7b1ab6580ab9",
+      "source": "Introduce test framework for randomly generated Tolang code and CI integration (Completed)",
+      "sourceHash": "521c2a4d025036fcc7ae3169d5cff4d7d2fbef3c7c8e2038c143a93ac6ed6699",
       "text": "Testframework für zufällig erzeugte Tolang-Programme mit CI-Integration eingeführt (abgeschlossen)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:06:47.049Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.68": {
       "source": "Refactor replay logic (Completed)",

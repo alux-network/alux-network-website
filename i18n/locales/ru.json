@@ -1,7 +1,7 @@
 {
   "language": "ru",
   "target": "Russian, polished native Russian product/protocol copy",
-  "updatedAt": "2026-10-22T17:11:15.314Z",
+  "updatedAt": "2026-11-03T08:28:03.607Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -270,10 +270,10 @@
     "aluxVsOthers.article.universalText": {
       "source": "Instead of treating every transaction as a short isolated state update, ALUX models execution as a runtime that can coordinate parallel, concurrent, and composite transitions.",
       "sourceHash": "fcc73dce64eaa8d0eb77de9e3f0f57e111eee4b7e37e2cc1ae276a63daddaad6",
-      "text": "ALUX не ограничивает каждую транзакцию коротким изолированным обновлением состояния: его среда выполнения координирует параллельные, конкурентные и составные переходы.",
+      "text": "ALUX не ограничивает каждую транзакцию коротким изолированным обновлением состояния: его модель среды выполнения предусматривает координацию параллельных, конкурентных и составных переходов.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:11:15.314Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "aluxVsOthers.article.universalTitle": {
       "source": "ALUX as a Distributed Runtime for Long Transactions",
@@ -6604,12 +6604,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.101": {
-      "source": "Designed and initial implementation of BlockGit, a new consensus protocol (Completed)",
-      "sourceHash": "7dc579992148339d2cad37089690f9e08c481286cd86a1967d75b800216aaf98",
+      "source": "Design and initial implementation of BlockGit, a new consensus protocol (Completed)",
+      "sourceHash": "6757793b87f6dce99752722445b8de101c1f549668439e983774316dbf36deab",
       "text": "Проектирование и первоначальная реализация нового протокола консенсуса BlockGit (завершено)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:11:15.314Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.102": {
       "source": "A discrete event simulator to test consensus protocol implementation (Completed)",
@@ -7020,12 +7020,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.30": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "Новая песочница EVM на основе перехватов (в работе)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:11:15.314Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.31": {
       "source": "Integrate with Ethereum toolchain (In Progress)",
@@ -7124,12 +7124,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.42": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "Новая песочница EVM на основе перехватов (в работе)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:11:15.314Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.43": {
       "source": "2026 Q4",
@@ -7156,12 +7156,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.46": {
-      "source": "A \"GDB\" like TVM debug and observability tool (WIP)",
-      "sourceHash": "cf2ee5400cdb37f36aaae3a9f7758bf6ef71aeb19a65baa66d22d270b012100b",
+      "source": "A \"GDB\"-like TVM debug and observability tool (WIP)",
+      "sourceHash": "fd176f7b07e685ea8d388255d336e71dd6fd281bb7021d8ec9a0971f8ed26d06",
       "text": "Инструмент отладки и наблюдаемости TVM в стиле «GDB» (в работе)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:11:15.314Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.47": {
       "source": "Complete the cost accounting model (WIP)",
@@ -7340,12 +7340,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.67": {
-      "source": "Introduce test framework for randomly generated Tolang codes and CI integration (Completed)",
-      "sourceHash": "d58a58e55f92cb5f33ac6a0b808e79d9518b316e8a0fb8ccf05d7b1ab6580ab9",
+      "source": "Introduce test framework for randomly generated Tolang code and CI integration (Completed)",
+      "sourceHash": "521c2a4d025036fcc7ae3169d5cff4d7d2fbef3c7c8e2038c143a93ac6ed6699",
       "text": "Тестовый фреймворк для случайно генерируемого кода Tolang и интеграция с CI (завершено)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:11:15.314Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.68": {
       "source": "Refactor replay logic (Completed)",

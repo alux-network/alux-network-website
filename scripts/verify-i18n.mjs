@@ -21,6 +21,11 @@ function containsTechnicalToken(value, token) {
   return new RegExp(`(^|[^A-Za-z0-9_])${escaped}(?=$|[^A-Za-z0-9_])`).test(String(value || ""));
 }
 const officialTermPatterns = {
+  fr: {
+    longTransaction: /transactions? longues?/i,
+    glvm: /machine virtuelle logique globale/i,
+    bitExact: /bit à bit/i
+  },
   zh: {
     longTransaction: /长交易/,
     glvm: /全局逻辑虚拟机/,

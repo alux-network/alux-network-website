@@ -249,21 +249,36 @@ body[data-page] .header-actions .button.ghost {
   font-weight: 700;
 }
 
-/* Native language names remain readable in the expanded eleven-language menu. */
+/* Show every language at once, in reading order, without a nested scrollbar. */
 body[data-page] .lang-menu {
-  width: max-content;
-  min-width: 190px;
+  right: auto;
+  left: auto;
+  inset-inline-end: 0;
+  width: 340px;
+  min-width: 0;
   max-width: calc(100vw - 32px);
-  max-height: min(440px, calc(100dvh - 140px));
-  overflow-y: auto;
-  overscroll-behavior: contain;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-height: none;
+  overflow: visible;
+}
+body[data-page] .lang-dropdown .lang-menu {
+  background: #fffcf7;
+}
+@media (max-width: 960px) {
+  body[data-page] .lang-dropdown { position: static; }
+  body[data-page] .lang-menu {
+    width: min(340px, calc(100% - 24px));
+    inset-inline-end: 12px;
+  }
 }
 body[data-page] .lang-button {
   display: flex;
   justify-content: left;
   align-items: center;
   width: 100%;
-  min-height: 42px;
+  min-height: 44px;
+  min-width: 0;
+  padding-inline: 12px;
   font-size: 0.9375rem;
   line-height: 1.5;
   text-decoration: none;
@@ -277,4 +292,12 @@ html[dir="rtl"] body[data-page] .lang-button {
 @media (max-width: 600px) {
   body[data-page] .lang-label { display: none; }
   body[data-page] .lang-switch { gap: 6px; padding-inline: 12px; }
+}
+/* Short landscape screens use four rows while retaining full touch targets. */
+@media (min-width: 480px) and (max-height: 500px) {
+  body[data-page] .lang-menu {
+    width: min(510px, calc(100vw - 64px));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    top: calc(100% - 16px);
+  }
 }
