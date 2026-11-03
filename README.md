@@ -40,7 +40,7 @@ npm run check
 
 This verifies JavaScript syntax, localization integrity, website pages, and local asset references.
 
-For rendered language-menu regression checks, run `npm run menu:verify -- --all-pages --webkit --4k`. This optional check uses Playwright and installed Chromium/WebKit browsers; `PLAYWRIGHT_MODULE` and `BROWSER_EXECUTABLE` select existing installations as for share-card rendering. It checks all locales on phone, tablet, desktop and 4K viewports, including touch-menu exclusion, keyboard navigation, label fit, overflow and selection state. Reports go to `../output/language-menu-checks`; add `--screenshots` to save representative views there. Browser-engine emulation does not replace physical Android/iOS testing.
+For rendered language-menu regression checks, run `npm run menu:verify -- --all-pages --webkit --4k`. This optional check uses Playwright and installed Chromium/WebKit browsers; `PLAYWRIGHT_MODULE` and `BROWSER_EXECUTABLE` select existing installations as for share-card rendering. It checks all locales on phone, tablet, desktop and 4K viewports, including touch-menu exclusion, keyboard navigation, label fit, overflow and selection state. Reports go to `../output/language-menu-checks`; add `--screenshots` to save representative views there. `--langs=zh,zh-hant` limits a rerun to changed locales. Browser-engine emulation does not replace physical Android/iOS testing.
 
 ## Deployment
 

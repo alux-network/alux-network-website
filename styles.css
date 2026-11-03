@@ -30232,3 +30232,9 @@ html:is([lang="zh-hant"], [lang="vi"], [lang="fr"], [lang="de"], [lang="es"], [l
     text-wrap: balance;
   }
 }
+
+/* Chinese headings flow naturally; preserve token nowrap and semantic line spans. */
+html:is([lang="zh"], [lang="zh-hant"]) body[data-page] main :is(h1,h2,h3,h4,h5,h6),
+html:is([lang="zh"], [lang="zh-hant"]) body[data-page] main :is(h1,h2,h3,h4,h5,h6) * {
+  text-wrap-style: auto !important;
+}

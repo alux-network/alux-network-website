@@ -9,6 +9,10 @@ import {locales} from './locales.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = new Set(process.argv.slice(2));
 assert(locales.length > 1, 'Expected a nonempty multilingual registry');
+const languageArg = process.argv.slice(2).find(arg => arg.startsWith('--langs='));
+const selectedCodes = languageArg ? new Set(languageArg.slice(8).split(',')) : null;
+const selectedLocales = selectedCodes ? locales.filter(locale => selectedCodes.has(locale.code)) : locales;
+assert(selectedLocales.length > 0 && (!selectedCodes || selectedLocales.length === selectedCodes.size), 'Unknown language in --langs');
 const output = path.resolve(root, '../output/language-menu-checks');
 const modulePath = process.env.PLAYWRIGHT_MODULE;
 const {chromium, webkit} = await import(modulePath ? pathToFileURL(modulePath).href : 'playwright');
@@ -47,7 +51,7 @@ try {
     ];
     if (engineName === 'chromium' && args.has('--4k')) profiles.push({name:'4k', width:3840, height:2160, touch:false});
     try {
-      const jobs = profiles.flatMap(profile => locales.map(locale => ({profile, locale})));
+      const jobs = profiles.flatMap(profile => selectedLocales.map(locale => ({profile, locale})));
       let nextJob = 0;
       let lastProgress = reports.length;
       await Promise.all(Array.from({length:3}, async () => {
@@ -63,6 +67,10 @@ try {
                 const prefix = locale.code === 'en' ? '' : '/' + locale.code;
                 await page.goto(origin + prefix + (slug ? '/' + slug : prefix ? '' : '/'));
                 await page.evaluate(() => document.fonts.ready);
+                if (locale.code === 'zh' || locale.code === 'zh-hant') {
+                  const balanced = await page.locator('main :is(h1,h2,h3,h4,h5,h6), main :is(h1,h2,h3,h4,h5,h6) *').evaluateAll(elements => elements.filter(element => getComputedStyle(element).textWrapStyle === 'balance').length);
+                  assert.equal(balanced, 0, 'Chinese headings must use natural line flow');
+                }
                 const switcher = page.locator('.lang-switch');
                 const activate = locator => profile.touch ? locator.tap() : locator.click();
                 if (profile.touch) {
@@ -136,7 +144,7 @@ try {
                   await page.touchscreen.tap(1, profile.height - 2);
                 }
                 assert.deepEqual(errors, []);
-                if (args.has('--screenshots') && !slug && ['en','ar','fr'].includes(locale.code)) {
+                if (args.has('--screenshots') && !slug && ['en','ar','fr','zh','zh-hant'].includes(locale.code)) {
                   await activate(switcher);
                   await page.screenshot({path:path.join(output, `${engineName}-${profile.name}-${locale.code}.png`)});
                 }
