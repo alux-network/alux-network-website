@@ -18,8 +18,10 @@ function enter(pathname, { preferred = ["en-US"], saved = null, session = null, 
   return { ...context.window.ALUX_LANGUAGE, redirect };
 }
 assert.equal(enter("/", { preferred: ["zh-CN"] }).redirect, "https://www.alux.network/zh");
-assert.equal(enter("/", { preferred: ["fr-FR", "ja-JP"] }).language, "ja");
-assert.equal(enter("/", { preferred: ["fr-FR"] }).language, "en");
+assert.equal(enter("/", { preferred: ["fr-FR", "ja-JP"] }).language, "fr");
+assert.equal(enter("/", { preferred: ["pt-BR", "ja-JP"] }).language, "ja");
+assert.equal(enter("/", { preferred: ["pt-BR"] }).language, "en");
+assert.equal(enter("/", { preferred: ["fr-CA"] }).redirect, "https://www.alux.network/fr");
 assert.equal(enter("/", { preferred: ["zh-CN"], saved: "en" }).redirect, null);
 assert.equal(enter("/", { preferred: ["zh-CN"], saved: "ko" }).language, "ko");
 assert.equal(enter("/", { session: "ja" }).language, "ja");
@@ -52,7 +54,7 @@ for(const locale of locales) {
 }
 
 if(process.argv.includes('--routing-only')) {
-  console.log('Eleven-language routing verified, including Chinese scripts, saved preferences and all language pairs.');
+  console.log(`${languages.length}-language routing verified, including Chinese scripts, saved preferences and all language pairs.`);
   process.exit(0);
 }
 const fullCatalog = { window: {} };

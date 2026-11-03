@@ -88,7 +88,7 @@ for (const page of allPages) {
     const lang = page.includes('/') ? page.split('/')[0] : 'en';
     const slug = path.basename(page,'.html').replace(/^index$/,'home');
     const relative = `assets/social/pages/${lang}/${slug}.jpg`;
-    const image = `https://www.alux.network/${relative}?v=20261015`;
+    const image = `https://www.alux.network/${relative}?v=20261103`;
     for(const key of ['og:image','og:image:secure_url','twitter:image']) {
       if(meta(key)!==image) errors.push(`${page}: incorrect ${key} language/page mapping`);
     }

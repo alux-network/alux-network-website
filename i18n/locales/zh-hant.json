@@ -1,7 +1,7 @@
 {
   "language": "zh-hant",
   "target": "Chinese, polished Traditional Chinese product/protocol copy",
-  "updatedAt": "2026-10-22T17:14:22.480Z",
+  "updatedAt": "2026-11-03T08:28:03.607Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -110,10 +110,10 @@
     "aluxVsOthers.article.nav.3.label": {
       "source": "Composite & Compatibility",
       "sourceHash": "2a3ece1717b9e904c7c4876fdb93c6b3810a90af5510bb78d291bc00afe69ebb",
-      "text": "組合與相容性",
+      "text": "複合與相容性",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "aluxVsOthers.article.navLabel": {
       "source": "In this article",
@@ -1454,10 +1454,10 @@
     "glvm.continuity.modes.3.label": {
       "source": "Composite",
       "sourceHash": "8e3588157fcf8d7c32058feba195c8dfa8c61248b12807b660562c1997d2ce6a",
-      "text": "組合式",
+      "text": "複合式",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "glvm.continuity.modes.3.status": {
       "source": "Roadmap",
@@ -1662,10 +1662,10 @@
     "glvm.continuity.text": {
       "source": "Execution evolves from sequential and parallel work to concurrent processes that communicate, wait, and resume. Composite execution extends the model so multiple concurrent transactions can share a higher-level settlement boundary; cross-block continuity provides the vertical foundation for that direction.",
       "sourceHash": "31a40cb294ea110af5db98fa4ac991ecb8df1421211bc57d1ddb1cca4bb7ba37",
-      "text": "執行模型從順序、平行工作，演進為能夠通訊、等待與恢復的併發處理程序。組合式執行進一步擴充此模型，讓多筆併發交易共享更高層的結算邊界；跨區塊連續性則為這個方向提供縱向基礎。",
+      "text": "執行模型從順序、平行工作，演進為能夠通訊、等待與恢復的併發處理程序。複合式執行進一步擴充此模型，讓多筆併發交易共享更高層的結算邊界；跨區塊連續性則為這個方向提供縱向基礎。",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "glvm.continuity.title": {
       "source": "A transaction can wait across blocks, then settle as one",
@@ -2510,10 +2510,10 @@
     "glvm.stack.items.1.text": {
       "source": "Unforgeable references make reachable authority explicit and let the runtime enforce least-authority boundaries.",
       "sourceHash": "35aff70c2ba210a3d7b95fb683297bfcfe5fc2287433faa3600272c01c7de560",
-      "text": "不可偽造的引用讓可達權限顯式化，並使執行階段能夠執行最小權限邊界。",
+      "text": "不可偽造的引用讓可達權限顯式化，並使執行階段能夠落實最小權限邊界。",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "glvm.stack.items.1.title": {
       "source": "Native object capabilities",
@@ -5182,10 +5182,10 @@
     "home.sections.9.items.4.1": {
       "source": "ReplayTrie records the non-deterministic COMM choices that affect execution, enabling bit-exact deterministic replay inside the ALUX runtime so validators can reproduce the same execution outcome.",
       "sourceHash": "cabf021717aa85b223b8979f21768a7b121daeb062084dbfa64182a0d6c85ef2",
-      "text": "ReplayTrie 記錄會影響執行結果的非確定性 COMM 選擇，使驗證者能夠在 ALUX 執行階段邊界內逐位元精確地重播同一執行結果。",
+      "text": "ReplayTrie 記錄會影響執行結果的非確定性 COMM 選擇，使驗證者能夠在 ALUX 執行階段邊界內進行逐位元精確的確定性重播，復現同一執行結果。",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.9.items.5.0": {
       "source": "Can existing smart contract developers use it?",
@@ -5606,10 +5606,10 @@
     "parallelConcurrentComposable.close.points.2.0": {
       "source": "Only composable",
       "sourceHash": "71316af4bc29a3c4c60147bb218defa32a0fca29e8ce59de04b2f09a30f2e331",
-      "text": "只有組合",
+      "text": "只有可組合性",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "parallelConcurrentComposable.close.points.2.1": {
       "source": "An atomic boundary exists, but without interaction and waiting it cannot carry long-running dependencies.",
@@ -5846,10 +5846,10 @@
     "parallelConcurrentComposable.hero.hotspots.composable": {
       "source": "Open composable workflow",
       "sourceHash": "5f32e1422fd424027f2150febc5212d49d3d9c2c0a816cf7f4ee1b9f7d700794",
-      "text": "打開組合工作流程",
+      "text": "打開可組合工作流程",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "parallelConcurrentComposable.hero.hotspots.concurrent": {
       "source": "Open message-driven concurrency",
@@ -5918,10 +5918,10 @@
     "parallelConcurrentComposable.hero.subtitle": {
       "source": "Parallel / Concurrent / Composable",
       "sourceHash": "abe91cf8b48e19cd36d4ab21638e9feb990701fe8bf126582c9e5e0bc7d8a90b",
-      "text": "平行、併發、組合",
+      "text": "平行、併發、可組合",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "parallelConcurrentComposable.hero.text": {
       "source": "ALUX supports replayable long transactions: independent tasks run together and transactions coordinate through messages. The booking scenario illustrates the target model for settling related cross-system effects as one atomic result.",
@@ -5966,10 +5966,10 @@
     "parallelConcurrentComposable.intro.text": {
       "source": "Parallel runs independent transactions at the same time. Concurrency lets transactions interact through channels: one transaction can wait for a matching message from another, then continue. Composability binds state transitions from different systems into one auditable atomic transition.",
       "sourceHash": "152026760c81a80de9085395bee0ee5357981fee3e34b18ad1d89edc44ef5f76",
-      "text": "平行讓互不依賴的交易同時執行。併發讓交易透過通道互動：一筆交易可以等待另一筆交易發來匹配訊息，再繼續執行。組合把不同執行系統中的狀態轉移放進同一個結算邊界，使它們作為一次可審計的原子狀態轉移完成結算。",
+      "text": "平行讓互不依賴的交易同時執行。併發讓交易透過通道互動：一筆交易可以等待另一筆交易發來匹配訊息，再繼續執行。可組合性把不同執行系統中的狀態轉移放進同一個結算邊界，使它們作為一次可審計的原子狀態轉移完成結算。",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "parallelConcurrentComposable.intro.title": {
       "source": "Three words, three very different runtime jobs",
@@ -6094,10 +6094,10 @@
     "parallelConcurrentComposable.lab.benefits.3.label": {
       "source": "Composable",
       "sourceHash": "5173c61efc387bf89cbc8d02bdf08843cdb6b3d434335e6992c087a29fefeb17",
-      "text": "組合",
+      "text": "可組合",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "parallelConcurrentComposable.lab.benefits.3.text": {
       "source": "The target is one all-or-nothing result with reproducible settlement evidence.",
@@ -6534,10 +6534,10 @@
     "parallelConcurrentComposable.modes.2.label": {
       "source": "Composable",
       "sourceHash": "5173c61efc387bf89cbc8d02bdf08843cdb6b3d434335e6992c087a29fefeb17",
-      "text": "組合",
+      "text": "可組合",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "parallelConcurrentComposable.modes.2.title": {
       "source": "The room and payment<br>confirm together",
@@ -6604,12 +6604,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.101": {
-      "source": "Designed and initial implementation of BlockGit, a new consensus protocol (Completed)",
-      "sourceHash": "7dc579992148339d2cad37089690f9e08c481286cd86a1967d75b800216aaf98",
+      "source": "Design and initial implementation of BlockGit, a new consensus protocol (Completed)",
+      "sourceHash": "6757793b87f6dce99752722445b8de101c1f549668439e983774316dbf36deab",
       "text": "設計並初步實作新的共識協議 BlockGit（已完成）",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.102": {
       "source": "A discrete event simulator to test consensus protocol implementation (Completed)",
@@ -7020,12 +7020,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.30": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "新的基於 Trap 的 EVM 沙箱（進行中）",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.31": {
       "source": "Integrate with Ethereum toolchain (In Progress)",
@@ -7124,12 +7124,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.42": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "新的基於 Trap 的 EVM 沙箱（進行中）",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.43": {
       "source": "2026 Q4",
@@ -7156,12 +7156,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.46": {
-      "source": "A \"GDB\" like TVM debug and observability tool (WIP)",
-      "sourceHash": "cf2ee5400cdb37f36aaae3a9f7758bf6ef71aeb19a65baa66d22d270b012100b",
+      "source": "A \"GDB\"-like TVM debug and observability tool (WIP)",
+      "sourceHash": "fd176f7b07e685ea8d388255d336e71dd6fd281bb7021d8ec9a0971f8ed26d06",
       "text": "類 GDB 的 TVM 調試與可觀測性工具（WIP）",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.47": {
       "source": "Complete the cost accounting model (WIP)",
@@ -7270,10 +7270,10 @@
     "roadmapStatic.59": {
       "source": "Refactored the whole system to an event-driven framework to enable concurrent transaction execution, block replay, and block proposing for maximum concurrency (Completed)",
       "sourceHash": "3f78d9b009d7698a4ae0f8644da9ff8235a2da7664b6b9cda8c6165bb54b4da8",
-      "text": "將整個系統重構為事件驅動架構，以最大化併發地支援併發交易執行、區塊重播和區塊提議（已完成）",
+      "text": "將整個系統重構為事件驅動架構，使併發交易執行、區塊重播和區塊提議能夠以最大併發度推進（已完成）",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "roadmapStatic.6": {
       "source": "2027 Q1",
@@ -7340,12 +7340,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.67": {
-      "source": "Introduce test framework for randomly generated Tolang codes and CI integration (Completed)",
-      "sourceHash": "d58a58e55f92cb5f33ac6a0b808e79d9518b316e8a0fb8ccf05d7b1ab6580ab9",
+      "source": "Introduce test framework for randomly generated Tolang code and CI integration (Completed)",
+      "sourceHash": "521c2a4d025036fcc7ae3169d5cff4d7d2fbef3c7c8e2038c143a93ac6ed6699",
       "text": "引入隨機產生 Tolang 程式碼的測試架構並整合 CI（已完成）",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.68": {
       "source": "Refactor replay logic (Completed)",
@@ -7510,10 +7510,10 @@
     "roadmapStatic.86": {
       "source": "Functional programming support from Tolang and TVM (Completed)",
       "sourceHash": "91260b03c174dce1ac724e67f5633603db160d86a3e01c131610d093912ebebb",
-      "text": "Tolang 與 TVM 的函式式編程支援（已完成）",
+      "text": "Tolang 與 TVM 的函數式程式設計支援（已完成）",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "roadmapStatic.87": {
       "source": "Supported thread-safe sequential computing on concurrent TVM (Completed)",
@@ -7582,10 +7582,10 @@
     "roadmapStatic.94": {
       "source": "Implemented an external HTTPS call play and replay to demonstrate the capability to actively collaborate with Web 2.0 systems without oracles / relayers (Completed)",
       "sourceHash": "252826327dbe6ace52b97cffc0e35588c0f77be2086add1810efff85d7fb2c66",
-      "text": "實作外部 HTTPS 呼叫的執行與重播，展示無需預言機/中繼器即可主動協作 Web 2.0 系統的能力（已完成）",
+      "text": "實作外部 HTTPS 呼叫的執行與重播，展示無需預言機/中繼器即可主動與 Web 2.0 系統協作的能力（已完成）",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.480Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "roadmapStatic.95": {
       "source": "Initial implementation of the Blocklace consensus protocol (Completed)",

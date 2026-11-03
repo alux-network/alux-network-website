@@ -117,7 +117,7 @@ for(const file of files){
   html=html.replace(/(<meta property="og:locale" content=")[^"]*/,'$1'+ogLocale);
   // Share crawlers read the static head without running the language/runtime JS.
   const shareSlug=file==='index.html'?'home':file.replace(/\.html$/,'');
-  const shareImage='https://www.alux.network/assets/social/pages/'+language+'/'+shareSlug+'.jpg?v=20261015';
+  const shareImage='https://www.alux.network/assets/social/pages/'+language+'/'+shareSlug+'.jpg?v=20261103';
   const shareMeta={
    'og:type':'website','og:site_name':'ALUX Network','og:locale':ogLocale,
    'og:url':canonical,'og:title':result.page.metaTitle,'og:description':result.page.metaDescription,
@@ -156,7 +156,7 @@ for(const file of files){
    html=html.replace(/(<script\b[^>]*src="\/script\.js)/,'<script defer src="/'+name+'?v='+version+'"></script>\n$1');
   }
   html=html.replace(/<script\b(?: defer)? src="\/script\.js/g,'<script defer src="/script.js');
-  html=html.replace(/styles\.css\?v=[^"\s]+/g,'styles.css?v=20261023-locales').replace(/script\.js\?v=[^"\s]+/g,'script.js?v=20261024-discord').replace(/site-frame\.css\?v=[^"\s]+/g,'site-frame.css?v=20261031-language-menu').replace(/home-hero-3d\.css\?v=[^"\s]+/g,'home-hero-3d.css?v=20261015-hero-spacing').replace(/roadmap\.css\?v=[^"\s]+/g,'roadmap.css?v=20261014-details');
+  html=html.replace(/styles\.css\?v=[^"\s]+/g,'styles.css?v=20261103-locale-flow').replace(/script\.js\?v=[^"\s]+/g,'script.js?v=20261103-language-grid').replace(/site-frame\.css\?v=[^"\s]+/g,'site-frame.css?v=20261103-language-grid').replace(/home-hero-3d\.css\?v=[^"\s]+/g,'home-hero-3d.css?v=20261015-hero-spacing').replace(/roadmap\.css\?v=[^"\s]+/g,'roadmap.css?v=20261014-details');
   if(page==='home'){
    html=html.replace(/\s*<link rel="preload"[^>]*data-home-media[^>]*>/g,'');
    const preloads=['assets/home/hero/alux-hero-3d-upper-brick.png','assets/home/hero/alux-hero-3d-lower-assembly.png'].map(name=>'<link rel="preload" as="image" type="image/webp" href="/'+media[name]+'" fetchpriority="high"'+' data-home-media>').join('\n');

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T17:14:22.561Z",
+  "generatedAt": "2026-11-03T08:28:03.862Z",
   "source": "script.js:all active English page and shared UI data; scripts/templates/roadmap.html static roadmap text nodes",
   "entries": {
     "aluxVsOthers.article.closingText": {
@@ -3303,8 +3303,8 @@
       "sourceHash": "f1d1b772a77331881a1ea3f7574e850fece1f999d12b0c790fcdd99fb0daf0c9"
     },
     "roadmapStatic.101": {
-      "source": "Designed and initial implementation of BlockGit, a new consensus protocol (Completed)",
-      "sourceHash": "7dc579992148339d2cad37089690f9e08c481286cd86a1967d75b800216aaf98"
+      "source": "Design and initial implementation of BlockGit, a new consensus protocol (Completed)",
+      "sourceHash": "6757793b87f6dce99752722445b8de101c1f549668439e983774316dbf36deab"
     },
     "roadmapStatic.102": {
       "source": "A discrete event simulator to test consensus protocol implementation (Completed)",
@@ -3511,8 +3511,8 @@
       "sourceHash": "5313e5bf17148de844ff74be3663d47c6e361ca469b30a36337701233c89a15e"
     },
     "roadmapStatic.30": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622"
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44"
     },
     "roadmapStatic.31": {
       "source": "Integrate with Ethereum toolchain (In Progress)",
@@ -3563,8 +3563,8 @@
       "sourceHash": "a195bdf6c6f55c4c9e95baeabb4101d4919097f828b10d4f95785b1f92d46339"
     },
     "roadmapStatic.42": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622"
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44"
     },
     "roadmapStatic.43": {
       "source": "2026 Q4",
@@ -3579,8 +3579,8 @@
       "sourceHash": "b2363cb46f870bb7ff12df9908a67e3745335a43f7b87bb6508693fcfc6e5105"
     },
     "roadmapStatic.46": {
-      "source": "A \"GDB\" like TVM debug and observability tool (WIP)",
-      "sourceHash": "cf2ee5400cdb37f36aaae3a9f7758bf6ef71aeb19a65baa66d22d270b012100b"
+      "source": "A \"GDB\"-like TVM debug and observability tool (WIP)",
+      "sourceHash": "fd176f7b07e685ea8d388255d336e71dd6fd281bb7021d8ec9a0971f8ed26d06"
     },
     "roadmapStatic.47": {
       "source": "Complete the cost accounting model (WIP)",
@@ -3671,8 +3671,8 @@
       "sourceHash": "c323d55459986d630d168e13023a51a5a91659084da47b6c640c9e60b86132c0"
     },
     "roadmapStatic.67": {
-      "source": "Introduce test framework for randomly generated Tolang codes and CI integration (Completed)",
-      "sourceHash": "d58a58e55f92cb5f33ac6a0b808e79d9518b316e8a0fb8ccf05d7b1ab6580ab9"
+      "source": "Introduce test framework for randomly generated Tolang code and CI integration (Completed)",
+      "sourceHash": "521c2a4d025036fcc7ae3169d5cff4d7d2fbef3c7c8e2038c143a93ac6ed6699"
     },
     "roadmapStatic.68": {
       "source": "Refactor replay logic (Completed)",

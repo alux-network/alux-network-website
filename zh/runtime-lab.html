@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <script data-language-routing>
-window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ko","name":"한국어"},{"code":"ja","name":"日本語"},{"code":"es","name":"Español"},{"code":"ar","name":"العربية"},{"code":"de","name":"Deutsch"},{"code":"fr","name":"Français"},{"code":"uk","name":"Українська"},{"code":"ru","name":"Русский"},{"code":"vi","name":"Tiếng Việt"}];
 // Inlined at the start of each generated head; no runtime download is needed.
 (function () {
   const languages = window.ALUX_LOCALES.map(locale => locale.code);
@@ -62,20 +62,21 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
 <link rel="alternate" hreflang="en" href="https://www.alux.network/runtime-lab">
 <link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/runtime-lab">
 <link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/runtime-lab">
-<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/runtime-lab">
 <link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/runtime-lab">
-<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/runtime-lab">
-<link rel="alternate" hreflang="de" href="https://www.alux.network/de/runtime-lab">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/runtime-lab">
 <link rel="alternate" hreflang="es" href="https://www.alux.network/es/runtime-lab">
-<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/runtime-lab">
-<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/runtime-lab">
 <link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/runtime-lab">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/runtime-lab">
+<link rel="alternate" hreflang="fr" href="https://www.alux.network/fr/runtime-lab">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/runtime-lab">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/runtime-lab">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/runtime-lab">
 <link rel="alternate" hreflang="x-default" href="https://www.alux.network/runtime-lab">
   <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
   <meta name="description" content="以可视化方式介绍 ALUX 当前的并行执行与消息驱动协作，以及跨系统原子组合的目标模型。">
 <link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
-<link rel="stylesheet" href="/styles.css?v=20261023-locales">
-<link rel="stylesheet" href="/site-frame.css?v=20261031-language-menu">
+<link rel="stylesheet" href="/styles.css?v=20261103-locale-flow">
+<link rel="stylesheet" href="/site-frame.css?v=20261103-language-grid">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
 <meta property="og:type" content="website">
@@ -84,8 +85,8 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
 <meta property="og:url" content="https://www.alux.network/zh/runtime-lab">
 <meta property="og:title" content="ALUX Runtime Lab | ALUX Network">
 <meta property="og:description" content="以可视化方式介绍 ALUX 当前的并行执行与消息驱动协作，以及跨系统原子组合的目标模型。">
-<meta property="og:image" content="https://www.alux.network/assets/social/pages/zh/runtime-lab.jpg?v=20261015">
-<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/zh/runtime-lab.jpg?v=20261015">
+<meta property="og:image" content="https://www.alux.network/assets/social/pages/zh/runtime-lab.jpg?v=20261103">
+<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/zh/runtime-lab.jpg?v=20261103">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -93,7 +94,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ALUX Runtime Lab | ALUX Network">
 <meta name="twitter:description" content="以可视化方式介绍 ALUX 当前的并行执行与消息驱动协作，以及跨系统原子组合的目标模型。">
-<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/zh/runtime-lab.jpg?v=20261015">
+<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/zh/runtime-lab.jpg?v=20261103">
 <meta name="twitter:image:alt" content="ALUX Runtime Lab | ALUX Network">
 </head>
 <body data-page="parallelConcurrentComposable">
@@ -121,7 +122,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
         <a href="/zh/roadmap" data-nav="roadmap">路线图</a>
       </nav>
       <div class="header-actions">
-        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>语言</span><span class="lang-current" data-lang-current>简体中文</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/runtime-lab" hreflang="en">English</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/runtime-lab" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/runtime-lab" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/runtime-lab" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/runtime-lab" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/runtime-lab" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/runtime-lab" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/runtime-lab" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/runtime-lab" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/runtime-lab" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/runtime-lab" hreflang="ar">العربية</a></div></div>
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>语言</span><span class="lang-current" data-lang-current>简体中文</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/runtime-lab" hreflang="en">English</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/runtime-lab" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/runtime-lab" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/runtime-lab" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/runtime-lab" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/runtime-lab" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/runtime-lab" hreflang="ar">العربية</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/runtime-lab" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="fr" lang="fr" dir="ltr" href="https://www.alux.network/fr/runtime-lab" hreflang="fr">Français</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/runtime-lab" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/runtime-lab" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/runtime-lab" hreflang="vi">Tiếng Việt</a></div></div>
         <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">联系我们</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-label="切换导航菜单"><span></span><span></span><span></span></button>
       </div>
@@ -132,7 +133,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
         <div class="pcc-hero-copy">
           <p class="eyebrow">了解 / Runtime Lab</p>
           <h1>Runtime Lab</h1>
-          <p class="pcc-hero-subtitle">并行、并发、组合</p>
+          <p class="pcc-hero-subtitle">并行、并发、可组合</p>
           <p class="pcc-hero-text"><span class="technical-token">ALUX</span> 支持可重放的长交易：独立任务可以同时推进，交易则通过消息协作。预订场景演示的是目标模型——让相关的跨系统<span class="technical-token">状态变化</span>作为一个原子结果结算。</p>
           <div class="pcc-hero-signals" aria-label="Runtime signals"><div class="pcc-signal"><span>定位</span><strong><span class="technical-token">去中心化</span><span class="technical-token">并发运行时</span></strong></div><div class="pcc-signal"><span>执行</span><strong>运行、交互、等待、结算</strong></div><div class="pcc-signal"><span>边界</span><strong>能力<span class="technical-token">约束</span>下的工作流</strong></div></div>
         </div>
@@ -148,13 +149,13 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
         <div class="section-heading pcc-section-heading">
           <p class="eyebrow">先分清三件事</p>
           <h2>三个词很像，<br>但它们解决的问题不同</h2>
-          <p>并行让互不依赖的交易同时执行。并发让交易通过通道交互：一笔交易可以等待另一笔交易发来匹配消息，再继续执行。组合把不同执行系统中的状态转移放进同一个结算边界，使它们作为一次可审计的原子状态转移完成结算。</p>
+          <p>并行让互不依赖的交易同时执行。并发让交易通过通道交互：一笔交易可以等待另一笔交易发来匹配消息，再继续执行。可组合性把不同执行系统中的状态转移放进同一个结算边界，使它们作为一次可审计的原子状态转移完成结算。</p>
           <p class="pcc-intro-claim">在当前 <span class="technical-token">ALUX</span> 运行时中，<span class="pcc-keep">独立任务</span>可以并行推进，交易通过消息协作，执行也能跨区块恢复。<span class="pcc-keep">独立系统</span>之间的原子组合仍属于架构目标。</p>
         </div>
       </section>
 
       <section class="pcc-mode-section fade-in" aria-label="三个词很像，&lt;br&gt;但它们解决的问题不同">
-        <div class="pcc-mode-toolbar" aria-label="Runtime mode selector"><button class="pcc-mode-button is-active" type="button" data-pcc-mode="parallel" aria-pressed="true"><span>01</span> 并行</button><button class="pcc-mode-button" type="button" data-pcc-mode="concurrent" aria-pressed="false"><span>02</span> 并发</button><button class="pcc-mode-button" type="button" data-pcc-mode="composable" aria-pressed="false"><span>03</span> 组合</button></div>
+        <div class="pcc-mode-toolbar" aria-label="Runtime mode selector"><button class="pcc-mode-button is-active" type="button" data-pcc-mode="parallel" aria-pressed="true"><span>01</span> 并行</button><button class="pcc-mode-button" type="button" data-pcc-mode="concurrent" aria-pressed="false"><span>02</span> 并发</button><button class="pcc-mode-button" type="button" data-pcc-mode="composable" aria-pressed="false"><span>03</span> 可组合</button></div>
         <div class="pcc-mode-stage">
           <div class="pcc-mode-visuals">
       <figure class="pcc-mode-visual is-active" data-pcc-visual="parallel" aria-hidden="false">
@@ -180,7 +181,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
           <img src="/assets/parallel-concurrent-composable/composable.svg?v=20260812-motion-restore4" alt="房间预订和支付授权分别来自两个系统；只有两边都准备好后，原子边界才输出一份预订确认结果。" loading="lazy" data-pcc-image>
           <span class="pcc-image-fallback">房间预订和支付授权分别来自两个系统；只有两边都准备好后，原子边界才输出一份预订确认结果。</span>
         </div>
-        <figcaption class="pcc-mode-cue"><span>组合</span><strong>只有预订和付款都成功，订单才确认</strong></figcaption>
+        <figcaption class="pcc-mode-cue"><span>可组合</span><strong>只有预订和付款都成功，订单才确认</strong></figcaption>
         <div class="pcc-mode-impact"><span>它能做什么</span><p>预期结果是避免出现只扣款却没有房间，或只锁房却没有完成付款的半成品预订。</p><strong>目标组合模型让不同系统得到一个全有或全无的结果；并发负责传递共同提交前的消息。</strong></div>
       </figure>
     </div>
@@ -208,7 +209,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
       </article>
 
       <article class="pcc-mode-panel" data-pcc-panel="composable" aria-hidden="true">
-        <p class="pcc-mode-kicker">组合</p>
+        <p class="pcc-mode-kicker">可组合</p>
         <h3>房间锁定与付款<br>共同确认</h3>
         <dl class="pcc-mode-facts">
           <div><dt>它是什么意思</dt><dd>组合不是把多项工作简单打包。这个示例的目标，是让房间锁定与付款授权要么共同提交，要么都不提交。</dd></div>
@@ -272,7 +273,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
             </div>
             <p class="pcc-lab-message" data-pcc-lab-message>从第 1 步开始：预订和支付由同一个运行时管理，但状态彼此独立。</p>
           </div>
-          <div class="pcc-lab-benefits"><article class="pcc-lab-benefit" data-pcc-benefit="parallel"><span>并行</span><strong>两项检查同时进行</strong><p>独立工作不必排在同一条全局队列里。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="paused"><span>并发</span><strong>预订等待酒店回复</strong><p>依赖关系留在通道中，不会阻塞整个运行时。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="resumed"><span>消息匹配</span><strong>回复生成下一步</strong><p><span class="technical-token">COMM</span> 生成<span class="technical-token">后续执行</span>；只有匹配存在非确定性时，<span class="technical-token">ReplayTrie</span> 才记录这次选择。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="settled"><span>组合</span><strong>房间与付款共同确认</strong><p>目标是得到全有或全无的结果，并保留可复现的结算证据。</p></article></div>
+          <div class="pcc-lab-benefits"><article class="pcc-lab-benefit" data-pcc-benefit="parallel"><span>并行</span><strong>两项检查同时进行</strong><p>独立工作不必排在同一条全局队列里。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="paused"><span>并发</span><strong>预订等待酒店回复</strong><p>依赖关系留在通道中，不会阻塞整个运行时。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="resumed"><span>消息匹配</span><strong>回复生成下一步</strong><p><span class="technical-token">COMM</span> 生成<span class="technical-token">后续执行</span>；只有匹配存在非确定性时，<span class="technical-token">ReplayTrie</span> 才记录这次选择。</p></article><article class="pcc-lab-benefit" data-pcc-benefit="settled"><span>可组合</span><strong>房间与付款共同确认</strong><p>目标是得到全有或全无的结果，并保留可复现的结算证据。</p></article></div>
         </div>
       </section>
 
@@ -302,7 +303,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
           <h2>不是更快的区块，<span class="no-break">而是</span>持续运行的服务</h2>
           <p>并行负责推进彼此独立的任务，并发负责消息驱动的交互以及等待与恢复。<span class="technical-token">ALUX</span> 当前已实现这些运行时基础，并正在面向跨系统原子组合继续建设。</p>
         </div>
-        <div class="pcc-close-points"><article class="pcc-close-point"><span>只有并行</span><p>吞吐更高，但没有交易依赖与消息匹配。</p></article><article class="pcc-close-point"><span>只有并发</span><p>交易可以交互和等待，但跨系统结果<span class="technical-token">仍可能</span>分别结算。</p></article><article class="pcc-close-point"><span>只有组合</span><p>存在原子边界，但没有交互与等待，就承载不了持续运行的依赖关系。</p></article></div>
+        <div class="pcc-close-points"><article class="pcc-close-point"><span>只有并行</span><p>吞吐更高，但没有交易依赖与消息匹配。</p></article><article class="pcc-close-point"><span>只有并发</span><p>交易可以交互和等待，但跨系统结果<span class="technical-token">仍可能</span>分别结算。</p></article><article class="pcc-close-point"><span>只有可组合性</span><p>存在原子边界，但没有交互与等待，就承载不了持续运行的依赖关系。</p></article></div>
         <div class="hero-actions pcc-close-actions"><a class="button primary" href="/zh/alux-vs-others">回到 <span class="technical-token">ALUX</span> VS Others</a><a class="button secondary" href="/zh/for-ai-agents">面向 <span class="technical-token">AI 智能体</span></a></div>
       </section>
     </article>
@@ -311,7 +312,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
       <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Copyright © 2026 Foundation ALUX</p></div>
     </footer>
   </div>
-<script defer src="/i18n/runtime/zh/parallelConcurrentComposable.js?v=d0effb9cb7c3"></script>
-<script defer src="/script.js?v=20261024-discord"></script>
+<script defer src="/i18n/runtime/zh/parallelConcurrentComposable.js?v=bf72f6eb07a1"></script>
+<script defer src="/script.js?v=20261103-language-grid"></script>
 </body>
 </html>

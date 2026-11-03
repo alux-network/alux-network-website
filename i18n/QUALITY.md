@@ -45,6 +45,7 @@ Approved locale forms:
 - Russian: `длинная транзакция`; `глобальная логическая виртуальная машина (GLVM)`; `побитово точный`.
 - Ukrainian: `довга транзакція`; `глобальна логічна віртуальна машина (GLVM)`; `побітово точний`.
 - Arabic: `المعاملات طويلة الأمد`; `الآلة الافتراضية المنطقية العالمية (GLVM)`.
+- French: `transaction longue`; `machine virtuelle logique globale (GLVM)`; `exact bit à bit`; `rejeu` for runtime replay. Preserve the distinction between `composable` and `composite`.
 
 ## Forbidden Terms
 

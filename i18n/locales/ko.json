@@ -1,7 +1,7 @@
 {
   "language": "ko",
   "target": "Korean, polished native Korean product/protocol copy",
-  "updatedAt": "2026-10-04T17:17:33.177599Z",
+  "updatedAt": "2026-11-03T08:28:03.607Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -3342,10 +3342,10 @@
     "home.sections.2.clusters.0.text": {
       "source": "The Tuple-Space Virtual Machine executes bytecode processes that fork, wait, resume, and communicate through typed channels.",
       "sourceHash": "474775da0eed445fbd27884a5cf182b9c50749013da18ed490da6c6cddb8c23b",
-      "text": "TVM은 바이트코드 프로세스를 실행하며, 프로세스는 타입이 지정된 채널로 통신하고 기다렸다가 다시 이어집니다.",
+      "text": "TVM은 바이트코드 프로세스를 실행하며, 프로세스는 분기하고, 대기하고, 재개하며, 타입이 지정된 채널로 통신합니다.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.2.clusters.0.title": {
       "source": "TVM Bytecode VM",
@@ -3566,10 +3566,10 @@
     "home.sections.2.clusters.2.text": {
       "source": "A Long Transaction can suspend at a block boundary, resume in a later block, and still finalize as one ALUX transaction. Its ALUX state changes remain staged until commit; on abort, uncommitted effects are discarded.",
       "sourceHash": "1985e1aec2d8185ce8f17363b1bef7565cc1be5b87f705946887eeb5e40c618b",
-      "text": "장기 트랜잭션은 블록 경계에서 중단되었다가 이후 블록에서 재개되어도 하나의 ALUX 트랜잭션으로 확정될 수 있습니다. ALUX 상태 변경은 커밋 전까지 스테이징되며, 중단되면 커밋되지 않은 효과가 폐기됩니다.",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-08-11T08:47:31.738Z",
-      "reviewerNotes": "Human-reviewed Korean copy aligned with the current English homepage source and ALUX maturity boundaries."
+      "text": "장기 트랜잭션은 블록 경계에서 중단되었다가 이후 블록에서 재개되어도 하나의 ALUX 트랜잭션으로 확정될 수 있습니다. ALUX 상태 변경은 커밋 전까지 스테이징되며, 실행이 취소되면 커밋되지 않은 효과가 폐기됩니다.",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.2.clusters.2.title": {
       "source": "Vertical Atomicity",
@@ -3654,10 +3654,10 @@
     "home.sections.2.clusters.4.detailTitle": {
       "source": "Parallel work finalizes",
       "sourceHash": "97f46f0195de68e9f450fe619d7ae9f65ce85194dde2c95ba10327785c7edca5",
-      "text": "동시 작업도 최종화됩니다",
+      "text": "병렬 작업이 최종화됩니다",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.2.clusters.4.items.0": {
       "source": "DAG Blocks",
@@ -6462,10 +6462,10 @@
     "parallelConcurrentComposable.modes.1.how": {
       "source": "The waiting consume is stored as a resource in tuple space. A produce from another transaction matches it, triggering a COMM event that spawns the continuation and moves the Execution Context from Inactive back to Running. If more than one match is possible, ReplayTrie records the chosen COMM for deterministic replay.",
       "sourceHash": "3787bc4fd86a32a9c28c6b7c66fce7b2d9e41bfee5670629b9b340b5320b5acf",
-      "text": "기다리는 consume은 튜플 공간에 자원으로 저장됩니다. 다른 트랜잭션의 produce가 이를 일치시키면 COMM 이벤트가 발생해 continuation을 실행하고 Execution Context를 Inactive에서 Running으로 되돌립니다. 가능한 일치가 여러 개일 때 ReplayTrie가 선택된 COMM을 기록해 결정적으로 재현합니다.",
+      "text": "기다리는 consume은 튜플 공간에 자원으로 저장됩니다. 다른 트랜잭션의 produce가 이를 일치시키면 COMM 이벤트가 발생해 continuation을 시작하고 Execution Context를 Inactive에서 Running으로 되돌립니다. 가능한 일치가 여러 개일 때 ReplayTrie가 선택된 COMM을 기록해 결정적으로 재현합니다.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "parallelConcurrentComposable.modes.1.label": {
       "source": "Concurrent",
@@ -6550,10 +6550,10 @@
     "parallelConcurrentComposable.modes.2.what": {
       "source": "Composition is not ordinary bundling. The target in this example is to commit the room hold and payment authorization together, or commit neither one.",
       "sourceHash": "714bfae203c19e417fc9492e6fefb489e86f79a042d81a1b82b6741932cec51e",
-      "text": "조합은 단순히 여러 작업을 묶는 것이 아닙니다. 이 예에서는 예약 시스템이 객실을 확보하고 결제 시스템이 승인을 완료합니다. 두 상태 변화는 함께 적용되거나 둘 다 적용되지 않습니다.",
+      "text": "조합은 단순히 여러 작업을 묶는 것이 아닙니다. 이 예의 목표는 객실 확보와 결제 승인을 함께 커밋하거나 둘 다 커밋하지 않는 것입니다.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "roadmap.metaDescription": {
       "source": "ALUX Network development roadmap: quarterly milestones for the TVM runtime, BlockGit consensus, the Tolang toolchain, and EVM compatibility from 2023 through 2027.",
@@ -6604,12 +6604,12 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "roadmapStatic.101": {
-      "source": "Designed and initial implementation of BlockGit, a new consensus protocol (Completed)",
-      "sourceHash": "7dc579992148339d2cad37089690f9e08c481286cd86a1967d75b800216aaf98",
+      "source": "Design and initial implementation of BlockGit, a new consensus protocol (Completed)",
+      "sourceHash": "6757793b87f6dce99752722445b8de101c1f549668439e983774316dbf36deab",
       "text": "새로운 합의 프로토콜 BlockGit 설계 및 초기 구현 (완료)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Native Korean review aligned to the current English source and ALUX terminology."
     },
     "roadmapStatic.102": {
       "source": "A discrete event simulator to test consensus protocol implementation (Completed)",
@@ -7020,12 +7020,12 @@
       "reviewerNotes": "Reviewed against the supplied October 2026 roadmap update; technical terms and per-item status preserved."
     },
     "roadmapStatic.30": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "새로운 트랩 기반 EVM 샌드박스 (진행 중)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Native Korean review aligned to the current English source and ALUX terminology."
     },
     "roadmapStatic.31": {
       "source": "Integrate with Ethereum toolchain (In Progress)",
@@ -7124,12 +7124,12 @@
       "reviewerNotes": "Reviewed against the supplied October 2026 roadmap update; technical terms and per-item status preserved."
     },
     "roadmapStatic.42": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "새로운 트랩 기반 EVM 샌드박스 (진행 중)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Native Korean review aligned to the current English source and ALUX terminology."
     },
     "roadmapStatic.43": {
       "source": "2026 Q4",
@@ -7156,12 +7156,12 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "roadmapStatic.46": {
-      "source": "A \"GDB\" like TVM debug and observability tool (WIP)",
-      "sourceHash": "cf2ee5400cdb37f36aaae3a9f7758bf6ef71aeb19a65baa66d22d270b012100b",
+      "source": "A \"GDB\"-like TVM debug and observability tool (WIP)",
+      "sourceHash": "fd176f7b07e685ea8d388255d336e71dd6fd281bb7021d8ec9a0971f8ed26d06",
       "text": "\"GDB\" 스타일의 TVM 디버깅 및 관측성 도구 (WIP)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Native Korean review aligned to the current English source and ALUX terminology."
     },
     "roadmapStatic.47": {
       "source": "Complete the cost accounting model (WIP)",
@@ -7340,12 +7340,12 @@
       "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
     },
     "roadmapStatic.67": {
-      "source": "Introduce test framework for randomly generated Tolang codes and CI integration (Completed)",
-      "sourceHash": "d58a58e55f92cb5f33ac6a0b808e79d9518b316e8a0fb8ccf05d7b1ab6580ab9",
+      "source": "Introduce test framework for randomly generated Tolang code and CI integration (Completed)",
+      "sourceHash": "521c2a4d025036fcc7ae3169d5cff4d7d2fbef3c7c8e2038c143a93ac6ed6699",
       "text": "무작위 생성 Tolang 코드 테스트 프레임워크 도입 및 CI 통합 (완료)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Native Korean review aligned to the current English source and ALUX terminology."
     },
     "roadmapStatic.68": {
       "source": "Refactor replay logic (Completed)",
@@ -8030,10 +8030,10 @@
     "ui.cookie.button": {
       "source": "Accept",
       "sourceHash": "89713b9c9c1b8f659c9f49db25e4a47886dd673fee248c3f650391f09a759cef",
-      "text": "확인",
+      "text": "동의",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "ui.cookie.text": {
       "source": "Cookies may be used to improve the site experience.",
@@ -8798,10 +8798,10 @@
     "vs.sections.2.steps.2.points.0": {
       "source": "Waiting suspends cleanly",
       "sourceHash": "bb24573567d229d039058d60529b9af2a906007323c852d2568b0d6a4c159e95",
-      "text": "대기는 깔끔하게 일시 중단됩니다",
+      "text": "대기 시 실행이 정상적으로 일시 중단됩니다",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "vs.sections.2.steps.2.points.1": {
       "source": "Wait state stays in the runtime",
@@ -8894,10 +8894,10 @@
     "vs.sections.2.steps.4.label": {
       "source": "Accountable Record",
       "sourceHash": "8e8ed757463cb8bdeecf0ad079c26d73d988984e2d8e469454b65f8e3b85ac60",
-      "text": "책임 가능한 기록",
+      "text": "책임 추적이 가능한 기록",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:37:19.360Z",
-      "reviewerNotes": "Native Korean review aligned to the current English source and ALUX terminology."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "vs.sections.2.steps.4.mini": {
       "source": "The trail remains public",

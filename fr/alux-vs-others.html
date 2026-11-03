@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<script data-language-routing>
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ko","name":"한국어"},{"code":"ja","name":"日本語"},{"code":"es","name":"Español"},{"code":"ar","name":"العربية"},{"code":"de","name":"Deutsch"},{"code":"fr","name":"Français"},{"code":"uk","name":"Українська"},{"code":"ru","name":"Русский"},{"code":"vi","name":"Tiếng Việt"}];
+// Inlined at the start of each generated head; no runtime download is needed.
+(function () {
+  const languages = window.ALUX_LOCALES.map(locale => locale.code);
+  function browserLanguage(value) {
+    const normalized = String(value).toLowerCase().replace(/_/g, "-");
+    if (/^zh(?:-|$)/.test(normalized)) {
+      if (/-hans(?:-|$)/.test(normalized)) return "zh";
+      if (/-hant(?:-|$)|-(?:tw|hk|mo)(?:-|$)/.test(normalized)) return "zh-hant";
+      return "zh";
+    }
+    return languages.includes(normalized) ? normalized : normalized.split("-")[0];
+  }
+  const slugs = ["", "for-ai-agents", "glvm", "alux-vs-others", "runtime-lab", "team", "roadmap"];
+  const current = new URL(window.location.href);
+  function languageUrl(value, language) {
+    const url = new URL(value, current);
+    if (url.origin !== current.origin) return url.href;
+    const parts = url.pathname.replace(/\.html$/, "").split("/").filter(Boolean);
+    if (languages.includes(parts[0])) parts.shift();
+    const slug = parts.join("/") === "index" ? "" : parts.join("/");
+    if (!slugs.includes(slug)) return url.href;
+    url.pathname = (language === "en" ? "" : "/" + language) + (slug ? "/" + slug : language === "en" ? "/" : "");
+    url.searchParams.delete("lang");
+    return url.href;
+  }
+  const prefix = current.pathname.split("/")[1];
+  const queryLanguage = current.searchParams.get("lang");
+  const explicit = languages.includes(queryLanguage) ? queryLanguage : languages.includes(prefix) ? prefix : null;
+  let language = explicit || "en";
+  const homeEntry = current.pathname === "/" || current.pathname === "/index" || current.pathname === "/index.html";
+  if (!explicit && homeEntry) {
+    let saved;
+    try { saved = localStorage.getItem("alux-lang"); } catch {}
+    if (!languages.includes(saved)) {
+      try { saved = sessionStorage.getItem("alux-lang"); } catch {}
+      if (languages.includes(saved)) {
+        try { localStorage.setItem("alux-lang", saved); } catch {}
+      }
+    }
+    const preferred = (navigator.languages || [navigator.language || "en"])
+      .map(browserLanguage).find(value => languages.includes(value));
+    language = languages.includes(saved) ? saved : preferred || "en";
+  }
+  window.ALUX_LANGUAGE = { language, urlFor: languageUrl };
+  const destination = languageUrl(current.href, language);
+  if ((homeEntry || explicit) && destination !== current.href) {
+    // Keep the wrong-language document from painting during entry negotiation.
+    document.documentElement.style.visibility = "hidden";
+    window.location.replace(destination);
+  }
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALUX face aux autres | ALUX Network</title>
+<link rel="canonical" href="https://www.alux.network/fr/alux-vs-others">
+<link rel="alternate" hreflang="en" href="https://www.alux.network/alux-vs-others">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/alux-vs-others">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/alux-vs-others">
+<link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/alux-vs-others">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/alux-vs-others">
+<link rel="alternate" hreflang="es" href="https://www.alux.network/es/alux-vs-others">
+<link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/alux-vs-others">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/alux-vs-others">
+<link rel="alternate" hreflang="fr" href="https://www.alux.network/fr/alux-vs-others">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/alux-vs-others">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/alux-vs-others">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/alux-vs-others">
+<link rel="alternate" hreflang="x-default" href="https://www.alux.network/alux-vs-others">
+  <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
+  <meta name="description" content="Comment ALUX étend les appels courts aux machines virtuelles en transactions longues rejouables, avec une compatibilité EVM déjà disponible et une composition plus large entre environnements d’exécution inscrite dans la feuille de route.">
+<link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
+<link rel="stylesheet" href="/styles.css?v=20261103-locale-flow">
+<link rel="stylesheet" href="/site-frame.css?v=20261103-language-grid">
+<link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ALUX Network">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://www.alux.network/fr/alux-vs-others">
+<meta property="og:title" content="ALUX face aux autres | ALUX Network">
+<meta property="og:description" content="Comment ALUX étend les appels courts aux machines virtuelles en transactions longues rejouables, avec une compatibilité EVM déjà disponible et une composition plus large entre environnements d’exécution inscrite dans la feuille de route.">
+<meta property="og:image" content="https://www.alux.network/assets/social/pages/fr/alux-vs-others.jpg?v=20261103">
+<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/fr/alux-vs-others.jpg?v=20261103">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ALUX face aux autres | ALUX Network">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ALUX face aux autres | ALUX Network">
+<meta name="twitter:description" content="Comment ALUX étend les appels courts aux machines virtuelles en transactions longues rejouables, avec une compatibilité EVM déjà disponible et une composition plus large entre environnements d’exécution inscrite dans la feuille de route.">
+<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/fr/alux-vs-others.jpg?v=20261103">
+<meta name="twitter:image:alt" content="ALUX face aux autres | ALUX Network">
+</head>
+<body data-page="aluxVsOthers">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow glow-one" aria-hidden="true"></div>
+  <div class="bg-glow glow-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/fr" aria-label="ALUX Network home"><img class="brand-logo" src="/assets/optimized/alux-logo.0ddab7cca545.webp" alt="ALUX logo"></a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="/fr" data-nav="home">Accueil</a>
+        <a href="/fr/for-ai-agents" data-nav="vs">Pour les agents IA</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="learn-menu">
+            <span data-nav="learn">Comprendre</span><span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown-menu" id="learn-menu">
+            <a href="/fr/glvm" data-nav="learnGlvm">GLVM</a>
+            <a href="/fr/runtime-lab" data-nav="learnPcc">Runtime Lab</a>
+            <a href="/fr/alux-vs-others" data-nav="learnAlux" class="active-link" aria-current="page">ALUX face aux autres</a>
+          </div>
+        </div>
+        <a href="https://x.com/alux_network/articles" data-nav="blog" target="_blank" rel="noreferrer">Blog</a>
+        <a href="/fr/team" data-nav="team">Équipe</a>
+        <a href="/fr/roadmap" data-nav="roadmap">Feuille de route</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>Langue</span><span class="lang-current" data-lang-current>Français</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/alux-vs-others" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/alux-vs-others" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/alux-vs-others" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/alux-vs-others" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/alux-vs-others" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/alux-vs-others" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/alux-vs-others" hreflang="ar">العربية</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/alux-vs-others" hreflang="de">Deutsch</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="fr" lang="fr" dir="ltr" href="https://www.alux.network/fr/alux-vs-others" hreflang="fr">Français</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/alux-vs-others" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/alux-vs-others" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/alux-vs-others" hreflang="vi">Tiếng Việt</a></div></div>
+        <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">Nous contacter</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Ouvrir ou fermer le menu de navigation"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main id="page-content" data-prerendered="fr">
+    <article class="alux-vs-page alux-vs-article">
+      <header class="alux-vs-article-header fade-in">
+        <div class="alux-vs-article-lede">
+          <h1>Un environnement d’exécution distribué pour unifier le <span class="technical-token">Web 2</span> et le <span class="technical-token">Web 3</span></h1>
+          <p>Les blockchains sont fondamentalement des machines à transitions d’état. <span class="technical-token">ALUX</span> fait évoluer ce modèle, des appels courts et isolés à une machine virtuelle vers des transactions longues rejouables : l’exécution sur plusieurs blocs et les entrées-sorties <span class="technical-token">Web 2</span> vérifiables sont disponibles dès aujourd’hui, tandis que la composition entre environnements d’exécution et entre shards constitue l’architecture plus large.</p>
+        </div>
+        <aside class="alux-vs-article-summary" aria-label="Résumé de l’article">
+          <span>Différence fondamentale</span>
+
+    <section class="alux-summary-group alux-summary-group--other" aria-labelledby="summary-other-title">
+      <h2 id="summary-other-title">La plupart des chaînes</h2>
+      <p>Appels courts et isolés à une machine virtuelle</p>
+    </section>
+    <section class="alux-summary-group alux-summary-group--alux" aria-labelledby="summary-alux-title">
+      <h2 id="summary-alux-title"><span class="technical-token">ALUX</span></h2>
+      <ul class="alux-summary-features">
+        <li><p>Transactions longues rejouables</p></li>
+        <li><dl><dt>Exécution</dt><dd>Parallèle et concurrente dès aujourd’hui ; composite dans le modèle cible</dd></dl></li><li><dl><dt>Sémantique transactionnelle</dt><dd>Sémantique de type ACID pour les transactions longues</dd></dl></li>
+      </ul>
+    </section>
+        </aside>
+      </header>
+
+      <div class="alux-vs-article-layout">
+        <aside class="alux-vs-article-nav" aria-label="Dans cet article">
+          <span>Dans cet article</span>
+          <a href="#problem">Le problème</a><a href="#universal">Transactions longues</a><a href="#execution">Modèle d’exécution</a><a href="#compatibility">Transitions composites et compatibilité</a>
+        </aside>
+
+        <div class="alux-vs-article-body">
+          <section class="alux-vs-article-section fade-in" id="problem">
+            <h2>Le problème auquel nous répondons</h2>
+            <p>De nombreuses machines virtuelles de blockchain se concentrent sur des mises à jour d’état courtes et ordonnées. <span class="technical-token">ALUX</span> étend ce modèle aux workflows qui doivent attendre, reprendre leur exécution, se coordonner ou franchir les limites d’un bloc.</p>
+            <ul><li>Les blockchains sont fondamentalement des machines à transitions d’état.</li><li>De nombreuses machines virtuelles de blockchain actuelles se concentrent sur une catégorie plus restreinte de transitions courtes et ordonnées.</li></ul>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--state"><div class="alux-vs-native-surface" role="img" aria-label="Schéma du modèle de transitions d’état">
+    <div class="alux-vs-original-image alux-vs-original-image--state">
+      <img src="/assets/optimized/state-transitions-page-crop-transparent.0f12753d2c10.webp" alt="" width="2070" height="910" loading="lazy">
+    </div>
+  </div><figcaption>Figure 1. <span class="technical-token">ALUX</span> étend le modèle d’exécution du Web3, des mises à jour courtes aux transactions longues rejouables.</figcaption><p class="alux-vs-figure-note"><strong>À retenir :</strong> de nombreuses chaînes se concentrent sur les mises à jour d’état courtes ; <span class="technical-token">ALUX</span> y ajoute les transactions longues rejouables.</p></figure>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="universal">
+            <h2><span class="technical-token">ALUX</span>, un environnement d’exécution distribué pour les transactions longues</h2>
+            <p><span class="technical-token">ALUX</span> modélise des transitions parallèles, concurrentes et composites, au-delà des mises à jour d’état ponctuelles.</p>
+            <p>Au lieu de traiter chaque transaction comme une mise à jour d’état courte et isolée, <span class="technical-token">ALUX</span> modélise l’exécution sous la forme d’un environnement capable de coordonner des transitions parallèles, concurrentes et composites.</p>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--types"><div class="alux-vs-native-surface" role="img" aria-label="Schéma des transitions parallèles, concurrentes et composites"><div class="alux-vs-original-image alux-vs-original-image--types"><img src="/assets/optimized/transition-types-transparent.e5e4dd5437d5.webp" alt="" width="3634" height="1353" loading="lazy"></div></div><figcaption>Figure 2. <span class="technical-token">ALUX</span> prend déjà en charge les transitions d’état parallèles et concurrentes et définit les transitions composites comme architecture cible.</figcaption><p class="alux-vs-figure-note"><strong>À retenir :</strong> le parallélisme fait avancer des tâches indépendantes, la concurrence permet d’attendre puis de reprendre l’exécution, et la composition définit comment les effets liés doivent être finalisés ensemble.</p></figure>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="execution">
+            <h2>Modèle d’exécution</h2>
+            <div class="alux-vs-capability-grid"><article class="alux-vs-capability alux-vs-capability--1"><span>Parallèle</span><div><h3>Exécution parallèle </h3><p>Des instances <span class="alux-vs-accent"><span class="technical-token">EVM</span></span> isolées peuvent déjà s’exécuter en parallèle. <span class="technical-token">WASM</span> relève de l’orientation prévue vers des machines virtuelles hétérogènes.</p></div></article><article class="alux-vs-capability alux-vs-capability--2"><span>Concurrent</span><div><h3>Exécution concurrente </h3><p><span class="technical-token">ALUX</span> permet aux TX de s’exécuter sous forme de <span class="alux-vs-accent">coroutines</span>, qui peuvent être suspendues, réveillées et entrelacées. Leur exécution est non déterministe, mais leur rejeu est déterministe.</p></div></article><article class="alux-vs-capability alux-vs-capability--3"><span>Composite</span><div><h3>Transitions composites </h3><p>Les TX peuvent s’étendre sur plusieurs hauteurs de bloc et coordonner les tâches sur la chaîne avec des effets HTTPS rejouables, tout en préservant l’isolation et la <span class="alux-vs-accent">finalisation atomique</span> au sein du périmètre transactionnel d’<span class="technical-token">ALUX</span>. La composition entre shards reste inscrite dans l’architecture et la feuille de route.</p></div></article></div>
+          </section>
+
+          <section class="alux-vs-article-section fade-in" id="compatibility">
+            <h2>Transitions composites et compatibilité</h2>
+            <p>Les TX peuvent s’étendre sur plusieurs hauteurs de bloc et coordonner les tâches sur la chaîne avec des effets HTTPS rejouables, tout en préservant l’isolation et la <span class="alux-vs-accent">finalisation atomique</span> au sein du périmètre transactionnel d’<span class="technical-token">ALUX</span>. La composition entre shards reste inscrite dans l’architecture et la feuille de route.</p>
+            <p><span class="technical-token">ALUX</span> propose dès aujourd’hui une voie d’exécution <span class="alux-vs-accent"><span class="technical-token">EVM</span></span> via son bac à sable et l’interface <span class="technical-token">JSON-RPC</span> Ethereum. <span class="technical-token">WASM</span> et, plus largement, la composition entre machines virtuelles hétérogènes sont prévus ; la version de référence actuelle ne les intègre pas.</p>
+            <figure class="alux-vs-native-figure alux-vs-native-figure--composite"><div class="alux-vs-native-surface" role="img" aria-label="Schéma de l’environnement d’exécution des transactions composites">
+    <div class="alux-vs-original-image alux-vs-original-image--composite">
+      <img src="/assets/optimized/composite-transitions-transparent.e45337a28246.webp" alt="" width="1570" height="1762" loading="lazy">
+    </div>
+  </div><figcaption>Figure 3. L’architecture de transitions composites relie les tâches sur la chaîne aux services <span class="technical-token">Web 2</span> ; la composition entre shards reste inscrite dans la feuille de route.</figcaption><p class="alux-vs-figure-note"><strong>À retenir :</strong> <span class="technical-token">ALUX</span> prend déjà en charge l’exécution sur plusieurs blocs et les entrées-sorties <span class="technical-token">Web 2</span> rejouables ; la composition entre shards reste prévue.</p></figure>
+            <p class="alux-vs-article-close">En bref, <span class="technical-token">ALUX</span> ne contraint pas tous les workflows à tenir dans une transaction courte. Dès aujourd’hui, il permet de rejouer des transactions longues qui traversent plusieurs blocs et se connectent au <span class="technical-token">Web 2</span>, tandis que la composition entre shards et, plus largement, entre environnements d’exécution reste inscrite dans l’architecture et la feuille de route.</p>
+          </section>
+        </div>
+      </div>
+    </article>
+</main>
+    <footer class="site-footer">
+      <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Copyright © 2026 Foundation ALUX</p></div>
+    </footer>
+  </div>
+<script defer src="/i18n/runtime/fr/aluxVsOthers.js?v=2490bcc3985d"></script>
+<script defer src="/script.js?v=20261103-language-grid"></script>
+</body>
+</html>

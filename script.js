@@ -4926,11 +4926,14 @@ function initDropdown() {
     dropdownTrigger.setAttribute("aria-expanded", String(isOpen));
   });
 
-  document.addEventListener("click", (event) => {
+  const closeOnOutsideInteraction = (event) => {
     if (mobileQuery.matches && !navDropdown.contains(event.target)) {
       closeDropdown();
     }
-  });
+  };
+  // WebKit background taps need pointer handling; click covers synthesized activation.
+  document.addEventListener('pointerdown', closeOnOutsideInteraction, true);
+  document.addEventListener('click', closeOnOutsideInteraction, true);
 }
 
 function initLanguage() {
@@ -4978,20 +4981,36 @@ function initRoadmapOrder() {
 function initLanguageDropdown() {
   if (!langDropdown || !langSwitch) return;
 
+  const openLanguageMenu = () => {
+    langDropdown.classList.add('open');
+    langSwitch.setAttribute('aria-expanded', 'true');
+    navDropdown?.classList.remove('open');
+    dropdownTrigger?.setAttribute('aria-expanded', 'false');
+    siteNav?.classList.remove('open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+  };
+
   langDropdown.addEventListener('keydown', event => {
     const buttons = [...langButtons];
     const index = buttons.indexOf(document.activeElement);
     let target;
-    if (event.key === 'ArrowDown') target = buttons[(index + 1) % buttons.length];
-    if (event.key === 'ArrowUp') target = buttons[index < 0 ? buttons.length - 1 : (index + buttons.length - 1) % buttons.length];
+    const navigationKeys = ['ArrowDown', 'ArrowUp', 'ArrowRight', 'ArrowLeft', 'Home', 'End'];
+    if (navigationKeys.includes(event.key)) {
+      openLanguageMenu();
+    }
+    const columns = getComputedStyle(langDropdown.querySelector('.lang-menu')).gridTemplateColumns.split(/\s+/).length;
+    const rtl = document.documentElement.dir === 'rtl';
+    if (event.key === 'ArrowDown') target = buttons[index < 0 ? 0 : (index + columns) % buttons.length];
+    if (event.key === 'ArrowUp') target = buttons[index < 0 ? buttons.length - 1 : (index + buttons.length - columns) % buttons.length];
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      const step = (event.key === 'ArrowRight') !== rtl ? 1 : -1;
+      target = buttons[index < 0 ? 0 : (index + buttons.length + step) % buttons.length];
+    }
     if (event.key === 'Home') target = buttons[0];
     if (event.key === 'End') target = buttons[buttons.length - 1];
     if (target) {
       event.preventDefault();
-      langDropdown.classList.add('open');
-      langSwitch.setAttribute('aria-expanded', 'true');
-      target.focus();
-      target.scrollIntoView({block:'nearest'});
+      target.focus({preventScroll: true});
     }
     if (event.key === 'Escape') {
       langDropdown.classList.remove('open');
@@ -5001,16 +5020,30 @@ function initLanguageDropdown() {
   });
 
   langSwitch.addEventListener("click", () => {
-    const isOpen = langDropdown.classList.toggle("open");
-    langSwitch.setAttribute("aria-expanded", String(isOpen));
+    if (!langDropdown.classList.contains('open')) {
+      openLanguageMenu();
+    } else {
+      langDropdown.classList.remove('open');
+      langSwitch.setAttribute('aria-expanded', 'false');
+    }
   });
 
-  document.addEventListener("click", (event) => {
+  langDropdown.addEventListener('focusout', event => {
+    if (!langDropdown.contains(event.relatedTarget)) {
+      langDropdown.classList.remove('open');
+      langSwitch.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  const closeOnOutsideInteraction = (event) => {
     if (!langDropdown.contains(event.target)) {
       langDropdown.classList.remove("open");
       langSwitch.setAttribute("aria-expanded", "false");
     }
-  });
+  };
+  // Keep background-touch dismissal independent of synthesized click events.
+  document.addEventListener('pointerdown', closeOnOutsideInteraction, true);
+  document.addEventListener('click', closeOnOutsideInteraction, true);
 }
 
 function initCookieBanner() {

@@ -1,7 +1,7 @@
 {
   "language": "ja",
   "target": "Japanese, polished native Japanese product/protocol copy",
-  "updatedAt": "2026-10-04T17:17:33.177599Z",
+  "updatedAt": "2026-11-03T08:28:03.607Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -5022,10 +5022,10 @@
     "home.sections.6.items.0.1": {
       "source": "A workflow starts several agents in parallel. Some call the Claude API, while other steps wait for user input. The main agent continues only after every branch finishes, even when the workflow runs for about 30 minutes. Claude and user input connect at the application layer; ALUX provides durable fork, wait, join, capability passing, and replayable execution.",
       "sourceHash": "755f159b851633ea58ab36b0e302056d3fda460086aa70c69341ce85ba15a2b0",
-      "text": "ワークフローは複数のエージェントを並行して起動します。Claude API を呼び出すエージェントもあれば、ユーザー入力を待つ処理もあります。ワークフローが約30分間続く場合でも、メインエージェントはすべての分岐が完了した後にのみ処理を続行します。Claude API とユーザー入力との接続はアプリケーションレイヤーが担い、ALUX は永続的な fork、wait、join、ケイパビリティの受け渡し、リプレイ可能な実行を提供します。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-08-11T14:49:11.059Z",
-      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
+      "text": "ワークフローは複数のエージェントを並列に起動します。Claude API を呼び出すエージェントもあれば、ユーザー入力を待つ処理もあります。ワークフローが約30分間続く場合でも、メインエージェントはすべての分岐が完了した後にのみ処理を続行します。Claude API とユーザー入力との接続はアプリケーションレイヤーが担い、ALUX は永続的な fork、wait、join、ケイパビリティの受け渡し、リプレイ可能な実行を提供します。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.6.items.1.0": {
       "source": "BTC Price Aggregation from Three Exchanges",
@@ -5038,10 +5038,10 @@
     "home.sections.6.items.1.1": {
       "source": "A contract starts three parallel processes through configured external-I/O adapters to read BTC prices from Binance, Coinbase, and Kraken. A fourth process waits for all three, joins their results, normalizes the quotes, computes the median, and then continues. ALUX makes the execution reproducible; the selected endpoints still determine source truth.",
       "sourceHash": "33580b07be3aa7bc77b0df6c6bcb5c0f51ef672b05829f255741066f691f57ab",
-      "text": "コントラクトは、構成済みの外部 I/O アダプターを介して3つのプロセスを並行起動し、Binance、Coinbase、Kraken から BTC 価格を取得します。4つ目のプロセスは3つすべての完了を待ち、結果を join し、価格を正規化して中央値を算出した後、処理を続行します。ALUX は実行を再現可能にしますが、どの情報源を正とするかは選択したエンドポイントによって決まります。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-08-11T14:49:11.059Z",
-      "reviewerNotes": "Reviewed for Frank's homepage revision, technical maturity, and responsive multilingual typography."
+      "text": "コントラクトは、構成済みの外部 I/O アダプターを介して3つのプロセスを並列起動し、Binance、Coinbase、Kraken から BTC 価格を取得します。4つ目のプロセスは3つすべての完了を待ち、結果を join し、価格を正規化して中央値を算出した後、処理を続行します。ALUX は実行を再現可能にしますが、どの情報源を正とするかは選択したエンドポイントによって決まります。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.6.items.2.0": {
       "source": "Cross-Shard Atomic Execution",
@@ -5078,10 +5078,10 @@
     "home.sections.6.text": {
       "source": "Build workflows that keep their context while they wait, coordinate parallel work, and settle as one result. Current capabilities and roadmap targets are labeled separately.",
       "sourceHash": "aeccfc46565169a6d539fb201bd7e7a0b41ff9cb2e61ac2f0b29270651625978",
-      "text": "待機中もコンテキストを保持し、並行処理を調整し、単一の結果として確定するワークフローを構築できます。現行機能とロードマップ上の目標は分けて表示しています。",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-08-11T08:47:31.738Z",
-      "reviewerNotes": "Human-reviewed Japanese copy aligned with the current English homepage source and ALUX maturity boundaries."
+      "text": "待機中もコンテキストを保持し、並列処理を調整し、単一の結果として確定するワークフローを構築できます。現行機能とロードマップ上の目標は分けて表示しています。",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "home.sections.6.title": {
       "source": "What You Can\nBuild on ALUX",
@@ -6422,10 +6422,10 @@
     "parallelConcurrentComposable.modes.0.what": {
       "source": "Parallel execution means independent jobs run at the same time. A travel agent can search flights, rooms, transfers, and insurance without making one search wait behind another.",
       "sourceHash": "3c847dd2a7e6cb57dbb19f64bd116e210ac1875819c0812cea4db280703a1028",
-      "text": "並列実行とは、独立した作業を同時に進めることです。旅行エージェントは、1つの検索の完了を待たずに、航空券、客室、送迎、保険を並行して検索できます。",
+      "text": "並列実行とは、独立した作業を同時に進めることです。旅行エージェントは、1つの検索の完了を待たずに、航空券、客室、送迎、保険を並列に検索できます。",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "parallelConcurrentComposable.modes.1.alt": {
       "source": "Two transactions interact through a tuple-space channel: one waits for a matching message, the other sends it, and the waiting continuation resumes while unrelated work keeps moving.",
@@ -6454,10 +6454,10 @@
     "parallelConcurrentComposable.modes.1.enables": {
       "source": "A travel agent can keep one long transaction alive across blocks: it waits for room availability, an API response, or a user decision, then continues without blocking unrelated work.",
       "sourceHash": "5327fc1321a85ad865a955553fd59a65216bcc55c2e26cc149f7599c1b7d4140",
-      "text": "旅行エージェントは、1つの長期トランザクションをブロックをまたいで維持できます。空室情報、API 応答、ユーザーの判断を待ちながら、無関係な処理を止めずに実行を続けます。",
+      "text": "旅行エージェントは、1つの長期トランザクションをブロックをまたいで維持できます。空室情報、API 応答、ユーザーの判断を待ち、応答が届くと、無関係な処理を止めることなく実行を続けます。",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "parallelConcurrentComposable.modes.1.how": {
       "source": "The waiting consume is stored as a resource in tuple space. A produce from another transaction matches it, triggering a COMM event that spawns the continuation and moves the Execution Context from Inactive back to Running. If more than one match is possible, ReplayTrie records the chosen COMM for deterministic replay.",
@@ -6604,12 +6604,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "roadmapStatic.101": {
-      "source": "Designed and initial implementation of BlockGit, a new consensus protocol (Completed)",
-      "sourceHash": "7dc579992148339d2cad37089690f9e08c481286cd86a1967d75b800216aaf98",
+      "source": "Design and initial implementation of BlockGit, a new consensus protocol (Completed)",
+      "sourceHash": "6757793b87f6dce99752722445b8de101c1f549668439e983774316dbf36deab",
       "text": "新しい合意プロトコル BlockGit の設計と初期実装（完了）",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "roadmapStatic.102": {
       "source": "A discrete event simulator to test consensus protocol implementation (Completed)",
@@ -7020,12 +7020,12 @@
       "reviewerNotes": "Reviewed against the supplied October 2026 roadmap update; technical terms and per-item status preserved."
     },
     "roadmapStatic.30": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "新しいトラップベースの EVM サンドボックス（進行中）",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "roadmapStatic.31": {
       "source": "Integrate with Ethereum toolchain (In Progress)",
@@ -7124,12 +7124,12 @@
       "reviewerNotes": "Reviewed against the supplied October 2026 roadmap update; technical terms and per-item status preserved."
     },
     "roadmapStatic.42": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "新しいトラップベースの EVM サンドボックス（進行中）",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "roadmapStatic.43": {
       "source": "2026 Q4",
@@ -7156,12 +7156,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "roadmapStatic.46": {
-      "source": "A \"GDB\" like TVM debug and observability tool (WIP)",
-      "sourceHash": "cf2ee5400cdb37f36aaae3a9f7758bf6ef71aeb19a65baa66d22d270b012100b",
+      "source": "A \"GDB\"-like TVM debug and observability tool (WIP)",
+      "sourceHash": "fd176f7b07e685ea8d388255d336e71dd6fd281bb7021d8ec9a0971f8ed26d06",
       "text": "「GDB」ライクな TVM デバッグ・可観測性ツール（WIP）",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "roadmapStatic.47": {
       "source": "Complete the cost accounting model (WIP)",
@@ -7340,12 +7340,12 @@
       "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "roadmapStatic.67": {
-      "source": "Introduce test framework for randomly generated Tolang codes and CI integration (Completed)",
-      "sourceHash": "d58a58e55f92cb5f33ac6a0b808e79d9518b316e8a0fb8ccf05d7b1ab6580ab9",
+      "source": "Introduce test framework for randomly generated Tolang code and CI integration (Completed)",
+      "sourceHash": "521c2a4d025036fcc7ae3169d5cff4d7d2fbef3c7c8e2038c143a93ac6ed6699",
       "text": "ランダム生成 Tolang コード向けテストフレームワークを導入し、CI と統合（完了）",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
     },
     "roadmapStatic.68": {
       "source": "Refactor replay logic (Completed)",
@@ -9102,10 +9102,10 @@
     "vs.sections.3.features.2.text": {
       "source": "Processes communicate through produce and consume channels. Unmatched work waits; non-deterministic matches are recorded for replay.",
       "sourceHash": "08713a2682213bb586567ed8707d64409599f5e21bfef5d05b7c59c3d32ce69a",
-      "text": "プロセスは Produce と Consume のチャネルを通じて通信します。一致する相手がない処理は待機し、非決定的な照合はリプレイ用に記録されます。",
+      "text": "プロセスは produce と consume のチャネルを通じて通信します。一致する相手がない処理は待機し、非決定的な照合はリプレイ用に記録されます。",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-07-13T13:43:16.874Z",
-      "reviewerNotes": "Full native-Japanese review against the current English source; terminology, implementation status, and HTML structure verified."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "vs.sections.3.features.2.title": {
       "source": "Tuple-Space Coordination",

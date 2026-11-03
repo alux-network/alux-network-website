@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <script data-language-routing>
-window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ja","name":"日本語"},{"code":"ko","name":"한국어"},{"code":"vi","name":"Tiếng Việt"},{"code":"de","name":"Deutsch"},{"code":"es","name":"Español"},{"code":"ru","name":"Русский"},{"code":"uk","name":"Українська"},{"code":"ar","name":"العربية"}];
+window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简体中文"},{"code":"zh-hant","name":"繁體中文"},{"code":"ko","name":"한국어"},{"code":"ja","name":"日本語"},{"code":"es","name":"Español"},{"code":"ar","name":"العربية"},{"code":"de","name":"Deutsch"},{"code":"fr","name":"Français"},{"code":"uk","name":"Українська"},{"code":"ru","name":"Русский"},{"code":"vi","name":"Tiếng Việt"}];
 // Inlined at the start of each generated head; no runtime download is needed.
 (function () {
   const languages = window.ALUX_LOCALES.map(locale => locale.code);
@@ -62,20 +62,21 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
 <link rel="alternate" hreflang="en" href="https://www.alux.network/runtime-lab">
 <link rel="alternate" hreflang="zh-Hans" href="https://www.alux.network/zh/runtime-lab">
 <link rel="alternate" hreflang="zh-Hant" href="https://www.alux.network/zh-hant/runtime-lab">
-<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/runtime-lab">
 <link rel="alternate" hreflang="ko" href="https://www.alux.network/ko/runtime-lab">
-<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/runtime-lab">
-<link rel="alternate" hreflang="de" href="https://www.alux.network/de/runtime-lab">
+<link rel="alternate" hreflang="ja" href="https://www.alux.network/ja/runtime-lab">
 <link rel="alternate" hreflang="es" href="https://www.alux.network/es/runtime-lab">
-<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/runtime-lab">
-<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/runtime-lab">
 <link rel="alternate" hreflang="ar" href="https://www.alux.network/ar/runtime-lab">
+<link rel="alternate" hreflang="de" href="https://www.alux.network/de/runtime-lab">
+<link rel="alternate" hreflang="fr" href="https://www.alux.network/fr/runtime-lab">
+<link rel="alternate" hreflang="uk" href="https://www.alux.network/uk/runtime-lab">
+<link rel="alternate" hreflang="ru" href="https://www.alux.network/ru/runtime-lab">
+<link rel="alternate" hreflang="vi" href="https://www.alux.network/vi/runtime-lab">
 <link rel="alternate" hreflang="x-default" href="https://www.alux.network/runtime-lab">
   <link rel="icon" href="/assets/alux-favicon.png?v=20260714-logo4" type="image/png" sizes="512x512">
   <meta name="description" content="ALUX の現行の並列実行とメッセージ駆動実行、およびシステム境界をまたぐアトミック・コンポーザビリティの目標モデルを図解します。">
 <link rel="stylesheet" href="/fonts.css?v=20261014-local-fonts">
-<link rel="stylesheet" href="/styles.css?v=20261023-locales">
-<link rel="stylesheet" href="/site-frame.css?v=20261031-language-menu">
+<link rel="stylesheet" href="/styles.css?v=20261103-locale-flow">
+<link rel="stylesheet" href="/site-frame.css?v=20261103-language-grid">
 <link rel="stylesheet" href="/home-mobile-nav.css?v=20261010-localized-navigation">
 
 <meta property="og:type" content="website">
@@ -84,8 +85,8 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
 <meta property="og:url" content="https://www.alux.network/ja/runtime-lab">
 <meta property="og:title" content="ALUX ランタイム・ラボ | ALUX Network">
 <meta property="og:description" content="ALUX の現行の並列実行とメッセージ駆動実行、およびシステム境界をまたぐアトミック・コンポーザビリティの目標モデルを図解します。">
-<meta property="og:image" content="https://www.alux.network/assets/social/pages/ja/runtime-lab.jpg?v=20261015">
-<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/ja/runtime-lab.jpg?v=20261015">
+<meta property="og:image" content="https://www.alux.network/assets/social/pages/ja/runtime-lab.jpg?v=20261103">
+<meta property="og:image:secure_url" content="https://www.alux.network/assets/social/pages/ja/runtime-lab.jpg?v=20261103">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -93,7 +94,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ALUX ランタイム・ラボ | ALUX Network">
 <meta name="twitter:description" content="ALUX の現行の並列実行とメッセージ駆動実行、およびシステム境界をまたぐアトミック・コンポーザビリティの目標モデルを図解します。">
-<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/ja/runtime-lab.jpg?v=20261015">
+<meta name="twitter:image" content="https://www.alux.network/assets/social/pages/ja/runtime-lab.jpg?v=20261103">
 <meta name="twitter:image:alt" content="ALUX ランタイム・ラボ | ALUX Network">
 </head>
 <body data-page="parallelConcurrentComposable">
@@ -121,7 +122,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
         <a href="/ja/roadmap" data-nav="roadmap">ロードマップ</a>
       </nav>
       <div class="header-actions">
-        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>言語</span><span class="lang-current" data-lang-current>日本語</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/runtime-lab" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/runtime-lab" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/runtime-lab" hreflang="zh-Hant">繁體中文</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/runtime-lab" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/runtime-lab" hreflang="ko">한국어</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/runtime-lab" hreflang="vi">Tiếng Việt</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/runtime-lab" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/runtime-lab" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/runtime-lab" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/runtime-lab" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/runtime-lab" hreflang="ar">العربية</a></div></div>
+        <div class="lang-dropdown"><button class="lang-switch" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu"><span class="lang-label" data-lang-label>言語</span><span class="lang-current" data-lang-current>日本語</span><span class="nav-caret" aria-hidden="true"></span></button><div class="lang-menu" id="lang-menu" role="menu"><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="en" lang="en" dir="ltr" href="https://www.alux.network/runtime-lab" hreflang="en">English</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh" lang="zh-Hans" dir="ltr" href="https://www.alux.network/zh/runtime-lab" hreflang="zh-Hans">简体中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="zh-hant" lang="zh-Hant" dir="ltr" href="https://www.alux.network/zh-hant/runtime-lab" hreflang="zh-Hant">繁體中文</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ko" lang="ko" dir="ltr" href="https://www.alux.network/ko/runtime-lab" hreflang="ko">한국어</a><a class="lang-button active" role="menuitemradio" aria-checked="true" data-lang="ja" lang="ja" dir="ltr" href="https://www.alux.network/ja/runtime-lab" hreflang="ja">日本語</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es" dir="ltr" href="https://www.alux.network/es/runtime-lab" hreflang="es">Español</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ar" lang="ar" dir="rtl" href="https://www.alux.network/ar/runtime-lab" hreflang="ar">العربية</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de" dir="ltr" href="https://www.alux.network/de/runtime-lab" hreflang="de">Deutsch</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="fr" lang="fr" dir="ltr" href="https://www.alux.network/fr/runtime-lab" hreflang="fr">Français</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="uk" lang="uk" dir="ltr" href="https://www.alux.network/uk/runtime-lab" hreflang="uk">Українська</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="ru" lang="ru" dir="ltr" href="https://www.alux.network/ru/runtime-lab" hreflang="ru">Русский</a><a class="lang-button" role="menuitemradio" aria-checked="false" data-lang="vi" lang="vi" dir="ltr" href="https://www.alux.network/vi/runtime-lab" hreflang="vi">Tiếng Việt</a></div></div>
         <a href="mailto:info@alux.network" data-nav="cta" class="button ghost desktop-only">お問い合わせ</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-label="ナビゲーションメニューを切り替える"><span></span><span></span><span></span></button>
       </div>
@@ -172,7 +173,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
           <span class="pcc-image-fallback">2つのトランザクションがタプル空間チャネルで相互作用します。一方が一致するメッセージを待ち、もう一方がそれを送信します。照合後は待機中の継続処理が進み、無関係な作業も動き続けます。</span>
         </div>
         <figcaption class="pcc-mode-cue"><span>並行</span><strong>予約が待機し、ホテルエージェントが応答すると、次の処理が始まります</strong></figcaption>
-        <div class="pcc-mode-impact"><span>可能になること</span><p>旅行エージェントは、1つの長期トランザクションをブロックをまたいで維持できます。空室情報、API 応答、ユーザーの判断を待ちながら、無関係な処理を止めずに実行を続けます。</p><strong>並行性は応答を次の処理へつなげます。メッセージ照合は、停止したレーンを再始動するだけでなく、新しい継続処理を生成します。</strong></div>
+        <div class="pcc-mode-impact"><span>可能になること</span><p>旅行エージェントは、1つの長期トランザクションをブロックをまたいで維持できます。空室情報、API 応答、ユーザーの判断を待ち、応答が届くと、無関係な処理を止めることなく実行を続けます。</p><strong>並行性は応答を次の処理へつなげます。メッセージ照合は、停止したレーンを再始動するだけでなく、新しい継続処理を生成します。</strong></div>
       </figure>
 
       <figure class="pcc-mode-visual" data-pcc-visual="composable" aria-hidden="true">
@@ -189,7 +190,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
         <p class="pcc-mode-kicker">並列</p>
         <h3>航空券、ホテル、送迎、保険を<br>同時に検索します</h3>
         <dl class="pcc-mode-facts">
-          <div><dt>何を意味するか</dt><dd>並列実行とは、独立した作業を同時に進めることです。旅行エージェントは、1つの検索の完了を待たずに、航空券、客室、送迎、保険を並行して検索できます。</dd></div>
+          <div><dt>何を意味するか</dt><dd>並列実行とは、独立した作業を同時に進めることです。旅行エージェントは、1つの検索の完了を待たずに、航空券、客室、送迎、保険を並列に検索できます。</dd></div>
           <div><dt><span class="technical-token">ALUX</span> の方法</dt><dd>並列実行は <span class="technical-token">ALUX</span> のプロセス計算に組み込まれています。トランザクションはメモリを共有せず、相互作用はタプル空間チャネルに限定されます。そのため独立したトランザクションは別々の <span class="technical-token">TVM</span> レーンで進み、コミット時の状態競合は <span class="technical-token">Block Merge</span> が解決します。</dd></div>
           <div class="pcc-mode-fact--transfer"><dt>可能になること</dt><dd>同じ時間で、より多くの独立作業を完了できます。ただし並列性だけでは、作業同士がメッセージを交換したり、長期トランザクションが待機後に処理を続けたりすることはできません。</dd></div>
         </dl>
@@ -202,7 +203,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
         <dl class="pcc-mode-facts">
           <div><dt>何を意味するか</dt><dd>並行性は、作業同士が相互作用するときに始まります。予約は待機条件をチャネルに残し、ホテルサービスは後から一致する空室メッセージを送って、その条件を満たせます。</dd></div>
           <div><dt><span class="technical-token">ALUX</span> の方法</dt><dd>待機中の consume は、タプル空間にリソースとして保存されます。別のトランザクションの produce が一致すると <span class="technical-token">COMM</span> イベントが発生し、継続処理が生成され、Execution Context は Inactive から Running へ戻ります。候補が複数ある場合は、<span class="technical-token">ReplayTrie</span> が選択された <span class="technical-token">COMM</span> を記録し、決定的なリプレイを可能にします。</dd></div>
-          <div class="pcc-mode-fact--transfer"><dt>可能になること</dt><dd>旅行エージェントは、1つの長期トランザクションをブロックをまたいで維持できます。空室情報、API 応答、ユーザーの判断を待ちながら、無関係な処理を止めずに実行を続けます。</dd></div>
+          <div class="pcc-mode-fact--transfer"><dt>可能になること</dt><dd>旅行エージェントは、1つの長期トランザクションをブロックをまたいで維持できます。空室情報、API 応答、ユーザーの判断を待ち、応答が届くと、無関係な処理を止めることなく実行を続けます。</dd></div>
         </dl>
         <p class="pcc-mode-conclusion pcc-mode-conclusion--transfer">並行性は応答を次の処理へつなげます。メッセージ照合は、停止したレーンを再始動するだけでなく、新しい継続処理を生成します。</p>
       </article>
@@ -311,7 +312,7 @@ window.ALUX_LOCALES = [{"code":"en","name":"English"},{"code":"zh","name":"简�
       <div class="footer-meta"><a href="mailto:info@alux.network">info@alux.network</a><p data-footer="copyright">Copyright © 2026 Foundation ALUX</p></div>
     </footer>
   </div>
-<script defer src="/i18n/runtime/ja/parallelConcurrentComposable.js?v=c70824007e63"></script>
-<script defer src="/script.js?v=20261024-discord"></script>
+<script defer src="/i18n/runtime/ja/parallelConcurrentComposable.js?v=20a1eebd4c41"></script>
+<script defer src="/script.js?v=20261103-language-grid"></script>
 </body>
 </html>

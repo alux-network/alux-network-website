@@ -1,7 +1,7 @@
 {
   "language": "vi",
   "target": "Vietnamese, polished native Vietnamese product/protocol copy",
-  "updatedAt": "2026-10-22T17:14:22.395Z",
+  "updatedAt": "2026-11-03T08:28:03.607Z",
   "entries": {
     "aluxVsOthers.article.closingText": {
       "source": "In short, ALUX does not force every workflow into a short transaction. It makes long transactions that cross blocks and connect to Web 2 replayable today, while cross-shard and broader cross-runtime composition remain part of the architecture and roadmap.",
@@ -646,10 +646,10 @@
     "aluxVsOthers.metaTitle": {
       "source": "ALUX VS Others | ALUX Network",
       "sourceHash": "eb82dfd125f5617dca5a16f49e339710fa97474d082873094459618164642689",
-      "text": "ALUX VÀ CÁC NỀN TẢNG KHÁC | ALUX Network",
+      "text": "ALUX SO VỚI CÁC NỀN TẢNG KHÁC | ALUX Network",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.395Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "aluxVsOthers.problem.bullets.0": {
       "source": "Blockchains are essentially state transition machines.",
@@ -1134,26 +1134,26 @@
     "glvm.close.links.2.0": {
       "source": "ALUX VS Others",
       "sourceHash": "eb4b3f01c8ece1d0aedb62d3feb2142e1879e19355434ab4ed0336c129231d62",
-      "text": "ALUX và các nền tảng khác",
+      "text": "ALUX so với các nền tảng khác",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.395Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "glvm.close.text": {
       "source": "Runtime Lab explains the execution model. For AI Agents shows the workload pattern. ALUX VS Others compares architecture and capabilities across systems.",
       "sourceHash": "015cc615b5f87813ba1d3bb1e947ac75c792b8c02c0d06c65e09f591a37dbec2",
-      "text": "Runtime Lab giải thích mô hình thực thi. Mục Dành cho AI Agent trình bày kiểu khối lượng công việc. Mục ALUX và các nền tảng khác so sánh kiến trúc và khả năng giữa các hệ thống.",
+      "text": "Runtime Lab giải thích mô hình thực thi. Mục Dành cho AI Agent trình bày kiểu khối lượng công việc. Mục ALUX so với các nền tảng khác so sánh kiến trúc và khả năng giữa các hệ thống.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.395Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "glvm.close.title": {
       "source": "Explore the runtime, agent workloads, and system comparisons",
       "sourceHash": "82db601f2dfd02c5e80dff7166b8c6aa56186255857b34e049731c2051d25309",
-      "text": "Khám phá runtime, khối lượng công việc của agent và các hệ thống",
+      "text": "Khám phá runtime, khối lượng công việc của agent và phần so sánh giữa các hệ thống",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.395Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "glvm.continuity.atomicity.label": {
       "source": "Vertical atomicity · core runtime",
@@ -5558,10 +5558,10 @@
     "parallelConcurrentComposable.close.links.0.0": {
       "source": "Back to ALUX VS Others",
       "sourceHash": "64bea6b0dbbbcd28776d391ec19b03d932bbc2e4a3fefe98b7185cce95ba00ed",
-      "text": "Trở lại ALUX và các nền tảng khác",
+      "text": "Trở lại ALUX so với các nền tảng khác",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.395Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "parallelConcurrentComposable.close.links.1.0": {
       "source": "For AI Agents",
@@ -6604,12 +6604,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.101": {
-      "source": "Designed and initial implementation of BlockGit, a new consensus protocol (Completed)",
-      "sourceHash": "7dc579992148339d2cad37089690f9e08c481286cd86a1967d75b800216aaf98",
+      "source": "Design and initial implementation of BlockGit, a new consensus protocol (Completed)",
+      "sourceHash": "6757793b87f6dce99752722445b8de101c1f549668439e983774316dbf36deab",
       "text": "Thiết kế và triển khai ban đầu BlockGit, một giao thức đồng thuận mới (Đã hoàn thành)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.395Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.102": {
       "source": "A discrete event simulator to test consensus protocol implementation (Completed)",
@@ -7020,12 +7020,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.30": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "Sandbox EVM mới dựa trên trap (Đang thực hiện)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.395Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.31": {
       "source": "Integrate with Ethereum toolchain (In Progress)",
@@ -7124,12 +7124,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.42": {
-      "source": "New trap based EVM sandbox (In Progress)",
-      "sourceHash": "de068ddfa4102296eb7de07dc75bb6272a3c9e508d42e70e31147ecf2309f622",
+      "source": "New trap-based EVM sandbox (In Progress)",
+      "sourceHash": "e21acd618858656dfa66dcb8de412a1a1f3bdb818c06344124c58ac533246e44",
       "text": "Sandbox EVM mới dựa trên trap (Đang thực hiện)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.395Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.43": {
       "source": "2026 Q4",
@@ -7156,12 +7156,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.46": {
-      "source": "A \"GDB\" like TVM debug and observability tool (WIP)",
-      "sourceHash": "cf2ee5400cdb37f36aaae3a9f7758bf6ef71aeb19a65baa66d22d270b012100b",
+      "source": "A \"GDB\"-like TVM debug and observability tool (WIP)",
+      "sourceHash": "fd176f7b07e685ea8d388255d336e71dd6fd281bb7021d8ec9a0971f8ed26d06",
       "text": "Công cụ gỡ lỗi và quan sát TVM kiểu GDB (Đang thực hiện)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.395Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.47": {
       "source": "Complete the cost accounting model (WIP)",
@@ -7340,12 +7340,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.67": {
-      "source": "Introduce test framework for randomly generated Tolang codes and CI integration (Completed)",
-      "sourceHash": "d58a58e55f92cb5f33ac6a0b808e79d9518b316e8a0fb8ccf05d7b1ab6580ab9",
+      "source": "Introduce test framework for randomly generated Tolang code and CI integration (Completed)",
+      "sourceHash": "521c2a4d025036fcc7ae3169d5cff4d7d2fbef3c7c8e2038c143a93ac6ed6699",
       "text": "Đưa vào framework kiểm thử mã Tolang được tạo ngẫu nhiên và tích hợp CI (Đã hoàn thành)",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.395Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "English grammar/punctuation copyedit reviewed; existing translation meaning remains aligned. AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "roadmapStatic.68": {
       "source": "Refactor replay logic (Completed)",
@@ -8110,10 +8110,10 @@
     "ui.nav.learnAlux": {
       "source": "ALUX VS Others",
       "sourceHash": "eb4b3f01c8ece1d0aedb62d3feb2142e1879e19355434ab4ed0336c129231d62",
-      "text": "ALUX và các nền tảng khác",
+      "text": "ALUX so với các nền tảng khác",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.395Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "ui.nav.learnGlvm": {
       "source": "GLVM",
@@ -8630,10 +8630,10 @@
     "vs.sections.1.items.2.points.1": {
       "source": "Committed capability and state transitions",
       "sourceHash": "fd7183f4b2027d646f07eded3d2d224f488cc7d1435f9f46adf8692b33f1501f",
-      "text": "Chuyển trạng thái capability và trạng thái đã commit",
+      "text": "Các chuyển đổi đã được commit về capability và trạng thái",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.395Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "vs.sections.1.items.2.points.2": {
       "source": "A foundation for governance and safety layers",
@@ -9230,10 +9230,10 @@
     "vs.sections.4.statement": {
       "source": "Production-grade agents must be RISC. ALUX builds the machine.",
       "sourceHash": "be60821dc0423cf7426c5ccef2efda054d25ee229398e469cb4469ca3871a632",
-      "text": "Agent cấp sản xuất phải có RISC. ALUX đang xây dựng cỗ máy đó.",
+      "text": "Agent cấp sản xuất phải đáp ứng các tiêu chí RISC. ALUX đang xây dựng cỗ máy đó.",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.395Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-03T08:28:03.607Z",
+      "reviewerNotes": "Full English-source comparison and independent AI adjudication; bounded semantic/grammar correction. No human-native review claimed."
     },
     "vs.sections.4.systems.0.keywords.0": {
       "source": "cross-block",
