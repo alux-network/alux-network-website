@@ -1,7 +1,7 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
-const dropdownTrigger = document.querySelector(".nav-dropdown-trigger");
-const navDropdown = document.querySelector(".nav-dropdown");
+const dropdownTrigger = document.querySelector('[aria-controls="learn-menu"]');
+const navDropdowns = document.querySelectorAll(".nav-dropdown");
 const langButtons = document.querySelectorAll(".lang-button");
 const langDropdown = document.querySelector(".lang-dropdown");
 const langSwitch = document.querySelector(".lang-switch");
@@ -15,7 +15,7 @@ document.querySelectorAll('.brand, [data-nav="home"]').forEach((anchor) => {
 });
 const memoryStore = {};
 let staticRoadmapHTML = null;
-const mobileQuery = window.matchMedia("(max-width: 960px)");
+const mobileQuery = window.matchMedia("(max-width: 1180px)");
 
 const ui = {
   en: {
@@ -27,12 +27,14 @@ const ui = {
       home: "Home",
       vs: "For AI Agents",
       learn: "Learn",
+      tools: "Tools",
       learnGlvm: "GLVM",
       blog: "Blog",
       learnAlux: "ALUX VS Others",
       learnPcc: "Runtime Lab",
       team: "Team",
       roadmap: "Roadmap",
+      explorer: "Explorer",
       cta: "Contact Us"
     },
     footer: {
@@ -73,7 +75,7 @@ const homeFaqItems = {
 
 const pageData = {
   home: {
-    metaTitle: "ALUX Network — Building GLVM",
+    metaTitle: "ALUX — Building the Global VM",
     metaDescription: "GLVM is ALUX's architecture for one logical execution layer across physically distributed TVMs, coordinating concurrency, replay, authority, finalization, replication, and consensus.",
     hero: {
       eyebrow: "ALUX Network",
@@ -397,14 +399,16 @@ const pageData = {
         type: "links",
         eyebrow: "Learn More",
         title: "Channels",
+        itemOrder: [2, 3, 5, 0, 6, 7, 4, 1],
         items: [
           ["GitHub", "https://github.com/alux-network"],
           ["Medium", "https://medium.com/@alux_network"],
           ["X", "https://x.com/alux_network"],
           ["Discord", "https://discord.gg/HTBcp4ehDy"],
-          ["Instagram", "https://www.instagram.com/alux_network/"],
-          ["YouTube", "https://www.youtube.com/channel/UCWkSM8Qi2oMzTzIJTK1VOvA"],
-          ["LinkedIn", "https://www.linkedin.com/company/foundation-alux/"]
+          ["Instagram", "https://www.instagram.com/alux.network/"],
+          ["YouTube", "https://www.youtube.com/@alux.network"],
+          ["LinkedIn", "https://www.linkedin.com/company/foundation-alux/"],
+          ["Facebook", "https://www.facebook.com/alux.network"]
         ]
       }
     ]
@@ -4093,6 +4097,7 @@ function renderAluxVsOthersPage(page) {
 }
 
 const socialChannelIcons = {
+  Facebook: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 22v-9h3l.5-4H14V6.5c0-1.2.4-2 2.1-2H18V1.1A25 25 0 0 0 15.2 1C12.4 1 10 2.7 10 6v3H7v4h3v9h4Z"/></svg>`,
   GitHub: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.78-.25.78-.55V20c-3.18.69-3.85-1.35-3.85-1.35-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.54-.29-5.22-1.27-5.22-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.11 1.17a10.8 10.8 0 0 1 5.67 0c2.16-1.48 3.11-1.17 3.11-1.17.62 1.58.23 2.74.11 3.03.74.8 1.18 1.82 1.18 3.07 0 4.4-2.68 5.36-5.23 5.65.41.36.78 1.06.78 2.14v3.17c0 .3.2.66.79.55A11.3 11.3 0 0 0 12 .7Z"/></svg>`,
   Medium: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="5" fill="currentColor"/><ellipse cx="15.5" cy="12" rx="2.8" ry="5" fill="currentColor"/><ellipse cx="21" cy="12" rx="1.2" ry="4.4" fill="currentColor"/></svg>`,
   X: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/></svg>`,
@@ -4168,8 +4173,8 @@ function renderSection(section, index = -1) {
     return `<section class="section faq-section fade-in"><div class="section-heading faq-heading"><div class="faq-heading-title"><p class="eyebrow">${section.eyebrow}</p><h2>${section.title}</h2></div><p class="faq-hint">${faqHint}</p></div><div class="faq-list">${faqItems.map(([q, a], index) => `<details class="faq-item"${index === 0 ? " open" : ""}><summary><span class="faq-question-text">${q}</span><span class="faq-toggle-icon" aria-hidden="true"></span></summary><div class="faq-body">${a}</div></details>`).join("")}</div></section>`;
   }
   if (section.type === "links") {
-    const orderedItems = currentPage === "home"
-      ? [...section.items].sort(([, hrefA], [, hrefB]) => Number(hrefA.includes("medium.com")) - Number(hrefB.includes("medium.com")))
+    const orderedItems = section.itemOrder
+      ? section.itemOrder.map(itemIndex => section.items[itemIndex])
       : section.items;
     return `<section class="section community-section fade-in"><div class="community-card"><div class="community-copy"><p class="eyebrow">${section.eyebrow}</p><h2>${section.title}</h2></div><div class="social-links">${orderedItems.map(([label, href]) => `<a class="social-link" href="${href}" ${href.startsWith("http") ? 'target="_blank" rel="noreferrer"' : ""}><span class="social-link-main"><span class="social-link-icon" aria-hidden="true">${renderSocialChannelIcon(label)}</span><span class="social-link-label">${label}</span></span><span class="social-link-arrow" aria-hidden="true">→</span></a>`).join("")}</div></div></section>`;
   }
@@ -4681,11 +4686,12 @@ function updateActiveNavigation() {
   const learnPages = new Set(["glvm", "aluxVsOthers", "parallelConcurrentComposable"]);
 
   document.querySelectorAll(".site-nav a").forEach((anchor) => {
-    const pathname = new URL(anchor.href, window.location.href).pathname;
+    const destination = new URL(anchor.href, window.location.href);
+    const pathname = destination.pathname;
     const parts = pathname.split('/').filter(Boolean);
     if (supportedLanguages.has(parts[0]) && parts[0] !== 'en') parts.shift();
     const normalized = ('/'+parts.join('/')).replace(/\.html$/, "") || "/";
-    const isActive = normalized === activeHref.replace(/\.html$/, "").replace(/^(?!\/)/, "/");
+    const isActive = destination.origin === new URL(window.location.href).origin && normalized === activeHref.replace(/\.html$/, "").replace(/^(?!\/)/, "/");
     anchor.classList.toggle("active-link", isActive);
     if (isActive) {
       anchor.setAttribute("aria-current", "page");
@@ -4878,10 +4884,7 @@ function initMenu() {
   menuToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.toggle("open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
-    if (!isOpen && navDropdown && dropdownTrigger) {
-      navDropdown.classList.remove("open");
-      dropdownTrigger.setAttribute("aria-expanded", "false");
-    }
+    if (!isOpen) closeNavDropdowns();
   });
 
   siteNav.addEventListener("click", (event) => {
@@ -4889,51 +4892,86 @@ function initMenu() {
     if (!link || !mobileQuery.matches) return;
     siteNav.classList.remove("open");
     menuToggle.setAttribute("aria-expanded", "false");
+    closeNavDropdowns();
+  });
+}
+
+function closeNavDropdowns(except = null) {
+  navDropdowns.forEach(menu => {
+    if (menu === except) return;
+    menu.classList.remove("open");
+    menu.querySelector('.nav-dropdown-trigger')?.setAttribute('aria-expanded', 'false');
   });
 }
 
 function initDropdown() {
-  if (!navDropdown || !dropdownTrigger) return;
+  navDropdowns.forEach(navDropdown => {
+    const trigger = navDropdown.querySelector('.nav-dropdown-trigger');
+    if (!trigger) return;
 
-  const openDropdown = () => {
-    navDropdown.classList.add("open");
-    dropdownTrigger.setAttribute("aria-expanded", "true");
-  };
+    const openDropdown = () => {
+      closeNavDropdowns(navDropdown);
+      langDropdown?.classList.remove('open');
+      langSwitch?.setAttribute('aria-expanded', 'false');
+      navDropdown.classList.add("open");
+      trigger.setAttribute("aria-expanded", "true");
+    };
 
-  const closeDropdown = () => {
-    navDropdown.classList.remove("open");
-    dropdownTrigger.setAttribute("aria-expanded", "false");
-  };
+    const closeDropdown = () => {
+      navDropdown.classList.remove("open");
+      trigger.setAttribute("aria-expanded", "false");
+    };
 
-  navDropdown.addEventListener("mouseenter", () => {
-    if (!mobileQuery.matches) openDropdown();
-  });
+    navDropdown.addEventListener("mouseenter", () => {
+      if (!mobileQuery.matches) openDropdown();
+    });
 
-  navDropdown.addEventListener("mouseleave", () => {
-    if (!mobileQuery.matches) closeDropdown();
-  });
+    navDropdown.addEventListener("mouseleave", () => {
+      if (!mobileQuery.matches && !navDropdown.contains(document.activeElement)) closeDropdown();
+    });
 
-  dropdownTrigger.addEventListener("click", (event) => {
-    if (!mobileQuery.matches) {
+    trigger.addEventListener("click", (event) => {
+      if (!mobileQuery.matches) {
+        event.preventDefault();
+        openDropdown();
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+      if (navDropdown.classList.contains('open')) closeDropdown();
+      else openDropdown();
+    });
+
+    trigger.addEventListener('keydown', event => {
+      if (event.key !== 'ArrowDown') return;
       event.preventDefault();
       openDropdown();
-      return;
-    }
-
-    event.preventDefault();
-    event.stopPropagation();
-    const isOpen = navDropdown.classList.toggle("open");
-    dropdownTrigger.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  const closeOnOutsideInteraction = (event) => {
-    if (mobileQuery.matches && !navDropdown.contains(event.target)) {
+      navDropdown.querySelector('.nav-dropdown-menu a')?.focus();
+    });
+    navDropdown.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
       closeDropdown();
-    }
-  };
-  // WebKit background taps need pointer handling; click covers synthesized activation.
-  document.addEventListener('pointerdown', closeOnOutsideInteraction, true);
-  document.addEventListener('click', closeOnOutsideInteraction, true);
+      trigger.focus();
+    });
+    navDropdown.addEventListener('focusout', event => {
+      // Focus can reach a sibling trigger before its pointer click fires.
+      // That trigger owns the switch; leaving the dropdown groups closes all.
+      if (!navDropdown.contains(event.relatedTarget) && !event.relatedTarget?.closest?.('.nav-dropdown')) closeNavDropdowns();
+    });
+
+    const closeOnOutsideInteraction = (event) => {
+      // Let compact-navigation clicks settle before collapsing a sibling:
+      // closing Learn on pointerdown moves Tools before the tap completes.
+      if (!navDropdown.contains(event.target) && !(mobileQuery.matches && siteNav?.contains(event.target))) {
+        closeDropdown();
+      }
+    };
+    // WebKit background taps need pointer handling; click covers synthesized activation.
+    document.addEventListener('pointerdown', closeOnOutsideInteraction, true);
+    document.addEventListener('click', closeOnOutsideInteraction, true);
+  });
 }
 
 function initLanguage() {
@@ -4984,8 +5022,7 @@ function initLanguageDropdown() {
   const openLanguageMenu = () => {
     langDropdown.classList.add('open');
     langSwitch.setAttribute('aria-expanded', 'true');
-    navDropdown?.classList.remove('open');
-    dropdownTrigger?.setAttribute('aria-expanded', 'false');
+    closeNavDropdowns();
     siteNav?.classList.remove('open');
     menuToggle?.setAttribute('aria-expanded', 'false');
   };

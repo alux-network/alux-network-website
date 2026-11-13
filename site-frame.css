@@ -5,6 +5,7 @@ body[data-page] .site-shell {
 }
 
 body[data-page] .site-header {
+  gap: 12px !important;
   margin-top: 18px !important;
   padding: 18px 24px !important;
   border-radius: 28px !important;
@@ -33,7 +34,15 @@ body[data-page] .brand-logo {
 
 body[data-page] .site-nav {
   flex: 0 0 auto !important;
-  gap: 28px !important;
+  gap: 12px !important;
+}
+
+/* Class state also governs hover so only one dropdown can stay visible. */
+body[data-page] .nav-dropdown:not(.open) .nav-dropdown-menu {
+  display: none !important;
+}
+body[data-page] .nav-dropdown:not(.open) .nav-caret {
+  transform: rotate(45deg) translateY(-1px) !important;
 }
 
 body[data-page] .header-actions {
@@ -54,7 +63,7 @@ body[data-page] .header-actions .button {
 
 body[data-page] .header-actions .button {
   min-height: 56px !important;
-  padding: 0 26px !important;
+  padding: 0 18px !important;
   border-radius: 18px !important;
 }
 
@@ -107,6 +116,73 @@ body[data-page] .header-actions .button.ghost {
 
   body[data-page="parallelConcurrentComposable"] .pcc-close-copy h2 {
     font-size: clamp(1.95rem, 2.95vw, 3.05rem) !important;
+  }
+}
+
+/* Seven top-level destinations need the compact header on tablets. */
+@media (max-width: 1180px) {
+  body[data-page] .header-actions .desktop-only {
+    display: none !important;
+  }
+
+  body[data-page] .menu-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 47px;
+    min-height: 47px;
+  }
+
+  body[data-page] .site-nav {
+    position: absolute !important;
+    top: calc(100% + 12px) !important;
+    inset-inline-end: 0 !important;
+    inset-inline-start: auto !important;
+    display: none !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: min(320px, calc(100vw - 48px)) !important;
+    min-width: 0 !important;
+    max-height: calc(100dvh - 140px);
+    overflow-y: auto;
+    padding: 18px !important;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: #fffcf7 !important;
+    box-shadow: var(--shadow-deep);
+  }
+
+  body[data-page] .site-nav.open {
+    display: flex !important;
+  }
+
+  body[data-page] .site-nav > a,
+  body[data-page] .nav-dropdown-trigger {
+    display: flex !important;
+    align-items: center;
+    min-height: 47px !important;
+    width: 100% !important;
+  }
+
+  body[data-page] .nav-dropdown,
+  body[data-page] .nav-dropdown-menu {
+    width: 100% !important;
+  }
+
+  body[data-page] .nav-dropdown-menu {
+    position: static !important;
+    margin-top: 10px;
+  }
+
+  body[data-page] .nav-dropdown:not(.open) .nav-dropdown-menu {
+    display: none !important;
+  }
+
+  body[data-page] .nav-dropdown.open .nav-dropdown-menu {
+    display: block !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
   }
 }
 

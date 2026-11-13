@@ -5,7 +5,8 @@
   }
 }
 
-@media (max-width: 960px) {
+/* The icon shares the compact-header breakpoint; panel styling stays mobile-only. */
+@media (max-width: 1180px) {
   body[data-page] .menu-toggle {
     position: relative;
     z-index: 32;
@@ -80,6 +81,9 @@
     outline-offset: 4px;
   }
 
+}
+
+@media (max-width: 960px) {
   body[data-page] .site-nav {
     top: calc(100% + 12px);
     right: 0;
