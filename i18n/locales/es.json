@@ -9538,6 +9538,14 @@
       "status": "ai-reviewed",
       "reviewedAt": "2026-10-22T17:06:47.123Z",
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+    },
+    "home.sections.10.items.7.0": {
+      "source": "Facebook",
+      "sourceHash": "d41f5b4977ee05c6b61b3b5f054784628f5cd1cbe06a82a5484d1e6de6eefe85",
+      "text": "Facebook",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-13T04:58:41.738Z",
+      "reviewerNotes": "Preserve the official platform name in every locale, consistent with the other social channels."
     }
   }
 }

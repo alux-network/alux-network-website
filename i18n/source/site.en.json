@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T08:28:03.862Z",
+  "generatedAt": "2026-11-13T04:58:50.823Z",
   "source": "script.js:all active English page and shared UI data; scripts/templates/roadmap.html static roadmap text nodes",
   "entries": {
     "aluxVsOthers.article.closingText": {
@@ -1617,6 +1617,10 @@
     "home.sections.10.items.6.0": {
       "source": "LinkedIn",
       "sourceHash": "dd84425b72da12c6c828339ce814342daceac705b50d42e377e1acebf8f2320b"
+    },
+    "home.sections.10.items.7.0": {
+      "source": "Facebook",
+      "sourceHash": "d41f5b4977ee05c6b61b3b5f054784628f5cd1cbe06a82a5484d1e6de6eefe85"
     },
     "home.sections.10.title": {
       "source": "Channels",
