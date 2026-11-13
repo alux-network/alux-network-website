@@ -15,7 +15,7 @@ document.querySelectorAll('.brand, [data-nav="home"]').forEach((anchor) => {
 });
 const memoryStore = {};
 let staticRoadmapHTML = null;
-const mobileQuery = window.matchMedia("(max-width: 960px)");
+const mobileQuery = window.matchMedia("(max-width: 1180px)");
 
 const ui = {
   en: {
@@ -33,6 +33,7 @@ const ui = {
       learnPcc: "Runtime Lab",
       team: "Team",
       roadmap: "Roadmap",
+      explorer: "Explorer",
       cta: "Contact Us"
     },
     footer: {
@@ -73,7 +74,7 @@ const homeFaqItems = {
 
 const pageData = {
   home: {
-    metaTitle: "ALUX Network — Building GLVM",
+    metaTitle: "ALUX — Building the Global VM",
     metaDescription: "GLVM is ALUX's architecture for one logical execution layer across physically distributed TVMs, coordinating concurrency, replay, authority, finalization, replication, and consensus.",
     hero: {
       eyebrow: "ALUX Network",

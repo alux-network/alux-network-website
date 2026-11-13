@@ -2980,12 +2980,12 @@
       "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
     },
     "home.metaTitle": {
-      "source": "ALUX Network — Building GLVM",
-      "sourceHash": "844a106d7546ff7697122e62a80ba30c7492b090a0e6bc576ca121dad39c4ec1",
-      "text": "ALUX Network — Xây dựng GLVM",
+      "source": "ALUX — Building the Global VM",
+      "sourceHash": "70cb38d7a048da4271f5e6429cb1740aeffe4a82e60bb4af6e23a16ab67d7849",
+      "text": "ALUX — Xây dựng máy ảo toàn cầu",
       "status": "ai-reviewed",
-      "reviewedAt": "2026-10-22T17:14:22.395Z",
-      "reviewerNotes": "AI translation and second-pass source review; HTML, code and protected terminology checked."
+      "reviewedAt": "2026-11-13T05:10:46.148Z",
+      "reviewerNotes": "Reviewed localized homepage positioning and block-explorer navigation against the English source. ALUX remains the brand name; the global VM is the existing GLVM concept."
     },
     "home.sections.0.architecture.infrastructure.groups.0.0": {
       "source": "Public Blockchain",
@@ -9546,6 +9546,14 @@
       "status": "ai-reviewed",
       "reviewedAt": "2026-11-13T04:58:41.778Z",
       "reviewerNotes": "Preserve the official platform name in every locale, consistent with the other social channels."
+    },
+    "ui.nav.explorer": {
+      "source": "Explorer",
+      "sourceHash": "c39d646f10769b078ae82be4da7a0079ca91182b241e749be4276e08c215c654",
+      "text": "Khám phá chuỗi",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-13T05:10:46.148Z",
+      "reviewerNotes": "Reviewed localized homepage positioning and block-explorer navigation against the English source. ALUX remains the brand name; the global VM is the existing GLVM concept."
     }
   }
 }

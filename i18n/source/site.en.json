@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T04:58:50.823Z",
+  "generatedAt": "2026-11-13T05:10:46.232Z",
   "source": "script.js:all active English page and shared UI data; scripts/templates/roadmap.html static roadmap text nodes",
   "entries": {
     "aluxVsOthers.article.closingText": {
@@ -1491,8 +1491,8 @@
       "sourceHash": "d93c8c7861244466e5b1efdc84e0d79c3402f093cfae6b5f1e40ab03e3dda2f2"
     },
     "home.metaTitle": {
-      "source": "ALUX Network — Building GLVM",
-      "sourceHash": "844a106d7546ff7697122e62a80ba30c7492b090a0e6bc576ca121dad39c4ec1"
+      "source": "ALUX — Building the Global VM",
+      "sourceHash": "70cb38d7a048da4271f5e6429cb1740aeffe4a82e60bb4af6e23a16ab67d7849"
     },
     "home.sections.0.architecture.infrastructure.groups.0.0": {
       "source": "Public Blockchain",
@@ -4049,6 +4049,10 @@
     "ui.nav.cta": {
       "source": "Contact Us",
       "sourceHash": "98b67063cf8e584d75e53b88472ee85473e01e0ea16f29ece9cc98f4a2710494"
+    },
+    "ui.nav.explorer": {
+      "source": "Explorer",
+      "sourceHash": "c39d646f10769b078ae82be4da7a0079ca91182b241e749be4276e08c215c654"
     },
     "ui.nav.home": {
       "source": "Home",

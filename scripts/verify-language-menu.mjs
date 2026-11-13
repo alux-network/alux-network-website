@@ -94,7 +94,7 @@ try {
                     columns:getComputedStyle(menu).gridTemplateColumns.split(/\s+/).length,
                     pageWidth:document.documentElement.scrollWidth,
                     items:[...menu.children].map(item => ({code:item.dataset.lang, text:item.textContent, checked:item.getAttribute('aria-checked'), clipped:item.scrollWidth > item.clientWidth + 1})),
-                    competingMenu:document.querySelector('.nav-dropdown').classList.contains('open') || (matchMedia('(max-width: 960px)').matches && document.querySelector('.site-nav').classList.contains('open'))
+                    competingMenu:document.querySelector('.nav-dropdown').classList.contains('open') || (matchMedia('(max-width: 1180px)').matches && document.querySelector('.site-nav').classList.contains('open'))
                   };
                 });
                 assert.deepEqual(state.items.map(item => item.code), locales.map(item => item.code));
@@ -135,7 +135,7 @@ try {
                 assert.equal(await switcher.getAttribute('aria-expanded'), 'false');
                 if (profile.name === 'tablet' && !slug) {
                   await activate(page.locator('.menu-toggle'));
-                  await page.setViewportSize({width:1180, height:900});
+                  await page.setViewportSize({width:1280, height:900});
                   await activate(switcher);
                   await page.setViewportSize({width:profile.width, height:profile.height});
                   assert(!await page.locator('.site-nav').evaluate(element => element.classList.contains('open')), 'Mobile navigation survived a breakpoint change');

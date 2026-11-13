@@ -2980,12 +2980,12 @@
       "reviewerNotes": "AI-assisted native Japanese official-site review of the current public GLVM copy."
     },
     "home.metaTitle": {
-      "source": "ALUX Network — Building GLVM",
-      "sourceHash": "844a106d7546ff7697122e62a80ba30c7492b090a0e6bc576ca121dad39c4ec1",
-      "text": "ALUX Network — GLVM を構築する",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-25T05:07:40.857Z",
-      "reviewerNotes": "Human-reviewed native Japanese copy; GLVM retained as the ALUX architecture brand."
+      "source": "ALUX — Building the Global VM",
+      "sourceHash": "70cb38d7a048da4271f5e6429cb1740aeffe4a82e60bb4af6e23a16ab67d7849",
+      "text": "ALUX — グローバル仮想マシンを構築",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-13T05:10:46.107Z",
+      "reviewerNotes": "Reviewed localized homepage positioning and block-explorer navigation against the English source. ALUX remains the brand name; the global VM is the existing GLVM concept."
     },
     "home.sections.0.architecture.infrastructure.groups.0.0": {
       "source": "Public Blockchain",
@@ -9546,6 +9546,14 @@
       "status": "ai-reviewed",
       "reviewedAt": "2026-11-13T04:58:41.752Z",
       "reviewerNotes": "Preserve the official platform name in every locale, consistent with the other social channels."
+    },
+    "ui.nav.explorer": {
+      "source": "Explorer",
+      "sourceHash": "c39d646f10769b078ae82be4da7a0079ca91182b241e749be4276e08c215c654",
+      "text": "エクスプローラー",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-13T05:10:46.107Z",
+      "reviewerNotes": "Reviewed localized homepage positioning and block-explorer navigation against the English source. ALUX remains the brand name; the global VM is the existing GLVM concept."
     }
   }
 }

@@ -16,7 +16,7 @@ const modulePath=process.env.PLAYWRIGHT_MODULE;
 const {chromium}=await import(modulePath?pathToFileURL(modulePath).href:'playwright');
 const browser=await chromium.launch({headless:true,...(process.env.BROWSER_EXECUTABLE?{executablePath:process.env.BROWSER_EXECUTABLE}:{})});
 const cards=new Map();
-const server=http.createServer(async(req,res)=>{try{const u=new URL(req.url,'http://localhost');if(u.pathname==='/card'){res.setHeader('Content-Type','text/html; charset=utf-8');res.end(shareCardTemplate(cards.get(u.searchParams.get('key'))));return;}const name=decodeURIComponent(u.pathname).replace(/^\//,'');const target=path.resolve(root,name);if(!target.startsWith(root+path.sep))throw Error('Invalid path');res.setHeader('Content-Type',({'.css':'text/css','.woff2':'font/woff2','.webp':'image/webp','.svg':'image/svg+xml','.jpg':'image/jpeg'})[path.extname(target)]||'application/octet-stream');res.end(await fs.readFile(target));}catch{res.statusCode=404;res.end();}});
+const server=http.createServer(async(req,res)=>{try{const u=new URL(req.url,'http://localhost');if(u.pathname==='/card'){res.setHeader('Content-Type','text/html; charset=utf-8');res.end(shareCardTemplate(cards.get(u.searchParams.get('key'))));return;}const name=decodeURIComponent(u.pathname).replace(/^\//,'');const target=path.resolve(root,name);if(!target.startsWith(root+path.sep))throw Error('Invalid path');res.setHeader('Content-Type',({'.css':'text/css','.woff2':'font/woff2','.webp':'image/webp','.svg':'image/svg+xml','.jpg':'image/jpeg'})[path.extname(target)]||'application/octet-stream');const content=await fs.readFile(target);res.end(name==='fonts.css'?content.toString().replaceAll('font-display: optional','font-display: block'):content);}catch{res.statusCode=404;res.end();}});
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
 const origin='http://127.0.0.1:'+server.address().port;
 const reports=[];
@@ -31,6 +31,7 @@ try{
   if(slug==='home'){
    title=title.replace(/^ALUX(?: Network)?\s*[—–-]+\s*/u,'');
    title=title.charAt(0).toLocaleUpperCase(lang)+title.slice(1);
+   if(lang==='en')title=title.replace('Global VM','Global\u00a0VM');
   }
   cards.set(key,{lang,slug,title,description:meta.description,quarters:meta.quarters,displayUrl:'alux.network'+(lang==='en'?'':'/'+lang)+(slug==='home'?'':'/'+slug)});
   const webPath=path.join(root,'assets/social/pages',lang,slug+'.jpg');await fs.mkdir(path.dirname(webPath),{recursive:true});
