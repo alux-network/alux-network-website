@@ -37,6 +37,14 @@ body[data-page] .site-nav {
   gap: 12px !important;
 }
 
+/* Class state also governs hover so only one dropdown can stay visible. */
+body[data-page] .nav-dropdown:not(.open) .nav-dropdown-menu {
+  display: none !important;
+}
+body[data-page] .nav-dropdown:not(.open) .nav-caret {
+  transform: rotate(45deg) translateY(-1px) !important;
+}
+
 body[data-page] .header-actions {
   display: flex !important;
   align-items: center !important;

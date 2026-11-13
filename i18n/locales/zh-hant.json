@@ -9554,6 +9554,14 @@
       "status": "ai-reviewed",
       "reviewedAt": "2026-11-13T05:10:46.096Z",
       "reviewerNotes": "Reviewed localized homepage positioning and block-explorer navigation against the English source. ALUX remains the brand name; the global VM is the existing GLVM concept."
+    },
+    "ui.nav.tools": {
+      "source": "Tools",
+      "sourceHash": "ea93d6a262ecb87a9fa4d09edbd7654c046597936a8e235fc3949eb01775ff99",
+      "text": "工具",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-13T05:40:42.799Z",
+      "reviewerNotes": "Localized Tools navigation category; educational content remains in Learn."
     }
   }
 }

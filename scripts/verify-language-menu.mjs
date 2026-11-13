@@ -75,15 +75,27 @@ try {
                 const activate = locator => profile.touch ? locator.tap() : locator.click();
                 if (profile.touch) {
                   await activate(page.locator('.menu-toggle'));
-                  assert.equal(await page.locator('.menu-toggle').getAttribute('aria-expanded'), 'true');
-                  await activate(page.locator('.nav-dropdown-trigger'));
-                  assert.equal(await page.locator('.nav-dropdown-trigger').getAttribute('aria-expanded'), 'true');
+                  assert.equal(await page.locator('.menu-toggle').getAttribute('aria-expanded'), 'true', 'Navigation did not open');
+                  await activate(page.locator('[aria-controls="learn-menu"]'));
+                  assert.equal(await page.locator('[aria-controls="learn-menu"]').getAttribute('aria-expanded'), 'true', 'Learn did not open');
                   await page.touchscreen.tap(1, profile.height - 2);
-                  assert.equal(await page.locator('.nav-dropdown-trigger').getAttribute('aria-expanded'), 'false');
-                  await activate(page.locator('.nav-dropdown-trigger'));
+                  assert.equal(await page.locator('[aria-controls="learn-menu"]').getAttribute('aria-expanded'), 'false');
+                  await activate(page.locator('[aria-controls="learn-menu"]'));
                 }
+                const toolsTrigger = page.locator('[aria-controls="tools-menu"]');
+                await activate(toolsTrigger);
+                assert.equal(await toolsTrigger.getAttribute('aria-expanded'), 'true', 'Tools did not open');
+                assert.equal(await page.locator('#tools-menu a').getAttribute('aria-current'), null, 'External Explorer is not the current homepage');
+                assert.equal(await page.locator('[aria-controls="learn-menu"]').getAttribute('aria-expanded'), 'false');
+                await toolsTrigger.focus();
+                await page.keyboard.press('ArrowDown');
+                assert(await page.locator('#tools-menu a').evaluate(element => element === document.activeElement));
+                await page.keyboard.press('Escape');
+                assert.equal(await toolsTrigger.getAttribute('aria-expanded'), 'false');
+                assert(await toolsTrigger.evaluate(element => element === document.activeElement));
+                await activate(toolsTrigger);
                 await activate(switcher);
-                assert.equal(await switcher.getAttribute('aria-expanded'), 'true');
+                assert.equal(await switcher.getAttribute('aria-expanded'), 'true', 'Language picker did not open');
                 assert(await page.locator('.lang-menu').isVisible(), 'Language picker is hidden');
                 const state = await page.locator('.lang-menu').evaluate(menu => {
                   const rect = menu.getBoundingClientRect();
@@ -94,7 +106,7 @@ try {
                     columns:getComputedStyle(menu).gridTemplateColumns.split(/\s+/).length,
                     pageWidth:document.documentElement.scrollWidth,
                     items:[...menu.children].map(item => ({code:item.dataset.lang, text:item.textContent, checked:item.getAttribute('aria-checked'), clipped:item.scrollWidth > item.clientWidth + 1})),
-                    competingMenu:document.querySelector('.nav-dropdown').classList.contains('open') || (matchMedia('(max-width: 1180px)').matches && document.querySelector('.site-nav').classList.contains('open'))
+                    competingMenu:[...document.querySelectorAll('.nav-dropdown')].some(menu => menu.classList.contains('open')) || (matchMedia('(max-width: 1180px)').matches && document.querySelector('.site-nav').classList.contains('open'))
                   };
                 });
                 assert.deepEqual(state.items.map(item => item.code), locales.map(item => item.code));

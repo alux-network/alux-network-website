@@ -1,7 +1,7 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
-const dropdownTrigger = document.querySelector(".nav-dropdown-trigger");
-const navDropdown = document.querySelector(".nav-dropdown");
+const dropdownTrigger = document.querySelector('[aria-controls="learn-menu"]');
+const navDropdowns = document.querySelectorAll(".nav-dropdown");
 const langButtons = document.querySelectorAll(".lang-button");
 const langDropdown = document.querySelector(".lang-dropdown");
 const langSwitch = document.querySelector(".lang-switch");
@@ -27,6 +27,7 @@ const ui = {
       home: "Home",
       vs: "For AI Agents",
       learn: "Learn",
+      tools: "Tools",
       learnGlvm: "GLVM",
       blog: "Blog",
       learnAlux: "ALUX VS Others",
@@ -4685,11 +4686,12 @@ function updateActiveNavigation() {
   const learnPages = new Set(["glvm", "aluxVsOthers", "parallelConcurrentComposable"]);
 
   document.querySelectorAll(".site-nav a").forEach((anchor) => {
-    const pathname = new URL(anchor.href, window.location.href).pathname;
+    const destination = new URL(anchor.href, window.location.href);
+    const pathname = destination.pathname;
     const parts = pathname.split('/').filter(Boolean);
     if (supportedLanguages.has(parts[0]) && parts[0] !== 'en') parts.shift();
     const normalized = ('/'+parts.join('/')).replace(/\.html$/, "") || "/";
-    const isActive = normalized === activeHref.replace(/\.html$/, "").replace(/^(?!\/)/, "/");
+    const isActive = destination.origin === new URL(window.location.href).origin && normalized === activeHref.replace(/\.html$/, "").replace(/^(?!\/)/, "/");
     anchor.classList.toggle("active-link", isActive);
     if (isActive) {
       anchor.setAttribute("aria-current", "page");
@@ -4882,10 +4884,7 @@ function initMenu() {
   menuToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.toggle("open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
-    if (!isOpen && navDropdown && dropdownTrigger) {
-      navDropdown.classList.remove("open");
-      dropdownTrigger.setAttribute("aria-expanded", "false");
-    }
+    if (!isOpen) closeNavDropdowns();
   });
 
   siteNav.addEventListener("click", (event) => {
@@ -4893,51 +4892,86 @@ function initMenu() {
     if (!link || !mobileQuery.matches) return;
     siteNav.classList.remove("open");
     menuToggle.setAttribute("aria-expanded", "false");
+    closeNavDropdowns();
+  });
+}
+
+function closeNavDropdowns(except = null) {
+  navDropdowns.forEach(menu => {
+    if (menu === except) return;
+    menu.classList.remove("open");
+    menu.querySelector('.nav-dropdown-trigger')?.setAttribute('aria-expanded', 'false');
   });
 }
 
 function initDropdown() {
-  if (!navDropdown || !dropdownTrigger) return;
+  navDropdowns.forEach(navDropdown => {
+    const trigger = navDropdown.querySelector('.nav-dropdown-trigger');
+    if (!trigger) return;
 
-  const openDropdown = () => {
-    navDropdown.classList.add("open");
-    dropdownTrigger.setAttribute("aria-expanded", "true");
-  };
+    const openDropdown = () => {
+      closeNavDropdowns(navDropdown);
+      langDropdown?.classList.remove('open');
+      langSwitch?.setAttribute('aria-expanded', 'false');
+      navDropdown.classList.add("open");
+      trigger.setAttribute("aria-expanded", "true");
+    };
 
-  const closeDropdown = () => {
-    navDropdown.classList.remove("open");
-    dropdownTrigger.setAttribute("aria-expanded", "false");
-  };
+    const closeDropdown = () => {
+      navDropdown.classList.remove("open");
+      trigger.setAttribute("aria-expanded", "false");
+    };
 
-  navDropdown.addEventListener("mouseenter", () => {
-    if (!mobileQuery.matches) openDropdown();
-  });
+    navDropdown.addEventListener("mouseenter", () => {
+      if (!mobileQuery.matches) openDropdown();
+    });
 
-  navDropdown.addEventListener("mouseleave", () => {
-    if (!mobileQuery.matches) closeDropdown();
-  });
+    navDropdown.addEventListener("mouseleave", () => {
+      if (!mobileQuery.matches && !navDropdown.contains(document.activeElement)) closeDropdown();
+    });
 
-  dropdownTrigger.addEventListener("click", (event) => {
-    if (!mobileQuery.matches) {
+    trigger.addEventListener("click", (event) => {
+      if (!mobileQuery.matches) {
+        event.preventDefault();
+        openDropdown();
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+      if (navDropdown.classList.contains('open')) closeDropdown();
+      else openDropdown();
+    });
+
+    trigger.addEventListener('keydown', event => {
+      if (event.key !== 'ArrowDown') return;
       event.preventDefault();
       openDropdown();
-      return;
-    }
-
-    event.preventDefault();
-    event.stopPropagation();
-    const isOpen = navDropdown.classList.toggle("open");
-    dropdownTrigger.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  const closeOnOutsideInteraction = (event) => {
-    if (mobileQuery.matches && !navDropdown.contains(event.target)) {
+      navDropdown.querySelector('.nav-dropdown-menu a')?.focus();
+    });
+    navDropdown.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
       closeDropdown();
-    }
-  };
-  // WebKit background taps need pointer handling; click covers synthesized activation.
-  document.addEventListener('pointerdown', closeOnOutsideInteraction, true);
-  document.addEventListener('click', closeOnOutsideInteraction, true);
+      trigger.focus();
+    });
+    navDropdown.addEventListener('focusout', event => {
+      // Focus can reach a sibling trigger before its pointer click fires.
+      // That trigger owns the switch; leaving the dropdown groups closes all.
+      if (!navDropdown.contains(event.relatedTarget) && !event.relatedTarget?.closest?.('.nav-dropdown')) closeNavDropdowns();
+    });
+
+    const closeOnOutsideInteraction = (event) => {
+      // Let compact-navigation clicks settle before collapsing a sibling:
+      // closing Learn on pointerdown moves Tools before the tap completes.
+      if (!navDropdown.contains(event.target) && !(mobileQuery.matches && siteNav?.contains(event.target))) {
+        closeDropdown();
+      }
+    };
+    // WebKit background taps need pointer handling; click covers synthesized activation.
+    document.addEventListener('pointerdown', closeOnOutsideInteraction, true);
+    document.addEventListener('click', closeOnOutsideInteraction, true);
+  });
 }
 
 function initLanguage() {
@@ -4988,8 +5022,7 @@ function initLanguageDropdown() {
   const openLanguageMenu = () => {
     langDropdown.classList.add('open');
     langSwitch.setAttribute('aria-expanded', 'true');
-    navDropdown?.classList.remove('open');
-    dropdownTrigger?.setAttribute('aria-expanded', 'false');
+    closeNavDropdowns();
     siteNav?.classList.remove('open');
     menuToggle?.setAttribute('aria-expanded', 'false');
   };

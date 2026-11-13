@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T05:10:46.232Z",
+  "generatedAt": "2026-11-13T05:40:42.915Z",
   "source": "script.js:all active English page and shared UI data; scripts/templates/roadmap.html static roadmap text nodes",
   "entries": {
     "aluxVsOthers.article.closingText": {
@@ -4081,6 +4081,10 @@
     "ui.nav.team": {
       "source": "Team",
       "sourceHash": "5985039f106df054b43c3529139613bf7c2372937539f344c7c5ee47d00a0d63"
+    },
+    "ui.nav.tools": {
+      "source": "Tools",
+      "sourceHash": "ea93d6a262ecb87a9fa4d09edbd7654c046597936a8e235fc3949eb01775ff99"
     },
     "ui.nav.vs": {
       "source": "For AI Agents",
