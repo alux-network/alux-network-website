@@ -161,6 +161,7 @@ for(const file of files){
   }
   html=html.replace(/<script\b(?: defer)? src="\/script\.js/g,'<script defer src="/script.js');
   html=html.replace(/styles\.css\?v=[^"\s]+/g,'styles.css?v=20261103-locale-flow').replace(/script\.js\?v=[^"\s]+/g,'script.js?v=20261113-tools-menu').replace(/site-frame\.css\?v=[^"\s]+/g,'site-frame.css?v=20261113-tools-menu').replace(/home-hero-3d\.css\?v=[^"\s]+/g,'home-hero-3d.css?v=20261015-hero-spacing').replace(/roadmap\.css\?v=[^"\s]+/g,'roadmap.css?v=20261014-details');
+  html=html.replace(/home-mobile-nav\.css\?v=[^"\s]+/g,'home-mobile-nav.css?v=20261113-menu-toggle');
   if(page==='home'){
    html=html.replace(/\s*<link rel="preload"[^>]*data-home-media[^>]*>/g,'');
    const preloads=['assets/home/hero/alux-hero-3d-upper-brick.png','assets/home/hero/alux-hero-3d-lower-assembly.png'].map(name=>'<link rel="preload" as="image" type="image/webp" href="/'+media[name]+'" fetchpriority="high"'+' data-home-media>').join('\n');
