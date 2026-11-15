@@ -95,6 +95,10 @@ for(const file of files){
   const main=protectInitialText(file==='roadmap.html'?roadmap(language,result):'<main id="page-content" data-prerendered="'+language+'">'+result.markup+'</main>',language,result);
   if(!/<h[1-6]\b/.test(main))throw Error(file+': empty content');
   html=html.replace(/<main\b[^>]*id="page-content"[^>]*>[\s\S]*?<\/main>/,()=>main);
+  // Rebuild only this shared group; keep Learn content and Blog's main-nav position.
+  html=html.replace(/\s*<div class="nav-dropdown" data-nav-group="tools">[\s\S]*?<\/div>\s*<\/div>/g,'').replace(/\s*<a\b[^>]*data-nav="explorer"[^>]*>[^<]*<\/a>/g,'');
+  const toolsMenu='<div class="nav-dropdown" data-nav-group="tools"><button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="tools-menu"><span data-nav="tools">Tools</span><span class="nav-caret" aria-hidden="true"></span></button><div class="nav-dropdown-menu" id="tools-menu"><a href="https://explorer.alux.network/" data-nav="explorer" target="_blank" rel="noreferrer">Explorer</a></div></div>';
+  html=html.replace(/(<a\b[^>]*data-nav="blog"[^>]*>)/,toolsMenu+'\n        $1');
   html=html.replace(/(<[^>]+data-nav="([^"]+)"[^>]*>)[^<]*/g,(_,open,key)=>open+escape(chrome.nav[key]));
   const navPages={home:'home',vs:'vs',learnGlvm:'glvm',learnPcc:'parallelConcurrentComposable',learnAlux:'aluxVsOthers',team:'team',roadmap:'roadmap'};
   html=html.replace(/<a\b[^>]*data-nav="([^"]+)"[^>]*>/g,(tag,key)=>{
@@ -117,7 +121,7 @@ for(const file of files){
   html=html.replace(/(<meta property="og:locale" content=")[^"]*/,'$1'+ogLocale);
   // Share crawlers read the static head without running the language/runtime JS.
   const shareSlug=file==='index.html'?'home':file.replace(/\.html$/,'');
-  const shareImage='https://www.alux.network/assets/social/pages/'+language+'/'+shareSlug+'.jpg?v=20261103';
+  const shareImage='https://www.alux.network/assets/social/pages/'+language+'/'+shareSlug+'.jpg?v='+(page==='home'?'20261113':'20261103');
   const shareMeta={
    'og:type':'website','og:site_name':'ALUX Network','og:locale':ogLocale,
    'og:url':canonical,'og:title':result.page.metaTitle,'og:description':result.page.metaDescription,
@@ -156,7 +160,8 @@ for(const file of files){
    html=html.replace(/(<script\b[^>]*src="\/script\.js)/,'<script defer src="/'+name+'?v='+version+'"></script>\n$1');
   }
   html=html.replace(/<script\b(?: defer)? src="\/script\.js/g,'<script defer src="/script.js');
-  html=html.replace(/styles\.css\?v=[^"\s]+/g,'styles.css?v=20261103-locale-flow').replace(/script\.js\?v=[^"\s]+/g,'script.js?v=20261103-language-grid').replace(/site-frame\.css\?v=[^"\s]+/g,'site-frame.css?v=20261103-language-grid').replace(/home-hero-3d\.css\?v=[^"\s]+/g,'home-hero-3d.css?v=20261015-hero-spacing').replace(/roadmap\.css\?v=[^"\s]+/g,'roadmap.css?v=20261014-details');
+  html=html.replace(/styles\.css\?v=[^"\s]+/g,'styles.css?v=20261103-locale-flow').replace(/script\.js\?v=[^"\s]+/g,'script.js?v=20261113-tools-menu').replace(/site-frame\.css\?v=[^"\s]+/g,'site-frame.css?v=20261113-tools-menu').replace(/home-hero-3d\.css\?v=[^"\s]+/g,'home-hero-3d.css?v=20261015-hero-spacing').replace(/roadmap\.css\?v=[^"\s]+/g,'roadmap.css?v=20261014-details');
+  html=html.replace(/home-mobile-nav\.css\?v=[^"\s]+/g,'home-mobile-nav.css?v=20261113-menu-toggle');
   if(page==='home'){
    html=html.replace(/\s*<link rel="preload"[^>]*data-home-media[^>]*>/g,'');
    const preloads=['assets/home/hero/alux-hero-3d-upper-brick.png','assets/home/hero/alux-hero-3d-lower-assembly.png'].map(name=>'<link rel="preload" as="image" type="image/webp" href="/'+media[name]+'" fetchpriority="high"'+' data-home-media>').join('\n');

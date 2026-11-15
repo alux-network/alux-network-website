@@ -47,6 +47,8 @@ try {
       {name:'phone', width:engineName === 'webkit' ? 390 : 360, height:844, touch:true},
       {name:'landscape', width:568, height:320, touch:true},
       {name:'tablet', width:engineName === 'webkit' ? 820 : 768, height:1180, touch:true},
+      {name:'compact-start', width:961, height:900, touch:true},
+      {name:'compact-end', width:1180, height:900, touch:true},
       {name:'desktop', width:1440, height:900, touch:false}
     ];
     if (engineName === 'chromium' && args.has('--4k')) profiles.push({name:'4k', width:3840, height:2160, touch:false});
@@ -74,16 +76,36 @@ try {
                 const switcher = page.locator('.lang-switch');
                 const activate = locator => profile.touch ? locator.tap() : locator.click();
                 if (profile.touch) {
+                  const bars = await page.locator('.menu-toggle span').evaluateAll(elements => elements.map(element => {
+                    const rect = element.getBoundingClientRect();
+                    return {x:rect.x+rect.width/2,y:rect.y+rect.height/2,width:rect.width,height:rect.height};
+                  }));
+                  assert.equal(bars.length, 3, 'Expected three visible hamburger bars');
+                  assert(bars.every(bar => bar.width > 10 && bar.height > 0), 'Collapsed hamburger bar');
+                  assert(Math.max(...bars.map(bar => bar.x))-Math.min(...bars.map(bar => bar.x)) < 1 && bars[1].y-bars[0].y > 4 && bars[2].y-bars[1].y > 4, 'Hamburger bars must stack vertically');
                   await activate(page.locator('.menu-toggle'));
-                  assert.equal(await page.locator('.menu-toggle').getAttribute('aria-expanded'), 'true');
-                  await activate(page.locator('.nav-dropdown-trigger'));
-                  assert.equal(await page.locator('.nav-dropdown-trigger').getAttribute('aria-expanded'), 'true');
+                  assert.equal(await page.locator('.menu-toggle').getAttribute('aria-expanded'), 'true', 'Navigation did not open');
+                  await page.waitForFunction(() => getComputedStyle(document.querySelector('.menu-toggle span:nth-child(2)')).opacity === '0');
+                  await activate(page.locator('[aria-controls="learn-menu"]'));
+                  assert.equal(await page.locator('[aria-controls="learn-menu"]').getAttribute('aria-expanded'), 'true', 'Learn did not open');
                   await page.touchscreen.tap(1, profile.height - 2);
-                  assert.equal(await page.locator('.nav-dropdown-trigger').getAttribute('aria-expanded'), 'false');
-                  await activate(page.locator('.nav-dropdown-trigger'));
+                  assert.equal(await page.locator('[aria-controls="learn-menu"]').getAttribute('aria-expanded'), 'false');
+                  await activate(page.locator('[aria-controls="learn-menu"]'));
                 }
+                const toolsTrigger = page.locator('[aria-controls="tools-menu"]');
+                await activate(toolsTrigger);
+                assert.equal(await toolsTrigger.getAttribute('aria-expanded'), 'true', 'Tools did not open');
+                assert.equal(await page.locator('#tools-menu a').getAttribute('aria-current'), null, 'External Explorer is not the current homepage');
+                assert.equal(await page.locator('[aria-controls="learn-menu"]').getAttribute('aria-expanded'), 'false');
+                await toolsTrigger.focus();
+                await page.keyboard.press('ArrowDown');
+                assert(await page.locator('#tools-menu a').evaluate(element => element === document.activeElement));
+                await page.keyboard.press('Escape');
+                assert.equal(await toolsTrigger.getAttribute('aria-expanded'), 'false');
+                assert(await toolsTrigger.evaluate(element => element === document.activeElement));
+                await activate(toolsTrigger);
                 await activate(switcher);
-                assert.equal(await switcher.getAttribute('aria-expanded'), 'true');
+                assert.equal(await switcher.getAttribute('aria-expanded'), 'true', 'Language picker did not open');
                 assert(await page.locator('.lang-menu').isVisible(), 'Language picker is hidden');
                 const state = await page.locator('.lang-menu').evaluate(menu => {
                   const rect = menu.getBoundingClientRect();
@@ -94,7 +116,7 @@ try {
                     columns:getComputedStyle(menu).gridTemplateColumns.split(/\s+/).length,
                     pageWidth:document.documentElement.scrollWidth,
                     items:[...menu.children].map(item => ({code:item.dataset.lang, text:item.textContent, checked:item.getAttribute('aria-checked'), clipped:item.scrollWidth > item.clientWidth + 1})),
-                    competingMenu:document.querySelector('.nav-dropdown').classList.contains('open') || (matchMedia('(max-width: 960px)').matches && document.querySelector('.site-nav').classList.contains('open'))
+                    competingMenu:[...document.querySelectorAll('.nav-dropdown')].some(menu => menu.classList.contains('open')) || (matchMedia('(max-width: 1180px)').matches && document.querySelector('.site-nav').classList.contains('open'))
                   };
                 });
                 assert.deepEqual(state.items.map(item => item.code), locales.map(item => item.code));
@@ -135,7 +157,7 @@ try {
                 assert.equal(await switcher.getAttribute('aria-expanded'), 'false');
                 if (profile.name === 'tablet' && !slug) {
                   await activate(page.locator('.menu-toggle'));
-                  await page.setViewportSize({width:1180, height:900});
+                  await page.setViewportSize({width:1280, height:900});
                   await activate(switcher);
                   await page.setViewportSize({width:profile.width, height:profile.height});
                   assert(!await page.locator('.site-nav').evaluate(element => element.classList.contains('open')), 'Mobile navigation survived a breakpoint change');

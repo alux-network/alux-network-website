@@ -2980,12 +2980,12 @@
       "reviewerNotes": "AI-assisted native Arabic review for official-site copy, terminology, and RTL."
     },
     "home.metaTitle": {
-      "source": "ALUX Network — Building GLVM",
-      "sourceHash": "844a106d7546ff7697122e62a80ba30c7492b090a0e6bc576ca121dad39c4ec1",
-      "text": "شبكة ALUX — نبني GLVM",
-      "status": "human-reviewed",
-      "reviewedAt": "2026-07-25T00:00:00.000Z",
-      "reviewerNotes": "مراجعة بشرية؛ حُفظ اسما ALUX وGLVM بصيغتهما الأصلية في عنوان الصفحة."
+      "source": "ALUX — Building the Global VM",
+      "sourceHash": "70cb38d7a048da4271f5e6429cb1740aeffe4a82e60bb4af6e23a16ab67d7849",
+      "text": "ALUX — نبني الآلة الافتراضية العالمية",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-13T05:10:46.119Z",
+      "reviewerNotes": "Reviewed localized homepage positioning and block-explorer navigation against the English source. ALUX remains the brand name; the global VM is the existing GLVM concept."
     },
     "home.sections.0.architecture.infrastructure.groups.0.0": {
       "source": "Public Blockchain",
@@ -9538,6 +9538,30 @@
       "status": "ai-reviewed",
       "reviewedAt": "2026-10-12T00:00:00.000Z",
       "reviewerNotes": "Reviewed sorting control labels for the roadmap."
+    },
+    "home.sections.10.items.7.0": {
+      "source": "Facebook",
+      "sourceHash": "d41f5b4977ee05c6b61b3b5f054784628f5cd1cbe06a82a5484d1e6de6eefe85",
+      "text": "Facebook",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-13T04:58:41.716Z",
+      "reviewerNotes": "Preserve the official platform name in every locale, consistent with the other social channels."
+    },
+    "ui.nav.explorer": {
+      "source": "Explorer",
+      "sourceHash": "c39d646f10769b078ae82be4da7a0079ca91182b241e749be4276e08c215c654",
+      "text": "مستكشف السلسلة",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-13T05:10:46.119Z",
+      "reviewerNotes": "Reviewed localized homepage positioning and block-explorer navigation against the English source. ALUX remains the brand name; the global VM is the existing GLVM concept."
+    },
+    "ui.nav.tools": {
+      "source": "Tools",
+      "sourceHash": "ea93d6a262ecb87a9fa4d09edbd7654c046597936a8e235fc3949eb01775ff99",
+      "text": "الأدوات",
+      "status": "ai-reviewed",
+      "reviewedAt": "2026-11-13T05:40:42.822Z",
+      "reviewerNotes": "Localized Tools navigation category; educational content remains in Learn."
     }
   }
 }
